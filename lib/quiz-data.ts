@@ -598,7 +598,7 @@ const cpe301Chapter1: Question[] = [
     text: "A binary digit can be:",
     options: [
       { id: "a", text: "Any digit from 0 to 9" },
-      { id: "a", text: "0 or 1" },
+      { id: "b", text: "0 or 1" },
       { id: "c", text: "Any hexadecimal digit" },
       { id: "d", text: "0 to 7" },
     ],

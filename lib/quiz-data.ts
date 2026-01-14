@@ -15,8 +15,7 @@ export interface Question {
 // ============================================================
 // CPE301 CHAPTER 1 - ASSEMBLY LANGUAGE FUNDAMENTALS (260 QUESTIONS)
 // ============================================================
-
-const cpe301Chapter1: Question[] = [
+export const cpe301Chapter1: Question[] = [
   // SECTION 1: INTRODUCTION TO ASSEMBLY LANGUAGE (1-25)
   {
     id: "cpe301-1",
@@ -29,6 +28,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A portable language" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Assembly language is considered the oldest programming language because it was one of the first ways programmers could write instructions for computers using human-readable mnemonics instead of raw binary.",
   },
   {
     id: "cpe301-2",
@@ -41,6 +42,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Many-to-many" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Assembly language has a one-to-one relationship with machine language, meaning each assembly instruction corresponds to exactly one machine instruction.",
   },
   {
     id: "cpe301-3",
@@ -53,6 +56,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "JAVA" },
     ],
     correctOptionId: "d",
+    explanation:
+      "JAVA is not an assembler—it's a high-level programming language. MASM, TASM, and NASM are all well-known x86 assemblers.",
   },
   {
     id: "cpe301-4",
@@ -65,6 +70,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Micro Architecture System Module" },
     ],
     correctOptionId: "b",
+    explanation:
+      "MASM stands for Microsoft Macro Assembler. It's Microsoft's x86 assembler that supports macro instructions.",
   },
   {
     id: "cpe301-5",
@@ -77,6 +84,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Debugger" },
     ],
     correctOptionId: "c",
+    explanation:
+      "An assembler converts assembly language source code into machine language (object code). A compiler converts high-level language to machine code.",
   },
   {
     id: "cpe301-6",
@@ -89,6 +98,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Debugger" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A linker combines multiple object files into a single executable program, resolving references between files and linking required library code.",
   },
   {
     id: "cpe301-7",
@@ -101,6 +112,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Compiler" },
     ],
     correctOptionId: "c",
+    explanation:
+      "A debugger allows programmers to execute a program step by step, set breakpoints, and examine registers and memory to find and fix bugs.",
   },
   {
     id: "cpe301-8",
@@ -113,6 +126,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "No relationship" },
     ],
     correctOptionId: "b",
+    explanation:
+      "High-level languages have a one-to-many relationship with machine language. A single high-level statement typically expands into multiple machine instructions.",
   },
   {
     id: "cpe301-9",
@@ -128,6 +143,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Assembly language is as portable as Java" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Assembly language is NOT portable—it's designed for a specific processor family (like x86 or ARM). Code written for one architecture won't run on another.",
   },
   {
     id: "cpe301-10",
@@ -140,6 +157,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Input/output devices" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Registers are small, fast storage locations built directly into the CPU. They hold data being actively processed and are much faster than RAM.",
   },
   {
     id: "cpe301-11",
@@ -152,6 +171,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Kernel programs" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Embedded programs are written for embedded systems—dedicated computers within devices with limited memory that perform specific functions.",
   },
   {
     id: "cpe301-12",
@@ -164,6 +185,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Web server" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Automobile fuel and ignition systems are examples of embedded systems containing dedicated microcontrollers running specialized software.",
   },
   {
     id: "cpe301-13",
@@ -176,6 +199,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Control the operating system" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Device drivers translate OS commands into hardware-specific instructions, allowing the OS to communicate with various hardware devices.",
   },
   {
     id: "cpe301-14",
@@ -188,6 +213,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Real-address mode only" },
     ],
     correctOptionId: "a",
+    explanation:
+      "32-bit Protected Mode programs run under all 32-bit versions of Windows and also on 64-bit Windows through compatibility layers.",
   },
   {
     id: "cpe301-15",
@@ -200,6 +227,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Virtual-8086 Mode" },
     ],
     correctOptionId: "c",
+    explanation:
+      "64-bit Windows does NOT support 16-bit Real-Address Mode. It supports 32-bit protected mode for backward compatibility and 64-bit long mode.",
   },
   {
     id: "cpe301-16",
@@ -212,6 +241,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "JAVA" },
     ],
     correctOptionId: "c",
+    explanation:
+      "NASM uses Intel syntax similar to MASM, unlike GAS which uses AT&T syntax with different operand ordering.",
   },
   {
     id: "cpe301-17",
@@ -224,6 +255,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "C++" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Assembly language provides the most direct hardware access, allowing programmers to manipulate registers, memory addresses, and hardware ports directly.",
   },
   {
     id: "cpe301-18",
@@ -236,6 +269,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "All of the above" },
     ],
     correctOptionId: "d",
+    explanation:
+      "All options are valid reasons: understanding CPU architecture, writing device drivers, and embedded systems programming all benefit from assembly knowledge.",
   },
   {
     id: "cpe301-19",
@@ -248,6 +283,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Text Assembly Manager" },
     ],
     correctOptionId: "a",
+    explanation:
+      "TASM stands for Turbo Assembler, developed by Borland, supporting both MASM-compatible and its own 'Ideal' syntax mode.",
   },
   {
     id: "cpe301-20",
@@ -260,6 +297,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "No rules" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Assembly language has fewer syntactic rules than high-level languages, lacking complex structures like classes or type checking.",
   },
   {
     id: "cpe301-21",
@@ -272,6 +311,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Depends on optimization level" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A single C++ statement typically expands into multiple assembly instructions. Even a simple assignment may require load, compute, and store instructions.",
   },
   {
     id: "cpe301-22",
@@ -284,6 +325,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Embedded systems" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Large commercial applications are NOT typically written in assembly because it's too time-consuming to write and maintain.",
   },
   {
     id: "cpe301-23",
@@ -296,6 +339,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Graphics Assembly System" },
     ],
     correctOptionId: "b",
+    explanation:
+      "GAS stands for GNU Assembler, the default assembler in the GNU toolchain used on Linux and Unix-like systems.",
   },
   {
     id: "cpe301-24",
@@ -308,6 +353,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Java Number Interpreter" },
     ],
     correctOptionId: "a",
+    explanation:
+      "JNI stands for Java Native Interface, allowing Java code to call native applications written in C, C++, or assembly.",
   },
   {
     id: "cpe301-25",
@@ -320,6 +367,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "It cannot access hardware" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Assembly takes too much time to write and maintain. Each operation requires explicit instructions, making development slow and code hard to modify.",
   },
 
   // SECTION 2: VIRTUAL MACHINE CONCEPT (26-45)
@@ -334,6 +383,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Linus Torvalds" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Andrew Tanenbaum explained the virtual machine concept, describing computers as a hierarchy of virtual machines in his textbook on structured computer organization.",
   },
   {
     id: "cpe301-27",
@@ -346,6 +397,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Intermediate code" },
     ],
     correctOptionId: "c",
+    explanation:
+      "L0 (Level 0) represents native machine language—the actual binary instructions that the physical hardware can execute directly.",
   },
   {
     id: "cpe301-28",
@@ -358,6 +411,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Assembly" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Interpretation decodes and executes each instruction one at a time as the program runs, unlike compilation which converts the entire program first.",
   },
   {
     id: "cpe301-29",
@@ -370,6 +425,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Runtime processing" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Translation (compilation) converts an entire program before execution. The translated program can then run independently.",
   },
   {
     id: "cpe301-30",
@@ -382,6 +439,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A type of processor" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A virtual machine is software that emulates another computer's functions, creating an abstraction layer for program execution.",
   },
   {
     id: "cpe301-31",
@@ -394,6 +453,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "High-level language" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Level 1 represents digital logic hardware—the actual electronic circuits (logic gates, registers, buses) that implement the CPU.",
   },
   {
     id: "cpe301-32",
@@ -406,6 +467,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Level 4" },
     ],
     correctOptionId: "b",
+    explanation:
+      "The ISA is at Level 2, defining the machine instructions, registers, and addressing modes—the interface between hardware and software.",
   },
   {
     id: "cpe301-33",
@@ -418,6 +481,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Level 4" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Assembly language is at Level 3, providing human-readable mnemonics that are translated (assembled) to Level 2 machine language.",
   },
   {
     id: "cpe301-34",
@@ -430,6 +495,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Level 5" },
     ],
     correctOptionId: "c",
+    explanation:
+      "High-level languages are at Level 4, providing abstractions like variables and functions that are translated to lower levels.",
   },
   {
     id: "cpe301-35",
@@ -442,6 +509,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Require the interpreter at runtime" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Translated programs execute more quickly because translation is done once before execution, avoiding runtime decoding overhead.",
   },
   {
     id: "cpe301-36",
@@ -454,6 +523,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A compiler" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Java bytecode is executed by the JVM, which interprets or JIT-compiles it, allowing Java to run on any platform with a JVM.",
   },
   {
     id: "cpe301-37",
@@ -466,6 +537,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A system utility" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A microprogram is firmware embedded in the CPU that implements machine instructions using microinstructions to control internal operations.",
   },
   {
     id: "cpe301-38",
@@ -478,6 +551,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Hexadecimal codes" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Machine language consists of binary values (0s and 1s)—the actual bit patterns that the CPU reads and executes directly.",
   },
   {
     id: "cpe301-39",
@@ -490,6 +565,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Bytecode" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Assembly language uses short mnemonics like ADD, SUB, MOV—human-readable abbreviations representing machine instructions.",
   },
   {
     id: "cpe301-40",
@@ -502,6 +579,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Level 4" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Level 3 (Assembly language) is the first level where users typically write programs. Most programmers work at Level 4 (high-level languages).",
   },
   {
     id: "cpe301-41",
@@ -514,6 +593,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Compiled to bytecode" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Assembly programs are translated entirely before execution. The assembler converts source to machine code, which is then linked into an executable.",
   },
   {
     id: "cpe301-42",
@@ -526,6 +607,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Supercomputers only" },
     ],
     correctOptionId: "c",
+    explanation:
+      "The JVM is implemented on many different systems, enabling Java's 'write once, run anywhere' capability.",
   },
   {
     id: "cpe301-43",
@@ -538,6 +621,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Only by the assembler" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Machine instructions can be executed either by hardware directly (hardwired) or by microprogram. Simple instructions may be hardwired for speed.",
   },
   {
     id: "cpe301-44",
@@ -553,6 +638,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "User interface design" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Layered virtual machines explain the relationship between software and hardware layers, from physical circuits up to high-level languages.",
   },
   {
     id: "cpe301-45",
@@ -565,6 +652,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Stored in ROM" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Programs at any layer are translated or interpreted by the next-lowest layer, continuing down until reaching hardware execution.",
   },
 
   // SECTION 3: BINARY INTEGERS (46-80)
@@ -579,6 +668,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Word" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A binary digit is called a 'bit' (binary digit). It's the smallest unit of data, having only two values: 0 or 1.",
   },
   {
     id: "cpe301-47",
@@ -591,6 +682,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Binary numbers are base 2, using only two digits: 0 and 1. Each position represents a power of 2.",
   },
   {
     id: "cpe301-48",
@@ -603,6 +696,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "0 to 7" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A binary digit (bit) can only be 0 or 1, since binary is base 2 and only uses two symbols.",
   },
   {
     id: "cpe301-49",
@@ -615,6 +710,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Sign bit" },
     ],
     correctOptionId: "b",
+    explanation:
+      "The leftmost bit is the MSB (Most Significant Bit), having the highest positional value. In 8 bits, the MSB represents 2^7 (128).",
   },
   {
     id: "cpe301-50",
@@ -627,6 +724,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Machine System Byte" },
     ],
     correctOptionId: "b",
+    explanation:
+      "MSB stands for Most Significant Bit—the leftmost bit carrying the greatest weight (highest power of 2).",
   },
   {
     id: "cpe301-51",
@@ -639,6 +738,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Left Shift Bits" },
     ],
     correctOptionId: "a",
+    explanation:
+      "LSB stands for Least Significant Bit—the rightmost bit with the smallest weight (2^0 = 1).",
   },
   {
     id: "cpe301-52",
@@ -651,6 +752,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "0 on the right" },
     ],
     correctOptionId: "d",
+    explanation:
+      "Bits are numbered starting from 0 on the right (LSB), matching the power of 2 each position represents.",
   },
   {
     id: "cpe301-53",
@@ -663,6 +766,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "10" },
     ],
     correctOptionId: "b",
+    explanation: "2^0 equals 1. Any number raised to the power of 0 equals 1.",
   },
   {
     id: "cpe301-54",
@@ -675,6 +779,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "9" },
     ],
     correctOptionId: "c",
+    explanation:
+      "2^3 = 2 × 2 × 2 = 8. Bit position 3 represents the value 8 when set.",
   },
   {
     id: "cpe301-55",
@@ -687,6 +793,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "24" },
     ],
     correctOptionId: "c",
+    explanation:
+      "2^4 = 16. This represents one hexadecimal digit (values 0-15).",
   },
   {
     id: "cpe301-56",
@@ -699,6 +807,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1024" },
     ],
     correctOptionId: "b",
+    explanation:
+      "2^8 = 256, the number of values representable with 8 bits (one byte), ranging 0-255.",
   },
   {
     id: "cpe301-57",
@@ -711,6 +821,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "2048" },
     ],
     correctOptionId: "c",
+    explanation:
+      "2^10 = 1024, approximately 1000. This is why 1024 bytes is called a kilobyte.",
   },
   {
     id: "cpe301-58",
@@ -723,6 +835,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "17" },
     ],
     correctOptionId: "b",
+    explanation: "00001001 = 2^3 + 2^0 = 8 + 1 = 9. Bits 0 and 3 are set.",
   },
   {
     id: "cpe301-59",
@@ -735,6 +848,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "17" },
     ],
     correctOptionId: "b",
+    explanation: "00001111 = 8 + 4 + 2 + 1 = 15. The lower 4 bits are all set.",
   },
   {
     id: "cpe301-60",
@@ -747,6 +861,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "17" },
     ],
     correctOptionId: "b",
+    explanation: "00010000 = 2^4 = 16. Only bit 4 is set.",
   },
   {
     id: "cpe301-61",
@@ -759,6 +874,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "255" },
     ],
     correctOptionId: "d",
+    explanation:
+      "Unsigned 11111111 = 2^8 - 1 = 255. All 8 bits set gives the maximum unsigned byte value.",
   },
   {
     id: "cpe301-62",
@@ -771,6 +888,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "256" },
     ],
     correctOptionId: "b",
+    explanation: "Unsigned 10000000 = 2^7 = 128. Only bit 7 is set.",
   },
   {
     id: "cpe301-63",
@@ -783,6 +901,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "c",
+    explanation:
+      "To convert decimal to binary, repeatedly divide by 2 and record remainders, reading them bottom to top.",
   },
   {
     id: "cpe301-64",
@@ -795,6 +915,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00001101" },
     ],
     correctOptionId: "d",
+    explanation: "13 = 8 + 4 + 1 = 2^3 + 2^2 + 2^0 = 00001101.",
   },
   {
     id: "cpe301-65",
@@ -807,6 +928,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00001001" },
     ],
     correctOptionId: "b",
+    explanation: "7 = 4 + 2 + 1 = 2^2 + 2^1 + 2^0 = 00000111.",
   },
   {
     id: "cpe301-66",
@@ -819,6 +941,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00100000" },
     ],
     correctOptionId: "b",
+    explanation: "16 = 2^4 = 00010000. Only bit 4 is set.",
   },
   {
     id: "cpe301-67",
@@ -831,6 +954,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "10000000" },
     ],
     correctOptionId: "b",
+    explanation: "32 = 2^5 = 00100000. Only bit 5 is set.",
   },
   {
     id: "cpe301-68",
@@ -843,6 +967,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00001101" },
     ],
     correctOptionId: "b",
+    explanation: "00000100 (4) + 00000111 (7) = 00001011 (11).",
   },
   {
     id: "cpe301-69",
@@ -855,6 +980,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "11" },
     ],
     correctOptionId: "c",
+    explanation:
+      "In binary, 1 + 1 = 10 (decimal 2). Adding two 1s requires a carry to the next position.",
   },
   {
     id: "cpe301-70",
@@ -867,6 +994,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1 + 1 = 1" },
     ],
     correctOptionId: "c",
+    explanation:
+      "A carry is generated when 1 + 1 = 10. The sum exceeds one digit, carrying to the next position.",
   },
   {
     id: "cpe301-71",
@@ -879,6 +1008,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "2^n" },
     ],
     correctOptionId: "c",
+    explanation:
+      "ceiling(log₂ n) gives the minimum bits needed to represent n values. The ceiling rounds up for fractional results.",
   },
   {
     id: "cpe301-72",
@@ -891,6 +1022,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "b",
+    explanation:
+      "17 requires 5 bits. 4 bits represent 0-15, but 17 = 10001 needs 5 bits.",
   },
   {
     id: "cpe301-73",
@@ -903,6 +1036,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "110" },
     ],
     correctOptionId: "b",
+    explanation: "01100100 = 64 + 32 + 4 = 100. Bits 6, 5, and 2 are set.",
   },
   {
     id: "cpe301-74",
@@ -915,6 +1049,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "It is always accurate" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Inserting dots/spaces every 4 or 8 bits improves readability and aids hex conversion.",
   },
   {
     id: "cpe301-75",
@@ -927,6 +1063,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "54" },
     ],
     correctOptionId: "c",
+    explanation: "00110101 = 32 + 16 + 4 + 1 = 53. Bits 5, 4, 2, 0 are set.",
   },
   {
     id: "cpe301-76",
@@ -939,6 +1076,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "01111111" },
     ],
     correctOptionId: "b",
+    explanation:
+      "255 = 2^8 - 1 = 11111111. All 8 bits set gives max unsigned byte.",
   },
   {
     id: "cpe301-77",
@@ -951,6 +1090,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Zero only" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Signed integers can be positive, negative, or zero. The MSB indicates the sign.",
   },
   {
     id: "cpe301-78",
@@ -963,6 +1104,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Indeterminate" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Unsigned integers are always positive (or zero). All bits represent magnitude.",
   },
   {
     id: "cpe301-79",
@@ -975,6 +1118,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Undefined" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Zero is typically considered neither positive nor negative, though in computing it's grouped with positives (sign bit = 0).",
   },
   {
     id: "cpe301-80",
@@ -987,6 +1132,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00010011" },
     ],
     correctOptionId: "b",
+    explanation: "00001111 (15) + 00000010 (2) = 00010001 (17).",
   },
 
   // SECTION 4: INTEGER STORAGE SIZES (81-100)
@@ -1001,6 +1147,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Kilobyte" },
     ],
     correctOptionId: "b",
+    explanation:
+      "The byte (8 bits) is the basic storage unit. Memory is byte-addressable.",
   },
   {
     id: "cpe301-82",
@@ -1013,6 +1161,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "32" },
     ],
     correctOptionId: "b",
+    explanation: "A byte contains 8 bits, representing 256 different values.",
   },
   {
     id: "cpe301-83",
@@ -1025,6 +1174,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "b",
+    explanation: "In x86 terminology, a word is 2 bytes (16 bits).",
   },
   {
     id: "cpe301-84",
@@ -1037,6 +1187,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "64" },
     ],
     correctOptionId: "b",
+    explanation: "A word in x86 is 16 bits, representing 0-65535 unsigned.",
   },
   {
     id: "cpe301-85",
@@ -1049,6 +1200,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A doubleword (DWORD) is 4 bytes (32 bits), the native size for 32-bit processors.",
   },
   {
     id: "cpe301-86",
@@ -1061,6 +1214,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "128" },
     ],
     correctOptionId: "b",
+    explanation: "A doubleword is 32 bits (4 bytes).",
   },
   {
     id: "cpe301-87",
@@ -1073,6 +1227,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "32" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A quadword (QWORD) is 8 bytes (64 bits), native for 64-bit processors.",
   },
   {
     id: "cpe301-88",
@@ -1085,6 +1241,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "256" },
     ],
     correctOptionId: "b",
+    explanation: "A quadword is 64 bits (8 bytes).",
   },
   {
     id: "cpe301-89",
@@ -1097,6 +1254,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "512" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A double quadword is 128 bits (16 bytes), used in SIMD/SSE operations.",
   },
   {
     id: "cpe301-90",
@@ -1109,6 +1268,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "512 bytes" },
     ],
     correctOptionId: "b",
+    explanation: "One KB = 1024 bytes = 2^10 bytes in binary terms.",
   },
   {
     id: "cpe301-91",
@@ -1121,6 +1281,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "11" },
     ],
     correctOptionId: "c",
+    explanation: "1 KB = 2^10 = 1024 bytes.",
   },
   {
     id: "cpe301-92",
@@ -1133,6 +1294,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "2,097,152 bytes" },
     ],
     correctOptionId: "b",
+    explanation: "1 MB = 2^20 = 1,048,576 bytes = 1024 KB.",
   },
   {
     id: "cpe301-93",
@@ -1145,6 +1307,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "25" },
     ],
     correctOptionId: "c",
+    explanation: "1 MB = 2^20 bytes. Pattern: KB=2^10, MB=2^20, GB=2^30.",
   },
   {
     id: "cpe301-94",
@@ -1157,6 +1320,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "35" },
     ],
     correctOptionId: "c",
+    explanation: "1 GB = 2^30 bytes ≈ 1 billion bytes.",
   },
   {
     id: "cpe301-95",
@@ -1169,6 +1333,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "45" },
     ],
     correctOptionId: "c",
+    explanation: "1 TB = 2^40 bytes ≈ 1 trillion bytes.",
   },
   {
     id: "cpe301-96",
@@ -1181,6 +1346,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1 to 256" },
     ],
     correctOptionId: "c",
+    explanation: "Unsigned byte: 0 to 255 (2^8 = 256 values starting from 0).",
   },
   {
     id: "cpe301-97",
@@ -1193,6 +1359,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "-65536 to 65535" },
     ],
     correctOptionId: "b",
+    explanation: "Unsigned word (16 bits): 0 to 65535 = 2^16 - 1.",
   },
   {
     id: "cpe301-98",
@@ -1205,6 +1372,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "2^7 - 1" },
     ],
     correctOptionId: "c",
+    explanation: "Max unsigned byte = 2^8 - 1 = 255.",
   },
   {
     id: "cpe301-99",
@@ -1217,6 +1385,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "55" },
     ],
     correctOptionId: "c",
+    explanation: "1 PB = 2^50 bytes ≈ 1000 TB.",
   },
   {
     id: "cpe301-100",
@@ -1229,6 +1398,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "65" },
     ],
     correctOptionId: "c",
+    explanation: "1 EB = 2^60 bytes ≈ 1000 PB.",
   },
 
   // SECTION 5: HEXADECIMAL INTEGERS (101-130)
@@ -1243,6 +1413,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "2" },
     ],
     correctOptionId: "c",
+    explanation: "Hexadecimal is base 16, using digits 0-9 and letters A-F.",
   },
   {
     id: "cpe301-102",
@@ -1255,6 +1426,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1 binary bit" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Each hex digit = 4 binary bits (nibble). 2^4 = 16 values per digit.",
   },
   {
     id: "cpe301-103",
@@ -1267,6 +1440,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A doubleword" },
     ],
     correctOptionId: "c",
+    explanation: "Two hex digits = 8 bits = 1 byte. Example: FF = 11111111.",
   },
   {
     id: "cpe301-104",
@@ -1279,6 +1453,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "12" },
     ],
     correctOptionId: "b",
+    explanation: "Hex A = decimal 10. Letters A-F represent 10-15.",
   },
   {
     id: "cpe301-105",
@@ -1291,6 +1466,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "17" },
     ],
     correctOptionId: "b",
+    explanation: "Hex F = decimal 15, the highest single hex digit.",
   },
   {
     id: "cpe301-106",
@@ -1303,6 +1479,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "13" },
     ],
     correctOptionId: "b",
+    explanation: "Hex B = decimal 11. A=10, B=11, C=12, D=13, E=14, F=15.",
   },
   {
     id: "cpe301-107",
@@ -1315,6 +1492,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "14" },
     ],
     correctOptionId: "b",
+    explanation: "Hex C = decimal 12 = binary 1100.",
   },
   {
     id: "cpe301-108",
@@ -1327,6 +1505,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "15" },
     ],
     correctOptionId: "b",
+    explanation: "Hex D = decimal 13 = binary 1101.",
   },
   {
     id: "cpe301-109",
@@ -1339,6 +1518,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "b",
+    explanation: "Hex E = decimal 14 = binary 1110.",
   },
   {
     id: "cpe301-110",
@@ -1351,6 +1531,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1011" },
     ],
     correctOptionId: "c",
+    explanation: "Hex A = 10 = binary 1010 (8+2).",
   },
   {
     id: "cpe301-111",
@@ -1363,6 +1544,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "01111" },
     ],
     correctOptionId: "b",
+    explanation: "Hex F = 15 = binary 1111 (all four bits set).",
   },
   {
     id: "cpe301-112",
@@ -1375,6 +1557,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "D" },
     ],
     correctOptionId: "c",
+    explanation: "Binary 1100 = 8 + 4 = 12 = hex C.",
   },
   {
     id: "cpe301-113",
@@ -1387,6 +1570,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "10" },
     ],
     correctOptionId: "c",
+    explanation: "Binary 1111 = 15 = hex F.",
   },
   {
     id: "cpe301-114",
@@ -1399,6 +1583,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "256" },
     ],
     correctOptionId: "b",
+    explanation: "16^0 = 1. Any non-zero number to power 0 equals 1.",
   },
   {
     id: "cpe301-115",
@@ -1411,6 +1596,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "4096" },
     ],
     correctOptionId: "b",
+    explanation: "16^1 = 16. The second hex digit position has weight 16.",
   },
   {
     id: "cpe301-116",
@@ -1423,6 +1609,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "512" },
     ],
     correctOptionId: "c",
+    explanation: "16^2 = 256. Third hex digit position weight.",
   },
   {
     id: "cpe301-117",
@@ -1435,6 +1622,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "8192" },
     ],
     correctOptionId: "c",
+    explanation: "16^3 = 4096. Fourth hex digit position weight.",
   },
   {
     id: "cpe301-118",
@@ -1447,6 +1635,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "27" },
     ],
     correctOptionId: "c",
+    explanation: "1A = 1×16 + 10×1 = 16 + 10 = 26.",
   },
   {
     id: "cpe301-119",
@@ -1459,6 +1648,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "17" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Hex 10 = 1×16 + 0 = 16 decimal. Don't confuse with decimal 10!",
   },
   {
     id: "cpe301-120",
@@ -1471,6 +1662,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "260" },
     ],
     correctOptionId: "b",
+    explanation: "FF = 15×16 + 15 = 240 + 15 = 255 (max byte).",
   },
   {
     id: "cpe301-121",
@@ -1483,6 +1675,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "d",
+    explanation:
+      "Divide by 16, record remainders (convert 10-15 to A-F), read bottom to top.",
   },
   {
     id: "cpe301-122",
@@ -1495,6 +1689,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "AF" },
     ],
     correctOptionId: "b",
+    explanation: "255 ÷ 16 = 15 R15, both are F, so 255 = FF.",
   },
   {
     id: "cpe301-123",
@@ -1507,6 +1702,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "20" },
     ],
     correctOptionId: "b",
+    explanation: "16 ÷ 16 = 1 R0, so decimal 16 = hex 10.",
   },
   {
     id: "cpe301-124",
@@ -1519,6 +1715,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "BC3" },
     ],
     correctOptionId: "a",
+    explanation: "6A2 + 49A: 2+A=C, A+9=13(3 carry 1), 6+4+1=B. Result: B3C.",
   },
   {
     id: "cpe301-125",
@@ -1531,6 +1728,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "0111" },
     ],
     correctOptionId: "b",
+    explanation: "Hex 5 = 4 + 1 = binary 0101.",
   },
   {
     id: "cpe301-126",
@@ -1543,6 +1741,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "26B7" },
     ],
     correctOptionId: "b",
+    explanation: "Group by 4: 0001=1, 0110=6, 1010=A, 0111=7 → 16A7.",
   },
   {
     id: "cpe301-127",
@@ -1555,6 +1754,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "It speeds up computation" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Hex provides compact representation of binary—each digit is 4 bits.",
   },
   {
     id: "cpe301-128",
@@ -1567,6 +1768,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "4" },
     ],
     correctOptionId: "b",
+    explanation: "2 hex digits = 8 bits = 1 byte (e.g., FF = 11111111).",
   },
   {
     id: "cpe301-129",
@@ -1579,6 +1781,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "0-7" },
     ],
     correctOptionId: "c",
+    explanation: "Hex uses 0-9 for 0-9 and A-F for 10-15 (16 total symbols).",
   },
   {
     id: "cpe301-130",
@@ -1591,6 +1794,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16,000" },
     ],
     correctOptionId: "b",
+    explanation:
+      "3BA4 = 3×4096 + 11×256 + 10×16 + 4 = 12288 + 2816 + 160 + 4 = 15,268.",
   },
 
   // SECTION 6: SIGNED BINARY INTEGERS (131-160)
@@ -1605,6 +1810,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "The overflow status" },
     ],
     correctOptionId: "b",
+    explanation: "The MSB indicates sign: 0 = positive/zero, 1 = negative.",
   },
   {
     id: "cpe301-132",
@@ -1617,6 +1823,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Undefined" },
     ],
     correctOptionId: "b",
+    explanation:
+      "MSB = 0 indicates positive (or zero). Remaining bits show magnitude.",
   },
   {
     id: "cpe301-133",
@@ -1629,6 +1837,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Undefined" },
     ],
     correctOptionId: "b",
+    explanation: "MSB = 1 indicates negative in two's complement.",
   },
   {
     id: "cpe301-134",
@@ -1641,6 +1850,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Direct representation" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Modern computers use two's complement: only one zero, and addition works for both signs.",
   },
   {
     id: "cpe301-135",
@@ -1653,6 +1864,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Compliment" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Two's complement is the additive inverse: number + its two's complement = 0.",
   },
   {
     id: "cpe301-136",
@@ -1665,6 +1878,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Two" },
     ],
     correctOptionId: "c",
+    explanation:
+      "N + (-N) = 0 (ignoring overflow). Defining property of two's complement.",
   },
   {
     id: "cpe301-137",
@@ -1677,6 +1892,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Subtract 1" },
     ],
     correctOptionId: "a",
+    explanation: "Two's complement: (1) invert all bits, (2) add 1.",
   },
   {
     id: "cpe301-138",
@@ -1689,6 +1905,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "10000000" },
     ],
     correctOptionId: "b",
+    explanation: "00000001 → invert → 11111110 → +1 → 11111111 (= -1).",
   },
   {
     id: "cpe301-139",
@@ -1701,6 +1918,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Logic gates" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Subtraction becomes addition: A - B = A + (-B). Same hardware works.",
   },
   {
     id: "cpe301-140",
@@ -1713,6 +1932,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "-A - B" },
     ],
     correctOptionId: "b",
+    explanation: "Subtraction A - B becomes A + (two's complement of B).",
   },
   {
     id: "cpe301-141",
@@ -1725,6 +1945,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "255" },
     ],
     correctOptionId: "c",
+    explanation:
+      "11111111 = -1. Two's complement: invert→00000000, +1→00000001 = 1, so original = -1.",
   },
   {
     id: "cpe301-142",
@@ -1737,6 +1959,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "0" },
     ],
     correctOptionId: "b",
+    explanation: "10000000 = -128, the minimum signed byte value (-2^7).",
   },
   {
     id: "cpe301-143",
@@ -1749,6 +1972,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "-256 to 255" },
     ],
     correctOptionId: "c",
+    explanation: "Signed byte: -128 to 127 (-2^7 to 2^7-1).",
   },
   {
     id: "cpe301-144",
@@ -1761,6 +1985,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1 to 2^n" },
     ],
     correctOptionId: "c",
+    explanation: "Signed n-bit: -2^(n-1) to 2^(n-1) - 1. One bit for sign.",
   },
   {
     id: "cpe301-145",
@@ -1773,6 +1998,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "-65536 to 65535" },
     ],
     correctOptionId: "c",
+    explanation: "Signed word (16 bits): -32768 to 32767 (-2^15 to 2^15-1).",
   },
   {
     id: "cpe301-146",
@@ -1785,6 +2011,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Add a minus sign to 43" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Convert +43 to binary, then apply two's complement (invert + add 1).",
   },
   {
     id: "cpe301-147",
@@ -1797,6 +2025,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "11010011" },
     ],
     correctOptionId: "b",
+    explanation: "43 = 00101011 → invert → 11010100 → +1 → 11010101 = -43.",
   },
   {
     id: "cpe301-148",
@@ -1809,6 +2038,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "F" },
     ],
     correctOptionId: "c",
+    explanation: "Hex 8-F (binary 1xxx) have MSB=1, indicating negative.",
   },
   {
     id: "cpe301-149",
@@ -1821,6 +2051,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Undefined" },
     ],
     correctOptionId: "b",
+    explanation: "8A20 starts with 8 (≥8), so MSB=1, meaning negative.",
   },
   {
     id: "cpe301-150",
@@ -1833,6 +2064,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Undefined" },
     ],
     correctOptionId: "c",
+    explanation: "7FD9 starts with 7 (<8), so MSB=0, meaning positive.",
   },
   {
     id: "cpe301-151",
@@ -1845,6 +2077,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Undefined" },
     ],
     correctOptionId: "a",
+    explanation:
+      "Two's complement is reversible: applying it twice returns the original.",
   },
   {
     id: "cpe301-152",
@@ -1857,6 +2091,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "96C3" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Subtract each digit from F, then add 1: F-6=9, F-A=5, F-3=C, F-D=2 → 95C2 + 1 = 95C3.",
   },
   {
     id: "cpe301-153",
@@ -1869,6 +2105,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "FF" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Subtract each hex digit from F (15), then add 1 to the result.",
   },
   {
     id: "cpe301-154",
@@ -1881,6 +2119,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "The number is zero" },
     ],
     correctOptionId: "a",
+    explanation:
+      "MSB = 1 means negative. Take two's complement to find magnitude.",
   },
   {
     id: "cpe301-155",
@@ -1893,6 +2133,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "240" },
     ],
     correctOptionId: "b",
+    explanation:
+      "MSB=1 → negative. Invert: 00001111, +1: 00010000 = 16. So original = -16.",
   },
   {
     id: "cpe301-156",
@@ -1905,6 +2147,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "N + 1" },
     ],
     correctOptionId: "b",
+    explanation: "N-1 bits for magnitude, 1 bit for sign.",
   },
   {
     id: "cpe301-157",
@@ -1917,6 +2160,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "256" },
     ],
     correctOptionId: "b",
+    explanation: "Max positive signed byte = 2^7 - 1 = 127 (01111111).",
   },
   {
     id: "cpe301-158",
@@ -1929,6 +2173,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "-256" },
     ],
     correctOptionId: "b",
+    explanation: "Min signed byte = -2^7 = -128 (10000000).",
   },
   {
     id: "cpe301-159",
@@ -1941,6 +2186,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "11111110" },
     ],
     correctOptionId: "c",
+    explanation:
+      "-1 in 8-bit = 11111111. Verify: +1 = 00000001, invert → 11111110, +1 → 11111111.",
   },
   {
     id: "cpe301-160",
@@ -1953,6 +2200,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "B - A" },
     ],
     correctOptionId: "c",
+    explanation:
+      "A - B = A + (two's complement of B). Uses same addition hardware.",
   },
 
   // SECTION 7: CHARACTER STORAGE (161-180)
@@ -1967,6 +2216,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Alphanumeric Standard Character Information Exchange" },
     ],
     correctOptionId: "b",
+    explanation: "ASCII = American Standard Code for Information Interchange.",
   },
   {
     id: "cpe301-162",
@@ -1979,6 +2229,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16 bits" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Standard ASCII uses 7 bits (128 characters). Extended ASCII uses 8 bits.",
   },
   {
     id: "cpe301-163",
@@ -1991,6 +2243,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Memory addresses" },
     ],
     correctOptionId: "b",
+    explanation:
+      "ASCII maps characters to integers (numeric codes). 'A' = 65, 'a' = 97.",
   },
   {
     id: "cpe301-164",
@@ -2003,6 +2257,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Unicode characters" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Extended ASCII (128-255) includes graphic symbols, line-drawing, and international characters.",
   },
   {
     id: "cpe301-165",
@@ -2015,6 +2271,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Alliance of National Standards Index" },
     ],
     correctOptionId: "a",
+    explanation: "ANSI = American National Standards Institute.",
   },
   {
     id: "cpe301-166",
@@ -2027,6 +2284,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "512 characters" },
     ],
     correctOptionId: "c",
+    explanation: "ANSI defines 256 characters (codes 0-255).",
   },
   {
     id: "cpe301-167",
@@ -2039,6 +2297,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Speed up text processing" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Unicode covers all major world languages with 100,000+ characters.",
   },
   {
     id: "cpe301-168",
@@ -2051,6 +2311,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "EBCDIC" },
     ],
     correctOptionId: "c",
+    explanation: "UTF-8 is backward compatible with ASCII for codes 0-127.",
   },
   {
     id: "cpe301-169",
@@ -2063,6 +2324,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "32 bits" },
     ],
     correctOptionId: "b",
+    explanation:
+      "UTF-16 uses 16 bits per character (some need surrogate pairs).",
   },
   {
     id: "cpe301-170",
@@ -2075,6 +2338,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "64 bits" },
     ],
     correctOptionId: "c",
+    explanation:
+      "UTF-32 uses fixed 32 bits per character—simple but space-inefficient.",
   },
   {
     id: "cpe301-171",
@@ -2087,6 +2352,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A newline character" },
     ],
     correctOptionId: "b",
+    explanation: "Null-terminated strings end with byte 0x00 to mark the end.",
   },
   {
     id: "cpe301-172",
@@ -2099,6 +2365,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "JavaScript and Ruby" },
     ],
     correctOptionId: "b",
+    explanation: "C and C++ use null-terminated strings (null byte marks end).",
   },
   {
     id: "cpe301-173",
@@ -2111,6 +2378,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "61h" },
     ],
     correctOptionId: "b",
+    explanation: "'A' = 41h (65 decimal). Uppercase A-Z are 65-90.",
   },
   {
     id: "cpe301-174",
@@ -2123,6 +2391,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "41h" },
     ],
     correctOptionId: "c",
+    explanation:
+      "'a' = 61h (97 decimal). Lowercase a-z are 97-122. Difference of 32 from uppercase.",
   },
   {
     id: "cpe301-175",
@@ -2135,6 +2405,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "128 through 159" },
     ],
     correctOptionId: "b",
+    explanation: "Control characters are 0-31 (and 127 DEL). Non-printable.",
   },
   {
     id: "cpe301-176",
@@ -2147,6 +2418,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Horizontal tab" },
     ],
     correctOptionId: "c",
+    explanation: "ASCII 8 = Backspace (BS).",
   },
   {
     id: "cpe301-177",
@@ -2159,6 +2431,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Horizontal tab" },
     ],
     correctOptionId: "c",
+    explanation: "ASCII 10 = Line Feed (LF). Unix uses LF alone for newlines.",
   },
   {
     id: "cpe301-178",
@@ -2171,6 +2444,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Horizontal tab" },
     ],
     correctOptionId: "c",
+    explanation:
+      "ASCII 13 = Carriage Return (CR). Windows uses CR+LF for newlines.",
   },
   {
     id: "cpe301-179",
@@ -2183,6 +2458,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Horizontal tab" },
     ],
     correctOptionId: "d",
+    explanation: "ASCII 9 = Horizontal Tab (HT).",
   },
   {
     id: "cpe301-180",
@@ -2195,6 +2471,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "ASCII" },
     ],
     correctOptionId: "c",
+    explanation: "Windows uses UTF-16 internally for Unicode strings.",
   },
 
   // SECTION 8: BOOLEAN EXPRESSIONS (181-210)
@@ -2209,6 +2486,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Bertrand Russell" },
     ],
     correctOptionId: "b",
+    explanation:
+      "George Boole invented Boolean algebra in the 1800s—foundation of digital computing.",
   },
   {
     id: "cpe301-182",
@@ -2221,6 +2500,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Memory allocation" },
     ],
     correctOptionId: "b",
+    explanation: "Boolean expressions evaluate to true or false (1 or 0).",
   },
   {
     id: "cpe301-183",
@@ -2233,6 +2513,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Quaternary" },
     ],
     correctOptionId: "c",
+    explanation:
+      "NOT is unary (one operand). AND and OR are binary (two operands).",
   },
   {
     id: "cpe301-184",
@@ -2245,6 +2527,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Quaternary" },
     ],
     correctOptionId: "b",
+    explanation: "AND and OR are binary operators requiring two operands.",
   },
   {
     id: "cpe301-185",
@@ -2257,6 +2540,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Compares values" },
     ],
     correctOptionId: "b",
+    explanation: "NOT reverses/inverts: true→false, false→true.",
   },
   {
     id: "cpe301-186",
@@ -2269,6 +2553,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "NOT TRUE = FALSE.",
   },
   {
     id: "cpe301-187",
@@ -2281,6 +2566,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "NOT FALSE = TRUE.",
   },
   {
     id: "cpe301-188",
@@ -2293,6 +2579,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "At least one input is false" },
     ],
     correctOptionId: "c",
+    explanation: "AND outputs true only when BOTH inputs are true.",
   },
   {
     id: "cpe301-189",
@@ -2305,6 +2592,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "T AND T = T. Only case where AND returns true.",
   },
   {
     id: "cpe301-190",
@@ -2317,6 +2605,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "T AND F = F. AND requires both inputs true.",
   },
   {
     id: "cpe301-191",
@@ -2329,6 +2618,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "F AND F = F.",
   },
   {
     id: "cpe301-192",
@@ -2341,6 +2631,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Inputs are different" },
     ],
     correctOptionId: "c",
+    explanation: "OR outputs false only when BOTH inputs are false.",
   },
   {
     id: "cpe301-193",
@@ -2353,6 +2644,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "T OR F = T. OR returns true if at least one input is true.",
   },
   {
     id: "cpe301-194",
@@ -2365,6 +2657,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "F OR F = F. Only case where OR returns false.",
   },
   {
     id: "cpe301-195",
@@ -2377,6 +2670,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "F OR T = T. OR is commutative.",
   },
   {
     id: "cpe301-196",
@@ -2389,6 +2683,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "XOR" },
     ],
     correctOptionId: "c",
+    explanation: "NOT has highest precedence, then AND, then OR.",
   },
   {
     id: "cpe301-197",
@@ -2401,6 +2696,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NOT, OR, AND" },
     ],
     correctOptionId: "c",
+    explanation: "Precedence: NOT (highest), AND, OR (lowest).",
   },
   {
     id: "cpe301-198",
@@ -2413,6 +2709,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Depends on context" },
     ],
     correctOptionId: "b",
+    explanation: "NOT has higher precedence than OR, so ¬X is computed first.",
   },
   {
     id: "cpe301-199",
@@ -2425,6 +2722,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00000000" },
     ],
     correctOptionId: "a",
+    explanation: "Bitwise AND with all 1s preserves the original value.",
   },
   {
     id: "cpe301-200",
@@ -2437,6 +2735,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00000000" },
     ],
     correctOptionId: "a",
+    explanation: "Bitwise OR combines set bits from both operands.",
   },
   {
     id: "cpe301-201",
@@ -2449,6 +2748,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Logic gate designs" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Truth table lists all input combinations and corresponding outputs.",
   },
   {
     id: "cpe301-202",
@@ -2461,6 +2762,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "c",
+    explanation: "2 inputs → 2^2 = 4 rows (combinations).",
   },
   {
     id: "cpe301-203",
@@ -2473,6 +2775,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "c",
+    explanation: "3 inputs → 2^3 = 8 rows.",
   },
   {
     id: "cpe301-204",
@@ -2485,6 +2788,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "64" },
     ],
     correctOptionId: "b",
+    explanation: "4 inputs → 2^4 = 16 rows.",
   },
   {
     id: "cpe301-205",
@@ -2497,6 +2801,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A truth table to generate output" },
     ],
     correctOptionId: "b",
+    explanation:
+      "A MUX uses selector bits to choose which input passes to output.",
   },
   {
     id: "cpe301-206",
@@ -2509,6 +2815,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "(T AND F) = F, then F OR T = T.",
   },
   {
     id: "cpe301-207",
@@ -2521,6 +2828,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "F OR T = T, then NOT T = F.",
   },
   {
     id: "cpe301-208",
@@ -2533,6 +2841,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "NOT F = T, NOT T = F, then T OR F = T.",
   },
   {
     id: "cpe301-209",
@@ -2545,6 +2854,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Only mathematics" },
     ],
     correctOptionId: "c",
+    explanation:
+      "Boolean algebra is fundamental to both circuits and programming.",
   },
   {
     id: "cpe301-210",
@@ -2557,6 +2868,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "XOR operation" },
     ],
     correctOptionId: "c",
+    explanation: "∧ = AND. ∨ = OR. ¬ = NOT.",
   },
 
   // SECTION 9: DATA REPRESENTATION TERMINOLOGY (211-225)
@@ -2571,6 +2883,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Compressed for storage" },
     ],
     correctOptionId: "a",
+    explanation:
+      "Binary integers are stored as raw binary—actual bits representing the value.",
   },
   {
     id: "cpe301-212",
@@ -2583,6 +2897,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "32 bits" },
     ],
     correctOptionId: "b",
+    explanation: "Integers are stored in byte multiples: 1, 2, 4, or 8 bytes.",
   },
   {
     id: "cpe301-213",
@@ -2595,6 +2910,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A hexadecimal code" },
     ],
     correctOptionId: "b",
+    explanation:
+      'Digit string = ASCII characters representing a number ("123" = three characters).',
   },
   {
     id: "cpe301-214",
@@ -2607,6 +2924,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "A binary value" },
     ],
     correctOptionId: "a",
+    explanation:
+      "\"65\" = two characters '6' and '5', different from binary integer 65.",
   },
   {
     id: "cpe301-215",
@@ -2619,6 +2938,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: '"A"' },
     ],
     correctOptionId: "c",
+    explanation:
+      'Decimal digit string for 65 is "65" (ASCII text representation).',
   },
   {
     id: "cpe301-216",
@@ -2631,6 +2952,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: '"40"' },
     ],
     correctOptionId: "a",
+    explanation: '65 decimal = 41 hex, so hex digit string is "41".',
   },
   {
     id: "cpe301-217",
@@ -2643,6 +2965,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: '"01000011"' },
     ],
     correctOptionId: "b",
+    explanation: '65 = 01000001 binary, so binary digit string is "01000001".',
   },
   {
     id: "cpe301-218",
@@ -2655,6 +2978,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: '"103"' },
     ],
     correctOptionId: "b",
+    explanation: "65 = 1×64 + 0×8 + 1×1 = 101 octal.",
   },
   {
     id: "cpe301-219",
@@ -2667,6 +2991,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "16" },
     ],
     correctOptionId: "b",
+    explanation: "Octal is base 8, using digits 0-7.",
   },
   {
     id: "cpe301-220",
@@ -2679,6 +3004,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1-8" },
     ],
     correctOptionId: "b",
+    explanation: "Octal uses 0-7 (eight symbols for base 8).",
   },
   {
     id: "cpe301-221",
@@ -2691,6 +3017,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "01000011" },
     ],
     correctOptionId: "b",
+    explanation: "65 = 01000001 (raw binary value in memory).",
   },
   {
     id: "cpe301-222",
@@ -2703,6 +3030,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: '"A"' },
     ],
     correctOptionId: "b",
+    explanation: "Debuggers typically show hex: 01000001 = 41h.",
   },
   {
     id: "cpe301-223",
@@ -2715,6 +3043,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: 'Letter "A"' },
     ],
     correctOptionId: "d",
+    explanation: "Video hardware interprets 65 as ASCII 'A' and displays it.",
   },
   {
     id: "cpe301-224",
@@ -2727,6 +3056,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "The CPU used" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Context determines meaning: same byte could be number, character, or opcode.",
   },
   {
     id: "cpe301-225",
@@ -2739,6 +3070,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: 'Digit "0"' },
     ],
     correctOptionId: "c",
+    explanation: "01000001 = 65 = ASCII 'A'.",
   },
 
   // SECTION 10: BINARY SUBTRACTION (226-235)
@@ -2753,6 +3085,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Use a calculator" },
     ],
     correctOptionId: "b",
+    explanation: "A - B = A + (-B). Negate B using two's complement and add.",
   },
   {
     id: "cpe301-227",
@@ -2765,6 +3098,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "01000" },
     ],
     correctOptionId: "b",
+    explanation: "01101 (13) - 00111 (7) = 00110 (6).",
   },
   {
     id: "cpe301-228",
@@ -2777,6 +3111,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "The result is undefined" },
     ],
     correctOptionId: "c",
+    explanation: "0 - 1 requires borrowing from the next higher bit position.",
   },
   {
     id: "cpe301-229",
@@ -2789,6 +3124,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "7" },
     ],
     correctOptionId: "c",
+    explanation: "13 - 7 = 6 (same in binary or decimal).",
   },
   {
     id: "cpe301-230",
@@ -2801,6 +3137,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Additional memory" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Need an extra bit for sign to handle signed arithmetic properly.",
   },
   {
     id: "cpe301-231",
@@ -2813,6 +3151,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Negative values" },
     ],
     correctOptionId: "c",
+    explanation: "Ignore carry-out from the highest bit in two's complement.",
   },
   {
     id: "cpe301-232",
@@ -2825,6 +3164,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "00001000" },
     ],
     correctOptionId: "b",
+    explanation: "00001101 (13) - 00000111 (7) = 00000110 (6).",
   },
   {
     id: "cpe301-233",
@@ -2837,6 +3177,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "100" },
     ],
     correctOptionId: "b",
+    explanation:
+      "Binary 10 = decimal 2. Borrowing from this gives value 2 to work with.",
   },
   {
     id: "cpe301-234",
@@ -2849,6 +3191,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Eliminates the need for CPU" },
     ],
     correctOptionId: "b",
+    explanation: "Same adder hardware handles both addition and subtraction.",
   },
   {
     id: "cpe301-235",
@@ -2861,6 +3204,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "-A + (-B)" },
     ],
     correctOptionId: "c",
+    explanation: "A - B = A + (two's complement of B) = A + (-B).",
   },
 
   // SECTION 11: ADDITIONAL PRACTICE QUESTIONS (236-260)
@@ -2875,6 +3219,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "128" },
     ],
     correctOptionId: "b",
+    explanation: "2^5 = 32.",
   },
   {
     id: "cpe301-237",
@@ -2887,6 +3232,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "256" },
     ],
     correctOptionId: "b",
+    explanation: "2^6 = 64.",
   },
   {
     id: "cpe301-238",
@@ -2899,6 +3245,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "512" },
     ],
     correctOptionId: "b",
+    explanation: "2^7 = 128.",
   },
   {
     id: "cpe301-239",
@@ -2911,6 +3258,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "68" },
     ],
     correctOptionId: "b",
+    explanation: "100 = 6×16 + 4 = 64h.",
   },
   {
     id: "cpe301-240",
@@ -2923,6 +3271,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "104" },
     ],
     correctOptionId: "c",
+    explanation: "Hex 64 = 6×16 + 4 = 100 decimal.",
   },
   {
     id: "cpe301-241",
@@ -2935,6 +3284,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "0101" },
     ],
     correctOptionId: "b",
+    explanation: "Hex 3 = binary 0011.",
   },
   {
     id: "cpe301-242",
@@ -2947,6 +3297,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1001" },
     ],
     correctOptionId: "b",
+    explanation: "Hex 7 = binary 0111.",
   },
   {
     id: "cpe301-243",
@@ -2959,6 +3310,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "1011" },
     ],
     correctOptionId: "a",
+    explanation: "Hex 9 = binary 1001.",
   },
   {
     id: "cpe301-244",
@@ -2971,6 +3323,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "8 bits" },
     ],
     correctOptionId: "c",
+    explanation: "A nibble = 4 bits = half a byte = one hex digit.",
   },
   {
     id: "cpe301-245",
@@ -2983,6 +3336,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "b",
+    explanation: "1 byte = 8 bits = 2 nibbles (2 hex digits).",
   },
   {
     id: "cpe301-246",
@@ -2995,6 +3349,8 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Decimal to any base" },
     ],
     correctOptionId: "b",
+    explanation:
+      "This positional notation formula converts any base B to decimal.",
   },
   {
     id: "cpe301-247",
@@ -3007,6 +3363,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "204" },
     ],
     correctOptionId: "c",
+    explanation: "11001010 = 128 + 64 + 8 + 2 = 202.",
   },
   {
     id: "cpe301-248",
@@ -3019,6 +3376,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "240" },
     ],
     correctOptionId: "d",
+    explanation: "11110000 = 128 + 64 + 32 + 16 = 240.",
   },
   {
     id: "cpe301-249",
@@ -3031,6 +3389,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "CE" },
     ],
     correctOptionId: "a",
+    explanation: "1100 = C, 1010 = A → CA.",
   },
   {
     id: "cpe301-250",
@@ -3043,6 +3402,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "FF" },
     ],
     correctOptionId: "c",
+    explanation: "1111 = F, 0000 = 0 → F0.",
   },
   {
     id: "cpe301-251",
@@ -3055,6 +3415,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "75" },
     ],
     correctOptionId: "c",
+    explanation: "1 ZB = 2^70 bytes. Pattern: EB=60, ZB=70, YB=80.",
   },
   {
     id: "cpe301-252",
@@ -3067,6 +3428,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "85" },
     ],
     correctOptionId: "c",
+    explanation: "1 YB = 2^80 bytes (largest standard unit).",
   },
   {
     id: "cpe301-253",
@@ -3079,6 +3441,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "2Ah" },
     ],
     correctOptionId: "b",
+    explanation: "Space = 20h (32 decimal). First printable character.",
   },
   {
     id: "cpe301-254",
@@ -3091,6 +3454,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "39h" },
     ],
     correctOptionId: "b",
+    explanation: "'0' = 30h (48 decimal). Digits 0-9 are 48-57.",
   },
   {
     id: "cpe301-255",
@@ -3103,6 +3467,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "3Bh" },
     ],
     correctOptionId: "b",
+    explanation: "'9' = 39h (57 decimal).",
   },
   {
     id: "cpe301-256",
@@ -3115,6 +3480,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "30h" },
     ],
     correctOptionId: "c",
+    explanation: "'a' - 'A' = 97 - 65 = 32 = 20h.",
   },
   {
     id: "cpe301-257",
@@ -3127,6 +3493,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "XOR = true when inputs differ. T XOR F = T.",
   },
   {
     id: "cpe301-258",
@@ -3139,6 +3506,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "NULL" },
     ],
     correctOptionId: "b",
+    explanation: "XOR = false when inputs are same. T XOR T = F.",
   },
   {
     id: "cpe301-259",
@@ -3151,6 +3519,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "Both inputs are false" },
     ],
     correctOptionId: "c",
+    explanation: "XOR (exclusive OR) outputs true only when inputs differ.",
   },
   {
     id: "cpe301-260",
@@ -3163,6 +3532,7 @@ const cpe301Chapter1: Question[] = [
       { id: "d", text: "XOR operation" },
     ],
     correctOptionId: "c",
+    explanation: "∨ = OR. (∧ = AND, ¬ = NOT, ⊕ = XOR).",
   },
 ];
 

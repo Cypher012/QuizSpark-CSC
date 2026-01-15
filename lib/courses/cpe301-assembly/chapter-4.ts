@@ -1,4 +1,4 @@
-import { Question } from "./quiz-types";
+import { Question } from "../../quiz-types";
 
 const assemblyChapter4: Question[] = [
   // CHAPTER 4: DATA TRANSFERS, ADDRESSING, AND ARITHMETIC
@@ -261,7 +261,10 @@ const assemblyChapter4: Question[] = [
     text: "What does zero extension mean?",
     options: [
       { id: "a", text: "Setting all bits to zero" },
-      { id: "b", text: "Filling upper bits with zeros when copying to larger register" },
+      {
+        id: "b",
+        text: "Filling upper bits with zeros when copying to larger register",
+      },
       { id: "c", text: "Clearing the destination register" },
       { id: "d", text: "Setting the Zero flag" },
     ],
@@ -417,7 +420,10 @@ const assemblyChapter4: Question[] = [
     text: "reg8 in operand notation refers to:",
     options: [
       { id: "a", text: "Any 8-bit immediate value" },
-      { id: "b", text: "8-bit general-purpose registers like AH, AL, BH, BL, CH, CL, DH, DL" },
+      {
+        id: "b",
+        text: "8-bit general-purpose registers like AH, AL, BH, BL, CH, CL, DH, DL",
+      },
       { id: "c", text: "8-bit memory operand" },
       { id: "d", text: "The 8th register" },
     ],
@@ -771,7 +777,10 @@ const assemblyChapter4: Question[] = [
     text: "The Parity flag is set when:",
     options: [
       { id: "a", text: "The result is odd" },
-      { id: "b", text: "The least significant byte has an even number of 1 bits" },
+      {
+        id: "b",
+        text: "The least significant byte has an even number of 1 bits",
+      },
       { id: "c", text: "The result is zero" },
       { id: "d", text: "There is a carry" },
     ],
@@ -997,7 +1006,10 @@ const assemblyChapter4: Question[] = [
     text: "The OFFSET operator returns:",
     options: [
       { id: "a", text: "The value of a variable" },
-      { id: "b", text: "The distance of a variable from the beginning of its segment" },
+      {
+        id: "b",
+        text: "The distance of a variable from the beginning of its segment",
+      },
       { id: "c", text: "The size of a variable" },
       { id: "d", text: "The type of a variable" },
     ],
@@ -1086,8 +1098,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "4" },
     ],
     correctOptionId: "b",
-    explanation:
-      "TYPE of a BYTE is 1, since a byte is 1 byte in size.",
+    explanation: "TYPE of a BYTE is 1, since a byte is 1 byte in size.",
   },
   {
     id: "asm4-78",
@@ -1100,8 +1111,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "b",
-    explanation:
-      "TYPE of a WORD is 2, since a word is 2 bytes in size.",
+    explanation: "TYPE of a WORD is 2, since a word is 2 bytes in size.",
   },
   {
     id: "asm4-79",
@@ -1162,7 +1172,7 @@ const assemblyChapter4: Question[] = [
   {
     id: "asm4-83",
     chapter: "Chapter 4",
-    text: "Given: digitStr BYTE \"12345678\",0. What is LENGTHOF digitStr?",
+    text: 'Given: digitStr BYTE "12345678",0. What is LENGTHOF digitStr?',
     options: [
       { id: "a", text: "8" },
       { id: "b", text: "9" },
@@ -1508,8 +1518,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "c",
-    explanation:
-      "DWORD is 4 bytes, so the scale factor is 4.",
+    explanation: "DWORD is 4 bytes, so the scale factor is 4.",
   },
   {
     id: "asm4-108",
@@ -2100,8 +2109,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "128-bit value" },
     ],
     correctOptionId: "c",
-    explanation:
-      "QWORD (quadword) declares a 64-bit (8-byte) value.",
+    explanation: "QWORD (quadword) declares a 64-bit (8-byte) value.",
   },
   {
     id: "asm4-150",
@@ -2186,8 +2194,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "32-bit only" },
     ],
     correctOptionId: "b",
-    explanation:
-      "Both operands in a MOV instruction must be the same size.",
+    explanation: "Both operands in a MOV instruction must be the same size.",
   },
   {
     id: "asm4-156",
@@ -2438,8 +2445,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "Segment word" },
     ],
     correctOptionId: "b",
-    explanation:
-      "SWORD declares a signed word (16-bit signed integer).",
+    explanation: "SWORD declares a signed word (16-bit signed integer).",
   },
   {
     id: "asm4-174",
@@ -2452,8 +2458,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "Segment doubleword" },
     ],
     correctOptionId: "b",
-    explanation:
-      "SDWORD declares a signed doubleword (32-bit signed integer).",
+    explanation: "SDWORD declares a signed doubleword (32-bit signed integer).",
   },
   {
     id: "asm4-175",
@@ -2812,7 +2817,7 @@ const assemblyChapter4: Question[] = [
   {
     id: "asm4-200",
     chapter: "Chapter 4",
-    text: "Given: source BYTE \"Hello\",0 and target BYTE SIZEOF source DUP(0). SIZEOF source is:",
+    text: 'Given: source BYTE "Hello",0 and target BYTE SIZEOF source DUP(0). SIZEOF source is:',
     options: [
       { id: "a", text: "5" },
       { id: "b", text: "6" },
@@ -2821,7 +2826,7 @@ const assemblyChapter4: Question[] = [
     ],
     correctOptionId: "b",
     explanation:
-      "\"Hello\" has 5 characters plus 1 null terminator (0) = 6 bytes total.",
+      '"Hello" has 5 characters plus 1 null terminator (0) = 6 bytes total.',
   },
   {
     id: "asm4-201",
@@ -2876,8 +2881,7 @@ const assemblyChapter4: Question[] = [
       { id: "d", text: "8" },
     ],
     correctOptionId: "a",
-    explanation:
-      "LENGTHOF returns the number of elements, which is 4.",
+    explanation: "LENGTHOF returns the number of elements, which is 4.",
   },
   {
     id: "asm4-205",

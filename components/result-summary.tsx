@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import type { Question } from "@/lib/quiz-data";
+import type { Question } from "@/lib/quiz-types";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -18,6 +18,7 @@ interface ResultSummaryProps {
   questions: Question[];
   onRestart: () => void;
   onBackToChapters?: () => void;
+  onBackToCourses?: () => void;
 }
 
 export default function ResultSummary({
@@ -27,6 +28,7 @@ export default function ResultSummary({
   questions,
   onRestart,
   onBackToChapters,
+  onBackToCourses,
 }: ResultSummaryProps) {
   const [expandedId, setExpandedId] = useState<string | null>(null);
   const percentage = Math.round((score / total) * 100);
@@ -103,6 +105,15 @@ export default function ResultSummary({
                 className="flex-1 h-11 text-base font-semibold"
               >
                 Change Chapter
+              </Button>
+            )}
+            {onBackToCourses && (
+              <Button
+                onClick={onBackToCourses}
+                variant="outline"
+                className="flex-1 h-11 text-base font-semibold"
+              >
+                Change Course
               </Button>
             )}
           </div>

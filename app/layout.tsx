@@ -8,9 +8,9 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "QuizSpark - Assembly Language Quiz",
+  title: "QuizSpark - Interactive Course Quizzes",
   description:
-    "Interactive MCQ quiz for Assembly Language Programming covering CPE301 Chapter 1 and Assembly Chapters 2-3",
+    "Interactive MCQ quizzes for multiple courses including Assembly Language Programming, Information Systems, and more.",
   icons: {
     icon: "/icon.svg",
   },

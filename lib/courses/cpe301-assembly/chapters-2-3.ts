@@ -1,4 +1,4 @@
-import { Question } from "./quiz-types";
+import { Question } from "../../quiz-types";
 
 // ============================================================
 // ASSEMBLY LANGUAGE CHAPTERS 2 & 3 (200 QUESTIONS)

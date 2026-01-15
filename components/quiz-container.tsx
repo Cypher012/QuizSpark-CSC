@@ -1,11 +1,13 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { type Question, allQuestions } from "@/lib/quiz-data";
+import { type Question } from "@/lib/quiz-types";
+import { courses, getCourseById, filterByChapter, Course } from "@/lib/courses";
 import QuestionCard from "./question-card";
 import ProgressHeader from "./progress-header";
 import ResultSummary from "./result-summary";
 import ChapterSelect from "./chapter-select";
+import CourseSelect from "./course-select";
 import QuestionNavigator from "./question-navigator";
 
 type QuizState = "idle" | "answered" | "revealed" | "next" | "complete";
@@ -25,32 +27,35 @@ function shuffleArray<T>(array: T[]): T[] {
   return shuffled;
 }
 
-function filterByChapter(
-  questions: Question[],
-  chapter: string | null,
-): Question[] {
-  if (chapter === null) {
-    return questions;
-  }
-  return questions.filter((q) => q.chapter === chapter);
-}
-
 export default function QuizContainer() {
+  // Course and chapter selection state
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [selectedChapter, setSelectedChapter] = useState<
     string | null | undefined
   >(undefined);
+
+  // Quiz state
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isReady, setIsReady] = useState(false);
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const [state, setState] = useState<QuizState>("idle");
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [score, setScore] = useState(0);
 
+  const handleSelectCourse = (courseId: string) => {
+    const course = getCourseById(courseId);
+    if (course) {
+      setSelectedCourse(course);
+    }
+  };
+
   const handleSelectChapter = (chapter: string | null) => {
+    if (!selectedCourse) return;
+
     setSelectedChapter(chapter);
-    const filtered = filterByChapter(allQuestions, chapter);
+    const courseQuestions = selectedCourse.getQuestions();
+    const filtered = filterByChapter(courseQuestions, chapter);
     setQuestions(shuffleArray(filtered));
     setIsReady(true);
   };
@@ -118,7 +123,10 @@ export default function QuizContainer() {
   };
 
   const handleRestart = () => {
-    const filtered = filterByChapter(allQuestions, selectedChapter ?? null);
+    if (!selectedCourse) return;
+
+    const courseQuestions = selectedCourse.getQuestions();
+    const filtered = filterByChapter(courseQuestions, selectedChapter ?? null);
     setQuestions(shuffleArray(filtered));
     setCurrentIndex(0);
     setSelectedOption(null);
@@ -128,6 +136,18 @@ export default function QuizContainer() {
   };
 
   const handleBackToChapters = () => {
+    setSelectedChapter(undefined);
+    setQuestions([]);
+    setIsReady(false);
+    setCurrentIndex(0);
+    setSelectedOption(null);
+    setState("idle");
+    setUserAnswers([]);
+    setScore(0);
+  };
+
+  const handleBackToCourses = () => {
+    setSelectedCourse(null);
     setSelectedChapter(undefined);
     setQuestions([]);
     setIsReady(false);
@@ -149,9 +169,22 @@ export default function QuizContainer() {
     }
   };
 
+  // Show course selection if no course selected yet
+  if (!selectedCourse) {
+    return (
+      <CourseSelect courses={courses} onSelectCourse={handleSelectCourse} />
+    );
+  }
+
   // Show chapter selection if no chapter selected yet
   if (selectedChapter === undefined) {
-    return <ChapterSelect onSelectChapter={handleSelectChapter} />;
+    return (
+      <ChapterSelect
+        course={selectedCourse}
+        onSelectChapter={handleSelectChapter}
+        onBackToCourses={handleBackToCourses}
+      />
+    );
   }
 
   if (!isReady) {
@@ -173,6 +206,7 @@ export default function QuizContainer() {
         questions={questions}
         onRestart={handleRestart}
         onBackToChapters={handleBackToChapters}
+        onBackToCourses={handleBackToCourses}
       />
     );
   }

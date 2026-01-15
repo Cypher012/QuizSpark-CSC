@@ -1,4 +1,4 @@
-import { Question } from "./quiz-types";
+import { Question } from "../../quiz-types";
 
 // ============================================================
 // CPE301 CHAPTER 1 - ASSEMBLY LANGUAGE FUNDAMENTALS (260 QUESTIONS)

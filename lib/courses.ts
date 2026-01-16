@@ -13,16 +13,20 @@ export interface Course {
   description: string;
   chapters: Chapter[];
   getQuestions: () => Question[];
+  // Flag to indicate special quiz type (tokenized for CSC307)
+  quizType?: "standard" | "tokenized";
 }
 
 // Import course data
 import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
 import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
+import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-computation";
 
 // Export all available courses
 export const courses: Course[] = [
   cpe301AssemblyCourse,
   csc311InfoSystemsCourse,
+  { ...csc307NumericalComputationCourse, quizType: "tokenized" },
 ];
 
 // Helper to get a course by ID
@@ -39,7 +43,7 @@ export function getCourseQuestions(courseId: string): Question[] {
 // Helper to filter questions by chapter within a course
 export function filterByChapter(
   questions: Question[],
-  chapter: string | null
+  chapter: string | null,
 ): Question[] {
   if (chapter === null) {
     return questions;

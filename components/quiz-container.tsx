@@ -9,6 +9,7 @@ import ResultSummary from "./result-summary";
 import ChapterSelect from "./chapter-select";
 import CourseSelect from "./course-select";
 import QuestionNavigator from "./question-navigator";
+import CSC307QuizContainer from "./csc307-quiz-container";
 
 type QuizState = "idle" | "answered" | "revealed" | "next" | "complete";
 
@@ -173,6 +174,17 @@ export default function QuizContainer() {
   if (!selectedCourse) {
     return (
       <CourseSelect courses={courses} onSelectCourse={handleSelectCourse} />
+    );
+  }
+
+  // Handle CSC307 tokenized quiz separately
+  if (selectedCourse.quizType === "tokenized") {
+    return (
+      <CSC307QuizContainer
+        chapter={selectedChapter ?? null}
+        onBackToChapters={handleBackToChapters}
+        onBackToCourses={handleBackToCourses}
+      />
     );
   }
 

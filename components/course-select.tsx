@@ -1,26 +1,20 @@
 "use client";
 
 import { Course } from "@/lib/courses";
-import CourseSettings from "./course-settings";
 
 interface CourseSelectProps {
   courses: Course[];
   onSelectCourse: (courseId: string) => void;
-  onSettingsChange: () => void;
 }
 
 export default function CourseSelect({
   courses,
   onSelectCourse,
-  onSettingsChange,
 }: CourseSelectProps) {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 p-4 sm:p-6 lg:p-8">
       <div className="max-w-3xl mx-auto flex flex-col min-h-[calc(100vh-2rem)] sm:min-h-[calc(100vh-3rem)] lg:min-h-[calc(100vh-4rem)]">
-        <div className="text-center mb-8 relative">
-          <div className="absolute right-0 top-0">
-            <CourseSettings onSettingsChange={onSettingsChange} />
-          </div>
+        <div className="text-center mb-8">
           <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Select Your Course
           </h1>

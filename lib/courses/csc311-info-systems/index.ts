@@ -1,5 +1,5 @@
 import { Course } from "../../courses";
-import { Question } from "../../quiz-types";
+import { QuestionV2 } from "../../quiz-types";
 import chapter1 from "./chapter-1";
 import chapter2 from "./chapter-2";
 import chapter3 from "./chapter-3";
@@ -44,7 +44,7 @@ export const csc311InfoSystemsCourse: Course = {
         "System Development Life Cycle (SDLC) - Covers SDLC purpose, 6 core phases (Planning, Analysis, Design, Implementation, Testing, Maintenance), SDLC models (Waterfall, Iterative, Spiral, Agile), feasibility studies, requirements gathering, as-is/to-be models, logical vs physical design, deployment strategies (Parallel, Pilot, Phased, Plunge), testing types (Unit, Integration, System, UAT), and roles of users and managers.",
     },
   ],
-  getQuestions: (): Question[] => {
+  getQuestions: (): QuestionV2[] => {
     return [
       ...chapter1,
       ...chapter2,

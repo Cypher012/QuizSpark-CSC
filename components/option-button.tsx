@@ -1,43 +1,50 @@
-"use client"
+"use client";
 
-import type { Option } from "@/lib/quiz-data"
-import { cn } from "@/lib/utils"
+import type { Option } from "@/lib/quiz-types";
+import { cn } from "@/lib/utils";
 
 interface OptionButtonProps {
-  option: Option
-  isSelected: boolean
-  isCorrect: boolean
-  isRevealed: boolean
-  onClick: () => void
-  isDisabled: boolean
+  option: Option | string; // Support both old object format and new string format
+  optionLabel?: "A" | "B" | "C" | "D"; // For displaying A/B/C/D labels with shuffled questions
+  isSelected: boolean;
+  isCorrect: boolean;
+  isRevealed: boolean;
+  onClick: () => void;
+  isDisabled: boolean;
 }
 
 export default function OptionButton({
   option,
+  optionLabel,
   isSelected,
   isCorrect,
   isRevealed,
   onClick,
   isDisabled,
 }: OptionButtonProps) {
-  let bgColor = "bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600"
-  let borderColor = "border-slate-300 dark:border-slate-600"
-  let textColor = "text-slate-900 dark:text-white"
+  // Extract option text - handles both old (object) and new (string) formats
+  const optionText = typeof option === "string" ? option : option.text;
+  const displayLabel =
+    optionLabel || (typeof option === "object" ? option.id.toUpperCase() : "");
+  let bgColor =
+    "bg-slate-50 dark:bg-slate-700 hover:bg-slate-100 dark:hover:bg-slate-600";
+  let borderColor = "border-slate-300 dark:border-slate-600";
+  let textColor = "text-slate-900 dark:text-white";
 
   if (isRevealed) {
     if (isCorrect) {
-      bgColor = "bg-green-50 dark:bg-green-900/30"
-      borderColor = "border-green-500 dark:border-green-600"
-      textColor = "text-slate-900 dark:text-white"
+      bgColor = "bg-green-50 dark:bg-green-900/30";
+      borderColor = "border-green-500 dark:border-green-600";
+      textColor = "text-slate-900 dark:text-white";
     } else if (isSelected && !isCorrect) {
-      bgColor = "bg-red-50 dark:bg-red-900/30"
-      borderColor = "border-red-500 dark:border-red-600"
-      textColor = "text-slate-900 dark:text-white"
+      bgColor = "bg-red-50 dark:bg-red-900/30";
+      borderColor = "border-red-500 dark:border-red-600";
+      textColor = "text-slate-900 dark:text-white";
     }
   } else if (isSelected) {
-    bgColor = "bg-blue-50 dark:bg-blue-900/30"
-    borderColor = "border-blue-500 dark:border-blue-600"
-    textColor = "text-slate-900 dark:text-white"
+    bgColor = "bg-blue-50 dark:bg-blue-900/30";
+    borderColor = "border-blue-500 dark:border-blue-600";
+    textColor = "text-slate-900 dark:text-white";
   }
 
   return (
@@ -82,8 +89,13 @@ export default function OptionButton({
             />
           )}
         </div>
-        <span>{option.text}</span>
+        {displayLabel && (
+          <span className="font-bold text-sm text-slate-500 dark:text-slate-400">
+            {displayLabel}.
+          </span>
+        )}
+        <span>{optionText}</span>
       </div>
     </button>
-  )
+  );
 }

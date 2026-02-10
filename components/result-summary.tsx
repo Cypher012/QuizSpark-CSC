@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import type { Question } from "@/lib/quiz-types";
+import type { Question, QuestionV2, ShuffledQuestion } from "@/lib/quiz-types";
+import { isQuestionV2, isShuffledQuestion } from "@/lib/quiz-types";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
 
@@ -15,7 +16,7 @@ interface ResultSummaryProps {
   score: number;
   total: number;
   userAnswers: UserAnswer[];
-  questions: Question[];
+  questions: (Question | QuestionV2 | ShuffledQuestion)[];
   onRestart: () => void;
   onBackToChapters?: () => void;
   onBackToCourses?: () => void;
@@ -129,12 +130,33 @@ export default function ResultSummary({
             const question = questions.find((q) => q.id === answer.questionId);
             if (!question) return null;
 
-            const selectedOption = question.options.find(
-              (o) => o.id === answer.selectedOptionId,
-            );
-            const correctOption = question.options.find(
-              (o) => o.id === question.correctOptionId,
-            );
+            // Handle both old and new question formats for option lookup
+            let selectedOptionText: string | undefined;
+            let correctOptionText: string | undefined;
+
+            if (isQuestionV2(question) && isShuffledQuestion(question)) {
+              // Shuffled V2 questions
+              selectedOptionText =
+                question.displayOptions[
+                  answer.selectedOptionId as "A" | "B" | "C" | "D"
+                ];
+              correctOptionText =
+                question.displayOptions[question.displayCorrectAnswer];
+            } else if (isQuestionV2(question)) {
+              // Non-shuffled V2 questions
+              const selectedIndex = answer.selectedOptionId.charCodeAt(0) - 65;
+              selectedOptionText = question.options[selectedIndex];
+              correctOptionText = question.options[question.correctAnswer];
+            } else {
+              // Old V1 questions
+              const q = question as Question;
+              selectedOptionText = q.options.find(
+                (o) => o.id === answer.selectedOptionId,
+              )?.text;
+              correctOptionText = q.options.find(
+                (o) => o.id === q.correctOptionId,
+              )?.text;
+            }
 
             return (
               <div
@@ -195,7 +217,7 @@ export default function ResultSummary({
                             : "bg-red-50 dark:bg-red-900/20 border-red-300 dark:border-red-700 text-red-900 dark:text-red-100",
                         )}
                       >
-                        {selectedOption?.text}
+                        {selectedOptionText}
                       </p>
                     </div>
 
@@ -205,7 +227,7 @@ export default function ResultSummary({
                           Correct Answer
                         </p>
                         <p className="text-sm p-3 rounded border-2 bg-green-50 dark:bg-green-900/20 border-green-300 dark:border-green-700 text-green-900 dark:text-green-100">
-                          {correctOption?.text}
+                          {correctOptionText}
                         </p>
                       </div>
                     )}

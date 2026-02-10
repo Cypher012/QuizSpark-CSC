@@ -1,4 +1,4 @@
-import { Question } from "./quiz-types";
+import { Question, QuestionV2 } from "./quiz-types";
 
 export interface Chapter {
   id: string;
@@ -12,7 +12,7 @@ export interface Course {
   name: string;
   description: string;
   chapters: Chapter[];
-  getQuestions: () => Question[];
+  getQuestions: () => Question[] | QuestionV2[]; // Support both old and new formats
   // Flag to indicate special quiz type (tokenized for CSC307)
   quizType?: "standard" | "tokenized";
 }
@@ -81,16 +81,18 @@ export function getCourseById(courseId: string): Course | undefined {
 }
 
 // Helper to get questions for a course
-export function getCourseQuestions(courseId: string): Question[] {
+export function getCourseQuestions(
+  courseId: string,
+): Question[] | QuestionV2[] {
   const course = getCourseById(courseId);
   return course ? course.getQuestions() : [];
 }
 
 // Helper to filter questions by chapter within a course
 export function filterByChapter(
-  questions: Question[],
+  questions: Question[] | QuestionV2[],
   chapter: string | null,
-): Question[] {
+): Question[] | QuestionV2[] {
   if (chapter === null) {
     return questions;
   }

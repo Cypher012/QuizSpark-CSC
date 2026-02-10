@@ -1,5 +1,5 @@
 import { Course } from "../../courses";
-import { Question } from "../../quiz-types";
+import { QuestionV2 } from "../../quiz-types";
 import chapter1 from "./chapter-1";
 import chapters23 from "./chapters-2-3";
 import chapter4 from "./chapter-4";
@@ -28,7 +28,7 @@ export const cpe301AssemblyCourse: Course = {
       description: "Data Transfers, Addressing, and Arithmetic",
     },
   ],
-  getQuestions: (): Question[] => {
+  getQuestions: (): QuestionV2[] => {
     return [...chapter1, ...chapters23, ...chapter4];
   },
 };

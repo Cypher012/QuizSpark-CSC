@@ -1,7 +1,13 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import { type Question } from "@/lib/quiz-types";
+import {
+  type Question,
+  type QuestionV2,
+  type ShuffledQuestion,
+  isQuestionV2,
+} from "@/lib/quiz-types";
+import { shuffleQuestions } from "@/lib/utils/question-shuffle";
 import {
   getEnabledCourses,
   getCourseById,
@@ -42,7 +48,9 @@ export default function QuizContainer() {
   const [enabledCourses, setEnabledCourses] = useState<Course[]>([]);
 
   // Quiz state
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<
+    (Question | QuestionV2 | ShuffledQuestion)[]
+  >([]);
   const [isReady, setIsReady] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [state, setState] = useState<QuizState>("idle");
@@ -52,11 +60,6 @@ export default function QuizContainer() {
 
   // Load enabled courses on mount
   useEffect(() => {
-    setEnabledCourses(getEnabledCourses());
-  }, []);
-
-  // Refresh enabled courses when settings change
-  const handleSettingsChange = useCallback(() => {
     setEnabledCourses(getEnabledCourses());
   }, []);
 
@@ -73,7 +76,13 @@ export default function QuizContainer() {
     setSelectedChapter(chapter);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapter(courseQuestions, chapter);
-    setQuestions(shuffleArray(filtered));
+
+    // Check if all questions are V2 format, if so shuffle them
+    const processedQuestions = filtered.every(isQuestionV2)
+      ? shuffleQuestions(filtered as QuestionV2[])
+      : shuffleArray(filtered);
+
+    setQuestions(processedQuestions);
     setIsReady(true);
   };
 
@@ -111,7 +120,14 @@ export default function QuizContainer() {
   const handleConfirmAnswer = () => {
     if (!selectedOption) return;
 
-    const isCorrect = selectedOption === currentQuestion.correctOptionId;
+    // Handle both old and new question formats for correctness check
+    const isCorrect =
+      isQuestionV2(currentQuestion) && "displayCorrectAnswer" in currentQuestion
+        ? selectedOption === currentQuestion.displayCorrectAnswer
+        : isQuestionV2(currentQuestion)
+          ? selectedOption ===
+            String.fromCharCode(65 + currentQuestion.correctAnswer)
+          : selectedOption === (currentQuestion as Question).correctOptionId;
 
     setUserAnswers((prev) => [
       ...prev,
@@ -144,7 +160,13 @@ export default function QuizContainer() {
 
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapter(courseQuestions, selectedChapter ?? null);
-    setQuestions(shuffleArray(filtered));
+
+    // Check if all questions are V2 format, if so shuffle them (new shuffle each restart)
+    const processedQuestions = filtered.every(isQuestionV2)
+      ? shuffleQuestions(filtered as QuestionV2[])
+      : shuffleArray(filtered);
+
+    setQuestions(processedQuestions);
     setCurrentIndex(0);
     setSelectedOption(null);
     setState("idle");
@@ -192,7 +214,6 @@ export default function QuizContainer() {
       <CourseSelect
         courses={enabledCourses}
         onSelectCourse={handleSelectCourse}
-        onSettingsChange={handleSettingsChange}
       />
     );
   }

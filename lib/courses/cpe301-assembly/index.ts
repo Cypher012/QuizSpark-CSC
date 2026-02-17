@@ -1,6 +1,7 @@
 import { Course } from "../../courses";
 import { QuestionV2 } from "../../quiz-types";
-import chapter1 from "./chapter-1";
+// import chapter1 from "./chapter-1";
+import { cpe301Chapter1 as chapter1 } from "./chapter-1-new";
 import chapters23 from "./chapters-2-3";
 import chapter4 from "./chapter-4";
 

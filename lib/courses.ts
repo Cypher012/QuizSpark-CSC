@@ -21,6 +21,7 @@ export interface Course {
 import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
 import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
 import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-computation";
+import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
 
 // ============================================
 // TOGGLE COURSES HERE - Just comment/uncomment lines to show/hide courses
@@ -28,6 +29,7 @@ import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-com
 export const courses: Course[] = [
   cpe301AssemblyCourse,
   csc311InfoSystemsCourse,
+  csc221ComputerAppreciation,
   // { ...csc307NumericalComputationCourse, quizType: "tokenized" }, // Uncomment to enable CSC307
 ];
 
@@ -35,6 +37,7 @@ export const courses: Course[] = [
 export const allCourses: Course[] = [
   cpe301AssemblyCourse,
   csc311InfoSystemsCourse,
+  csc221ComputerAppreciation,
   { ...csc307NumericalComputationCourse, quizType: "tokenized" },
 ];
 
@@ -42,6 +45,7 @@ export const allCourses: Course[] = [
 export const defaultEnabledCourses: Record<string, boolean> = {
   "cpe301-assembly": true,
   "csc311-info-systems": true,
+  "csc221-computer-appreciation": true,
   "csc307-numerical-computation": false,
 };
 

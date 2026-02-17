@@ -7,7 +7,7 @@ import chapter3 from "./chapter-3-new";
 import chapter4 from "./chapter-4-new";
 import chapter5 from "./chapter-5";
 import chapter6 from "./chapter-6";
-// import chapter7 from "./chapter-7";
+import chapter7 from "./chapter-7";
 
 export const cpe301AssemblyCourse: Course = {
   id: "cpe301-assembly",
@@ -42,11 +42,11 @@ export const cpe301AssemblyCourse: Course = {
       label: "Chapter 6",
       description: "Conditional Processsing",
     },
-    // {
-    //   id: "Chapter 7",
-    //   label: "Chapter 7",
-    //   description: "Integer Arithmetic",
-    // },
+    {
+      id: "Chapter 7",
+      label: "Chapter 7",
+      description: "Integer Arithmetic",
+    },
   ],
   getQuestions: (): QuestionV2[] => {
     return [
@@ -56,7 +56,7 @@ export const cpe301AssemblyCourse: Course = {
       ...chapter4,
       ...chapter5,
       ...chapter6,
-      // ...chapter7,
+      ...chapter7,
     ];
   },
 };

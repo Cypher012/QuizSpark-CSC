@@ -7,5 +7,6 @@ export {
   getCourseById,
   getCourseQuestions,
   filterByChapter,
+  filterByChapters,
 } from "./courses";
 export type { Course, Chapter } from "./courses";

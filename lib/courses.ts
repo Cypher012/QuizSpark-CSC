@@ -108,3 +108,13 @@ export function filterByChapter(
     | Question[]
     | QuestionV2[];
 }
+
+export function filterByChapters(
+  questions: Question[] | QuestionV2[],
+  chapters: string[],
+): Question[] | QuestionV2[] {
+  const chapterSet = new Set(chapters);
+  return questions.filter((q) => chapterSet.has(q.chapter ?? "")) as
+    | Question[]
+    | QuestionV2[];
+}

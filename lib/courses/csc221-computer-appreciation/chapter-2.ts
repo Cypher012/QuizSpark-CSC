@@ -596,8 +596,8 @@ export const csc221Chapter2: QuestionV2[] = [
     chapter: "Chapter 2",
     text: "Industry 5.0 focuses on the integration of human-centric and bio-intelligent systems.",
     options: ["True", "False", "Maybe", "I don't know"],
-    correctAnswer: 2,
+    correctAnswer: 0,
     explanation:
-      "While 'Metaverse' and 'Digital Twins' are mentioned, the full nature of 5.0 is still an emerging/theoretical area in these slides.",
+      "Industry 5.0 focuses on human-centric approaches, sustainability, and the collaboration between humans and intelligent systems.",
   },
 ];

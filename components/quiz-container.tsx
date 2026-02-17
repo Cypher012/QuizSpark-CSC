@@ -12,6 +12,7 @@ import {
   getEnabledCourses,
   getCourseById,
   filterByChapter,
+  filterByChapters,
   Course,
 } from "@/lib/courses";
 import QuestionCard from "./question-card";
@@ -45,6 +46,9 @@ export default function QuizContainer() {
   const [selectedChapter, setSelectedChapter] = useState<
     string | null | undefined
   >(undefined);
+  const [selectedChapters, setSelectedChapters] = useState<string[] | null>(
+    null,
+  );
   const [enabledCourses, setEnabledCourses] = useState<Course[]>([]);
 
   // Quiz state
@@ -78,6 +82,22 @@ export default function QuizContainer() {
     const filtered = filterByChapter(courseQuestions, chapter);
 
     // Check if all questions are V2 format, if so shuffle them
+    const processedQuestions = filtered.every(isQuestionV2)
+      ? shuffleQuestions(filtered as QuestionV2[])
+      : shuffleArray(filtered);
+
+    setQuestions(processedQuestions);
+    setIsReady(true);
+  };
+
+  const handleSelectCustomChapters = (chapters: string[]) => {
+    if (!selectedCourse) return;
+
+    setSelectedChapter(null);
+    setSelectedChapters(chapters);
+    const courseQuestions = selectedCourse.getQuestions();
+    const filtered = filterByChapters(courseQuestions, chapters);
+
     const processedQuestions = filtered.every(isQuestionV2)
       ? shuffleQuestions(filtered as QuestionV2[])
       : shuffleArray(filtered);
@@ -159,7 +179,9 @@ export default function QuizContainer() {
     if (!selectedCourse) return;
 
     const courseQuestions = selectedCourse.getQuestions();
-    const filtered = filterByChapter(courseQuestions, selectedChapter ?? null);
+    const filtered = selectedChapters
+      ? filterByChapters(courseQuestions, selectedChapters)
+      : filterByChapter(courseQuestions, selectedChapter ?? null);
 
     // Check if all questions are V2 format, if so shuffle them (new shuffle each restart)
     const processedQuestions = filtered.every(isQuestionV2)
@@ -176,6 +198,7 @@ export default function QuizContainer() {
 
   const handleBackToChapters = () => {
     setSelectedChapter(undefined);
+    setSelectedChapters(null);
     setQuestions([]);
     setIsReady(false);
     setCurrentIndex(0);
@@ -188,6 +211,7 @@ export default function QuizContainer() {
   const handleBackToCourses = () => {
     setSelectedCourse(null);
     setSelectedChapter(undefined);
+    setSelectedChapters(null);
     setQuestions([]);
     setIsReady(false);
     setCurrentIndex(0);
@@ -235,6 +259,7 @@ export default function QuizContainer() {
       <ChapterSelect
         course={selectedCourse}
         onSelectChapter={handleSelectChapter}
+        onSelectCustomChapters={handleSelectCustomChapters}
         onBackToCourses={handleBackToCourses}
       />
     );

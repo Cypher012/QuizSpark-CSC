@@ -14,6 +14,27 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
+  openGraph: {
+    title: "QuizSpark - Interactive Course Quizzes",
+    description:
+      "Smart quizzing for modern students. Randomized MCQs, instant feedback, and score tracking across multiple university courses.",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1280,
+        height: 640,
+        alt: "QuizSpark - Smart Quizzing for Modern Students",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "QuizSpark - Interactive Course Quizzes",
+    description:
+      "Smart quizzing for modern students. Randomized MCQs, instant feedback, and score tracking across multiple university courses.",
+    images: ["/opengraph-image.png"],
+  },
 };
 
 export default function RootLayout({

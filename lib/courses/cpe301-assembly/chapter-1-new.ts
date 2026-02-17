@@ -645,16 +645,7 @@ export const cpe301Chapter1: QuestionV2[] = [
   },
 
   // ADDITIONAL QUESTIONS (SCENARIO & APPLICATION)
-  {
-    id: "cpe301_056",
-    course: "CPE 301",
-    chapter: "Chapter 1",
-    text: "You are debugging a program and see the value 41h in memory. If you interpret this as a decimal digit string, what is the number?",
-    options: ["65", "41", "12", "35"],
-    correctAnswer: 0,
-    explanation:
-      "The question asks to interpret 41h as a 'decimal digit string', which implies the ASCII representation. However, the text example clarifies: 41h is '65' decimal, or 'A' ASCII. Wait, re-reading text: 'Decimal digit string 65' is stored as 36h 35h. The question asks 'Interpret 41h'. 41h is decimal 65.",
-  },
+
   {
     id: "cpe301_057",
     course: "CPE 301",
@@ -1037,16 +1028,7 @@ export const cpe301Chapter1: QuestionV2[] = [
     correctAnswer: 2,
     explanation: "Microprograms are embedded in the microprocessor chip.",
   },
-  {
-    id: "cpe301_093",
-    course: "CPE 301",
-    chapter: "Chapter 1",
-    text: "Which has a larger range of values?",
-    options: ["Signed Byte", "Unsigned Byte"],
-    correctAnswer: 1,
-    explanation:
-      "Trick question. The *span* (256 values) is the same, but Unsigned goes higher (255 vs 127). Often 'range' implies max magnitude.",
-  },
+
   {
     id: "cpe301_094",
     course: "CPE 301",
@@ -1471,15 +1453,7 @@ export const cpe301Chapter1: QuestionV2[] = [
     correctAnswer: 1,
     explanation: "Invert 00000001, Add 1 -> 2. So it is -2.",
   },
-  {
-    id: "cpe301_136",
-    course: "CPE 301",
-    chapter: "Chapter 1",
-    text: "Which layer interprets the Instruction Set Architecture?",
-    options: ["Digital Logic", "Assembly", "High Level", "User"],
-    correctAnswer: 0,
-    explanation: "Digital logic circuits execute the ISA instructions.",
-  },
+
   {
     id: "cpe301_137",
     course: "CPE 301",

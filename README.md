@@ -22,9 +22,10 @@ A modern, interactive quiz application built for university students to study an
 
 | Code    | Course                          | Chapters |
 |---------|---------------------------------|----------|
-| CPE301  | Assembly Language Programming   | 4        |
-| CSC311  | Introduction to Information Systems | 3    |
+| CPE301  | Assembly Language Programming   | 6        |
+| CSC311  | Introduction to Information Systems | 5    |
 | CSC221  | Computer Appreciation           | 7        |
+| CSC315  | Data Structures and Algorithms  | 2        |
 | CSC307  | Numerical Computations I        | 1 (tokenized mastery mode) |
 
 ---
@@ -69,6 +70,7 @@ interactive-quiz-application/
 │       ├── cpe301-assembly/    # CPE301 question bank
 │       ├── csc311-info-systems/# CSC311 question bank
 │       ├── csc221-computer-appreciation/ # CSC221 question bank (ch1–7)
+│       ├── csc315-dsa/             # CSC315 question bank (Lecturers 1, 3)
 │       └── csc307-numerical-computation/ # CSC307 tokenized question bank
 ```
 

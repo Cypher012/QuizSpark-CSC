@@ -22,12 +22,14 @@ import { cpe301AssemblyCourse } from "./courses/cpe301-assembly";
 import { csc311InfoSystemsCourse } from "./courses/csc311-info-systems";
 import { csc307NumericalComputationCourse } from "./courses/csc307-numerical-computation";
 import { csc221ComputerAppreciation } from "./courses/csc221-computer-appreciation";
+import { csc315DSACourse } from "./courses/csc315-dsa";
 
 // ============================================
 // TOGGLE COURSES HERE - Just comment/uncomment lines to show/hide courses
 // ============================================
 export const courses: Course[] = [
   cpe301AssemblyCourse,
+  csc315DSACourse,
   csc311InfoSystemsCourse,
   csc221ComputerAppreciation,
   // { ...csc307NumericalComputationCourse, quizType: "tokenized" }, // Uncomment to enable CSC307
@@ -36,6 +38,7 @@ export const courses: Course[] = [
 // All available courses (master list - for settings UI)
 export const allCourses: Course[] = [
   cpe301AssemblyCourse,
+  csc315DSACourse,
   csc311InfoSystemsCourse,
   csc221ComputerAppreciation,
   { ...csc307NumericalComputationCourse, quizType: "tokenized" },
@@ -44,6 +47,7 @@ export const allCourses: Course[] = [
 // Default enabled state for courses
 export const defaultEnabledCourses: Record<string, boolean> = {
   "cpe301-assembly": true,
+  "csc315-dsa": true,
   "csc311-info-systems": true,
   "csc221-computer-appreciation": true,
   "csc307-numerical-computation": false,
@@ -100,5 +104,7 @@ export function filterByChapter(
   if (chapter === null) {
     return questions;
   }
-  return questions.filter((q) => q.chapter === chapter);
+  return questions.filter((q) => q.chapter === chapter) as
+    | Question[]
+    | QuestionV2[];
 }

@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "QuizSpark - Interactive Course Quizzes",
   description:
-    "Interactive MCQ quizzes for multiple courses including Assembly Language Programming, Information Systems, and more.",
+    "Interactive MCQ quizzes for university courses including Assembly Language Programming, Data Structures and Algorithms, Information Systems, Computer Appreciation, and more.",
   icons: {
     icon: "/icon.svg",
   },

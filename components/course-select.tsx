@@ -69,7 +69,7 @@ export default function CourseSelect({
           ))}
         </div>
 
-        <p className="text-center mt-auto pt-8 text-slate-400 text-sm">
+        <p className="text-center mt-auto pt-8 text-slate-400 ">
           Crafted by Cipher 💻 ❤️
         </p>
       </div>

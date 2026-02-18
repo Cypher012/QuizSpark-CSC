@@ -3,11 +3,14 @@
 import { useState } from "react";
 import { Course } from "@/lib/courses";
 import { Checkbox } from "@/components/ui/checkbox";
+import PracticeExamModal from "./practice-exam-modal";
+import type { ExamConfig } from "@/lib/quiz-types";
 
 interface ChapterSelectProps {
   course: Course;
   onSelectChapter: (chapter: string | null) => void;
   onSelectCustomChapters: (chapters: string[]) => void;
+  onStartExam: (config: ExamConfig) => void;
   onBackToCourses: () => void;
 }
 
@@ -15,10 +18,12 @@ export default function ChapterSelect({
   course,
   onSelectChapter,
   onSelectCustomChapters,
+  onStartExam,
   onBackToCourses,
 }: ChapterSelectProps) {
   const [isCustomMode, setIsCustomMode] = useState(false);
   const [selectedChapters, setSelectedChapters] = useState<string[]>([]);
+  const [isExamModalOpen, setIsExamModalOpen] = useState(false);
 
   const allChapterIds = course.chapters.map((c) => c.id);
 
@@ -276,10 +281,49 @@ export default function ChapterSelect({
           )}
         </div>
 
-        <p className="text-center mt-auto pt-8 text-slate-400 text-sm">
-          Crafted by Cipher
+        {/* Practice Exam Mode button — full width below the grid */}
+        <button
+          onClick={() => setIsExamModalOpen(true)}
+          className="w-full p-6 bg-neutral-600 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-[1.02] text-left group mt-4"
+        >
+          <div className="flex items-center justify-between">
+            <div>
+              <h2 className="text-xl font-semibold text-white">
+                Practice Exam Mode
+              </h2>
+              <p className="text-amber-100 mt-1">
+                Timed exam pick chapters, question count & duration
+              </p>
+            </div>
+            <div className="text-amber-200 group-hover:text-white transition-colors">
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+          </div>
+        </button>
+
+        <p className="text-center mt-auto pt-8 text-slate-400 ">
+          Crafted by Cipher 💻 ❤️
         </p>
       </div>
+
+      <PracticeExamModal
+        open={isExamModalOpen}
+        onOpenChange={setIsExamModalOpen}
+        course={course}
+        onStartExam={onStartExam}
+      />
     </div>
   );
 }

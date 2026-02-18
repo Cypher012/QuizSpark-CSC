@@ -5,6 +5,7 @@ import {
   type Question,
   type QuestionV2,
   type ShuffledQuestion,
+  type ExamConfig,
   isQuestionV2,
 } from "@/lib/quiz-types";
 import { shuffleQuestions } from "@/lib/utils/question-shuffle";
@@ -15,6 +16,7 @@ import {
   filterByChapters,
   Course,
 } from "@/lib/courses";
+import { saveExamState, loadExamState, clearExamState } from "@/lib/exam-state";
 import QuestionCard from "./question-card";
 import ProgressHeader from "./progress-header";
 import ResultSummary from "./result-summary";
@@ -62,9 +64,31 @@ export default function QuizContainer() {
   const [userAnswers, setUserAnswers] = useState<UserAnswer[]>([]);
   const [score, setScore] = useState(0);
 
-  // Load enabled courses on mount
+  // Exam mode state
+  const [isExamMode, setIsExamMode] = useState(false);
+  const [examEndTime, setExamEndTime] = useState<number | null>(null);
+
+  // Load enabled courses on mount; also restore any persisted exam
   useEffect(() => {
     setEnabledCourses(getEnabledCourses());
+
+    const persisted = loadExamState();
+    if (persisted) {
+      const course = getCourseById(persisted.courseId);
+      if (course) {
+        setSelectedCourse(course);
+        setSelectedChapter(null);
+        setQuestions(persisted.questions);
+        setUserAnswers(persisted.userAnswers);
+        setCurrentIndex(persisted.currentIndex);
+        setScore(persisted.score);
+        setExamEndTime(persisted.endTimestamp);
+        setIsExamMode(true);
+        setIsReady(true);
+      } else {
+        clearExamState();
+      }
+    }
   }, []);
 
   const handleSelectCourse = (courseId: string) => {
@@ -105,6 +129,67 @@ export default function QuizContainer() {
     setQuestions(processedQuestions);
     setIsReady(true);
   };
+
+  const handleStartExam = useCallback(
+    (config: ExamConfig) => {
+      if (!selectedCourse) return;
+
+      const courseQuestions = selectedCourse.getQuestions();
+      const filtered = filterByChapters(courseQuestions, config.chapters);
+      const shuffled = shuffleQuestions(filtered as QuestionV2[]);
+      const sliced = shuffled.slice(0, config.questionCount);
+
+      const endTimestamp = Date.now() + config.durationMinutes * 60_000;
+
+      setSelectedChapter(null);
+      setSelectedChapters(config.chapters);
+      setQuestions(sliced);
+      setUserAnswers([]);
+      setScore(0);
+      setCurrentIndex(0);
+      setSelectedOption(null);
+      setState("idle");
+      setExamEndTime(endTimestamp);
+      setIsExamMode(true);
+      setIsReady(true);
+
+      saveExamState({
+        endTimestamp,
+        questions: sliced as ShuffledQuestion[],
+        userAnswers: [],
+        currentIndex: 0,
+        score: 0,
+        courseId: selectedCourse.id,
+      });
+    },
+    [selectedCourse],
+  );
+
+  // Persist exam state on every relevant change
+  useEffect(() => {
+    if (!isExamMode || !examEndTime || !selectedCourse) return;
+    saveExamState({
+      endTimestamp: examEndTime,
+      questions: questions as ShuffledQuestion[],
+      userAnswers,
+      currentIndex,
+      score,
+      courseId: selectedCourse.id,
+    });
+  }, [
+    isExamMode,
+    examEndTime,
+    questions,
+    userAnswers,
+    currentIndex,
+    score,
+    selectedCourse,
+  ]);
+
+  const handleAutoSubmit = useCallback(() => {
+    clearExamState();
+    setState("complete");
+  }, []);
 
   // Warn user before leaving/refreshing during active quiz
   useEffect(() => {
@@ -167,16 +252,32 @@ export default function QuizContainer() {
 
   const handleNextQuestion = () => {
     if (isLastQuestion) {
+      clearExamState();
       setState("complete");
     } else {
-      setCurrentIndex((prev) => prev + 1);
-      setSelectedOption(null);
-      setState("idle");
+      const nextIndex = currentIndex + 1;
+      const nextQuestionId = questions[nextIndex]?.id;
+      const previousAnswer = userAnswers.find(
+        (a) => a.questionId === nextQuestionId,
+      );
+
+      setCurrentIndex(nextIndex);
+      if (previousAnswer) {
+        setSelectedOption(previousAnswer.selectedOptionId);
+        setState("revealed");
+      } else {
+        setSelectedOption(null);
+        setState("idle");
+      }
     }
   };
 
   const handleRestart = () => {
     if (!selectedCourse) return;
+
+    clearExamState();
+    setIsExamMode(false);
+    setExamEndTime(null);
 
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = selectedChapters
@@ -197,6 +298,9 @@ export default function QuizContainer() {
   };
 
   const handleBackToChapters = () => {
+    clearExamState();
+    setIsExamMode(false);
+    setExamEndTime(null);
     setSelectedChapter(undefined);
     setSelectedChapters(null);
     setQuestions([]);
@@ -209,6 +313,9 @@ export default function QuizContainer() {
   };
 
   const handleBackToCourses = () => {
+    clearExamState();
+    setIsExamMode(false);
+    setExamEndTime(null);
     setSelectedCourse(null);
     setSelectedChapter(undefined);
     setSelectedChapters(null);
@@ -260,6 +367,7 @@ export default function QuizContainer() {
         course={selectedCourse}
         onSelectChapter={handleSelectChapter}
         onSelectCustomChapters={handleSelectCustomChapters}
+        onStartExam={handleStartExam}
         onBackToCourses={handleBackToCourses}
       />
     );
@@ -282,6 +390,7 @@ export default function QuizContainer() {
         total={questions.length}
         userAnswers={userAnswers}
         questions={questions}
+        isExamMode={isExamMode}
         onRestart={handleRestart}
         onBackToChapters={handleBackToChapters}
         onBackToCourses={handleBackToCourses}
@@ -296,6 +405,8 @@ export default function QuizContainer() {
           current={currentIndex + 1}
           total={questions.length}
           score={score}
+          examEndTime={examEndTime}
+          onTimeUp={handleAutoSubmit}
         />
 
         <QuestionCard

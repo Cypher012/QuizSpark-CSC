@@ -17,6 +17,7 @@ interface ResultSummaryProps {
   total: number;
   userAnswers: UserAnswer[];
   questions: (Question | QuestionV2 | ShuffledQuestion)[];
+  isExamMode?: boolean;
   onRestart: () => void;
   onBackToChapters?: () => void;
   onBackToCourses?: () => void;
@@ -27,6 +28,7 @@ export default function ResultSummary({
   total,
   userAnswers,
   questions,
+  isExamMode = false,
   onRestart,
   onBackToChapters,
   onBackToCourses,
@@ -51,7 +53,7 @@ export default function ResultSummary({
         <div className="bg-white dark:bg-slate-800 rounded-xl shadow-xl p-8 border border-slate-200 dark:border-slate-700 mb-8 animate-in fade-in duration-500">
           <div className="text-center mb-8">
             <h1 className="text-4xl sm:text-5xl font-bold text-slate-900 dark:text-white mb-2">
-              Quiz Complete!
+              {isExamMode ? "Practice Exam Complete!" : "Quiz Complete!"}
             </h1>
             <p
               className={cn(
@@ -93,12 +95,14 @@ export default function ResultSummary({
           </div>
 
           <div className="flex flex-col sm:flex-row gap-3">
-            <Button
-              onClick={onRestart}
-              className="flex-1 h-11 text-base font-semibold"
-            >
-              Restart Quiz
-            </Button>
+            {!isExamMode && (
+              <Button
+                onClick={onRestart}
+                className="flex-1 h-11 text-base font-semibold"
+              >
+                Restart Quiz
+              </Button>
+            )}
             {onBackToChapters && (
               <Button
                 onClick={onBackToChapters}

@@ -40,6 +40,15 @@ export interface ShuffledQuestion extends QuestionV2 {
 }
 
 // ============================================================
+// EXAM MODE
+// ============================================================
+export interface ExamConfig {
+  chapters: string[];
+  questionCount: number;
+  durationMinutes: number;
+}
+
+// ============================================================
 // TYPE GUARDS
 // ============================================================
 export function isQuestionV2(

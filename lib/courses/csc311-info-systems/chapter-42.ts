@@ -2,7 +2,7 @@ import { QuestionV2 } from "@/lib/quiz-types";
 
 export const csc311Chapter4_2: QuestionV2[] = [
   {
-    id: "csc311_001",
+    id: "csc311_ch42_001",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "What does SDLC stand for in the context of information systems?",
@@ -17,7 +17,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "SDLC stands for System Development Life Cycle, which is the organized process of designing, developing, and implementing information systems to meet business needs.",
   },
   {
-    id: "csc311_002",
+    id: "csc311_ch42_002",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which of the following best describes the primary purpose of the SDLC?",
@@ -32,7 +32,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The SDLC provides a disciplined and structured process to avoid problems like cost overruns, missed deadlines, and systems that don't meet user needs.",
   },
   {
-    id: "csc311_003",
+    id: "csc311_ch42_003",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Ad-hoc system development without following SDLC typically leads to which problem?",
@@ -47,7 +47,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Ad-hoc system development leads to cost overruns, missed deadlines, systems that don't meet user needs, and poor quality and reliability.",
   },
   {
-    id: "csc311_004",
+    id: "csc311_ch42_004",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "How many core phases are typically identified in the SDLC?",
@@ -57,7 +57,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The SDLC consists of six core phases: Planning, Analysis, Design, Implementation, Testing, and Maintenance.",
   },
   {
-    id: "csc311_005",
+    id: "csc311_ch42_005",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC phase involves identifying and selecting the project?",
@@ -72,7 +72,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Planning phase involves identifying and selecting the project and conducting feasibility studies.",
   },
   {
-    id: "csc311_006",
+    id: "csc311_ch42_006",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Technical feasibility in the planning phase addresses which question?",
@@ -87,7 +87,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Technical feasibility asks 'Can we build it?' It assesses whether the organization has the technical capability to develop the system.",
   },
   {
-    id: "csc311_007",
+    id: "csc311_ch42_007",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which type of feasibility study evaluates the Return on Investment (ROI)?",
@@ -102,7 +102,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Economic feasibility evaluates the cost/benefit analysis and Return on Investment (ROI) of the proposed system.",
   },
   {
-    id: "csc311_008",
+    id: "csc311_ch42_008",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Operational feasibility primarily determines whether:",
@@ -117,7 +117,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Operational feasibility asks 'Will it be used?' It determines whether the system will be accepted and used by the organization.",
   },
   {
-    id: "csc311_009",
+    id: "csc311_ch42_009",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Schedule feasibility in the SDLC planning phase addresses:",
@@ -132,7 +132,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Schedule feasibility asks 'Can we build it on time?' It evaluates whether the project can be completed within acceptable time constraints.",
   },
   {
-    id: "csc311_010",
+    id: "csc311_ch42_010",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "During the Analysis phase, requirements are gathered through:",
@@ -147,7 +147,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Requirements gathering in the Analysis phase is done through interviews, surveys, and observation of current processes.",
   },
   {
-    id: "csc311_011",
+    id: "csc311_ch42_011",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "What does the 'as-is' model represent in the Analysis phase?",
@@ -162,7 +162,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The 'as-is' model represents the current system being studied during the Analysis phase, showing how things work now.",
   },
   {
-    id: "csc311_012",
+    id: "csc311_ch42_012",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The 'to-be' model in the Analysis phase defines:",
@@ -177,7 +177,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The 'to-be' model defines the new system's logical requirements, showing what the future system should do.",
   },
   {
-    id: "csc311_013",
+    id: "csc311_ch42_013",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC phase involves creating data flows and process models?",
@@ -192,7 +192,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Design phase involves creating data flows and process models as part of the logical design activities.",
   },
   {
-    id: "csc311_014",
+    id: "csc311_ch42_014",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Logical design in the SDLC focuses on:",
@@ -207,7 +207,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Logical design focuses on what the system will do, including data flows and process models, without specifying physical implementation details.",
   },
   {
-    id: "csc311_015",
+    id: "csc311_ch42_015",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Physical design includes all of the following EXCEPT:",
@@ -222,7 +222,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Physical design includes hardware specs, software choices, database design, and UI layouts. Business requirements gathering belongs to the Analysis phase.",
   },
   {
-    id: "csc311_016",
+    id: "csc311_ch42_016",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The technical blueprint for a system is created during which phase?",
@@ -237,7 +237,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Design phase creates the technical blueprint that serves as the detailed plan for building the system.",
   },
   {
-    id: "csc311_017",
+    id: "csc311_ch42_017",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "System construction and coding/programming occur during which SDLC phase?",
@@ -252,7 +252,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Implementation phase is where system construction occurs, including coding and programming the system.",
   },
   {
-    id: "csc311_018",
+    id: "csc311_ch42_018",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "In the parallel deployment strategy:",
@@ -267,7 +267,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Parallel deployment means the old and new systems run simultaneously, allowing comparison and fallback if needed.",
   },
   {
-    id: "csc311_019",
+    id: "csc311_ch42_019",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which deployment strategy involves launching the system in one department first?",
@@ -282,7 +282,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Pilot deployment involves launching the system in one department first before rolling it out to the entire organization.",
   },
   {
-    id: "csc311_020",
+    id: "csc311_ch42_020",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Phased deployment is characterized by:",
@@ -297,7 +297,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Phased deployment involves rolling out modules one at a time, gradually implementing the complete system.",
   },
   {
-    id: "csc311_021",
+    id: "csc311_ch42_021",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The plunge or direct cutover deployment strategy involves:",
@@ -312,7 +312,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Plunge or direct cutover deployment involves an immediate switch from the old system to the new one.",
   },
   {
-    id: "csc311_022",
+    id: "csc311_ch42_022",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Unit testing in the SDLC testing phase focuses on:",
@@ -327,7 +327,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Unit testing focuses on testing individual components or modules in isolation to verify they work correctly.",
   },
   {
-    id: "csc311_023",
+    id: "csc311_ch42_023",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Integration testing verifies:",
@@ -342,7 +342,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Integration testing verifies that the interfaces between modules work properly when components are combined.",
   },
   {
-    id: "csc311_024",
+    id: "csc311_ch42_024",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "System testing evaluates:",
@@ -357,7 +357,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "System testing evaluates the complete integrated system to ensure all components work together as expected.",
   },
   {
-    id: "csc311_025",
+    id: "csc311_ch42_025",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "User Acceptance Testing (UAT) is performed by:",
@@ -372,7 +372,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "User Acceptance Testing (UAT) is performed by end-users to validate that the system meets their requirements.",
   },
   {
-    id: "csc311_026",
+    id: "csc311_ch42_026",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC phase is typically the longest and most costly?",
@@ -387,7 +387,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Maintenance phase is often the longest and most costly phase of the SDLC as it continues throughout the system's operational life.",
   },
   {
-    id: "csc311_027",
+    id: "csc311_ch42_027",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Activities in the Maintenance phase include all EXCEPT:",
@@ -402,7 +402,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Maintenance includes fixing bugs, making enhancements, and adapting to changes. Feasibility studies belong to the Planning phase.",
   },
   {
-    id: "csc311_028",
+    id: "csc311_ch42_028",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "According to SDLC principles, who provides requirements and participates in UAT?",
@@ -417,7 +417,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Users provide requirements, participate in testing (UAT), and give feedback throughout the development process.",
   },
   {
-    id: "csc311_029",
+    id: "csc311_ch42_029",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Managers' responsibilities in SDLC include all EXCEPT:",
@@ -432,7 +432,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Managers secure funding, champion projects, make strategic decisions, and manage change. Writing code is a developer responsibility.",
   },
   {
-    id: "csc311_030",
+    id: "csc311_ch42_030",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The principle 'IT builds the system, but the business owns it' emphasizes:",
@@ -447,7 +447,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "This principle emphasizes that while IT builds systems technically, business stakeholders must be involved as they ultimately own and use the system.",
   },
   {
-    id: "csc311_031",
+    id: "csc311_ch42_031",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Waterfall SDLC model is best described as:",
@@ -462,7 +462,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Waterfall model is a linear, sequential approach where each phase must be fully completed before the next begins.",
   },
   {
-    id: "csc311_032",
+    id: "csc311_ch42_032",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC model builds systems through repeated cycles of refinement?",
@@ -477,7 +477,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Iterative model is a cyclic process where the system is built through repeated cycles of refinement, creating progressively more complete versions.",
   },
   {
-    id: "csc311_033",
+    id: "csc311_ch42_033",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Spiral model is characterized as:",
@@ -492,7 +492,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Spiral model is a risk-driven model that cycles through phases of planning, risk analysis, engineering, and evaluation in iterative loops.",
   },
   {
-    id: "csc311_034",
+    id: "csc311_ch42_034",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Agile methodology emphasizes all of the following EXCEPT:",
@@ -507,7 +507,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Agile emphasizes rapid delivery, customer collaboration, and responding to change OVER strict planning. Rigid adherence to plans contradicts Agile principles.",
   },
   {
-    id: "csc311_035",
+    id: "csc311_ch42_035",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "In the SDLC, the Planning phase answers which fundamental question?",
@@ -522,7 +522,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Planning answers 'Why?' by determining whether the project should be undertaken through feasibility studies.",
   },
   {
-    id: "csc311_036",
+    id: "csc311_ch42_036",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Analysis phase of SDLC primarily answers:",
@@ -537,7 +537,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Analysis answers 'What?' by determining what the system needs to do through requirements gathering and analysis.",
   },
   {
-    id: "csc311_037",
+    id: "csc311_ch42_037",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which fundamental question does the Design phase address?",
@@ -552,7 +552,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Design answers 'How?' by determining how the system will be built through logical and physical design specifications.",
   },
   {
-    id: "csc311_038",
+    id: "csc311_ch42_038",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which deployment strategy carries the highest risk if the new system fails?",
@@ -567,7 +567,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Plunge (direct cutover) carries the highest risk because there is no fallback system if the new system fails.",
   },
   {
-    id: "csc311_039",
+    id: "csc311_ch42_039",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The correct sequence of SDLC phases is:",
@@ -582,7 +582,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The correct SDLC sequence is: Planning, Analysis, Design, Implementation, Testing, and Maintenance.",
   },
   {
-    id: "csc311_040",
+    id: "csc311_ch42_040",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which testing type must be completed before integration testing can begin?",
@@ -597,7 +597,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Unit testing of individual components must be completed before integration testing can verify how modules work together.",
   },
   {
-    id: "csc311_041",
+    id: "csc311_ch42_041",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Training users and creating documentation occurs during which phase?",
@@ -612,7 +612,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Training users and creating documentation are key activities in the Implementation phase alongside system deployment.",
   },
   {
-    id: "csc311_042",
+    id: "csc311_ch42_042",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "A system that doesn't meet user needs is typically a result of:",
@@ -627,7 +627,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Systems that don't meet user needs typically result from ad-hoc development that lacks proper methodology and user involvement.",
   },
   {
-    id: "csc311_043",
+    id: "csc311_ch42_043",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Iterative model creates:",
@@ -642,7 +642,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Iterative model builds the system through repeated cycles of refinement, creating progressively more complete versions.",
   },
   {
-    id: "csc311_044",
+    id: "csc311_ch42_044",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "In the Spiral model, which activity is central to each iteration?",
@@ -657,7 +657,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Spiral model is risk-driven and cycles through planning, risk analysis, engineering, and evaluation in each iteration.",
   },
   {
-    id: "csc311_045",
+    id: "csc311_ch42_045",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Agile methodology prioritizes responding to change over:",
@@ -672,7 +672,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Agile prioritizes responding to change over following a strict plan, allowing flexibility throughout development.",
   },
   {
-    id: "csc311_046",
+    id: "csc311_ch42_046",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which feasibility type would evaluate whether staff will accept a new system?",
@@ -687,7 +687,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Operational feasibility evaluates whether the system will be accepted and used by staff and the organization.",
   },
   {
-    id: "csc311_047",
+    id: "csc311_ch42_047",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which phase would involve studying existing business processes?",
@@ -702,7 +702,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Analysis phase involves studying the current system and existing business processes to understand the 'as-is' state.",
   },
   {
-    id: "csc311_048",
+    id: "csc311_ch42_048",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Software choices and database design specifications belong to:",
@@ -717,7 +717,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Physical design specifies how the system will be built, including software choices, database design, and hardware specifications.",
   },
   {
-    id: "csc311_049",
+    id: "csc311_ch42_049",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The safest deployment strategy when system reliability is uncertain is:",
@@ -732,7 +732,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Parallel deployment is safest when reliability is uncertain because both old and new systems run simultaneously, providing a fallback.",
   },
   {
-    id: "csc311_050",
+    id: "csc311_ch42_050",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Managing organizational change during system implementation is the responsibility of:",
@@ -747,7 +747,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Managers are responsible for managing organizational change, securing funding, championing the project, and making strategic decisions.",
   },
   {
-    id: "csc311_051",
+    id: "csc311_ch42_051",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The primary deliverable of the Design phase is:",
@@ -762,7 +762,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Design phase creates a technical blueprint that serves as the detailed plan for building the system.",
   },
   {
-    id: "csc311_052",
+    id: "csc311_ch42_052",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which statement about the Waterfall model is TRUE?",
@@ -777,7 +777,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "In the Waterfall model, each phase must be fully completed before the next phase begins, following a linear sequential approach.",
   },
   {
-    id: "csc311_053",
+    id: "csc311_ch42_053",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Poor quality and reliability in developed systems often result from:",
@@ -792,7 +792,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Poor quality and reliability are common problems when ad-hoc development approaches are used instead of structured methodologies.",
   },
   {
-    id: "csc311_054",
+    id: "csc311_ch42_054",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The 'as-is' and 'to-be' models are created during:",
@@ -807,7 +807,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Analysis phase creates both the 'as-is' model (current system) and 'to-be' model (future system requirements).",
   },
   {
-    id: "csc311_055",
+    id: "csc311_ch42_055",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which is NOT a type of feasibility study in the Planning phase?",
@@ -822,7 +822,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The four types of feasibility studies are Technical, Economic, Operational, and Schedule. Integration feasibility is not a standard category.",
   },
   {
-    id: "csc311_056",
+    id: "csc311_ch42_056",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "User involvement is critical for SDLC success because:",
@@ -837,7 +837,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Users provide requirements, participate in testing (UAT), and give feedback, which is essential for building systems that meet actual needs.",
   },
   {
-    id: "csc311_057",
+    id: "csc311_ch42_057",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "A pilot deployment strategy is most appropriate when:",
@@ -852,7 +852,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Pilot deployment is used when testing in a controlled environment (one department) is desired before full organizational rollout.",
   },
   {
-    id: "csc311_058",
+    id: "csc311_ch42_058",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Adapting the system to new business needs occurs during:",
@@ -867,7 +867,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Maintenance phase includes adapting the system to new business needs or technologies throughout its operational life.",
   },
   {
-    id: "csc311_059",
+    id: "csc311_ch42_059",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The SDLC is defined as:",
@@ -882,7 +882,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "SDLC is the organized process of designing, developing, and implementing information systems to meet business needs.",
   },
   {
-    id: "csc311_060",
+    id: "csc311_ch42_060",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC model would be most appropriate for a project with unclear requirements?",
@@ -897,7 +897,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Iterative and Agile models are best for unclear requirements as they allow refinement through cycles and respond to changing needs.",
   },
   {
-    id: "csc311_061",
+    id: "csc311_ch42_061",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Data flows and process models are components of:",
@@ -912,7 +912,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Data flows and process models are part of logical design, which defines what the system will do functionally.",
   },
   {
-    id: "csc311_062",
+    id: "csc311_ch42_062",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Hardware specs and user interface layouts are part of:",
@@ -927,7 +927,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Physical design includes hardware specifications, software choices, database design, and user interface layouts.",
   },
   {
-    id: "csc311_063",
+    id: "csc311_ch42_063",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The testing phase that occurs immediately after integration testing is:",
@@ -942,7 +942,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The testing sequence is Unit Testing, Integration Testing, System Testing, then User Acceptance Testing.",
   },
   {
-    id: "csc311_064",
+    id: "csc311_ch42_064",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which activity is NOT part of the Implementation phase?",
@@ -957,7 +957,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Conducting feasibility studies is a Planning phase activity, not an Implementation phase activity.",
   },
   {
-    id: "csc311_065",
+    id: "csc311_ch42_065",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Agile approach values which of the following?",
@@ -972,7 +972,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Agile values customer collaboration, rapid delivery, and responding to change over strict documentation and planning.",
   },
   {
-    id: "csc311_066",
+    id: "csc311_ch42_066",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which phase determines whether the organization can build the system technically?",
@@ -987,7 +987,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Planning phase conducts technical feasibility to determine if the organization can build the system.",
   },
   {
-    id: "csc311_067",
+    id: "csc311_ch42_067",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "ROI analysis is most closely associated with which feasibility type?",
@@ -1002,7 +1002,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Economic feasibility evaluates cost/benefit analysis and Return on Investment (ROI).",
   },
   {
-    id: "csc311_068",
+    id: "csc311_ch42_068",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "A key characteristic of the Spiral model that distinguishes it from Waterfall is:",
@@ -1017,7 +1017,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Spiral model is distinguished by its risk-driven approach, cycling through planning, risk analysis, engineering, and evaluation.",
   },
   {
-    id: "csc311_069",
+    id: "csc311_ch42_069",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Minor and major enhancements to a deployed system occur during:",
@@ -1032,7 +1032,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Making minor and major enhancements is a key activity of the Maintenance phase.",
   },
   {
-    id: "csc311_070",
+    id: "csc311_ch42_070",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which deployment strategy allows gradual transition with module-by-module release?",
@@ -1047,7 +1047,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Phased deployment rolls out modules one at a time, allowing gradual transition to the new system.",
   },
   {
-    id: "csc311_071",
+    id: "csc311_ch42_071",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The primary purpose of modeling business processes in the Analysis phase is to:",
@@ -1062,7 +1062,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Modeling business processes helps understand current operations (as-is) and define requirements for the new system (to-be).",
   },
   {
-    id: "csc311_072",
+    id: "csc311_ch42_072",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Successful systems require user involvement primarily because:",
@@ -1077,7 +1077,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Users understand business needs and will ultimately use the system, making their involvement critical for building relevant systems.",
   },
   {
-    id: "csc311_073",
+    id: "csc311_ch42_073",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which phase comes immediately before the Testing phase in SDLC?",
@@ -1092,7 +1092,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The SDLC sequence is Planning, Analysis, Design, Implementation, Testing, Maintenance. Implementation precedes Testing.",
   },
   {
-    id: "csc311_074",
+    id: "csc311_ch42_074",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "End-user validation of the completed system is known as:",
@@ -1107,7 +1107,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "User Acceptance Testing (UAT) is end-user validation to ensure the system meets their requirements.",
   },
   {
-    id: "csc311_075",
+    id: "csc311_ch42_075",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The SDLC provides structure to avoid all of the following EXCEPT:",
@@ -1122,7 +1122,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "SDLC helps avoid cost overruns, missed deadlines, and poor quality. It does not aim to reduce planning time; proper planning is essential.",
   },
   {
-    id: "csc311_076",
+    id: "csc311_ch42_076",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which model cycles through planning, risk analysis, engineering, and evaluation?",
@@ -1137,7 +1137,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Spiral model specifically cycles through planning, risk analysis, engineering, and evaluation in iterative loops.",
   },
   {
-    id: "csc311_077",
+    id: "csc311_ch42_077",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Interviews and surveys are techniques used during which SDLC phase?",
@@ -1152,7 +1152,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Interviews, surveys, and observation are requirements gathering techniques used during the Analysis phase.",
   },
   {
-    id: "csc311_078",
+    id: "csc311_ch42_078",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "A cost/benefit analysis would reveal whether a project is:",
@@ -1167,7 +1167,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Cost/benefit analysis is part of economic feasibility, determining if the project provides adequate return on investment.",
   },
   {
-    id: "csc311_079",
+    id: "csc311_ch42_079",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which statement about the Maintenance phase is FALSE?",
@@ -1182,7 +1182,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Maintenance phase is often the LONGEST and most COSTLY phase, not short and inexpensive.",
   },
   {
-    id: "csc311_080",
+    id: "csc311_ch42_080",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Champions of IT projects who secure funding are typically:",
@@ -1192,7 +1192,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Managers are responsible for securing funding, championing projects, and making strategic decisions.",
   },
   {
-    id: "csc311_081",
+    id: "csc311_ch42_081",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which deployment approach provides the most risk mitigation through redundancy?",
@@ -1207,7 +1207,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Parallel deployment provides the most risk mitigation by running both systems simultaneously as a fallback.",
   },
   {
-    id: "csc311_082",
+    id: "csc311_ch42_082",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Design phase is divided into:",
@@ -1222,7 +1222,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Design is divided into logical design (what the system does) and physical design (how it will be built).",
   },
   {
-    id: "csc311_083",
+    id: "csc311_ch42_083",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which is the correct order of testing types in the Testing phase?",
@@ -1237,7 +1237,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The correct testing order is Unit Testing, Integration Testing, System Testing, then User Acceptance Testing.",
   },
   {
-    id: "csc311_084",
+    id: "csc311_ch42_084",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The four types of feasibility assessed during Planning are:",
@@ -1252,7 +1252,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The four feasibility types are Technical, Economic, Operational, and Schedule feasibility.",
   },
   {
-    id: "csc311_085",
+    id: "csc311_ch42_085",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "In Agile methodology, incremental delivery means:",
@@ -1267,7 +1267,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Agile emphasizes incremental and iterative delivery of working software in small, frequent releases.",
   },
   {
-    id: "csc311_086",
+    id: "csc311_ch42_086",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Observation as a requirements gathering technique involves:",
@@ -1282,7 +1282,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Observation involves watching users perform their current tasks to understand requirements and business processes.",
   },
   {
-    id: "csc311_087",
+    id: "csc311_ch42_087",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which phase would address the question 'Can we complete this project in 6 months?'",
@@ -1297,7 +1297,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Schedule feasibility, assessed during Planning, addresses whether the project can be completed within time constraints.",
   },
   {
-    id: "csc311_088",
+    id: "csc311_ch42_088",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "A system blueprint specifying database tables and fields is part of:",
@@ -1312,7 +1312,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Database design with specific tables and fields is part of physical design, which specifies how the system will be built.",
   },
   {
-    id: "csc311_089",
+    id: "csc311_ch42_089",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Testing interfaces between modules is the focus of:",
@@ -1327,7 +1327,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Integration testing specifically tests the interfaces between modules to ensure they work together properly.",
   },
   {
-    id: "csc311_090",
+    id: "csc311_ch42_090",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC model is LEAST flexible in accommodating requirement changes?",
@@ -1342,7 +1342,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Waterfall model is least flexible because each phase must be completed before the next begins, making changes difficult.",
   },
   {
-    id: "csc311_091",
+    id: "csc311_ch42_091",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The organized process of designing, developing, and implementing information systems is called:",
@@ -1357,7 +1357,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The System Development Life Cycle (SDLC) is the organized process for designing, developing, and implementing information systems.",
   },
   {
-    id: "csc311_092",
+    id: "csc311_ch42_092",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which feasibility asks 'Will users and management support and use the system?'",
@@ -1372,7 +1372,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Operational feasibility assesses whether the system will be accepted and used by the organization's users and management.",
   },
   {
-    id: "csc311_093",
+    id: "csc311_ch42_093",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Creating progressively more complete versions through cycles describes:",
@@ -1387,7 +1387,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "The Iterative model builds systems through repeated cycles of refinement, creating progressively more complete versions.",
   },
   {
-    id: "csc311_094",
+    id: "csc311_ch42_094",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "The Implementation phase does NOT include:",
@@ -1402,7 +1402,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Requirements gathering is an Analysis phase activity. Implementation includes coding, deployment, and training.",
   },
   {
-    id: "csc311_095",
+    id: "csc311_ch42_095",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which phase transforms the 'what' into 'how'?",
@@ -1417,7 +1417,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Analysis defines 'what' the system should do, while Design transforms this into 'how' it will be built.",
   },
   {
-    id: "csc311_096",
+    id: "csc311_ch42_096",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Complete integrated system functionality is verified during:",
@@ -1432,7 +1432,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "System testing evaluates the complete integrated system to ensure all components work together as intended.",
   },
   {
-    id: "csc311_097",
+    id: "csc311_ch42_097",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Bug fixes after system deployment are part of:",
@@ -1447,7 +1447,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Fixing bugs and errors after deployment is a key activity of the Maintenance phase.",
   },
   {
-    id: "csc311_098",
+    id: "csc311_ch42_098",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which deployment strategy tests the system with a subset of users first?",
@@ -1462,7 +1462,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Pilot deployment launches the system in one department first, testing with a subset of users before full rollout.",
   },
   {
-    id: "csc311_099",
+    id: "csc311_ch42_099",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Strategic decisions about IT projects are made by:",
@@ -1477,7 +1477,7 @@ export const csc311Chapter4_2: QuestionV2[] = [
       "Managers make strategic decisions, secure funding, champion projects, and manage organizational change.",
   },
   {
-    id: "csc311_100",
+    id: "csc311_ch42_100",
     course: "CSC 311",
     chapter: "Chapter 4_2",
     text: "Which SDLC model requires completing each phase before proceeding to the next?",

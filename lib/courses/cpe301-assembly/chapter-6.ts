@@ -3,7 +3,7 @@ import { QuestionV2 } from "@/lib/quiz-types";
 const CPE301Chapter6Part1: QuestionV2[] = [
   // SECTION 6.2: Boolean and Comparison Instructions
   {
-    id: "CPE301_001",
+    id: "CPE301_ch6_001",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which of the following actions is performed by the AND instruction?",
@@ -18,7 +18,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The AND instruction performs a bitwise boolean AND operation between the source and destination operands and stores the result in the destination.",
   },
   {
-    id: "CPE301_002",
+    id: "CPE301_ch6_002",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "How does the OR instruction affect the Carry Flag (CF) and Overflow Flag (OF)?",
@@ -33,7 +33,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The OR instruction (like AND and XOR) always clears the Carry Flag (CF) and Overflow Flag (OF) to 0.",
   },
   {
-    id: "CPE301_003",
+    id: "CPE301_ch6_003",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To 'mask' (clear) specific bits in a register while leaving others unchanged, which instruction is most appropriate?",
@@ -43,7 +43,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The AND instruction is used for masking (clearing) bits. ANDing a bit with 0 clears it, while ANDing with 1 preserves it.",
   },
   {
-    id: "CPE301_004",
+    id: "CPE301_ch6_004",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction would you use to toggle (invert) specific bits in an operand without affecting the others?",
@@ -53,7 +53,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The XOR instruction toggles bits. XORing a bit with 1 inverts it; XORing with 0 leaves it unchanged.",
   },
   {
-    id: "CPE301_005",
+    id: "CPE301_ch6_005",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What is the primary difference between the AND instruction and the TEST instruction?",
@@ -68,7 +68,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The TEST instruction performs an implied AND operation to update flags (Sign, Zero, Parity) but does not store the result or modify the destination operand.",
   },
   {
-    id: "CPE301_006",
+    id: "CPE301_ch6_006",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If AL contains 00000101b, what is the value of the Zero Flag (ZF) after executing `TEST AL, 1`?",
@@ -83,7 +83,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "00000101 AND 00000001 results in 00000001 (non-zero). Therefore, the Zero Flag is cleared (0).",
   },
   {
-    id: "CPE301_007",
+    id: "CPE301_ch6_007",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction is functionally equivalent to `SUB` regarding flag updates, but does not modify the destination operand?",
@@ -93,7 +93,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The CMP (Compare) instruction performs an implied subtraction (Destination - Source) to update flags but does not modify the destination.",
   },
   {
-    id: "CPE301_008",
+    id: "CPE301_ch6_008",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The NOT instruction affects the status flags (CF, ZF, SF, OF, etc.).",
@@ -103,7 +103,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The NOT instruction inverts all bits in the operand but does NOT affect any of the CPU status flags.",
   },
   {
-    id: "CPE301_009",
+    id: "CPE301_ch6_009",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If you want to set the Zero Flag (ZF) to 1 without changing the value in the EAX register (assuming EAX is zero), which instruction could you use?",
@@ -113,7 +113,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "`OR EAX, EAX` (or `AND EAX, EAX`) updates the Zero Flag based on the value of EAX without changing EAX itself. If EAX is 0, ZF becomes 1.",
   },
   {
-    id: "CPE301_010",
+    id: "CPE301_ch6_010",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which flag is set if the result of a signed comparison indicates that the destination is less than the source?",
@@ -128,7 +128,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "For signed comparison, 'Less Than' is detected when SF != OF.",
   },
   {
-    id: "CPE301_011",
+    id: "CPE301_ch6_011",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "In 64-bit mode, performing a `XOR RAX, RAX` instruction is a common way to:",
@@ -143,7 +143,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "XORing a register with itself results in 0. This is a standard idiom for clearing a register.",
   },
   {
-    id: "CPE301_012",
+    id: "CPE301_ch6_012",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction sets the Zero Flag if the source operand contains even parity?",
@@ -155,7 +155,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
 
   // SECTION 6.3: Conditional Jumps
   {
-    id: "CPE301_013",
+    id: "CPE301_ch6_013",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The Jcond instructions (like JZ, JNZ) branch to a destination label based on:",
@@ -170,7 +170,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Conditional jumps decide whether to branch based on the state of specific CPU status flags (ZF, CF, SF, OF, PF).",
   },
   {
-    id: "CPE301_014",
+    id: "CPE301_ch6_014",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which jump instruction is equivalent to `JE` (Jump if Equal)?",
@@ -185,7 +185,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "If two numbers are equal, their difference (CMP) is zero. Thus, Jump if Equal (JE) checks the same flag as Jump if Zero (JZ).",
   },
   {
-    id: "CPE301_015",
+    id: "CPE301_ch6_015",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which conditional jump should be used for unsigned comparisons when the destination is greater than the source?",
@@ -200,7 +200,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "For unsigned comparisons, the terms 'Above' and 'Below' are used. JA (Jump if Above) is used when destination > source (unsigned).",
   },
   {
-    id: "CPE301_016",
+    id: "CPE301_ch6_016",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which conditional jump instruction is used for signed comparisons when the destination is less than the source?",
@@ -215,7 +215,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "For signed comparisons, 'Less' and 'Greater' are used. JL (Jump if Less) is the correct instruction.",
   },
   {
-    id: "CPE301_017",
+    id: "CPE301_ch6_017",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The instruction `JNC` will jump to the target label if:",
@@ -229,7 +229,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "JNC stands for Jump if No Carry, meaning it jumps if CF = 0.",
   },
   {
-    id: "CPE301_018",
+    id: "CPE301_ch6_018",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If you execute `CMP EAX, EBX` and EAX is 5 and EBX is 10 (unsigned), which jump will be taken?",
@@ -244,7 +244,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "5 is less than 10. In unsigned terminology, 5 is 'Below' 10. JB (Jump if Below) will be taken.",
   },
   {
-    id: "CPE301_019",
+    id: "CPE301_ch6_019",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `JCXZ` instruction jumps if the ECX register is equal to Zero, regardless of the Zero Flag state.",
@@ -254,7 +254,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "JCXZ (Jump if CX is Zero) and JECXZ (Jump if ECX is Zero) examine the register value itself, not the status flags.",
   },
   {
-    id: "CPE301_020",
+    id: "CPE301_ch6_020",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "When implementing a high-level `if(val1 > val2)` structure where `val1` and `val2` are signed integers, which instructions are typically used?",
@@ -269,7 +269,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "CMP performs the comparison. Since variables are signed, JG (Jump if Greater) is the correct conditional jump.",
   },
   {
-    id: "CPE301_021",
+    id: "CPE301_ch6_021",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction is used to set the Carry Flag explicitly?",
@@ -278,7 +278,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "STC (Set Carry Flag) sets CF to 1.",
   },
   {
-    id: "CPE301_022",
+    id: "CPE301_ch6_022",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What does the `BT` (Bit Test) instruction do?",
@@ -295,7 +295,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
 
   // SECTION 6.4: Conditional Loop Instructions
   {
-    id: "CPE301_023",
+    id: "CPE301_ch6_023",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The `LOOPZ` (or `LOOPE`) instruction repeats the loop while:",
@@ -310,7 +310,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "LOOPZ/LOOPE decrements ECX and loops if ECX is not zero AND the Zero Flag is set (meaning the comparison condition was Equal).",
   },
   {
-    id: "CPE301_024",
+    id: "CPE301_ch6_024",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction is best suited for scanning an array to find the first nonzero value?",
@@ -325,7 +325,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Scanning for a non-zero value implies we continue looping as long as we find zeros (Equal to zero). Therefore, LOOPE (Loop while Equal) is used.",
   },
   {
-    id: "CPE301_025",
+    id: "CPE301_ch6_025",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `ECX` is 0 at the beginning of a `LOOPNZ` instruction block, how many times will the loop typically execute (in 32-bit mode)?",
@@ -340,7 +340,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Like the standard LOOP instruction, if ECX is 0, it decrements to FFFFFFFFh and continues, executing 2^32 times (unless the ZF condition breaks it early).",
   },
   {
-    id: "CPE301_026",
+    id: "CPE301_ch6_026",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: `LOOPE` and `LOOPZ` are different mnemonics for the same machine instruction.",
@@ -352,7 +352,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
 
   // SECTION 6.5: Conditional Structures
   {
-    id: "CPE301_027",
+    id: "CPE301_ch6_027",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To implement a Compound boolean AND expression (if X > Y AND Z > A) in assembly, how is the control flow usually managed?",
@@ -367,7 +367,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Assembly implementations typically use short-circuit evaluation: if the first condition fails, the code jumps over the second condition check directly to the false block.",
   },
   {
-    id: "CPE301_028",
+    id: "CPE301_ch6_028",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Implementing a `WHILE` loop in assembly typically involves:",
@@ -382,7 +382,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "A standard WHILE loop checks the condition before the first iteration. It involves a comparison/jump at the top and an unconditional jump at the bottom back to the top.",
   },
   {
-    id: "CPE301_029",
+    id: "CPE301_ch6_029",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What is Table-Driven Selection?",
@@ -397,7 +397,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Table-driven selection uses a data table containing lookup values and procedure offsets (pointers) to avoid long chains of compare/jump instructions.",
   },
   {
-    id: "CPE301_030",
+    id: "CPE301_ch6_030",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction effectively converts a character in AL from lowercase to uppercase by manipulating bits?",
@@ -414,7 +414,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
 
   // SECTION 6.7: Conditional Control Flow Directives
   {
-    id: "CPE301_031",
+    id: "CPE301_ch6_031",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "MASM provides directives like `.IF`, `.ELSE`, and `.ENDIF` to:",
@@ -429,7 +429,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "These runtime directives simplify coding by automatically generating the low-level compare and jump instructions needed for control flow.",
   },
   {
-    id: "CPE301_032",
+    id: "CPE301_ch6_032",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which relational operator symbol is used with MASM directives for 'Not Equal'?",
@@ -439,7 +439,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "MASM directives use C-style operators like `!=` for Not Equal (though standard mnemonics like JNE are used in raw instructions).",
   },
   {
-    id: "CPE301_033",
+    id: "CPE301_ch6_033",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Using the `.REPEAT` and `.UNTIL` directives generates a loop that checks the condition:",
@@ -456,7 +456,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
 
   // MIXED / SCENARIO QUESTIONS
   {
-    id: "CPE301_034",
+    id: "CPE301_ch6_034",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "You need to check if a 32-bit integer in EAX is even. Which instruction is most efficient?",
@@ -466,7 +466,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Checking the least significant bit (bit 0) determines parity. `TEST EAX, 1` checks bit 0 without modifying EAX. If Zero Flag is set (result 0), it is even.",
   },
   {
-    id: "CPE301_035",
+    id: "CPE301_ch6_035",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What value will the Zero Flag contain after `CMP val1, val2` if `val1` equals `val2`?",
@@ -476,7 +476,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "If operands are equal, the subtraction result is 0, so the Zero Flag (ZF) is set to 1.",
   },
   {
-    id: "CPE301_036",
+    id: "CPE301_ch6_036",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which flags are updated by the `SUB` instruction?",
@@ -491,7 +491,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Arithmetic instructions like SUB (and ADD) update all status flags: Carry, Zero, Sign, Overflow, Auxiliary Carry, and Parity.",
   },
   {
-    id: "CPE301_037",
+    id: "CPE301_ch6_037",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If you perform `CMP AL, BL` where AL=127 and BL=-128 (signed comparison), which jump would be taken?",
@@ -501,7 +501,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "127 is greater than -128. Therefore, JG (Jump if Greater) would be taken.",
   },
   {
-    id: "CPE301_038",
+    id: "CPE301_ch6_038",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `BTS` (Bit Test and Set) instruction copies a bit to the Carry Flag and then sets that bit in the destination operand.",
@@ -511,7 +511,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "BTS copies the specified bit to CF and then sets the bit to 1 in the destination.",
   },
   {
-    id: "CPE301_039",
+    id: "CPE301_ch6_039",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To jump if the Sign Flag (SF) is set to 1, which mnemonic should be used?",
@@ -520,7 +520,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "JS stands for Jump if Sign (SF=1).",
   },
   {
-    id: "CPE301_040",
+    id: "CPE301_ch6_040",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What indicates a 'Carry' condition when subtracting unsigned integers?",
@@ -535,7 +535,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "In unsigned subtraction, a Carry (borrow) occurs if the number being subtracted (source) is larger than the number it is being subtracted from (destination).",
   },
   {
-    id: "CPE301_041",
+    id: "CPE301_ch6_041",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction does NOT exist in the x86 instruction set?",
@@ -550,7 +550,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "JUE is not a standard mnemonic. Unsigned equality is just JE (Jump if Equal).",
   },
   {
-    id: "CPE301_042",
+    id: "CPE301_ch6_042",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To check if the Overflow Flag (OF) is set, you can use:",
@@ -559,7 +559,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "JO stands for Jump if Overflow (OF=1).",
   },
   {
-    id: "CPE301_043",
+    id: "CPE301_ch6_043",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Logic for `IsDigit` (checking if a character is '0' through '9') usually involves:",
@@ -574,7 +574,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "To check a range, you verify the value is >= the lower bound AND <= the upper bound.",
   },
   {
-    id: "CPE301_044",
+    id: "CPE301_ch6_044",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "When using the `.WHILE` directive, which instruction causes the loop to terminate immediately (break)?",
@@ -584,7 +584,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       ".BREAK is the directive used to exit a loop structure immediately.",
   },
   {
-    id: "CPE301_045",
+    id: "CPE301_ch6_045",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which logic gate operation produces a 1 only if both inputs are 1?",
@@ -593,7 +593,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "AND requires both inputs to be 1 to produce a 1.",
   },
   {
-    id: "CPE301_046",
+    id: "CPE301_ch6_046",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `JECXZ` instruction is useful when you want to avoid a loop executing if the counter is initially zero.",
@@ -603,7 +603,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "JECXZ checks if ECX is zero and jumps, often over a loop body, preventing the loop from running 2^32 times if initialized to 0.",
   },
   {
-    id: "CPE301_047",
+    id: "CPE301_ch6_047",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "In the context of Finite State Machines (FSM), what represents a 'state'?",
@@ -618,7 +618,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "In an FSM, a state is a condition or situation in the logic flow, often represented by a number or node in a graph.",
   },
   {
-    id: "CPE301_048",
+    id: "CPE301_ch6_048",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If AL contains 11001100b and you execute `AND AL, 00001111b`, what is the result?",
@@ -628,7 +628,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Upper 4 bits are masked (cleared). Lower 4 bits (1100) are preserved. Result: 00001100b.",
   },
   {
-    id: "CPE301_049",
+    id: "CPE301_ch6_049",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction toggles the Zero Flag?",
@@ -643,7 +643,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "There is no dedicated instruction to toggle the Zero Flag. (CMC toggles Carry, not Zero).",
   },
   {
-    id: "CPE301_050",
+    id: "CPE301_ch6_050",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "For a signed comparison `CMP A, B`, which condition indicates A > B?",
@@ -653,7 +653,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Greater Than (Signed) means Not Equal (ZF=0) AND the Sign equals the Overflow (SF=OF).",
   },
   {
-    id: "CPE301_051",
+    id: "CPE301_ch6_051",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction allows checking if a value is within a specific bit-mapped set membership?",
@@ -663,7 +663,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "BT can test if a specific bit index (representing a set member) is set to 1.",
   },
   {
-    id: "CPE301_052",
+    id: "CPE301_ch6_052",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The `SETz` (Set if Zero) instruction sets the destination byte to:",
@@ -678,7 +678,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "SETcc instructions set the destination byte to 1 if the condition is true, and 0 if false.",
   },
   {
-    id: "CPE301_053",
+    id: "CPE301_ch6_053",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `OR` instruction can be used to check if a register is zero without modifying it.",
@@ -688,7 +688,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "False. `OR` modifies the destination (though `OR Reg, Reg` doesn't change the value, it writes the result). `TEST` is the proper instruction to check without 'modifying' (writing back) conceptually, although `OR Reg, Reg` is effectively harmless to the value.",
   },
   {
-    id: "CPE301_054",
+    id: "CPE301_ch6_054",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What does the instruction `CMC` do?",
@@ -702,7 +702,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "CMC stands for Complement Carry Flag.",
   },
   {
-    id: "CPE301_055",
+    id: "CPE301_ch6_055",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "When writing a loop that terminates when a value is found (e.g., searching for the letter 'A'), which structure is most appropriate?",
@@ -717,7 +717,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "A loop that continues *while* the value is NOT found (`!= 'A'`) is the standard logic for a search.",
   },
   {
-    id: "CPE301_056",
+    id: "CPE301_ch6_056",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "In a Table-Driven selection, the table typically contains:",
@@ -732,7 +732,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The table maps a key (input) to an action (procedure address).",
   },
   {
-    id: "CPE301_057",
+    id: "CPE301_ch6_057",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which flags are used to detect unsigned arithmetic errors?",
@@ -742,7 +742,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The Carry Flag indicates overflow/underflow for unsigned arithmetic.",
   },
   {
-    id: "CPE301_058",
+    id: "CPE301_ch6_058",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `EAX` = 5 and `EBX` = 5, what happens after `CMP EAX, EBX`?",
@@ -752,7 +752,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "5 - 5 = 0. Zero Flag is set (1). No borrow occurred, so Carry Flag is 0.",
   },
   {
-    id: "CPE301_059",
+    id: "CPE301_ch6_059",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To clear the Sign Flag, you could execute:",
@@ -767,7 +767,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "There is no direct `CLS` instruction. Executing an operation resulting in a positive number (like `AND EAX, 0` -> 0 is positive) clears SF.",
   },
   {
-    id: "CPE301_060",
+    id: "CPE301_ch6_060",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction does NOT modify the operand but updates flags?",
@@ -776,7 +776,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "TEST is the non-destructive version of AND.",
   },
   {
-    id: "CPE301_061",
+    id: "CPE301_ch6_061",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What does `JPE` (Jump if Parity Even) check?",
@@ -785,7 +785,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "The Parity Flag is set (1) if parity is even.",
   },
   {
-    id: "CPE301_062",
+    id: "CPE301_ch6_062",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: In 64-bit mode, the `CMP` instruction acts differently on the flags than in 32-bit mode.",
@@ -795,7 +795,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "The flag behavior for CMP is consistent across modes; only operand sizes change.",
   },
   {
-    id: "CPE301_063",
+    id: "CPE301_ch6_063",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Short-circuit evaluation means:",
@@ -810,7 +810,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Short-circuit evaluation stops processing a compound boolean expression as soon as the final truth value is known (e.g., if the first part of an AND is false).",
   },
   {
-    id: "CPE301_064",
+    id: "CPE301_ch6_064",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which operator matches the `.IF` directive for 'Greater Than or Equal' (Signed)?",
@@ -819,7 +819,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "MASM directives support the C-style `>=` operator.",
   },
   {
-    id: "CPE301_065",
+    id: "CPE301_ch6_065",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "A state machine that verifies a signed integer must handle:",
@@ -834,7 +834,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Validating a signed integer requires handling an optional leading plus or minus sign, followed by a sequence of digits.",
   },
   {
-    id: "CPE301_066",
+    id: "CPE301_ch6_066",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Result of `OR AL, 11111111b`?",
@@ -849,7 +849,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "ORing anything with 1s results in 1s. AL becomes FFh (all 1s).",
   },
   {
-    id: "CPE301_067",
+    id: "CPE301_ch6_067",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `CMP` sets ZF=0 and CF=0 (Unsigned), what is the relationship?",
@@ -864,7 +864,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Not Equal (ZF=0) and No Carry (CF=0) implies Destination is strictly Greater than Source.",
   },
   {
-    id: "CPE301_068",
+    id: "CPE301_ch6_068",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction converts a bit index to a bit mask automatically?",
@@ -874,7 +874,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Instructions like BT, BTS, BTR take a bit position index and internally generate the mask to access that specific bit.",
   },
   {
-    id: "CPE301_069",
+    id: "CPE301_ch6_069",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The `.ELSEIF` directive allows you to:",
@@ -889,7 +889,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       ".ELSEIF adds checking for additional conditions if the previous .IF was false.",
   },
   {
-    id: "CPE301_070",
+    id: "CPE301_ch6_070",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To toggle the Zero Flag (ZF) intentionally, one might:",
@@ -904,7 +904,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "SAHF loads the AH register into the status flags. By setting bit 6 of AH and executing SAHF, you can force ZF to 1.",
   },
   {
-    id: "CPE301_071",
+    id: "CPE301_ch6_071",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `LOOPNE` instruction decrements ECX and jumps if ECX != 0 AND ZF = 0.",
@@ -914,7 +914,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "LOOPNE (Loop Not Equal) continues looping as long as the counter is valid (ECX!=0) AND the condition 'Not Equal' (ZF=0) holds.",
   },
   {
-    id: "CPE301_072",
+    id: "CPE301_ch6_072",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which directive marks the end of a `.WHILE` loop?",
@@ -923,7 +923,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: ".ENDW matches with .WHILE.",
   },
   {
-    id: "CPE301_073",
+    id: "CPE301_ch6_073",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The `BTR` instruction performs which action?",
@@ -937,7 +937,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "BTR copies the bit to CF and then Resets (Clears) it to 0.",
   },
   {
-    id: "CPE301_074",
+    id: "CPE301_ch6_074",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which jump mnemonic is synonymous with `JB` (Jump Below)?",
@@ -952,7 +952,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Below, Carry, and Not Above or Equal all check for CF=1. They are synonyms.",
   },
   {
-    id: "CPE301_075",
+    id: "CPE301_ch6_075",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `EAX` is negative, `TEST EAX, 80000000h` sets which flag?",
@@ -967,7 +967,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "80000000h masks the MSB (sign bit). If EAX is negative, MSB is 1. 1 AND 1 = 1 (Non-Zero). Thus, ZF is cleared (0).",
   },
   {
-    id: "CPE301_076",
+    id: "CPE301_ch6_076",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which of the following instructions forces the execution flow to a new address regardless of flags?",
@@ -976,7 +976,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "JMP is an unconditional jump.",
   },
   {
-    id: "CPE301_077",
+    id: "CPE301_ch6_077",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What is the purpose of the `.CONTINUE` directive inside a `.WHILE` loop?",
@@ -991,7 +991,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       ".CONTINUE skips the remaining instructions in the current iteration and jumps to the loop evaluation logic.",
   },
   {
-    id: "CPE301_078",
+    id: "CPE301_ch6_078",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The Parity Flag was originally designed for:",
@@ -1006,7 +1006,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Parity was used in early communication to detect transmission errors (even/odd bit counts).",
   },
   {
-    id: "CPE301_079",
+    id: "CPE301_ch6_079",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `XOR` instruction can be used to check if two registers contain the same value.",
@@ -1016,7 +1016,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "True. `XOR Reg1, Reg2` sets ZF=1 if Reg1 and Reg2 are identical (result is 0). However, it destroys the destination content.",
   },
   {
-    id: "CPE301_080",
+    id: "CPE301_ch6_080",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which flag is LEAST relevant to the `JA` (Jump Above) instruction?",
@@ -1031,7 +1031,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "JA is an unsigned jump. It checks CF and ZF. The Sign Flag (SF) is relevant to signed jumps (like JG), not unsigned ones.",
   },
   {
-    id: "CPE301_081",
+    id: "CPE301_ch6_081",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To shift the lower 4 bits of AL to the upper 4 bits, you could use:",
@@ -1040,7 +1040,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "Shifting Left (SHL) by 4 moves bits 0-3 to positions 4-7.",
   },
   {
-    id: "CPE301_082",
+    id: "CPE301_ch6_082",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `CMP` leaves the flags as SF=0, OF=1, what is the relationship (Signed)?",
@@ -1050,7 +1050,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "Signed Less Than occurs when SF != OF. Here 0 != 1, so it is Less Than.",
   },
   {
-    id: "CPE301_083",
+    id: "CPE301_ch6_083",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction does NOT support immediate operands?",
@@ -1060,7 +1060,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "CMP, TEST, AND, OR, XOR all support immediate operands (e.g., `CMP EAX, 5`).",
   },
   {
-    id: "CPE301_084",
+    id: "CPE301_ch6_084",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "A 'Null' pointer in assembly usually corresponds to the value:",
@@ -1069,7 +1069,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "Null is typically represented as address 0.",
   },
   {
-    id: "CPE301_085",
+    id: "CPE301_ch6_085",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `ECX` = 0, executing `LOOP` will decrement ECX to:",
@@ -1078,7 +1078,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "0 - 1 = -1 (FFFFFFFFh in 32-bit).",
   },
   {
-    id: "CPE301_086",
+    id: "CPE301_ch6_086",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: `CMP` is really a subtraction instruction.",
@@ -1088,7 +1088,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "True. CMP performs subtraction internally to set flags but discards the result.",
   },
   {
-    id: "CPE301_087",
+    id: "CPE301_ch6_087",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which directive allows for checking the Carry flag directly in high-level syntax?",
@@ -1098,7 +1098,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "MASM provides condition codes like `CARRY?`, `ZERO?`, `SIGN?` for use in `.IF` statements.",
   },
   {
-    id: "CPE301_088",
+    id: "CPE301_ch6_088",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What does the `NOT` instruction do to the Zero Flag?",
@@ -1107,7 +1107,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "NOT does not affect any flags.",
   },
   {
-    id: "CPE301_089",
+    id: "CPE301_ch6_089",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction checks if the least significant bit of AL is 1?",
@@ -1117,7 +1117,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "TEST AL, 1 is the specific non-destructive test. (CMP checks if the whole value is 1; AND modifies AL).",
   },
   {
-    id: "CPE301_090",
+    id: "CPE301_ch6_090",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Using `JA` after `CMP -5, 5` (signed integers interpreted as unsigned) results in:",
@@ -1132,7 +1132,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "-5 is represented as a large positive number (FFFFFFFBh) in unsigned binary. 5 is 00000005h. Large > Small, so 'Above' is true. Jump Taken.",
   },
   {
-    id: "CPE301_091",
+    id: "CPE301_ch6_091",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which flags are updated by `TEST`?",
@@ -1142,7 +1142,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "TEST updates Sign, Zero, and Parity flags based on the AND result. It clears Carry and Overflow.",
   },
   {
-    id: "CPE301_092",
+    id: "CPE301_ch6_092",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "In assembly, `str1 == str2` comparison usually requires:",
@@ -1157,7 +1157,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "You cannot compare entire strings with one CMP. You must loop through bytes.",
   },
   {
-    id: "CPE301_093",
+    id: "CPE301_ch6_093",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which instruction would you use to check if the value in EAX is zero?",
@@ -1167,7 +1167,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "All listed options effectively check if EAX is zero and set the Zero Flag accordingly.",
   },
   {
-    id: "CPE301_094",
+    id: "CPE301_ch6_094",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "True or False: The `.ENDIF` directive is optional if the `.IF` block only has one line.",
@@ -1176,7 +1176,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "Every `.IF` block must be closed with `.ENDIF`.",
   },
   {
-    id: "CPE301_095",
+    id: "CPE301_ch6_095",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "To clear the Overflow Flag, you can use:",
@@ -1191,7 +1191,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "There is no `CLO` instruction. Logic instructions like `OR` clear OF.",
   },
   {
-    id: "CPE301_096",
+    id: "CPE301_ch6_096",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "If `ECX` is 5, `LOOP` decrements it to 4 and jumps. If `ECX` is 1, `LOOP` decrements to 0 and:",
@@ -1201,7 +1201,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "LOOP jumps only if the *new* value of ECX is not zero. If it reaches 0, it falls through.",
   },
   {
-    id: "CPE301_097",
+    id: "CPE301_ch6_097",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which conditional jump pairs are NOT synonyms?",
@@ -1211,7 +1211,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "JA (Jump Above - Unsigned) is NOT a synonym for JG (Jump Greater - Signed).",
   },
   {
-    id: "CPE301_098",
+    id: "CPE301_ch6_098",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "The `BTC` instruction:",
@@ -1226,7 +1226,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
       "BTC copies the bit to CF and Complements (inverts) it in the destination.",
   },
   {
-    id: "CPE301_099",
+    id: "CPE301_ch6_099",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "Which status flag indicates that the last arithmetic operation resulted in a number too large for the unsigned destination?",
@@ -1235,7 +1235,7 @@ const CPE301Chapter6Part1: QuestionV2[] = [
     explanation: "Unsigned overflow is tracked by the Carry Flag.",
   },
   {
-    id: "CPE301_100",
+    id: "CPE301_ch6_100",
     course: "CPE301",
     chapter: "Chapter 6",
     text: "What does `JNC` stand for?",

@@ -3,7 +3,7 @@ import { QuestionV2 } from "@/lib/quiz-types";
 const cpe301Chapter4: QuestionV2[] = [
   // SECTION 4.1: Data Transfer Instructions
   {
-    id: "cpe301_001",
+    id: "cpe301_ch4_001",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "Which of the following is NOT a basic type of operand in x86 assembly?",
@@ -13,7 +13,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The text identifies three basic types of operands: Immediate, Register, and Memory. While floating-point operations exist, 'Floating-point stack' is not listed as one of the three basic operand types in the context of data transfer instructions.",
   },
   {
-    id: "cpe301_002",
+    id: "cpe301_ch4_002",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "Which instruction is used to move data from a source operand to a destination operand?",
@@ -23,7 +23,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The MOV instruction copies data from a source operand to a destination operand.",
   },
   {
-    id: "cpe301_003",
+    id: "cpe301_ch4_003",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the instruction `MOV destination, source`, what happens to the source operand?",
@@ -38,7 +38,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The MOV instruction copies data; the source operand remains unchanged.",
   },
   {
-    id: "cpe301_004",
+    id: "cpe301_ch4_004",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which of the following MOV instruction formats is INVALID?",
@@ -48,7 +48,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "A single MOV instruction cannot be used to move data directly from one memory location to another (memory-to-memory transfers are not allowed).",
   },
   {
-    id: "cpe301_005",
+    id: "cpe301_ch4_005",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The destination operand of a MOV instruction cannot be the instruction pointer (EIP).",
@@ -58,7 +58,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The instruction pointer register (IP, EIP, or RIP) cannot be a destination operand for a MOV instruction.",
   },
   {
-    id: "cpe301_006",
+    id: "cpe301_ch4_006",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the purpose of the MOVZX instruction?",
@@ -73,7 +73,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MOVZX stands for 'move with zero-extend'. It copies a source operand to a destination operand and zero-extends the value.",
   },
   {
-    id: "cpe301_007",
+    id: "cpe301_ch4_007",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When using MOVZX, which type of integer is it typically used with?",
@@ -87,7 +87,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "MOVZX is only used with unsigned integers.",
   },
   {
-    id: "cpe301_008",
+    id: "cpe301_ch4_008",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction should be used to move a signed integer to a larger destination operand while preserving its sign?",
@@ -97,7 +97,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MOVSX (move with sign-extend) copies a signed integer to a larger destination and fills the upper bits with a copy of the source's sign bit.",
   },
   {
-    id: "cpe301_009",
+    id: "cpe301_ch4_009",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "The LAHF instruction copies the low byte of which register into AH?",
@@ -106,7 +106,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "LAHF copies the low byte of the EFLAGS register into AH.",
   },
   {
-    id: "cpe301_010",
+    id: "cpe301_ch4_010",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction exchanges the contents of two operands?",
@@ -116,7 +116,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The XCHG (exchange data) instruction exchanges the contents of two operands.",
   },
   {
-    id: "cpe301_011",
+    id: "cpe301_ch4_011",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which of the following is NOT a valid operand combination for XCHG?",
@@ -130,7 +130,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The XCHG instruction does not accept immediate operands.",
   },
   {
-    id: "cpe301_012",
+    id: "cpe301_ch4_012",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `arrayB` is a byte array at offset 100h, what is the value of `AL` after `MOV AL, [arrayB+2]` if the array contains `10h, 20h, 30h`?",
@@ -140,7 +140,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "`arrayB+2` points to the third element (index 2). If elements are 10h, 20h, 30h, the third element is 30h.",
   },
   {
-    id: "cpe301_013",
+    id: "cpe301_ch4_013",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: MASM automatically checks for array bounds violations when using direct-offset operands.",
@@ -150,7 +150,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MASM has no built-in range checking for effective addresses. Accessing memory outside the array is possible and can cause bugs.",
   },
   {
-    id: "cpe301_014",
+    id: "cpe301_ch4_014",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In an array of 16-bit words, if the first element is at offset 100h, what is the offset of the second element?",
@@ -160,7 +160,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Each element in a word array is 2 bytes long. 100h + 2 = 102h.",
   },
   {
-    id: "cpe301_015",
+    id: "cpe301_ch4_015",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "To move a 32-bit doubleword from an array `arrayD` to EAX, accessing the second element, which instruction is correct?",
@@ -175,7 +175,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Doublewords are 4 bytes. The second element is at offset +4 bytes from the start.",
   },
   {
-    id: "cpe301_016",
+    id: "cpe301_ch4_016",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction does NOT affect the Carry flag?",
@@ -185,7 +185,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The INC (increment) and DEC (decrement) instructions do not affect the Carry flag.",
   },
   {
-    id: "cpe301_017",
+    id: "cpe301_ch4_017",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the INC instruction do?",
@@ -199,7 +199,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "INC (increment) adds 1 to a register or memory operand.",
   },
   {
-    id: "cpe301_018",
+    id: "cpe301_ch4_018",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `AL` contains `FFh`, what is the value of `AL` and the Zero Flag (ZF) after `INC AL`?",
@@ -209,7 +209,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "FFh + 1 = 100h. Stored in 8 bits, it becomes 00h. Since the result is zero, ZF is set to 1.",
   },
   {
-    id: "cpe301_019",
+    id: "cpe301_ch4_019",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "The NEG instruction performs what operation?",
@@ -224,7 +224,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "NEG reverses the sign of a number by converting it to its two's complement (invert bits + 1).",
   },
   {
-    id: "cpe301_020",
+    id: "cpe301_ch4_020",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When adding two unsigned integers, which flag signals if the result is too large for the destination operand?",
@@ -238,7 +238,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The Carry Flag (CF) indicates unsigned integer overflow.",
   },
   {
-    id: "cpe301_021",
+    id: "cpe301_ch4_021",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When adding two signed integers, which flag signals if the result is too large (positive or negative) for the destination?",
@@ -252,7 +252,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The Overflow Flag (OF) indicates signed integer overflow.",
   },
   {
-    id: "cpe301_022",
+    id: "cpe301_ch4_022",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the Zero Flag (ZF) indicate?",
@@ -267,7 +267,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Zero flag is set when the result of an arithmetic operation equals zero.",
   },
   {
-    id: "cpe301_023",
+    id: "cpe301_ch4_023",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: Subtracting a larger unsigned integer from a smaller one sets the Carry Flag.",
@@ -277,7 +277,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "A subtract operation sets the Carry flag when a larger unsigned integer is subtracted from a smaller one (a borrow occurs).",
   },
   {
-    id: "cpe301_024",
+    id: "cpe301_ch4_024",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "The Parity Flag (PF) is set when the least significant byte of the destination has:",
@@ -292,7 +292,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Parity flag is set when the least significant byte of the destination has an even number of 1 bits.",
   },
   {
-    id: "cpe301_025",
+    id: "cpe301_ch4_025",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What happens if you try to `NEG` the value -128 in an 8-bit register (AL)?",
@@ -309,7 +309,7 @@ const cpe301Chapter4: QuestionV2[] = [
 
   // SECTION 4.3: Data-Related Operators and Directives
   {
-    id: "cpe301_026",
+    id: "cpe301_ch4_026",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the OFFSET operator return?",
@@ -324,7 +324,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The OFFSET operator returns the distance (in bytes) of a label from the beginning of its enclosing segment.",
   },
   {
-    id: "cpe301_027",
+    id: "cpe301_ch4_027",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which directive aligns a variable on a byte, word, doubleword, or paragraph boundary?",
@@ -334,7 +334,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The ALIGN directive aligns a variable on a specified boundary (e.g., ALIGN 2, ALIGN 4).",
   },
   {
-    id: "cpe301_028",
+    id: "cpe301_ch4_028",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Why is data alignment important?",
@@ -349,7 +349,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The CPU can process data stored at even-numbered (aligned) addresses more quickly than at odd-numbered addresses.",
   },
   {
-    id: "cpe301_029",
+    id: "cpe301_ch4_029",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the purpose of the PTR operator?",
@@ -364,7 +364,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "PTR is used to override an operand's default size (e.g., treating a DWORD variable as a WORD).",
   },
   {
-    id: "cpe301_030",
+    id: "cpe301_ch4_030",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `myDouble` is a DWORD variable, how would you move its lower 16 bits into AX?",
@@ -379,7 +379,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "You must use `WORD PTR` to tell the assembler to treat the DWORD variable as a WORD for this instruction.",
   },
   {
-    id: "cpe301_031",
+    id: "cpe301_ch4_031",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What value does the TYPE operator return for a DWORD variable?",
@@ -388,7 +388,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "A DWORD (Doubleword) is 4 bytes, so TYPE returns 4.",
   },
   {
-    id: "cpe301_032",
+    id: "cpe301_ch4_032",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the LENGTHOF operator return?",
@@ -402,7 +402,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "LENGTHOF counts the number of elements in an array.",
   },
   {
-    id: "cpe301_033",
+    id: "cpe301_ch4_033",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the SIZEOF operator return?",
@@ -417,7 +417,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "SIZEOF returns the total number of bytes used by an array initializer, which is equivalent to LENGTHOF multiplied by TYPE.",
   },
   {
-    id: "cpe301_034",
+    id: "cpe301_ch4_034",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which directive allows you to insert a label and give it a size attribute without allocating storage?",
@@ -427,7 +427,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The LABEL directive inserts a label with a size attribute (like BYTE or WORD) but allocates no storage.",
   },
   {
-    id: "cpe301_035",
+    id: "cpe301_ch4_035",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: `mov esi, OFFSET myArray + 4` points ESI to the beginning of the array plus 4 bytes.",
@@ -439,7 +439,7 @@ const cpe301Chapter4: QuestionV2[] = [
 
   // SECTION 4.4: Indirect Addressing
   {
-    id: "cpe301_036",
+    id: "cpe301_ch4_036",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is indirect addressing?",
@@ -454,7 +454,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Indirect addressing uses a register (like ESI) to hold the address of the data, acting as a pointer.",
   },
   {
-    id: "cpe301_037",
+    id: "cpe301_ch4_037",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which notation correctly represents an indirect operand?",
@@ -464,7 +464,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Brackets around a register (e.g., [ESI]) indicate that the register holds an address and should be dereferenced.",
   },
   {
-    id: "cpe301_038",
+    id: "cpe301_ch4_038",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Why does `inc [esi]` cause an assembler error?",
@@ -479,7 +479,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The assembler doesn't know if [esi] points to a byte, word, or doubleword. You must use `inc BYTE PTR [esi]` or similar.",
   },
   {
-    id: "cpe301_039",
+    id: "cpe301_ch4_039",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If ESI points to the start of a WORD array, how much should you add to ESI to point to the next element?",
@@ -489,7 +489,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "A WORD is 2 bytes, so you must add 2 to the pointer to reach the next element.",
   },
   {
-    id: "cpe301_040",
+    id: "cpe301_ch4_040",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is an indexed operand?",
@@ -504,7 +504,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "An indexed operand combines a register with a constant (e.g., `array[esi]` or `[array + esi]`) to calculate an address.",
   },
   {
-    id: "cpe301_041",
+    id: "cpe301_ch4_041",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: In 32-bit mode, any general-purpose 32-bit register can be used as an index register.",
@@ -514,7 +514,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Any 32-bit general-purpose register (EAX, EBX, ECX, EDX, ESI, EDI, EBP, ESP) can be used.",
   },
   {
-    id: "cpe301_042",
+    id: "cpe301_ch4_042",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is a scale factor in indexed operands?",
@@ -529,7 +529,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The scale factor (1, 2, 4, or 8) is multiplied by the index to automatically handle element sizes (e.g., `[esi*4]`).",
   },
   {
-    id: "cpe301_043",
+    id: "cpe301_ch4_043",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction demonstrates using a scale factor for a doubleword array?",
@@ -543,7 +543,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "Doublewords are 4 bytes, so the scale factor must be 4.",
   },
   {
-    id: "cpe301_044",
+    id: "cpe301_ch4_044",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is a pointer variable?",
@@ -557,7 +557,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "A pointer is a variable that stores a memory address.",
   },
   {
-    id: "cpe301_045",
+    id: "cpe301_ch4_045",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the TYPEDEF operator do?",
@@ -574,7 +574,7 @@ const cpe301Chapter4: QuestionV2[] = [
 
   // SECTION 4.5: JMP and LOOP Instructions
   {
-    id: "cpe301_046",
+    id: "cpe301_ch4_046",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction creates an unconditional transfer of control?",
@@ -584,7 +584,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The JMP (Jump) instruction unconditionally transfers control to a new location.",
   },
   {
-    id: "cpe301_047",
+    id: "cpe301_ch4_047",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which register is automatically used as the counter for the LOOP instruction in 32-bit mode?",
@@ -593,7 +593,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "ECX is the default loop counter for the LOOP instruction.",
   },
   {
-    id: "cpe301_048",
+    id: "cpe301_ch4_048",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What logic does the LOOP instruction perform?",
@@ -608,7 +608,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LOOP first decrements ECX, then checks if ECX is not zero. If it's not zero, it jumps to the target label.",
   },
   {
-    id: "cpe301_049",
+    id: "cpe301_ch4_049",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If ECX is initialized to 0 before a LOOP instruction, how many times will the loop execute?",
@@ -618,7 +618,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LOOP decrements 0 to FFFFFFFFh (-1), so it will repeat 2^32 (4 billion+) times before reaching 0 again.",
   },
   {
-    id: "cpe301_050",
+    id: "cpe301_ch4_050",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: You should explicitly modify the ECX register inside a loop that uses the LOOP instruction.",
@@ -630,7 +630,7 @@ const cpe301Chapter4: QuestionV2[] = [
 
   // Mixed Application / Review Questions
   {
-    id: "cpe301_051",
+    id: "cpe301_ch4_051",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction does not require both operands to be the same size?",
@@ -640,7 +640,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MOVZX (and MOVSX) is designed to move a smaller source operand to a larger destination operand.",
   },
   {
-    id: "cpe301_052",
+    id: "cpe301_ch4_052",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the context of the LOOP instruction, what happens if the destination label is too far away?",
@@ -655,7 +655,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The LOOP destination must be within -128 to +127 bytes. If it's too far, MASM generates a 'jump destination too far' error.",
   },
   {
-    id: "cpe301_053",
+    id: "cpe301_ch4_053",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "How do you define a nested loop correctly using ECX?",
@@ -670,7 +670,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Since LOOP always uses ECX, you must save the outer loop's count before the inner loop and restore it afterwards.",
   },
   {
-    id: "cpe301_054",
+    id: "cpe301_ch4_054",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "To copy a string using a loop, which register is typically used for indexed addressing?",
@@ -680,7 +680,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "ESI (Source Index) is commonly used as an index register for arrays and strings.",
   },
   {
-    id: "cpe301_055",
+    id: "cpe301_ch4_055",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which flag corresponds to the symbol 'OV' in the Visual Studio debugger?",
@@ -689,7 +689,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "OV stands for Overflow.",
   },
   {
-    id: "cpe301_056",
+    id: "cpe301_ch4_056",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the value of the Parity Flag if the result low byte has an odd number of 1 bits?",
@@ -699,7 +699,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Parity Flag is set (1) if there is an *even* number of 1 bits. It is clear (0) for an odd number.",
   },
   {
-    id: "cpe301_057",
+    id: "cpe301_ch4_057",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The Auxiliary Carry flag is primarily used for BCD (Binary Coded Decimal) arithmetic.",
@@ -709,7 +709,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The AC flag tracks carries out of bit 3, which is used for BCD correction.",
   },
   {
-    id: "cpe301_058",
+    id: "cpe301_ch4_058",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When translating `Rval = -Xval + (Yval - Zval)` to assembly, which operation is performed first for `-Xval`?",
@@ -719,7 +719,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Typically, `MOV` is used to copy the variable to a register before applying `NEG`.",
   },
   {
-    id: "cpe301_059",
+    id: "cpe301_ch4_059",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which operand type uses a numeric literal expression?",
@@ -729,7 +729,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "An immediate operand is a constant value (literal) encoded directly into the instruction.",
   },
   {
-    id: "cpe301_060",
+    id: "cpe301_ch4_060",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If you want to move the value 0 into EAX, which instruction is valid?",
@@ -739,7 +739,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MOV destination, source. EAX is the destination, 0 is the immediate source.",
   },
   {
-    id: "cpe301_061",
+    id: "cpe301_ch4_061",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the instruction `mov al, [arrayB + 1]`, what is `[arrayB + 1]` called?",
@@ -754,7 +754,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "It adds a displacement (1) to a variable name, creating a direct-offset operand.",
   },
   {
-    id: "cpe301_062",
+    id: "cpe301_ch4_062",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The SAHF instruction copies the Status Flags into the AH register.",
@@ -764,7 +764,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "False. SAHF stores AH *into* the status flags. LAHF loads flags *into* AH.",
   },
   {
-    id: "cpe301_063",
+    id: "cpe301_ch4_063",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `myWord` is at offset 0000 and contains 1234h, what does `mov al, BYTE PTR myWord` put in AL?",
@@ -774,7 +774,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "x86 is Little Endian. The low byte (34h) is stored at the lower address (offset 0000).",
   },
   {
-    id: "cpe301_064",
+    id: "cpe301_ch4_064",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the result of `LENGTHOF` on an array defined as `array1 WORD 30 DUP(?), 0, 0`?",
@@ -794,7 +794,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "XCHG exchanges two writable locations (register/memory). It cannot exchange with a constant (immediate).",
   },
   {
-    id: "cpe301_066",
+    id: "cpe301_ch4_066",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What happens if you add 1 to a byte variable containing 255 (FFh)?",
@@ -809,7 +809,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "FFh + 1 = 100h. This fits in 9 bits. The lower 8 bits (00) are stored, and the 9th bit becomes the Carry Flag.",
   },
   {
-    id: "cpe301_067",
+    id: "cpe301_ch4_067",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: `ALIGN 2` ensures the next variable starts at an address divisible by 2.",
@@ -818,7 +818,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "ALIGN 2 aligns to a word boundary (even address).",
   },
   {
-    id: "cpe301_068",
+    id: "cpe301_ch4_068",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In 64-bit mode, what is the size of the default operand for MOV?",
@@ -828,7 +828,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "While 64-bit mode supports 64-bit data, the default operand size for many instructions remains 32 bits for compatibility and code density, though R-registers are 64-bit. (Note: The prompt asks for 64-bit programming section, but based on general x86-64, 32-bit is often default for immediates, but registers like RAX are 64-bit. In the context of the book's 32-bit focus with a 64-bit section, usually 32-bit is standard unless R-prefix is used.)",
   },
   {
-    id: "cpe301_069",
+    id: "cpe301_ch4_069",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction allows a loop to execute a specific number of times?",
@@ -837,7 +837,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "LOOP repeats a block based on the ECX counter.",
   },
   {
-    id: "cpe301_070",
+    id: "cpe301_ch4_070",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the primary difference between a JMP and a LOOP instruction?",
@@ -852,7 +852,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "JMP always jumps. LOOP jumps only if ECX != 0 after decrementing.",
   },
   {
-    id: "cpe301_071",
+    id: "cpe301_ch4_071",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If you need to access the 5th element of a DWORD array named `list`, what is the offset from the start?",
@@ -861,7 +861,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "Index 4 (5th element). 4 * 4 bytes/element = 16 bytes.",
   },
   {
-    id: "cpe301_072",
+    id: "cpe301_ch4_072",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which register is best suited for string source indexing?",
@@ -871,7 +871,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "ESI (Extended Source Index) is conventionally used for source data.",
   },
   {
-    id: "cpe301_073",
+    id: "cpe301_ch4_073",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: `OFFSET` is determined at runtime.",
@@ -881,7 +881,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "OFFSET is an assembler operator determined at assembly/link time, not runtime.",
   },
   {
-    id: "cpe301_074",
+    id: "cpe301_ch4_074",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does `mov eax, [ebx+esi]` represent?",
@@ -896,7 +896,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "It uses a base register (EBX) and an index register (ESI), known as based-indexed addressing.",
   },
   {
-    id: "cpe301_075",
+    id: "cpe301_ch4_075",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "If AL contains +127 and you execute `add al, 1`, which flag is SET?",
@@ -907,7 +907,7 @@ const cpe301Chapter4: QuestionV2[] = [
   },
   // SECTION 4.6: 64-Bit Programming
   {
-    id: "cpe301_076",
+    id: "cpe301_ch4_076",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "In 64-bit mode, what happens to the upper 32 bits of a 64-bit destination register when a 32-bit constant is moved into its lower 32 bits?",
@@ -922,7 +922,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "When you move a 32-bit constant to a 64-bit register, the upper 32 bits of the destination are cleared.",
   },
   {
-    id: "cpe301_077",
+    id: "cpe301_ch4_077",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "True or False: Moving an 8-bit or 16-bit memory operand into the lower part of a 64-bit register clears the upper bits of the register.",
@@ -932,7 +932,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Moving an 8-bit or 16-bit memory operand into the lower bits of a 64-bit register does NOT affect the upper bits.",
   },
   {
-    id: "cpe301_078",
+    id: "cpe301_ch4_078",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction allows moving a 32-bit source operand into a 64-bit destination with sign extension?",
@@ -942,7 +942,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The MOVSXD instruction (move with sign-extension) permits the source operand to be a 32-bit register or memory operand and sign-extends it to 64 bits.",
   },
   {
-    id: "cpe301_079",
+    id: "cpe301_ch4_079",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which register is used as the loop counter for the LOOP instruction in 64-bit mode?",
@@ -952,7 +952,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The LOOP instruction in 64-bit mode uses the RCX register as the loop counter.",
   },
   {
-    id: "cpe301_080",
+    id: "cpe301_ch4_080",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In 64-bit mode, what size is the address generated by the OFFSET operator?",
@@ -962,7 +962,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The OFFSET operator generates a 64-bit address in 64-bit mode, which must be held by a 64-bit register.",
   },
   {
-    id: "cpe301_081",
+    id: "cpe301_ch4_081",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What data type directive is used to create an array of 64-bit integers?",
@@ -972,7 +972,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "QWORD (Quadword) allocates storage for 64-bit (8-byte) values.",
   },
   {
-    id: "cpe301_082",
+    id: "cpe301_ch4_082",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When adding 1 to the 32-bit register EAX in 64-bit mode, how are the upper 32 bits of RAX affected?",
@@ -987,7 +987,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "When you use a partial register operand (like EAX), the remainder of the register (upper RAX) is not modified (except for the special case of MOV 32-bit to 64-bit reg).",
   },
   {
-    id: "cpe301_083",
+    id: "cpe301_ch4_083",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What scale factor should be used for indexed operands when accessing an array of 64-bit integers?",
@@ -997,7 +997,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Since 64-bit integers are 8 bytes long, a scale factor of 8 is used (e.g., `[rsi*8]`).",
   },
   {
-    id: "cpe301_084",
+    id: "cpe301_ch4_084",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: In 64-bit mode, immediate operands can be 64 bits long.",
@@ -1007,7 +1007,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Immediate operands (constants) may be 8, 16, 32, or 64 bits in 64-bit mode.",
   },
   {
-    id: "cpe301_085",
+    id: "cpe301_ch4_085",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What happens if you execute `MOV RAX, FFFFFFFFh` in 64-bit mode?",
@@ -1024,7 +1024,7 @@ const cpe301Chapter4: QuestionV2[] = [
 
   // MIXED / COMPREHENSIVE QUESTIONS (Continuing Coverage)
   {
-    id: "cpe301_086",
+    id: "cpe301_ch4_086",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the `SumArray` program (32-bit), which instruction points to the next element in the array?",
@@ -1039,7 +1039,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "To point to the next element, you add the size of a single element (TYPE) to the index register.",
   },
   {
-    id: "cpe301_087",
+    id: "cpe301_ch4_087",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction format allows adding a 32-bit integer constant to a 64-bit register in 64-bit mode?",
@@ -1054,7 +1054,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Standard ADD instruction supports adding an immediate 32-bit value to a 64-bit register (e.g., `ADD RAX, 1`).",
   },
   {
-    id: "cpe301_088",
+    id: "cpe301_ch4_088",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `myArray` is a WORD array, what is the value of `TYPE myArray`?",
@@ -1063,7 +1063,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The TYPE of a WORD (16-bit) is 2 bytes.",
   },
   {
-    id: "cpe301_089",
+    id: "cpe301_ch4_089",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which operator would you use to calculate the number of elements in an array defined with nested DUP operators?",
@@ -1073,7 +1073,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LENGTHOF returns the total number of elements in an array, handling nested DUPs.",
   },
   {
-    id: "cpe301_090",
+    id: "cpe301_ch4_090",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The `LABEL` directive allocates memory storage for a variable.",
@@ -1083,7 +1083,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The LABEL directive inserts a label and gives it a size attribute but does NOT allocate any storage.",
   },
   {
-    id: "cpe301_091",
+    id: "cpe301_ch4_091",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the purpose of the `ALIGN 4` directive?",
@@ -1098,7 +1098,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "ALIGN 4 aligns the next address to a multiple of 4 (doubleword boundary).",
   },
   {
-    id: "cpe301_092",
+    id: "cpe301_ch4_092",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `val32` is a DWORD containing `12345678h`, what is the value moved to AX by `MOV AX, WORD PTR val32`?",
@@ -1108,7 +1108,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "In Little Endian, the lower word (5678h) is at the starting address.",
   },
   {
-    id: "cpe301_093",
+    id: "cpe301_ch4_093",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which directive creates a user-defined type for a pointer?",
@@ -1118,7 +1118,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "TYPEDEF allows creating user-defined types, often used for pointers (e.g., `PBYTE TYPEDEF PTR BYTE`).",
   },
   {
-    id: "cpe301_094",
+    id: "cpe301_ch4_094",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What kind of addressing uses a register as a pointer to data?",
@@ -1133,7 +1133,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Using a register to hold an address is called indirect addressing.",
   },
   {
-    id: "cpe301_095",
+    id: "cpe301_ch4_095",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: In 64-bit mode, the LOOP instruction uses ECX as the loop counter.",
@@ -1143,7 +1143,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "In 64-bit mode, LOOP uses RCX as the loop counter (LOOPD uses ECX).",
   },
   {
-    id: "cpe301_096",
+    id: "cpe301_ch4_096",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When copying a string in assembly, why is the `MOV` instruction usually performed in two steps (Memory to Register, Register to Memory)?",
@@ -1158,7 +1158,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The MOV instruction rules prohibit both operands from being memory operands.",
   },
   {
-    id: "cpe301_097",
+    id: "cpe301_ch4_097",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `ptrB` is a QWORD variable containing the address of `arrayB`, what instruction loads that address into RSI in 64-bit mode?",
@@ -1173,7 +1173,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "`MOV RSI, ptrB` moves the 64-bit value (the address) stored in the variable `ptrB` into the `RSI` register.",
   },
   {
-    id: "cpe301_098",
+    id: "cpe301_ch4_098",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What happens if you use `inc [rsi]` without a PTR operator?",
@@ -1188,7 +1188,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The operand size is ambiguous (byte? word?), so the assembler generates an 'operand must have size' error.",
   },
   {
-    id: "cpe301_099",
+    id: "cpe301_ch4_099",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which flag is set if an arithmetic operation generates a negative result?",
@@ -1198,7 +1198,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Sign Flag is set when the result of a signed arithmetic operation is negative (MSB is 1).",
   },
   {
-    id: "cpe301_100",
+    id: "cpe301_ch4_100",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "How is the Overflow Flag determined by the hardware during addition?",
@@ -1213,7 +1213,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Overflow is detected by XORing the carry *into* the high bit with the carry *out of* the high bit.",
   },
   {
-    id: "cpe301_101",
+    id: "cpe301_ch4_101",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The `NEG` instruction changes the Sign Flag, Zero Flag, Carry Flag, and Overflow Flag.",
@@ -1223,7 +1223,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "NEG affects the Carry, Zero, Sign, Overflow, Auxiliary Carry, and Parity flags according to the result.",
   },
   {
-    id: "cpe301_102",
+    id: "cpe301_ch4_102",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `EAX` contains `FFFFFFFFh`, what is the value of `EAX` after `INC EAX`?",
@@ -1232,7 +1232,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "Incrementing the maximum value wraps around to 0.",
   },
   {
-    id: "cpe301_103",
+    id: "cpe301_ch4_103",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction is used to unconditionally jump to a label?",
@@ -1242,7 +1242,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "JMP (Jump) causes an unconditional transfer to a destination label.",
   },
   {
-    id: "cpe301_104",
+    id: "cpe301_ch4_104",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the `AddSubTest` example, `mov cx, 1` followed by `sub cx, 1` results in which flag being set?",
@@ -1251,7 +1251,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "1 - 1 = 0. The result is zero, so the Zero Flag (ZF) is set.",
   },
   {
-    id: "cpe301_105",
+    id: "cpe301_ch4_105",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the effect of `mov al, -128` followed by `sub al, 1` on a signed 8-bit integer?",
@@ -1266,7 +1266,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "-128 - 1 = -129. -129 is too small for a signed byte (min -128). It wraps to +127 (7Fh) and sets the Overflow Flag.",
   },
   {
-    id: "cpe301_106",
+    id: "cpe301_ch4_106",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `count` is a DWORD variable, what does `SIZEOF count` return?",
@@ -1276,7 +1276,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "SIZEOF returns LENGTHOF * TYPE. For a single DWORD, 1 * 4 = 4.",
   },
   {
-    id: "cpe301_107",
+    id: "cpe301_ch4_107",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What allows you to view an array's contents in the Visual Studio debugger?",
@@ -1291,7 +1291,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Memory Window allows viewing raw memory contents, useful for arrays.",
   },
   {
-    id: "cpe301_108",
+    id: "cpe301_ch4_108",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The `JMP` instruction modifies the Instruction Pointer (EIP).",
@@ -1301,7 +1301,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "JMP loads the offset of the destination into the instruction pointer, changing the execution flow.",
   },
   {
-    id: "cpe301_109",
+    id: "cpe301_ch4_109",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction sign-extends a byte in AL to a word in AX?",
@@ -1311,7 +1311,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "CBW (Convert Byte to Word) sign-extends AL into AH. (Though not explicitly in the summary list, it's a standard related instruction, but based strictly on text provided, `MOVSX AX, AL` is the general form. Assuming general knowledge or implied coverage. If strict to text, MOVSX covers this).",
   },
   {
-    id: "cpe301_110",
+    id: "cpe301_ch4_110",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the `SumArray_64` program, which register is used as the accumulator for the sum?",
@@ -1320,7 +1320,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The program uses `MOV RAX, 0` and `ADD RAX, [RDI]`.",
   },
   {
-    id: "cpe301_111",
+    id: "cpe301_ch4_111",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When implementing `Rval = -Xval + (Yval - Zval)`, why is `NEG` used?",
@@ -1335,7 +1335,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The expression requires `-Xval`, so `NEG` is used to negate the value.",
   },
   {
-    id: "cpe301_112",
+    id: "cpe301_ch4_112",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: `LOOP` jumps if `ECX` is zero.",
@@ -1344,7 +1344,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "LOOP jumps only if ECX is *not* zero after decrementing.",
   },
   {
-    id: "cpe301_113",
+    id: "cpe301_ch4_113",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which operator is used to verify the operand size when it is ambiguous?",
@@ -1353,7 +1353,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "PTR is used to explicitly state the size (e.g., `BYTE PTR`).",
   },
   {
-    id: "cpe301_114",
+    id: "cpe301_ch4_114",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does `mov eax, [arrayD + 4]` do?",
@@ -1368,7 +1368,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Accesses the memory at offset +4, which is the second element of a DWORD array.",
   },
   {
-    id: "cpe301_115",
+    id: "cpe301_ch4_115",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "If `BX` contains a negative number, what happens to `CX` after `MOVSX CX, BL`?",
@@ -1383,7 +1383,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MOVSX sign-extends the source, preserving the sign in the larger destination.",
   },
   {
-    id: "cpe301_116",
+    id: "cpe301_ch4_116",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "Which of the following is an example of a base-index operand?",
@@ -1393,7 +1393,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "A base-index operand combines two registers (e.g., [EAX + EBX]) to calculate an effective address.",
   },
   {
-    id: "cpe301_117",
+    id: "cpe301_ch4_117",
     course: "CPE 301",
     chapter: "Chapter 4",
     text: "When using indexed addressing with a scale factor, which of the following is NOT a valid scale factor?",
@@ -1403,7 +1403,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Valid scale factors correspond to standard data sizes: 1, 2, 4, and 8. 3 is not a valid scale factor.",
   },
   {
-    id: "cpe301_118",
+    id: "cpe301_ch4_118",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In 32-bit mode, what does the instruction `MOV EAX, arrayD[ESI*4]` assume about `arrayD`?",
@@ -1418,7 +1418,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The scale factor 4 implies elements are 4 bytes wide, which corresponds to Doublewords.",
   },
   {
-    id: "cpe301_119",
+    id: "cpe301_ch4_119",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which directive is used to create a pointer type definition, such as `PBYTE`?",
@@ -1428,7 +1428,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "TYPEDEF is used to define user-defined types, including pointers (e.g., `PBYTE TYPEDEF PTR BYTE`).",
   },
   {
-    id: "cpe301_120",
+    id: "cpe301_ch4_120",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the instruction `inc [esi]`, why is the `PTR` operator required?",
@@ -1443,7 +1443,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The assembler needs to know the size of the data at the address in ESI (byte, word, etc.) to generate the correct code.",
   },
   {
-    id: "cpe301_121",
+    id: "cpe301_ch4_121",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the range of the relative offset for a `LOOP` instruction in 32-bit mode?",
@@ -1458,7 +1458,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The LOOP instruction uses a short jump, limited to a relative offset of -128 to +127 bytes from the current location.",
   },
   {
-    id: "cpe301_122",
+    id: "cpe301_ch4_122",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which steps does the `LOOP` instruction perform?",
@@ -1473,7 +1473,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LOOP first decrements ECX, then checks if the new value of ECX is not zero.",
   },
   {
-    id: "cpe301_123",
+    id: "cpe301_ch4_123",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What happens if `ECX` is 0 when the `LOOP` instruction is executed?",
@@ -1488,7 +1488,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Because LOOP decrements *before* checking, 0 becomes -1 (FFFFFFFFh), causing the loop to repeat billions of times.",
   },
   {
-    id: "cpe301_124",
+    id: "cpe301_ch4_124",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In a nested loop, what must be done with the outer loop's counter (ECX) before entering the inner loop?",
@@ -1503,7 +1503,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Since LOOP always uses ECX, the outer loop's value must be saved before the inner loop overwrites ECX, and restored afterwards.",
   },
   {
-    id: "cpe301_125",
+    id: "cpe301_ch4_125",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When summing an integer array, why is the loop counter initialized to `LENGTHOF array`?",
@@ -1518,7 +1518,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LENGTHOF returns the number of elements, which is the correct count for the loop iterations.",
   },
   {
-    id: "cpe301_126",
+    id: "cpe301_ch4_126",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction is functionally equivalent to `SUB ECX, 1` followed by `JNZ destination`?",
@@ -1528,7 +1528,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The LOOP instruction performs `DEC ECX` and jumps if the result is non-zero (JNZ).",
   },
   {
-    id: "cpe301_127",
+    id: "cpe301_ch4_127",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In 64-bit mode, what is the effect of `MOV RAX, 80000000h`?",
@@ -1543,7 +1543,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Moving a 32-bit constant to a 64-bit register clears the upper 32 bits. It does NOT sign extend.",
   },
   {
-    id: "cpe301_128",
+    id: "cpe301_ch4_128",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction allows a 32-bit register source to be sign-extended into a 64-bit destination register?",
@@ -1553,7 +1553,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "MOVSXD (Move with Sign-Extend Doubleword) is designed for this specific 32-to-64 bit operation.",
   },
   {
-    id: "cpe301_129",
+    id: "cpe301_ch4_129",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Why must the `OFFSET` operator be used with a 64-bit register in 64-bit mode?",
@@ -1568,7 +1568,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "In 64-bit mode, memory addresses are 64 bits long, requiring a 64-bit register to hold them.",
   },
   {
-    id: "cpe301_130",
+    id: "cpe301_ch4_130",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What happens to the upper bits of a 64-bit register if you move an 8-bit memory operand into its lowest byte (e.g., `MOV AL, [mem]`)?",
@@ -1583,7 +1583,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Writing to 8-bit or 16-bit partial registers (like AL, AX) does NOT affect the upper bits of the full 64-bit register.",
   },
   {
-    id: "cpe301_131",
+    id: "cpe301_ch4_131",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the 64-bit `SumArray` example, which register is used to dereference the array elements?",
@@ -1593,7 +1593,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The example uses RDI as the pointer to the array (indirect addressing).",
   },
   {
-    id: "cpe301_132",
+    id: "cpe301_ch4_132",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which status flag helps identify if a subtraction resulted in a negative number?",
@@ -1608,7 +1608,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Sign Flag is set equal to the MSB of the result. If MSB is 1, the number is negative.",
   },
   {
-    id: "cpe301_133",
+    id: "cpe301_ch4_133",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `MOV AL, 0FFh` is followed by `ADD AL, 1`, what are the values of ZF and CF?",
@@ -1618,7 +1618,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "FFh + 1 = 100h. The 8-bit result is 00h (ZF=1). The carry out is 1 (CF=1).",
   },
   {
-    id: "cpe301_134",
+    id: "cpe301_ch4_134",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction does NOT support memory-to-memory data transfer?",
@@ -1628,7 +1628,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The basic `MOV` instruction does not permit two memory operands. (Note: MOVS is a special string instruction that does, but MOV does not).",
   },
   {
-    id: "cpe301_135",
+    id: "cpe301_ch4_135",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the `ALIGN 2` directive accomplish?",
@@ -1643,7 +1643,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "ALIGN 2 forces the location counter to the next even address (word boundary) to optimize CPU access.",
   },
   {
-    id: "cpe301_136",
+    id: "cpe301_ch4_136",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `myBytes` is defined as `BYTE 10h, 20h, 30h, 40h`, what is the value of `LENGTHOF myBytes`?",
@@ -1653,7 +1653,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LENGTHOF counts the number of initializers. There are 4 bytes.",
   },
   {
-    id: "cpe301_137",
+    id: "cpe301_ch4_137",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `myArray` is `DWORD 1, 2, 3`, what is `SIZEOF myArray`?",
@@ -1662,7 +1662,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "SIZEOF = LENGTHOF (3) * TYPE (4) = 12 bytes.",
   },
   {
-    id: "cpe301_138",
+    id: "cpe301_ch4_138",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which flag is set when an arithmetic operation results in a carry out of the most significant bit of the result?",
@@ -1677,7 +1677,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Carry Flag (CF) tracks the carry out of the MSB for unsigned arithmetic.",
   },
   {
-    id: "cpe301_139",
+    id: "cpe301_ch4_139",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the primary use of the Overflow Flag (OF)?",
@@ -1692,7 +1692,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Overflow Flag is specifically for signed arithmetic, indicating the result is invalid for the storage size.",
   },
   {
-    id: "cpe301_140",
+    id: "cpe301_ch4_140",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: The `XCHG` instruction can accept immediate values (constants) as operands.",
@@ -1702,7 +1702,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "XCHG requires two mutable locations (registers or memory) to swap data; constants cannot be changed.",
   },
   {
-    id: "cpe301_141",
+    id: "cpe301_ch4_141",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction subtracts the source operand from the destination?",
@@ -1711,7 +1711,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "SUB dest, source performs dest = dest - source.",
   },
   {
-    id: "cpe301_142",
+    id: "cpe301_ch4_142",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the result of `NEG 0`?",
@@ -1721,7 +1721,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Negating zero results in zero. The Carry flag is cleared (0) only when the operand is 0; otherwise it is set.",
   },
   {
-    id: "cpe301_143",
+    id: "cpe301_ch4_143",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which operator allows you to treat a variable as a different size than declared?",
@@ -1731,7 +1731,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The PTR operator overrides the declared size (e.g., `WORD PTR [eax]`).",
   },
   {
-    id: "cpe301_144",
+    id: "cpe301_ch4_144",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What does the `LABEL` directive do?",
@@ -1746,7 +1746,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "LABEL creates a name and size attribute for the current location without allocating storage.",
   },
   {
-    id: "cpe301_145",
+    id: "cpe301_ch4_145",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which register is known as the 'Counter Register'?",
@@ -1756,7 +1756,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "ECX (Count Register) is used for loops and string operations.",
   },
   {
-    id: "cpe301_146",
+    id: "cpe301_ch4_146",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: `JMP` is a conditional transfer instruction.",
@@ -1766,7 +1766,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "JMP is an UNconditional transfer. Conditional jumps are JE, JNE, etc.",
   },
   {
-    id: "cpe301_147",
+    id: "cpe301_ch4_147",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "How many times does the loop execute? `mov ecx, 3` `L1: dec ecx` `loop L1`",
@@ -1776,7 +1776,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Inside the loop, `dec ecx` reduces count. Then `loop` decrements it *again*. Logic error likely leads to infinite loop or unexpected behavior as ECX skips 0.",
   },
   {
-    id: "cpe301_148",
+    id: "cpe301_ch4_148",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In 64-bit mode, arithmetic on a 32-bit register (e.g., `ADD EAX, EBX`) affects:",
@@ -1791,7 +1791,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "In 64-bit mode, the result of a 32-bit operation is zero-extended to the upper 32 bits of the destination 64-bit register.",
   },
   {
-    id: "cpe301_149",
+    id: "cpe301_ch4_149",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What represents the Auxiliary Carry Flag symbol in the Visual Studio debugger?",
@@ -1800,7 +1800,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The symbol for Auxiliary Carry in the debugger is AC.",
   },
   {
-    id: "cpe301_150",
+    id: "cpe301_ch4_150",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "To reverse an array in place, which addressing method is most suitable?",
@@ -1815,7 +1815,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Using two pointers (e.g., ESI at start, EDI at end) and moving them towards each other is the standard way to reverse an array.",
   },
   {
-    id: "cpe301_151",
+    id: "cpe301_ch4_151",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `TYPE` returns 2, what data type is the operand?",
@@ -1824,7 +1824,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "TYPE 2 corresponds to a 2-byte WORD.",
   },
   {
-    id: "cpe301_152",
+    id: "cpe301_ch4_152",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction is used to reverse the sign of an integer?",
@@ -1833,7 +1833,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "NEG (Negate) reverses the sign (Two's Complement).",
   },
   {
-    id: "cpe301_153",
+    id: "cpe301_ch4_153",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the instruction `MOV EAX, [EBX + ESI]`, what addressing mode is used?",
@@ -1843,7 +1843,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "Base-Indexed addressing uses a base register (EBX) plus an index register (ESI).",
   },
   {
-    id: "cpe301_154",
+    id: "cpe301_ch4_154",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which of the following is true about the `JMP` instruction?",
@@ -1858,7 +1858,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "JMP works by loading the target address into the instruction pointer.",
   },
   {
-    id: "cpe301_155",
+    id: "cpe301_ch4_155",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "True or False: `MOVZX` can be used with a signed source operand to preserve the sign.",
@@ -1868,7 +1868,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "False. MOVZX zero-extends, which destroys negative signs. MOVSX must be used for signed values.",
   },
   {
-    id: "cpe301_156",
+    id: "cpe301_ch4_156",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "If `EAX` is 100, what is the value after `NEG EAX`?",
@@ -1877,7 +1877,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "NEG converts 100 to -100.",
   },
   {
-    id: "cpe301_157",
+    id: "cpe301_ch4_157",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "When debugging, which window allows you to view the individual CPU flags?",
@@ -1887,7 +1887,7 @@ const cpe301Chapter4: QuestionV2[] = [
       "The Registers window (often with a right-click 'Flags' option) shows CPU flags.",
   },
   {
-    id: "cpe301_158",
+    id: "cpe301_ch4_158",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "What is the result of `TYPE` applied to a `BYTE` variable?",
@@ -1896,7 +1896,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "A BYTE is 1 byte in size.",
   },
   {
-    id: "cpe301_159",
+    id: "cpe301_ch4_159",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "In the instruction `ADD EAX, EBX`, which operand is the destination?",
@@ -1905,7 +1905,7 @@ const cpe301Chapter4: QuestionV2[] = [
     explanation: "The first operand (EAX) is the destination.",
   },
   {
-    id: "cpe301_160",
+    id: "cpe301_ch4_160",
     course: "CPE301",
     chapter: "Chapter 4",
     text: "Which instruction copies the low byte of the EFLAGS register into AH?",

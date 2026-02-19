@@ -3,7 +3,7 @@ import { QuestionV2 } from "@/lib/quiz-types";
 const cpe301Chapter3: QuestionV2[] = [
   // SECTION 3.1: Basic Language Elements
   {
-    id: "CPE301_001",
+    id: "CPE301_ch3_001",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following best distinguishes an Assembly Language 'directive' from an 'instruction'?",
@@ -18,7 +18,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Directives (like .data, DWORD, .code) guide the assembler's process but do not run on the CPU. Instructions (like MOV, ADD) are translated into machine code and executed by the processor.",
   },
   {
-    id: "CPE301_002",
+    id: "CPE301_ch3_002",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following is a valid integer literal in MASM syntax assuming the default radix is decimal?",
@@ -28,7 +28,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "'30h' is a valid hexadecimal literal (30 hex = 48 decimal) and '101b' is a valid binary literal (101 binary = 5 decimal). '1A' is NOT a valid integer literal because it contains a non-decimal character ('A') but has no radix suffix ('h' for hex). Without the 'h' suffix, MASM treats it as an identifier, not a number.",
   },
   {
-    id: "CPE301_003",
+    id: "CPE301_ch3_003",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "According to MASM identifier rules, which of the following is an INVALID identifier?",
@@ -38,7 +38,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Identifiers cannot begin with a numeric digit. They must begin with a letter, underscore, @, ?, or $.",
   },
   {
-    id: "CPE301_004",
+    id: "CPE301_ch3_004",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the primary function of the NOP instruction?",
@@ -53,7 +53,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "NOP (No Operation) takes up 1 byte and does nothing. It is used by compilers/assemblers to align code to efficient address boundaries.",
   },
   {
-    id: "CPE301_005",
+    id: "CPE301_ch3_005",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following is NOT a reserved word in MASM?",
@@ -63,7 +63,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "MOV (mnemonic), EAX (register), and .CODE (directive) are reserved words. LoopCounter is a user-defined identifier.",
   },
   {
-    id: "CPE301_006",
+    id: "CPE301_ch3_006",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: In MASM, a code label must always end with a colon (:), whereas a data label typically does not.",
@@ -73,7 +73,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Code labels (targets for jumps) must end with a colon. Data labels (variable names) do not end with a colon.",
   },
   {
-    id: "CPE301_007",
+    id: "CPE301_ch3_007",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the machine code hexadecimal value for the NOP instruction?",
@@ -83,7 +83,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The text explicitly mentions: '00000003 90 nop'. The opcode for NOP is 90h.",
   },
   {
-    id: "CPE301_008",
+    id: "CPE301_ch3_008",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive marks the beginning of the code segment?",
@@ -93,7 +93,7 @@ const cpe301Chapter3: QuestionV2[] = [
       ".CODE identifies the area of a program containing executable instructions.",
   },
   {
-    id: "CPE301_009",
+    id: "CPE301_ch3_009",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "When defining a real number literal in MASM, how is 'encoded real' format represented?",
@@ -108,7 +108,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "An encoded real represents a real number in hexadecimal using the 'r' suffix (e.g., 3F800000r).",
   },
   {
-    id: "CPE301_010",
+    id: "CPE301_ch3_010",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In the instruction 'MOV EAX, 5', what role does '5' play?",
@@ -125,7 +125,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // SECTION 3.2: Example Program & Debugging
   {
-    id: "CPE301_011",
+    id: "CPE301_ch3_011",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the purpose of the 'ExitProcess' function in a MASM program?",
@@ -140,7 +140,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "ExitProcess is a Windows service that halts the program and returns control to the OS.",
   },
   {
-    id: "CPE301_012",
+    id: "CPE301_ch3_012",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "The directive '.386' in an assembly program indicates:",
@@ -155,7 +155,7 @@ const cpe301Chapter3: QuestionV2[] = [
       ".386 identifies the program as a 32-bit program that can access 32-bit registers and addresses.",
   },
   {
-    id: "CPE301_013",
+    id: "CPE301_ch3_013",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In the 'flat' memory model used by 32-bit Windows programs, which mode of the processor is primarily used?",
@@ -170,7 +170,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The flat memory model is associated with the processor's Protected Mode.",
   },
   {
-    id: "CPE301_014",
+    id: "CPE301_ch3_014",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The 'PROTO' directive is used to define the implementation details of a procedure within the current source file.",
@@ -180,7 +180,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "False. PROTO declares a *prototype* (name and parameters) for a function, often one defined externally or in a library. The PROC directive is used to define the implementation.",
   },
   {
-    id: "CPE301_015",
+    id: "CPE301_ch3_015",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "While debugging in Visual Studio, what does the 'Step Over' command do?",
@@ -195,7 +195,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Step Over executes the current instruction. If it's a function call, it runs the function and pauses at the line *after* the call, avoiding stepping into the function code.",
   },
   {
-    id: "CPE301_016",
+    id: "CPE301_ch3_016",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does a return value of '0' passed to ExitProcess usually indicate?",
@@ -212,7 +212,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // SECTION 3.3: Assembling, Linking, Running
   {
-    id: "CPE301_017",
+    id: "CPE301_ch3_017",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which utility is responsible for combining object files and link libraries into a final executable file?",
@@ -222,7 +222,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The Linker combines object files and resolves calls to library procedures to create the executable.",
   },
   {
-    id: "CPE301_018",
+    id: "CPE301_ch3_018",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What file type is produced directly by the Assembler?",
@@ -236,7 +236,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "The assembler reads source files and produces object files.",
   },
   {
-    id: "CPE301_019",
+    id: "CPE301_ch3_019",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which file contains a copy of the source code, line numbers, numeric addresses, machine code bytes, and a symbol table?",
@@ -251,7 +251,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The Listing File contains detailed information about the assembly process, including machine code and addresses alongside source code.",
   },
   {
-    id: "CPE301_020",
+    id: "CPE301_ch3_020",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which component reads the executable file into memory and branches the CPU to the program's starting address?",
@@ -266,7 +266,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Step 4 of the cycle: The operating system loader reads the executable into memory and starts execution.",
   },
   {
-    id: "CPE301_021",
+    id: "CPE301_ch3_021",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If a source file is modified, which steps must occur before the changes are reflected in the executable?",
@@ -283,7 +283,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // SECTION 3.4: Defining Data - Types and Storage
   {
-    id: "CPE301_022",
+    id: "CPE301_ch3_022",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which data directive is used to define a 32-bit unsigned integer?",
@@ -292,7 +292,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "DWORD (Double Word) defines a 32-bit integer.",
   },
   {
-    id: "CPE301_023",
+    id: "CPE301_ch3_023",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "How many bits of storage does a 'QWORD' occupy?",
@@ -301,7 +301,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "QWORD (Quad Word) is 64 bits (8 bytes).",
   },
   {
-    id: "CPE301_024",
+    id: "CPE301_ch3_024",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which legacy directive corresponds to the intrinsic type 'WORD'?",
@@ -310,7 +310,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "DW (Define Word) corresponds to the WORD type (16-bit).",
   },
   {
-    id: "CPE301_025",
+    id: "CPE301_ch3_025",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the primary usage of the 'TBYTE' directive?",
@@ -325,7 +325,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "TBYTE defines an 80-bit (10-byte) integer, often used for Packed BCD or Extended Precision Floats.",
   },
   {
-    id: "CPE301_026",
+    id: "CPE301_ch3_026",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The '?' initializer in a data definition causes the variable to be initialized to zero.",
@@ -335,7 +335,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The '?' initializer leaves the variable uninitialized (undefined value), not necessarily zero.",
   },
   {
-    id: "CPE301_027",
+    id: "CPE301_ch3_027",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Consider the definition: `myArray WORD 10, 20, 30`. If `myArray` is at offset 0000, what is the offset of the value `30`?",
@@ -345,7 +345,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "WORD is 2 bytes. 10 is at 0000. 20 is at 0002. 30 is at 0004.",
   },
   {
-    id: "CPE301_028",
+    id: "CPE301_ch3_028",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which operator is used to allocate storage for multiple data items using a counter?",
@@ -355,7 +355,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The DUP operator creates repeated storage allocation (e.g., `20 DUP(0)`).",
   },
   {
-    id: "CPE301_029",
+    id: "CPE301_ch3_029",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "How are x86 integers stored in memory?",
@@ -370,7 +370,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "x86 processors use Little-Endian order (least significant byte at the lowest address).",
   },
   {
-    id: "CPE301_030",
+    id: "CPE301_ch3_030",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If EAX contains 12345678h, and it is stored in memory at address 0000 using Little-Endian, what byte is at address 0000?",
@@ -380,7 +380,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Little-Endian stores the LSB (78h) at the lowest address (0000).",
   },
   {
-    id: "CPE301_031",
+    id: "CPE301_ch3_031",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive allows for the declaration of uninitialized data to reduce the size of the compiled program?",
@@ -390,7 +390,7 @@ const cpe301Chapter3: QuestionV2[] = [
       ".DATA? is used for uninitialized data. It does not occupy space in the compiled executable on disk, unlike initialized data.",
   },
   {
-    id: "CPE301_032",
+    id: "CPE301_ch3_032",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Consider `val1 SWORD -32768`. What does SWORD indicate?",
@@ -399,7 +399,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "SWORD stands for Signed Word (16-bit signed integer).",
   },
   {
-    id: "CPE301_033",
+    id: "CPE301_ch3_033",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "How many bytes of storage does a 'REAL8' variable require?",
@@ -409,7 +409,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "REAL8 defines an 8-byte double-precision floating-point value.",
   },
   {
-    id: "CPE301_034",
+    id: "CPE301_ch3_034",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following defines a string that is null-terminated?",
@@ -425,7 +425,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // SECTION 3.5: Symbolic Constants
   {
-    id: "CPE301_035",
+    id: "CPE301_ch3_035",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive associates a symbol name with an integer expression and ALLOWS redefinition later in the program?",
@@ -435,7 +435,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The equal-sign directive (=) allows symbols to be redefined. EQU does not.",
   },
   {
-    id: "CPE301_036",
+    id: "CPE301_ch3_036",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does the symbol '$' represent in MASM data definitions?",
@@ -450,7 +450,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "$ is the current location counter, representing the current offset address.",
   },
   {
-    id: "CPE301_037",
+    id: "CPE301_ch3_037",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Given `list BYTE 10, 20, 30, 40`, which expression correctly calculates the size of the array?",
@@ -465,7 +465,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "($ - list) calculates the difference between the current location (after the array) and the start of the array.",
   },
   {
-    id: "CPE301_038",
+    id: "CPE301_ch3_038",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive creates a 'text macro' that can be assigned arbitrary text?",
@@ -475,7 +475,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "TEXTEQU creates a text macro where the symbol is replaced by the assigned text.",
   },
   {
-    id: "CPE301_039",
+    id: "CPE301_ch3_039",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: A symbol defined with the EQU directive cannot be redefined later in the same source code file.",
@@ -485,7 +485,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "True. EQU constants are permanent within the source file and cannot be redefined, unlike =.",
   },
   {
-    id: "CPE301_040",
+    id: "CPE301_ch3_040",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "When calculating the number of elements in a DWORD array using `$`, why must you divide by 4?",
@@ -502,7 +502,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // SECTION 3.6: 64-bit Programming
   {
-    id: "CPE301_041",
+    id: "CPE301_ch3_041",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In 64-bit MASM programming, which register is used as the 64-bit accumulator (equivalent to EAX)?",
@@ -511,7 +511,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "RAX is the 64-bit version of the EAX register.",
   },
   {
-    id: "CPE301_042",
+    id: "CPE301_ch3_042",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive is NOT supported in the 64-bit version of MASM?",
@@ -521,7 +521,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The text states: 'The 64-bit version of MASM does not support the INVOKE directive.'",
   },
   {
-    id: "CPE301_043",
+    id: "CPE301_ch3_043",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "How does the `PROTO` directive differ in 64-bit programs compared to 32-bit?",
@@ -536,7 +536,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "In 64-bit MASM, statements using PROTO do not have parameters (e.g., `ExitProcess PROTO`).",
   },
   {
-    id: "CPE301_044",
+    id: "CPE301_ch3_044",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines an 80-bit integer?",
@@ -547,7 +547,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // MIXED & SCENARIO QUESTIONS
   {
-    id: "CPE301_045",
+    id: "CPE301_ch3_045",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "You are defining an array of 50 uninitialized 32-bit integers. Which declaration is most efficient?",
@@ -562,7 +562,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "DUP(?) creates uninitialized data, which is preferred for efficiency if specific initial values aren't needed.",
   },
   {
-    id: "CPE301_046",
+    id: "CPE301_ch3_046",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If you want to define a constant for PI (3.1416), which directive is most appropriate?",
@@ -577,7 +577,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The equal-sign directive (=) is for integers. EQU with text brackets <...> works for real number text substitution.",
   },
   {
-    id: "CPE301_047",
+    id: "CPE301_ch3_047",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the sequence of bytes for `val1 DWORD 12345678h` in Little-Endian memory?",
@@ -586,7 +586,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "LSB (78) first, then 56, 34, MSB (12) last.",
   },
   {
-    id: "CPE301_048",
+    id: "CPE301_ch3_048",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following lines causes a syntax error?",
@@ -600,7 +600,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "BYTE fits 0-255. 300 exceeds the 8-bit limit.",
   },
   {
-    id: "CPE301_050",
+    id: "CPE301_ch3_050",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The `.stack 4096` directive reserves 4096 bits of stack space.",
@@ -609,7 +609,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "False. It reserves 4096 *bytes*, not bits.",
   },
   {
-    id: "CPE301_051",
+    id: "CPE301_ch3_051",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the size of the following array in bytes? `myArray WORD 10 DUP(?)`",
@@ -618,7 +618,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "WORD is 2 bytes. 10 elements * 2 bytes = 20 bytes.",
   },
   {
-    id: "CPE301_052",
+    id: "CPE301_ch3_052",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which legacy directive creates a 64-bit variable?",
@@ -627,7 +627,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "DQ (Define Quadword) creates a 64-bit variable.",
   },
   {
-    id: "CPE301_053",
+    id: "CPE301_ch3_053",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the purpose of the `END main` directive?",
@@ -642,7 +642,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "END marks the end of the source module and the label 'main' specifies where execution begins.",
   },
   {
-    id: "CPE301_054",
+    id: "CPE301_ch3_054",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction is used to move a value from one location to another?",
@@ -651,7 +651,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "MOV is the mnemonic for the move instruction.",
   },
   {
-    id: "CPE301_055",
+    id: "CPE301_ch3_055",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following is an example of an instruction mnemonic?",
@@ -661,7 +661,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "ADD is an instruction. .code is a directive. DWORD is a type/directive. eax is a register/operand.",
   },
   {
-    id: "CPE301_056",
+    id: "CPE301_ch3_056",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "When defining a packed BCD integer, which directive must be used?",
@@ -670,7 +670,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "TBYTE is used for 80-bit packed BCD integers.",
   },
   {
-    id: "CPE301_058",
+    id: "CPE301_ch3_058",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In the Listing File, what does the first column typically represent?",
@@ -685,7 +685,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Typically, the listing shows address offset, then machine code, then source.",
   },
   {
-    id: "CPE301_059",
+    id: "CPE301_ch3_059",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: A `WORD` variable can hold the value 70000.",
@@ -694,7 +694,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "False. An unsigned WORD (16-bit) maxes out at 65535.",
   },
   {
-    id: "CPE301_060",
+    id: "CPE301_ch3_060",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "How many significant digits does a `REAL4` (Short Real) typically support?",
@@ -706,7 +706,7 @@ const cpe301Chapter3: QuestionV2[] = [
 
   // Continuing with more variations and depth...
   {
-    id: "CPE301_061",
+    id: "CPE301_ch3_061",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If you declare `val1 SBYTE -128`, what is the binary representation in memory (Two's Complement)?",
@@ -715,7 +715,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "-128 in 8-bit two's complement is 10000000.",
   },
   {
-    id: "CPE301_062",
+    id: "CPE301_ch3_062",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following is the correct syntax to define a 16-bit variable named `myCount` initialized to 0?",
@@ -730,7 +730,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Both `WORD` and legacy `DW` can be used to define a 16-bit variable.",
   },
   {
-    id: "CPE301_063",
+    id: "CPE301_ch3_063",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the function of the `stdcall` keyword in the `.model` directive?",
@@ -745,7 +745,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "stdcall specifies the calling convention, crucial for Windows API calls.",
   },
   {
-    id: "CPE301_064",
+    id: "CPE301_ch3_064",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In the instruction `ADD EAX, EBX`, which is the destination operand?",
@@ -755,7 +755,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The first operand (EAX) is the destination where the result is stored.",
   },
   {
-    id: "CPE301_065",
+    id: "CPE301_ch3_065",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What file extension is typically given to the Listing File?",
@@ -764,7 +764,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: ".lst is the standard extension for listing files.",
   },
   {
-    id: "CPE301_066",
+    id: "CPE301_ch3_066",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following statements creates a variable containing the carriage-return and line-feed characters?",
@@ -774,7 +774,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "0Dh (13 decimal) is the Carriage Return and 0Ah (10 decimal) is the Line Feed. This hex notation is the standard form shown in MASM textbook examples for defining CR/LF bytes.",
   },
   {
-    id: "CPE301_067",
+    id: "CPE301_ch3_067",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: Identifier names in MASM are case-sensitive by default.",
@@ -783,7 +783,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "MASM is not case-sensitive by default (MOV is same as mov).",
   },
   {
-    id: "CPE301_068",
+    id: "CPE301_ch3_068",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `list` is at offset 100, and `ListSize = ($ - list)`, what does `$` represent at that moment?",
@@ -798,7 +798,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "$ represents the current location counter, which would be the address immediately after the allocated array.",
   },
   {
-    id: "CPE301_069",
+    id: "CPE301_ch3_069",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which register is often used as an accumulator in arithmetic operations?",
@@ -807,7 +807,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "EAX (Accumulator) is the primary register for arithmetic.",
   },
   {
-    id: "CPE301_070",
+    id: "CPE301_ch3_070",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Why might a programmer use the `TEXTEQU` directive?",
@@ -822,7 +822,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "TEXTEQU creates text macros, allowing symbolic names for arbitrary text or code snippets.",
   },
   {
-    id: "CPE301_071",
+    id: "CPE301_ch3_071",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which operator would you use to define an array of 20 uninitialized BYTEs?",
@@ -837,7 +837,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "DUP(?) creates uninitialized data. DUP(0) would initialize them to zero.",
   },
   {
-    id: "CPE301_072",
+    id: "CPE301_ch3_072",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the decimal value of the hex literal `0A3h`?",
@@ -846,7 +846,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "A=10. 10*16 + 3 = 163.",
   },
   {
-    id: "CPE301_073",
+    id: "CPE301_ch3_073",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "The directive `.model flat` implies which type of memory addressing?",
@@ -860,7 +860,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: ".model flat is standard for Win32 protected mode.",
   },
   {
-    id: "CPE301_074",
+    id: "CPE301_ch3_074",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction pushes parameters onto the stack and calls a procedure in one line (in 32-bit MASM)?",
@@ -870,7 +870,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "INVOKE is a high-level directive that handles pushing parameters and calling the function.",
   },
   {
-    id: "CPE301_075",
+    id: "CPE301_ch3_075",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does the `IMUL` instruction do?",
@@ -884,7 +884,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "IMUL performs signed integer multiplication.",
   },
   {
-    id: "CPE301_076",
+    id: "CPE301_ch3_076",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `myList` is an array of DWORDs, what is the proper way to calculate its number of elements?",
@@ -898,7 +898,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "Size in bytes divided by element size (4 bytes for DWORD).",
   },
   {
-    id: "CPE301_077",
+    id: "CPE301_ch3_077",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which character is used to indicate a comment in MASM?",
@@ -907,7 +907,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "Semicolon (;) starts a single-line comment.",
   },
   {
-    id: "CPE301_078",
+    id: "CPE301_ch3_078",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The `NOP` instruction is often used to align code to even address boundaries.",
@@ -916,7 +916,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "True. It pads code to align addresses for performance.",
   },
   {
-    id: "CPE301_079",
+    id: "CPE301_ch3_079",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines a 48-bit integer (Far pointer)?",
@@ -925,7 +925,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "FWORD (Far Word) defines a 48-bit integer.",
   },
   {
-    id: "CPE301_080",
+    id: "CPE301_ch3_080",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the binary representation of the octal literal `42q`?",
@@ -934,7 +934,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "Octal 4 = 100, Octal 2 = 010. Combined: 100010.",
   },
   {
-    id: "CPE301_081",
+    id: "CPE301_ch3_081",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which register contains the status flags (Zero, Carry, etc.)?",
@@ -943,7 +943,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "EFL / EFLAGS register holds the status flags.",
   },
   {
-    id: "CPE301_082",
+    id: "CPE301_ch3_082",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In the Listing File, bytes like `B8 00000005` represent:",
@@ -958,7 +958,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "These are the hexadecimal representations of the machine instructions.",
   },
   {
-    id: "CPE301_083",
+    id: "CPE301_ch3_083",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which statement defines a constant `COUNT` equal to 500?",
@@ -968,7 +968,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "COUNT = 500 defines a symbolic constant using the equal-sign directive.",
   },
   {
-    id: "CPE301_084",
+    id: "CPE301_ch3_084",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The `INVOKE` directive is available in 64-bit MASM.",
@@ -977,7 +977,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "False. 64-bit MASM does not support INVOKE.",
   },
   {
-    id: "CPE301_085",
+    id: "CPE301_ch3_085",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines a segment for uninitialized variables?",
@@ -986,7 +986,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: ".DATA? is specifically for uninitialized data.",
   },
   {
-    id: "CPE301_086",
+    id: "CPE301_ch3_086",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In the instruction `mov eax, 5`, the value `5` is an example of:",
@@ -1001,7 +1001,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "A literal constant used as an operand is called an immediate operand.",
   },
   {
-    id: "CPE301_087",
+    id: "CPE301_ch3_087",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does the suffix 'r' indicate in `3F800000r`?",
@@ -1011,7 +1011,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The 'r' suffix indicates an encoded real (floating point) literal in hex.",
   },
   {
-    id: "CPE301_088",
+    id: "CPE301_ch3_088",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following creates a block comment?",
@@ -1021,7 +1021,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The COMMENT directive allows block comments with a user-defined delimiter (like !).",
   },
   {
-    id: "CPE301_089",
+    id: "CPE301_ch3_089",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `myWord` is a WORD variable, how much is the address incremented to reach the next WORD in an array?",
@@ -1030,7 +1030,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "A WORD is 2 bytes, so the address increments by 2.",
   },
   {
-    id: "CPE301_090",
+    id: "CPE301_ch3_090",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is a 'memory operand'?",
@@ -1045,7 +1045,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "An operand that refers to data in memory (like a variable name) is a memory operand.",
   },
   {
-    id: "CPE301_091",
+    id: "CPE301_ch3_091",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines a 10-byte extended precision real?",
@@ -1054,7 +1054,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "REAL10 defines a 10-byte (80-bit) extended real.",
   },
   {
-    id: "CPE301_092",
+    id: "CPE301_ch3_092",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The assembler produces an Object File (.obj) that contains executable machine code ready to run.",
@@ -1064,7 +1064,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "False. The object file must be LINKED to create an executable.",
   },
   {
-    id: "CPE301_093",
+    id: "CPE301_ch3_093",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive is used to specify the stack size?",
@@ -1073,7 +1073,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: ".STACK <size> reserves stack space.",
   },
   {
-    id: "CPE301_094",
+    id: "CPE301_ch3_094",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the hexadecimal representation of the binary `1101b`?",
@@ -1082,7 +1082,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "1101 = 8+4+0+1 = 13 = D in hex.",
   },
   {
-    id: "CPE301_095",
+    id: "CPE301_ch3_095",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction adds a source operand to a destination operand?",
@@ -1091,7 +1091,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "ADD is the mnemonic.",
   },
   {
-    id: "CPE301_096",
+    id: "CPE301_ch3_096",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the maximum number of characters in a MASM identifier?",
@@ -1100,7 +1100,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "MASM identifiers may contain between 1 and 247 characters.",
   },
   {
-    id: "CPE301_097",
+    id: "CPE301_ch3_097",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive identifies the entry point of the program?",
@@ -1110,7 +1110,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The END directive (e.g., `END main`) specifies the program entry point.",
   },
   {
-    id: "CPE301_098",
+    id: "CPE301_ch3_098",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In 64-bit programming, pointers are how many bits wide?",
@@ -1119,7 +1119,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "In 64-bit mode, addresses/pointers are 64 bits.",
   },
   {
-    id: "CPE301_099",
+    id: "CPE301_ch3_099",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The `EQU` directive creates a symbol that uses no memory storage.",
@@ -1129,7 +1129,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "True. EQU creates a symbolic constant replaced at compile time; it does not reserve memory.",
   },
   {
-    id: "CPE301_100",
+    id: "CPE301_ch3_100",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `val1 DWORD 1`, what is the size of `val1`?",
@@ -1138,7 +1138,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "DWORD is 32 bits = 4 bytes.",
   },
   {
-    id: "CPE301_101",
+    id: "CPE301_ch3_101",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the effect of `myStr BYTE 20 DUP(0)`?",
@@ -1152,7 +1152,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "Allocates 20 bytes, each initialized to 0.",
   },
   {
-    id: "CPE301_102",
+    id: "CPE301_ch3_102",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction is used to perform a 'no operation' cycle?",
@@ -1161,7 +1161,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "NOP (No Operation).",
   },
   {
-    id: "CPE301_103",
+    id: "CPE301_ch3_103",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following is a legacy data directive for a 32-bit integer?",
@@ -1171,7 +1171,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "DD (Define Doubleword) is the legacy directive for 32-bit data.",
   },
   {
-    id: "CPE301_104",
+    id: "CPE301_ch3_104",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If you define `val1 REAL4 -1.2`, what type of data is this?",
@@ -1180,7 +1180,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "REAL4 is a single-precision floating-point number.",
   },
   {
-    id: "CPE301_105",
+    id: "CPE301_ch3_105",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The `EXITPROCESS` function must be called to properly terminate a Windows assembly program.",
@@ -1189,7 +1189,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "True. It returns control to the OS.",
   },
   {
-    id: "CPE301_106",
+    id: "CPE301_ch3_106",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which register is a 64-bit general purpose register?",
@@ -1198,7 +1198,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "RAX is 64-bit. EAX is 32-bit. AX is 16-bit. AL is 8-bit.",
   },
   {
-    id: "CPE301_107",
+    id: "CPE301_ch3_107",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does the `OFFSET` operator do?",
@@ -1213,7 +1213,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "OFFSET returns the distance of the variable from the beginning of its segment.",
   },
   {
-    id: "CPE301_108",
+    id: "CPE301_ch3_108",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "In `mov eax, [ebx]`, what type of operand is `[ebx]`?",
@@ -1223,7 +1223,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Brackets indicate dereferencing (using the address in EBX), known as indirect memory addressing.",
   },
   {
-    id: "CPE301_109",
+    id: "CPE301_ch3_109",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines an 8-bit signed integer?",
@@ -1232,7 +1232,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "SBYTE defines a signed byte.",
   },
   {
-    id: "CPE301_110",
+    id: "CPE301_ch3_110",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `count = 500`, and you write `mov eax, count`, what code is generated?",
@@ -1247,7 +1247,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The `=` directive performs text substitution of the value. The code becomes `mov eax, 500`.",
   },
   {
-    id: "CPE301_111",
+    id: "CPE301_ch3_111",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which status flag indicates that the result of an operation is zero?",
@@ -1256,7 +1256,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "ZF (Zero Flag).",
   },
   {
-    id: "CPE301_112",
+    id: "CPE301_ch3_112",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the typical use of the `CDQ` instruction?",
@@ -1271,7 +1271,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "CDQ extends the sign bit of EAX into EDX, converting a doubleword to a quadword (often for division).",
   },
   {
-    id: "CPE301_113",
+    id: "CPE301_ch3_113",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: `list BYTE 10, 20` defines two bytes at consecutive addresses.",
@@ -1280,7 +1280,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "True. They are stored sequentially.",
   },
   {
-    id: "CPE301_114",
+    id: "CPE301_ch3_114",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What happens if you define `myStr BYTE 'A', 0, 'B'`?",
@@ -1295,7 +1295,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "The 0 terminates the first string. 'B' is just the next byte in memory.",
   },
   {
-    id: "CPE301_115",
+    id: "CPE301_ch3_115",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which assembler directive allows conditional assembly?",
@@ -1304,7 +1304,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "IF (and related directives) allow conditional assembly.",
   },
   {
-    id: "CPE301_116",
+    id: "CPE301_ch3_116",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the purpose of the `INCLUDE` directive?",
@@ -1318,7 +1318,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "INCLUDE textually inserts another file's content.",
   },
   {
-    id: "CPE301_117",
+    id: "CPE301_ch3_117",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `myVal` is 1234h, and you `MOV AL, BYTE PTR myVal`, what is in AL?",
@@ -1328,7 +1328,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "Little-endian: 34h is at the lowest address. AL gets the low byte.",
   },
   {
-    id: "CPE301_118",
+    id: "CPE301_ch3_118",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines the memory model as flat?",
@@ -1337,7 +1337,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: ".MODEL FLAT specifies the flat memory model.",
   },
   {
-    id: "CPE301_120",
+    id: "CPE301_ch3_120",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: `main PROC` marks the start of the main procedure.",
@@ -1346,7 +1346,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "True. PROC directives define the start of procedures.",
   },
   {
-    id: "CPE301_121",
+    id: "CPE301_ch3_121",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does the instruction `INC EAX` do?",
@@ -1360,7 +1360,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "INC increments the operand by 1.",
   },
   {
-    id: "CPE301_122",
+    id: "CPE301_ch3_122",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the result of `DEC` instruction?",
@@ -1369,7 +1369,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "DEC decrements (subtracts 1).",
   },
   {
-    id: "CPE301_123",
+    id: "CPE301_ch3_123",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive is used to define a stack of 1024 bytes?",
@@ -1378,7 +1378,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: ".STACK directive takes the size in bytes.",
   },
   {
-    id: "CPE301_124",
+    id: "CPE301_ch3_124",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If `EAX` is 10, `ADD EAX, 5` results in:",
@@ -1387,7 +1387,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "10 + 5 = 15.",
   },
   {
-    id: "CPE301_125",
+    id: "CPE301_ch3_125",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does `SUB EAX, EBX` do?",
@@ -1401,7 +1401,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "Subtracts source (EBX) from destination (EAX).",
   },
   {
-    id: "CPE301_126",
+    id: "CPE301_ch3_126",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which of the following is an input-output instruction?",
@@ -1410,7 +1410,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "IN reads from a port. OUT writes to a port.",
   },
   {
-    id: "CPE301_127",
+    id: "CPE301_ch3_127",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The assembler generates machine code for comments.",
@@ -1419,7 +1419,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "False. Comments are ignored by the assembler.",
   },
   {
-    id: "CPE301_128",
+    id: "CPE301_ch3_128",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the purpose of the `NEG` instruction?",
@@ -1433,7 +1433,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "NEG performs a Two's Complement negation (multiplies by -1).",
   },
   {
-    id: "CPE301_129",
+    id: "CPE301_ch3_129",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction transfers control to a new location unconditionally?",
@@ -1442,7 +1442,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "JMP (Jump) is an unconditional transfer.",
   },
   {
-    id: "CPE301_130",
+    id: "CPE301_ch3_130",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does `JE` stand for?",
@@ -1451,7 +1451,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "Jump if Equal (conditional jump).",
   },
   {
-    id: "CPE301_131",
+    id: "CPE301_ch3_131",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which register is typically used as a loop counter?",
@@ -1460,7 +1460,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "ECX (Counter register).",
   },
   {
-    id: "CPE301_132",
+    id: "CPE301_ch3_132",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is the machine code for `MOV EAX, 5` (approximate/concept)?",
@@ -1470,7 +1470,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "B8 is the opcode for MOV EAX, imm32. 05 00 00 00 is the value 5.",
   },
   {
-    id: "CPE301_133",
+    id: "CPE301_ch3_133",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: `val1 BYTE ?` leaves `val1` uninitialized (its value is undefined).",
@@ -1480,7 +1480,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "True. The '?' initializer allocates space but does not set it to any specific value. The contents are undefined and will contain whatever was previously in that memory location.",
   },
   {
-    id: "CPE301_134",
+    id: "CPE301_ch3_134",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines an 80-bit integer?",
@@ -1489,7 +1489,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "TBYTE is 80-bit.",
   },
   {
-    id: "CPE301_135",
+    id: "CPE301_ch3_135",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "If you have `array WORD 10 DUP(1)`, what is the total size in bytes?",
@@ -1498,7 +1498,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "10 elements * 2 bytes/element = 20 bytes.",
   },
   {
-    id: "CPE301_136",
+    id: "CPE301_ch3_136",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does the `$` operator return in a data definition?",
@@ -1512,7 +1512,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "The current location counter ($) returns the current offset.",
   },
   {
-    id: "CPE301_137",
+    id: "CPE301_ch3_137",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction pushes a value onto the stack?",
@@ -1521,7 +1521,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "PUSH adds to the stack.",
   },
   {
-    id: "CPE301_138",
+    id: "CPE301_ch3_138",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction pops a value from the stack?",
@@ -1530,7 +1530,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "POP removes from the stack.",
   },
   {
-    id: "CPE301_139",
+    id: "CPE301_ch3_139",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: The stack grows downwards (towards lower addresses) on x86.",
@@ -1539,7 +1539,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "True. Pushing decrements the stack pointer.",
   },
   {
-    id: "CPE301_140",
+    id: "CPE301_ch3_140",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines a procedure?",
@@ -1548,7 +1548,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "PROC defines a procedure.",
   },
   {
-    id: "CPE301_141",
+    id: "CPE301_ch3_141",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive ends a procedure?",
@@ -1557,7 +1557,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "ENDP (End Procedure).",
   },
   {
-    id: "CPE301_142",
+    id: "CPE301_ch3_142",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What is `L1:` in the code `L1: MOV EAX, 0`?",
@@ -1566,7 +1566,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "L1: is a code label.",
   },
   {
-    id: "CPE301_143",
+    id: "CPE301_ch3_143",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which instruction effectively does `Destination = Destination * Source`?",
@@ -1576,7 +1576,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "IMUL (Signed Multiply) can take operands. MUL typically uses implicit operands.",
   },
   {
-    id: "CPE301_144",
+    id: "CPE301_ch3_144",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: `MOV` can move memory to memory.",
@@ -1586,7 +1586,7 @@ const cpe301Chapter3: QuestionV2[] = [
       "False. x86 MOV cannot move memory to memory directly; you must go through a register.",
   },
   {
-    id: "CPE301_146",
+    id: "CPE301_ch3_146",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What represents the `Extended Instruction Pointer`?",
@@ -1595,7 +1595,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "EIP is the instruction pointer.",
   },
   {
-    id: "CPE301_147",
+    id: "CPE301_ch3_147",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "What does `OFFSET var` return?",
@@ -1609,7 +1609,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "It returns the offset address.",
   },
   {
-    id: "CPE301_148",
+    id: "CPE301_ch3_148",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which type of operand is `100` in `MOV EAX, 100`?",
@@ -1618,7 +1618,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "100 is an immediate value.",
   },
   {
-    id: "CPE301_149",
+    id: "CPE301_ch3_149",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "True or False: `REAL4` is 32 bits.",
@@ -1627,7 +1627,7 @@ const cpe301Chapter3: QuestionV2[] = [
     explanation: "True. 4 bytes = 32 bits.",
   },
   {
-    id: "CPE301_150",
+    id: "CPE301_ch3_150",
     course: "CPE301",
     chapter: "Chapter 3",
     text: "Which directive defines a quadword (64 bits)?",

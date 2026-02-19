@@ -2,7 +2,7 @@ import { QuestionV2 } from "@/lib/quiz-types";
 
 export const csc311Chapter4_1: QuestionV2[] = [
   {
-    id: "csc311_001",
+    id: "csc311_ch41_001",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Who invented the first mechanical calculator in 1642?",
@@ -17,7 +17,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Blaise Pascal, a French mathematician and philosopher, invented the mechanical calculator in 1642 to add figures and provide information.",
   },
   {
-    id: "csc311_002",
+    id: "csc311_ch41_002",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "What did Herman Hollerith create for the 1890 census?",
@@ -32,7 +32,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Herman Hollerith created a punch card system to tabulate data for the 1890 census. His company later evolved into IBM.",
   },
   {
-    id: "csc311_003",
+    id: "csc311_ch41_003",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which company evolved from Herman Hollerith's data processing equipment company?",
@@ -47,7 +47,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Herman Hollerith's company evolved into International Business Machines (IBM), which became a major provider of data processing equipment.",
   },
   {
-    id: "csc311_004",
+    id: "csc311_ch41_004",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In which decade did increased enthusiasm for information systems to enhance management decision processes begin?",
@@ -57,7 +57,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In 1960, there was increased enthusiasm for information systems to enhance management decision processes, though mid-1960s accounting systems lacked capacity.",
   },
   {
-    id: "csc311_005",
+    id: "csc311_ch41_005",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "When did colleges and business schools create full four-year programs designed to study information systems?",
@@ -67,7 +67,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In 1970, colleges and business schools created full four-year programs designed to study information systems.",
   },
   {
-    id: "csc311_006",
+    id: "csc311_ch41_006",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "What significant development occurred in the 1980s regarding information systems?",
@@ -82,7 +82,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In 1980, PCs and LANs were installed. Departments set up their own computer systems using word processors and spreadsheets, becoming less dependent on IT departments.",
   },
   {
-    id: "csc311_007",
+    id: "csc311_ch41_007",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "What became corporate standards in the 1990s?",
@@ -97,7 +97,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In 1990, Wide Area Networks (WANs) became corporate standards, and management looked for system integration and data integration.",
   },
   {
-    id: "csc311_008",
+    id: "csc311_ch41_008",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which era in IS development is characterized by paper-based record keeping?",
@@ -112,7 +112,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The manual systems era was characterized by paper-based record keeping, before computerized systems were introduced.",
   },
   {
-    id: "csc311_009",
+    id: "csc311_ch41_009",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The data processing era (1950s-1960s) primarily used mainframe computers for which functions?",
@@ -127,7 +127,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The data processing era (1950s-1960s) used mainframe computers primarily for payroll and accounting functions.",
   },
   {
-    id: "csc311_010",
+    id: "csc311_ch41_010",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "What was the primary focus of Management Information Systems in the 1970s?",
@@ -142,7 +142,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Management Information Systems (MIS) in the 1970s focused on providing support for managerial decision-making.",
   },
   {
-    id: "csc311_011",
+    id: "csc311_ch41_011",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Decision Support Systems emerged in which decade?",
@@ -152,7 +152,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Decision Support Systems (DSS) emerged in the 1980s and were characterized as analytical and model-based systems.",
   },
   {
-    id: "csc311_012",
+    id: "csc311_ch41_012",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which systems are associated with the Enterprise Systems era of the 1990s?",
@@ -167,7 +167,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The Enterprise Systems era (1990s) featured ERP (Enterprise Resource Planning), CRM (Customer Relationship Management), and SCM (Supply Chain Management) integration.",
   },
   {
-    id: "csc311_013",
+    id: "csc311_ch41_013",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "What characterizes the Digital and Intelligent Systems era from 2000s to present?",
@@ -182,7 +182,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The Digital and Intelligent Systems era (2000s-present) is characterized by cloud computing, mobile systems, AI, and big data technologies.",
   },
   {
-    id: "csc311_014",
+    id: "csc311_ch41_014",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the definition, an Information System is described as:",
@@ -197,7 +197,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "An Information System is defined as a set of interrelated components that collect, manipulate, store, and disseminate data and information and provide a feedback mechanism to meet an objective.",
   },
   {
-    id: "csc311_015",
+    id: "csc311_ch41_015",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which of the following is NOT a core component of an Information System?",
@@ -212,7 +212,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The six core components of an Information System are hardware, software, data, people, procedures, and networks. Profit margins is not a component.",
   },
   {
-    id: "csc311_016",
+    id: "csc311_ch41_016",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In the context of IS components, what does 'hardware' refer to?",
@@ -227,7 +227,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Hardware refers to physical devices such as computers, servers, printers, scanners, and mobile devices used to input, process, store, and output information.",
   },
   {
-    id: "csc311_017",
+    id: "csc311_ch41_017",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which IS component includes operating systems and application software?",
@@ -237,7 +237,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Software consists of programs and applications that control hardware and process data, including operating systems and application software.",
   },
   {
-    id: "csc311_018",
+    id: "csc311_ch41_018",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Raw facts and figures stored in files or databases are referred to as:",
@@ -247,7 +247,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Data refers to raw facts and figures stored in files or databases that are processed to produce meaningful information.",
   },
   {
-    id: "csc311_019",
+    id: "csc311_ch41_019",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which IS component includes end users, managers, and IT personnel?",
@@ -257,7 +257,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "People includes individuals who use, manage, develop, and maintain the information system, including end users, managers, and IT personnel.",
   },
   {
-    id: "csc311_020",
+    id: "csc311_ch41_020",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Rules, guidelines, and methods that govern how data is collected, processed, and stored are called:",
@@ -267,7 +267,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Procedures are rules, guidelines, and methods that govern how data is collected, processed, stored, and used within the system.",
   },
   {
-    id: "csc311_021",
+    id: "csc311_ch41_021",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Communication media and technologies enabling data sharing, such as internet and intranet, fall under which IS component?",
@@ -277,7 +277,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Networks include communication media and technologies that connect computers and devices, enabling data sharing and access to information (e.g., internet, intranet).",
   },
   {
-    id: "csc311_022",
+    id: "csc311_ch41_022",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The technical perspective of Information Systems emphasizes:",
@@ -292,7 +292,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The technical perspective emphasizes hardware, software, databases, networks, and algorithms, viewing IS primarily as a technological solution.",
   },
   {
-    id: "csc311_023",
+    id: "csc311_ch41_023",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "From the technical perspective, system performance is measured in terms of:",
@@ -307,7 +307,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "From the technical view, system performance is measured in terms of speed, accuracy, reliability, security, and efficiency.",
   },
   {
-    id: "csc311_024",
+    id: "csc311_ch41_024",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The technical perspective of IS is rooted in which disciplines?",
@@ -322,7 +322,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The technical perspective is rooted in computer science, engineering, and mathematics.",
   },
   {
-    id: "csc311_025",
+    id: "csc311_ch41_025",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The social perspective of Information Systems focuses on:",
@@ -337,7 +337,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The social perspective focuses on the human, organizational, and societal aspects of Information Systems.",
   },
   {
-    id: "csc311_026",
+    id: "csc311_ch41_026",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the social perspective, IS success or failure is linked to:",
@@ -352,7 +352,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "From the social viewpoint, IS success or failure is linked to user acceptance, organizational culture, management support, training, and ethical considerations.",
   },
   {
-    id: "csc311_027",
+    id: "csc311_ch41_027",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The social perspective views an Information System as:",
@@ -367,7 +367,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "From the social viewpoint, an Information System is not just a technical artifact but a social construct shaped by users' values, skills, attitudes, policies, and institutional norms.",
   },
   {
-    id: "csc311_028",
+    id: "csc311_ch41_028",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "What does the socio-technical perspective integrate?",
@@ -382,7 +382,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The socio-technical perspective integrates both the technical and social dimensions, arguing that IS are composed of interdependent social and technical subsystems.",
   },
   {
-    id: "csc311_029",
+    id: "csc311_ch41_029",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the socio-technical approach, effective IS design requires:",
@@ -397,7 +397,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The socio-technical approach recognizes that effective IS design requires aligning technology (tools, software, infrastructure) with social elements (people, tasks, structures, and processes).",
   },
   {
-    id: "csc311_030",
+    id: "csc311_ch41_030",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In the socio-technical perspective, system success depends on:",
@@ -412,7 +412,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "System success depends on achieving a balance between technical efficiency and social effectiveness according to the socio-technical perspective.",
   },
   {
-    id: "csc311_031",
+    id: "csc311_ch41_031",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which user category includes clerks, technicians, and frontline workers?",
@@ -427,7 +427,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Operational staff includes clerks, technicians, and frontline workers who use information systems in their daily work.",
   },
   {
-    id: "csc311_032",
+    id: "csc311_ch41_032",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Strategic decision-making is primarily the responsibility of which IS user category?",
@@ -442,7 +442,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Executives are responsible for strategic decision-making within organizations.",
   },
   {
-    id: "csc311_033",
+    id: "csc311_ch41_033",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "System developers and administrators belong to which IS user category?",
@@ -452,7 +452,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "IT professionals include system developers and administrators who build and maintain information systems.",
   },
   {
-    id: "csc311_034",
+    id: "csc311_ch41_034",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Customers, suppliers, and regulators are classified as which type of IS users?",
@@ -467,7 +467,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "External users include customers, suppliers, and regulators who interact with organizational information systems.",
   },
   {
-    id: "csc311_035",
+    id: "csc311_ch41_035",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which of the following is a way Information Systems are used in organizations?",
@@ -482,7 +482,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Information Systems are used for processing daily transactions such as payroll and sales operations.",
   },
   {
-    id: "csc311_036",
+    id: "csc311_ch41_036",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Monitoring performance and control is an example of:",
@@ -497,7 +497,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Monitoring performance and control is one of the ways information systems are used in organizations.",
   },
   {
-    id: "csc311_037",
+    id: "csc311_ch41_037",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which is NOT a benefit delivered by Information Systems?",
@@ -512,7 +512,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "IS does not guarantee elimination of all business risks. Benefits include improved efficiency, better decision-making, and enhanced communication.",
   },
   {
-    id: "csc311_038",
+    id: "csc311_ch41_038",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Cost reduction and error minimisation is classified as:",
@@ -527,7 +527,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Cost reduction and error minimisation is one of the benefits delivered by Information Systems.",
   },
   {
-    id: "csc311_039",
+    id: "csc311_ch41_039",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Competitive advantage and innovation are examples of:",
@@ -542,7 +542,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Competitive advantage and innovation are among the benefits delivered by Information Systems.",
   },
   {
-    id: "csc311_040",
+    id: "csc311_ch41_040",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The socio-technical principle states that IS involves:",
@@ -557,7 +557,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The socio-technical principle states that IS involves both technology and people, not just technical components.",
   },
   {
-    id: "csc311_041",
+    id: "csc311_ch41_041",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The alignment principle emphasizes that IS must:",
@@ -572,7 +572,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The alignment principle states that IS must align with organisational goals to be effective and useful.",
   },
   {
-    id: "csc311_042",
+    id: "csc311_ch41_042",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the data quality principle, which characteristics are essential for data?",
@@ -587,7 +587,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The data quality principle states that accurate, timely, and relevant data is essential for effective information systems.",
   },
   {
-    id: "csc311_043",
+    id: "csc311_ch41_043",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The system integration principle asserts that IS components must:",
@@ -602,7 +602,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The system integration principle states that IS components must work together as a unified system.",
   },
   {
-    id: "csc311_044",
+    id: "csc311_ch41_044",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The user-centred design principle states that systems should:",
@@ -617,7 +617,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The user-centred design principle states that systems should be designed around the needs, abilities, and expectations of users.",
   },
   {
-    id: "csc311_045",
+    id: "csc311_ch41_045",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the socio-technical principle, ignoring human and social aspects often leads to:",
@@ -632,7 +632,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The socio-technical principle states that ignoring the human and social aspects often leads to system failure.",
   },
   {
-    id: "csc311_046",
+    id: "csc311_ch41_046",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Systems that do not align with business objectives often become:",
@@ -647,7 +647,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "According to the organizational alignment principle, systems that do not align with business objectives often become underutilised or abandoned.",
   },
   {
-    id: "csc311_047",
+    id: "csc311_ch41_047",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Poor data quality leads to:",
@@ -662,7 +662,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Poor data quality leads to incorrect information and poor decisions, highlighting the importance of data quality in IS.",
   },
   {
-    id: "csc311_048",
+    id: "csc311_ch41_048",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the user-centred design principle, user involvement during system development increases:",
@@ -677,7 +677,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "User involvement during system development increases acceptance, usability, and effectiveness according to the user-centred design principle.",
   },
   {
-    id: "csc311_049",
+    id: "csc311_ch41_049",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Systems that are complex or difficult to use may lead to:",
@@ -692,7 +692,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Systems that are complex or difficult to use reduce productivity and may be resisted by users.",
   },
   {
-    id: "csc311_050",
+    id: "csc311_ch41_050",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which is a key assumption about information in organizations?",
@@ -707,7 +707,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "A key assumption is that information is a valuable organisational resource, similar to capital, labour, and materials.",
   },
   {
-    id: "csc311_051",
+    id: "csc311_ch41_051",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to key assumptions, technology alone:",
@@ -722,7 +722,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "A key assumption is that technology alone cannot solve organisational problems; other factors must be considered.",
   },
   {
-    id: "csc311_052",
+    id: "csc311_ch41_052",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Users influence the success or failure of IS according to:",
@@ -737,7 +737,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "According to key assumptions in IS study, users influence the success or failure of Information Systems.",
   },
   {
-    id: "csc311_053",
+    id: "csc311_ch41_053",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which statement reflects a key assumption about organizational context and IS?",
@@ -752,7 +752,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "A key assumption is that organisational context affects IS design and use.",
   },
   {
-    id: "csc311_054",
+    id: "csc311_ch41_054",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "IS evolves with changes in:",
@@ -767,7 +767,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "A key assumption is that IS evolves with changes in the business environment.",
   },
   {
-    id: "csc311_055",
+    id: "csc311_ch41_055",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In the banking sector, core banking systems integrate which elements?",
@@ -782,7 +782,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Core banking systems integrate customer data, transactions, and reporting to support efficiency and regulatory compliance.",
   },
   {
-    id: "csc311_056",
+    id: "csc311_ch41_056",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Student Information Systems in universities manage which functions?",
@@ -797,7 +797,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Student Information Systems manage admissions, registration, results, and records in universities.",
   },
   {
-    id: "csc311_057",
+    id: "csc311_ch41_057",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Health Information Systems in hospitals support:",
@@ -812,7 +812,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Health Information Systems support patient records, diagnosis, and treatment in hospitals.",
   },
   {
-    id: "csc311_058",
+    id: "csc311_ch41_058",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Point-of-Sale (POS) systems in retail organisations track:",
@@ -827,7 +827,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Point-of-Sale systems track sales, inventory, and customer behaviour in retail organisations.",
   },
   {
-    id: "csc311_059",
+    id: "csc311_ch41_059",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "E-government systems improve which aspects of government operations?",
@@ -842,7 +842,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "E-government systems improve transparency, service delivery, and record management in government agencies.",
   },
   {
-    id: "csc311_060",
+    id: "csc311_ch41_060",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Practical IS applications demonstrate which principles?",
@@ -857,7 +857,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Practical IS applications demonstrate alignment with organisational goals, user involvement, data accuracy, and integration of technology with work processes.",
   },
   {
-    id: "csc311_061",
+    id: "csc311_ch41_061",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which is an emerging consequence for organisations regarding IS?",
@@ -872,7 +872,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "One emerging consequence for organisations is increased dependence on information systems.",
   },
   {
-    id: "csc311_062",
+    id: "csc311_ch41_062",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The shift toward data-driven decision-making is:",
@@ -887,7 +887,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The shift toward data-driven decision-making is an emerging consequence for organisations.",
   },
   {
-    id: "csc311_063",
+    id: "csc311_ch41_063",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Greater organisational flexibility and remote work capabilities are:",
@@ -902,7 +902,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Greater organisational flexibility and remote work are emerging consequences enabled by information systems.",
   },
   {
-    id: "csc311_064",
+    id: "csc311_ch41_064",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "New security and cybersecurity challenges represent:",
@@ -917,7 +917,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "New security and cybersecurity challenges are emerging consequences that organisations face with increased IS adoption.",
   },
   {
-    id: "csc311_065",
+    id: "csc311_ch41_065",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Ethical and governance issues in AI-driven systems are:",
@@ -932,7 +932,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Ethical and governance issues in AI-driven systems are emerging consequences that organisations must address.",
   },
   {
-    id: "csc311_066",
+    id: "csc311_ch41_066",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The continuous need for system evaluation and innovation reflects:",
@@ -947,7 +947,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The continuous need for system evaluation and innovation is an emerging consequence for organisations.",
   },
   {
-    id: "csc311_067",
+    id: "csc311_ch41_067",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In the 2000s, Wide Area Networks expanded to include:",
@@ -962,7 +962,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In 2000, Wide Area Networks expanded to the Internet to include global enterprise and business partners.",
   },
   {
-    id: "csc311_068",
+    id: "csc311_ch41_068",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The main focus in the 2000s was on:",
@@ -977,7 +977,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In 2000, the main focus was on efficiencies and speed in inventory, manufacturing, and distributions.",
   },
   {
-    id: "csc311_069",
+    id: "csc311_ch41_069",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Which devices were invented around the year 2000 according to IS history?",
@@ -992,7 +992,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The iPhone, iPad, and iPod were invented around the 2000s era according to IS history.",
   },
   {
-    id: "csc311_070",
+    id: "csc311_ch41_070",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "High-quality information enables:",
@@ -1007,7 +1007,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "High-quality information enables better planning, control, and decision-making within organisations.",
   },
   {
-    id: "csc311_071",
+    id: "csc311_ch41_071",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Information quality must ensure data is:",
@@ -1022,7 +1022,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "IS must ensure data accuracy, completeness, consistency, timeliness, and security for quality information.",
   },
   {
-    id: "csc311_072",
+    id: "csc311_ch41_072",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "According to the alignment principle, IS should support:",
@@ -1037,7 +1037,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "IS should support what the organisation is trying to achieve, whether improving efficiency, enhancing service delivery, or gaining competitive advantage.",
   },
   {
-    id: "csc311_073",
+    id: "csc311_ch41_073",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Changes in technology inevitably affect:",
@@ -1052,7 +1052,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "According to the socio-technical perspective, changes in technology inevitably affect work roles and organisational behaviour.",
   },
   {
-    id: "csc311_074",
+    id: "csc311_ch41_074",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Social factors influence:",
@@ -1067,7 +1067,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Social factors influence how technology is adopted and used within organisations.",
   },
   {
-    id: "csc311_075",
+    id: "csc311_ch41_075",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Middle and senior management are categorized as which type of IS users?",
@@ -1082,7 +1082,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Middle and senior management are categorized as managers in the IS user classification.",
   },
   {
-    id: "csc311_076",
+    id: "csc311_ch41_076",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Supporting management decisions is:",
@@ -1097,7 +1097,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Supporting management decisions is one of the ways information systems are used in organizations.",
   },
   {
-    id: "csc311_077",
+    id: "csc311_ch41_077",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Coordinating organisational activities is an example of:",
@@ -1112,7 +1112,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Coordinating organisational activities is one of the ways information systems are used.",
   },
   {
-    id: "csc311_078",
+    id: "csc311_ch41_078",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Communicating information internally and externally demonstrates:",
@@ -1127,7 +1127,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Communicating information internally and externally is one of the ways information systems are used.",
   },
   {
-    id: "csc311_079",
+    id: "csc311_ch41_079",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Improved service delivery and customer satisfaction is:",
@@ -1142,7 +1142,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Improved service delivery and customer satisfaction is one of the benefits delivered by Information Systems.",
   },
   {
-    id: "csc311_080",
+    id: "csc311_ch41_080",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The evolution of ICT in the public sector has influenced which areas?",
@@ -1157,7 +1157,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "ICT evolution has influenced government operations, public services delivery, citizen participation, policy and decision making, and governance reform.",
   },
   {
-    id: "csc311_081",
+    id: "csc311_ch41_081",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "IBM created a punch card system in 1952 that allowed mainframes to:",
@@ -1172,7 +1172,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "IBM created a punch card system that allowed mainframes to read and interpret data from computers by reading hole punchers.",
   },
   {
-    id: "csc311_082",
+    id: "csc311_ch41_082",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In the 1970s, computers and data were characterized as:",
@@ -1187,7 +1187,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In the 1970s, mainframe computers were being used, and computers and data were centralized.",
   },
   {
-    id: "csc311_083",
+    id: "csc311_ch41_083",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Systems connected to business functions like billing, inventory, and payroll emerged in:",
@@ -1202,7 +1202,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "In the 1970s, systems were connected to business functions such as billing, inventory, and payroll.",
   },
   {
-    id: "csc311_084",
+    id: "csc311_ch41_084",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Mid-1960s accounting systems were effective in supplying descriptive information but:",
@@ -1217,7 +1217,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Mid-1960s accounting systems were fairly effective in supplying descriptive information but lacked capacity for more advanced functions.",
   },
   {
-    id: "csc311_085",
+    id: "csc311_ch41_085",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Information as a valuable organisational resource is similar to:",
@@ -1232,7 +1232,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Information is a valuable organisational resource, similar to capital, labour, and materials.",
   },
   {
-    id: "csc311_086",
+    id: "csc311_ch41_086",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "An organised combination of people, hardware, software, data, procedures, and networks defines:",
@@ -1247,7 +1247,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "An Information System is an organized combination of people, hardware, software, data, procedures, and networks that work together.",
   },
   {
-    id: "csc311_087",
+    id: "csc311_ch41_087",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The feedback mechanism in an Information System serves to:",
@@ -1262,7 +1262,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The feedback mechanism in an IS helps meet objectives by providing information about system performance.",
   },
   {
-    id: "csc311_088",
+    id: "csc311_ch41_088",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "In IS, the term 'disseminate' refers to:",
@@ -1277,7 +1277,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Disseminate refers to distributing data and information to users who need it.",
   },
   {
-    id: "csc311_089",
+    id: "csc311_ch41_089",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "From the technical perspective, users are often seen as:",
@@ -1292,7 +1292,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "From the technical perspective, users are often seen as operators of the system.",
   },
   {
-    id: "csc311_090",
+    id: "csc311_ch41_090",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Problems in the technical perspective are addressed through:",
@@ -1307,7 +1307,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "From the technical view, problems are addressed through better system design, programming, automation, and optimization.",
   },
   {
-    id: "csc311_091",
+    id: "csc311_ch41_091",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The social perspective emphasizes how IS influences:",
@@ -1322,7 +1322,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The social perspective emphasizes how IS influences work practices, power relations, communication patterns, culture, and decision-making.",
   },
   {
-    id: "csc311_092",
+    id: "csc311_ch41_092",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The socio-technical perspective argues that IS are composed of:",
@@ -1337,7 +1337,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The socio-technical perspective argues that IS are composed of interdependent social and technical subsystems that must be jointly optimized.",
   },
   {
-    id: "csc311_093",
+    id: "csc311_ch41_093",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Modern organisations require integration across departments to avoid:",
@@ -1352,7 +1352,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Modern organisations require integration across departments so that information flows seamlessly, avoiding duplication, inconsistency, and inefficiency.",
   },
   {
-    id: "csc311_094",
+    id: "csc311_ch41_094",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "E-government adoption rates vary:",
@@ -1367,7 +1367,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The rate of successful e-government adoption and operation varies from country to country.",
   },
   {
-    id: "csc311_095",
+    id: "csc311_ch41_095",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "ICT evolution in the public sector has occurred over approximately:",
@@ -1382,7 +1382,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The evolution of ICT in the public sector has occurred over the past 25 years according to the lecture.",
   },
   {
-    id: "csc311_096",
+    id: "csc311_ch41_096",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Organisations invest in systems that ensure information is:",
@@ -1397,7 +1397,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "Organisations invest in systems that ensure information is accurate, timely, relevant, and secure.",
   },
   {
-    id: "csc311_097",
+    id: "csc311_ch41_097",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The value of an information system depends on:",
@@ -1412,7 +1412,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The value of an information system depends on the quality of data it processes.",
   },
   {
-    id: "csc311_098",
+    id: "csc311_ch41_098",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "IS components including hardware, software, data, people, procedures, and networks are:",
@@ -1427,7 +1427,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "IS components are interdependent and must work together as a unified system.",
   },
   {
-    id: "csc311_099",
+    id: "csc311_ch41_099",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "The six core components of an Information System include all EXCEPT:",
@@ -1442,7 +1442,7 @@ export const csc311Chapter4_1: QuestionV2[] = [
       "The six core components are hardware, software, data, people, procedures, and networks. Marketing and sales is not a component.",
   },
   {
-    id: "csc311_100",
+    id: "csc311_ch41_100",
     course: "CSC 311",
     chapter: "Chapter 4_1",
     text: "Processing data to produce meaningful information transforms:",

@@ -37,6 +37,25 @@ interface UserAnswer {
   isCorrect: boolean;
 }
 
+// Trims a filtered question pool down to `count` questions (currently the
+// MTH302-only "how many questions" picker). Sampling is always random so a
+// smaller run isn't just "the first N in the book" -- but when the question
+// order preference is "Written order" the sample is put back in its
+// original order so it still reads sequentially, just shorter.
+function sampleQuestionSubset(
+  filtered: (Question | QuestionV2)[],
+  count: number | null,
+  shuffle: boolean,
+): (Question | QuestionV2)[] {
+  if (count === null || count >= filtered.length) return filtered;
+  const withIndex = filtered.map((q, i) => ({ q, i }));
+  const sampled = shuffleArray(withIndex).slice(0, count);
+  if (!shuffle) {
+    sampled.sort((a, b) => a.i - b.i);
+  }
+  return sampled.map(({ q }) => q);
+}
+
 // Orders a filtered question set for display, respecting the shuffle
 // choice made in the "Shuffle the questions?" prompt before a topic starts.
 function processQuestions(
@@ -72,6 +91,9 @@ export default function QuizContainer() {
   );
   const [enabledCourses, setEnabledCourses] = useState<Course[]>([]);
   const [shufflePreference, setShufflePreference] = useState(true);
+  const [questionCountPreference, setQuestionCountPreference] = useState<
+    number | null
+  >(null);
   const [timerDurationMinutes, setTimerDurationMinutes] = useState<
     number | null
   >(null);
@@ -165,15 +187,18 @@ export default function QuizContainer() {
     shuffle: boolean,
     durationMinutes: number | null,
     studyMode: boolean,
+    questionCount: number | null,
   ) => {
     if (!selectedCourse) return;
 
     setSelectedChapter(chapter);
     setShufflePreference(shuffle);
     setIsStudyMode(studyMode);
+    setQuestionCountPreference(questionCount);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapter(courseQuestions, chapter);
-    const processedQuestions = processQuestions(filtered, shuffle);
+    const subset = sampleQuestionSubset(filtered, questionCount, shuffle);
+    const processedQuestions = processQuestions(subset, shuffle);
 
     setQuestions(processedQuestions);
     applyTimerChoice(durationMinutes, processedQuestions, selectedCourse.id);
@@ -185,6 +210,7 @@ export default function QuizContainer() {
     shuffle: boolean,
     durationMinutes: number | null,
     studyMode: boolean,
+    questionCount: number | null,
   ) => {
     if (!selectedCourse) return;
 
@@ -192,9 +218,11 @@ export default function QuizContainer() {
     setSelectedChapters(chapters);
     setShufflePreference(shuffle);
     setIsStudyMode(studyMode);
+    setQuestionCountPreference(questionCount);
     const courseQuestions = selectedCourse.getQuestions();
     const filtered = filterByChapters(courseQuestions, chapters);
-    const processedQuestions = processQuestions(filtered, shuffle);
+    const subset = sampleQuestionSubset(filtered, questionCount, shuffle);
+    const processedQuestions = processQuestions(subset, shuffle);
 
     setQuestions(processedQuestions);
     applyTimerChoice(durationMinutes, processedQuestions, selectedCourse.id);
@@ -453,8 +481,14 @@ export default function QuizContainer() {
       ? filterByChapters(courseQuestions, selectedChapters)
       : filterByChapter(courseQuestions, selectedChapter ?? null);
 
-    // Reuses the shuffle preference chosen when this topic was started
-    const processedQuestions = processQuestions(filtered, shufflePreference);
+    // Reuses the shuffle/question-count preferences chosen when this topic
+    // was started
+    const subset = sampleQuestionSubset(
+      filtered,
+      questionCountPreference,
+      shufflePreference,
+    );
+    const processedQuestions = processQuestions(subset, shufflePreference);
     // isStudyMode intentionally persists -- restarting a study run keeps it
     setQuestions(processedQuestions);
     // A timed run gets a fresh full-length timer, not silently untimed

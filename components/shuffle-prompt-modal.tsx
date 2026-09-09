@@ -22,17 +22,27 @@ interface ShufflePromptModalProps {
     shuffle: boolean,
     durationMinutes: number | null,
     studyMode: boolean,
+    questionCount: number | null,
   ) => void;
+  // Only set for courses that offer a question-count picker (currently
+  // MTH302); omitted elsewhere so the step doesn't render.
+  questionCountOptions?: number[];
+  availableCount?: number;
 }
 
 export default function ShufflePromptModal({
   open,
   onOpenChange,
   onStart,
+  questionCountOptions,
+  availableCount,
 }: ShufflePromptModalProps) {
   const [shuffle, setShuffle] = useState(true);
   const [durationMinutes, setDurationMinutes] = useState<number | null>(null);
   const [studyMode, setStudyMode] = useState(false);
+  const [questionCount, setQuestionCount] = useState<number | null>(null);
+  const showQuestionCountStep =
+    !!questionCountOptions && questionCountOptions.length > 0;
 
   // Don't carry the previous quiz's choices into a fresh prompt.
   useEffect(() => {
@@ -40,12 +50,13 @@ export default function ShufflePromptModal({
       setShuffle(true);
       setDurationMinutes(null);
       setStudyMode(false);
+      setQuestionCount(null);
     }
   }, [open]);
 
   const handleStart = () => {
     // Study mode is a read-through, so a countdown would be meaningless.
-    onStart(shuffle, studyMode ? null : durationMinutes, studyMode);
+    onStart(shuffle, studyMode ? null : durationMinutes, studyMode, questionCount);
   };
 
   return (
@@ -134,11 +145,48 @@ export default function ShufflePromptModal({
             </p>
           </div>
 
-          {/* Step 3 -- Optional timer (pointless while just reading answers) */}
+          {/* Step 3 -- Optional question count (MTH302 only) */}
+          {showQuestionCountStep && (
+            <div>
+              <div className="flex items-center gap-2 mb-3">
+                <span className="w-5 h-5 rounded-full bg-chalk-yellow text-chalk-yellow-ink text-xs font-bold flex items-center justify-center">
+                  3
+                </span>
+                <p className="text-sm font-bold text-board-ink">Questions</p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <button
+                  onClick={() => setQuestionCount(null)}
+                  className={`px-4 py-2 rounded-md text-sm font-bold transition-all duration-200 border ${FOCUS_RING} ${
+                    questionCount === null
+                      ? "bg-chalk-yellow border-chalk-yellow text-chalk-yellow-ink"
+                      : "bg-board-2 border-board-line text-board-ink-muted hover:border-board-ink-muted hover:text-board-ink"
+                  }`}
+                >
+                  All{availableCount ? ` (${availableCount})` : ""}
+                </button>
+                {questionCountOptions!.map((count) => (
+                  <button
+                    key={count}
+                    onClick={() => setQuestionCount(count)}
+                    className={`px-4 py-2 rounded-md text-sm font-bold transition-all duration-200 border ${FOCUS_RING} ${
+                      questionCount === count
+                        ? "bg-chalk-yellow border-chalk-yellow text-chalk-yellow-ink"
+                        : "bg-board-2 border-board-line text-board-ink-muted hover:border-board-ink-muted hover:text-board-ink"
+                    }`}
+                  >
+                    {count}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Step 4 -- Optional timer (pointless while just reading answers) */}
           <div className={studyMode ? "hidden" : undefined}>
             <div className="flex items-center gap-2 mb-3">
               <span className="w-5 h-5 rounded-full bg-chalk-yellow text-chalk-yellow-ink text-xs font-bold flex items-center justify-center">
-                3
+                {showQuestionCountStep ? 4 : 3}
               </span>
               <p className="text-sm font-bold text-board-ink">Timer</p>
             </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Course, filterByChapter } from "@/lib/courses";
+import { Course, filterByChapter, filterByChapters } from "@/lib/courses";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import PracticeExamModal from "./practice-exam-modal";
@@ -19,6 +19,11 @@ import {
 const FOCUS_RING =
   "outline-none focus-visible:ring-[3px] focus-visible:ring-chalk-yellow/70 focus-visible:ring-offset-2 focus-visible:ring-offset-board";
 
+// Question-count picker is currently a one-course pilot -- MTH302 has enough
+// depth per chapter to make trimming a run worthwhile.
+const QUESTION_COUNT_COURSES = ["MTH302"];
+const QUESTION_COUNT_OPTIONS = [10, 15, 20, 25];
+
 interface ChapterSelectProps {
   course: Course;
   onSelectChapter: (
@@ -26,12 +31,14 @@ interface ChapterSelectProps {
     shuffle: boolean,
     durationMinutes: number | null,
     studyMode: boolean,
+    questionCount: number | null,
   ) => void;
   onSelectCustomChapters: (
     chapters: string[],
     shuffle: boolean,
     durationMinutes: number | null,
     studyMode: boolean,
+    questionCount: number | null,
   ) => void;
   onStartExam: (config: ExamConfig) => void;
   onBackToCourses: () => void;
@@ -92,22 +99,46 @@ export default function ChapterSelect({
     setPendingSelection(selection);
   };
 
+  const showQuestionCountPicker = QUESTION_COUNT_COURSES.includes(course.code);
+
+  // Available pool for the pending selection, used to cap/label the
+  // question-count options in the setup modal.
+  const pendingAvailableCount = useMemo(() => {
+    if (!pendingSelection) return 0;
+    const questions = course.getQuestions();
+    return pendingSelection.kind === "chapter"
+      ? filterByChapter(questions, pendingSelection.chapterId).length
+      : filterByChapters(questions, pendingSelection.chapters).length;
+  }, [pendingSelection, course]);
+
+  const pendingQuestionCountOptions = showQuestionCountPicker
+    ? QUESTION_COUNT_OPTIONS.filter((n) => n < pendingAvailableCount)
+    : undefined;
+
   const handleStart = (
     shuffle: boolean,
     durationMinutes: number | null,
     studyMode: boolean,
+    questionCount: number | null,
   ) => {
     const selection = pendingSelection;
     setPendingSelection(null);
     if (!selection) return;
     if (selection.kind === "chapter") {
-      onSelectChapter(selection.chapterId, shuffle, durationMinutes, studyMode);
+      onSelectChapter(
+        selection.chapterId,
+        shuffle,
+        durationMinutes,
+        studyMode,
+        questionCount,
+      );
     } else {
       onSelectCustomChapters(
         selection.chapters,
         shuffle,
         durationMinutes,
         studyMode,
+        questionCount,
       );
     }
   };
@@ -328,6 +359,8 @@ export default function ChapterSelect({
           if (!open) setPendingSelection(null);
         }}
         onStart={handleStart}
+        questionCountOptions={pendingQuestionCountOptions}
+        availableCount={pendingAvailableCount}
       />
     </div>
   );

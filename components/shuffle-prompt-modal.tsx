@@ -61,7 +61,7 @@ export default function ShufflePromptModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-board border-2 border-board-line text-board-ink w-[calc(100%-2rem)] sm:max-w-sm rounded-md shadow-2xl">
+      <DialogContent className="bg-board border-2 border-board-line text-board-ink w-[calc(100%-2rem)] sm:max-w-sm max-h-[92dvh] overflow-y-auto rounded-md shadow-2xl">
         <Shuffle className="w-9 h-9 text-chalk-yellow mb-2" />
         <DialogHeader>
           <DialogTitle className="text-board-ink text-lg font-bold mb-1">

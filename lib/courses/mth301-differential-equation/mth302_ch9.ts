@@ -106,12 +106,12 @@ const mth302Chapter9: QuestionV2[] = [
     text: "If $f$ is expanded as $\\sum_n c_n\\phi_n$, where the $\\phi_n$ are orthogonal on the interval from $a$ to $b$ with weight $r$, what is the formula for the coefficient $c_n$?",
     options: [
       "$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$",
-      "$c_n = \\dfrac{\\displaystyle\\int_a^b rf\\phi_n\\,dx}{\\displaystyle\\int_a^b r\\phi_n^2\\,dx}$",
+      "$c_n = \\dfrac{\\displaystyle\\int_a^b rf\\phi_n\\,dx}{\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx}$",
       "$c_n = \\dfrac{\\displaystyle\\int_a^b f\\phi_n\\,dx}{\\displaystyle\\int_a^b \\phi_n\\,dx}$",
       "$c_n$ equals the average of $f$ over the interval from $a$ to $b$"
     ],
     correctAnswer: 1,
-    explanation: "Multiplying the expansion by $r\\phi_m$ and integrating over the interval from $a$ to $b$ uses orthogonality to eliminate every term except the one with $n = m$, leaving $\\displaystyle\\int_a^b rf\\phi_n\\,dx$ equal to $c_n$ times $\\displaystyle\\int_a^b r\\phi_n^2\\,dx$, and dividing gives the coefficient formula.\n\n$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$ alone is correct only when the system is orthonormal, meaning the denominator integral happens to equal $1$, which is not assumed in general.\n\n$c_n = \\dfrac{\\int f\\phi_n\\,dx}{\\int \\phi_n\\,dx}$ omits the weight function $r$ from both integrals and uses $\\phi_n$ instead of $\\phi_n$ squared in the denominator.\n\n$c_n$ equals the average of $f$ describes only the special case of the constant term in a Fourier series, not the general Sturm-Liouville expansion coefficient."
+    explanation: "Multiplying the expansion by $r\\phi_m$ and integrating over the interval from $a$ to $b$ uses orthogonality to eliminate every term except the one with $n = m$, leaving $\\displaystyle\\int_a^b rf\\phi_n\\,dx$ equal to $c_n$ times $\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx$, and dividing gives the coefficient formula.\n\n$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$ alone is correct only when the system is orthonormal, meaning the denominator integral happens to equal $1$, which is not assumed in general.\n\n$c_n = \\dfrac{\\int f\\phi_n\\,dx}{\\int \\phi_n\\,dx}$ omits the weight function $r$ from both integrals and uses $\\phi_n$ instead of $\\phi_n$ squared in the denominator.\n\n$c_n$ equals the average of $f$ describes only the special case of the constant term in a Fourier series, not the general Sturm-Liouville expansion coefficient."
   },
   {
     id: "mth302_ch9_009",
@@ -483,10 +483,10 @@ const mth302Chapter9: QuestionV2[] = [
     chapter: "Chapter 9",
     text: "In an expansion $f \\sim \\sum_n c_n\\phi_n$ with $\\{\\phi_n\\}$ orthogonal with weight $r$, what is $c_n$?",
     options: [
-      "$\\dfrac{\\int_a^b fr\\phi_n\\,dx}{\\int_a^b r\\phi_n^2\\,dx}$",
-      "$\\dfrac{\\int_a^b f\\phi_n\\,dx}{\\int_a^b \\phi_n^2\\,dx}$",
+      "$\\dfrac{\\int_a^b fr\\phi_n\\,dx}{\\int_a^b r\\phi_{n}^{2}\\,dx}$",
+      "$\\dfrac{\\int_a^b f\\phi_n\\,dx}{\\int_a^b \\phi_{n}^{2}\\,dx}$",
       "$\\int_a^b fr\\phi_n\\,dx$",
-      "$\\dfrac{\\int_a^b r\\phi_n^2\\,dx}{\\int_a^b fr\\phi_n\\,dx}$"
+      "$\\dfrac{\\int_a^b r\\phi_{n}^{2}\\,dx}{\\int_a^b fr\\phi_n\\,dx}$"
     ],
     correctAnswer: 0,
     explanation: "Multiplying by $r\\phi_n$ and integrating kills every other term by orthogonality, leaving the stated ratio.\n\nOmitting the weight is valid only when $r \\equiv 1$.\n\nWithout the denominator the coefficient is not normalised.\n\nInverting the quotient reverses the roles of the two integrals."

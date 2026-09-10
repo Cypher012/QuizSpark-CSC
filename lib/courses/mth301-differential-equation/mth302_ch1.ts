@@ -61,7 +61,7 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_005",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "How should the first-order PDE $u_x^2 + u_y = 0$ be classified?",
+    text: "How should the first-order PDE $u_{x}^{2} + u_y = 0$ be classified?",
     options: [
       "Order $1$, degree $2$, nonlinear",
       "Order $2$, degree $1$, linear",
@@ -411,7 +411,7 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_030",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "How is the eikonal equation $u_x^2 + u_y^2 = 1$ classified?",
+    text: "How is the eikonal equation $u_{x}^{2} + u_{y}^{2} = 1$ classified?",
     options: [
       "Linear",
       "Semilinear",
@@ -509,7 +509,7 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_037",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "Why is $u_x^2 + u_y = 0$ not quasilinear?",
+    text: "Why is $u_{x}^{2} + u_y = 0$ not quasilinear?",
     options: [
       "Its highest derivative does not appear linearly",
       "Its coefficients depend on the independent variables",

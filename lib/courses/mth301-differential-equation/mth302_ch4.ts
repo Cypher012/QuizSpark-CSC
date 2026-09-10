@@ -147,13 +147,13 @@ const mth302Chapter4: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "What is the reduction-of-order formula for a second solution of $y'' + Py' + Qy = 0$, given one solution $y_1$?",
     options: [
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1^2}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{\\int P\\,dx}}{y_1^2}\\,dx$",
+      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
+      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
       "$y_2 = \\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int Q\\,dx}}{y_1^2}\\,dx$"
+      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int Q\\,dx}}{y_{1}^{2}}\\,dx$"
     ],
     correctAnswer: 0,
-    explanation: "Substituting $y = vy_1$ and $z = v'$ into the equation produces $z' + \\left(\\dfrac{2y_1'}{y_1} + P\\right)z = 0$, whose solution is $z = e^{-\\int P\\,dx}/y_1^2$; integrating $z$ to recover $v$ and multiplying back by $y_1$ gives $y_2 = y_1\\int \\dfrac{e^{-\\int P\\,dx}}{y_1^2}\\,dx$. The exponent carries a minus sign and the denominator is $y_1$ squared.\n\n$y_2 = y_1\\int \\dfrac{e^{\\int P\\,dx}}{y_1^2}\\,dx$ has the wrong sign on the exponent.\n\n$y_2 = \\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$ omits the multiplication by $y_1$ in front and uses only $y_1$ to the first power inside the integral.\n\n$y_2 = y_1\\int \\dfrac{e^{-\\int Q\\,dx}}{y_1^2}\\,dx$ wrongly uses $Q$ in place of $P$."
+    explanation: "Substituting $y = vy_1$ and $z = v'$ into the equation produces $z' + \\left(\\dfrac{2y_1'}{y_1} + P\\right)z = 0$, whose solution is $z = e^{-\\int P\\,dx}/y_{1}^{2}$; integrating $z$ to recover $v$ and multiplying back by $y_1$ gives $y_2 = y_1\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$. The exponent carries a minus sign and the denominator is $y_1$ squared.\n\n$y_2 = y_1\\int \\dfrac{e^{\\int P\\,dx}}{y_{1}^{2}}\\,dx$ has the wrong sign on the exponent.\n\n$y_2 = \\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$ omits the multiplication by $y_1$ in front and uses only $y_1$ to the first power inside the integral.\n\n$y_2 = y_1\\int \\dfrac{e^{-\\int Q\\,dx}}{y_{1}^{2}}\\,dx$ wrongly uses $Q$ in place of $P$."
   },
   {
     id: "mth302_ch4_012",
@@ -399,13 +399,13 @@ const mth302Chapter4: QuestionV2[] = [
     chapter: "Chapter 4",
     text: "What is the reduction-of-order formula for the second solution?",
     options: [
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1^2}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{+\\int P\\,dx}}{y_1^2}\\,dx$",
+      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
+      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{+\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
       "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$",
-      "$y_2 = \\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1^2}\\,dx$"
+      "$y_2 = \\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$"
     ],
     correctAnswer: 0,
-    explanation: "The derivation gives $y_2 = y_1\\int \\dfrac{e^{-\\int P\\,dx}}{y_1^2}\\,dx$, with the known solution both multiplying the integral and squared inside it.\n\nA positive exponent reverses the sign that the integrating factor supplies.\n\nUsing $y_1$ rather than $y_1^2$ in the denominator drops a factor from the derivation.\n\nOmitting the outer factor $y_1$ leaves an expression that does not solve the equation."
+    explanation: "The derivation gives $y_2 = y_1\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$, with the known solution both multiplying the integral and squared inside it.\n\nA positive exponent reverses the sign that the integrating factor supplies.\n\nUsing $y_1$ rather than $y_{1}^{2}$ in the denominator drops a factor from the derivation.\n\nOmitting the outer factor $y_1$ leaves an expression that does not solve the equation."
   },
   {
     id: "mth302_ch4_030",

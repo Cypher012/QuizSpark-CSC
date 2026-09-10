@@ -55,7 +55,7 @@ const mth302Chapter11: QuestionV2[] = [
       "$2$"
     ],
     correctAnswer: 1,
-    explanation: "The normalization formula for Legendre polynomials states that $\\int_{-1}^1 P_n^2\\,dx = \\dfrac{2}{2n+1}$, so with $n = 3$ the value is $2/7$.\n\n$0$ is the value that would apply to the integral of $P_m$ times $P_n$ for two different indices $m$ and $n$, not to the integral of $P_n$ squared with itself.\n\n$2/3$ and $2$ do not match the correct substitution $n = 3$ into the formula $2/(2n+1)$."
+    explanation: "The normalization formula for Legendre polynomials states that $\\int_{-1}^1 P_{n}^{2}\\,dx = \\dfrac{2}{2n+1}$, so with $n = 3$ the value is $2/7$.\n\n$0$ is the value that would apply to the integral of $P_m$ times $P_n$ for two different indices $m$ and $n$, not to the integral of $P_n$ squared with itself.\n\n$2/3$ and $2$ do not match the correct substitution $n = 3$ into the formula $2/(2n+1)$."
   },
   {
     id: "mth302_ch11_005",

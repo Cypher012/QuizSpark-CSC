@@ -25,7 +25,7 @@ interface PracticeExamModalProps {
   onStartExam: (config: ExamConfig) => void;
 }
 
-const QUESTION_COUNT_OPTIONS = [30, 60, 75, 100, 120, 150];
+const QUESTION_COUNT_OPTIONS = [25, 30, 60, 75, 100, 120, 150];
 
 export default function PracticeExamModal({
   open,

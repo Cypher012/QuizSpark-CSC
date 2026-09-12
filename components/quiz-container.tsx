@@ -15,6 +15,7 @@ import {
   getCourseById,
   filterByChapter,
   filterByChapters,
+  checkMth302MockUnlock,
   Course,
 } from "@/lib/courses";
 import { saveExamState, loadExamState, clearExamState } from "@/lib/exam-state";
@@ -126,6 +127,7 @@ export default function QuizContainer() {
 
   // Load enabled courses on mount; also restore any persisted exam
   useEffect(() => {
+    checkMth302MockUnlock();
     setEnabledCourses(getEnabledCourses());
 
     const persisted = loadExamState();

@@ -10,7 +10,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch1_029",
     course: "MTH 302",
-    chapter: "Chapter 1",
+    chapter: "Chapter 3",
     text: "Which description fits a quasilinear PDE?",
     options: [
       "The highest derivatives appear linearly, but their coefficients may depend on $x$, $y$, and $u$",
@@ -25,7 +25,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch1_040",
     course: "MTH 302",
-    chapter: "Chapter 1",
+    chapter: "Chapter 3",
     text: "What is the degree of $y'' + e^{y'} = 0$?",
     options: [
       "Not defined",
@@ -40,7 +40,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch2_022",
     course: "MTH 302",
-    chapter: "Chapter 2",
+    chapter: "Chapter 3",
     text: "Is $(2xy + 3)\\,dx + (x^2 + 4y)\\,dy = 0$ exact?",
     options: [
       "Yes, since $M_y = 2x = N_x$",
@@ -55,7 +55,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch2_001",
     course: "MTH 302",
-    chapter: "Chapter 2",
+    chapter: "Chapter 3",
     text: "What is the integrating factor of $xy' + 2y = x^3$?",
     options: [
       "$e^{2x}$",
@@ -100,7 +100,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch4_032",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 3",
     text: "What is the Wronskian of $y_1 = e^{x}$ and $y_2 = e^{3x}$?",
     options: [
       "$2e^{4x}$",
@@ -115,7 +115,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch4_001",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 3",
     text: "What is the Wronskian of $y_1 = e^{-x}$ and $y_2 = e^{-2x}$?",
     options: [
       "$e^{-3x}$",
@@ -130,7 +130,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch4_034",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 3",
     text: "For $y'' + 4y' + 4y = 0$, what are the characteristic roots?",
     options: [
       "$r = -2$ repeated",
@@ -145,7 +145,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch5_037",
     course: "MTH 302",
-    chapter: "Chapter 5",
+    chapter: "Chapter 3",
     text: "Which method should be used for $y'' + y = \\sec x$?",
     options: [
       "Variation of parameters",
@@ -160,7 +160,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch5_006",
     course: "MTH 302",
-    chapter: "Chapter 5",
+    chapter: "Chapter 3",
     text: "What is the general solution of $y'' = e^x + \\sin x$?",
     options: [
       "$e^x - \\sin x + C_1x + C_2$",
@@ -175,7 +175,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch6_036",
     course: "MTH 302",
-    chapter: "Chapter 6",
+    chapter: "Chapter 3",
     text: "For $u_x + 2u_y = 0$, what is the general solution?",
     options: [
       "$u = F(2x - y)$",
@@ -190,7 +190,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch6_008",
     course: "MTH 302",
-    chapter: "Chapter 6",
+    chapter: "Chapter 3",
     text: "What is the general solution of $u_{xy} - 2u_x = 0$?",
     options: [
       "$u = e^{2y}A(x) + B(y)$",
@@ -205,7 +205,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch7_019",
     course: "MTH 302",
-    chapter: "Chapter 7",
+    chapter: "Chapter 3",
     text: "How is $2u_{xx} - 2u_{xy} + 5u_{yy} = 0$ classified?",
     options: [
       "Elliptic",
@@ -220,7 +220,7 @@ const mth302ExamPrepC: QuestionV2[] = [
   {
     id: "mth302_ch7_014",
     course: "MTH 302",
-    chapter: "Chapter 7",
+    chapter: "Chapter 3",
     text: "A second-order PDE with $\\Delta < 0$ is of which type?",
     options: [
       "Elliptic",
@@ -231,11 +231,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "A negative discriminant corresponds to the elliptic case, modelled by the Laplace equation.\n\nA positive discriminant gives the hyperbolic case.\n\nA vanishing discriminant gives the parabolic case.\n\nThe lower-order coefficients play no part in classification."
   },
-  // originally mth302_ch9_014, Chapter 9
+  // originally mth302_ch9_014, Chapter 8
   {
-    id: "mth302_ch9_014",
+    id: "mth302_ch8_014",
     course: "MTH 302",
-    chapter: "Chapter 9",
+    chapter: "Chapter 3",
     text: "What is true of the eigenvalues of a Sturm-Liouville system?",
     options: [
       "They are real, and non-negative under the usual sign conditions",
@@ -246,11 +246,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "The eigenvalues are real and, under the usual sign conditions, non-negative, even though the auxiliary equation produces roots $m = \\pm i\\sqrt{\\lambda}$.\n\nThe imaginary auxiliary roots do not make the eigenvalues complex.\n\nThe eigenvalues form an infinite sequence tending to infinity.\n\nEach eigenvalue is simple, so repetition does not occur."
   },
-  // originally mth302_ch9_026, Chapter 9
+  // originally mth302_ch9_026, Chapter 8
   {
-    id: "mth302_ch9_026",
+    id: "mth302_ch8_026",
     course: "MTH 302",
-    chapter: "Chapter 9",
+    chapter: "Chapter 3",
     text: "When may the weight be omitted from the orthogonality integral?",
     options: [
       "Only when $r \\equiv 1$",
@@ -261,11 +261,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "The weight can be dropped only in the special case where it is identically one; otherwise it must be carried.\n\nDistinct eigenvalues are what make the integral vanish, not what removes the weight.\n\nSymmetry of the interval has no bearing on the weight.\n\nThe weight does not cancel and omitting it is a standard error."
   },
-  // originally mth302_ch10_007, Chapter 10
+  // originally mth302_ch10_007, Chapter 9
   {
-    id: "mth302_ch10_007",
+    id: "mth302_ch9_007",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 3",
     text: "What is the value of $B(4, 3)$?",
     options: [
       "$1/60$",
@@ -276,11 +276,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Using $B(4,3) = \\dfrac{\\Gamma(4)\\Gamma(3)}{\\Gamma(7)} = \\dfrac{3! \\cdot 2!}{6!} = \\dfrac{6 \\times 2}{720} = \\dfrac{1}{60}$, which agrees with computing the reduction formula step by step down to $2B(2,1) = 1/2$.\n\n$1/12$, $1/120$, and $1/30$ do not match the correct factorial computation $3! \\cdot 2!/6!$."
   },
-  // originally mth302_ch10_001, Chapter 10
+  // originally mth302_ch10_001, Chapter 9
   {
-    id: "mth302_ch10_001",
+    id: "mth302_ch9_001",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 3",
     text: "What is the value of $\\Gamma(1/2)$?",
     options: [
       "$\\pi$",
@@ -291,11 +291,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 1,
     explanation: "Substituting $t = u^2$ gives $\\Gamma(1/2) = 2\\displaystyle\\int_0^\\infty e^{-u^2}\\,du$, which equals $2 \\cdot \\sqrt{\\pi}/2$, using the polar-coordinate evaluation of that Gaussian integral, giving $\\Gamma(1/2) = \\sqrt{\\pi}$.\n\n$\\pi$ omits the square root, mistaking the squared value for the answer itself.\n\n$\\sqrt{\\pi}/2$ is actually the value of $\\int_0^\\infty e^{-u^2}\\,du$ on its own, before the factor of $2$ supplied by the substitution is applied.\n\n$2\\sqrt{\\pi}$ applies the factor of $2$ twice instead of once."
   },
-  // originally mth302_ch10_002, Chapter 10
+  // originally mth302_ch10_002, Chapter 9
   {
-    id: "mth302_ch10_002",
+    id: "mth302_ch9_002",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 3",
     text: "What is the value of $\\Gamma(7/2)$?",
     options: [
       "$15\\sqrt{\\pi}/8$",
@@ -306,11 +306,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Applying the recurrence $\\Gamma(x+1) = x\\Gamma(x)$ repeatedly gives $\\Gamma(7/2) = \\dfrac{5}{2}\\cdot\\dfrac{3}{2}\\cdot\\dfrac{1}{2}\\Gamma(1/2) = \\dfrac{15}{8}\\sqrt{\\pi}$.\n\n$3\\sqrt{\\pi}/4$ is actually the value of $\\Gamma(3/2)$, one recurrence step short of the target.\n\n$5\\sqrt{\\pi}/2$ does not match any correct step in the recurrence chain from $\\Gamma(1/2)$.\n\n$105\\sqrt{\\pi}/16$ is actually the value of $\\Gamma(9/2)$, one recurrence step too far."
   },
-  // originally mth302_ch11_025, Chapter 11
+  // originally mth302_ch11_025, Chapter 10
   {
-    id: "mth302_ch11_025",
+    id: "mth302_ch10_025",
     course: "MTH 302",
-    chapter: "Chapter 11",
+    chapter: "Chapter 3",
     text: "What is $P_n(-1)$?",
     options: [
       "$(-1)^n$",
@@ -321,11 +321,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "At $x = -1$ the generating function becomes $\\dfrac{1}{1 + t} = \\sum(-1)^nt^n$, giving $P_n(-1) = (-1)^n$.\n\nA constant value of one holds at $x = +1$, not at $x = -1$.\n\nA constant value of $-1$ fails for even $n$.\n\nThe polynomials do not vanish at the endpoint for odd $n$; they equal $-1$."
   },
-  // originally mth302_ch11_001, Chapter 11
+  // originally mth302_ch11_001, Chapter 10
   {
-    id: "mth302_ch11_001",
+    id: "mth302_ch10_001",
     course: "MTH 302",
-    chapter: "Chapter 11",
+    chapter: "Chapter 3",
     text: "What is the Legendre polynomial $P_2(x)$?",
     options: [
       "$(3x^2 - 1)/2$",
@@ -336,11 +336,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "By Rodrigues' formula, $P_2 = \\dfrac{1}{8}\\dfrac{d^2}{dx^2}(x^2-1)^2$, which works out to $\\dfrac{12x^2-4}{8} = \\dfrac{3x^2-1}{2}$. An instant check is that $P_2(1)$ must equal $1$, and $\\dfrac{3-1}{2} = 1$ confirms this while immediately ruling out the options with a plus sign or a different leading coefficient.\n\n$(3x^2+1)/2$ has the wrong sign on the constant term and fails the check $P_2(1) = 1$.\n\n$(5x^2-3)/2$ uses coefficients that belong to $P_3$ rather than $P_2$.\n\n$3x^2 - 1$ omits the necessary division by $2$, so it fails the normalization check $P_2(1) = 1$."
   },
-  // originally mth302_ch12_036, Chapter 12
+  // originally mth302_ch12_036, Chapter 11
   {
-    id: "mth302_ch12_036",
+    id: "mth302_ch11_036",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 3",
     text: "What is the fundamental period of a periodic function?",
     options: [
       "The smallest positive period",
@@ -351,11 +351,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Every integer multiple of a period is again a period, so the fundamental period is defined as the smallest positive one.\n\nNo largest period exists, since multiples grow without bound.\n\nSpacing between maxima can differ from the period for a general profile.\n\nAny repeating interval is a period, but not necessarily the fundamental one."
   },
-  // originally mth302_ch12_028, Chapter 12
+  // originally mth302_ch12_028, Chapter 11
   {
-    id: "mth302_ch12_028",
+    id: "mth302_ch11_028",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 3",
     text: "What is the formula for $b_n$ for a function of period $2L$?",
     options: [
       "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$",
@@ -366,11 +366,11 @@ const mth302ExamPrepC: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Rescaling the period-$2\\pi$ formulas by $v = \\pi x/L$ replaces the prefactor $1/\\pi$ by $1/L$ and the harmonic $\\sin nx$ by $\\sin(n\\pi x/L)$.\n\nHalving the prefactor belongs to a different normalisation.\n\nUsing the cosine gives $a_n$.\n\nRetaining $\\pi$ in the prefactor fails to rescale consistently."
   },
-  // originally mth302_ch12_014, Chapter 12
+  // originally mth302_ch12_014, Chapter 11
   {
-    id: "mth302_ch12_014",
+    id: "mth302_ch11_014",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 3",
     text: "For $y = 6\\sin\\tfrac{2}{3}x$, what are the amplitude and period?",
     options: [
       "Amplitude $6$, period $3\\pi$",

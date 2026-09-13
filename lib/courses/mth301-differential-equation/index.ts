@@ -11,7 +11,6 @@ import mth302Chapter8 from "./mth302_ch8";
 import mth302Chapter9 from "./mth302_ch9";
 import mth302Chapter10 from "./mth302_ch10";
 import mth302Chapter11 from "./mth302_ch11";
-import mth302Chapter12 from "./mth302_ch12";
 
 export const mth302DifferentialEquationsCourse: Course = {
   id: "mth302-differential-equations",
@@ -64,33 +63,27 @@ export const mth302DifferentialEquationsCourse: Course = {
     },
     {
       id: "Chapter 8",
-      label: "The Heat Equation and the Wave Equation",
-      description:
-        "Separation of variables for the heat equation and the thermal diffusivity, the exponential decay of Fourier modes, D'Alembert's formula for the wave equation, the finite domain of dependence, and the classification comparison across the heat, wave, and Laplace equations.",
-    },
-    {
-      id: "Chapter 9",
       label: "Sturm-Liouville Systems and Orthogonality",
       description:
         "The Sturm-Liouville standard form and reading off p, q, r, and the weight function, the four core properties of regular Sturm-Liouville systems, worked eigenvalue problems under Dirichlet and Neumann conditions, and expansion in orthogonal eigenfunctions.",
     },
     {
-      id: "Chapter 10",
+      id: "Chapter 9",
       label: "The Gamma and Beta Functions",
       description:
         "The Gamma function's definition, recurrence, integer and half-integer values, behavior at negative non-integer arguments versus its poles at zero and negative integers, using Gamma to evaluate integrals, the Beta function and its trigonometric form, and the Beta-Gamma relation.",
     },
     {
-      id: "Chapter 11",
+      id: "Chapter 10",
       label: "Legendre and Bessel Functions",
       description:
         "Legendre's equation and the Legendre polynomials via Rodrigues' formula, the three-term recurrence relation, orthogonality and normalization, the generating function, and Bessel's equation with the relation between Bessel functions of positive and negative integer order.",
     },
     {
-      id: "Chapter 12",
+      id: "Chapter 11",
       label: "Periodic Functions and Fourier Series",
       description:
-        "Periodic functions and their period, the Fourier series of period 2 pi and general period 2L, the constant term as the mean value, convergence at jump discontinuities, symmetry shortcuts for even and odd functions, and half-range sine expansions for the heat equation with zero boundary conditions.",
+        "Periodic functions and their period, the Fourier series of period 2 pi and general period 2L, the constant term as the mean value, convergence at jump discontinuities, and symmetry shortcuts for even and odd functions.",
     },
   ],
   getQuestions: (): QuestionV2[] => {
@@ -106,7 +99,6 @@ export const mth302DifferentialEquationsCourse: Course = {
       ...mth302Chapter9,
       ...mth302Chapter10,
       ...mth302Chapter11,
-      ...mth302Chapter12,
     ];
   },
 };

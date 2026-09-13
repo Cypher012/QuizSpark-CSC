@@ -5,561 +5,561 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_001",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\Gamma(1/2)$?",
+    text: "What is the Legendre polynomial $P_2(x)$?",
     options: [
-      "$\\pi$",
-      "$\\sqrt{\\pi}$",
-      "$\\sqrt{\\pi}/2$",
-      "$2\\sqrt{\\pi}$"
+      "$(3x^2 - 1)/2$",
+      "$(3x^2 + 1)/2$",
+      "$(5x^2 - 3)/2$",
+      "$3x^2 - 1$"
     ],
-    correctAnswer: 1,
-    explanation: "Substituting $t = u^2$ gives $\\Gamma(1/2) = 2\\displaystyle\\int_0^\\infty e^{-u^2}\\,du$, which equals $2 \\cdot \\sqrt{\\pi}/2$, using the polar-coordinate evaluation of that Gaussian integral, giving $\\Gamma(1/2) = \\sqrt{\\pi}$.\n\n$\\pi$ omits the square root, mistaking the squared value for the answer itself.\n\n$\\sqrt{\\pi}/2$ is actually the value of $\\int_0^\\infty e^{-u^2}\\,du$ on its own, before the factor of $2$ supplied by the substitution is applied.\n\n$2\\sqrt{\\pi}$ applies the factor of $2$ twice instead of once."
+    correctAnswer: 0,
+    explanation: "By Rodrigues' formula, $P_2 = \\dfrac{1}{8}\\dfrac{d^2}{dx^2}(x^2-1)^2$, which works out to $\\dfrac{12x^2-4}{8} = \\dfrac{3x^2-1}{2}$. An instant check is that $P_2(1)$ must equal $1$, and $\\dfrac{3-1}{2} = 1$ confirms this while immediately ruling out the options with a plus sign or a different leading coefficient.\n\n$(3x^2+1)/2$ has the wrong sign on the constant term and fails the check $P_2(1) = 1$.\n\n$(5x^2-3)/2$ uses coefficients that belong to $P_3$ rather than $P_2$.\n\n$3x^2 - 1$ omits the necessary division by $2$, so it fails the normalization check $P_2(1) = 1$."
   },
   {
     id: "mth302_ch10_002",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\Gamma(7/2)$?",
+    text: "What is the Legendre polynomial $P_3(x)$?",
     options: [
-      "$15\\sqrt{\\pi}/8$",
-      "$3\\sqrt{\\pi}/4$",
-      "$5\\sqrt{\\pi}/2$",
-      "$105\\sqrt{\\pi}/16$"
+      "$(5x^2 - 3x)/2$",
+      "$(5x^3 - 3x)/2$",
+      "$(5x^3 - 3)/2$",
+      "$(35x^3 - 30x)/8$"
     ],
-    correctAnswer: 0,
-    explanation: "Applying the recurrence $\\Gamma(x+1) = x\\Gamma(x)$ repeatedly gives $\\Gamma(7/2) = \\dfrac{5}{2}\\cdot\\dfrac{3}{2}\\cdot\\dfrac{1}{2}\\Gamma(1/2) = \\dfrac{15}{8}\\sqrt{\\pi}$.\n\n$3\\sqrt{\\pi}/4$ is actually the value of $\\Gamma(3/2)$, one recurrence step short of the target.\n\n$5\\sqrt{\\pi}/2$ does not match any correct step in the recurrence chain from $\\Gamma(1/2)$.\n\n$105\\sqrt{\\pi}/16$ is actually the value of $\\Gamma(9/2)$, one recurrence step too far."
+    correctAnswer: 1,
+    explanation: "From the recurrence $3P_3 = 5xP_2 - 2P_1 = 5x\\cdot\\dfrac{3x^2-1}{2} - 2x$, which simplifies to $\\dfrac{15x^3-9x}{2}$, giving $P_3 = \\dfrac{5x^3-3x}{2}$. Two instant checks confirm this: the degree of $P_n$ must equal $n$ exactly, ruling out the quadratic option, and $P_3(1)$ must equal $1$, which $\\dfrac{5-3}{2} = 1$ satisfies.\n\n$(5x^2-3x)/2$ has the wrong power on the leading term, since $P_3$ must be cubic, not quadratic.\n\n$(5x^3-3)/2$ fails the check $P_3(1) = 1$, since $\\dfrac{5-3}{2} = 1$ works only with the $x$ multiplying the second term.\n\n$(35x^3-30x)/8$ uses coefficients that belong to a different Legendre polynomial, not $P_3$."
   },
   {
     id: "mth302_ch10_003",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\Gamma(-3/2)$?",
+    text: "What are the values of $P_n(1)$ and $P_n(-1)$ respectively?",
     options: [
-      "$-2\\sqrt{\\pi}$",
-      "$4\\sqrt{\\pi}/3$",
-      "$-8\\sqrt{\\pi}/15$",
-      "Undefined"
+      "$1$ and $1$",
+      "$n$ and $-n$",
+      "$(-1)^n$ and $1$",
+      "$1$ and $(-1)^n$"
     ],
-    correctAnswer: 1,
-    explanation: "Using $\\Gamma(x) = \\Gamma(x+1)/x$ downward from $\\Gamma(1/2)$, first $\\Gamma(-1/2) = \\Gamma(1/2)/(-1/2) = -2\\sqrt{\\pi}$, and then $\\Gamma(-3/2) = \\Gamma(-1/2)/(-3/2) = (-2\\sqrt{\\pi})/(-3/2) = 4\\sqrt{\\pi}/3$.\n\n$-2\\sqrt{\\pi}$ is actually the value of $\\Gamma(-1/2)$, one step earlier in the chain.\n\n$-8\\sqrt{\\pi}/15$ is actually the value of $\\Gamma(-5/2)$, one step further down the chain.\n\nUndefined is wrong here since $\\Gamma$ is undefined only at $0$ and the negative integers; $-3/2$ is a negative non-integer, where the value is perfectly well defined."
+    correctAnswer: 3,
+    explanation: "Setting $x = 1$ in the generating function reduces it to $1/(1-t)$, whose power series is $\\sum t^n$, so $P_n(1) = 1$ for every $n$. Setting $x = -1$ reduces it to $1/(1+t)$, whose power series is $\\sum(-1)^nt^n$, so $P_n(-1) = (-1)^n$. This normalization $P_n(1) = 1$ is exactly what fixes the constants in each Legendre polynomial.\n\n$1$ and $1$ wrongly gives the same value at both endpoints, ignoring the alternating sign at $x = -1$.\n\n$n$ and $-n$ do not match the actual constant values $1$ and $(-1)^n$ obtained from the generating function.\n\n$(-1)^n$ and $1$ has the two values swapped."
   },
   {
     id: "mth302_ch10_004",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\displaystyle\\int_0^\\infty x^7e^{-x}\\,dx$?",
+    text: "What is the value of $\\displaystyle\\int_{-1}^1 P_3(x)^2\\,dx$?",
     options: [
-      "$7! = 5040$",
-      "$8! = 40320$",
-      "$6! = 720$",
-      "$\\Gamma(7) = 720$"
+      "$0$",
+      "$2/7$",
+      "$2/3$",
+      "$2$"
     ],
-    correctAnswer: 0,
-    explanation: "Matching against $\\int_0^\\infty t^{s-1}e^{-t}\\,dt$ gives $s - 1 = 7$, so $s = 8$, and the integral equals $\\Gamma(8) = 7! = 5040$. The off-by-one relationship between the exponent in the integrand and the argument of $\\Gamma$ is exactly what this question tests.\n\n$8! = 40320$ mistakenly uses $s = 9$ rather than $s = 8$.\n\n$6! = 720$ and $\\Gamma(7) = 720$ both mistakenly use $s = 7$ rather than the correct $s = 8$."
+    correctAnswer: 1,
+    explanation: "The normalization formula for Legendre polynomials states that $\\int_{-1}^1 P_{n}^{2}\\,dx = \\dfrac{2}{2n+1}$, so with $n = 3$ the value is $2/7$.\n\n$0$ is the value that would apply to the integral of $P_m$ times $P_n$ for two different indices $m$ and $n$, not to the integral of $P_n$ squared with itself.\n\n$2/3$ and $2$ do not match the correct substitution $n = 3$ into the formula $2/(2n+1)$."
   },
   {
     id: "mth302_ch10_005",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\displaystyle\\int_0^\\infty x^3e^{-4x}\\,dx$?",
+    text: "What is Rodrigues' formula for the Legendre polynomials?",
     options: [
-      "$3/128$",
-      "$6/64$",
-      "$3!/4$",
-      "$1/64$"
+      "$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2-1)^n$",
+      "$P_n = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2-1)^n$",
+      "$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(1-x^2)^n$",
+      "$P_n = \\dfrac{1}{2^n}\\dfrac{d^n}{dx^n}(x^2-1)$"
     ],
     correctAnswer: 0,
-    explanation: "Using the general formula $\\int_0^\\infty x^ne^{-ax}\\,dx = \\Gamma(n+1)/a^{n+1}$, with $n = 3$ and $a = 4$, gives $3!/4^4 = 6/256 = 3/128$.\n\n$6/64$ fails to raise the denominator to the fourth power correctly.\n\n$3!/4$ forgets to raise $a$ to the power $n+1$ at all, using only the first power of $a$.\n\n$1/64$ does not follow from a correct application of the formula."
+    explanation: "The correct normalizing factor is $\\dfrac{1}{2^nn!}$, and the expression differentiated $n$ times is $(x^2-1)$ raised to the same power $n$ as the order of differentiation.\n\n$P_n = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2-1)^n$ omits the necessary factor of $2^n$ in the denominator.\n\n$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(1-x^2)^n$ differs by a sign inside the parentheses, which would violate the normalization $P_n(1) = 1$ for odd values of $n$.\n\n$P_n = \\dfrac{1}{2^n}\\dfrac{d^n}{dx^n}(x^2-1)$ both omits the $n!$ factor and fails to raise the bracket to the power $n$."
   },
   {
     id: "mth302_ch10_006",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the general formula for $B(m, n)$, the Beta function, in terms of the Gamma function?",
+    text: "What is the recurrence relation for the Legendre polynomials?",
     options: [
-      "$\\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$",
-      "$\\dfrac{\\Gamma(m)\\Gamma(n)}{(m+n)!}$",
-      "$\\Gamma(m+n)\\Gamma(m)\\Gamma(n)$",
-      "$\\Gamma(m)\\Gamma(n)\\Gamma(m+n)$"
+      "$(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$",
+      "$nP_{n+1} = (2n+1)xP_n - (n+1)P_{n-1}$",
+      "$P_{n+1} = xP_n - P_{n-1}$",
+      "$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$"
     ],
     correctAnswer: 0,
-    explanation: "For positive integers this identity reads $\\dfrac{(m-1)!(n-1)!}{(m+n-1)!}$, so the denominator is $\\Gamma(m+n)$, which equals $(m+n-1)!$, and not $(m+n)!$.\n\n$\\dfrac{\\Gamma(m)\\Gamma(n)}{(m+n)!}$ commits exactly the off-by-one error of using $(m+n)!$ instead of the correct $(m+n-1)!$ in the denominator.\n\n$\\Gamma(m+n)\\Gamma(m)\\Gamma(n)$ places $\\Gamma(m+n)$ in the numerator rather than the denominator, which is the reciprocal of the correct relationship.\n\n$\\Gamma(m)\\Gamma(n)\\Gamma(m+n)$ omits the division entirely, multiplying all three Gamma values together instead."
+    explanation: "Testing this recurrence with $n = 1$ gives $2P_2 = 3xP_1 - P_0 = 3x^2 - 1$, so $P_2 = (3x^2-1)/2$, which matches the known correct polynomial, confirming that $(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$ is the correct form. Testing a low case against a known polynomial is the fastest way to verify the recurrence quickly.\n\n$nP_{n+1} = (2n+1)xP_n - (n+1)P_{n-1}$ has the coefficients $n$ and $n+1$ swapped relative to the correct recurrence.\n\n$P_{n+1} = xP_n - P_{n-1}$ omits the necessary coefficients $(2n+1)$ and $n$ entirely.\n\n$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$ misplaces the coefficient $(2n+1)$, which should multiply $xP_n$, not $P_{n+1}$."
   },
   {
     id: "mth302_ch10_007",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $B(4, 3)$?",
+    text: "For integer $n$, how does $J_{-n}(x)$ relate to $J_n(x)$?",
     options: [
-      "$1/60$",
-      "$1/12$",
-      "$1/120$",
-      "$1/30$"
+      "$J_{-n}(x) = J_n(x)$",
+      "$J_{-n}(x) = -J_n(x)$",
+      "$J_{-n}(x) = (-1)^nJ_n(x)$",
+      "$J_{-n}(x) = Y_n(x)$"
     ],
-    correctAnswer: 0,
-    explanation: "Using $B(4,3) = \\dfrac{\\Gamma(4)\\Gamma(3)}{\\Gamma(7)} = \\dfrac{3! \\cdot 2!}{6!} = \\dfrac{6 \\times 2}{720} = \\dfrac{1}{60}$, which agrees with computing the reduction formula step by step down to $2B(2,1) = 1/2$.\n\n$1/12$, $1/120$, and $1/30$ do not match the correct factorial computation $3! \\cdot 2!/6!$."
+    correctAnswer: 2,
+    explanation: "Because $\\Gamma$ is infinite at every non-positive integer, the first $n$ terms of the series for $J_{-n}$ vanish, and re-indexing the remaining series with $k = p + n$ produces the overall factor $(-1)^n$, giving $J_{-n}(x) = (-1)^nJ_n(x)$. The practical consequence is that $J_n$ and $J_{-n}$ are linearly dependent for integer order, which is exactly why the second solution $Y_n$ must be introduced.\n\n$J_{-n}(x) = J_n(x)$ is correct only when $n$ is even, but the general relation includes the sign factor $(-1)^n$ for all integers.\n\n$J_{-n}(x) = -J_n(x)$ is correct only when $n$ is odd, again missing the general $(-1)^n$ pattern.\n\n$J_{-n}(x) = Y_n(x)$ confuses the negative-order Bessel function of the first kind with the entirely separate Bessel function of the second kind."
   },
   {
     id: "mth302_ch10_008",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\displaystyle\\int_0^1 x^6(1-x)^4\\,dx$?",
+    text: "What is the general solution of $x^2y'' + xy' + (x^2-4)y = 0$?",
     options: [
-      "$B(6, 4)$",
-      "$B(7, 5) = 1/210$",
-      "$B(7, 5) = 1/420$",
-      "$1/35$"
+      "$AJ_4(x) + BY_4(x)$",
+      "$AJ_2(x) + BY_2(x)$",
+      "$AJ_2(x) + BJ_{-2}(x)$",
+      "$AP_2(x) + BQ_2(x)$"
     ],
     correctAnswer: 1,
-    explanation: "Matching $\\int_0^1 x^{m-1}(1-x)^{n-1}\\,dx$ against the given integrand gives $m - 1 = 6$ and $n - 1 = 4$, so $m = 7$ and $n = 5$, and $B(7,5) = \\dfrac{6! \\cdot 4!}{10!} = \\dfrac{720 \\times 24}{3628800} = \\dfrac{1}{210}$.\n\n$B(6, 4)$ commits the off-by-one error in reading the exponents as the parameters directly, instead of adding $1$ to each.\n\n$B(7, 5) = 1/420$ correctly identifies the parameters but computes the wrong numerical value.\n\n$1/35$ does not follow from the correct factorial computation."
+    explanation: "Comparing with the standard Bessel equation $x^2y'' + xy' + (x^2-\\nu^2)y = 0$ gives $\\nu^2 = 4$, so the order is $\\nu = 2$, not $4$, and the general solution is $AJ_2(x) + BY_2(x)$.\n\n$AJ_4(x) + BY_4(x)$ commits the standard slip of reading the order as $4$ directly from the constant term instead of taking its square root.\n\n$AJ_2(x) + BJ_{-2}(x)$ fails because $J_{-2} = (-1)^2J_2 = J_2$, meaning it is not independent of $J_2$ and cannot serve as the second solution.\n\n$AP_2(x) + BQ_2(x)$ wrongly applies the Legendre function solutions, which belong to a different differential equation entirely."
   },
   {
     id: "mth302_ch10_009",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the trigonometric form of the Beta function $B(m, n)$?",
+    text: "What is Legendre's differential equation?",
     options: [
-      "$\\displaystyle\\int_0^{\\pi/2}\\sin^m\\theta\\cos^n\\theta\\,d\\theta$",
-      "$\\displaystyle\\int_0^1\\sin^{m-1}\\theta\\cos^{n-1}\\theta\\,d\\theta$",
-      "$2\\displaystyle\\int_0^\\pi\\sin^{2m}\\theta\\cos^{2n}\\theta\\,d\\theta$",
-      "$2\\displaystyle\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$"
+      "$(1 - x^2)y'' - 2xy' + k(k+1)y = 0$",
+      "$(1 - x^2)y'' + 2xy' + k(k+1)y = 0$, with the middle sign reversed",
+      "$x^2y'' + xy' + (x^2 - n^2)y = 0$, which is Bessel's equation instead",
+      "$(1 + x^2)y'' - 2xy' + k(k+1)y = 0$, with a plus inside the bracket"
     ],
-    correctAnswer: 3,
-    explanation: "Substituting $x = \\sin^2\\theta$ gives $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, and $x^{m-1}(1-x)^{n-1}$ becomes $\\sin^{2m-2}\\theta\\cos^{2n-2}\\theta$; combining the powers from the substitution and the integrand produces $2\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$. The upper limit is $\\pi/2$ because $x = 1$ corresponds to $\\theta = \\pi/2$.\n\nThe plain $\sin^m\theta\cos^n\theta$ form uses the wrong exponents and omits the leading factor of $2$.\n\nThe version integrated from $0$ to $1$ uses the wrong upper limit for a trigonometric substitution.\n\nThe version integrated from $0$ to $\pi$ with exponents $2m$ and $2n$ uses the wrong upper limit and the wrong exponents."
+    correctAnswer: 0,
+    explanation: "Legendre's equation is $(1 - x^2)y'' - 2xy' + k(k+1)y = 0$ on $[-1, 1]$.\n\nReversing the sign of the first-derivative term breaks the self-adjoint structure.\n\nThe equation with $x^2 - n^2$ is Bessel's equation.\n\nA plus sign inside the bracket changes the singular points away from $\\pm 1$."
   },
   {
     id: "mth302_ch10_010",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "At which values is the Gamma function undefined?",
+    text: "On what interval is Legendre's equation considered?",
     options: [
-      "Only at $x = 0$",
-      "At $0$ and every negative integer",
-      "At every negative non-integer",
-      "Nowhere; Gamma is defined for all real numbers"
+      "$[-1, 1]$",
+      "$[0, 1]$, using only the positive half of the range",
+      "$[0, \\infty)$, matching the Bessel setting",
+      "$[-\\pi, \\pi]$, the interval used for Fourier series"
     ],
-    correctAnswer: 1,
-    explanation: "Gamma has poles at $0$ and at every negative integer, where its value blows up to infinity, so it is undefined at those points; negative non-integer arguments, by contrast, are perfectly well defined and can be evaluated using the recurrence relation, with signs alternating as the argument decreases through successive negative half-integers.\n\nOnly at $x = 0$ misses the poles at every negative integer as well.\n\nAt every negative non-integer is exactly backwards, since those values are well defined while the negative integers are not.\n\nNowhere is defined for all real numbers ignores the poles entirely."
+    correctAnswer: 0,
+    explanation: "The natural interval is $[-1, 1]$, whose endpoints are the singular points of the equation.\n\nHalving the range discards the symmetry that gives the polynomials their parity.\n\nThe half-line belongs to Bessel's equation.\n\nThe interval $[-\\pi, \\pi]$ belongs to Fourier analysis."
   },
   {
     id: "mth302_ch10_011",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the value of $\\displaystyle\\int_0^{\\pi/2}\\sin^5\\theta\\cos^4\\theta\\,d\\theta$?",
+    text: "What is the general solution of Legendre's equation?",
     options: [
-      "$\\dfrac{8}{315}$",
-      "$\\dfrac{16}{315}$, obtained without halving the Beta function",
-      "$\\dfrac{1}{15}$, from an incorrect reduction of the parameters",
-      "$\\dfrac{\\pi}{32}$, retaining a factor of $\\pi$ in the answer"
+      "$y = AP_k(x) + BQ_k(x)$",
+      "$y = AP_k(x)$ alone, since the second solution is discarded",
+      "$y = AJ_k(x) + BY_k(x)$, which uses the Bessel functions",
+      "$y = A\\cos kx + B\\sin kx$, a trigonometric pair"
     ],
     correctAnswer: 0,
-    explanation: "Using $\\int_0^{\\pi/2}\\sin^p\\theta\\cos^q\\theta\\,d\\theta = \\tfrac{1}{2}B\\!\\left(\\tfrac{p+1}{2}, \\tfrac{q+1}{2}\\right)$ with $p = 5$, $q = 4$ gives $\\tfrac{1}{2}B(3, \\tfrac{5}{2}) = \\tfrac{1}{2}\\cdot\\dfrac{\\Gamma(3)\\Gamma(5/2)}{\\Gamma(11/2)} = \\dfrac{8}{315}$.\n\nDoubling the result omits the factor $\\tfrac{1}{2}$ in front of the Beta function.\n\nA value of $\\tfrac{1}{15}$ does not follow from these parameters.\n\nBecause one of the powers is odd, the $\\sqrt{\\pi}$ factors cancel and the answer is rational, so any $\\pi$ in the answer signals an error."
+    explanation: "Being second order, the equation has two independent solutions, the Legendre functions of the first and second kind.\n\nDiscarding $Q_k$ happens in physical problems for boundedness, but the general solution retains both.\n\nThe Bessel functions solve a different equation.\n\nTrigonometric solutions belong to the constant-coefficient case."
   },
   {
     id: "mth302_ch10_012",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the integral definition of $\\Gamma(x)$?",
+    text: "When does the first-kind Legendre solution become a polynomial?",
     options: [
-      "$\\displaystyle\\int_0^\\infty t^{x-1}e^{-t}\\,dt$",
-      "$\\displaystyle\\int_0^\\infty t^{x}e^{-t}\\,dt$, using the exponent $x$ rather than $x - 1$",
-      "$\\displaystyle\\int_0^1 t^{x-1}e^{-t}\\,dt$, integrating only over the unit interval",
-      "$\\displaystyle\\int_0^\\infty t^{x-1}e^{t}\\,dt$, with a growing exponential"
+      "When $k$ is a non-negative integer",
+      "When $k$ is any real number whatsoever",
+      "When $k$ is negative, so the series terminates from below",
+      "When $k$ is a half-integer, as for the Gamma function"
     ],
     correctAnswer: 0,
-    explanation: "The Gamma function is defined by $\\int_0^\\infty t^{x-1}e^{-t}\\,dt$, convergent for $x > 0$.\n\nUsing the exponent $x$ instead of $x - 1$ defines $\\Gamma(x + 1)$.\n\nRestricting to the unit interval gives an incomplete Gamma function.\n\nA growing exponential makes the integral diverge."
+    explanation: "For $k = n$ a non-negative integer one of the two Frobenius series terminates, producing the Legendre polynomial $P_n$.\n\nA general real $k$ leaves both series infinite.\n\nNegative values do not truncate the series.\n\nHalf-integers do not terminate the series either."
   },
   {
     id: "mth302_ch10_013",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "For which $x$ does the defining integral for $\\Gamma(x)$ converge?",
+    text: "How are the arbitrary constants chosen in defining $P_n$?",
     options: [
-      "$x > 0$",
-      "$x \\geq 1$, excluding the fractional values below one",
-      "Every real $x$, including the negative integers",
-      "$x < 0$ only, where the reverse recurrence applies"
+      "So that $P_n(1) = 1$",
+      "So that $P_n(0) = 1$, normalising at the midpoint instead",
+      "So that the leading coefficient equals one",
+      "So that the integral of $P_n$ over $[-1, 1]$ equals one"
     ],
     correctAnswer: 0,
-    explanation: "The integral converges precisely for positive $x$; negative non-integer values are reached afterwards through the reverse recurrence.\n\nRestricting to $x \\geq 1$ excludes values such as $\\Gamma(1/2)$, which the integral does define.\n\nConvergence fails at zero and the negative integers.\n\nNegative arguments are handled by extension, not by the integral itself."
+    explanation: "The standard normalisation fixes $P_n(1) = 1$, which is also the quickest check on any offered polynomial.\n\nNormalising at the origin would fail for odd $n$, where $P_n(0) = 0$.\n\nA monic normalisation gives different polynomials.\n\nThe integral of $P_n$ vanishes for $n \\geq 1$ by orthogonality against $P_0$."
   },
   {
     id: "mth302_ch10_014",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the fundamental recurrence for the Gamma function?",
+    text: "Why is $Q_n$ discarded in most physical problems?",
     options: [
-      "$\\Gamma(x + 1) = x\\Gamma(x)$",
-      "$\\Gamma(x + 1) = (x + 1)\\Gamma(x)$, shifting the multiplier by one",
-      "$\\Gamma(x) = x\\Gamma(x + 1)$, inverting the direction of the relation",
-      "$\\Gamma(x + 1) = \\Gamma(x) + x$, adding rather than multiplying"
+      "It is unbounded at $x = \\pm 1$",
+      "It fails to satisfy Legendre's equation at interior points",
+      "It is not orthogonal to the polynomials $P_m$",
+      "It is identically zero for integer $n$"
     ],
     correctAnswer: 0,
-    explanation: "Integration by parts gives $\\Gamma(x + 1) = x\\Gamma(x)$, which is the relation behind both the factorial values and the extension to negative arguments.\n\nUsing $x + 1$ as the multiplier misstates the result of the integration by parts.\n\nInverting the relation reverses which side carries the factor.\n\nThe recurrence is multiplicative, not additive."
+    explanation: "The second-kind solution blows up at the endpoints, so boundedness on the closed interval rules it out.\n\nIt does satisfy the equation; that is why it is a solution at all.\n\nOrthogonality is not the reason for discarding it.\n\nIt is a genuine nonzero function."
   },
   {
     id: "mth302_ch10_015",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "For a positive integer $n$, what does $\\Gamma(n + 1)$ equal?",
+    text: "What is Rodrigues' formula for the Legendre polynomials?",
     options: [
-      "$n!$",
-      "$(n + 1)!$, shifting the factorial by one place",
-      "$(n - 1)!$, which is the value of $\\Gamma(n)$ instead",
-      "$n$, without forming a factorial at all"
+      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2 - 1)^n$",
+      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2 + 1)^n$, with a plus inside the bracket",
+      "$P_n(x) = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2 - 1)^n$, omitting the power of two",
+      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^{n}}{dx^{n}}(x - 1)^n$, without squaring $x$"
     ],
     correctAnswer: 0,
-    explanation: "Iterating the recurrence down to $\\Gamma(1) = 1$ gives $\\Gamma(n + 1) = n!$, and correspondingly $\\Gamma(n) = (n - 1)!$.\n\nUsing $(n + 1)!$ shifts the argument one step too far.\n\nThe value $(n - 1)!$ belongs to $\\Gamma(n)$, and confusing the two is the standard slip here.\n\nThe Gamma function produces a factorial, not the argument itself."
+    explanation: "Rodrigues' formula differentiates $(x^2 - 1)^n$ exactly $n$ times and divides by $2^nn!$.\n\nA plus sign inside the bracket changes the roots away from $\\pm 1$.\n\nOmitting $2^n$ destroys the normalisation $P_n(1) = 1$.\n\nDropping the square gives a different polynomial family."
   },
   {
     id: "mth302_ch10_016",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\Gamma(1)$?",
+    text: "What is $P_1(x)$?",
     options: [
-      "$1$",
-      "$0$, since the integrand vanishes at the lower limit",
-      "Undefined, as at the non-positive integers",
-      "$\\sqrt{\\pi}$, which is the half-integer value instead"
+      "$x$",
+      "$1$, which is $P_0(x)$ instead",
+      "$\\tfrac{1}{2}(3x^2 - 1)$, which is $P_2(x)$",
+      "$2x$, doubling the correct polynomial"
     ],
     correctAnswer: 0,
-    explanation: "Evaluating $\\int_0^\\infty e^{-t}\\,dt = 1$ gives $\\Gamma(1) = 1$, which anchors the factorial chain.\n\nThe integral is strictly positive, so zero is impossible.\n\nThe Gamma function is undefined at zero and the negative integers, not at one.\n\nThe value $\\sqrt{\\pi}$ belongs to $\\Gamma(1/2)$."
+    explanation: "Rodrigues' formula with $n = 1$ gives $P_1(x) = x$, which indeed satisfies $P_1(1) = 1$.\n\nThe constant $1$ is $P_0$.\n\nThe quadratic is $P_2$.\n\nDoubling would give $P_1(1) = 2$, breaking the normalisation."
   },
   {
     id: "mth302_ch10_017",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "At which arguments is the Gamma function undefined?",
+    text: "What is $P_4(x)$?",
     options: [
-      "At $0$ and the negative integers",
-      "At every negative argument, integer or not",
-      "At the positive integers, where the factorial takes over",
-      "At the half-integers, where a square root appears"
+      "$\\dfrac{35x^4 - 30x^2 + 3}{8}$",
+      "$\\dfrac{35x^4 - 30x^2 + 3}{16}$, halving the correct denominator",
+      "$\\dfrac{35x^3 - 30x}{8}$",
+      "$\\dfrac{5x^4 - 3x^2}{2}$, from an incorrect recurrence step"
     ],
     correctAnswer: 0,
-    explanation: "The reverse recurrence blows up at zero and at each negative integer, where the function has poles, while negative non-integers are perfectly well defined.\n\nNegative non-integers such as $-1/2$ do have finite values.\n\nThe positive integers give the factorial values and are certainly defined.\n\nHalf-integers give values involving $\\sqrt{\\pi}$ and are defined."
+    explanation: "Rodrigues' formula gives $P_4(x) = \\dfrac{35x^4 - 30x^2 + 3}{8}$, and substituting $x = 1$ gives $\\dfrac{35 - 30 + 3}{8} = 1$ as required.\n\nDoubling the denominator would give $P_4(1) = 1/2$.\n\nA cubic cannot be $P_4$, since $P_n$ has degree exactly $n$.\n\nThe last expression fails the check $P_4(1) = 1$."
   },
   {
     id: "mth302_ch10_018",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\Gamma(3/2)$?",
+    text: "What is the degree and parity of $P_n(x)$?",
     options: [
-      "$\\dfrac{\\sqrt{\\pi}}{2}$",
-      "$\\sqrt{\\pi}$",
-      "$\\dfrac{3\\sqrt{\\pi}}{4}$, which is the value of $\\Gamma(5/2)$",
-      "$\\dfrac{\\sqrt{\\pi}}{4}$, halving the correct value once too often"
+      "Degree exactly $n$, even for even $n$ and odd for odd $n$",
+      "Degree $n$, but always an even function regardless of $n$",
+      "Degree $2n$, with parity matching that of $n$",
+      "Degree $n - 1$, with parity opposite to that of $n$"
     ],
     correctAnswer: 0,
-    explanation: "Applying the recurrence, $\\Gamma(3/2) = \\tfrac{1}{2}\\Gamma(1/2) = \\dfrac{\\sqrt{\\pi}}{2}$.\n\nThe bare $\\sqrt{\\pi}$ is $\\Gamma(1/2)$, one step earlier.\n\nThe value $3\\sqrt{\\pi}/4$ is $\\Gamma(5/2)$, one step later.\n\nHalving again overshoots the recurrence."
+    explanation: "Each Legendre polynomial has degree exactly $n$ and inherits the parity of $n$, so $P_3$ is an odd cubic.\n\nUniform evenness fails for $P_1(x) = x$.\n\nThe degree is $n$, not $2n$.\n\nA degree of $n - 1$ contradicts Rodrigues' formula."
   },
   {
     id: "mth302_ch10_019",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\Gamma(5/2)$?",
+    text: "What is the recurrence relation for the Legendre polynomials?",
     options: [
-      "$\\dfrac{3\\sqrt{\\pi}}{4}$",
-      "$\\dfrac{\\sqrt{\\pi}}{2}$, which is the value of $\\Gamma(3/2)$ instead",
-      "$\\dfrac{15\\sqrt{\\pi}}{8}$, which is the value of $\\Gamma(7/2)$",
-      "$\\dfrac{5\\sqrt{\\pi}}{2}$"
+      "$(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$",
+      "$(n+1)P_{n+1} = (2n+1)xP_n + nP_{n-1}$",
+      "$P_{n+1} = xP_n - P_{n-1}$, dropping every coefficient",
+      "$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$, exchanging two coefficients"
     ],
     correctAnswer: 0,
-    explanation: "Using the recurrence twice, $\\Gamma(5/2) = \\tfrac{3}{2}\\cdot\\tfrac{1}{2}\\sqrt{\\pi} = \\dfrac{3\\sqrt{\\pi}}{4}$.\n\nThe value $\\sqrt{\\pi}/2$ is one step earlier.\n\nThe value $15\\sqrt{\\pi}/8$ is one step later.\n\nMultiplying by $5/2$ misapplies the recurrence, which uses the argument minus one."
+    explanation: "The three-term recurrence is $(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$, which reproduces $P_3$ from $P_2$ and $P_1$.\n\nReversing the final sign gives the wrong polynomial.\n\nDropping the coefficients loses the normalisation.\n\nExchanging the two outer coefficients breaks the identity."
   },
   {
     id: "mth302_ch10_020",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\Gamma(-1/2)$?",
+    text: "Applying the recurrence with $n = 2$ gives which polynomial?",
     options: [
-      "$-2\\sqrt{\\pi}$",
-      "$2\\sqrt{\\pi}$",
-      "$\\dfrac{4\\sqrt{\\pi}}{3}$, which is the value of $\\Gamma(-3/2)$",
-      "Undefined, as at the negative integers"
+      "$P_3 = \\dfrac{5x^3 - 3x}{2}$",
+      "$P_3 = \\dfrac{5x^2 - 3x}{2}$",
+      "$P_3 = \\dfrac{3x^2 - 1}{2}$, which is $P_2$ instead",
+      "$P_3 = \\dfrac{35x^3 - 30x}{8}$, from a later step of the recurrence"
     ],
     correctAnswer: 0,
-    explanation: "Using $\\Gamma(x) = \\dfrac{\\Gamma(x + 1)}{x}$ with $x = -1/2$ gives $\\dfrac{\\Gamma(1/2)}{-1/2} = -2\\sqrt{\\pi}$.\n\nDropping the minus sign ignores the negative denominator.\n\nThe value $4\\sqrt{\\pi}/3$ belongs to $\\Gamma(-3/2)$.\n\nNegative half-integers are defined; only zero and the negative integers are not."
+    explanation: "From $3P_3 = 5xP_2 - 2P_1$ we get $3P_3 = \\dfrac{15x^3 - 5x}{2} - 2x = \\dfrac{15x^3 - 9x}{2}$, so $P_3 = \\dfrac{5x^3 - 3x}{2}$.\n\nA quadratic cannot be $P_3$, since the degree must equal three.\n\nThe expression $\\dfrac{3x^2 - 1}{2}$ is $P_2$.\n\nThe last expression does not satisfy $P_3(1) = 1$."
   },
   {
     id: "mth302_ch10_021",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "Which substitution converts $\\Gamma(1/2)$ into a Gaussian integral?",
+    text: "On what interval and with what weight are the Legendre polynomials orthogonal?",
     options: [
-      "$t = u^2$",
-      "$t = \\sqrt{u}$",
-      "$t = e^{-u}$, replacing the variable by an exponential",
-      "$t = 1 - u$, reflecting the variable about one"
+      "On $[-1, 1]$ with weight $1$",
+      "On $[-1, 1]$ with weight $x$",
+      "On $[0, 1]$ with weight $1$, over half the interval",
+      "On $[-\\pi, \\pi]$ with weight $1$, as for trigonometric families"
     ],
     correctAnswer: 0,
-    explanation: "Putting $t = u^2$ gives $dt = 2u\\,du$ and turns $\\Gamma(1/2)$ into $2\\int_0^\\infty e^{-u^2}\\,du$, which the polar-coordinate trick evaluates.\n\nThe reverse substitution does not clear the half-power.\n\nAn exponential substitution does not produce a Gaussian.\n\nReflecting about one belongs to the Beta function's symmetry argument."
+    explanation: "Legendre polynomials satisfy $\\int_{-1}^{1}P_mP_n\\,dx = 0$ for $m \\neq n$, with weight one.\n\nThe weight $x$ belongs to Bessel's equation in Sturm-Liouville form.\n\nHalving the interval destroys the orthogonality, which relies on symmetry.\n\nThe trigonometric interval belongs to Fourier series."
   },
   {
     id: "mth302_ch10_022",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\displaystyle\\int_0^\\infty e^{-x^2}\\,dx$?",
+    text: "What is $\\displaystyle\\int_{-1}^{1}P_n(x)^2\\,dx$?",
     options: [
-      "$\\dfrac{\\sqrt{\\pi}}{2}$",
-      "$\\sqrt{\\pi}$",
-      "$\\dfrac{\\pi}{4}$, which is the value of its square",
-      "$\\dfrac{\\pi}{2}$, confusing the square with the integral itself"
+      "$\\dfrac{2}{2n+1}$",
+      "$\\dfrac{1}{2n+1}$",
+      "$\\dfrac{2}{n+1}$, using the wrong denominator",
+      "$2$, independent of the index $n$"
     ],
     correctAnswer: 0,
-    explanation: "The polar-coordinate computation gives $I^2 = \\pi/4$, so $I = \\dfrac{\\sqrt{\\pi}}{2}$, and the factor $2$ supplied by the substitution then yields $\\Gamma(1/2) = \\sqrt{\\pi}$.\n\nThe bare $\\sqrt{\\pi}$ is $\\Gamma(1/2)$, twice this integral.\n\nThe value $\\pi/4$ is $I^2$, not $I$.\n\nThe value $\\pi/2$ matches neither the integral nor its square."
+    explanation: "The normalisation integral is $\\dfrac{2}{2n+1}$, which for $n = 3$ gives $\\dfrac{2}{7}$.\n\nOmitting the two halves the value.\n\nUsing $n + 1$ in the denominator misstates the formula.\n\nA constant value would contradict the dependence on $n$."
   },
   {
     id: "mth302_ch10_023",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\displaystyle\\int_0^\\infty x^5e^{-x}\\,dx$?",
+    text: "What is the generating function for the Legendre polynomials?",
     options: [
-      "$120$",
-      "$720$, which is $6!$ rather than $5!$",
-      "$24$",
-      "$5$, taking the exponent itself as the answer"
+      "$\\dfrac{1}{\\sqrt{1 - 2xt + t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$",
+      "$\\dfrac{1}{1 - 2xt + t^2} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, without the square root",
+      "$\\dfrac{1}{\\sqrt{1 + 2xt + t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$",
+      "$e^{xt} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, an exponential generating function"
     ],
     correctAnswer: 0,
-    explanation: "Matching $\\int_0^\\infty t^{s-1}e^{-t}\\,dt$ gives $s - 1 = 5$, so $s = 6$ and the integral is $\\Gamma(6) = 5! = 120$.\n\nThe value $720$ is $6!$ and overshoots by one step.\n\nThe value $24$ is $4!$ and undershoots by one step.\n\nThe exponent itself is not the value of the integral."
+    explanation: "The generating function is $(1 - 2xt + t^2)^{-1/2}$, valid for $|t| < 1$.\n\nOmitting the square root gives a different family of coefficients.\n\nA plus sign in the middle changes the expansion point.\n\nAn exponential generating function belongs to other polynomial families."
   },
   {
     id: "mth302_ch10_024",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the general formula for $\\displaystyle\\int_0^\\infty x^ne^{-ax}\\,dx$ with $a > 0$?",
+    text: "Setting $x = 1$ in the generating function establishes which value?",
     options: [
-      "$\\dfrac{\\Gamma(n + 1)}{a^{n+1}}$",
-      "$\\dfrac{\\Gamma(n + 1)}{a^{n}}$",
-      "$\\dfrac{\\Gamma(n)}{a^{n+1}}$, shifting the Gamma argument down by one",
-      "$a^{n+1}\\Gamma(n + 1)$, multiplying rather than dividing"
+      "$P_n(1) = 1$",
+      "$P_n(1) = n$, growing with the index",
+      "$P_n(1) = 0$ for every $n \\geq 1$",
+      "$P_n(1) = (-1)^n$"
     ],
     correctAnswer: 0,
-    explanation: "Substituting $y = ax$ contributes one power of $a$ for each of the $n$ factors of $x$ and one more from $dx$, giving $a^{n+1}$ in the denominator.\n\nOmitting one power of $a$ is exactly the slip this substitution is designed to catch.\n\nShifting the Gamma argument confuses $\\Gamma(n)$ with $\\Gamma(n + 1)$.\n\nMultiplying by $a^{n+1}$ inverts the relation."
+    explanation: "At $x = 1$ the generating function collapses to $\\dfrac{1}{1 - t} = \\sum t^n$, so every coefficient is one.\n\nGrowth with $n$ contradicts the geometric series obtained.\n\nVanishing coefficients would contradict the same expansion.\n\nThe alternating values arise at $x = -1$."
   },
   {
     id: "mth302_ch10_025",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the integral definition of $B(m, n)$?",
+    text: "What is $P_n(-1)$?",
     options: [
-      "$\\displaystyle\\int_0^1 x^{m-1}(1 - x)^{n-1}\\,dx$",
-      "$\\displaystyle\\int_0^1 x^{m}(1 - x)^{n}\\,dx$, without reducing either exponent",
-      "$\\displaystyle\\int_0^\\infty x^{m-1}(1 - x)^{n-1}\\,dx$, over an infinite range",
-      "$\\displaystyle\\int_0^1 x^{m-1}(1 + x)^{n-1}\\,dx$"
+      "$(-1)^n$",
+      "$1$ for every $n$, as at the other endpoint",
+      "$-1$ for every $n$, regardless of parity",
+      "$0$ for odd $n$ and $1$ for even $n$"
     ],
     correctAnswer: 0,
-    explanation: "The Beta function is $\\int_0^1 x^{m-1}(1 - x)^{n-1}\\,dx$, convergent for $m > 0$ and $n > 0$.\n\nFailing to reduce the exponents shifts both parameters by one.\n\nThe range is the unit interval, not the half-line.\n\nThe bracket carries a minus sign, which is what confines the integrand to $[0, 1]$."
+    explanation: "At $x = -1$ the generating function becomes $\\dfrac{1}{1 + t} = \\sum(-1)^nt^n$, giving $P_n(-1) = (-1)^n$.\n\nA constant value of one holds at $x = +1$, not at $x = -1$.\n\nA constant value of $-1$ fails for even $n$.\n\nThe polynomials do not vanish at the endpoint for odd $n$; they equal $-1$."
   },
   {
     id: "mth302_ch10_026",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What symmetry does the Beta function possess?",
+    text: "Which quick check rules out an offered expression for $P_n(x)$?",
     options: [
-      "$B(m, n) = B(n, m)$",
-      "$B(m, n) = -B(n, m)$, changing sign under the exchange",
-      "$B(m, n) = B(m + n, 1)$, collapsing the two parameters",
-      "$B(m, n) = \\dfrac{1}{B(n, m)}$, giving the reciprocal"
+      "Substituting $x = 1$ and requiring the value $1$",
+      "Substituting $x = 0$ and requiring the value $1$",
+      "Checking that the leading coefficient equals one",
+      "Checking that the polynomial has no constant term"
     ],
     correctAnswer: 0,
-    explanation: "The substitution $x \\mapsto 1 - x$ exchanges the two exponents, showing $B(m, n) = B(n, m)$.\n\nA sign change would contradict the positivity of the integrand.\n\nCollapsing the parameters discards information the function retains.\n\nThe reciprocal relation does not follow from the substitution."
+    explanation: "Because every Legendre polynomial satisfies $P_n(1) = 1$, evaluating at $x = 1$ eliminates wrong options instantly.\n\nThe value at the origin is zero for odd $n$, so it is not a uniform check.\n\nThe polynomials are not monic.\n\nEven-index polynomials do have constant terms, as $P_2$ shows."
   },
   {
     id: "mth302_ch10_027",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "Which substitution produces the trigonometric form of the Beta function?",
+    text: "Verifying $k = 2$, what does $(1 - x^2)y'' - 2xy' + 6y$ equal for $y = \\tfrac{1}{2}(3x^2 - 1)$?",
     options: [
-      "$x = \\sin^2\\theta$",
-      "$x = \\sin\\theta$, without the square on the sine",
-      "$x = \\cos\\theta$, using the cosine instead",
-      "$x = \\tan^2\\theta$"
+      "$0$",
+      "$6$",
+      "$3x^2 - 1$, reproducing the polynomial itself",
+      "$3$, the second derivative of the polynomial"
     ],
     correctAnswer: 0,
-    explanation: "Putting $x = \\sin^2\\theta$ gives $1 - x = \\cos^2\\theta$ and $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, sending $x = 0$ to $\\theta = 0$ and $x = 1$ to $\\theta = \\pi/2$.\n\nOmitting the square fails to convert $1 - x$ into a clean square.\n\nThe cosine reverses the limits and does not simplify the bracket.\n\nThe tangent squared runs to infinity rather than to one."
+    explanation: "With $y' = 3x$ and $y'' = 3$, the expression becomes $3 - 3x^2 - 6x^2 + 9x^2 - 3 = 0$, confirming $P_2$ solves the equation.\n\nA nonzero constant would mean the polynomial fails the equation.\n\nReproducing the polynomial would likewise indicate failure.\n\nThe second derivative alone is not the value of the whole expression."
   },
   {
     id: "mth302_ch10_028",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\displaystyle\\int_0^{\\pi/2}\\sin^p\\theta\\cos^q\\theta\\,d\\theta$ in terms of the Beta function?",
+    text: "What is Bessel's differential equation of order $n$?",
     options: [
-      "$\\tfrac{1}{2}B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$",
-      "$B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$",
-      "$\\tfrac{1}{2}B\\!\\left(\\dfrac{p}{2},\\ \\dfrac{q}{2}\\right)$",
-      "$2B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$, doubling instead of halving"
+      "$x^2y'' + xy' + (x^2 - n^2)y = 0$",
+      "$x^2y'' + xy' + (x^2 + n^2)y = 0$",
+      "$(1 - x^2)y'' - 2xy' + n(n+1)y = 0$, which is Legendre's equation",
+      "$x^2y'' + xy' + (n^2 - x^2)y = 0$, with the bracket reversed"
     ],
     correctAnswer: 0,
-    explanation: "Inverting the trigonometric form gives the integral as one half of the Beta function with each parameter shifted and halved.\n\nOmitting the factor of one half doubles the answer.\n\nDropping the shift by one misreads the parameters.\n\nDoubling inverts the required factor."
+    explanation: "Bessel's equation of order $n$ is $x^2y'' + xy' + (x^2 - n^2)y = 0$, with a regular singular point at the origin.\n\nA plus before $n^2$ gives the modified equation with different solutions.\n\nThe second expression is Legendre's equation.\n\nReversing the bracket changes the sign of the whole term."
   },
   {
     id: "mth302_ch10_029",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "For positive integers, what does $B(m, n)$ equal in factorial form?",
+    text: "For $x^2y'' + xy' + (x^2 - 4)y = 0$, what is the order $\\nu$?",
     options: [
-      "$\\dfrac{(m-1)!\\,(n-1)!}{(m+n-1)!}$",
-      "$\\dfrac{m!\\,n!}{(m+n)!}$",
-      "$\\dfrac{(m-1)!\\,(n-1)!}{(m+n)!}$, reducing only the numerator",
-      "$\\dfrac{m!\\,n!}{(m+n-1)!}$, reducing only the denominator"
+      "$\\nu = 2$",
+      "$\\nu = 4$",
+      "$\\nu = 16$, squaring the constant in the bracket",
+      "$\\nu = 1$"
     ],
     correctAnswer: 0,
-    explanation: "Since $B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$ and $\\Gamma(k) = (k-1)!$, every factorial is reduced by one.\n\nLeaving all the factorials unreduced is the standard off-by-one error.\n\nReducing only the numerator is inconsistent.\n\nReducing only the denominator is likewise inconsistent."
+    explanation: "Matching $x^2 - \\nu^2$ against $x^2 - 4$ gives $\\nu^2 = 4$, so $\\nu = 2$.\n\nReading $4$ as the order confuses $\\nu^2$ with $\\nu$ and is the standard slip.\n\nSquaring again compounds the error.\n\nThe coefficient of $y'$ carries no information about the order."
   },
   {
     id: "mth302_ch10_030",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $B(2, 3)$?",
+    text: "What is the general solution of $x^2y'' + xy' + (x^2 - 4)y = 0$?",
     options: [
-      "$\\dfrac{1}{12}$",
-      "$\\dfrac{1}{60}$",
-      "$\\dfrac{1}{20}$, from an incorrect factorial reduction",
-      "$\\dfrac{1}{6}$, doubling the correct value"
+      "$y = AJ_2(x) + BY_2(x)$",
+      "$y = AJ_4(x) + BY_4(x)$",
+      "$y = AJ_2(x) + BJ_{-2}(x)$",
+      "$y = AP_2(x) + BQ_2(x)$, using the Legendre functions"
     ],
     correctAnswer: 0,
-    explanation: "Computing $B(2, 3) = \\dfrac{\\Gamma(2)\\Gamma(3)}{\\Gamma(5)} = \\dfrac{1!\\cdot 2!}{4!} = \\dfrac{2}{24} = \\dfrac{1}{12}$.\n\nThe value $1/60$ belongs to $B(4, 3)$.\n\nA value of $1/20$ does not follow from these factorials.\n\nDoubling the result misplaces a factor of two."
+    explanation: "With $\\nu = 2$ the two independent solutions are $J_2$ and $Y_2$.\n\nUsing order four misreads $\\nu^2 = 4$.\n\nFor integer order $J_{-n} = (-1)^nJ_n$, so that pair is dependent and cannot form a general solution.\n\nThe Legendre functions solve a different equation."
   },
   {
     id: "mth302_ch10_031",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\displaystyle\\int_0^1 x^3(1 - x)^2\\,dx$?",
+    text: "For integer $n$, how are $J_{-n}$ and $J_n$ related?",
     options: [
-      "$\\dfrac{1}{60}$",
-      "$\\dfrac{1}{12}$",
-      "$\\dfrac{1}{30}$, doubling the correct value",
-      "$\\dfrac{1}{20}$, from an incorrect parameter match"
+      "$J_{-n}(x) = (-1)^nJ_n(x)$",
+      "$J_{-n}(x) = J_n(x)$ for every integer $n$",
+      "$J_{-n}(x) = -J_n(x)$, regardless of parity",
+      "$J_{-n}(x) = \\dfrac{1}{J_n(x)}$, giving the reciprocal"
     ],
     correctAnswer: 0,
-    explanation: "Matching $x^{m-1}(1-x)^{n-1}$ gives $m = 4$ and $n = 3$, so the integral is $B(4, 3) = \\dfrac{3!\\,2!}{6!} = \\dfrac{12}{720} = \\dfrac{1}{60}$.\n\nThe value $1/12$ corresponds to different parameters.\n\nDoubling the result misplaces a factor.\n\nA value of $1/20$ does not follow from these factorials."
+    explanation: "Because $\\Gamma$ is infinite at non-positive integers, the first $n$ terms of the series for $J_{-n}$ vanish, and reindexing gives $J_{-n} = (-1)^nJ_n$.\n\nEquality without the sign fails for odd $n$.\n\nA uniform minus sign fails for even $n$.\n\nA reciprocal relation has no basis in the series."
   },
   {
     id: "mth302_ch10_032",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the relation between the Beta and Gamma functions?",
+    text: "Why is $Y_n$ needed as a second solution for integer order?",
     options: [
-      "$B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m + n)}$",
-      "$B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{(m + n)!}$",
-      "$B(m, n) = \\dfrac{\\Gamma(m + n)}{\\Gamma(m)\\Gamma(n)}$",
-      "$B(m, n) = \\Gamma(m)\\Gamma(n)\\Gamma(m + n)$, forming a product of all three"
+      "Because $J_n$ and $J_{-n}$ are not independent then",
+      "Because $J_n$ fails to satisfy Bessel's equation for integer $n$",
+      "Because $J_n$ is unbounded at the origin for integer $n$",
+      "Because $J_n$ is only defined for non-integer order"
     ],
     correctAnswer: 0,
-    explanation: "The Beta function is the product of two Gamma values divided by the Gamma of their sum.\n\nWriting $(m + n)!$ in the denominator carries an off-by-one error, since $\\Gamma(m + n) = (m + n - 1)!$.\n\nInverting the quotient gives the reciprocal.\n\nA product of all three has entirely the wrong structure."
+    explanation: "For integer order the relation $J_{-n} = (-1)^nJ_n$ makes the two proportional, so a genuinely independent second solution $Y_n$ is required.\n\nThe function $J_n$ does satisfy the equation for integer order.\n\nIt is $Y_n$, not $J_n$, that is unbounded at the origin.\n\nThe function $J_n$ is defined for every real order."
   },
   {
     id: "mth302_ch10_033",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\Gamma(6)$?",
+    text: "What are the first three terms of $J_0(x)$?",
     options: [
-      "$120$",
-      "$720$",
-      "$24$",
-      "$6$, taking the argument itself"
+      "$1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{64}$",
+      "$1 - \\dfrac{x^2}{2} + \\dfrac{x^4}{16}$, with the denominators halved",
+      "$1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{16}$",
+      "$x - \\dfrac{x^3}{16} + \\dfrac{x^5}{384}$"
     ],
     correctAnswer: 0,
-    explanation: "Since $\\Gamma(n) = (n - 1)!$, we get $\\Gamma(6) = 5! = 120$.\n\nThe value $720$ is $6! = \\Gamma(7)$.\n\nThe value $24$ is $4! = \\Gamma(5)$.\n\nThe argument itself is not a factorial value."
+    explanation: "The series gives $J_0(x) = 1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{64} - \\dfrac{x^6}{2304} + \\cdots$.\n\nHalving the denominators misreads the factors $2^{2k}(k!)^2$.\n\nThe fourth-power term has denominator $64$, not $16$.\n\nThe expansion beginning at $x/2$ is that of $J_1$, not $J_0$."
   },
   {
     id: "mth302_ch10_034",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "Why is the answer to $\\displaystyle\\int_0^{\\pi/2}\\sin^5\\theta\\cos^4\\theta\\,d\\theta$ rational rather than a multiple of $\\pi$?",
+    text: "What are the first three terms of $J_1(x)$?",
     options: [
-      "One of the powers is odd, so the $\\sqrt{\\pi}$ factors cancel",
-      "Both powers are even, which always removes the irrational part",
-      "The interval of integration is symmetric about its midpoint",
-      "The Beta function is always rational for integer parameters"
+      "$\\dfrac{x}{2} - \\dfrac{x^3}{16} + \\dfrac{x^5}{384}$",
+      "$\\dfrac{x}{2} - \\dfrac{x^3}{8} + \\dfrac{x^5}{192}$, with each denominator halved",
+      "$1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{64}$",
+      "$x - \\dfrac{x^3}{16} + \\dfrac{x^5}{384}$"
     ],
     correctAnswer: 0,
-    explanation: "An odd power makes one Beta parameter an integer, so the half-integer Gamma values pair up and their $\\sqrt{\\pi}$ factors cancel, leaving a rational number.\n\nBoth powers being even is precisely the case in which a $\\pi$ survives.\n\nSymmetry of the interval does not control the arithmetic of the result.\n\nThe Beta function is not rational for all integer parameters in the half-integer setting."
+    explanation: "The series gives $J_1(x) = \\dfrac{x}{2} - \\dfrac{x^3}{16} + \\dfrac{x^5}{384} - \\cdots$, where $384 = 12 \\times 32$.\n\nHalving the denominators misreads the factorial factors.\n\nThe expansion beginning at one is that of $J_0$.\n\nOmitting the factor one half misstates the leading term."
   },
   {
     id: "mth302_ch10_035",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "In evaluating $\\displaystyle\\int_0^\\infty x^3e^{-4x}\\,dx$, what power of $4$ appears in the denominator?",
+    text: "What kind of point is $x = 0$ for Bessel's equation?",
     options: [
-      "$4^4$",
-      "$4^3$, counting only the powers contributed by $x^3$",
-      "$4^1$, counting only the contribution from $dx$",
-      "$4^2$, counting half of the required contributions"
+      "A regular singular point",
+      "An ordinary point",
+      "An irregular singular point",
+      "A point outside the domain of the equation"
     ],
     correctAnswer: 0,
-    explanation: "The substitution $y = 4x$ contributes one factor of $4$ for each of the three powers of $x$ and one more from $dx$, giving $4^4$.\n\nCounting only the powers from $x^3$ forgets the contribution of $dx$.\n\nCounting only $dx$ forgets the three powers of $x$.\n\nA squared factor accounts for neither contribution correctly."
+    explanation: "Dividing by $x^2$ produces coefficients singular at the origin but mildly enough for the Frobenius method, so the origin is a regular singular point.\n\nAn ordinary point would allow an ordinary power series without the Frobenius exponent.\n\nAn irregular singular point would obstruct the Frobenius construction.\n\nThe origin lies in the natural domain of the equation."
   },
   {
     id: "mth302_ch10_036",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\Gamma(-5/2)$ in terms of $\\sqrt{\\pi}$?",
+    text: "For $x^2y'' + xy' + (\\lambda^2x^2 - n^2)y = 0$, what is the solution?",
     options: [
-      "$-\\dfrac{8\\sqrt{\\pi}}{15}$",
-      "$\\dfrac{8\\sqrt{\\pi}}{15}$",
-      "$\\dfrac{4\\sqrt{\\pi}}{3}$, which is the value of $\\Gamma(-3/2)$",
-      "$-2\\sqrt{\\pi}$"
+      "$J_n(\\lambda x)$",
+      "$J_{\\lambda}(nx)$, exchanging the order and the scaling",
+      "$\\lambda J_n(x)$",
+      "$J_n(x)$"
     ],
     correctAnswer: 0,
-    explanation: "Applying $\\Gamma(x) = \\Gamma(x+1)/x$ once more to $\\Gamma(-3/2) = 4\\sqrt{\\pi}/3$ gives $\\Gamma(-5/2) = \\dfrac{4\\sqrt{\\pi}/3}{-5/2} = -\\dfrac{8\\sqrt{\\pi}}{15}$.\n\nDropping the sign ignores that the values alternate.\n\nThe value $4\\sqrt{\\pi}/3$ is one step earlier.\n\nThe value $-2\\sqrt{\\pi}$ is two steps earlier."
+    explanation: "The parameter $\\lambda$ rescales the argument, so the solution is $J_n(\\lambda x)$.\n\nExchanging the roles of $n$ and $\\lambda$ misidentifies the order.\n\nA multiplicative constant outside does not absorb the rescaling.\n\nIgnoring $\\lambda$ loses the scaling entirely."
   },
   {
     id: "mth302_ch10_037",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "How do the values of $\\Gamma$ at successive negative half-integers behave in sign?",
+    text: "What is $P_0(x)$?",
     options: [
-      "They alternate",
-      "They are all negative without exception",
-      "They are all positive without exception",
-      "They keep the sign of the nearest integer argument"
+      "$1$",
+      "$x$",
+      "$0$",
+      "$\\tfrac{1}{2}$, halving the correct constant"
     ],
     correctAnswer: 0,
-    explanation: "Each application of $\\Gamma(x) = \\Gamma(x+1)/x$ divides by a negative number, so the sign flips at every step.\n\nA uniformly negative sequence contradicts the division by successive negatives.\n\nA uniformly positive sequence fails for $\\Gamma(-1/2) = -2\\sqrt{\\pi}$.\n\nThe sign is set by the recurrence, not by a neighbouring integer."
+    explanation: "Rodrigues' formula with $n = 0$ gives the constant polynomial $1$, consistent with $P_0(1) = 1$.\n\nThe linear polynomial is $P_1$.\n\nThe zero polynomial would fail the normalisation.\n\nHalving would give $P_0(1) = 1/2$."
   },
   {
     id: "mth302_ch10_038",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\displaystyle\\int_0^{\\pi/2}\\sin^2\\theta\\cos^2\\theta\\,d\\theta$?",
+    text: "Which behaviour distinguishes $Y_n$ from $J_n$ at the origin?",
     options: [
-      "$\\dfrac{\\pi}{16}$",
-      "$\\dfrac{\\pi}{8}$, doubling the correct value",
-      "$\\dfrac{1}{16}$",
-      "$\\dfrac{\\pi}{4}$, from an incorrect parameter match"
+      "$Y_n$ is unbounded there",
+      "$Y_n$ vanishes there for every order $n$",
+      "$Y_n$ equals one there for every order $n$",
+      "$Y_n$ is undefined for non-integer order"
     ],
     correctAnswer: 0,
-    explanation: "With $p = q = 2$ the formula gives $\\tfrac{1}{2}B(3/2, 3/2) = \\tfrac{1}{2}\\cdot\\dfrac{\\Gamma(3/2)^2}{\\Gamma(3)} = \\tfrac{1}{2}\\cdot\\dfrac{\\pi/4}{2} = \\dfrac{\\pi}{16}$.\n\nDoubling misplaces the factor of one half.\n\nBecause both powers are even the $\\sqrt{\\pi}$ factors survive, so a $\\pi$ must appear.\n\nA value of $\\pi/4$ does not follow from these parameters."
+    explanation: "The Bessel function of the second kind blows up at $x = 0$, which is why bounded physical problems retain only $J_n$.\n\nVanishing at the origin describes $J_n$ for $n \\geq 1$.\n\nThe value one at the origin describes $J_0$.\n\nThe function $Y_n$ is defined for non-integer order as well."
   },
   {
     id: "mth302_ch10_039",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is $\\displaystyle\\lim_{x \\to 0^+}\\Gamma(x)$?",
+    text: "What is $P_2(x)$?",
     options: [
-      "$\\infty$",
-      "$0$, approaching the value of the argument",
-      "$1$",
-      "$\\sqrt{\\pi}$"
+      "$\\dfrac{3x^2 - 1}{2}$",
+      "$\\dfrac{3x^2 + 1}{2}$",
+      "$\\dfrac{5x^2 - 3}{2}$, from an incorrect recurrence step",
+      "$3x^2 - 1$"
     ],
     correctAnswer: 0,
-    explanation: "The recurrence $\\Gamma(x) = \\Gamma(x+1)/x$ has a numerator tending to $\\Gamma(1) = 1$ while the denominator tends to zero from above, so the limit is infinite and the function has a pole there.\n\nA limit of zero contradicts the blow-up.\n\nThe value $1$ is attained at $x = 1$, not in this limit.\n\nThe value $\\sqrt{\\pi}$ belongs to $\\Gamma(1/2)$."
+    explanation: "Rodrigues' formula gives $P_2(x) = \\dfrac{3x^2 - 1}{2}$, and substituting $x = 1$ gives $1$ as required.\n\nA plus sign would give $P_2(1) = 2$.\n\nThe third expression fails the check at $x = 1$.\n\nOmitting the division gives $P_2(1) = 2$."
   },
   {
     id: "mth302_ch10_040",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "Convergence of the Beta integral requires which condition?",
+    text: "In the series for $J_n(x)$, which function appears in the denominator of each term?",
     options: [
-      "$m > 0$ and $n > 0$",
-      "$m > 1$ and $n > 1$, excluding the values between zero and one",
-      "$m + n > 0$ only, allowing one parameter to be negative",
-      "$m$ and $n$ both integers"
+      "$k!\\,\\Gamma(n + k + 1)$",
+      "$k!\\,\\Gamma(n + k)$, shifting the Gamma argument down by one",
+      "$k!\\,(n + k)!$",
+      "$\\Gamma(k)\\,\\Gamma(n + 1)$, splitting the factors incorrectly"
     ],
     correctAnswer: 0,
-    explanation: "Both parameters must be strictly positive for the integrand to be integrable at each endpoint of $[0, 1]$.\n\nRequiring values above one excludes cases such as $B(1/2, 1/2)$, which converge.\n\nA condition on the sum alone permits a divergent endpoint.\n\nThe parameters need not be integers, as the half-integer cases show."
+    explanation: "Each term carries $\\dfrac{(-1)^k}{k!\\,\\Gamma(n + k + 1)}$, and the Gamma function is what permits non-integer order.\n\nShifting the argument breaks the reduction to factorials for integer $n$.\n\nA factorial denominator would restrict the definition to integer order.\n\nSplitting the factors that way does not match the series."
   }
 ];
 

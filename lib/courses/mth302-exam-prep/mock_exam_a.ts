@@ -40,7 +40,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch2_010",
     course: "MTH 302",
-    chapter: "Chapter 2",
+    chapter: "Chapter 1",
     text: "Which of the following equations is not exact?",
     options: [
       "$(2xy + 3)\\,dx + (x^2 + 4y)\\,dy = 0$",
@@ -55,7 +55,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch2_028",
     course: "MTH 302",
-    chapter: "Chapter 2",
+    chapter: "Chapter 1",
     text: "Which of the following equations is separable?",
     options: [
       "$\\dfrac{dy}{dx} = x^2y$",
@@ -70,7 +70,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch3_013",
     course: "MTH 302",
-    chapter: "Chapter 3",
+    chapter: "Chapter 1",
     text: "Which chain of implications is correct?",
     options: [
       "Continuously differentiable implies Lipschitz implies continuous",
@@ -85,7 +85,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch3_025",
     course: "MTH 302",
-    chapter: "Chapter 3",
+    chapter: "Chapter 1",
     text: "For $f(x, y) = 3y + \\sin x$, what is $f_y$?",
     options: [
       "$3$",
@@ -100,7 +100,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch4_020",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 1",
     text: "In Abel's formula the exponent carries which sign?",
     options: [
       "Negative, giving $e^{-\\int P\\,dx}$",
@@ -115,7 +115,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch4_005",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 1",
     text: "What is the general solution of $y'' + 4y' + 4y = 0$?",
     options: [
       "$C_1e^{-2x} + C_2e^{2x}$",
@@ -130,7 +130,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch4_006",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 1",
     text: "What is the general solution of $y'' + 2y' + 5y = 0$?",
     options: [
       "$e^{2x}(C_1\\cos x + C_2\\sin x)$",
@@ -145,7 +145,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch5_027",
     course: "MTH 302",
-    chapter: "Chapter 5",
+    chapter: "Chapter 1",
     text: "What is the general solution of $y'' - y = x^2$?",
     options: [
       "$y = Ae^{x} + Be^{-x} - x^2 - 2$",
@@ -160,7 +160,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch5_003",
     course: "MTH 302",
-    chapter: "Chapter 5",
+    chapter: "Chapter 1",
     text: "What is a particular solution of $y'' - y = x^2$?",
     options: [
       "$x^2$",
@@ -175,7 +175,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch6_033",
     course: "MTH 302",
-    chapter: "Chapter 6",
+    chapter: "Chapter 1",
     text: "Why must the Jacobian be nonzero on the domain?",
     options: [
       "So the change of variables is one-to-one there and can therefore be inverted",
@@ -190,7 +190,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch6_004",
     course: "MTH 302",
-    chapter: "Chapter 6",
+    chapter: "Chapter 1",
     text: "What is the general solution of $2u_x - 5u_y = 0$?",
     options: [
       "$u = F(5x + 2y)$",
@@ -205,7 +205,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch7_005",
     course: "MTH 302",
-    chapter: "Chapter 7",
+    chapter: "Chapter 1",
     text: "How is $u_{xx} - 2u_{xy} = 0$ classified?",
     options: [
       "Parabolic",
@@ -220,7 +220,7 @@ const mth302ExamPrepA: QuestionV2[] = [
   {
     id: "mth302_ch7_036",
     course: "MTH 302",
-    chapter: "Chapter 7",
+    chapter: "Chapter 1",
     text: "How is $u_{xx} - 2u_{xy} + u_{yy} = 0$ classified?",
     options: [
       "Parabolic",
@@ -231,11 +231,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Here $\\Delta = (-2)^2 - 4(1)(1) = 0$, so the equation is parabolic at every point.\n\nThe sign of $B$ is irrelevant because $B$ is squared.\n\nPositive outer coefficients do not by themselves force the elliptic case.\n\nThe coefficients are constants, so the type cannot vary."
   },
-  // originally mth302_ch9_015, Chapter 9
+  // originally mth302_ch9_015, Chapter 8
   {
-    id: "mth302_ch9_015",
+    id: "mth302_ch8_015",
     course: "MTH 302",
-    chapter: "Chapter 9",
+    chapter: "Chapter 1",
     text: "How can the eigenvalues be arranged?",
     options: [
       "As a strictly increasing sequence tending to infinity",
@@ -246,11 +246,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "They form a strictly increasing infinite sequence $0 \\leq \\lambda_0 < \\lambda_1 < \\lambda_2 < \\cdots$ with $\\lambda_n \\to \\infty$.\n\nA decreasing sequence would contradict the growth to infinity.\n\nA largest eigenvalue cannot exist for an unbounded increasing sequence.\n\nThe eigenvalues are genuinely ordered by size."
   },
-  // originally mth302_ch9_012, Chapter 9
+  // originally mth302_ch9_012, Chapter 8
   {
-    id: "mth302_ch9_012",
+    id: "mth302_ch8_012",
     course: "MTH 302",
-    chapter: "Chapter 9",
+    chapter: "Chapter 1",
     text: "For $y'' + \\lambda y = 0$, what are $p$, $q$ and $r$?",
     options: [
       "$p = 1$, $q = 0$, $r = 1$",
@@ -261,11 +261,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Matching against the expanded form gives $p = 1$, hence $p' = 0$, with $q = 0$ and weight $r = 1$.\n\nThe eigenvalue $\\lambda$ is the parameter and never plays the role of the weight.\n\nPlacing $\\lambda$ inside $q$ confuses the potential with the eigenvalue term.\n\nThe leading coefficient is $1$, not $\\lambda$."
   },
-  // originally mth302_ch10_030, Chapter 10
+  // originally mth302_ch10_030, Chapter 9
   {
-    id: "mth302_ch10_030",
+    id: "mth302_ch9_030",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 1",
     text: "What is $B(2, 3)$?",
     options: [
       "$\\dfrac{1}{12}$",
@@ -276,11 +276,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Computing $B(2, 3) = \\dfrac{\\Gamma(2)\\Gamma(3)}{\\Gamma(5)} = \\dfrac{1!\\cdot 2!}{4!} = \\dfrac{2}{24} = \\dfrac{1}{12}$.\n\nThe value $1/60$ belongs to $B(4, 3)$.\n\nA value of $1/20$ does not follow from these factorials.\n\nDoubling the result misplaces a factor of two."
   },
-  // originally mth302_ch10_016, Chapter 10
+  // originally mth302_ch10_016, Chapter 9
   {
-    id: "mth302_ch10_016",
+    id: "mth302_ch9_016",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 1",
     text: "What is $\\Gamma(1)$?",
     options: [
       "$1$",
@@ -291,11 +291,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Evaluating $\\int_0^\\infty e^{-t}\\,dt = 1$ gives $\\Gamma(1) = 1$, which anchors the factorial chain.\n\nThe integral is strictly positive, so zero is impossible.\n\nThe Gamma function is undefined at zero and the negative integers, not at one.\n\nThe value $\\sqrt{\\pi}$ belongs to $\\Gamma(1/2)$."
   },
-  // originally mth302_ch10_033, Chapter 10
+  // originally mth302_ch10_033, Chapter 9
   {
-    id: "mth302_ch10_033",
+    id: "mth302_ch9_033",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 1",
     text: "What is $\\Gamma(6)$?",
     options: [
       "$120$",
@@ -306,11 +306,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Since $\\Gamma(n) = (n - 1)!$, we get $\\Gamma(6) = 5! = 120$.\n\nThe value $720$ is $6! = \\Gamma(7)$.\n\nThe value $24$ is $4! = \\Gamma(5)$.\n\nThe argument itself is not a factorial value."
   },
-  // originally mth302_ch11_016, Chapter 11
+  // originally mth302_ch11_016, Chapter 10
   {
-    id: "mth302_ch11_016",
+    id: "mth302_ch10_016",
     course: "MTH 302",
-    chapter: "Chapter 11",
+    chapter: "Chapter 1",
     text: "What is $P_1(x)$?",
     options: [
       "$x$",
@@ -321,11 +321,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Rodrigues' formula with $n = 1$ gives $P_1(x) = x$, which indeed satisfies $P_1(1) = 1$.\n\nThe constant $1$ is $P_0$.\n\nThe quadratic is $P_2$.\n\nDoubling would give $P_1(1) = 2$, breaking the normalisation."
   },
-  // originally mth302_ch11_017, Chapter 11
+  // originally mth302_ch11_017, Chapter 10
   {
-    id: "mth302_ch11_017",
+    id: "mth302_ch10_017",
     course: "MTH 302",
-    chapter: "Chapter 11",
+    chapter: "Chapter 1",
     text: "What is $P_4(x)$?",
     options: [
       "$\\dfrac{35x^4 - 30x^2 + 3}{8}$",
@@ -336,11 +336,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Rodrigues' formula gives $P_4(x) = \\dfrac{35x^4 - 30x^2 + 3}{8}$, and substituting $x = 1$ gives $\\dfrac{35 - 30 + 3}{8} = 1$ as required.\n\nDoubling the denominator would give $P_4(1) = 1/2$.\n\nA cubic cannot be $P_4$, since $P_n$ has degree exactly $n$.\n\nThe last expression fails the check $P_4(1) = 1$."
   },
-  // originally mth302_ch12_013, Chapter 12
+  // originally mth302_ch12_013, Chapter 11
   {
-    id: "mth302_ch12_013",
+    id: "mth302_ch11_013",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 1",
     text: "What is the period of $y = A\\sin nx$?",
     options: [
       "$\\dfrac{2\\pi}{n}$",
@@ -351,11 +351,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "The sine completes one cycle when $nx$ increases by $2\\pi$, so the period is $2\\pi/n$.\n\nMultiplying by $n$ reverses the effect of the frequency.\n\nHalving gives the period of $\\sin 2nx$ instead.\n\nInverting the expression has the wrong dimensions."
   },
-  // originally mth302_ch12_006, Chapter 12
+  // originally mth302_ch12_006, Chapter 11
   {
-    id: "mth302_ch12_006",
+    id: "mth302_ch11_006",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 1",
     text: "What is the period of $y = 3\\sin(5x)$?",
     options: [
       "$2\\pi/5$",
@@ -366,11 +366,11 @@ const mth302ExamPrepA: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "The period of $A\\sin(nx)$ is $2\\pi/n$ regardless of the amplitude $A$, so with $n = 5$ the period is $2\\pi/5$. The amplitude $3$ has no effect on the period whatsoever.\n\n$5\\pi$ and $\\pi/5$ do not follow from the formula $2\\pi/n$ with $n = 5$.\n\n$2\\pi$ is the period of $\\sin x$ itself, ignoring the factor of $5$ multiplying $x$."
   },
-  // originally mth302_ch12_023, Chapter 12
+  // originally mth302_ch12_023, Chapter 11
   {
-    id: "mth302_ch12_023",
+    id: "mth302_ch11_023",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 1",
     text: "If $f$ is odd, which coefficients vanish?",
     options: [
       "$a_0$ and all the $a_n$",

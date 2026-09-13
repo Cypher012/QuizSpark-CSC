@@ -5,561 +5,561 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_001",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a copper bar with $K = 0.95$, $\\rho = 8.92$, and $s = 0.092$, what is the approximate thermal diffusivity $\\kappa = K/(\\rho s)$?",
+    text: "What are the eigenvalues of $X'' + \\lambda X = 0$ with $X(0) = X(L) = 0$?",
     options: [
-      "$0.86$",
-      "$1.16$",
-      "$8.92$",
-      "$0.095$"
+      "$\\lambda_n = n\\pi/L$",
+      "$\\lambda_n = n^2\\pi^2/L$",
+      "$\\lambda_n = n^2\\pi^2/L^2$",
+      "$\\lambda_n = n\\pi/L^2$"
     ],
-    correctAnswer: 1,
-    explanation: "Computing directly, $\\kappa = \\dfrac{0.95}{8.92 \\times 0.092} = \\dfrac{0.95}{0.82064}$, which is approximately $1.158$ square centimeters per second.\n\n$0.86$ results from a reciprocal-style slip that inverts the ratio $\\rho s/K$ instead of $K/(\\rho s)$.\n\n$8.92$ mistakenly reports the density value itself rather than the computed diffusivity.\n\n$0.095$ drops a factor of ten somewhere in the arithmetic."
+    correctAnswer: 2,
+    explanation: "With $X = A\\sin(\\sqrt{\\lambda}\\,x)$ after applying $X(0) = 0$, the condition $\\sin(\\sqrt{\\lambda}\\,L) = 0$ requires $\\sqrt{\\lambda}\\,L = n\\pi$, so $\\sqrt{\\lambda} = n\\pi/L$. Squaring both the numerator and the denominator gives $\\lambda_n = n^2\\pi^2/L^2$.\n\n$\\lambda_n = n\\pi/L$ fails to square the expression at all.\n\n$\\lambda_n = n^2\\pi^2/L$ squares only the numerator, leaving the denominator unsquared.\n\n$\\lambda_n = n\\pi/L^2$ squares only the denominator, leaving the numerator unsquared."
   },
   {
     id: "mth302_ch8_002",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "A bar of length $L = 80$ has $u(0, t) = u(80, t) = 0$ and initial temperature $u(x, 0) = 100\\sin(3\\pi x/80)$. What is the solution $u(x, t)$?",
+    text: "For $y'' + \\lambda y = 0$ on $0 \\leq x \\leq 5$ with $y(0) = y(5) = 0$, what are the eigenvalues?",
     options: [
-      "$100e^{-\\kappa(3\\pi/80)t}\\sin(3\\pi x/80)$",
-      "$100e^{-\\kappa(3\\pi/80)^2t}\\sin(3\\pi x/80)$",
-      "$100e^{-\\kappa(\\pi/80)^2t}\\sin(3\\pi x/80)$",
-      "$100e^{-\\kappa(3\\pi/80)^2t/2}\\sin(3\\pi x/80)$"
+      "$n^2\\pi^2/5$",
+      "$n^2\\pi/25$",
+      "$n\\pi/5$",
+      "$n^2\\pi^2/25$"
     ],
-    correctAnswer: 1,
-    explanation: "Separation of variables gives $u = Ae^{-\\kappa(n\\pi/L)^2t}\\sin(n\\pi x/L)$. Since the initial profile is exactly the third spatial mode, $n = 3$, $L = 80$, and $A = 100$, giving $100e^{-\\kappa(3\\pi/80)^2t}\\sin(3\\pi x/80)$. The entire bracket $n\\pi/L$ must be squared, and $t$ appears to the first power in the exponent.\n\n$100e^{-\\kappa(3\\pi/80)t}\\sin(3\\pi x/80)$ forgets to square the bracket entirely.\n\n$100e^{-\\kappa(\\pi/80)^2t}\\sin(3\\pi x/80)$ drops the mode number $n = 3$ from the exponent while keeping it in the sine term, an inconsistency.\n\n$100e^{-\\kappa(3\\pi/80)^2t/2}\\sin(3\\pi x/80)$ introduces an extraneous factor of $2$ in the exponent that does not belong."
+    correctAnswer: 3,
+    explanation: "The Dirichlet boundary condition at $x = 5$ requires $5\\sqrt{\\lambda_n} = n\\pi$, so $\\lambda_n = n^2\\pi^2/25$, with eigenfunctions $y_n = \\sin(n\\pi x/5)$ for $n = 1, 2, 3, \\dots$. The value $n = 0$ is excluded, since it produces only the trivial solution, which is never counted as an eigenfunction.\n\n$n^2\\pi^2/5$ fails to square the denominator $L = 5$ to match the squared numerator.\n\n$n^2\\pi/25$ fails to square the numerator $n\\pi$ while squaring the denominator.\n\n$n\\pi/5$ fails to square either the numerator or the denominator at all."
   },
   {
     id: "mth302_ch8_003",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a copper bar of length $L = 80$ with $\\kappa \\approx 1.158$ and $u(x, 0) = 100\\sin\\dfrac{3\\pi x}{80}$, approximately how long does it take for the maximum temperature to fall to $50$ degrees?",
+    text: "For $y'' + \\lambda y = 0$ on $0 < x < \\pi/2$ with $y'(0) = y'(\\pi/2) = 0$, what are the eigenvalues?",
     options: [
-      "$21$ seconds",
-      "$43$ seconds",
-      "$86$ seconds",
-      "$120$ seconds"
+      "$\\lambda_n = 4n^2$",
+      "$\\lambda_n = 2n$",
+      "$\\lambda_n = n^2$",
+      "$\\lambda_n = n^2\\pi^2/4$"
     ],
-    correctAnswer: 1,
-    explanation: "The amplitude of the solution is $100e^{-\\kappa(3\\pi/80)^2t}$. Setting this equal to $50$ gives $t = \\dfrac{\\ln 2}{\\kappa(3\\pi/80)^2} = \\dfrac{0.6931}{1.158 \\times 0.013879}$, which is approximately $43$ seconds.\n\n$21$ seconds results from using $\\ln 2$ divided by $2$ rather than solving the actual exponential equation.\n\n$86$ seconds results from forgetting to square the bracket $(3\\pi/80)$ correctly, roughly doubling the required time.\n\n$120$ seconds does not follow from correctly solving the amplitude equation."
+    correctAnswer: 0,
+    explanation: "The condition $y'(0) = 0$ eliminates the sine term, leaving $y = B\\cos(\\sqrt{\\lambda}\\,x)$; then $y'(\\pi/2) = -B\\sqrt{\\lambda}\\sin(\\sqrt{\\lambda}\\,\\pi/2) = 0$ requires $\\sqrt{\\lambda}\\,\\pi/2 = n\\pi$, giving $\\sqrt{\\lambda} = 2n$ and therefore $\\lambda_n = 4n^2$, with eigenfunctions $y_n = \\cos(2nx)$. Unlike the Dirichlet case, $n = 0$ is admissible here, giving the constant eigenfunction.\n\n$\\lambda_n = 2n$ fails to square $\\sqrt{\\lambda} = 2n$ to obtain $\\lambda$ itself.\n\n$\\lambda_n = n^2$ confuses the coefficient with the value that should be squared.\n\n$\\lambda_n = n^2\\pi^2/4$ wrongly applies the Dirichlet-style formula to this Neumann boundary condition problem."
   },
   {
     id: "mth302_ch8_004",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "A rod of length $50$ has zero end temperatures and initial temperature $u(x, 0) = 80\\sin(2\\pi x/50)$. What is the solution?",
+    text: "Eigenfunctions of a Sturm-Liouville system corresponding to distinct eigenvalues satisfy which relation?",
     options: [
-      "$80e^{-2\\kappa t}\\sin(2\\pi x/50)$",
-      "$80e^{-\\kappa(\\pi/50)^2t}\\sin(2\\pi x/50)$",
-      "$80e^{-\\kappa(2\\pi/50)t}\\sin(\\pi x/50)$",
-      "$80e^{-\\kappa(2\\pi/50)^2t}\\sin(2\\pi x/50)$"
+      "$\\displaystyle\\int_a^b y_my_n\\,dx = 1$",
+      "$\\displaystyle\\int_a^b y_my_n\\,r(x)\\,dx = 0$",
+      "$\\displaystyle\\int_a^b y_my_n\\,dx = \\dfrac{2}{2n+1}$",
+      "$y_m = y_n$"
     ],
-    correctAnswer: 3,
-    explanation: "Reading $n = 2$ and $L = 50$ directly off the initial condition and substituting into $Ae^{-\\kappa(n\\pi/L)^2t}\\sin(n\\pi x/L)$ gives $80e^{-\\kappa(2\\pi/50)^2t}\\sin(2\\pi x/50)$. The spatial part of the solution does not change with time; only the amplitude decays.\n\n$80e^{-2\\kappa t}\\sin(2\\pi x/50)$ does not correctly incorporate the mode number and length into the exponent.\n\n$80e^{-\\kappa(\\pi/50)^2t}\\sin(2\\pi x/50)$ drops the mode number $n = 2$ from the exponent.\n\n$80e^{-\\kappa(2\\pi/50)t}\\sin(\\pi x/50)$ forgets to square the bracket and also changes the mode number in the sine term inconsistently."
+    correctAnswer: 1,
+    explanation: "Orthogonality of Sturm-Liouville eigenfunctions is always taken with respect to the weight function $r(x)$ appearing in the equation, so the integral of $y_my_nr(x)\\,dx$ vanishes for $m \\neq n$. The weight may be omitted from the notation only when $r$ is identically $1$.\n\n$\\displaystyle\\int_a^b y_my_n\\,dx = 1$ wrongly assumes normalization to $1$ without the weight function.\n\n$\\displaystyle\\int_a^b y_my_n\\,dx = \\dfrac{2}{2n+1}$ is the special normalization used for Legendre polynomials, not a general Sturm-Liouville property.\n\n$y_m = y_n$ contradicts the premise that the eigenvalues, and hence the eigenfunctions, are distinct."
   },
   {
     id: "mth302_ch8_005",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What is D'Alembert's solution of $u_{tt} = c^2u_{xx}$ with $u(x, 0) = \\phi(x)$ and $u_t(x, 0) = \\psi(x)$?",
+    text: "Which statement about a regular Sturm-Liouville system is false?",
     options: [
-      "$\\dfrac{1}{2}(\\phi(x+ct) + \\phi(x-ct)) + \\dfrac{1}{2}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$",
-      "$\\dfrac{1}{2}(\\phi(x+ct) + \\phi(x-ct)) + \\dfrac{1}{2c}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$",
-      "$\\phi(x+ct) + \\phi(x-ct) + \\dfrac{1}{2c}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$",
-      "$\\dfrac{1}{2}(\\phi(x+ct) - \\phi(x-ct)) + \\dfrac{1}{2c}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$"
+      "The eigenvalues are real",
+      "The eigenvalues form an increasing sequence tending to infinity",
+      "Each eigenvalue has exactly one linearly independent eigenfunction",
+      "Two different eigenvalues can share the same eigenfunction"
     ],
-    correctAnswer: 1,
-    explanation: "Both the factor of $1/2$ on the displacement part and the factor of $1/(2c)$ on the velocity integral are needed: at $t = 0$ the displacement part reduces to $\\phi(x)$, and differentiating the integral term with respect to $t$ and evaluating at $t = 0$ correctly returns $\\psi(x)$.\n\nThe version using $1/2$ instead of $1/(2c)$ on the integral term drops the required factor of $c$ in the denominator.\n\nThe version with no leading $1/2$ on the displacement part omits that factor, doubling it incorrectly.\n\nThe version using a minus sign between $\phi(x+ct)$ and $\phi(x-ct)$ would give $u(x, 0) = 0$, contradicting the prescribed initial displacement $\\phi(x)$."
+    correctAnswer: 3,
+    explanation: "An eigenfunction determines its eigenvalue uniquely through the differential equation it satisfies, so it is impossible for two different eigenvalues to share the same eigenfunction, making this statement false.\n\nThe eigenvalues are real is one of the standard listed properties of Sturm-Liouville systems, and is true.\n\nThe eigenvalues form an increasing sequence tending to infinity is also a standard true property.\n\nEach eigenvalue has exactly one linearly independent eigenfunction is true as well, understood as unique up to a constant multiple."
   },
   {
     id: "mth302_ch8_006",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What is the domain of dependence of the point $(x, t)$ for the wave equation $u_{tt} = c^2u_{xx}$?",
+    text: "Writing the equation as $(p(x)y')' + [q(x) + \\lambda r(x)]y = 0$, what are $p$, $q$, and $r$ for $y'' + \\lambda y = 0$?",
     options: [
-      "The whole real line",
-      "The interval from $x - ct$ to $x + ct$",
-      "The single point $x$",
-      "The interval from $x - t$ to $x + t$"
+      "$p = x$, $q = 0$, $r = 1$",
+      "$p = 0$, $q = 1$, $r = 1$",
+      "$p = 1$, $q = \\lambda$, $r = 0$",
+      "$p = 1$, $q = 0$, $r = 1$, so that $p\' = 0$ as required"
     ],
-    correctAnswer: 1,
-    explanation: "D'Alembert's formula only involves $\\phi$ evaluated at $x \\pm ct$ and $\\psi$ integrated over the interval from $x - ct$ to $x + ct$, showing that signals travel at the finite speed $c$. This finite domain of dependence contrasts sharply with the heat equation, which has infinite propagation speed.\n\nThe whole real line wrongly implies infinite propagation speed, which applies to the heat equation, not the wave equation.\n\nThe single point $x$ ignores the spreading effect of the wave over time entirely.\n\nThe interval from $x - t$ to $x + t$ omits the wave speed $c$ from the bounds, an easy slip when $c$ is implicitly taken as $1$."
+    correctAnswer: 3,
+    explanation: "Expanding the standard form gives $py'' + p'y' + (q + \\lambda r)y = 0$. Matching this term by term with $y'' + \\lambda y = 0$ forces $p = 1$, so $p' = 0$, consistent with the absent $y'$ term, $q = 0$, and $r = 1$.\n\n$p = x$, $q = 0$, $r = 1$ wrongly assigns a nonconstant value to $p$ for this simple equation.\n\n$p = 0$, $q = 1$, $r = 1$ would eliminate the $y''$ term entirely, which is not the case here.\n\n$p = 1$, $q = \\lambda$, $r = 0$ confuses $\\lambda$, the eigenvalue parameter itself, with $q$, and wrongly sets the weight $r$ to zero."
   },
   {
     id: "mth302_ch8_007",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How are the heat equation, wave equation, and Laplace equation classified respectively?",
+    text: "Bessel's equation in Sturm-Liouville form is $(xy')' + [-\\nu^2/x + \\lambda x]y = 0$. What is its weight function?",
     options: [
-      "Hyperbolic, parabolic, elliptic",
-      "Parabolic, elliptic, hyperbolic",
-      "Elliptic, parabolic, hyperbolic",
-      "Parabolic, hyperbolic, elliptic"
+      "$r = 1$",
+      "$r = \\nu^2$",
+      "$r = 1/x$",
+      "$r = x$"
     ],
     correctAnswer: 3,
-    explanation: "For $u_t = \\kappa u_{xx}$, treating $x$ and $t$ as the two variables gives $A = \\kappa$, $B = 0$, $C = 0$, so the discriminant is $0$, making it parabolic. For $u_{tt} = c^2u_{xx}$, the discriminant is $4c^2$, which is positive, making it hyperbolic. For $u_{xx} + u_{yy} = 0$, the discriminant is $-4$, which is negative, making it elliptic. This gives parabolic, hyperbolic, elliptic in that order.\n\nHyperbolic, parabolic, elliptic assigns the heat equation the wrong type.\n\nParabolic, elliptic, hyperbolic swaps the wave and Laplace classifications.\n\nElliptic, parabolic, hyperbolic misclassifies all three equations relative to their correct types."
+    explanation: "The weight function is the coefficient multiplying $\\lambda$ in the standard Sturm-Liouville form, which here is $r(x) = x$. This is why Bessel functions of different orders satisfy an orthogonality integral that includes an extra factor of $x$ inside the integrand.\n\n$r = 1$ would apply only if $\\lambda$ were multiplied by $1$, which is not the case in this equation.\n\n$r = \\nu^2$ confuses the parameter $\\nu$ appearing in $q$ with the weight function that multiplies $\\lambda$.\n\n$r = 1/x$ has the reciprocal of the correct weight."
   },
   {
     id: "mth302_ch8_008",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the general heat solution $u = \\sum_n B_n e^{-\\kappa(n\\pi/L)^2t}\\sin(n\\pi x/L)$, which mode decays fastest as $t$ increases?",
+    text: "If $f$ is expanded as $\\sum_n c_n\\phi_n$, where the $\\phi_n$ are orthogonal on the interval from $a$ to $b$ with weight $r$, what is the formula for the coefficient $c_n$?",
     options: [
-      "The mode $n = 1$",
-      "The mode with the largest coefficient $B_n$",
-      "All modes decay at the same rate",
-      "The mode with the largest $n$ present"
+      "$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$",
+      "$c_n = \\dfrac{\\displaystyle\\int_a^b rf\\phi_n\\,dx}{\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx}$",
+      "$c_n = \\dfrac{\\displaystyle\\int_a^b f\\phi_n\\,dx}{\\displaystyle\\int_a^b \\phi_n\\,dx}$",
+      "$c_n$ equals the average of $f$ over the interval from $a$ to $b$"
     ],
-    correctAnswer: 3,
-    explanation: "The decay rate for each mode is $\\kappa(n\\pi/L)^2$, which increases with $n^2$, so higher-frequency components are damped fastest. This is why heat conduction smooths out a rough initial temperature profile very quickly, since the high-$n$ modes vanish first.\n\nThe mode $n = 1$ actually decays the slowest among the modes present, not the fastest.\n\nThe mode with the largest coefficient $B_n$ confuses the size of a term's contribution with its rate of decay, which are independent properties.\n\nAll modes decay at the same rate is false, since the exponent depends explicitly on $n^2$."
+    correctAnswer: 1,
+    explanation: "Multiplying the expansion by $r\\phi_m$ and integrating over the interval from $a$ to $b$ uses orthogonality to eliminate every term except the one with $n = m$, leaving $\\displaystyle\\int_a^b rf\\phi_n\\,dx$ equal to $c_n$ times $\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx$, and dividing gives the coefficient formula.\n\n$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$ alone is correct only when the system is orthonormal, meaning the denominator integral happens to equal $1$, which is not assumed in general.\n\n$c_n = \\dfrac{\\int f\\phi_n\\,dx}{\\int \\phi_n\\,dx}$ omits the weight function $r$ from both integrals and uses $\\phi_n$ instead of $\\phi_n$ squared in the denominator.\n\n$c_n$ equals the average of $f$ describes only the special case of the constant term in a Fourier series, not the general Sturm-Liouville expansion coefficient."
   },
   {
     id: "mth302_ch8_009",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the heat equation $u_t = \\kappa u_{xx}$, how is the thermal diffusivity $\\kappa$ defined?",
+    text: "Which equation is the general form of a Sturm-Liouville problem?",
     options: [
-      "$\\kappa = \\dfrac{K}{\\rho s}$",
-      "$\\kappa = \\dfrac{\\rho s}{K}$, inverting the ratio of the three quantities",
-      "$\\kappa = K\\rho s$, formed as a product of all three quantities",
-      "$\\kappa = \\dfrac{K\\rho}{s}$, placing the density in the numerator"
+      "$(p(x)y')' + [q(x) + \\lambda r(x)]y = 0$",
+      "$p(x)y'' + q(x)y' + r(x)y = 0$, with no eigenvalue parameter present",
+      "$(p(x)y')' + \\lambda y = 0$, omitting the functions $q$ and $r$ entirely",
+      "$y'' + \\lambda y = 0$, which is only the simplest special case"
     ],
     correctAnswer: 0,
-    explanation: "The diffusivity is the conductivity divided by the product of density and specific heat, $\\kappa = \\dfrac{K}{\\rho s}$.\n\nInverting the ratio would give the reciprocal of the diffusivity.\n\nA product of all three has the wrong dimensions entirely.\n\nMoving $\\rho$ to the numerator misplaces the density."
+    explanation: "The general form places the eigenvalue against the weight function, giving $(py')' + [q + \\lambda r]y = 0$ on $a \\leq x \\leq b$ with $r > 0$.\n\nAn equation with no $\\lambda$ is not an eigenvalue problem at all.\n\nDropping $q$ and $r$ discards both the potential term and the weight.\n\nThe constant-coefficient equation is one instance rather than the general form."
   },
   {
     id: "mth302_ch8_010",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Separating $u = X(x)T(t)$ in the heat equation with zero end temperatures gives which problem for $X$?",
+    text: "What condition is imposed on the weight function $r(x)$?",
     options: [
-      "$X'' + \\lambda X = 0$ with $X(0) = X(L) = 0$",
-      "$X'' - \\lambda X = 0$ with $X(0) = X(L) = 0$, carrying the opposite sign",
-      "$X' + \\lambda X = 0$ with $X(0) = 0$, a first-order problem instead",
-      "$X'' + \\lambda X = 0$ with $X'(0) = X'(L) = 0$, imposing Neumann conditions"
+      "$r(x) > 0$ on the interval",
+      "$r(x) = 1$ throughout the interval considered",
+      "$r(x) \\geq 0$, allowing it to vanish at interior points",
+      "$r(x)$ is a polynomial of degree at most two"
     ],
     correctAnswer: 0,
-    explanation: "Separation produces $X'' + \\lambda X = 0$, and the vanishing end temperatures transfer directly to $X(0) = X(L) = 0$.\n\nThe opposite sign would give exponential rather than sinusoidal modes.\n\nA first-order equation cannot carry two boundary conditions.\n\nNeumann conditions correspond to insulated ends, not to prescribed zero temperature."
+    explanation: "The weight must be strictly positive on $[a, b]$, which is what makes the orthogonality relation meaningful.\n\nRequiring $r = 1$ describes only the unweighted special case.\n\nAllowing the weight to vanish would break the inner product it defines.\n\nNothing restricts the weight to polynomials."
   },
   {
     id: "mth302_ch8_011",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What are the eigenvalues of $X'' + \\lambda X = 0$ with $X(0) = X(L) = 0$?",
+    text: "In the expanded form $p(x)y'' + p'(x)y' + [q(x) + \\lambda r(x)]y = 0$, how is $p$ identified?",
     options: [
-      "$\\lambda_n = \\left(\\dfrac{n\\pi}{L}\\right)^2$",
-      "$\\lambda_n = \\dfrac{n^2\\pi^2}{L}$, with $L$ appearing to the first power only",
-      "$\\lambda_n = \\dfrac{n\\pi}{L}$, without squaring the whole bracket",
-      "$\\lambda_n = \\dfrac{n\\pi}{L^2}$, squaring only the length"
+      "As the coefficient of $y''$",
+      "As the coefficient of $y'$, which is actually its derivative",
+      "As the coefficient of $y$, alongside the eigenvalue term",
+      "As the reciprocal of the weight function $r$"
     ],
     correctAnswer: 0,
-    explanation: "Non-trivial solutions require $\\lambda_n = (n\\pi/L)^2$, with the whole bracket squared.\n\nLeaving $L$ unsquared is the standard slip on this eigenvalue.\n\nOmitting the square altogether gives the wrong dimensions.\n\nSquaring only $L$ misplaces the exponent."
+    explanation: "Comparing with the expanded form shows the coefficient of $y''$ is $p$ and the coefficient of $y'$ is $p'$, which is the consistency check.\n\nThe coefficient of $y'$ is the derivative $p'$, not $p$ itself.\n\nThe coefficient of $y$ contains $q$ and $\\lambda r$.\n\nThe weight is a separate function and is not the reciprocal of $p$."
   },
   {
     id: "mth302_ch8_012",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What are the corresponding eigenfunctions $X_n$?",
+    text: "For $y'' + \\lambda y = 0$, what are $p$, $q$ and $r$?",
     options: [
-      "$\\sin\\dfrac{n\\pi x}{L}$",
-      "$\\cos\\dfrac{n\\pi x}{L}$, which would satisfy insulated end conditions instead",
-      "$e^{n\\pi x/L}$, an exponential rather than a sinusoid",
-      "$\\sin\\dfrac{n\\pi x}{L^2}$, with the length squared in the argument"
+      "$p = 1$, $q = 0$, $r = 1$",
+      "$p = 0$, $q = 1$, $r = \\lambda$, reading the parameter as the weight",
+      "$p = 1$, $q = \\lambda$, $r = 0$, placing the eigenvalue in $q$",
+      "$p = \\lambda$, $q = 0$, $r = 1$, taking the parameter as the leading coefficient"
     ],
     correctAnswer: 0,
-    explanation: "The condition $X(0) = 0$ selects the sine, and $X(L) = 0$ quantises the frequency, giving $\\sin(n\\pi x/L)$.\n\nThe cosine fails $X(0) = 0$.\n\nAn exponential cannot vanish at both ends.\n\nSquaring $L$ in the argument would break the boundary condition at $x = L$."
+    explanation: "Matching against the expanded form gives $p = 1$, hence $p' = 0$, with $q = 0$ and weight $r = 1$.\n\nThe eigenvalue $\\lambda$ is the parameter and never plays the role of the weight.\n\nPlacing $\\lambda$ inside $q$ confuses the potential with the eigenvalue term.\n\nThe leading coefficient is $1$, not $\\lambda$."
   },
   {
     id: "mth302_ch8_013",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What is the time factor $T_n(t)$ for the heat equation?",
+    text: "What form do the boundary conditions of a Sturm-Liouville system take?",
     options: [
-      "$e^{-\\kappa(n\\pi/L)^2t}$",
-      "$e^{-\\kappa n\\pi t/L}$, without squaring the bracket at all",
-      "$e^{-\\kappa(n\\pi/L)t}$, squaring nothing in the exponent",
-      "$e^{+\\kappa(n\\pi/L)^2t}$, with a positive exponent producing growth"
+      "$\\alpha_1y(a) + \\alpha_2y'(a) = 0$ and $\\beta_1y(b) + \\beta_2y'(b) = 0$",
+      "$y(a) = y(b)$ with the derivatives left entirely unconstrained",
+      "$y(a) = 1$ and $y(b) = 1$, fixing the values at the two ends",
+      "$y'(a) = y'(b) = \\lambda$, tying the derivatives to the eigenvalue"
     ],
     correctAnswer: 0,
-    explanation: "Substituting the separated form gives $T' = -\\kappa\\lambda_n T$, so $T_n = e^{-\\kappa(n\\pi/L)^2t}$ with the whole bracket squared.\n\nOmitting the square is one of the two standard distractors for this exponent.\n\nSquaring nothing is the other standard distractor.\n\nA positive exponent would make the temperature grow without bound."
+    explanation: "Each end carries a homogeneous condition combining the function and its derivative, which is what makes the trivial solution always admissible and the eigenvalues discrete.\n\nMatching values at the two ends describes periodic conditions, a different type.\n\nNonzero prescribed values would make the conditions nonhomogeneous.\n\nTying the derivatives to $\\lambda$ is not a standard boundary condition."
   },
   {
     id: "mth302_ch8_014",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the exponent $\\kappa(n\\pi/L)^2t$, where does the mode number $n$ come from?",
+    text: "What is true of the eigenvalues of a Sturm-Liouville system?",
     options: [
-      "The initial condition",
-      "The boundary conditions at the two ends of the rod",
-      "The thermal diffusivity of the material being heated",
-      "The length of the rod measured in centimetres"
+      "They are real, and non-negative under the usual sign conditions",
+      "They are complex in general, since the auxiliary roots are imaginary",
+      "They form a finite set determined by the interval length",
+      "They may repeat, with several eigenfunctions sharing one value"
     ],
     correctAnswer: 0,
-    explanation: "The mode number is read off the initial temperature profile, so an initial condition proportional to $\\sin(3\\pi x/L)$ fixes $n = 3$ rather than $n = 1$.\n\nThe boundary conditions determine the family of admissible modes but not which one is present.\n\nThe diffusivity is a material constant and carries no mode information.\n\nThe length enters separately as $L$ in the same bracket."
+    explanation: "The eigenvalues are real and, under the usual sign conditions, non-negative, even though the auxiliary equation produces roots $m = \\pm i\\sqrt{\\lambda}$.\n\nThe imaginary auxiliary roots do not make the eigenvalues complex.\n\nThe eigenvalues form an infinite sequence tending to infinity.\n\nEach eigenvalue is simple, so repetition does not occur."
   },
   {
     id: "mth302_ch8_015",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a general initial profile, what are the coefficients $B_n$ in $u = \\sum_n B_ne^{-\\kappa(n\\pi/L)^2t}\\sin\\dfrac{n\\pi x}{L}$?",
+    text: "How can the eigenvalues be arranged?",
     options: [
-      "The Fourier sine coefficients of $u(x, 0)$",
-      "The Fourier cosine coefficients of the initial profile instead",
-      "The eigenvalues of the associated spatial problem",
-      "Arbitrary constants fixed by the boundary conditions"
+      "As a strictly increasing sequence tending to infinity",
+      "As a decreasing sequence tending to zero from above",
+      "As a finite list with a largest member",
+      "In no particular order, since they are unordered"
     ],
     correctAnswer: 0,
-    explanation: "Setting $t = 0$ leaves a sine series for $u(x, 0)$, so the $B_n$ are exactly its Fourier sine coefficients.\n\nCosine coefficients would correspond to an expansion in cosines, which the zero end conditions exclude.\n\nThe eigenvalues appear in the exponent, not as the coefficients.\n\nThe boundary conditions are already satisfied by every mode and cannot fix the coefficients."
+    explanation: "They form a strictly increasing infinite sequence $0 \\leq \\lambda_0 < \\lambda_1 < \\lambda_2 < \\cdots$ with $\\lambda_n \\to \\infty$.\n\nA decreasing sequence would contradict the growth to infinity.\n\nA largest eigenvalue cannot exist for an unbounded increasing sequence.\n\nThe eigenvalues are genuinely ordered by size."
   },
   {
     id: "mth302_ch8_016",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a copper bar with $K = 0.95$, $\\rho = 8.92$ and $s = 0.092$, what is $\\kappa$ approximately?",
+    text: "How many linearly independent eigenfunctions correspond to each eigenvalue?",
     options: [
-      "$1.158$",
-      "$0.864$, obtained by inverting the computed ratio",
-      "$0.78$",
-      "$8.92$, taking the density as the diffusivity"
+      "Exactly one, understood up to a constant multiple",
+      "Exactly two",
+      "Infinitely many, since any multiple is also an eigenfunction",
+      "A number that varies from one eigenvalue to the next"
     ],
     correctAnswer: 0,
-    explanation: "Computing $\\kappa = \\dfrac{0.95}{8.92 \\times 0.092} \\approx \\dfrac{0.95}{0.8206} \\approx 1.158$.\n\nInverting the ratio gives roughly the reciprocal.\n\nMultiplying the quantities has the wrong structure entirely.\n\nThe density alone is not the diffusivity."
+    explanation: "The problem is simple, so each eigenvalue carries one eigenfunction up to a constant multiple, meaning $\\sin(n\\pi x/L)$ and $5\\sin(n\\pi x/L)$ are not counted as different.\n\nThe second-order equation admits two solutions, but only one satisfies both boundary conditions.\n\nConstant multiples do not count as independent.\n\nSimplicity means the count is one for every eigenvalue."
   },
   {
     id: "mth302_ch8_017",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a bar with $u(x, 0) = 100\\sin\\dfrac{3\\pi x}{80}$, what is the maximum temperature at time $t$?",
+    text: "With respect to what are Sturm-Liouville eigenfunctions orthogonal?",
     options: [
-      "The amplitude $100e^{-\\kappa(3\\pi/80)^2t}$",
-      "The value $100$ at every time, since the sine attains one somewhere",
-      "The value at the midpoint $x = 40$ only, wherever the sine happens to peak",
-      "The integral of the profile taken across the whole bar"
+      "The weight function $r(x)$, which must be carried in the integral",
+      "The coefficient $p(x)$ appearing in the leading term",
+      "The potential $q(x)$ appearing alongside the eigenvalue",
+      "No weight at all"
     ],
     correctAnswer: 0,
-    explanation: "The decay factor does not depend on $x$, so the maximum over $x$ is simply the amplitude multiplying the sine.\n\nThe amplitude decays with time, so it does not stay at $100$.\n\nFor $n = 3$ the sine does not peak at the midpoint, and in any case the amplitude is what matters.\n\nAn integral would give a total rather than a maximum."
+    explanation: "The relation is $\\int_a^b y_my_nr\\,dx = 0$ for $m \\neq n$, so the weight $r$ must be carried unless it happens to equal one.\n\nThe coefficient $p$ appears in the differential operator, not in the inner product.\n\nThe potential $q$ likewise plays no part in orthogonality.\n\nDropping the weight is valid only in the special case $r \\equiv 1$."
   },
   {
     id: "mth302_ch8_018",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Setting $e^{-\\kappa(3\\pi/80)^2t} = \\tfrac{1}{2}$ gives which expression for $t$?",
+    text: "For $y'' + \\lambda y = 0$ on $0 \\leq x \\leq 5$ with $y(0) = y(5) = 0$, what are the eigenfunctions?",
     options: [
-      "$t = \\dfrac{\\ln 2}{\\kappa(3\\pi/80)^2}$",
-      "$t = \\dfrac{\\ln 2}{\\kappa}$",
-      "$t = \\kappa(3\\pi/80)^2\\ln 2$, multiplying rather than dividing",
-      "$t = \\dfrac{\\ln(1/2)}{\\kappa(3\\pi/80)^2}$, retaining a negative logarithm"
+      "$\\sin\\dfrac{n\\pi x}{5}$",
+      "$\\cos\\dfrac{n\\pi x}{5}$, which would satisfy Neumann conditions instead",
+      "$e^{n\\pi x/5}$, an exponential rather than a sinusoid",
+      "$\\sin\\dfrac{n\\pi x}{25}$"
     ],
     correctAnswer: 0,
-    explanation: "Taking logarithms gives $-\\kappa(3\\pi/80)^2t = -\\ln 2$, so $t = \\dfrac{\\ln 2}{\\kappa(3\\pi/80)^2}$.\n\nDropping the eigenvalue removes the mode dependence.\n\nMultiplying instead of dividing inverts the relation.\n\nRetaining $\\ln(1/2)$ leaves a negative value for a positive time."
+    explanation: "The condition $y(0) = 0$ removes the cosine and $y(5) = 0$ quantises the frequency, giving $\\sin(n\\pi x/5)$.\n\nThe cosine fails the condition at $x = 0$.\n\nAn exponential cannot vanish at both ends.\n\nThe $25$ belongs to the eigenvalue, not to the argument of the sine."
   },
   {
     id: "mth302_ch8_019",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "If a problem supplies thermal conductivity, density and specific heat, which model applies?",
+    text: "For $y'' + \\lambda y = 0$ on $0 < x < \\pi/2$ with $y'(0) = y'(\\pi/2) = 0$, what are the eigenfunctions?",
     options: [
-      "The heat equation",
-      "The wave equation, if the wording of the question mentions a vibrating string",
-      "The Laplace equation",
-      "A first-order transport equation with constant coefficients"
+      "$\\cos 2nx$",
+      "$\\sin 2nx$, which would satisfy Dirichlet conditions instead",
+      "$\\cos nx$",
+      "$\\sin nx$, combining both errors at once"
     ],
     correctAnswer: 0,
-    explanation: "The data determine a thermal diffusivity, so the heat equation is the correct model regardless of how the question is worded.\n\nWave problems require a wave speed, not conductivity and specific heat.\n\nThe Laplace equation describes a steady state with no time evolution.\n\nA first-order transport equation would not use these material constants."
+    explanation: "The condition $y'(0) = 0$ removes the sine, and $y'(\\pi/2) = 0$ gives $\\sqrt{\\lambda} = 2n$, so the eigenfunctions are $\\cos 2nx$.\n\nThe sine fails the derivative condition at the left end.\n\nOmitting the factor of two breaks the condition at $x = \\pi/2$.\n\nThe final choice fails both conditions at once."
   },
   {
     id: "mth302_ch8_020",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What is D'Alembert's solution of $u_{tt} = c^2u_{xx}$ with $u(x,0) = \\phi$ and $u_t(x,0) = \\psi$?",
+    text: "For the Neumann problem on $0 < x < \\pi/2$, what are the eigenvalues?",
     options: [
-      "$\\tfrac{1}{2}[\\phi(x + ct) + \\phi(x - ct)] + \\dfrac{1}{2c}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$",
-      "$\\tfrac{1}{2}[\\phi(x + ct) + \\phi(x - ct)] + \\dfrac{1}{2}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$",
-      "$\\tfrac{1}{2}[\\phi(x + ct) - \\phi(x - ct)] + \\dfrac{1}{2c}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$",
-      "$\\phi(x + ct) + \\phi(x - ct) + \\dfrac{1}{2c}\\displaystyle\\int_{x-ct}^{x+ct}\\psi(s)\\,ds$"
+      "$\\lambda_n = 4n^2$",
+      "$\\lambda_n = 2n$",
+      "$\\lambda_n = n^2$, omitting the factor of four",
+      "$\\lambda_n = 2n^2$, halving the correct coefficient"
     ],
     correctAnswer: 0,
-    explanation: "The displacement contributes the average of the two travelling profiles and the velocity contributes an integral carrying the factor $\\dfrac{1}{2c}$.\n\nUsing $\\tfrac{1}{2}$ in place of $\\dfrac{1}{2c}$ drops the wave speed from the integral term.\n\nA difference of the two profiles fails the initial displacement condition.\n\nOmitting the factor $\\tfrac{1}{2}$ doubles the initial displacement."
+    explanation: "From $\\sqrt{\\lambda} = 2n$ we get $\\lambda_n = 4n^2$, squaring the whole expression.\n\nTaking $2n$ leaves the square root rather than the eigenvalue.\n\nOmitting the four fails to square the factor of two.\n\nHalving the coefficient does not follow from squaring $2n$."
   },
   {
     id: "mth302_ch8_021",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What factor multiplies the integral term in D'Alembert's formula?",
+    text: "Why is $n = 0$ admissible for the Neumann problem but not for the Dirichlet problem?",
     options: [
-      "$\\dfrac{1}{2c}$",
-      "$\\dfrac{1}{2}$",
-      "$\\dfrac{1}{c}$, which omits the factor of two",
-      "$2c$, placing the factor in the numerator instead"
+      "$\\lambda_0 = 0$ gives a nonzero constant eigenfunction",
+      "The Neumann interval is shorter than the Dirichlet interval used earlier",
+      "The weight function differs between the two problems",
+      "The Neumann problem has no boundary conditions at the left end"
     ],
     correctAnswer: 0,
-    explanation: "The velocity term carries $\\dfrac{1}{2c}$, with both the two and the wave speed in the denominator.\n\nUsing $\\dfrac{1}{2}$ alone is the standard slip on this formula.\n\nUsing $\\dfrac{1}{c}$ drops the factor of two.\n\nPlacing $2c$ in the numerator inverts the factor."
+    explanation: "With Neumann ends a constant function has vanishing derivative at both ends, so $\\lambda_0 = 0$ with $y_0$ constant is a genuine eigenpair, whereas a constant satisfying Dirichlet ends must be zero.\n\nThe length of the interval does not decide whether zero is an eigenvalue.\n\nBoth problems here have weight $r = 1$.\n\nThe Neumann problem does impose a condition at the left end, on the derivative."
   },
   {
     id: "mth302_ch8_022",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What are the limits of the integral in D'Alembert's formula?",
+    text: "For $x^2y'' + xy' + (\\lambda x^2 - \\nu^2)y = 0$ put into Sturm-Liouville form, what is $p$?",
     options: [
-      "From $x - ct$ to $x + ct$",
-      "From $0$ to $x$, integrating from the origin to the point of interest",
-      "From $-\\infty$ to $\\infty$, taking the whole real line into account",
-      "From $x - t$ to $x + t$"
+      "$p = x$",
+      "$p = x^2$, taken directly from the coefficient before dividing",
+      "$p = 1$, as for the constant-coefficient case",
+      "$p = \\lambda x^2$, absorbing the eigenvalue into the leading term"
     ],
     correctAnswer: 0,
-    explanation: "The integral runs across the interval reached by signals travelling at speed $c$, namely from $x - ct$ to $x + ct$.\n\nIntegrating from the origin ignores the finite propagation speed.\n\nIntegrating over the whole line would contradict finite propagation speed.\n\nOmitting $c$ from the limits misscales the interval."
+    explanation: "Dividing by $x$ makes the $y''$ coefficient $x$ and the $y'$ coefficient $1 = p'$, consistent with $(xy')' = xy'' + y'$.\n\nUsing $x^2$ reads the coefficient before the division needed for consistency.\n\nThe constant value $1$ applies only when the leading coefficient is constant.\n\nThe eigenvalue belongs with the weight, not with $p$."
   },
   {
     id: "mth302_ch8_023",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What is the domain of dependence of the point $(x, t)$ for $u_{tt} = c^2u_{xx}$?",
+    text: "For Bessel's equation in the form $(xy')' + [-\\nu^2/x + \\lambda x]y = 0$, what is the weight?",
     options: [
-      "The interval $[x - ct,\\ x + ct]$",
-      "The single point $x$ on the initial line",
-      "The whole real line at the initial time",
-      "The interval $[x - t,\\ x + t]$"
+      "$r = x$, being whatever multiplies the eigenvalue $\\lambda$",
+      "$r = 1$, as in the unweighted constant-coefficient problems",
+      "$r = -\\nu^2/x$",
+      "$r = x^2$, squaring the coefficient that multiplies $\\lambda$"
     ],
     correctAnswer: 0,
-    explanation: "D'Alembert's formula shows the solution at $(x, t)$ uses initial data only from $[x - ct, x + ct]$.\n\nA single point cannot account for the integral term.\n\nUsing the whole line describes infinite propagation speed, which is the parabolic case.\n\nDropping $c$ misscales the interval."
+    explanation: "The weight is whatever multiplies $\\lambda$, and here that is $x$.\n\nThe value $1$ would apply only if $\\lambda$ stood alone.\n\nThe expression $-\\nu^2/x$ is $q$, the potential term.\n\nSquaring the coefficient misreads the term multiplying $\\lambda$."
   },
   {
     id: "mth302_ch8_024",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Which type of problem has finite propagation speed?",
+    text: "For $y'' + \\lambda y = 0$ with $y(0) = y(5) = 0$, which relation determines the eigenvalues?",
     options: [
-      "Hyperbolic",
-      "Parabolic, of which the heat equation is the standard model",
-      "Elliptic",
-      "Every type, regardless of the classification"
+      "$5\\sqrt{\\lambda} = n\\pi$",
+      "$5\\lambda = n\\pi$",
+      "$\\sqrt{\\lambda} = n\\pi$",
+      "$5\\sqrt{\\lambda} = 2n\\pi$, doubling the right-hand side"
     ],
     correctAnswer: 0,
-    explanation: "Hyperbolic problems such as the wave equation propagate signals at the finite speed $c$, which is why the domain of dependence is a bounded interval.\n\nParabolic problems such as the heat equation have infinite propagation speed.\n\nElliptic problems describe steady states with no propagation.\n\nThe distinction is precisely between the types, so it cannot hold for all."
+    explanation: "A nontrivial solution needs $\\sin(5\\sqrt{\\lambda}) = 0$, hence $5\\sqrt{\\lambda} = n\\pi$.\n\nOmitting the square root confuses $\\lambda$ with $\\sqrt{\\lambda}$.\n\nDropping the factor $5$ ignores the length of the interval.\n\nDoubling the right-hand side corresponds to a different boundary condition."
   },
   {
     id: "mth302_ch8_025",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Which type of problem has infinite propagation speed?",
+    text: "For $y'' + \\lambda y = 0$ with $y(0) = y(5) = 0$, what are the eigenvalues?",
     options: [
-      "Parabolic",
-      "Hyperbolic, of which the wave equation is the standard model",
-      "Elliptic",
-      "None"
+      "$\\lambda_n = \\dfrac{n^2\\pi^2}{25}$",
+      "$\\lambda_n = \\dfrac{n\\pi}{5}$",
+      "$\\lambda_n = \\dfrac{n^2\\pi^2}{5}$, squaring the numerator but not the length",
+      "$\\lambda_n = \\dfrac{n^2\\pi^2}{10}$, doubling rather than squaring the length"
     ],
     correctAnswer: 0,
-    explanation: "The heat equation is parabolic, and a disturbance anywhere in the initial data affects the solution everywhere immediately.\n\nHyperbolic problems have the finite speed $c$.\n\nElliptic problems have no time evolution to propagate.\n\nThe heat equation does exhibit this behaviour as a property of the model."
+    explanation: "Squaring $\\sqrt{\\lambda} = n\\pi/5$ gives $\\lambda_n = n^2\\pi^2/25$, with the whole expression squared.\n\nLeaving the square root untaken confuses the two quantities.\n\nSquaring only the numerator is the standard slip here.\n\nDoubling the length does not follow from squaring."
   },
   {
     id: "mth302_ch8_026",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For the pure displacement case $\\psi = 0$, what does D'Alembert's formula reduce to?",
+    text: "When may the weight be omitted from the orthogonality integral?",
     options: [
-      "$\\tfrac{1}{2}[\\phi(x + ct) + \\phi(x - ct)]$",
-      "$\\phi(x + ct) + \\phi(x - ct)$",
-      "$\\tfrac{1}{2}[\\phi(x + ct) - \\phi(x - ct)]$, taking a difference instead",
-      "$\\phi(x)$, unchanged for all later times"
+      "Only when $r \\equiv 1$",
+      "Whenever the eigenvalues are distinct from one another",
+      "Whenever the interval is symmetric about the origin",
+      "Always"
     ],
     correctAnswer: 0,
-    explanation: "With no initial velocity the integral vanishes, leaving the average of the two travelling copies of the initial profile.\n\nOmitting the factor $\\tfrac{1}{2}$ doubles the value at $t = 0$.\n\nA difference vanishes at $t = 0$ and so fails the initial condition.\n\nA static profile would not satisfy the wave equation."
+    explanation: "The weight can be dropped only in the special case where it is identically one; otherwise it must be carried.\n\nDistinct eigenvalues are what make the integral vanish, not what removes the weight.\n\nSymmetry of the interval has no bearing on the weight.\n\nThe weight does not cancel and omitting it is a standard error."
   },
   {
     id: "mth302_ch8_027",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How are the heat, wave and Laplace equations classified, respectively?",
+    text: "Two functions are orthogonal on $[a, b]$ with respect to $r$ when which integral vanishes?",
     options: [
-      "Parabolic, hyperbolic, elliptic",
-      "Hyperbolic, parabolic, elliptic",
-      "Elliptic, hyperbolic, parabolic",
-      "Parabolic, elliptic, hyperbolic, with the last two interchanged"
+      "$\\displaystyle\\int_a^b f(x)g(x)r(x)\\,dx$",
+      "$\\displaystyle\\int_a^b [f(x) + g(x)]r(x)\\,dx$, integrating a sum instead of a product",
+      "$\\displaystyle\\int_a^b \\dfrac{f(x)}{g(x)}r(x)\\,dx$, integrating a quotient of the two",
+      "$\\displaystyle\\int_a^b f(x)g(x)\\,dx$"
     ],
     correctAnswer: 0,
-    explanation: "The diffusion equation is parabolic, the wave equation hyperbolic, and the Laplace equation elliptic.\n\nInterchanging the first two misassigns diffusion and propagation.\n\nInterchanging the outer two misassigns the steady-state model.\n\nInterchanging the last two swaps the wave and steady-state models."
+    explanation: "Weighted orthogonality means the integral of the product of the two functions against the positive weight vanishes.\n\nA sum rather than a product does not define an inner product.\n\nA quotient is undefined wherever $g$ vanishes.\n\nOmitting the weight gives the unweighted notion, valid only when $r \\equiv 1$."
   },
   {
     id: "mth302_ch8_028",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a rod of length $50$ with zero ends and $u(x, 0) = 80\\sin\\dfrac{\\pi x}{50}$, which mode is present?",
+    text: "Which product-to-sum identity is used when verifying orthogonality of sines?",
     options: [
-      "$n = 1$",
-      "$n = 50$",
-      "$n = 80$",
-      "$n = 2$, doubling the mode read from the profile"
+      "$\\sin A\\sin B = \\tfrac{1}{2}[\\cos(A - B) - \\cos(A + B)]$",
+      "$\\sin A\\sin B = \\tfrac{1}{2}[\\cos(A + B) - \\cos(A - B)]$",
+      "$\\sin A\\sin B = \\tfrac{1}{2}[\\sin(A + B) + \\sin(A - B)]$, producing sines instead",
+      "$\\sin A\\sin B = \\cos(A - B) - \\cos(A + B)$"
     ],
     correctAnswer: 0,
-    explanation: "Comparing $\\sin(\\pi x/50)$ with $\\sin(n\\pi x/L)$ and $L = 50$ gives $n = 1$.\n\nThe length appears as $L$, not as the mode number.\n\nThe amplitude $80$ multiplies the profile and carries no mode information.\n\nNothing in the profile suggests doubling the mode."
+    explanation: "The identity converts the product into a difference of cosines with the factor $\\tfrac{1}{2}$, which integrates to zero over the interval when $m \\neq n$.\n\nExchanging the two cosine terms reverses the sign of the whole expression.\n\nA product of two sines gives cosines, not sines.\n\nDropping the factor of one half misstates the identity."
   },
   {
     id: "mth302_ch8_029",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the diffusivity $\\kappa = K/(\\rho s)$, what does $K$ denote?",
+    text: "Are $\\sin\\dfrac{n\\pi x}{L}$ and $5\\sin\\dfrac{n\\pi x}{L}$ two different eigenfunctions?",
     options: [
-      "Thermal conductivity",
-      "Specific heat capacity of the rod",
-      "Density of the rod",
-      "The length of the rod under consideration"
+      "No, they differ only by a constant multiple",
+      "Yes, since their amplitudes differ from one another",
+      "Yes, because they correspond to different eigenvalues",
+      "Only when $n$ is even rather than odd"
     ],
     correctAnswer: 0,
-    explanation: "In $\\kappa = K/(\\rho s)$ the symbol $K$ is the thermal conductivity.\n\nSpecific heat is denoted $s$.\n\nDensity is denoted $\\rho$.\n\nThe length is denoted $L$ and does not appear in the diffusivity."
+    explanation: "Uniqueness of the eigenfunction is understood up to a constant multiple, so scaling produces the same eigenfunction.\n\nA difference in amplitude is exactly the scaling that is being quotiented out.\n\nBoth correspond to the same eigenvalue, since they solve the same problem.\n\nThe parity of $n$ has no bearing on this."
   },
   {
     id: "mth302_ch8_030",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How does each Fourier mode of the heat equation behave as $t$ increases?",
+    text: "In the Dirichlet example, applying $y(0) = 0$ to $y = A\\sin\\sqrt{\\lambda}x + B\\cos\\sqrt{\\lambda}x$ forces what?",
     options: [
-      "It decays exponentially",
-      "It oscillates with constant amplitude for all later times",
-      "It grows exponentially without any bound",
-      "It remains exactly constant in time"
+      "$B = 0$",
+      "$A = 0$, removing the sine rather than the cosine",
+      "$\\lambda = 0$",
+      "$A = B$, tying the two constants together"
     ],
     correctAnswer: 0,
-    explanation: "The factor $e^{-\\kappa(n\\pi/L)^2t}$ has a negative exponent, so every mode decays, and higher modes decay faster.\n\nUndamped oscillation describes the wave equation instead.\n\nGrowth would require a positive exponent.\n\nA constant mode would require a vanishing eigenvalue."
+    explanation: "At $x = 0$ the sine vanishes and the cosine equals one, so $y(0) = B = 0$.\n\nRemoving the sine would be forced by a Neumann condition at the left end.\n\nThe eigenvalue is not determined by this first condition.\n\nNothing ties the two constants to each other."
   },
   {
     id: "mth302_ch8_031",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Which modes of the heat equation decay fastest?",
+    text: "For the Neumann example, applying $y'(0) = 0$ forces what?",
     options: [
-      "Those with the largest $n$",
-      "Those with the smallest $n$",
-      "All modes decay at exactly the same rate",
-      "Those with $n$ even, regardless of their size"
+      "$A = 0$",
+      "$B = 0$, removing the cosine rather than the sine",
+      "$\\lambda = 1$, fixing the eigenvalue immediately",
+      "$A = -B$, relating the two constants"
     ],
     correctAnswer: 0,
-    explanation: "The decay rate is $\\kappa(n\\pi/L)^2$, which grows with $n^2$, so high modes are damped most rapidly.\n\nSmall $n$ gives the slowest decay, not the fastest.\n\nThe rate depends on $n$, so the modes cannot all decay equally.\n\nParity of $n$ plays no part in the decay rate."
+    explanation: "Differentiating gives $y'(0) = A\\sqrt{\\lambda}$, so a vanishing derivative at the left end forces $A = 0$ and leaves the cosine.\n\nRemoving the cosine would follow from a Dirichlet condition at that end.\n\nThe eigenvalue is not pinned down by this condition alone.\n\nNo relation between the constants is produced."
   },
   {
     id: "mth302_ch8_032",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the wave equation $u_{tt} = c^2u_{xx}$, what does $c$ represent?",
+    text: "Which classical orthogonality relation holds on $[-\\pi, \\pi]$ for $m \\neq n$?",
     options: [
-      "The wave speed",
-      "The thermal diffusivity of the medium carrying the wave",
-      "The amplitude of the initial displacement profile",
-      "The length of the spatial domain being considered"
+      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\cos nx\\,dx = 0$",
+      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\cos nx\\,dx = \\pi$",
+      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\cos nx\\,dx = 2\\pi$",
+      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\sin nx\\,dx = 1$, mixing the two families"
     ],
     correctAnswer: 0,
-    explanation: "The constant $c$ is the speed at which disturbances travel, which is why the domain of dependence extends a distance $ct$ either side of $x$.\n\nDiffusivity belongs to the parabolic heat equation.\n\nThe amplitude is carried by the initial data $\\phi$.\n\nThe spatial length is a separate quantity denoted $L$."
+    explanation: "Distinct cosine modes are orthogonal on the symmetric interval, so the integral vanishes for $m \\neq n$.\n\nThe value $\\pi$ arises in the equal-index case.\n\nThe value $2\\pi$ arises only for the constant mode.\n\nA cosine against a sine integrates to zero, not to one."
   },
   {
     id: "mth302_ch8_033",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What boundary conditions correspond to both ends of a rod being held at zero temperature?",
+    text: "In the Dirichlet example on $[0, 5]$, why is $A \\neq 0$ required?",
     options: [
-      "$u(0, t) = u(L, t) = 0$",
-      "$u_x(0, t) = u_x(L, t) = 0$",
-      "$u(x, 0) = 0$",
-      "$u_t(0, t) = 0$, constraining the rate of change at one end"
+      "Otherwise the solution is identically zero",
+      "Otherwise the eigenvalue becomes negative",
+      "Otherwise the weight function fails to be positive",
+      "Otherwise the interval length cannot be recovered"
     ],
     correctAnswer: 0,
-    explanation: "Prescribing the temperature itself as zero at both ends gives the Dirichlet conditions $u(0, t) = u(L, t) = 0$.\n\nVanishing spatial derivatives describe insulated ends, a Neumann condition.\n\nA condition at $t = 0$ is initial data, not a boundary condition.\n\nConstraining a time derivative at one end is neither of the standard conditions here."
+    explanation: "With $B$ already zero, taking $A = 0$ as well would leave the trivial solution, which is excluded when seeking eigenfunctions.\n\nThe sign of the eigenvalue is not controlled by $A$.\n\nThe weight is fixed at one and is unaffected by $A$.\n\nThe interval length enters through the boundary condition, not through $A$."
   },
   {
     id: "mth302_ch8_034",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the separated heat solution, which equation does $T(t)$ satisfy?",
+    text: "What does the auxiliary equation $m^2 + \\lambda = 0$ give for $\\lambda > 0$?",
     options: [
-      "$T' + \\kappa\\lambda T = 0$",
-      "$T'' + \\kappa\\lambda T = 0$",
-      "$T' - \\kappa\\lambda T = 0$",
-      "$T' + \\lambda T = 0$"
+      "$m = \\pm i\\sqrt{\\lambda}$",
+      "$m = \\pm\\sqrt{\\lambda}$, giving real roots and exponential solutions",
+      "$m = \\pm i\\lambda$",
+      "$m = \\pm\\lambda^2$, squaring rather than taking a root"
     ],
     correctAnswer: 0,
-    explanation: "Because the heat equation is first order in time, separation gives $T' = -\\kappa\\lambda T$, that is $T' + \\kappa\\lambda T = 0$.\n\nA second-order equation in time belongs to the wave equation.\n\nReversing the sign would produce growth rather than decay.\n\nOmitting $\\kappa$ loses the material dependence of the decay rate."
+    explanation: "Solving $m^2 = -\\lambda$ with $\\lambda > 0$ gives purely imaginary roots $\\pm i\\sqrt{\\lambda}$, which produce the sine and cosine solutions.\n\nReal roots would arise from $m^2 = +\\lambda$.\n\nOmitting the square root misreads the quadratic.\n\nSquaring the eigenvalue is not what solving the quadratic requires."
   },
   {
     id: "mth302_ch8_035",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "For a single initial mode $u(x,0) = A\\sin\\dfrac{n\\pi x}{L}$, what is the solution?",
+    text: "In an expansion $f \\sim \\sum_n c_n\\phi_n$ with $\\{\\phi_n\\}$ orthogonal with weight $r$, what is $c_n$?",
     options: [
-      "$u = Ae^{-\\kappa(n\\pi/L)^2t}\\sin\\dfrac{n\\pi x}{L}$",
-      "$u = Ae^{-\\kappa(n\\pi/L)^2t}\\cos\\dfrac{n\\pi x}{L}$, replacing the sine by a cosine",
-      "$u = A\\sin\\dfrac{n\\pi x}{L}$",
-      "$u = Ae^{-\\kappa n\\pi t/L}\\sin\\dfrac{n\\pi x}{L}$, with the bracket left unsquared"
+      "$\\dfrac{\\int_a^b fr\\phi_n\\,dx}{\\int_a^b r\\phi_{n}^{2}\\,dx}$",
+      "$\\dfrac{\\int_a^b f\\phi_n\\,dx}{\\int_a^b \\phi_{n}^{2}\\,dx}$",
+      "$\\int_a^b fr\\phi_n\\,dx$",
+      "$\\dfrac{\\int_a^b r\\phi_{n}^{2}\\,dx}{\\int_a^b fr\\phi_n\\,dx}$"
     ],
     correctAnswer: 0,
-    explanation: "A single mode simply acquires its own decay factor, giving $Ae^{-\\kappa(n\\pi/L)^2t}\\sin(n\\pi x/L)$.\n\nSwitching to a cosine violates the boundary condition at $x = 0$.\n\nOmitting the decay leaves a solution that does not satisfy the equation.\n\nLeaving the bracket unsquared is the standard exponent slip."
+    explanation: "Multiplying by $r\\phi_n$ and integrating kills every other term by orthogonality, leaving the stated ratio.\n\nOmitting the weight is valid only when $r \\equiv 1$.\n\nWithout the denominator the coefficient is not normalised.\n\nInverting the quotient reverses the roles of the two integrals."
   },
   {
     id: "mth302_ch8_036",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In D'Alembert's formula, the term $\\phi(x - ct)$ represents what?",
+    text: "The eigenvalues of a Sturm-Liouville system form which kind of set?",
     options: [
-      "A profile travelling to the right",
-      "A profile travelling to the left with speed $c$",
-      "A stationary profile fixed at the origin",
-      "The average of the two travelling profiles"
+      "An infinite sequence",
+      "A finite set whose size equals the order of the equation",
+      "A continuous interval of admissible values",
+      "A single value determined by the weight function"
     ],
     correctAnswer: 0,
-    explanation: "The combination $x - ct$ stays constant when $x$ increases with $t$, so the profile moves in the direction of increasing $x$.\n\nThe leftward profile corresponds to the argument $x + ct$.\n\nA stationary profile would have no dependence on $t$.\n\nThe average is formed from both terms together."
+    explanation: "The solutions form an infinite sequence of eigenfunctions with eigenvalues indexed by $n = 0, 1, 2, \\ldots$ tending to infinity.\n\nA finite set would contradict the unbounded increasing sequence.\n\nA continuum of eigenvalues does not arise for a regular problem.\n\nA single eigenvalue would leave no expansion to build."
   },
   {
     id: "mth302_ch8_037",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How many initial conditions does the wave equation require?",
+    text: "For $y'' + \\lambda y = 0$ on $0 \\leq x \\leq 5$, which values of $n$ give eigenvalues under Dirichlet ends?",
     options: [
-      "Two",
-      "One",
-      "Three, one for each of the coefficients in the equation",
-      "None"
+      "$n = 1, 2, 3, \\ldots$",
+      "$n = 0, 1, 2, \\ldots$, including the zero mode as well",
+      "Only even values of $n$ throughout",
+      "Only odd values of $n$ throughout"
     ],
     correctAnswer: 0,
-    explanation: "Being second order in time, the wave equation needs both the initial displacement $\\phi$ and the initial velocity $\\psi$.\n\nOne condition suffices only for an equation first order in time, such as the heat equation.\n\nThree conditions would over-determine the problem.\n\nBoundary conditions alone cannot fix the time evolution."
+    explanation: "Taking $n = 0$ would give the identically zero solution, so the Dirichlet sequence starts at $n = 1$.\n\nIncluding $n = 0$ is correct for Neumann ends but not for Dirichlet ends.\n\nEven values alone would omit half the genuine eigenfunctions.\n\nOdd values alone would likewise omit half of them."
   },
   {
     id: "mth302_ch8_038",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How many initial conditions does the heat equation require?",
+    text: "Which statement about a regular Sturm-Liouville system is false?",
     options: [
-      "One",
-      "Two",
-      "None",
-      "One for each spatial boundary of the rod"
+      "Some eigenvalues may be repeated",
+      "The eigenvalues are all real numbers",
+      "The eigenfunctions are mutually orthogonal with weight $r$",
+      "The eigenvalues increase without bound"
     ],
     correctAnswer: 0,
-    explanation: "Being first order in time, the heat equation needs only the initial temperature profile $u(x, 0)$.\n\nTwo conditions are required by an equation second order in time.\n\nThe diffusivity is a material constant and cannot replace initial data.\n\nConditions at the spatial boundaries are boundary conditions, not initial conditions."
+    explanation: "The system is simple, meaning each eigenvalue carries exactly one independent eigenfunction, so repetition never occurs and this statement is the false one.\n\nReality of the eigenvalues is one of the core properties.\n\nWeighted orthogonality is likewise a core property.\n\nGrowth without bound is part of the standard ordering of the eigenvalues."
   },
   {
     id: "mth302_ch8_039",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Verifying D'Alembert's formula at $t = 0$, what does the integral term contribute?",
+    text: "In the expanded Sturm-Liouville form, what must the coefficient of $y'$ equal?",
     options: [
-      "Zero, since its limits coincide",
-      "The full value $\\psi(x)$ at that instant",
-      "Half the initial displacement $\\phi(x)$",
-      "A constant independent of $x$"
+      "$p'(x)$",
+      "$q(x)$",
+      "$r(x)$",
+      "Zero in every admissible case"
     ],
     correctAnswer: 0,
-    explanation: "At $t = 0$ the limits $x - ct$ and $x + ct$ are both $x$, so the integral vanishes and the formula returns $u(x, 0) = \\phi(x)$.\n\nThe value $\\psi(x)$ is recovered by differentiating the integral term, not by evaluating it.\n\nThe displacement contribution comes from the bracketed terms.\n\nA nonzero constant would spoil the initial condition."
+    explanation: "Expanding $(py')'$ gives $py'' + p'y'$, so consistency requires the coefficient of $y'$ to be exactly the derivative of the coefficient of $y''$.\n\nThe potential $q$ multiplies $y$, not $y'$.\n\nThe weight $r$ multiplies $\\lambda y$.\n\nThe coefficient vanishes only when $p$ happens to be constant."
   },
   {
     id: "mth302_ch8_040",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the heat solution, higher modes are damped more strongly because the decay rate grows how with $n$?",
+    text: "For the Neumann problem, what is the eigenfunction belonging to $\\lambda_0 = 0$?",
     options: [
-      "Quadratically",
-      "Linearly",
-      "Exponentially, as a power of the mode number",
-      "Not at all, since the rate is independent of $n$"
+      "A nonzero constant, whose derivative vanishes at both ends",
+      "The zero function",
+      "A linear function of $x$ with nonzero slope",
+      "The sine $\\sin 2x$ evaluated at the first mode"
     ],
     correctAnswer: 0,
-    explanation: "The rate is $\\kappa(n\\pi/L)^2$, which is proportional to $n^2$, so the growth with $n$ is quadratic.\n\nLinear growth would follow from an unsquared bracket.\n\nThe rate itself is not exponential in $n$; the solution is exponential in $t$.\n\nThe rate plainly depends on $n$ through the square."
+    explanation: "A constant has vanishing derivative at both ends and solves $y'' = 0$, so it is a genuine eigenfunction for $\\lambda_0 = 0$.\n\nThe zero function is excluded, since eigenfunctions must be nontrivial.\n\nA nonconstant linear function has nonzero derivative and fails the boundary conditions.\n\nThe sine fails the derivative condition at the left end."
   }
 ];
 

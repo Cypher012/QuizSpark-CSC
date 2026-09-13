@@ -5,561 +5,561 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_001",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What are the eigenvalues of $X'' + \\lambda X = 0$ with $X(0) = X(L) = 0$?",
+    text: "What is the value of $\\Gamma(1/2)$?",
     options: [
-      "$\\lambda_n = n\\pi/L$",
-      "$\\lambda_n = n^2\\pi^2/L$",
-      "$\\lambda_n = n^2\\pi^2/L^2$",
-      "$\\lambda_n = n\\pi/L^2$"
+      "$\\pi$",
+      "$\\sqrt{\\pi}$",
+      "$\\sqrt{\\pi}/2$",
+      "$2\\sqrt{\\pi}$"
     ],
-    correctAnswer: 2,
-    explanation: "With $X = A\\sin(\\sqrt{\\lambda}\\,x)$ after applying $X(0) = 0$, the condition $\\sin(\\sqrt{\\lambda}\\,L) = 0$ requires $\\sqrt{\\lambda}\\,L = n\\pi$, so $\\sqrt{\\lambda} = n\\pi/L$. Squaring both the numerator and the denominator gives $\\lambda_n = n^2\\pi^2/L^2$.\n\n$\\lambda_n = n\\pi/L$ fails to square the expression at all.\n\n$\\lambda_n = n^2\\pi^2/L$ squares only the numerator, leaving the denominator unsquared.\n\n$\\lambda_n = n\\pi/L^2$ squares only the denominator, leaving the numerator unsquared."
+    correctAnswer: 1,
+    explanation: "Substituting $t = u^2$ gives $\\Gamma(1/2) = 2\\displaystyle\\int_0^\\infty e^{-u^2}\\,du$, which equals $2 \\cdot \\sqrt{\\pi}/2$, using the polar-coordinate evaluation of that Gaussian integral, giving $\\Gamma(1/2) = \\sqrt{\\pi}$.\n\n$\\pi$ omits the square root, mistaking the squared value for the answer itself.\n\n$\\sqrt{\\pi}/2$ is actually the value of $\\int_0^\\infty e^{-u^2}\\,du$ on its own, before the factor of $2$ supplied by the substitution is applied.\n\n$2\\sqrt{\\pi}$ applies the factor of $2$ twice instead of once."
   },
   {
     id: "mth302_ch9_002",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ on $0 \\leq x \\leq 5$ with $y(0) = y(5) = 0$, what are the eigenvalues?",
+    text: "What is the value of $\\Gamma(7/2)$?",
     options: [
-      "$n^2\\pi^2/5$",
-      "$n^2\\pi/25$",
-      "$n\\pi/5$",
-      "$n^2\\pi^2/25$"
+      "$15\\sqrt{\\pi}/8$",
+      "$3\\sqrt{\\pi}/4$",
+      "$5\\sqrt{\\pi}/2$",
+      "$105\\sqrt{\\pi}/16$"
     ],
-    correctAnswer: 3,
-    explanation: "The Dirichlet boundary condition at $x = 5$ requires $5\\sqrt{\\lambda_n} = n\\pi$, so $\\lambda_n = n^2\\pi^2/25$, with eigenfunctions $y_n = \\sin(n\\pi x/5)$ for $n = 1, 2, 3, \\dots$. The value $n = 0$ is excluded, since it produces only the trivial solution, which is never counted as an eigenfunction.\n\n$n^2\\pi^2/5$ fails to square the denominator $L = 5$ to match the squared numerator.\n\n$n^2\\pi/25$ fails to square the numerator $n\\pi$ while squaring the denominator.\n\n$n\\pi/5$ fails to square either the numerator or the denominator at all."
+    correctAnswer: 0,
+    explanation: "Applying the recurrence $\\Gamma(x+1) = x\\Gamma(x)$ repeatedly gives $\\Gamma(7/2) = \\dfrac{5}{2}\\cdot\\dfrac{3}{2}\\cdot\\dfrac{1}{2}\\Gamma(1/2) = \\dfrac{15}{8}\\sqrt{\\pi}$.\n\n$3\\sqrt{\\pi}/4$ is actually the value of $\\Gamma(3/2)$, one recurrence step short of the target.\n\n$5\\sqrt{\\pi}/2$ does not match any correct step in the recurrence chain from $\\Gamma(1/2)$.\n\n$105\\sqrt{\\pi}/16$ is actually the value of $\\Gamma(9/2)$, one recurrence step too far."
   },
   {
     id: "mth302_ch9_003",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ on $0 < x < \\pi/2$ with $y'(0) = y'(\\pi/2) = 0$, what are the eigenvalues?",
+    text: "What is the value of $\\Gamma(-3/2)$?",
     options: [
-      "$\\lambda_n = 4n^2$",
-      "$\\lambda_n = 2n$",
-      "$\\lambda_n = n^2$",
-      "$\\lambda_n = n^2\\pi^2/4$"
+      "$-2\\sqrt{\\pi}$",
+      "$4\\sqrt{\\pi}/3$",
+      "$-8\\sqrt{\\pi}/15$",
+      "Undefined"
     ],
-    correctAnswer: 0,
-    explanation: "The condition $y'(0) = 0$ eliminates the sine term, leaving $y = B\\cos(\\sqrt{\\lambda}\\,x)$; then $y'(\\pi/2) = -B\\sqrt{\\lambda}\\sin(\\sqrt{\\lambda}\\,\\pi/2) = 0$ requires $\\sqrt{\\lambda}\\,\\pi/2 = n\\pi$, giving $\\sqrt{\\lambda} = 2n$ and therefore $\\lambda_n = 4n^2$, with eigenfunctions $y_n = \\cos(2nx)$. Unlike the Dirichlet case, $n = 0$ is admissible here, giving the constant eigenfunction.\n\n$\\lambda_n = 2n$ fails to square $\\sqrt{\\lambda} = 2n$ to obtain $\\lambda$ itself.\n\n$\\lambda_n = n^2$ confuses the coefficient with the value that should be squared.\n\n$\\lambda_n = n^2\\pi^2/4$ wrongly applies the Dirichlet-style formula to this Neumann boundary condition problem."
+    correctAnswer: 1,
+    explanation: "Using $\\Gamma(x) = \\Gamma(x+1)/x$ downward from $\\Gamma(1/2)$, first $\\Gamma(-1/2) = \\Gamma(1/2)/(-1/2) = -2\\sqrt{\\pi}$, and then $\\Gamma(-3/2) = \\Gamma(-1/2)/(-3/2) = (-2\\sqrt{\\pi})/(-3/2) = 4\\sqrt{\\pi}/3$.\n\n$-2\\sqrt{\\pi}$ is actually the value of $\\Gamma(-1/2)$, one step earlier in the chain.\n\n$-8\\sqrt{\\pi}/15$ is actually the value of $\\Gamma(-5/2)$, one step further down the chain.\n\nUndefined is wrong here since $\\Gamma$ is undefined only at $0$ and the negative integers; $-3/2$ is a negative non-integer, where the value is perfectly well defined."
   },
   {
     id: "mth302_ch9_004",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Eigenfunctions of a Sturm-Liouville system corresponding to distinct eigenvalues satisfy which relation?",
+    text: "What is the value of $\\displaystyle\\int_0^\\infty x^7e^{-x}\\,dx$?",
     options: [
-      "$\\displaystyle\\int_a^b y_my_n\\,dx = 1$",
-      "$\\displaystyle\\int_a^b y_my_n\\,r(x)\\,dx = 0$",
-      "$\\displaystyle\\int_a^b y_my_n\\,dx = \\dfrac{2}{2n+1}$",
-      "$y_m = y_n$"
+      "$7! = 5040$",
+      "$8! = 40320$",
+      "$6! = 720$",
+      "$\\Gamma(7) = 720$"
     ],
-    correctAnswer: 1,
-    explanation: "Orthogonality of Sturm-Liouville eigenfunctions is always taken with respect to the weight function $r(x)$ appearing in the equation, so the integral of $y_my_nr(x)\\,dx$ vanishes for $m \\neq n$. The weight may be omitted from the notation only when $r$ is identically $1$.\n\n$\\displaystyle\\int_a^b y_my_n\\,dx = 1$ wrongly assumes normalization to $1$ without the weight function.\n\n$\\displaystyle\\int_a^b y_my_n\\,dx = \\dfrac{2}{2n+1}$ is the special normalization used for Legendre polynomials, not a general Sturm-Liouville property.\n\n$y_m = y_n$ contradicts the premise that the eigenvalues, and hence the eigenfunctions, are distinct."
+    correctAnswer: 0,
+    explanation: "Matching against $\\int_0^\\infty t^{s-1}e^{-t}\\,dt$ gives $s - 1 = 7$, so $s = 8$, and the integral equals $\\Gamma(8) = 7! = 5040$. The off-by-one relationship between the exponent in the integrand and the argument of $\\Gamma$ is exactly what this question tests.\n\n$8! = 40320$ mistakenly uses $s = 9$ rather than $s = 8$.\n\n$6! = 720$ and $\\Gamma(7) = 720$ both mistakenly use $s = 7$ rather than the correct $s = 8$."
   },
   {
     id: "mth302_ch9_005",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which statement about a regular Sturm-Liouville system is false?",
+    text: "What is the value of $\\displaystyle\\int_0^\\infty x^3e^{-4x}\\,dx$?",
     options: [
-      "The eigenvalues are real",
-      "The eigenvalues form an increasing sequence tending to infinity",
-      "Each eigenvalue has exactly one linearly independent eigenfunction",
-      "Two different eigenvalues can share the same eigenfunction"
+      "$3/128$",
+      "$6/64$",
+      "$3!/4$",
+      "$1/64$"
     ],
-    correctAnswer: 3,
-    explanation: "An eigenfunction determines its eigenvalue uniquely through the differential equation it satisfies, so it is impossible for two different eigenvalues to share the same eigenfunction, making this statement false.\n\nThe eigenvalues are real is one of the standard listed properties of Sturm-Liouville systems, and is true.\n\nThe eigenvalues form an increasing sequence tending to infinity is also a standard true property.\n\nEach eigenvalue has exactly one linearly independent eigenfunction is true as well, understood as unique up to a constant multiple."
+    correctAnswer: 0,
+    explanation: "Using the general formula $\\int_0^\\infty x^ne^{-ax}\\,dx = \\Gamma(n+1)/a^{n+1}$, with $n = 3$ and $a = 4$, gives $3!/4^4 = 6/256 = 3/128$.\n\n$6/64$ fails to raise the denominator to the fourth power correctly.\n\n$3!/4$ forgets to raise $a$ to the power $n+1$ at all, using only the first power of $a$.\n\n$1/64$ does not follow from a correct application of the formula."
   },
   {
     id: "mth302_ch9_006",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Writing the equation as $(p(x)y')' + [q(x) + \\lambda r(x)]y = 0$, what are $p$, $q$, and $r$ for $y'' + \\lambda y = 0$?",
+    text: "What is the general formula for $B(m, n)$, the Beta function, in terms of the Gamma function?",
     options: [
-      "$p = x$, $q = 0$, $r = 1$",
-      "$p = 0$, $q = 1$, $r = 1$",
-      "$p = 1$, $q = \\lambda$, $r = 0$",
-      "$p = 1$, $q = 0$, $r = 1$, so that $p\' = 0$ as required"
+      "$\\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$",
+      "$\\dfrac{\\Gamma(m)\\Gamma(n)}{(m+n)!}$",
+      "$\\Gamma(m+n)\\Gamma(m)\\Gamma(n)$",
+      "$\\Gamma(m)\\Gamma(n)\\Gamma(m+n)$"
     ],
-    correctAnswer: 3,
-    explanation: "Expanding the standard form gives $py'' + p'y' + (q + \\lambda r)y = 0$. Matching this term by term with $y'' + \\lambda y = 0$ forces $p = 1$, so $p' = 0$, consistent with the absent $y'$ term, $q = 0$, and $r = 1$.\n\n$p = x$, $q = 0$, $r = 1$ wrongly assigns a nonconstant value to $p$ for this simple equation.\n\n$p = 0$, $q = 1$, $r = 1$ would eliminate the $y''$ term entirely, which is not the case here.\n\n$p = 1$, $q = \\lambda$, $r = 0$ confuses $\\lambda$, the eigenvalue parameter itself, with $q$, and wrongly sets the weight $r$ to zero."
+    correctAnswer: 0,
+    explanation: "For positive integers this identity reads $\\dfrac{(m-1)!(n-1)!}{(m+n-1)!}$, so the denominator is $\\Gamma(m+n)$, which equals $(m+n-1)!$, and not $(m+n)!$.\n\n$\\dfrac{\\Gamma(m)\\Gamma(n)}{(m+n)!}$ commits exactly the off-by-one error of using $(m+n)!$ instead of the correct $(m+n-1)!$ in the denominator.\n\n$\\Gamma(m+n)\\Gamma(m)\\Gamma(n)$ places $\\Gamma(m+n)$ in the numerator rather than the denominator, which is the reciprocal of the correct relationship.\n\n$\\Gamma(m)\\Gamma(n)\\Gamma(m+n)$ omits the division entirely, multiplying all three Gamma values together instead."
   },
   {
     id: "mth302_ch9_007",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Bessel's equation in Sturm-Liouville form is $(xy')' + [-\\nu^2/x + \\lambda x]y = 0$. What is its weight function?",
+    text: "What is the value of $B(4, 3)$?",
     options: [
-      "$r = 1$",
-      "$r = \\nu^2$",
-      "$r = 1/x$",
-      "$r = x$"
+      "$1/60$",
+      "$1/12$",
+      "$1/120$",
+      "$1/30$"
     ],
-    correctAnswer: 3,
-    explanation: "The weight function is the coefficient multiplying $\\lambda$ in the standard Sturm-Liouville form, which here is $r(x) = x$. This is why Bessel functions of different orders satisfy an orthogonality integral that includes an extra factor of $x$ inside the integrand.\n\n$r = 1$ would apply only if $\\lambda$ were multiplied by $1$, which is not the case in this equation.\n\n$r = \\nu^2$ confuses the parameter $\\nu$ appearing in $q$ with the weight function that multiplies $\\lambda$.\n\n$r = 1/x$ has the reciprocal of the correct weight."
+    correctAnswer: 0,
+    explanation: "Using $B(4,3) = \\dfrac{\\Gamma(4)\\Gamma(3)}{\\Gamma(7)} = \\dfrac{3! \\cdot 2!}{6!} = \\dfrac{6 \\times 2}{720} = \\dfrac{1}{60}$, which agrees with computing the reduction formula step by step down to $2B(2,1) = 1/2$.\n\n$1/12$, $1/120$, and $1/30$ do not match the correct factorial computation $3! \\cdot 2!/6!$."
   },
   {
     id: "mth302_ch9_008",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "If $f$ is expanded as $\\sum_n c_n\\phi_n$, where the $\\phi_n$ are orthogonal on the interval from $a$ to $b$ with weight $r$, what is the formula for the coefficient $c_n$?",
+    text: "What is the value of $\\displaystyle\\int_0^1 x^6(1-x)^4\\,dx$?",
     options: [
-      "$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$",
-      "$c_n = \\dfrac{\\displaystyle\\int_a^b rf\\phi_n\\,dx}{\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx}$",
-      "$c_n = \\dfrac{\\displaystyle\\int_a^b f\\phi_n\\,dx}{\\displaystyle\\int_a^b \\phi_n\\,dx}$",
-      "$c_n$ equals the average of $f$ over the interval from $a$ to $b$"
+      "$B(6, 4)$",
+      "$B(7, 5) = 1/210$",
+      "$B(7, 5) = 1/420$",
+      "$1/35$"
     ],
     correctAnswer: 1,
-    explanation: "Multiplying the expansion by $r\\phi_m$ and integrating over the interval from $a$ to $b$ uses orthogonality to eliminate every term except the one with $n = m$, leaving $\\displaystyle\\int_a^b rf\\phi_n\\,dx$ equal to $c_n$ times $\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx$, and dividing gives the coefficient formula.\n\n$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$ alone is correct only when the system is orthonormal, meaning the denominator integral happens to equal $1$, which is not assumed in general.\n\n$c_n = \\dfrac{\\int f\\phi_n\\,dx}{\\int \\phi_n\\,dx}$ omits the weight function $r$ from both integrals and uses $\\phi_n$ instead of $\\phi_n$ squared in the denominator.\n\n$c_n$ equals the average of $f$ describes only the special case of the constant term in a Fourier series, not the general Sturm-Liouville expansion coefficient."
+    explanation: "Matching $\\int_0^1 x^{m-1}(1-x)^{n-1}\\,dx$ against the given integrand gives $m - 1 = 6$ and $n - 1 = 4$, so $m = 7$ and $n = 5$, and $B(7,5) = \\dfrac{6! \\cdot 4!}{10!} = \\dfrac{720 \\times 24}{3628800} = \\dfrac{1}{210}$.\n\n$B(6, 4)$ commits the off-by-one error in reading the exponents as the parameters directly, instead of adding $1$ to each.\n\n$B(7, 5) = 1/420$ correctly identifies the parameters but computes the wrong numerical value.\n\n$1/35$ does not follow from the correct factorial computation."
   },
   {
     id: "mth302_ch9_009",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which equation is the general form of a Sturm-Liouville problem?",
+    text: "What is the trigonometric form of the Beta function $B(m, n)$?",
     options: [
-      "$(p(x)y')' + [q(x) + \\lambda r(x)]y = 0$",
-      "$p(x)y'' + q(x)y' + r(x)y = 0$, with no eigenvalue parameter present",
-      "$(p(x)y')' + \\lambda y = 0$, omitting the functions $q$ and $r$ entirely",
-      "$y'' + \\lambda y = 0$, which is only the simplest special case"
+      "$\\displaystyle\\int_0^{\\pi/2}\\sin^m\\theta\\cos^n\\theta\\,d\\theta$",
+      "$\\displaystyle\\int_0^1\\sin^{m-1}\\theta\\cos^{n-1}\\theta\\,d\\theta$",
+      "$2\\displaystyle\\int_0^\\pi\\sin^{2m}\\theta\\cos^{2n}\\theta\\,d\\theta$",
+      "$2\\displaystyle\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$"
     ],
-    correctAnswer: 0,
-    explanation: "The general form places the eigenvalue against the weight function, giving $(py')' + [q + \\lambda r]y = 0$ on $a \\leq x \\leq b$ with $r > 0$.\n\nAn equation with no $\\lambda$ is not an eigenvalue problem at all.\n\nDropping $q$ and $r$ discards both the potential term and the weight.\n\nThe constant-coefficient equation is one instance rather than the general form."
+    correctAnswer: 3,
+    explanation: "Substituting $x = \\sin^2\\theta$ gives $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, and $x^{m-1}(1-x)^{n-1}$ becomes $\\sin^{2m-2}\\theta\\cos^{2n-2}\\theta$; combining the powers from the substitution and the integrand produces $2\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$. The upper limit is $\\pi/2$ because $x = 1$ corresponds to $\\theta = \\pi/2$.\n\nThe plain $\sin^m\theta\cos^n\theta$ form uses the wrong exponents and omits the leading factor of $2$.\n\nThe version integrated from $0$ to $1$ uses the wrong upper limit for a trigonometric substitution.\n\nThe version integrated from $0$ to $\pi$ with exponents $2m$ and $2n$ uses the wrong upper limit and the wrong exponents."
   },
   {
     id: "mth302_ch9_010",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What condition is imposed on the weight function $r(x)$?",
+    text: "At which values is the Gamma function undefined?",
     options: [
-      "$r(x) > 0$ on the interval",
-      "$r(x) = 1$ throughout the interval considered",
-      "$r(x) \\geq 0$, allowing it to vanish at interior points",
-      "$r(x)$ is a polynomial of degree at most two"
+      "Only at $x = 0$",
+      "At $0$ and every negative integer",
+      "At every negative non-integer",
+      "Nowhere; Gamma is defined for all real numbers"
     ],
-    correctAnswer: 0,
-    explanation: "The weight must be strictly positive on $[a, b]$, which is what makes the orthogonality relation meaningful.\n\nRequiring $r = 1$ describes only the unweighted special case.\n\nAllowing the weight to vanish would break the inner product it defines.\n\nNothing restricts the weight to polynomials."
+    correctAnswer: 1,
+    explanation: "Gamma has poles at $0$ and at every negative integer, where its value blows up to infinity, so it is undefined at those points; negative non-integer arguments, by contrast, are perfectly well defined and can be evaluated using the recurrence relation, with signs alternating as the argument decreases through successive negative half-integers.\n\nOnly at $x = 0$ misses the poles at every negative integer as well.\n\nAt every negative non-integer is exactly backwards, since those values are well defined while the negative integers are not.\n\nNowhere is defined for all real numbers ignores the poles entirely."
   },
   {
     id: "mth302_ch9_011",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "In the expanded form $p(x)y'' + p'(x)y' + [q(x) + \\lambda r(x)]y = 0$, how is $p$ identified?",
+    text: "What is the value of $\\displaystyle\\int_0^{\\pi/2}\\sin^5\\theta\\cos^4\\theta\\,d\\theta$?",
     options: [
-      "As the coefficient of $y''$",
-      "As the coefficient of $y'$, which is actually its derivative",
-      "As the coefficient of $y$, alongside the eigenvalue term",
-      "As the reciprocal of the weight function $r$"
+      "$\\dfrac{8}{315}$",
+      "$\\dfrac{16}{315}$, obtained without halving the Beta function",
+      "$\\dfrac{1}{15}$, from an incorrect reduction of the parameters",
+      "$\\dfrac{\\pi}{32}$, retaining a factor of $\\pi$ in the answer"
     ],
     correctAnswer: 0,
-    explanation: "Comparing with the expanded form shows the coefficient of $y''$ is $p$ and the coefficient of $y'$ is $p'$, which is the consistency check.\n\nThe coefficient of $y'$ is the derivative $p'$, not $p$ itself.\n\nThe coefficient of $y$ contains $q$ and $\\lambda r$.\n\nThe weight is a separate function and is not the reciprocal of $p$."
+    explanation: "Using $\\int_0^{\\pi/2}\\sin^p\\theta\\cos^q\\theta\\,d\\theta = \\tfrac{1}{2}B\\!\\left(\\tfrac{p+1}{2}, \\tfrac{q+1}{2}\\right)$ with $p = 5$, $q = 4$ gives $\\tfrac{1}{2}B(3, \\tfrac{5}{2}) = \\tfrac{1}{2}\\cdot\\dfrac{\\Gamma(3)\\Gamma(5/2)}{\\Gamma(11/2)} = \\dfrac{8}{315}$.\n\nDoubling the result omits the factor $\\tfrac{1}{2}$ in front of the Beta function.\n\nA value of $\\tfrac{1}{15}$ does not follow from these parameters.\n\nBecause one of the powers is odd, the $\\sqrt{\\pi}$ factors cancel and the answer is rational, so any $\\pi$ in the answer signals an error."
   },
   {
     id: "mth302_ch9_012",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$, what are $p$, $q$ and $r$?",
+    text: "What is the integral definition of $\\Gamma(x)$?",
     options: [
-      "$p = 1$, $q = 0$, $r = 1$",
-      "$p = 0$, $q = 1$, $r = \\lambda$, reading the parameter as the weight",
-      "$p = 1$, $q = \\lambda$, $r = 0$, placing the eigenvalue in $q$",
-      "$p = \\lambda$, $q = 0$, $r = 1$, taking the parameter as the leading coefficient"
+      "$\\displaystyle\\int_0^\\infty t^{x-1}e^{-t}\\,dt$",
+      "$\\displaystyle\\int_0^\\infty t^{x}e^{-t}\\,dt$, using the exponent $x$ rather than $x - 1$",
+      "$\\displaystyle\\int_0^1 t^{x-1}e^{-t}\\,dt$, integrating only over the unit interval",
+      "$\\displaystyle\\int_0^\\infty t^{x-1}e^{t}\\,dt$, with a growing exponential"
     ],
     correctAnswer: 0,
-    explanation: "Matching against the expanded form gives $p = 1$, hence $p' = 0$, with $q = 0$ and weight $r = 1$.\n\nThe eigenvalue $\\lambda$ is the parameter and never plays the role of the weight.\n\nPlacing $\\lambda$ inside $q$ confuses the potential with the eigenvalue term.\n\nThe leading coefficient is $1$, not $\\lambda$."
+    explanation: "The Gamma function is defined by $\\int_0^\\infty t^{x-1}e^{-t}\\,dt$, convergent for $x > 0$.\n\nUsing the exponent $x$ instead of $x - 1$ defines $\\Gamma(x + 1)$.\n\nRestricting to the unit interval gives an incomplete Gamma function.\n\nA growing exponential makes the integral diverge."
   },
   {
     id: "mth302_ch9_013",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What form do the boundary conditions of a Sturm-Liouville system take?",
+    text: "For which $x$ does the defining integral for $\\Gamma(x)$ converge?",
     options: [
-      "$\\alpha_1y(a) + \\alpha_2y'(a) = 0$ and $\\beta_1y(b) + \\beta_2y'(b) = 0$",
-      "$y(a) = y(b)$ with the derivatives left entirely unconstrained",
-      "$y(a) = 1$ and $y(b) = 1$, fixing the values at the two ends",
-      "$y'(a) = y'(b) = \\lambda$, tying the derivatives to the eigenvalue"
+      "$x > 0$",
+      "$x \\geq 1$, excluding the fractional values below one",
+      "Every real $x$, including the negative integers",
+      "$x < 0$ only, where the reverse recurrence applies"
     ],
     correctAnswer: 0,
-    explanation: "Each end carries a homogeneous condition combining the function and its derivative, which is what makes the trivial solution always admissible and the eigenvalues discrete.\n\nMatching values at the two ends describes periodic conditions, a different type.\n\nNonzero prescribed values would make the conditions nonhomogeneous.\n\nTying the derivatives to $\\lambda$ is not a standard boundary condition."
+    explanation: "The integral converges precisely for positive $x$; negative non-integer values are reached afterwards through the reverse recurrence.\n\nRestricting to $x \\geq 1$ excludes values such as $\\Gamma(1/2)$, which the integral does define.\n\nConvergence fails at zero and the negative integers.\n\nNegative arguments are handled by extension, not by the integral itself."
   },
   {
     id: "mth302_ch9_014",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is true of the eigenvalues of a Sturm-Liouville system?",
+    text: "What is the fundamental recurrence for the Gamma function?",
     options: [
-      "They are real, and non-negative under the usual sign conditions",
-      "They are complex in general, since the auxiliary roots are imaginary",
-      "They form a finite set determined by the interval length",
-      "They may repeat, with several eigenfunctions sharing one value"
+      "$\\Gamma(x + 1) = x\\Gamma(x)$",
+      "$\\Gamma(x + 1) = (x + 1)\\Gamma(x)$, shifting the multiplier by one",
+      "$\\Gamma(x) = x\\Gamma(x + 1)$, inverting the direction of the relation",
+      "$\\Gamma(x + 1) = \\Gamma(x) + x$, adding rather than multiplying"
     ],
     correctAnswer: 0,
-    explanation: "The eigenvalues are real and, under the usual sign conditions, non-negative, even though the auxiliary equation produces roots $m = \\pm i\\sqrt{\\lambda}$.\n\nThe imaginary auxiliary roots do not make the eigenvalues complex.\n\nThe eigenvalues form an infinite sequence tending to infinity.\n\nEach eigenvalue is simple, so repetition does not occur."
+    explanation: "Integration by parts gives $\\Gamma(x + 1) = x\\Gamma(x)$, which is the relation behind both the factorial values and the extension to negative arguments.\n\nUsing $x + 1$ as the multiplier misstates the result of the integration by parts.\n\nInverting the relation reverses which side carries the factor.\n\nThe recurrence is multiplicative, not additive."
   },
   {
     id: "mth302_ch9_015",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "How can the eigenvalues be arranged?",
+    text: "For a positive integer $n$, what does $\\Gamma(n + 1)$ equal?",
     options: [
-      "As a strictly increasing sequence tending to infinity",
-      "As a decreasing sequence tending to zero from above",
-      "As a finite list with a largest member",
-      "In no particular order, since they are unordered"
+      "$n!$",
+      "$(n + 1)!$, shifting the factorial by one place",
+      "$(n - 1)!$, which is the value of $\\Gamma(n)$ instead",
+      "$n$, without forming a factorial at all"
     ],
     correctAnswer: 0,
-    explanation: "They form a strictly increasing infinite sequence $0 \\leq \\lambda_0 < \\lambda_1 < \\lambda_2 < \\cdots$ with $\\lambda_n \\to \\infty$.\n\nA decreasing sequence would contradict the growth to infinity.\n\nA largest eigenvalue cannot exist for an unbounded increasing sequence.\n\nThe eigenvalues are genuinely ordered by size."
+    explanation: "Iterating the recurrence down to $\\Gamma(1) = 1$ gives $\\Gamma(n + 1) = n!$, and correspondingly $\\Gamma(n) = (n - 1)!$.\n\nUsing $(n + 1)!$ shifts the argument one step too far.\n\nThe value $(n - 1)!$ belongs to $\\Gamma(n)$, and confusing the two is the standard slip here.\n\nThe Gamma function produces a factorial, not the argument itself."
   },
   {
     id: "mth302_ch9_016",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "How many linearly independent eigenfunctions correspond to each eigenvalue?",
+    text: "What is $\\Gamma(1)$?",
     options: [
-      "Exactly one, understood up to a constant multiple",
-      "Exactly two",
-      "Infinitely many, since any multiple is also an eigenfunction",
-      "A number that varies from one eigenvalue to the next"
+      "$1$",
+      "$0$, since the integrand vanishes at the lower limit",
+      "Undefined, as at the non-positive integers",
+      "$\\sqrt{\\pi}$, which is the half-integer value instead"
     ],
     correctAnswer: 0,
-    explanation: "The problem is simple, so each eigenvalue carries one eigenfunction up to a constant multiple, meaning $\\sin(n\\pi x/L)$ and $5\\sin(n\\pi x/L)$ are not counted as different.\n\nThe second-order equation admits two solutions, but only one satisfies both boundary conditions.\n\nConstant multiples do not count as independent.\n\nSimplicity means the count is one for every eigenvalue."
+    explanation: "Evaluating $\\int_0^\\infty e^{-t}\\,dt = 1$ gives $\\Gamma(1) = 1$, which anchors the factorial chain.\n\nThe integral is strictly positive, so zero is impossible.\n\nThe Gamma function is undefined at zero and the negative integers, not at one.\n\nThe value $\\sqrt{\\pi}$ belongs to $\\Gamma(1/2)$."
   },
   {
     id: "mth302_ch9_017",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "With respect to what are Sturm-Liouville eigenfunctions orthogonal?",
+    text: "At which arguments is the Gamma function undefined?",
     options: [
-      "The weight function $r(x)$, which must be carried in the integral",
-      "The coefficient $p(x)$ appearing in the leading term",
-      "The potential $q(x)$ appearing alongside the eigenvalue",
-      "No weight at all"
+      "At $0$ and the negative integers",
+      "At every negative argument, integer or not",
+      "At the positive integers, where the factorial takes over",
+      "At the half-integers, where a square root appears"
     ],
     correctAnswer: 0,
-    explanation: "The relation is $\\int_a^b y_my_nr\\,dx = 0$ for $m \\neq n$, so the weight $r$ must be carried unless it happens to equal one.\n\nThe coefficient $p$ appears in the differential operator, not in the inner product.\n\nThe potential $q$ likewise plays no part in orthogonality.\n\nDropping the weight is valid only in the special case $r \\equiv 1$."
+    explanation: "The reverse recurrence blows up at zero and at each negative integer, where the function has poles, while negative non-integers are perfectly well defined.\n\nNegative non-integers such as $-1/2$ do have finite values.\n\nThe positive integers give the factorial values and are certainly defined.\n\nHalf-integers give values involving $\\sqrt{\\pi}$ and are defined."
   },
   {
     id: "mth302_ch9_018",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ on $0 \\leq x \\leq 5$ with $y(0) = y(5) = 0$, what are the eigenfunctions?",
+    text: "What is $\\Gamma(3/2)$?",
     options: [
-      "$\\sin\\dfrac{n\\pi x}{5}$",
-      "$\\cos\\dfrac{n\\pi x}{5}$, which would satisfy Neumann conditions instead",
-      "$e^{n\\pi x/5}$, an exponential rather than a sinusoid",
-      "$\\sin\\dfrac{n\\pi x}{25}$"
+      "$\\dfrac{\\sqrt{\\pi}}{2}$",
+      "$\\sqrt{\\pi}$",
+      "$\\dfrac{3\\sqrt{\\pi}}{4}$, which is the value of $\\Gamma(5/2)$",
+      "$\\dfrac{\\sqrt{\\pi}}{4}$, halving the correct value once too often"
     ],
     correctAnswer: 0,
-    explanation: "The condition $y(0) = 0$ removes the cosine and $y(5) = 0$ quantises the frequency, giving $\\sin(n\\pi x/5)$.\n\nThe cosine fails the condition at $x = 0$.\n\nAn exponential cannot vanish at both ends.\n\nThe $25$ belongs to the eigenvalue, not to the argument of the sine."
+    explanation: "Applying the recurrence, $\\Gamma(3/2) = \\tfrac{1}{2}\\Gamma(1/2) = \\dfrac{\\sqrt{\\pi}}{2}$.\n\nThe bare $\\sqrt{\\pi}$ is $\\Gamma(1/2)$, one step earlier.\n\nThe value $3\\sqrt{\\pi}/4$ is $\\Gamma(5/2)$, one step later.\n\nHalving again overshoots the recurrence."
   },
   {
     id: "mth302_ch9_019",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ on $0 < x < \\pi/2$ with $y'(0) = y'(\\pi/2) = 0$, what are the eigenfunctions?",
+    text: "What is $\\Gamma(5/2)$?",
     options: [
-      "$\\cos 2nx$",
-      "$\\sin 2nx$, which would satisfy Dirichlet conditions instead",
-      "$\\cos nx$",
-      "$\\sin nx$, combining both errors at once"
+      "$\\dfrac{3\\sqrt{\\pi}}{4}$",
+      "$\\dfrac{\\sqrt{\\pi}}{2}$, which is the value of $\\Gamma(3/2)$ instead",
+      "$\\dfrac{15\\sqrt{\\pi}}{8}$, which is the value of $\\Gamma(7/2)$",
+      "$\\dfrac{5\\sqrt{\\pi}}{2}$"
     ],
     correctAnswer: 0,
-    explanation: "The condition $y'(0) = 0$ removes the sine, and $y'(\\pi/2) = 0$ gives $\\sqrt{\\lambda} = 2n$, so the eigenfunctions are $\\cos 2nx$.\n\nThe sine fails the derivative condition at the left end.\n\nOmitting the factor of two breaks the condition at $x = \\pi/2$.\n\nThe final choice fails both conditions at once."
+    explanation: "Using the recurrence twice, $\\Gamma(5/2) = \\tfrac{3}{2}\\cdot\\tfrac{1}{2}\\sqrt{\\pi} = \\dfrac{3\\sqrt{\\pi}}{4}$.\n\nThe value $\\sqrt{\\pi}/2$ is one step earlier.\n\nThe value $15\\sqrt{\\pi}/8$ is one step later.\n\nMultiplying by $5/2$ misapplies the recurrence, which uses the argument minus one."
   },
   {
     id: "mth302_ch9_020",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For the Neumann problem on $0 < x < \\pi/2$, what are the eigenvalues?",
+    text: "What is $\\Gamma(-1/2)$?",
     options: [
-      "$\\lambda_n = 4n^2$",
-      "$\\lambda_n = 2n$",
-      "$\\lambda_n = n^2$, omitting the factor of four",
-      "$\\lambda_n = 2n^2$, halving the correct coefficient"
+      "$-2\\sqrt{\\pi}$",
+      "$2\\sqrt{\\pi}$",
+      "$\\dfrac{4\\sqrt{\\pi}}{3}$, which is the value of $\\Gamma(-3/2)$",
+      "Undefined, as at the negative integers"
     ],
     correctAnswer: 0,
-    explanation: "From $\\sqrt{\\lambda} = 2n$ we get $\\lambda_n = 4n^2$, squaring the whole expression.\n\nTaking $2n$ leaves the square root rather than the eigenvalue.\n\nOmitting the four fails to square the factor of two.\n\nHalving the coefficient does not follow from squaring $2n$."
+    explanation: "Using $\\Gamma(x) = \\dfrac{\\Gamma(x + 1)}{x}$ with $x = -1/2$ gives $\\dfrac{\\Gamma(1/2)}{-1/2} = -2\\sqrt{\\pi}$.\n\nDropping the minus sign ignores the negative denominator.\n\nThe value $4\\sqrt{\\pi}/3$ belongs to $\\Gamma(-3/2)$.\n\nNegative half-integers are defined; only zero and the negative integers are not."
   },
   {
     id: "mth302_ch9_021",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Why is $n = 0$ admissible for the Neumann problem but not for the Dirichlet problem?",
+    text: "Which substitution converts $\\Gamma(1/2)$ into a Gaussian integral?",
     options: [
-      "$\\lambda_0 = 0$ gives a nonzero constant eigenfunction",
-      "The Neumann interval is shorter than the Dirichlet interval used earlier",
-      "The weight function differs between the two problems",
-      "The Neumann problem has no boundary conditions at the left end"
+      "$t = u^2$",
+      "$t = \\sqrt{u}$",
+      "$t = e^{-u}$, replacing the variable by an exponential",
+      "$t = 1 - u$, reflecting the variable about one"
     ],
     correctAnswer: 0,
-    explanation: "With Neumann ends a constant function has vanishing derivative at both ends, so $\\lambda_0 = 0$ with $y_0$ constant is a genuine eigenpair, whereas a constant satisfying Dirichlet ends must be zero.\n\nThe length of the interval does not decide whether zero is an eigenvalue.\n\nBoth problems here have weight $r = 1$.\n\nThe Neumann problem does impose a condition at the left end, on the derivative."
+    explanation: "Putting $t = u^2$ gives $dt = 2u\\,du$ and turns $\\Gamma(1/2)$ into $2\\int_0^\\infty e^{-u^2}\\,du$, which the polar-coordinate trick evaluates.\n\nThe reverse substitution does not clear the half-power.\n\nAn exponential substitution does not produce a Gaussian.\n\nReflecting about one belongs to the Beta function's symmetry argument."
   },
   {
     id: "mth302_ch9_022",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $x^2y'' + xy' + (\\lambda x^2 - \\nu^2)y = 0$ put into Sturm-Liouville form, what is $p$?",
+    text: "What is $\\displaystyle\\int_0^\\infty e^{-x^2}\\,dx$?",
     options: [
-      "$p = x$",
-      "$p = x^2$, taken directly from the coefficient before dividing",
-      "$p = 1$, as for the constant-coefficient case",
-      "$p = \\lambda x^2$, absorbing the eigenvalue into the leading term"
+      "$\\dfrac{\\sqrt{\\pi}}{2}$",
+      "$\\sqrt{\\pi}$",
+      "$\\dfrac{\\pi}{4}$, which is the value of its square",
+      "$\\dfrac{\\pi}{2}$, confusing the square with the integral itself"
     ],
     correctAnswer: 0,
-    explanation: "Dividing by $x$ makes the $y''$ coefficient $x$ and the $y'$ coefficient $1 = p'$, consistent with $(xy')' = xy'' + y'$.\n\nUsing $x^2$ reads the coefficient before the division needed for consistency.\n\nThe constant value $1$ applies only when the leading coefficient is constant.\n\nThe eigenvalue belongs with the weight, not with $p$."
+    explanation: "The polar-coordinate computation gives $I^2 = \\pi/4$, so $I = \\dfrac{\\sqrt{\\pi}}{2}$, and the factor $2$ supplied by the substitution then yields $\\Gamma(1/2) = \\sqrt{\\pi}$.\n\nThe bare $\\sqrt{\\pi}$ is $\\Gamma(1/2)$, twice this integral.\n\nThe value $\\pi/4$ is $I^2$, not $I$.\n\nThe value $\\pi/2$ matches neither the integral nor its square."
   },
   {
     id: "mth302_ch9_023",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For Bessel's equation in the form $(xy')' + [-\\nu^2/x + \\lambda x]y = 0$, what is the weight?",
+    text: "What is $\\displaystyle\\int_0^\\infty x^5e^{-x}\\,dx$?",
     options: [
-      "$r = x$, being whatever multiplies the eigenvalue $\\lambda$",
-      "$r = 1$, as in the unweighted constant-coefficient problems",
-      "$r = -\\nu^2/x$",
-      "$r = x^2$, squaring the coefficient that multiplies $\\lambda$"
+      "$120$",
+      "$720$, which is $6!$ rather than $5!$",
+      "$24$",
+      "$5$, taking the exponent itself as the answer"
     ],
     correctAnswer: 0,
-    explanation: "The weight is whatever multiplies $\\lambda$, and here that is $x$.\n\nThe value $1$ would apply only if $\\lambda$ stood alone.\n\nThe expression $-\\nu^2/x$ is $q$, the potential term.\n\nSquaring the coefficient misreads the term multiplying $\\lambda$."
+    explanation: "Matching $\\int_0^\\infty t^{s-1}e^{-t}\\,dt$ gives $s - 1 = 5$, so $s = 6$ and the integral is $\\Gamma(6) = 5! = 120$.\n\nThe value $720$ is $6!$ and overshoots by one step.\n\nThe value $24$ is $4!$ and undershoots by one step.\n\nThe exponent itself is not the value of the integral."
   },
   {
     id: "mth302_ch9_024",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ with $y(0) = y(5) = 0$, which relation determines the eigenvalues?",
+    text: "What is the general formula for $\\displaystyle\\int_0^\\infty x^ne^{-ax}\\,dx$ with $a > 0$?",
     options: [
-      "$5\\sqrt{\\lambda} = n\\pi$",
-      "$5\\lambda = n\\pi$",
-      "$\\sqrt{\\lambda} = n\\pi$",
-      "$5\\sqrt{\\lambda} = 2n\\pi$, doubling the right-hand side"
+      "$\\dfrac{\\Gamma(n + 1)}{a^{n+1}}$",
+      "$\\dfrac{\\Gamma(n + 1)}{a^{n}}$",
+      "$\\dfrac{\\Gamma(n)}{a^{n+1}}$, shifting the Gamma argument down by one",
+      "$a^{n+1}\\Gamma(n + 1)$, multiplying rather than dividing"
     ],
     correctAnswer: 0,
-    explanation: "A nontrivial solution needs $\\sin(5\\sqrt{\\lambda}) = 0$, hence $5\\sqrt{\\lambda} = n\\pi$.\n\nOmitting the square root confuses $\\lambda$ with $\\sqrt{\\lambda}$.\n\nDropping the factor $5$ ignores the length of the interval.\n\nDoubling the right-hand side corresponds to a different boundary condition."
+    explanation: "Substituting $y = ax$ contributes one power of $a$ for each of the $n$ factors of $x$ and one more from $dx$, giving $a^{n+1}$ in the denominator.\n\nOmitting one power of $a$ is exactly the slip this substitution is designed to catch.\n\nShifting the Gamma argument confuses $\\Gamma(n)$ with $\\Gamma(n + 1)$.\n\nMultiplying by $a^{n+1}$ inverts the relation."
   },
   {
     id: "mth302_ch9_025",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ with $y(0) = y(5) = 0$, what are the eigenvalues?",
+    text: "What is the integral definition of $B(m, n)$?",
     options: [
-      "$\\lambda_n = \\dfrac{n^2\\pi^2}{25}$",
-      "$\\lambda_n = \\dfrac{n\\pi}{5}$",
-      "$\\lambda_n = \\dfrac{n^2\\pi^2}{5}$, squaring the numerator but not the length",
-      "$\\lambda_n = \\dfrac{n^2\\pi^2}{10}$, doubling rather than squaring the length"
+      "$\\displaystyle\\int_0^1 x^{m-1}(1 - x)^{n-1}\\,dx$",
+      "$\\displaystyle\\int_0^1 x^{m}(1 - x)^{n}\\,dx$, without reducing either exponent",
+      "$\\displaystyle\\int_0^\\infty x^{m-1}(1 - x)^{n-1}\\,dx$, over an infinite range",
+      "$\\displaystyle\\int_0^1 x^{m-1}(1 + x)^{n-1}\\,dx$"
     ],
     correctAnswer: 0,
-    explanation: "Squaring $\\sqrt{\\lambda} = n\\pi/5$ gives $\\lambda_n = n^2\\pi^2/25$, with the whole expression squared.\n\nLeaving the square root untaken confuses the two quantities.\n\nSquaring only the numerator is the standard slip here.\n\nDoubling the length does not follow from squaring."
+    explanation: "The Beta function is $\\int_0^1 x^{m-1}(1 - x)^{n-1}\\,dx$, convergent for $m > 0$ and $n > 0$.\n\nFailing to reduce the exponents shifts both parameters by one.\n\nThe range is the unit interval, not the half-line.\n\nThe bracket carries a minus sign, which is what confines the integrand to $[0, 1]$."
   },
   {
     id: "mth302_ch9_026",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "When may the weight be omitted from the orthogonality integral?",
+    text: "What symmetry does the Beta function possess?",
     options: [
-      "Only when $r \\equiv 1$",
-      "Whenever the eigenvalues are distinct from one another",
-      "Whenever the interval is symmetric about the origin",
-      "Always"
+      "$B(m, n) = B(n, m)$",
+      "$B(m, n) = -B(n, m)$, changing sign under the exchange",
+      "$B(m, n) = B(m + n, 1)$, collapsing the two parameters",
+      "$B(m, n) = \\dfrac{1}{B(n, m)}$, giving the reciprocal"
     ],
     correctAnswer: 0,
-    explanation: "The weight can be dropped only in the special case where it is identically one; otherwise it must be carried.\n\nDistinct eigenvalues are what make the integral vanish, not what removes the weight.\n\nSymmetry of the interval has no bearing on the weight.\n\nThe weight does not cancel and omitting it is a standard error."
+    explanation: "The substitution $x \\mapsto 1 - x$ exchanges the two exponents, showing $B(m, n) = B(n, m)$.\n\nA sign change would contradict the positivity of the integrand.\n\nCollapsing the parameters discards information the function retains.\n\nThe reciprocal relation does not follow from the substitution."
   },
   {
     id: "mth302_ch9_027",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Two functions are orthogonal on $[a, b]$ with respect to $r$ when which integral vanishes?",
+    text: "Which substitution produces the trigonometric form of the Beta function?",
     options: [
-      "$\\displaystyle\\int_a^b f(x)g(x)r(x)\\,dx$",
-      "$\\displaystyle\\int_a^b [f(x) + g(x)]r(x)\\,dx$, integrating a sum instead of a product",
-      "$\\displaystyle\\int_a^b \\dfrac{f(x)}{g(x)}r(x)\\,dx$, integrating a quotient of the two",
-      "$\\displaystyle\\int_a^b f(x)g(x)\\,dx$"
+      "$x = \\sin^2\\theta$",
+      "$x = \\sin\\theta$, without the square on the sine",
+      "$x = \\cos\\theta$, using the cosine instead",
+      "$x = \\tan^2\\theta$"
     ],
     correctAnswer: 0,
-    explanation: "Weighted orthogonality means the integral of the product of the two functions against the positive weight vanishes.\n\nA sum rather than a product does not define an inner product.\n\nA quotient is undefined wherever $g$ vanishes.\n\nOmitting the weight gives the unweighted notion, valid only when $r \\equiv 1$."
+    explanation: "Putting $x = \\sin^2\\theta$ gives $1 - x = \\cos^2\\theta$ and $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, sending $x = 0$ to $\\theta = 0$ and $x = 1$ to $\\theta = \\pi/2$.\n\nOmitting the square fails to convert $1 - x$ into a clean square.\n\nThe cosine reverses the limits and does not simplify the bracket.\n\nThe tangent squared runs to infinity rather than to one."
   },
   {
     id: "mth302_ch9_028",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which product-to-sum identity is used when verifying orthogonality of sines?",
+    text: "What is $\\displaystyle\\int_0^{\\pi/2}\\sin^p\\theta\\cos^q\\theta\\,d\\theta$ in terms of the Beta function?",
     options: [
-      "$\\sin A\\sin B = \\tfrac{1}{2}[\\cos(A - B) - \\cos(A + B)]$",
-      "$\\sin A\\sin B = \\tfrac{1}{2}[\\cos(A + B) - \\cos(A - B)]$",
-      "$\\sin A\\sin B = \\tfrac{1}{2}[\\sin(A + B) + \\sin(A - B)]$, producing sines instead",
-      "$\\sin A\\sin B = \\cos(A - B) - \\cos(A + B)$"
+      "$\\tfrac{1}{2}B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$",
+      "$B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$",
+      "$\\tfrac{1}{2}B\\!\\left(\\dfrac{p}{2},\\ \\dfrac{q}{2}\\right)$",
+      "$2B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$, doubling instead of halving"
     ],
     correctAnswer: 0,
-    explanation: "The identity converts the product into a difference of cosines with the factor $\\tfrac{1}{2}$, which integrates to zero over the interval when $m \\neq n$.\n\nExchanging the two cosine terms reverses the sign of the whole expression.\n\nA product of two sines gives cosines, not sines.\n\nDropping the factor of one half misstates the identity."
+    explanation: "Inverting the trigonometric form gives the integral as one half of the Beta function with each parameter shifted and halved.\n\nOmitting the factor of one half doubles the answer.\n\nDropping the shift by one misreads the parameters.\n\nDoubling inverts the required factor."
   },
   {
     id: "mth302_ch9_029",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Are $\\sin\\dfrac{n\\pi x}{L}$ and $5\\sin\\dfrac{n\\pi x}{L}$ two different eigenfunctions?",
+    text: "For positive integers, what does $B(m, n)$ equal in factorial form?",
     options: [
-      "No, they differ only by a constant multiple",
-      "Yes, since their amplitudes differ from one another",
-      "Yes, because they correspond to different eigenvalues",
-      "Only when $n$ is even rather than odd"
+      "$\\dfrac{(m-1)!\\,(n-1)!}{(m+n-1)!}$",
+      "$\\dfrac{m!\\,n!}{(m+n)!}$",
+      "$\\dfrac{(m-1)!\\,(n-1)!}{(m+n)!}$, reducing only the numerator",
+      "$\\dfrac{m!\\,n!}{(m+n-1)!}$, reducing only the denominator"
     ],
     correctAnswer: 0,
-    explanation: "Uniqueness of the eigenfunction is understood up to a constant multiple, so scaling produces the same eigenfunction.\n\nA difference in amplitude is exactly the scaling that is being quotiented out.\n\nBoth correspond to the same eigenvalue, since they solve the same problem.\n\nThe parity of $n$ has no bearing on this."
+    explanation: "Since $B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$ and $\\Gamma(k) = (k-1)!$, every factorial is reduced by one.\n\nLeaving all the factorials unreduced is the standard off-by-one error.\n\nReducing only the numerator is inconsistent.\n\nReducing only the denominator is likewise inconsistent."
   },
   {
     id: "mth302_ch9_030",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "In the Dirichlet example, applying $y(0) = 0$ to $y = A\\sin\\sqrt{\\lambda}x + B\\cos\\sqrt{\\lambda}x$ forces what?",
+    text: "What is $B(2, 3)$?",
     options: [
-      "$B = 0$",
-      "$A = 0$, removing the sine rather than the cosine",
-      "$\\lambda = 0$",
-      "$A = B$, tying the two constants together"
+      "$\\dfrac{1}{12}$",
+      "$\\dfrac{1}{60}$",
+      "$\\dfrac{1}{20}$, from an incorrect factorial reduction",
+      "$\\dfrac{1}{6}$, doubling the correct value"
     ],
     correctAnswer: 0,
-    explanation: "At $x = 0$ the sine vanishes and the cosine equals one, so $y(0) = B = 0$.\n\nRemoving the sine would be forced by a Neumann condition at the left end.\n\nThe eigenvalue is not determined by this first condition.\n\nNothing ties the two constants to each other."
+    explanation: "Computing $B(2, 3) = \\dfrac{\\Gamma(2)\\Gamma(3)}{\\Gamma(5)} = \\dfrac{1!\\cdot 2!}{4!} = \\dfrac{2}{24} = \\dfrac{1}{12}$.\n\nThe value $1/60$ belongs to $B(4, 3)$.\n\nA value of $1/20$ does not follow from these factorials.\n\nDoubling the result misplaces a factor of two."
   },
   {
     id: "mth302_ch9_031",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For the Neumann example, applying $y'(0) = 0$ forces what?",
+    text: "What is $\\displaystyle\\int_0^1 x^3(1 - x)^2\\,dx$?",
     options: [
-      "$A = 0$",
-      "$B = 0$, removing the cosine rather than the sine",
-      "$\\lambda = 1$, fixing the eigenvalue immediately",
-      "$A = -B$, relating the two constants"
+      "$\\dfrac{1}{60}$",
+      "$\\dfrac{1}{12}$",
+      "$\\dfrac{1}{30}$, doubling the correct value",
+      "$\\dfrac{1}{20}$, from an incorrect parameter match"
     ],
     correctAnswer: 0,
-    explanation: "Differentiating gives $y'(0) = A\\sqrt{\\lambda}$, so a vanishing derivative at the left end forces $A = 0$ and leaves the cosine.\n\nRemoving the cosine would follow from a Dirichlet condition at that end.\n\nThe eigenvalue is not pinned down by this condition alone.\n\nNo relation between the constants is produced."
+    explanation: "Matching $x^{m-1}(1-x)^{n-1}$ gives $m = 4$ and $n = 3$, so the integral is $B(4, 3) = \\dfrac{3!\\,2!}{6!} = \\dfrac{12}{720} = \\dfrac{1}{60}$.\n\nThe value $1/12$ corresponds to different parameters.\n\nDoubling the result misplaces a factor.\n\nA value of $1/20$ does not follow from these factorials."
   },
   {
     id: "mth302_ch9_032",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which classical orthogonality relation holds on $[-\\pi, \\pi]$ for $m \\neq n$?",
+    text: "What is the relation between the Beta and Gamma functions?",
     options: [
-      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\cos nx\\,dx = 0$",
-      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\cos nx\\,dx = \\pi$",
-      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\cos nx\\,dx = 2\\pi$",
-      "$\\displaystyle\\int_{-\\pi}^{\\pi}\\cos mx\\sin nx\\,dx = 1$, mixing the two families"
+      "$B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m + n)}$",
+      "$B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{(m + n)!}$",
+      "$B(m, n) = \\dfrac{\\Gamma(m + n)}{\\Gamma(m)\\Gamma(n)}$",
+      "$B(m, n) = \\Gamma(m)\\Gamma(n)\\Gamma(m + n)$, forming a product of all three"
     ],
     correctAnswer: 0,
-    explanation: "Distinct cosine modes are orthogonal on the symmetric interval, so the integral vanishes for $m \\neq n$.\n\nThe value $\\pi$ arises in the equal-index case.\n\nThe value $2\\pi$ arises only for the constant mode.\n\nA cosine against a sine integrates to zero, not to one."
+    explanation: "The Beta function is the product of two Gamma values divided by the Gamma of their sum.\n\nWriting $(m + n)!$ in the denominator carries an off-by-one error, since $\\Gamma(m + n) = (m + n - 1)!$.\n\nInverting the quotient gives the reciprocal.\n\nA product of all three has entirely the wrong structure."
   },
   {
     id: "mth302_ch9_033",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "In the Dirichlet example on $[0, 5]$, why is $A \\neq 0$ required?",
+    text: "What is $\\Gamma(6)$?",
     options: [
-      "Otherwise the solution is identically zero",
-      "Otherwise the eigenvalue becomes negative",
-      "Otherwise the weight function fails to be positive",
-      "Otherwise the interval length cannot be recovered"
+      "$120$",
+      "$720$",
+      "$24$",
+      "$6$, taking the argument itself"
     ],
     correctAnswer: 0,
-    explanation: "With $B$ already zero, taking $A = 0$ as well would leave the trivial solution, which is excluded when seeking eigenfunctions.\n\nThe sign of the eigenvalue is not controlled by $A$.\n\nThe weight is fixed at one and is unaffected by $A$.\n\nThe interval length enters through the boundary condition, not through $A$."
+    explanation: "Since $\\Gamma(n) = (n - 1)!$, we get $\\Gamma(6) = 5! = 120$.\n\nThe value $720$ is $6! = \\Gamma(7)$.\n\nThe value $24$ is $4! = \\Gamma(5)$.\n\nThe argument itself is not a factorial value."
   },
   {
     id: "mth302_ch9_034",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What does the auxiliary equation $m^2 + \\lambda = 0$ give for $\\lambda > 0$?",
+    text: "Why is the answer to $\\displaystyle\\int_0^{\\pi/2}\\sin^5\\theta\\cos^4\\theta\\,d\\theta$ rational rather than a multiple of $\\pi$?",
     options: [
-      "$m = \\pm i\\sqrt{\\lambda}$",
-      "$m = \\pm\\sqrt{\\lambda}$, giving real roots and exponential solutions",
-      "$m = \\pm i\\lambda$",
-      "$m = \\pm\\lambda^2$, squaring rather than taking a root"
+      "One of the powers is odd, so the $\\sqrt{\\pi}$ factors cancel",
+      "Both powers are even, which always removes the irrational part",
+      "The interval of integration is symmetric about its midpoint",
+      "The Beta function is always rational for integer parameters"
     ],
     correctAnswer: 0,
-    explanation: "Solving $m^2 = -\\lambda$ with $\\lambda > 0$ gives purely imaginary roots $\\pm i\\sqrt{\\lambda}$, which produce the sine and cosine solutions.\n\nReal roots would arise from $m^2 = +\\lambda$.\n\nOmitting the square root misreads the quadratic.\n\nSquaring the eigenvalue is not what solving the quadratic requires."
+    explanation: "An odd power makes one Beta parameter an integer, so the half-integer Gamma values pair up and their $\\sqrt{\\pi}$ factors cancel, leaving a rational number.\n\nBoth powers being even is precisely the case in which a $\\pi$ survives.\n\nSymmetry of the interval does not control the arithmetic of the result.\n\nThe Beta function is not rational for all integer parameters in the half-integer setting."
   },
   {
     id: "mth302_ch9_035",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "In an expansion $f \\sim \\sum_n c_n\\phi_n$ with $\\{\\phi_n\\}$ orthogonal with weight $r$, what is $c_n$?",
+    text: "In evaluating $\\displaystyle\\int_0^\\infty x^3e^{-4x}\\,dx$, what power of $4$ appears in the denominator?",
     options: [
-      "$\\dfrac{\\int_a^b fr\\phi_n\\,dx}{\\int_a^b r\\phi_{n}^{2}\\,dx}$",
-      "$\\dfrac{\\int_a^b f\\phi_n\\,dx}{\\int_a^b \\phi_{n}^{2}\\,dx}$",
-      "$\\int_a^b fr\\phi_n\\,dx$",
-      "$\\dfrac{\\int_a^b r\\phi_{n}^{2}\\,dx}{\\int_a^b fr\\phi_n\\,dx}$"
+      "$4^4$",
+      "$4^3$, counting only the powers contributed by $x^3$",
+      "$4^1$, counting only the contribution from $dx$",
+      "$4^2$, counting half of the required contributions"
     ],
     correctAnswer: 0,
-    explanation: "Multiplying by $r\\phi_n$ and integrating kills every other term by orthogonality, leaving the stated ratio.\n\nOmitting the weight is valid only when $r \\equiv 1$.\n\nWithout the denominator the coefficient is not normalised.\n\nInverting the quotient reverses the roles of the two integrals."
+    explanation: "The substitution $y = 4x$ contributes one factor of $4$ for each of the three powers of $x$ and one more from $dx$, giving $4^4$.\n\nCounting only the powers from $x^3$ forgets the contribution of $dx$.\n\nCounting only $dx$ forgets the three powers of $x$.\n\nA squared factor accounts for neither contribution correctly."
   },
   {
     id: "mth302_ch9_036",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "The eigenvalues of a Sturm-Liouville system form which kind of set?",
+    text: "What is $\\Gamma(-5/2)$ in terms of $\\sqrt{\\pi}$?",
     options: [
-      "An infinite sequence",
-      "A finite set whose size equals the order of the equation",
-      "A continuous interval of admissible values",
-      "A single value determined by the weight function"
+      "$-\\dfrac{8\\sqrt{\\pi}}{15}$",
+      "$\\dfrac{8\\sqrt{\\pi}}{15}$",
+      "$\\dfrac{4\\sqrt{\\pi}}{3}$, which is the value of $\\Gamma(-3/2)$",
+      "$-2\\sqrt{\\pi}$"
     ],
     correctAnswer: 0,
-    explanation: "The solutions form an infinite sequence of eigenfunctions with eigenvalues indexed by $n = 0, 1, 2, \\ldots$ tending to infinity.\n\nA finite set would contradict the unbounded increasing sequence.\n\nA continuum of eigenvalues does not arise for a regular problem.\n\nA single eigenvalue would leave no expansion to build."
+    explanation: "Applying $\\Gamma(x) = \\Gamma(x+1)/x$ once more to $\\Gamma(-3/2) = 4\\sqrt{\\pi}/3$ gives $\\Gamma(-5/2) = \\dfrac{4\\sqrt{\\pi}/3}{-5/2} = -\\dfrac{8\\sqrt{\\pi}}{15}$.\n\nDropping the sign ignores that the values alternate.\n\nThe value $4\\sqrt{\\pi}/3$ is one step earlier.\n\nThe value $-2\\sqrt{\\pi}$ is two steps earlier."
   },
   {
     id: "mth302_ch9_037",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For $y'' + \\lambda y = 0$ on $0 \\leq x \\leq 5$, which values of $n$ give eigenvalues under Dirichlet ends?",
+    text: "How do the values of $\\Gamma$ at successive negative half-integers behave in sign?",
     options: [
-      "$n = 1, 2, 3, \\ldots$",
-      "$n = 0, 1, 2, \\ldots$, including the zero mode as well",
-      "Only even values of $n$ throughout",
-      "Only odd values of $n$ throughout"
+      "They alternate",
+      "They are all negative without exception",
+      "They are all positive without exception",
+      "They keep the sign of the nearest integer argument"
     ],
     correctAnswer: 0,
-    explanation: "Taking $n = 0$ would give the identically zero solution, so the Dirichlet sequence starts at $n = 1$.\n\nIncluding $n = 0$ is correct for Neumann ends but not for Dirichlet ends.\n\nEven values alone would omit half the genuine eigenfunctions.\n\nOdd values alone would likewise omit half of them."
+    explanation: "Each application of $\\Gamma(x) = \\Gamma(x+1)/x$ divides by a negative number, so the sign flips at every step.\n\nA uniformly negative sequence contradicts the division by successive negatives.\n\nA uniformly positive sequence fails for $\\Gamma(-1/2) = -2\\sqrt{\\pi}$.\n\nThe sign is set by the recurrence, not by a neighbouring integer."
   },
   {
     id: "mth302_ch9_038",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which statement about a regular Sturm-Liouville system is false?",
+    text: "What is $\\displaystyle\\int_0^{\\pi/2}\\sin^2\\theta\\cos^2\\theta\\,d\\theta$?",
     options: [
-      "Some eigenvalues may be repeated",
-      "The eigenvalues are all real numbers",
-      "The eigenfunctions are mutually orthogonal with weight $r$",
-      "The eigenvalues increase without bound"
+      "$\\dfrac{\\pi}{16}$",
+      "$\\dfrac{\\pi}{8}$, doubling the correct value",
+      "$\\dfrac{1}{16}$",
+      "$\\dfrac{\\pi}{4}$, from an incorrect parameter match"
     ],
     correctAnswer: 0,
-    explanation: "The system is simple, meaning each eigenvalue carries exactly one independent eigenfunction, so repetition never occurs and this statement is the false one.\n\nReality of the eigenvalues is one of the core properties.\n\nWeighted orthogonality is likewise a core property.\n\nGrowth without bound is part of the standard ordering of the eigenvalues."
+    explanation: "With $p = q = 2$ the formula gives $\\tfrac{1}{2}B(3/2, 3/2) = \\tfrac{1}{2}\\cdot\\dfrac{\\Gamma(3/2)^2}{\\Gamma(3)} = \\tfrac{1}{2}\\cdot\\dfrac{\\pi/4}{2} = \\dfrac{\\pi}{16}$.\n\nDoubling misplaces the factor of one half.\n\nBecause both powers are even the $\\sqrt{\\pi}$ factors survive, so a $\\pi$ must appear.\n\nA value of $\\pi/4$ does not follow from these parameters."
   },
   {
     id: "mth302_ch9_039",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "In the expanded Sturm-Liouville form, what must the coefficient of $y'$ equal?",
+    text: "What is $\\displaystyle\\lim_{x \\to 0^+}\\Gamma(x)$?",
     options: [
-      "$p'(x)$",
-      "$q(x)$",
-      "$r(x)$",
-      "Zero in every admissible case"
+      "$\\infty$",
+      "$0$, approaching the value of the argument",
+      "$1$",
+      "$\\sqrt{\\pi}$"
     ],
     correctAnswer: 0,
-    explanation: "Expanding $(py')'$ gives $py'' + p'y'$, so consistency requires the coefficient of $y'$ to be exactly the derivative of the coefficient of $y''$.\n\nThe potential $q$ multiplies $y$, not $y'$.\n\nThe weight $r$ multiplies $\\lambda y$.\n\nThe coefficient vanishes only when $p$ happens to be constant."
+    explanation: "The recurrence $\\Gamma(x) = \\Gamma(x+1)/x$ has a numerator tending to $\\Gamma(1) = 1$ while the denominator tends to zero from above, so the limit is infinite and the function has a pole there.\n\nA limit of zero contradicts the blow-up.\n\nThe value $1$ is attained at $x = 1$, not in this limit.\n\nThe value $\\sqrt{\\pi}$ belongs to $\\Gamma(1/2)$."
   },
   {
     id: "mth302_ch9_040",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For the Neumann problem, what is the eigenfunction belonging to $\\lambda_0 = 0$?",
+    text: "Convergence of the Beta integral requires which condition?",
     options: [
-      "A nonzero constant, whose derivative vanishes at both ends",
-      "The zero function",
-      "A linear function of $x$ with nonzero slope",
-      "The sine $\\sin 2x$ evaluated at the first mode"
+      "$m > 0$ and $n > 0$",
+      "$m > 1$ and $n > 1$, excluding the values between zero and one",
+      "$m + n > 0$ only, allowing one parameter to be negative",
+      "$m$ and $n$ both integers"
     ],
     correctAnswer: 0,
-    explanation: "A constant has vanishing derivative at both ends and solves $y'' = 0$, so it is a genuine eigenfunction for $\\lambda_0 = 0$.\n\nThe zero function is excluded, since eigenfunctions must be nontrivial.\n\nA nonconstant linear function has nonzero derivative and fails the boundary conditions.\n\nThe sine fails the derivative condition at the left end."
+    explanation: "Both parameters must be strictly positive for the integrand to be integrable at each endpoint of $[0, 1]$.\n\nRequiring values above one excludes cases such as $B(1/2, 1/2)$, which converge.\n\nA condition on the sum alone permits a divergent endpoint.\n\nThe parameters need not be integers, as the half-integer cases show."
   }
 ];
 

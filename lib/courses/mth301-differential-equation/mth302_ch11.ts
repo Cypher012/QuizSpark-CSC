@@ -5,561 +5,533 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_001",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the Legendre polynomial $P_2(x)$?",
+    text: "If $f$ is an odd function on $[-\\pi, \\pi]$, which Fourier coefficients vanish?",
     options: [
-      "$(3x^2 - 1)/2$",
-      "$(3x^2 + 1)/2$",
-      "$(5x^2 - 3)/2$",
-      "$3x^2 - 1$"
+      "The sine coefficients $b_n$",
+      "The constant term $a_0$ and all cosine coefficients $a_n$",
+      "Both $a_n$ and $b_n$ for all $n$",
+      "Only the constant term $a_0$"
     ],
-    correctAnswer: 0,
-    explanation: "By Rodrigues' formula, $P_2 = \\dfrac{1}{8}\\dfrac{d^2}{dx^2}(x^2-1)^2$, which works out to $\\dfrac{12x^2-4}{8} = \\dfrac{3x^2-1}{2}$. An instant check is that $P_2(1)$ must equal $1$, and $\\dfrac{3-1}{2} = 1$ confirms this while immediately ruling out the options with a plus sign or a different leading coefficient.\n\n$(3x^2+1)/2$ has the wrong sign on the constant term and fails the check $P_2(1) = 1$.\n\n$(5x^2-3)/2$ uses coefficients that belong to $P_3$ rather than $P_2$.\n\n$3x^2 - 1$ omits the necessary division by $2$, so it fails the normalization check $P_2(1) = 1$."
+    correctAnswer: 1,
+    explanation: "An odd function multiplied by $\\cos(nx)$ is itself odd, so every cosine-related integral over the symmetric interval vanishes, including the constant term $a_0$, which is computed the same way. Only the sine coefficients survive, giving a pure sine series.\n\nThe sine coefficients $b_n$ is exactly the statement for an even function, not an odd one.\n\nBoth $a_n$ and $b_n$ vanishing for all $n$ would leave no series at all, which is too strong.\n\nOnly the constant term $a_0$ understates the result, since every cosine coefficient $a_n$ vanishes as well, not just the constant term."
   },
   {
     id: "mth302_ch11_002",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the Legendre polynomial $P_3(x)$?",
+    text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, what is the Fourier series?",
     options: [
-      "$(5x^2 - 3x)/2$",
-      "$(5x^3 - 3x)/2$",
-      "$(5x^3 - 3)/2$",
-      "$(35x^3 - 30x)/8$"
+      "$\\dfrac{4k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\dfrac{\\sin 5x}{5} + \\cdots\\right)$",
+      "$\\dfrac{2k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 2x}{2} + \\cdots\\right)$",
+      "$\\dfrac{4k}{\\pi}\\left(\\cos x + \\dfrac{\\cos 3x}{3} + \\cdots\\right)$",
+      "$\\dfrac{k}{2} + \\dfrac{4k}{\\pi}\\sin x$"
     ],
-    correctAnswer: 1,
-    explanation: "From the recurrence $3P_3 = 5xP_2 - 2P_1 = 5x\\cdot\\dfrac{3x^2-1}{2} - 2x$, which simplifies to $\\dfrac{15x^3-9x}{2}$, giving $P_3 = \\dfrac{5x^3-3x}{2}$. Two instant checks confirm this: the degree of $P_n$ must equal $n$ exactly, ruling out the quadratic option, and $P_3(1)$ must equal $1$, which $\\dfrac{5-3}{2} = 1$ satisfies.\n\n$(5x^2-3x)/2$ has the wrong power on the leading term, since $P_3$ must be cubic, not quadratic.\n\n$(5x^3-3)/2$ fails the check $P_3(1) = 1$, since $\\dfrac{5-3}{2} = 1$ works only with the $x$ multiplying the second term.\n\n$(35x^3-30x)/8$ uses coefficients that belong to a different Legendre polynomial, not $P_3$."
+    correctAnswer: 0,
+    explanation: "The function is odd, so $a_0$ and all $a_n$ vanish, and $b_n = \\dfrac{2k}{n\\pi}(1 - \\cos n\\pi)$, which equals $4k/(n\\pi)$ for odd $n$ and $0$ for even $n$, giving the series $\\dfrac{4k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\dfrac{\\sin 5x}{5} + \\cdots\\right)$.\n\nThe version with even harmonics like $\sin(2x)/2$ includes terms that this odd square wave does not actually contain.\n\nThe cosine-based version wrongly uses cosine terms for a function that is odd and therefore has a pure sine expansion.\n\nThe version with a leading $k/2$ term wrongly includes a nonzero constant, but the mean value of this particular function over a period is zero."
   },
   {
     id: "mth302_ch11_003",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What are the values of $P_n(1)$ and $P_n(-1)$ respectively?",
+    text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, what is the coefficient $b_4$?",
     options: [
-      "$1$ and $1$",
-      "$n$ and $-n$",
-      "$(-1)^n$ and $1$",
-      "$1$ and $(-1)^n$"
+      "$4k/(4\\pi)$",
+      "$k/\\pi$",
+      "$0$",
+      "$2k/\\pi$"
     ],
-    correctAnswer: 3,
-    explanation: "Setting $x = 1$ in the generating function reduces it to $1/(1-t)$, whose power series is $\\sum t^n$, so $P_n(1) = 1$ for every $n$. Setting $x = -1$ reduces it to $1/(1+t)$, whose power series is $\\sum(-1)^nt^n$, so $P_n(-1) = (-1)^n$. This normalization $P_n(1) = 1$ is exactly what fixes the constants in each Legendre polynomial.\n\n$1$ and $1$ wrongly gives the same value at both endpoints, ignoring the alternating sign at $x = -1$.\n\n$n$ and $-n$ do not match the actual constant values $1$ and $(-1)^n$ obtained from the generating function.\n\n$(-1)^n$ and $1$ has the two values swapped."
+    correctAnswer: 2,
+    explanation: "The formula $b_n$ is proportional to $(1 - \\cos n\\pi)$, which equals $1 - (-1)^n$, giving $0$ for every even $n$ and $2$ for every odd $n$. Since $n = 4$ is even, $b_4 = 0$, a direct consequence of the half-wave symmetry this square wave possesses.\n\n$4k/(4\\pi)$ and $k/\\pi$ both wrongly assign a nonzero value to an even-indexed coefficient.\n\n$2k/\\pi$ is the value that would apply to an odd-indexed coefficient, not the even $n = 4$ case."
   },
   {
     id: "mth302_ch11_004",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the value of $\\displaystyle\\int_{-1}^1 P_3(x)^2\\,dx$?",
+    text: "In the expansion $f(x) = \\dfrac{a_0}{2} + \\sum(a_n\\cos nx + b_n\\sin nx)$, with $a_0$ defined by the standard integral formula, what does the constant term $a_0/2$ represent?",
     options: [
-      "$0$",
-      "$2/7$",
-      "$2/3$",
-      "$2$"
+      "Twice the mean value of $f$",
+      "The maximum value of $f$",
+      "The mean value of $f$ over a period",
+      "It is always zero"
     ],
-    correctAnswer: 1,
-    explanation: "The normalization formula for Legendre polynomials states that $\\int_{-1}^1 P_{n}^{2}\\,dx = \\dfrac{2}{2n+1}$, so with $n = 3$ the value is $2/7$.\n\n$0$ is the value that would apply to the integral of $P_m$ times $P_n$ for two different indices $m$ and $n$, not to the integral of $P_n$ squared with itself.\n\n$2/3$ and $2$ do not match the correct substitution $n = 3$ into the formula $2/(2n+1)$."
+    correctAnswer: 2,
+    explanation: "Since $a_0/2$ equals $\\dfrac{1}{2\\pi}\\displaystyle\\int f\\,dx$ over one period, it is precisely the average value of $f$ over that period. This gives a quick sanity check on any Fourier answer: for a function that equals $0$ on half the period and $a$ on the other half, the constant term must work out to $a/2$.\n\nTwice the mean value of $f$ is off by a factor of $2$ from the correct interpretation.\n\nThe maximum value of $f$ confuses the constant, or average, term with a completely different quantity.\n\nIt is always zero is only true for functions whose average over a period happens to be zero, such as the odd square wave, not for Fourier series in general."
   },
   {
     id: "mth302_ch11_005",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is Rodrigues' formula for the Legendre polynomials?",
+    text: "At a point where a function $f$ has a jump discontinuity, what does its Fourier series converge to?",
     options: [
-      "$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2-1)^n$",
-      "$P_n = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2-1)^n$",
-      "$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(1-x^2)^n$",
-      "$P_n = \\dfrac{1}{2^n}\\dfrac{d^n}{dx^n}(x^2-1)$"
+      "The left-hand limit $f(x_0^-)$",
+      "The right-hand limit $f(x_0^+)$",
+      "The average of the left and right limits, one half times the sum $f(x_0^-) + f(x_0^+)$",
+      "The series diverges"
     ],
-    correctAnswer: 0,
-    explanation: "The correct normalizing factor is $\\dfrac{1}{2^nn!}$, and the expression differentiated $n$ times is $(x^2-1)$ raised to the same power $n$ as the order of differentiation.\n\n$P_n = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2-1)^n$ omits the necessary factor of $2^n$ in the denominator.\n\n$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(1-x^2)^n$ differs by a sign inside the parentheses, which would violate the normalization $P_n(1) = 1$ for odd values of $n$.\n\n$P_n = \\dfrac{1}{2^n}\\dfrac{d^n}{dx^n}(x^2-1)$ both omits the $n!$ factor and fails to raise the bracket to the power $n$."
+    correctAnswer: 2,
+    explanation: "By the Dirichlet convergence theorem, at a jump discontinuity the Fourier series converges to the average of the one-sided limits, $\\dfrac{1}{2}[f(x_0^-) + f(x_0^+)]$. For the square wave at $x = 0$ this gives $0$, the midpoint between $-k$ and $k$, even though the function itself is defined to equal one of those two values at that exact point.\n\nThe left-hand limit and the right-hand limit each capture only one side of the jump rather than the correct average of both.\n\nThe series diverges is incorrect, since Dirichlet's theorem guarantees convergence to a specific value even at a jump."
   },
   {
     id: "mth302_ch11_006",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the recurrence relation for the Legendre polynomials?",
+    text: "What is the period of $y = 3\\sin(5x)$?",
     options: [
-      "$(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$",
-      "$nP_{n+1} = (2n+1)xP_n - (n+1)P_{n-1}$",
-      "$P_{n+1} = xP_n - P_{n-1}$",
-      "$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$"
+      "$2\\pi/5$",
+      "$5\\pi$",
+      "$2\\pi$",
+      "$\\pi/5$"
     ],
     correctAnswer: 0,
-    explanation: "Testing this recurrence with $n = 1$ gives $2P_2 = 3xP_1 - P_0 = 3x^2 - 1$, so $P_2 = (3x^2-1)/2$, which matches the known correct polynomial, confirming that $(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$ is the correct form. Testing a low case against a known polynomial is the fastest way to verify the recurrence quickly.\n\n$nP_{n+1} = (2n+1)xP_n - (n+1)P_{n-1}$ has the coefficients $n$ and $n+1$ swapped relative to the correct recurrence.\n\n$P_{n+1} = xP_n - P_{n-1}$ omits the necessary coefficients $(2n+1)$ and $n$ entirely.\n\n$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$ misplaces the coefficient $(2n+1)$, which should multiply $xP_n$, not $P_{n+1}$."
+    explanation: "The period of $A\\sin(nx)$ is $2\\pi/n$ regardless of the amplitude $A$, so with $n = 5$ the period is $2\\pi/5$. The amplitude $3$ has no effect on the period whatsoever.\n\n$5\\pi$ and $\\pi/5$ do not follow from the formula $2\\pi/n$ with $n = 5$.\n\n$2\\pi$ is the period of $\\sin x$ itself, ignoring the factor of $5$ multiplying $x$."
   },
   {
     id: "mth302_ch11_007",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "For integer $n$, how does $J_{-n}(x)$ relate to $J_n(x)$?",
+    text: "For $f(x) = 0$ on $(-\\pi, 0)$ and $f(x) = a$ on $(0, \\pi)$, with period $2\\pi$, what is the Fourier series?",
     options: [
-      "$J_{-n}(x) = J_n(x)$",
-      "$J_{-n}(x) = -J_n(x)$",
-      "$J_{-n}(x) = (-1)^nJ_n(x)$",
-      "$J_{-n}(x) = Y_n(x)$"
+      "$\\dfrac{a}{2} + \\dfrac{2a}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\dfrac{\\sin 5x}{5} + \\cdots\\right)$",
+      "$a + \\dfrac{2a}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\cdots\\right)$",
+      "$\\dfrac{a}{2} + \\dfrac{4a}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\cdots\\right)$",
+      "$\\dfrac{a}{2} + \\dfrac{2a}{\\pi}\\left(\\cos x + \\dfrac{\\cos 3x}{3} + \\cdots\\right)$"
     ],
-    correctAnswer: 2,
-    explanation: "Because $\\Gamma$ is infinite at every non-positive integer, the first $n$ terms of the series for $J_{-n}$ vanish, and re-indexing the remaining series with $k = p + n$ produces the overall factor $(-1)^n$, giving $J_{-n}(x) = (-1)^nJ_n(x)$. The practical consequence is that $J_n$ and $J_{-n}$ are linearly dependent for integer order, which is exactly why the second solution $Y_n$ must be introduced.\n\n$J_{-n}(x) = J_n(x)$ is correct only when $n$ is even, but the general relation includes the sign factor $(-1)^n$ for all integers.\n\n$J_{-n}(x) = -J_n(x)$ is correct only when $n$ is odd, again missing the general $(-1)^n$ pattern.\n\n$J_{-n}(x) = Y_n(x)$ confuses the negative-order Bessel function of the first kind with the entirely separate Bessel function of the second kind."
+    correctAnswer: 0,
+    explanation: "Here $a_0 = \\dfrac{1}{\\pi}\\displaystyle\\int_0^\\pi a\\,dx$, which equals $a$, so the constant term is $a_0/2 = a/2$, matching the mean value of the function over the period. The cosine coefficients $a_n$ vanish, and $b_n = \\dfrac{a}{n\\pi}(1 - \\cos n\\pi)$, which equals $2a/(n\\pi)$ for odd $n$, giving the series $\\dfrac{a}{2} + \\dfrac{2a}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\dfrac{\\sin 5x}{5} + \\cdots\\right)$.\n\nThe version with a leading $a$ rather than $a/2$ forgets to halve $a_0$, doubling the constant term.\n\nThe version with $4a/\pi$ doubles $b_n$ by mistakenly applying the formula used for the symmetric square wave rather than this one-sided pulse.\n\nThe cosine-based version wrongly uses cosine terms, but the $a_n$ coefficients here are actually all zero."
   },
   {
     id: "mth302_ch11_008",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the general solution of $x^2y'' + xy' + (x^2-4)y = 0$?",
+    text: "For a function of period $2L$, what is the formula for the coefficient $b_n$?",
     options: [
-      "$AJ_4(x) + BY_4(x)$",
-      "$AJ_2(x) + BY_2(x)$",
-      "$AJ_2(x) + BJ_{-2}(x)$",
-      "$AP_2(x) + BQ_2(x)$"
+      "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L} f\\sin\\left(\\dfrac{n\\pi x}{L}\\right)dx$",
+      "$\\dfrac{1}{2L}\\displaystyle\\int_{-L}^{L} f\\sin\\left(\\dfrac{n\\pi x}{L}\\right)dx$",
+      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-L}^{L} f\\sin(nx)\\,dx$",
+      "$\\dfrac{1}{L}\\displaystyle\\int_0^{L} f\\sin\\left(\\dfrac{n\\pi x}{L}\\right)dx$"
     ],
-    correctAnswer: 1,
-    explanation: "Comparing with the standard Bessel equation $x^2y'' + xy' + (x^2-\\nu^2)y = 0$ gives $\\nu^2 = 4$, so the order is $\\nu = 2$, not $4$, and the general solution is $AJ_2(x) + BY_2(x)$.\n\n$AJ_4(x) + BY_4(x)$ commits the standard slip of reading the order as $4$ directly from the constant term instead of taking its square root.\n\n$AJ_2(x) + BJ_{-2}(x)$ fails because $J_{-2} = (-1)^2J_2 = J_2$, meaning it is not independent of $J_2$ and cannot serve as the second solution.\n\n$AP_2(x) + BQ_2(x)$ wrongly applies the Legendre function solutions, which belong to a different differential equation entirely."
+    correctAnswer: 0,
+    explanation: "Rescaling $v = \\pi x/L$ so that $v$ runs over $2\\pi$ while $x$ runs over $2L$ turns every prefactor of $1/\\pi$ in the period-$2\\pi$ formulas into $1/L$, with the limits becoming $\\pm L$ and $nx$ becoming $n\\pi x/L$, giving $b_n = \\dfrac{1}{L}\\int_{-L}^{L} f\\sin(n\\pi x/L)\\,dx$.\n\nThe version with $1/(2L)$ has an extra factor of $2$ in the denominator that does not belong.\n\nThe version with $1/\\pi$ and $\\sin(nx)$ incorrectly keeps the period-$2\\pi$ prefactor and argument rather than rescaling them for period $2L$.\n\nThe version integrated from $0$ to $L$ is the half-range sine formula, which carries a different prefactor of $2/L$ and different limits, not the full-range formula asked for here."
   },
   {
     id: "mth302_ch11_009",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is Legendre's differential equation?",
+    text: "For $f(x) = x^2$ on $(-\\pi, \\pi)$ extended periodically, which statement is correct?",
     options: [
-      "$(1 - x^2)y'' - 2xy' + k(k+1)y = 0$",
-      "$(1 - x^2)y'' + 2xy' + k(k+1)y = 0$, with the middle sign reversed",
-      "$x^2y'' + xy' + (x^2 - n^2)y = 0$, which is Bessel's equation instead",
-      "$(1 + x^2)y'' - 2xy' + k(k+1)y = 0$, with a plus inside the bracket"
+      "All the $a_n$ coefficients vanish",
+      "The series has only sine terms",
+      "The constant term $a_0$ is zero",
+      "All the $b_n$ coefficients vanish"
     ],
-    correctAnswer: 0,
-    explanation: "Legendre's equation is $(1 - x^2)y'' - 2xy' + k(k+1)y = 0$ on $[-1, 1]$.\n\nReversing the sign of the first-derivative term breaks the self-adjoint structure.\n\nThe equation with $x^2 - n^2$ is Bessel's equation.\n\nA plus sign inside the bracket changes the singular points away from $\\pm 1$."
+    correctAnswer: 3,
+    explanation: "Since $x^2$ is an even function, $f(x)\\sin(nx)$ is odd, so every sine-related integral over the symmetric interval $[-\\pi, \\pi]$ vanishes, meaning all $b_n$ coefficients are zero. The resulting expansion is a pure cosine series, with $a_0$ equal to $2\\pi^2/3$ and $a_n$ equal to $4(-1)^n/n^2$.\n\nAll the $a_n$ coefficients vanish is exactly backwards, since it is the cosine coefficients that survive for this even function.\n\nThe series has only sine terms is also backwards, since an even function produces a cosine series, not a sine series.\n\nThe constant term $a_0$ is zero is false, since $a_0$ works out to the nonzero value $2\\pi^2/3$ for this function."
   },
   {
     id: "mth302_ch11_010",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "On what interval is Legendre's equation considered?",
+    text: "Solving $u_t = \\kappa u_{xx}$ on $0 < x < L$ with $u(0, t) = u(L, t) = 0$ and a general initial temperature profile requires expanding $u(x, 0)$ in which type of series?",
     options: [
-      "$[-1, 1]$",
-      "$[0, 1]$, using only the positive half of the range",
-      "$[0, \\infty)$, matching the Bessel setting",
-      "$[-\\pi, \\pi]$, the interval used for Fourier series"
+      "A full Fourier series on the interval from $-L$ to $L$",
+      "A half-range cosine series",
+      "A half-range sine series",
+      "A Taylor series"
     ],
-    correctAnswer: 0,
-    explanation: "The natural interval is $[-1, 1]$, whose endpoints are the singular points of the equation.\n\nHalving the range discards the symmetry that gives the polynomials their parity.\n\nThe half-line belongs to Bessel's equation.\n\nThe interval $[-\\pi, \\pi]$ belongs to Fourier analysis."
+    correctAnswer: 2,
+    explanation: "The eigenfunctions of the associated Sturm-Liouville problem $X'' + \\lambda X = 0$ with $X(0) = X(L) = 0$ are $\\sin(n\\pi x/L)$, so the initial condition must be expanded in those functions alone, which is a half-range sine series. A half-range cosine series would instead be required for insulated ends, where the boundary condition involves $u_x = 0$ at both endpoints rather than $u = 0$.\n\nA full Fourier series on the interval from $-L$ to $L$ does not match the boundary conditions given here, which are defined only on $(0, L)$.\n\nA half-range cosine series is the companion expansion appropriate for insulated, not zero-temperature, boundary conditions.\n\nA Taylor series has no connection to satisfying the zero-boundary eigenfunction structure required by this problem."
   },
   {
     id: "mth302_ch11_011",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the general solution of Legendre's equation?",
+    text: "A function of period $4$ is given on $(-2, 2)$. Which harmonics appear in its Fourier series?",
     options: [
-      "$y = AP_k(x) + BQ_k(x)$",
-      "$y = AP_k(x)$ alone, since the second solution is discarded",
-      "$y = AJ_k(x) + BY_k(x)$, which uses the Bessel functions",
-      "$y = A\\cos kx + B\\sin kx$, a trigonometric pair"
+      "$\\cos\\dfrac{n\\pi x}{2}$ and $\\sin\\dfrac{n\\pi x}{2}$",
+      "$\\cos\\dfrac{n\\pi x}{4}$ and $\\sin\\dfrac{n\\pi x}{4}$, using the full period as $L$",
+      "$\\cos n\\pi x$ and $\\sin n\\pi x$, taking $L$ to be one",
+      "$\\cos nx$ and $\\sin nx$, as for a function of period $2\\pi$"
     ],
     correctAnswer: 0,
-    explanation: "Being second order, the equation has two independent solutions, the Legendre functions of the first and second kind.\n\nDiscarding $Q_k$ happens in physical problems for boundedness, but the general solution retains both.\n\nThe Bessel functions solve a different equation.\n\nTrigonometric solutions belong to the constant-coefficient case."
+    explanation: "Here $L$ is the half-period, so $T = 4$ gives $L = 2$ and the harmonics are $\\cos(n\\pi x/2)$ and $\\sin(n\\pi x/2)$.\n\nUsing $L = 4$ mistakes the full period for the half-period, which is the standard trap.\n\nTaking $L = 1$ corresponds to a function of period $2$.\n\nThe plain integer harmonics belong to period $2\\pi$."
   },
   {
     id: "mth302_ch11_012",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "When does the first-kind Legendre solution become a polynomial?",
+    text: "If a function has period $T$, what is $L$ in the general Fourier formulas?",
     options: [
-      "When $k$ is a non-negative integer",
-      "When $k$ is any real number whatsoever",
-      "When $k$ is negative, so the series terminates from below",
-      "When $k$ is a half-integer, as for the Gamma function"
+      "$L = \\dfrac{T}{2}$",
+      "$L = T$, taking the full period directly",
+      "$L = 2T$, doubling the period instead",
+      "$L = \\dfrac{T}{2\\pi}$, dividing by a factor of $2\\pi$"
     ],
     correctAnswer: 0,
-    explanation: "For $k = n$ a non-negative integer one of the two Frobenius series terminates, producing the Legendre polynomial $P_n$.\n\nA general real $k$ leaves both series infinite.\n\nNegative values do not truncate the series.\n\nHalf-integers do not terminate the series either."
+    explanation: "The general formulas are written on $[-L, L]$, an interval of length $2L$, so $L$ is the half-period.\n\nTaking $L = T$ doubles the interval and halves every harmonic frequency.\n\nDoubling the period compounds the same error.\n\nDividing by $2\\pi$ confuses the period with an angular frequency."
   },
   {
     id: "mth302_ch11_013",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "How are the arbitrary constants chosen in defining $P_n$?",
+    text: "What is the period of $y = A\\sin nx$?",
     options: [
-      "So that $P_n(1) = 1$",
-      "So that $P_n(0) = 1$, normalising at the midpoint instead",
-      "So that the leading coefficient equals one",
-      "So that the integral of $P_n$ over $[-1, 1]$ equals one"
+      "$\\dfrac{2\\pi}{n}$",
+      "$2\\pi n$, multiplying rather than dividing by $n$",
+      "$\\dfrac{\\pi}{n}$, which is half the correct period",
+      "$\\dfrac{n}{2\\pi}$, inverting the whole expression"
     ],
     correctAnswer: 0,
-    explanation: "The standard normalisation fixes $P_n(1) = 1$, which is also the quickest check on any offered polynomial.\n\nNormalising at the origin would fail for odd $n$, where $P_n(0) = 0$.\n\nA monic normalisation gives different polynomials.\n\nThe integral of $P_n$ vanishes for $n \\geq 1$ by orthogonality against $P_0$."
+    explanation: "The sine completes one cycle when $nx$ increases by $2\\pi$, so the period is $2\\pi/n$.\n\nMultiplying by $n$ reverses the effect of the frequency.\n\nHalving gives the period of $\\sin 2nx$ instead.\n\nInverting the expression has the wrong dimensions."
   },
   {
     id: "mth302_ch11_014",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Why is $Q_n$ discarded in most physical problems?",
+    text: "For $y = 6\\sin\\tfrac{2}{3}x$, what are the amplitude and period?",
     options: [
-      "It is unbounded at $x = \\pm 1$",
-      "It fails to satisfy Legendre's equation at interior points",
-      "It is not orthogonal to the polynomials $P_m$",
-      "It is identically zero for integer $n$"
+      "Amplitude $6$, period $3\\pi$",
+      "Amplitude $6$, period $\\dfrac{2\\pi}{3}$, dividing by the reciprocal",
+      "Amplitude $\\tfrac{2}{3}$, period $6$, exchanging the two quantities",
+      "Amplitude $3$, period $2\\pi$, halving the amplitude"
     ],
     correctAnswer: 0,
-    explanation: "The second-kind solution blows up at the endpoints, so boundedness on the closed interval rules it out.\n\nIt does satisfy the equation; that is why it is a solution at all.\n\nOrthogonality is not the reason for discarding it.\n\nIt is a genuine nonzero function."
+    explanation: "The amplitude is the multiplier $6$, and the period is $\\dfrac{2\\pi}{2/3} = 3\\pi$.\n\nDividing by $3/2$ rather than by $2/3$ inverts the frequency.\n\nThe amplitude and frequency cannot be exchanged.\n\nHalving the amplitude misreads the multiplier."
   },
   {
     id: "mth302_ch11_015",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is Rodrigues' formula for the Legendre polynomials?",
+    text: "In the expansion $f(x) = \\dfrac{a_0}{2} + \\sum(a_n\\cos nx + b_n\\sin nx)$, what does $\\dfrac{a_0}{2}$ represent?",
     options: [
-      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2 - 1)^n$",
-      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2 + 1)^n$, with a plus inside the bracket",
-      "$P_n(x) = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2 - 1)^n$, omitting the power of two",
-      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^{n}}{dx^{n}}(x - 1)^n$, without squaring $x$"
+      "The mean value of $f$ over a period",
+      "The amplitude of the first harmonic in the series",
+      "The value of $f$ at the origin of the interval",
+      "Twice the average value of $f$ over a period"
     ],
     correctAnswer: 0,
-    explanation: "Rodrigues' formula differentiates $(x^2 - 1)^n$ exactly $n$ times and divides by $2^nn!$.\n\nA plus sign inside the bracket changes the roots away from $\\pm 1$.\n\nOmitting $2^n$ destroys the normalisation $P_n(1) = 1$.\n\nDropping the square gives a different polynomial family."
+    explanation: "With $a_0 = \\dfrac{1}{\\pi}\\int_{-\\pi}^{\\pi}f\\,dx$, the constant term $\\dfrac{a_0}{2}$ equals the average of $f$ over one period.\n\nThe first harmonic's amplitude is governed by $a_1$ and $b_1$.\n\nThe value at the origin is generally different from the mean.\n\nDoubling rather than halving is exactly the error this convention invites."
   },
   {
     id: "mth302_ch11_016",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is $P_1(x)$?",
+    text: "What is the formula for $a_n$ on the interval $[-\\pi, \\pi]$?",
     options: [
-      "$x$",
-      "$1$, which is $P_0(x)$ instead",
-      "$\\tfrac{1}{2}(3x^2 - 1)$, which is $P_2(x)$",
-      "$2x$, doubling the correct polynomial"
+      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f(x)\\cos nx\\,dx$",
+      "$\\dfrac{1}{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f(x)\\cos nx\\,dx$, halving the prefactor",
+      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f(x)\\sin nx\\,dx$, which gives $b_n$ instead",
+      "$\\dfrac{2}{\\pi}\\displaystyle\\int_{0}^{\\pi}f(x)\\cos nx\\,dx$, valid only for even $f$"
     ],
     correctAnswer: 0,
-    explanation: "Rodrigues' formula with $n = 1$ gives $P_1(x) = x$, which indeed satisfies $P_1(1) = 1$.\n\nThe constant $1$ is $P_0$.\n\nThe quadratic is $P_2$.\n\nDoubling would give $P_1(1) = 2$, breaking the normalisation."
+    explanation: "The cosine coefficient carries the prefactor $\\dfrac{1}{\\pi}$ over the full interval $[-\\pi, \\pi]$.\n\nHalving the prefactor is the convention in which the constant term is written as $a_0$ rather than $a_0/2$.\n\nUsing the sine gives $b_n$.\n\nThe half-range form applies only when $f$ is even and is not the general definition."
   },
   {
     id: "mth302_ch11_017",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is $P_4(x)$?",
+    text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, what is $a_0$?",
     options: [
-      "$\\dfrac{35x^4 - 30x^2 + 3}{8}$",
-      "$\\dfrac{35x^4 - 30x^2 + 3}{16}$, halving the correct denominator",
-      "$\\dfrac{35x^3 - 30x}{8}$",
-      "$\\dfrac{5x^4 - 3x^2}{2}$, from an incorrect recurrence step"
+      "$0$",
+      "$k$, the value taken on the positive half",
+      "$2k$, the total jump across the discontinuity",
+      "$\\dfrac{4k}{\\pi}$, which is the value of $b_1$"
     ],
     correctAnswer: 0,
-    explanation: "Rodrigues' formula gives $P_4(x) = \\dfrac{35x^4 - 30x^2 + 3}{8}$, and substituting $x = 1$ gives $\\dfrac{35 - 30 + 3}{8} = 1$ as required.\n\nDoubling the denominator would give $P_4(1) = 1/2$.\n\nA cubic cannot be $P_4$, since $P_n$ has degree exactly $n$.\n\nThe last expression fails the check $P_4(1) = 1$."
+    explanation: "The contributions $-k\\pi$ and $+k\\pi$ cancel, so $a_0 = 0$, consistent with the function being odd.\n\nThe value $k$ ignores the negative half of the interval.\n\nThe jump size is not the mean value.\n\nThe quantity $4k/\\pi$ is the first sine coefficient."
   },
   {
     id: "mth302_ch11_018",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the degree and parity of $P_n(x)$?",
+    text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, why do all the cosine coefficients vanish?",
     options: [
-      "Degree exactly $n$, even for even $n$ and odd for odd $n$",
-      "Degree $n$, but always an even function regardless of $n$",
-      "Degree $2n$, with parity matching that of $n$",
-      "Degree $n - 1$, with parity opposite to that of $n$"
+      "The function is odd",
+      "The function is even",
+      "The function is discontinuous at the origin",
+      "The period is $2\\pi$ rather than a general $2L$"
     ],
     correctAnswer: 0,
-    explanation: "Each Legendre polynomial has degree exactly $n$ and inherits the parity of $n$, so $P_3$ is an odd cubic.\n\nUniform evenness fails for $P_1(x) = x$.\n\nThe degree is $n$, not $2n$.\n\nA degree of $n - 1$ contradicts Rodrigues' formula."
+    explanation: "An odd function has $a_0 = a_n = 0$, leaving a pure sine series, which is exactly what the square wave produces.\n\nAn even function would kill the sines instead.\n\nDiscontinuity affects convergence at the jump, not which family survives.\n\nThe length of the period does not decide the parity."
   },
   {
     id: "mth302_ch11_019",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the recurrence relation for the Legendre polynomials?",
+    text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, what is the general formula for $b_n$?",
     options: [
-      "$(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$",
-      "$(n+1)P_{n+1} = (2n+1)xP_n + nP_{n-1}$",
-      "$P_{n+1} = xP_n - P_{n-1}$, dropping every coefficient",
-      "$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$, exchanging two coefficients"
+      "$\\dfrac{2k}{\\pi n}(1 - \\cos n\\pi)$",
+      "$\\dfrac{2k}{\\pi n}(1 + \\cos n\\pi)$",
+      "$\\dfrac{4k}{\\pi n}$ for every $n$, ignoring the parity",
+      "$\\dfrac{k}{\\pi n}(1 - \\cos n\\pi)$, halving the prefactor"
     ],
     correctAnswer: 0,
-    explanation: "The three-term recurrence is $(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$, which reproduces $P_3$ from $P_2$ and $P_1$.\n\nReversing the final sign gives the wrong polynomial.\n\nDropping the coefficients loses the normalisation.\n\nExchanging the two outer coefficients breaks the identity."
+    explanation: "Integrating gives $b_n = \\dfrac{2k}{\\pi n}(1 - \\cos n\\pi)$, which is $\\dfrac{4k}{n\\pi}$ for odd $n$ and zero for even $n$.\n\nReversing the sign inside the bracket would make the even terms survive instead.\n\nA formula independent of parity contradicts the vanishing even coefficients.\n\nHalving the prefactor gives the wrong odd-index values."
   },
   {
     id: "mth302_ch11_020",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Applying the recurrence with $n = 2$ gives which polynomial?",
+    text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, what is $b_3$?",
     options: [
-      "$P_3 = \\dfrac{5x^3 - 3x}{2}$",
-      "$P_3 = \\dfrac{5x^2 - 3x}{2}$",
-      "$P_3 = \\dfrac{3x^2 - 1}{2}$, which is $P_2$ instead",
-      "$P_3 = \\dfrac{35x^3 - 30x}{8}$, from a later step of the recurrence"
+      "$\\dfrac{4k}{3\\pi}$",
+      "$\\dfrac{4k}{\\pi}$, which is the value of $b_1$",
+      "$0$",
+      "$\\dfrac{2k}{3\\pi}$, halving the correct value"
     ],
     correctAnswer: 0,
-    explanation: "From $3P_3 = 5xP_2 - 2P_1$ we get $3P_3 = \\dfrac{15x^3 - 5x}{2} - 2x = \\dfrac{15x^3 - 9x}{2}$, so $P_3 = \\dfrac{5x^3 - 3x}{2}$.\n\nA quadratic cannot be $P_3$, since the degree must equal three.\n\nThe expression $\\dfrac{3x^2 - 1}{2}$ is $P_2$.\n\nThe last expression does not satisfy $P_3(1) = 1$."
+    explanation: "Since $3$ is odd, $b_3 = \\dfrac{4k}{3\\pi}$.\n\nThe value $4k/\\pi$ belongs to $b_1$.\n\nZero occurs at even indices only.\n\nHalving misreads the odd-index formula."
   },
   {
     id: "mth302_ch11_021",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "On what interval and with what weight are the Legendre polynomials orthogonal?",
+    text: "What is the Fourier series of that square wave?",
     options: [
-      "On $[-1, 1]$ with weight $1$",
-      "On $[-1, 1]$ with weight $x$",
-      "On $[0, 1]$ with weight $1$, over half the interval",
-      "On $[-\\pi, \\pi]$ with weight $1$, as for trigonometric families"
+      "$\\dfrac{4k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\dfrac{\\sin 5x}{5} + \\cdots\\right)$",
+      "$\\dfrac{4k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 2x}{2} + \\dfrac{\\sin 3x}{3} + \\cdots\\right)$, keeping every index",
+      "$\\dfrac{4k}{\\pi}\\left(\\cos x + \\dfrac{\\cos 3x}{3} + \\cdots\\right)$, using cosines instead",
+      "$\\dfrac{2k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\cdots\\right)$, halving the prefactor"
     ],
     correctAnswer: 0,
-    explanation: "Legendre polynomials satisfy $\\int_{-1}^{1}P_mP_n\\,dx = 0$ for $m \\neq n$, with weight one.\n\nThe weight $x$ belongs to Bessel's equation in Sturm-Liouville form.\n\nHalving the interval destroys the orthogonality, which relies on symmetry.\n\nThe trigonometric interval belongs to Fourier series."
+    explanation: "Only the odd sine harmonics survive, each with coefficient $\\dfrac{4k}{n\\pi}$.\n\nKeeping every index contradicts the vanishing even coefficients.\n\nCosines vanish because the function is odd.\n\nHalving the prefactor misstates the coefficients."
   },
   {
     id: "mth302_ch11_022",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is $\\displaystyle\\int_{-1}^{1}P_n(x)^2\\,dx$?",
+    text: "If $f$ is even, which coefficients vanish?",
     options: [
-      "$\\dfrac{2}{2n+1}$",
-      "$\\dfrac{1}{2n+1}$",
-      "$\\dfrac{2}{n+1}$, using the wrong denominator",
-      "$2$, independent of the index $n$"
+      "All the $b_n$",
+      "All the $a_n$",
+      "Only $a_0$, while the rest survive unchanged",
+      "None of them, since parity does not affect the coefficients"
     ],
     correctAnswer: 0,
-    explanation: "The normalisation integral is $\\dfrac{2}{2n+1}$, which for $n = 3$ gives $\\dfrac{2}{7}$.\n\nOmitting the two halves the value.\n\nUsing $n + 1$ in the denominator misstates the formula.\n\nA constant value would contradict the dependence on $n$."
+    explanation: "An even function is orthogonal to every sine on a symmetric interval, so $b_n = 0$ and the series is a pure cosine series plus the constant.\n\nKilling the cosines describes the odd case.\n\nThe constant term generally survives for an even function.\n\nParity is precisely what determines which family survives."
   },
   {
     id: "mth302_ch11_023",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the generating function for the Legendre polynomials?",
+    text: "If $f$ is odd, which coefficients vanish?",
     options: [
-      "$\\dfrac{1}{\\sqrt{1 - 2xt + t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$",
-      "$\\dfrac{1}{1 - 2xt + t^2} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, without the square root",
-      "$\\dfrac{1}{\\sqrt{1 + 2xt + t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$",
-      "$e^{xt} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, an exponential generating function"
+      "$a_0$ and all the $a_n$",
+      "All the $b_n$",
+      "Only $a_0$, while the cosines survive unchanged",
+      "Only the odd-index coefficients throughout"
     ],
     correctAnswer: 0,
-    explanation: "The generating function is $(1 - 2xt + t^2)^{-1/2}$, valid for $|t| < 1$.\n\nOmitting the square root gives a different family of coefficients.\n\nA plus sign in the middle changes the expansion point.\n\nAn exponential generating function belongs to other polynomial families."
+    explanation: "An odd function is orthogonal to the constant and to every cosine, so only sine terms remain.\n\nKilling the sines describes the even case.\n\nThe cosines vanish as well, not only the constant.\n\nThe distinction is by family, not by index parity."
   },
   {
     id: "mth302_ch11_024",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Setting $x = 1$ in the generating function establishes which value?",
+    text: "At a jump discontinuity $x_0$, to what value does the Fourier series converge?",
     options: [
-      "$P_n(1) = 1$",
-      "$P_n(1) = n$, growing with the index",
-      "$P_n(1) = 0$ for every $n \\geq 1$",
-      "$P_n(1) = (-1)^n$"
+      "$\\tfrac{1}{2}[f(x_0^-) + f(x_0^+)]$",
+      "$f(x_0^+)$",
+      "$f(x_0^-)$, the value approached from the left",
+      "The larger of the two one-sided limits"
     ],
     correctAnswer: 0,
-    explanation: "At $x = 1$ the generating function collapses to $\\dfrac{1}{1 - t} = \\sum t^n$, so every coefficient is one.\n\nGrowth with $n$ contradicts the geometric series obtained.\n\nVanishing coefficients would contradict the same expansion.\n\nThe alternating values arise at $x = -1$."
+    explanation: "Under the Dirichlet conditions the series converges to the average of the two one-sided limits at a jump.\n\nTaking the right-hand limit ignores the left-hand contribution.\n\nTaking the left-hand limit has the same defect.\n\nSelecting the larger limit has no basis in the convergence theorem."
   },
   {
     id: "mth302_ch11_025",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is $P_n(-1)$?",
+    text: "For the square wave with $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, to what value does its series converge at $x = 0$?",
     options: [
-      "$(-1)^n$",
-      "$1$ for every $n$, as at the other endpoint",
-      "$-1$ for every $n$, regardless of parity",
-      "$0$ for odd $n$ and $1$ for even $n$"
+      "$0$",
+      "$k$",
+      "$-k$, the value taken just to the left of the origin",
+      "$\\dfrac{4k}{\\pi}$, the first sine coefficient"
     ],
     correctAnswer: 0,
-    explanation: "At $x = -1$ the generating function becomes $\\dfrac{1}{1 + t} = \\sum(-1)^nt^n$, giving $P_n(-1) = (-1)^n$.\n\nA constant value of one holds at $x = +1$, not at $x = -1$.\n\nA constant value of $-1$ fails for even $n$.\n\nThe polynomials do not vanish at the endpoint for odd $n$; they equal $-1$."
+    explanation: "The one-sided limits are $-k$ and $+k$, so the series converges to their average, which is zero.\n\nThe right-hand value alone ignores the averaging rule.\n\nThe left-hand value has the same defect.\n\nA Fourier coefficient is not a value of the sum."
   },
   {
     id: "mth302_ch11_026",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Which quick check rules out an offered expression for $P_n(x)$?",
+    text: "What is the formula for $b_n$ for a function of period $2L$?",
     options: [
-      "Substituting $x = 1$ and requiring the value $1$",
-      "Substituting $x = 0$ and requiring the value $1$",
-      "Checking that the leading coefficient equals one",
-      "Checking that the polynomial has no constant term"
+      "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$",
+      "$\\dfrac{1}{2L}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$, halving the prefactor",
+      "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L}f\\cos\\dfrac{n\\pi x}{L}\\,dx$",
+      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$"
     ],
     correctAnswer: 0,
-    explanation: "Because every Legendre polynomial satisfies $P_n(1) = 1$, evaluating at $x = 1$ eliminates wrong options instantly.\n\nThe value at the origin is zero for odd $n$, so it is not a uniform check.\n\nThe polynomials are not monic.\n\nEven-index polynomials do have constant terms, as $P_2$ shows."
+    explanation: "Rescaling the period-$2\\pi$ formulas by $v = \\pi x/L$ replaces the prefactor $1/\\pi$ by $1/L$ and the harmonic $\\sin nx$ by $\\sin(n\\pi x/L)$.\n\nHalving the prefactor belongs to a different normalisation.\n\nUsing the cosine gives $a_n$.\n\nRetaining $\\pi$ in the prefactor fails to rescale consistently."
   },
   {
     id: "mth302_ch11_027",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Verifying $k = 2$, what does $(1 - x^2)y'' - 2xy' + 6y$ equal for $y = \\tfrac{1}{2}(3x^2 - 1)$?",
+    text: "For the period-$4$ pulse with $f = k$ on $(-1, 1)$ and $f = 0$ elsewhere on $(-2, 2)$, what is $a_0$?",
     options: [
-      "$0$",
-      "$6$",
-      "$3x^2 - 1$, reproducing the polynomial itself",
-      "$3$, the second derivative of the polynomial"
+      "$k$",
+      "$2k$, doubling the computed value",
+      "$\\dfrac{k}{2}$",
+      "$0$, as for an odd function"
     ],
     correctAnswer: 0,
-    explanation: "With $y' = 3x$ and $y'' = 3$, the expression becomes $3 - 3x^2 - 6x^2 + 9x^2 - 3 = 0$, confirming $P_2$ solves the equation.\n\nA nonzero constant would mean the polynomial fails the equation.\n\nReproducing the polynomial would likewise indicate failure.\n\nThe second derivative alone is not the value of the whole expression."
+    explanation: "With $L = 2$, $a_0 = \\dfrac{1}{2}\\int_{-1}^{1}k\\,dx = \\dfrac{1}{2}(2k) = k$, so the constant term of the series is $a_0/2 = k/2$.\n\nDoubling misplaces the prefactor $1/L$.\n\nThe value $k/2$ is the constant term, not $a_0$ itself.\n\nThe function is even and nonnegative, so its mean cannot vanish."
   },
   {
     id: "mth302_ch11_028",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is Bessel's differential equation of order $n$?",
+    text: "For the period-$4$ pulse with $f = k$ on $(-1, 1)$ and $f = 0$ elsewhere on $(-2, 2)$, why do all the sine coefficients vanish?",
     options: [
-      "$x^2y'' + xy' + (x^2 - n^2)y = 0$",
-      "$x^2y'' + xy' + (x^2 + n^2)y = 0$",
-      "$(1 - x^2)y'' - 2xy' + n(n+1)y = 0$, which is Legendre's equation",
-      "$x^2y'' + xy' + (n^2 - x^2)y = 0$, with the bracket reversed"
+      "The pulse is an even function",
+      "The pulse is an odd function about the origin",
+      "The pulse is discontinuous at $x = \\pm 1$",
+      "The period is $4$ rather than $2\\pi$"
     ],
     correctAnswer: 0,
-    explanation: "Bessel's equation of order $n$ is $x^2y'' + xy' + (x^2 - n^2)y = 0$, with a regular singular point at the origin.\n\nA plus before $n^2$ gives the modified equation with different solutions.\n\nThe second expression is Legendre's equation.\n\nReversing the bracket changes the sign of the whole term."
+    explanation: "The pulse is symmetric about the origin, so it is even and every $b_n$ vanishes.\n\nAn odd function would kill the cosines instead.\n\nDiscontinuity governs convergence at the jumps, not which family survives.\n\nThe numerical period does not determine parity."
   },
   {
     id: "mth302_ch11_029",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "For $x^2y'' + xy' + (x^2 - 4)y = 0$, what is the order $\\nu$?",
+    text: "For the period-$4$ pulse with $f = k$ on $(-1, 1)$ and $f = 0$ elsewhere on $(-2, 2)$, what is $a_n$?",
     options: [
-      "$\\nu = 2$",
-      "$\\nu = 4$",
-      "$\\nu = 16$, squaring the constant in the bracket",
-      "$\\nu = 1$"
+      "$\\dfrac{2k}{n\\pi}\\sin\\dfrac{n\\pi}{2}$",
+      "$\\dfrac{2k}{n\\pi}\\cos\\dfrac{n\\pi}{2}$, replacing the sine by a cosine",
+      "$\\dfrac{k}{n\\pi}\\sin\\dfrac{n\\pi}{2}$, halving the prefactor",
+      "$\\dfrac{2k}{n\\pi}\\sin n\\pi$, which vanishes for every $n$"
     ],
     correctAnswer: 0,
-    explanation: "Matching $x^2 - \\nu^2$ against $x^2 - 4$ gives $\\nu^2 = 4$, so $\\nu = 2$.\n\nReading $4$ as the order confuses $\\nu^2$ with $\\nu$ and is the standard slip.\n\nSquaring again compounds the error.\n\nThe coefficient of $y'$ carries no information about the order."
+    explanation: "Integrating $k\\cos(n\\pi x/2)$ over $(-1, 1)$ with prefactor $\\tfrac{1}{2}$ gives $\\dfrac{2k}{n\\pi}\\sin\\dfrac{n\\pi}{2}$.\n\nA cosine would not vanish at the required places.\n\nHalving the prefactor misstates the integral.\n\nEvaluating at $n\\pi$ instead of $n\\pi/2$ would make every coefficient zero."
   },
   {
     id: "mth302_ch11_030",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the general solution of $x^2y'' + xy' + (x^2 - 4)y = 0$?",
+    text: "What are the Dirichlet conditions for convergence of a Fourier series?",
     options: [
-      "$y = AJ_2(x) + BY_2(x)$",
-      "$y = AJ_4(x) + BY_4(x)$",
-      "$y = AJ_2(x) + BJ_{-2}(x)$",
-      "$y = AP_2(x) + BQ_2(x)$, using the Legendre functions"
+      "Periodic, single valued, piecewise continuous, with finitely many extrema and discontinuities in a period",
+      "Continuous and differentiable everywhere on the whole real line",
+      "Bounded and monotonic throughout each period without exception",
+      "Infinitely differentiable with all derivatives bounded"
     ],
     correctAnswer: 0,
-    explanation: "With $\\nu = 2$ the two independent solutions are $J_2$ and $Y_2$.\n\nUsing order four misreads $\\nu^2 = 4$.\n\nFor integer order $J_{-n} = (-1)^nJ_n$, so that pair is dependent and cannot form a general solution.\n\nThe Legendre functions solve a different equation."
+    explanation: "The Dirichlet conditions require periodicity, single-valuedness, piecewise continuity, and finitely many maxima, minima and discontinuities in a period.\n\nRequiring differentiability everywhere would exclude the square wave, whose series converges.\n\nMonotonicity is far too strong and excludes ordinary oscillating functions.\n\nInfinite differentiability is likewise unnecessary."
   },
   {
     id: "mth302_ch11_031",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "For integer $n$, how are $J_{-n}$ and $J_n$ related?",
+    text: "At a point of continuity, to what does the Fourier series converge?",
     options: [
-      "$J_{-n}(x) = (-1)^nJ_n(x)$",
-      "$J_{-n}(x) = J_n(x)$ for every integer $n$",
-      "$J_{-n}(x) = -J_n(x)$, regardless of parity",
-      "$J_{-n}(x) = \\dfrac{1}{J_n(x)}$, giving the reciprocal"
+      "To $f(x)$ itself",
+      "To the mean value of $f$ over the whole period",
+      "To the average of the two neighbouring extrema",
+      "To zero, regardless of the value of $f$ there"
     ],
     correctAnswer: 0,
-    explanation: "Because $\\Gamma$ is infinite at non-positive integers, the first $n$ terms of the series for $J_{-n}$ vanish, and reindexing gives $J_{-n} = (-1)^nJ_n$.\n\nEquality without the sign fails for odd $n$.\n\nA uniform minus sign fails for even $n$.\n\nA reciprocal relation has no basis in the series."
+    explanation: "Under the Dirichlet conditions the series reproduces $f(x)$ at every point where $f$ is continuous.\n\nThe mean value is the constant term, not the sum at a general point.\n\nNeighbouring extrema play no part in the convergence statement.\n\nConvergence to zero would contradict reproducing the function."
   },
   {
     id: "mth302_ch11_032",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Why is $Y_n$ needed as a second solution for integer order?",
+    text: "For the ramp $f = -x$ on $(-\\pi, 0)$ and $f = 0$ on $(0, \\pi)$, what is $a_0$?",
     options: [
-      "Because $J_n$ and $J_{-n}$ are not independent then",
-      "Because $J_n$ fails to satisfy Bessel's equation for integer $n$",
-      "Because $J_n$ is unbounded at the origin for integer $n$",
-      "Because $J_n$ is only defined for non-integer order"
+      "$\\dfrac{\\pi}{2}$",
+      "$\\dfrac{\\pi}{4}$",
+      "$\\pi$",
+      "$0$, as for an odd function"
     ],
     correctAnswer: 0,
-    explanation: "For integer order the relation $J_{-n} = (-1)^nJ_n$ makes the two proportional, so a genuinely independent second solution $Y_n$ is required.\n\nThe function $J_n$ does satisfy the equation for integer order.\n\nIt is $Y_n$, not $J_n$, that is unbounded at the origin.\n\nThe function $J_n$ is defined for every real order."
+    explanation: "Computing $a_0 = \\dfrac{1}{\\pi}\\int_{-\\pi}^{0}(-x)\\,dx = \\dfrac{1}{\\pi}\\cdot\\dfrac{\\pi^2}{2} = \\dfrac{\\pi}{2}$, so the constant term is $a_0/2 = \\pi/4$.\n\nThe value $\\pi/4$ is the constant term, not $a_0$.\n\nOmitting the halving misreads the integral.\n\nThe function is nonnegative and not identically zero, so its mean is positive."
   },
   {
     id: "mth302_ch11_033",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What are the first three terms of $J_0(x)$?",
+    text: "Which orthogonal system underlies the Fourier series of period $2\\pi$?",
     options: [
-      "$1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{64}$",
-      "$1 - \\dfrac{x^2}{2} + \\dfrac{x^4}{16}$, with the denominators halved",
-      "$1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{16}$",
-      "$x - \\dfrac{x^3}{16} + \\dfrac{x^5}{384}$"
+      "$\\{1,\\ \\cos nx,\\ \\sin nx\\}$",
+      "$\\{\\cos nx\\}$ alone",
+      "$\\{P_n(x)\\}$, the Legendre polynomials",
+      "$\\{J_n(x)\\}$, the Bessel functions of the first kind"
     ],
     correctAnswer: 0,
-    explanation: "The series gives $J_0(x) = 1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{64} - \\dfrac{x^6}{2304} + \\cdots$.\n\nHalving the denominators misreads the factors $2^{2k}(k!)^2$.\n\nThe fourth-power term has denominator $64$, not $16$.\n\nThe expansion beginning at $x/2$ is that of $J_1$, not $J_0$."
+    explanation: "The Fourier expansion is precisely an expansion in the orthogonal system consisting of the constant together with all the cosines and sines.\n\nDropping the sines and the constant leaves an incomplete system.\n\nThe Legendre polynomials are orthogonal on $[-1, 1]$, a different setting.\n\nThe Bessel functions belong to problems with weight $x$."
   },
   {
     id: "mth302_ch11_034",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What are the first three terms of $J_1(x)$?",
+    text: "What is the fundamental period of a periodic function?",
     options: [
-      "$\\dfrac{x}{2} - \\dfrac{x^3}{16} + \\dfrac{x^5}{384}$",
-      "$\\dfrac{x}{2} - \\dfrac{x^3}{8} + \\dfrac{x^5}{192}$, with each denominator halved",
-      "$1 - \\dfrac{x^2}{4} + \\dfrac{x^4}{64}$",
-      "$x - \\dfrac{x^3}{16} + \\dfrac{x^5}{384}$"
+      "The smallest positive period",
+      "The largest period the function possesses",
+      "The average spacing between successive maxima",
+      "Any interval over which the function repeats"
     ],
     correctAnswer: 0,
-    explanation: "The series gives $J_1(x) = \\dfrac{x}{2} - \\dfrac{x^3}{16} + \\dfrac{x^5}{384} - \\cdots$, where $384 = 12 \\times 32$.\n\nHalving the denominators misreads the factorial factors.\n\nThe expansion beginning at one is that of $J_0$.\n\nOmitting the factor one half misstates the leading term."
+    explanation: "Every integer multiple of a period is again a period, so the fundamental period is defined as the smallest positive one.\n\nNo largest period exists, since multiples grow without bound.\n\nSpacing between maxima can differ from the period for a general profile.\n\nAny repeating interval is a period, but not necessarily the fundamental one."
   },
   {
     id: "mth302_ch11_035",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What kind of point is $x = 0$ for Bessel's equation?",
+    text: "For $f(x) = x^2$ on $(-\\pi, \\pi)$ extended periodically, which coefficients vanish?",
     options: [
-      "A regular singular point",
-      "An ordinary point",
-      "An irregular singular point",
-      "A point outside the domain of the equation"
+      "All the $b_n$, since the function is even",
+      "All the $a_n$, since the function is odd",
+      "Only $a_0$, since the mean value is zero",
+      "None of them, since the square destroys any symmetry"
     ],
     correctAnswer: 0,
-    explanation: "Dividing by $x^2$ produces coefficients singular at the origin but mildly enough for the Frobenius method, so the origin is a regular singular point.\n\nAn ordinary point would allow an ordinary power series without the Frobenius exponent.\n\nAn irregular singular point would obstruct the Frobenius construction.\n\nThe origin lies in the natural domain of the equation."
+    explanation: "Squaring produces an even function, so every sine coefficient vanishes and the series is a cosine series plus a constant.\n\nThe function is even rather than odd, so the cosines survive.\n\nThe mean of $x^2$ is positive, so $a_0$ does not vanish.\n\nThe square creates symmetry rather than destroying it."
   },
   {
     id: "mth302_ch11_036",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "For $x^2y'' + xy' + (\\lambda^2x^2 - n^2)y = 0$, what is the solution?",
+    text: "What is the period of $y = 3\\sin 5x$ in degrees?",
     options: [
-      "$J_n(\\lambda x)$",
-      "$J_{\\lambda}(nx)$, exchanging the order and the scaling",
-      "$\\lambda J_n(x)$",
-      "$J_n(x)$"
+      "$72^\\circ$",
+      "$360^\\circ$, ignoring the frequency altogether",
+      "$1800^\\circ$",
+      "$5^\\circ$"
     ],
     correctAnswer: 0,
-    explanation: "The parameter $\\lambda$ rescales the argument, so the solution is $J_n(\\lambda x)$.\n\nExchanging the roles of $n$ and $\\lambda$ misidentifies the order.\n\nA multiplicative constant outside does not absorb the rescaling.\n\nIgnoring $\\lambda$ loses the scaling entirely."
+    explanation: "The period is $\\dfrac{360^\\circ}{5} = 72^\\circ$.\n\nIgnoring the factor $5$ gives the period of $\\sin x$.\n\nMultiplying inverts the effect of the frequency.\n\nThe frequency itself is not a period."
   },
   {
     id: "mth302_ch11_037",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is $P_0(x)$?",
+    text: "Rescaling a period-$2\\pi$ series to period $2L$ uses which substitution?",
     options: [
-      "$1$",
-      "$x$",
-      "$0$",
-      "$\\tfrac{1}{2}$, halving the correct constant"
+      "$v = \\dfrac{\\pi x}{L}$",
+      "$v = \\dfrac{Lx}{\\pi}$",
+      "$v = 2\\pi x$",
+      "$v = \\dfrac{x}{2L}$, omitting the factor $\\pi$"
     ],
     correctAnswer: 0,
-    explanation: "Rodrigues' formula with $n = 0$ gives the constant polynomial $1$, consistent with $P_0(1) = 1$.\n\nThe linear polynomial is $P_1$.\n\nThe zero polynomial would fail the normalisation.\n\nHalving would give $P_0(1) = 1/2$."
+    explanation: "Choosing $\\kappa$ so that $v$ runs over $2\\pi$ while $x$ runs over $2L$ gives $\\kappa = \\pi/L$, hence $v = \\pi x/L$.\n\nInverting the ratio rescales in the wrong direction.\n\nIgnoring $L$ fails to match the two ranges.\n\nOmitting $\\pi$ leaves the harmonics unnormalised."
   },
   {
     id: "mth302_ch11_038",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Which behaviour distinguishes $Y_n$ from $J_n$ at the origin?",
+    text: "Which error does writing the constant term as $a_0$ rather than $\\dfrac{a_0}{2}$ produce?",
     options: [
-      "$Y_n$ is unbounded there",
-      "$Y_n$ vanishes there for every order $n$",
-      "$Y_n$ equals one there for every order $n$",
-      "$Y_n$ is undefined for non-integer order"
+      "It doubles the mean value of the function",
+      "It halves every sine coefficient in the series",
+      "It shifts each harmonic frequency by one",
+      "It has no effect on the resulting series"
     ],
     correctAnswer: 0,
-    explanation: "The Bessel function of the second kind blows up at $x = 0$, which is why bounded physical problems retain only $J_n$.\n\nVanishing at the origin describes $J_n$ for $n \\geq 1$.\n\nThe value one at the origin describes $J_0$.\n\nThe function $Y_n$ is defined for non-integer order as well."
-  },
-  {
-    id: "mth302_ch11_039",
-    course: "MTH 302",
-    chapter: "Chapter 11",
-    text: "What is $P_2(x)$?",
-    options: [
-      "$\\dfrac{3x^2 - 1}{2}$",
-      "$\\dfrac{3x^2 + 1}{2}$",
-      "$\\dfrac{5x^2 - 3}{2}$, from an incorrect recurrence step",
-      "$3x^2 - 1$"
-    ],
-    correctAnswer: 0,
-    explanation: "Rodrigues' formula gives $P_2(x) = \\dfrac{3x^2 - 1}{2}$, and substituting $x = 1$ gives $1$ as required.\n\nA plus sign would give $P_2(1) = 2$.\n\nThe third expression fails the check at $x = 1$.\n\nOmitting the division gives $P_2(1) = 2$."
-  },
-  {
-    id: "mth302_ch11_040",
-    course: "MTH 302",
-    chapter: "Chapter 11",
-    text: "In the series for $J_n(x)$, which function appears in the denominator of each term?",
-    options: [
-      "$k!\\,\\Gamma(n + k + 1)$",
-      "$k!\\,\\Gamma(n + k)$, shifting the Gamma argument down by one",
-      "$k!\\,(n + k)!$",
-      "$\\Gamma(k)\\,\\Gamma(n + 1)$, splitting the factors incorrectly"
-    ],
-    correctAnswer: 0,
-    explanation: "Each term carries $\\dfrac{(-1)^k}{k!\\,\\Gamma(n + k + 1)}$, and the Gamma function is what permits non-integer order.\n\nShifting the argument breaks the reduction to factorials for integer $n$.\n\nA factorial denominator would restrict the definition to integer order.\n\nSplitting the factors that way does not match the series."
+    explanation: "With $a_0$ defined using the same prefactor $1/\\pi$ as the other coefficients, the constant term must be $a_0/2$, so omitting the halving doubles the mean.\n\nThe sine coefficients are untouched by this convention.\n\nThe harmonic frequencies are unaffected.\n\nThe error changes the constant term and so does affect the series."
   }
 ];
 

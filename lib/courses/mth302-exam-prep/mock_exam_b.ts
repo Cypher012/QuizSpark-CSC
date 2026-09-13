@@ -10,7 +10,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch1_010",
     course: "MTH 302",
-    chapter: "Chapter 1",
+    chapter: "Chapter 2",
     text: "Which of the following PDEs is linear?",
     options: [
       "$uu_x + u_y = 0$, in which the unknown multiplies its own derivative",
@@ -25,7 +25,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch1_021",
     course: "MTH 302",
-    chapter: "Chapter 1",
+    chapter: "Chapter 2",
     text: "How is $y'' + \\sin y = 0$ classified?",
     options: [
       "Linear, because the highest derivative $y''$ appears to the first power throughout the equation",
@@ -70,7 +70,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch3_022",
     course: "MTH 302",
-    chapter: "Chapter 3",
+    chapter: "Chapter 2",
     text: "Why is $f(y) = y^{1/3}$ not Lipschitz near $y = 0$?",
     options: [
       "Its derivative is unbounded as $y$ approaches $0$",
@@ -85,7 +85,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch3_014",
     course: "MTH 302",
-    chapter: "Chapter 3",
+    chapter: "Chapter 2",
     text: "The function $f(y) = |y|$ illustrates which situation?",
     options: [
       "Lipschitz but not differentiable at $0$",
@@ -100,7 +100,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch4_023",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 2",
     text: "What is the general solution of $y'' - 3y' + 2y = 0$?",
     options: [
       "$y = C_1e^{x} + C_2e^{2x}$",
@@ -115,7 +115,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch4_009",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 2",
     text: "What is the Wronskian of $y_1 = x$ and $y_2 = x\\ln x$?",
     options: [
       "$x\\ln x$",
@@ -130,7 +130,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch4_016",
     course: "MTH 302",
-    chapter: "Chapter 4",
+    chapter: "Chapter 2",
     text: "The Wronskian $W(y_1, y_2)$ is given by which expression?",
     options: [
       "$y_1y_2' - y_1'y_2$",
@@ -145,7 +145,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch5_005",
     course: "MTH 302",
-    chapter: "Chapter 5",
+    chapter: "Chapter 2",
     text: "What is the general solution of $y'' - y' = e^{2x}$?",
     options: [
       "$C_1 + C_2e^x + \\dfrac{1}{2}e^{2x}$",
@@ -160,7 +160,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch5_004",
     course: "MTH 302",
-    chapter: "Chapter 5",
+    chapter: "Chapter 2",
     text: "Which method is appropriate for solving $y'' + y = \\tan x$ on the interval $0 < x < \\pi/2$?",
     options: [
       "Undetermined coefficients, which needs a closed family",
@@ -175,7 +175,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch6_006",
     course: "MTH 302",
-    chapter: "Chapter 6",
+    chapter: "Chapter 2",
     text: "What is the general solution of $u_{xy} + u_x = 0$?",
     options: [
       "$u = e^{-y}A(x) + B(y)$",
@@ -190,7 +190,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch6_032",
     course: "MTH 302",
-    chapter: "Chapter 6",
+    chapter: "Chapter 2",
     text: "The transformed equation takes which general shape?",
     options: [
       "$w_\\xi + h(\\xi,\\eta)w = F(\\xi,\\eta)$",
@@ -205,7 +205,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch7_001",
     course: "MTH 302",
-    chapter: "Chapter 7",
+    chapter: "Chapter 2",
     text: "How is $u_{xx} + 6u_{xy} + 9u_{yy} = 0$ classified?",
     options: [
       "Elliptic",
@@ -220,7 +220,7 @@ const mth302ExamPrepB: QuestionV2[] = [
   {
     id: "mth302_ch7_020",
     course: "MTH 302",
-    chapter: "Chapter 7",
+    chapter: "Chapter 2",
     text: "How is $4u_{xx} - 4u_{xy} + u_{yy} = 0$ classified?",
     options: [
       "Parabolic",
@@ -231,11 +231,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Here $\\Delta = (-4)^2 - 4(4)(1) = 16 - 16 = 0$, so the equation is parabolic.\n\nA positive discriminant would be required for the hyperbolic case.\n\nThe discriminant is zero rather than negative.\n\nWith constant coefficients the type is the same at every point."
   },
-  // originally mth302_ch9_010, Chapter 9
+  // originally mth302_ch9_010, Chapter 8
   {
-    id: "mth302_ch9_010",
+    id: "mth302_ch8_010",
     course: "MTH 302",
-    chapter: "Chapter 9",
+    chapter: "Chapter 2",
     text: "What condition is imposed on the weight function $r(x)$?",
     options: [
       "$r(x) > 0$ on the interval",
@@ -246,11 +246,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "The weight must be strictly positive on $[a, b]$, which is what makes the orthogonality relation meaningful.\n\nRequiring $r = 1$ describes only the unweighted special case.\n\nAllowing the weight to vanish would break the inner product it defines.\n\nNothing restricts the weight to polynomials."
   },
-  // originally mth302_ch9_031, Chapter 9
+  // originally mth302_ch9_031, Chapter 8
   {
-    id: "mth302_ch9_031",
+    id: "mth302_ch8_031",
     course: "MTH 302",
-    chapter: "Chapter 9",
+    chapter: "Chapter 2",
     text: "For the Neumann example, applying $y'(0) = 0$ forces what?",
     options: [
       "$A = 0$",
@@ -261,11 +261,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Differentiating gives $y'(0) = A\\sqrt{\\lambda}$, so a vanishing derivative at the left end forces $A = 0$ and leaves the cosine.\n\nRemoving the cosine would follow from a Dirichlet condition at that end.\n\nThe eigenvalue is not pinned down by this condition alone.\n\nNo relation between the constants is produced."
   },
-  // originally mth302_ch10_018, Chapter 10
+  // originally mth302_ch10_018, Chapter 9
   {
-    id: "mth302_ch10_018",
+    id: "mth302_ch9_018",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 2",
     text: "What is $\\Gamma(3/2)$?",
     options: [
       "$\\dfrac{\\sqrt{\\pi}}{2}$",
@@ -276,11 +276,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Applying the recurrence, $\\Gamma(3/2) = \\tfrac{1}{2}\\Gamma(1/2) = \\dfrac{\\sqrt{\\pi}}{2}$.\n\nThe bare $\\sqrt{\\pi}$ is $\\Gamma(1/2)$, one step earlier.\n\nThe value $3\\sqrt{\\pi}/4$ is $\\Gamma(5/2)$, one step later.\n\nHalving again overshoots the recurrence."
   },
-  // originally mth302_ch10_019, Chapter 10
+  // originally mth302_ch10_019, Chapter 9
   {
-    id: "mth302_ch10_019",
+    id: "mth302_ch9_019",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 2",
     text: "What is $\\Gamma(5/2)$?",
     options: [
       "$\\dfrac{3\\sqrt{\\pi}}{4}$",
@@ -291,11 +291,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Using the recurrence twice, $\\Gamma(5/2) = \\tfrac{3}{2}\\cdot\\tfrac{1}{2}\\sqrt{\\pi} = \\dfrac{3\\sqrt{\\pi}}{4}$.\n\nThe value $\\sqrt{\\pi}/2$ is one step earlier.\n\nThe value $15\\sqrt{\\pi}/8$ is one step later.\n\nMultiplying by $5/2$ misapplies the recurrence, which uses the argument minus one."
   },
-  // originally mth302_ch10_020, Chapter 10
+  // originally mth302_ch10_020, Chapter 9
   {
-    id: "mth302_ch10_020",
+    id: "mth302_ch9_020",
     course: "MTH 302",
-    chapter: "Chapter 10",
+    chapter: "Chapter 2",
     text: "What is $\\Gamma(-1/2)$?",
     options: [
       "$-2\\sqrt{\\pi}$",
@@ -306,11 +306,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Using $\\Gamma(x) = \\dfrac{\\Gamma(x + 1)}{x}$ with $x = -1/2$ gives $\\dfrac{\\Gamma(1/2)}{-1/2} = -2\\sqrt{\\pi}$.\n\nDropping the minus sign ignores the negative denominator.\n\nThe value $4\\sqrt{\\pi}/3$ belongs to $\\Gamma(-3/2)$.\n\nNegative half-integers are defined; only zero and the negative integers are not."
   },
-  // originally mth302_ch11_037, Chapter 11
+  // originally mth302_ch11_037, Chapter 10
   {
-    id: "mth302_ch11_037",
+    id: "mth302_ch10_037",
     course: "MTH 302",
-    chapter: "Chapter 11",
+    chapter: "Chapter 2",
     text: "What is $P_0(x)$?",
     options: [
       "$1$",
@@ -321,11 +321,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Rodrigues' formula with $n = 0$ gives the constant polynomial $1$, consistent with $P_0(1) = 1$.\n\nThe linear polynomial is $P_1$.\n\nThe zero polynomial would fail the normalisation.\n\nHalving would give $P_0(1) = 1/2$."
   },
-  // originally mth302_ch11_039, Chapter 11
+  // originally mth302_ch11_039, Chapter 10
   {
-    id: "mth302_ch11_039",
+    id: "mth302_ch10_039",
     course: "MTH 302",
-    chapter: "Chapter 11",
+    chapter: "Chapter 2",
     text: "What is $P_2(x)$?",
     options: [
       "$\\dfrac{3x^2 - 1}{2}$",
@@ -336,11 +336,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Rodrigues' formula gives $P_2(x) = \\dfrac{3x^2 - 1}{2}$, and substituting $x = 1$ gives $1$ as required.\n\nA plus sign would give $P_2(1) = 2$.\n\nThe third expression fails the check at $x = 1$.\n\nOmitting the division gives $P_2(1) = 2$."
   },
-  // originally mth302_ch12_022, Chapter 12
+  // originally mth302_ch12_022, Chapter 11
   {
-    id: "mth302_ch12_022",
+    id: "mth302_ch11_022",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 2",
     text: "If $f$ is even, which coefficients vanish?",
     options: [
       "All the $b_n$",
@@ -351,11 +351,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "An even function is orthogonal to every sine on a symmetric interval, so $b_n = 0$ and the series is a pure cosine series plus the constant.\n\nKilling the cosines describes the odd case.\n\nThe constant term generally survives for an even function.\n\nParity is precisely what determines which family survives."
   },
-  // originally mth302_ch12_021, Chapter 12
+  // originally mth302_ch12_021, Chapter 11
   {
-    id: "mth302_ch12_021",
+    id: "mth302_ch11_021",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 2",
     text: "What is the Fourier series of that square wave?",
     options: [
       "$\\dfrac{4k}{\\pi}\\left(\\sin x + \\dfrac{\\sin 3x}{3} + \\dfrac{\\sin 5x}{5} + \\cdots\\right)$",
@@ -366,11 +366,11 @@ const mth302ExamPrepB: QuestionV2[] = [
     correctAnswer: 0,
     explanation: "Only the odd sine harmonics survive, each with coefficient $\\dfrac{4k}{n\\pi}$.\n\nKeeping every index contradicts the vanishing even coefficients.\n\nCosines vanish because the function is odd.\n\nHalving the prefactor misstates the coefficients."
   },
-  // originally mth302_ch12_003, Chapter 12
+  // originally mth302_ch12_003, Chapter 11
   {
-    id: "mth302_ch12_003",
+    id: "mth302_ch11_003",
     course: "MTH 302",
-    chapter: "Chapter 12",
+    chapter: "Chapter 2",
     text: "For the square wave $f = -k$ on $(-\\pi, 0)$ and $f = k$ on $(0, \\pi)$, what is the coefficient $b_4$?",
     options: [
       "$4k/(4\\pi)$",

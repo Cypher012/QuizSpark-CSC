@@ -75,43 +75,43 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_006",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "What is the general solution of $u_{xy} + u_x = 0$?",
+    text: "What is the general solution of $6u_x - 3u_y + 2u = 0$?",
     options: [
-      "$u = e^{-y}A(x) + B(y)$",
-      "$u = e^{-x}A(y) + B(x)$",
-      "$u = e^{-y}A(x)$",
-      "$u = A(x) + B(y)$"
+      "$u = e^{-x/3}F(x + 2y)$",
+      "$u = e^{x/3}F(x + 2y)$",
+      "$u = e^{-2x}F(x + 2y)$",
+      "$u = e^{-x/3}F(2x - y)$"
     ],
     correctAnswer: 0,
-    explanation: "Setting $p = u_x$ turns the equation into $p_y + p = 0$, giving $p = F(x)e^{-y}$; integrating in $x$ then gives $u = e^{-y}A(x) + B(y)$, where $A' = F$. Every second-order PDE requires two arbitrary functions in its general solution.\n\n$e^{-x}A(y) + B(x)$ mismatches which variable the exponential decay applies to.\n\n$e^{-y}A(x)$ contains only one arbitrary function, which is insufficient for a second-order PDE.\n\n$A(x) + B(y)$ omits the exponential factor entirely, ignoring the $u_x$ term in the original equation."
+    explanation: "Here $\\dfrac{dy}{dx} = \\dfrac{b}{a} = \\dfrac{-3}{6} = -\\dfrac{1}{2}$, so $2y = -x + K$, giving the characteristic variable $x + 2y = $ constant. Along a characteristic, $6\\dfrac{du}{dx} = -2u$, so $\\dfrac{du}{dx} = -\\dfrac{u}{3}$, giving $u = e^{-x/3}F(x + 2y)$, which checks out directly by substitution.\n\n$e^{x/3}F(x + 2y)$ has the sign of the exponent flipped, as if the equation read $6u_x - 3u_y - 2u = 0$.\n\n$e^{-2x}F(x + 2y)$ uses $c = 2$ directly in the exponent instead of dividing by the coefficient $a = 6$ first.\n\n$e^{-x/3}F(2x - y)$ has the correct exponential factor but an incorrect characteristic variable, as if the ratio $b/a$ had been inverted."
   },
   {
     id: "mth302_ch6_007",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "What is the general solution of $u_{xx} - 4u = 0$, treating $u$ as a function of $x$ and $y$?",
+    text: "For the linear PDE $a(x,y)u_x + b(x,y)u_y + c(x,y)u = f(x,y)$, the characteristic equation $dy/dx = b/a$ is often written in the equivalent symmetric form $dx/a = dy/b = du/(f - cu)$. For the specific equation $2u_x + 3u_y + u = 6$, what is the correct symmetric form of its characteristic relations?",
     options: [
-      "$P(y)e^{2x} + Q(y)e^{-2x}$",
-      "$P(x)e^{2y} + Q(x)e^{-2y}$",
-      "$C_1e^{2x} + C_2e^{-2x}$",
-      "$P(y)\\cos 2x + Q(y)\\sin 2x$"
+      "$\\dfrac{dx}{2} = \\dfrac{dy}{3} = \\dfrac{du}{6 - u}$",
+      "$\\dfrac{dx}{3} = \\dfrac{dy}{2} = \\dfrac{du}{6 - u}$",
+      "$\\dfrac{dx}{2} = \\dfrac{dy}{3} = \\dfrac{du}{u - 6}$",
+      "$\\dfrac{dx}{2} = \\dfrac{dy}{3} = \\dfrac{du}{6}$"
     ],
     correctAnswer: 0,
-    explanation: "Since only $x$-derivatives appear, $y$ acts as a parameter, and the auxiliary equation $r^2 - 4 = 0$ gives $r = \\pm 2$. The constants of integration then become arbitrary functions of the parameter $y$, giving $P(y)e^{2x} + Q(y)e^{-2x}$.\n\n$P(x)e^{2y} + Q(x)e^{-2y}$ mismatches which variable carries the arbitrary function.\n\n$C_1e^{2x} + C_2e^{-2x}$ is the correct form for an ODE but misses the necessary dependence on $y$.\n\n$P(y)\\cos 2x + Q(y)\\sin 2x$ would be correct only for the equation $u_{xx} + 4u = 0$, since the roots here are real, not imaginary."
+    explanation: "Matching $2u_x + 3u_y + u = 6$ against $au_x + bu_y + cu = f$ gives $a = 2$, $b = 3$, $c = 1$, $f = 6$, so the symmetric form is $\\dfrac{dx}{2} = \\dfrac{dy}{3} = \\dfrac{du}{6 - u}$, since the third fraction is always $du/(f - cu)$.\n\n$\\dfrac{dx}{3} = \\dfrac{dy}{2} = \\dfrac{du}{6 - u}$ swaps $a$ and $b$ in the first two fractions.\n\n$\\dfrac{dx}{2} = \\dfrac{dy}{3} = \\dfrac{du}{u - 6}$ reverses the sign in the third fraction.\n\n$\\dfrac{dx}{2} = \\dfrac{dy}{3} = \\dfrac{du}{6}$ drops the $-cu$ term entirely, treating $f$ alone as if $c$ were zero."
   },
   {
     id: "mth302_ch6_008",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "What is the general solution of $u_{xy} - 2u_x = 0$?",
+    text: "What is the general solution of $u_x + u_y = u$?",
     options: [
-      "$u = e^{2y}A(x) + B(y)$",
-      "$u = e^{-2y}A(x) + B(y)$",
-      "$u = e^{2x}A(y) + B(x)$",
-      "$u = 2yA(x) + B(y)$"
+      "$u = e^{x}G(y - x)$",
+      "$u = e^{-x}G(y - x)$",
+      "$u = e^{y}G(y - x)$",
+      "$u = e^{x}G(x + y)$"
     ],
     correctAnswer: 0,
-    explanation: "With $p = u_x$, the equation $p_y - 2p = 0$ gives $p = F(x)e^{2y}$, so $u = e^{2y}A(x) + B(y)$. The sign of the exponent follows the sign in the equation: $p_y = 2p$ means growth in $y$, not decay.\n\n$e^{-2y}A(x) + B(y)$ has the wrong sign in the exponent.\n\n$e^{2x}A(y) + B(x)$ mismatches which variable the exponential applies to.\n\n$2yA(x) + B(y)$ fails to exponentiate at all, treating the equation as if it were linear in $y$ rather than exponential."
+    explanation: "Matching against $au_x + bu_y + cu = f$ gives $a=1$, $b=1$, $c=-1$, $f=0$, so the symmetric form is $\\dfrac{dx}{1} = \\dfrac{dy}{1} = \\dfrac{du}{u}$. The first equality gives $y - x = $ constant, and combining $dx = du/u$ gives $\\ln u = x + K$, so $u = e^{x}G(y-x)$ for arbitrary $G$; direct substitution confirms $u_x+u_y-u=0$.\n\n$e^{-x}G(y-x)$ has the sign of the exponent flipped, as though $c=+1$ rather than $-1$.\n\n$e^{y}G(y-x)$ puts the exponential growth in the wrong variable, when the equation $dx = du/u$ singles out $x$.\n\n$e^{x}G(x+y)$ uses the sum $x+y$ instead of the actual characteristic variable $y-x$ obtained from $dx=dy$."
   },
   {
     id: "mth302_ch6_009",

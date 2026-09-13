@@ -53,7 +53,7 @@ export const mth302DifferentialEquationsCourse: Course = {
       id: "Chapter 6",
       label: "First-Order PDEs and the Method of Characteristics",
       description:
-        "The characteristic equation derived from a change of variables, the Jacobian condition for an admissible transformation, worked characteristics examples, quasilinear equations and characteristics in (x, y, u) space, and the significance of characteristics for the Cauchy problem.",
+        "The characteristic equation derived from a change of variables, its symmetric form, the Jacobian condition for an admissible transformation, worked characteristics examples, quasilinear equations and characteristics in (x, y, u) space, and the significance of characteristics for the Cauchy problem.",
     },
     {
       id: "Chapter 7",

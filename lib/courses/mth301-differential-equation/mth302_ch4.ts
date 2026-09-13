@@ -103,15 +103,15 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_008",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "If $y_1$ and $y_2$ are solutions of $y'' + P(x)y' + Q(x)y = 0$ on an interval $I$, and the Wronskian $W(x_0) = 0$ at one point $x_0$ in $I$, what follows?",
+    text: "For solutions of $y'' + \\dfrac{2}{x}y' + q(x)y = 0$ on $x > 0$, the Wronskian of two solutions satisfies $W(2) = 6$. Using Abel's theorem, what is $W(5)$?",
     options: [
-      "$W$ may be nonzero elsewhere on $I$",
-      "No conclusion is possible",
-      "$y_1$ and $y_2$ are independent",
-      "$W$ is identically zero on $I$, and $y_1$, $y_2$ are dependent"
+      "$\\dfrac{24}{25}$, found by first solving $C(1/4)=6$ to get $C=24$",
+      "$37.5$, obtained by using $e^{+\\int P\\,dx}$ instead of $e^{-\\int P\\,dx}$",
+      "$\\dfrac{12}{5}$, obtained by leaving the coefficient $2$ out of $\\int P\\,dx$",
+      "$6$, treating the Wronskian as constant in $x$"
     ],
-    correctAnswer: 3,
-    explanation: "Abel's formula $W = Ce^{-\\int P}$ has an exponential factor that is never zero, so the Wronskian can vanish at one point only if $C = 0$, meaning $W$ is identically zero throughout $I$; for two solutions of the same linear equation, this forces linear dependence.\n\n$W$ may be nonzero elsewhere on $I$ contradicts the all-or-nothing behavior forced by Abel's formula.\n\nNo conclusion is possible understates what Abel's theorem actually guarantees.\n\n$y_1$ and $y_2$ are independent is the opposite of the correct conclusion."
+    correctAnswer: 0,
+    explanation: "Here $P(x) = 2/x$, so $\\int P\\,dx = 2\\ln x$ and Abel's theorem gives $W(x) = Ce^{-2\\ln x} = Cx^{-2}$. Using $W(2) = 6$: $C(1/4) = 6$, so $C = 24$, and $W(5) = 24/25$.\n\n$37.5$ comes from dropping the minus sign in the exponent, which turns the formula into $W = Cx^{2}$ instead of $Cx^{-2}$; that gives $C(4) = 6$, so $C = 1.5$ and $W(5) = 1.5(25) = 37.5$.\n\n$12/5$ comes from losing the coefficient $2$ while integrating $P$, using $W = Cx^{-1}$ instead of $Cx^{-2}$; that gives $C/2 = 6$, so $C=12$ and $W(5) = 12/5$.\n\n$6$ assumes the Wronskian does not depend on $x$ at all, ignoring that Abel's theorem produces an exponential factor in $x$ whenever $P(x)$ is not identically zero."
   },
   {
     id: "mth302_ch4_009",
@@ -131,29 +131,29 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_010",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "In Abel's theorem, $W = Ce^{-\\int P\\,dx}$, what does $P$ represent?",
+    text: "For $y'' + 5y' + 6y = 0$, the fundamental-set theorem says to take $y_1(x)$ to be the solution with $y_1(0) = 1$ and $y_1'(0) = 0$. What is $y_1(x)$?",
     options: [
-      "The coefficient of $y''$",
-      "The forcing term",
-      "The coefficient of $y$",
-      "The coefficient of $y'$ once the coefficient of $y''$ has been made $1$"
+      "$e^{-2x} - e^{-3x}$, obtained by mixing up which initial condition belongs to $y_1$ versus $y_2$",
+      "$3e^{-2x} - 2e^{-3x}$, obtained by solving $A+B=1$ and $-2A-3B=0$ for the two roots $r=-2$ and $r=-3$",
+      "$-3e^{-2x} + 2e^{-3x}$, obtained by an overall sign slip while solving the two equations for the coefficients",
+      "$3e^{-3x} - 2e^{-2x}$, obtained by swapping which coefficient attaches to which root"
     ],
-    correctAnswer: 3,
-    explanation: "Abel's theorem applies to the standard form $y'' + Py' + Qy = 0$, where the leading coefficient has already been divided out to equal $1$, and $P$ is the coefficient of $y'$ in that standardized equation. Forgetting to divide through by the leading coefficient of $y''$ before reading off $P$ is the most common way to lose marks on this topic, and $Q$ never enters Abel's formula at all.\n\nThe coefficient of $y''$ is wrong since that coefficient must already be normalized to $1$ before $P$ is read off.\n\nThe forcing term is irrelevant to Abel's theorem, which applies to homogeneous equations.\n\nThe coefficient of $y$ is $Q$, which plays no role in the Wronskian formula."
+    correctAnswer: 1,
+    explanation: "The characteristic equation $r^2+5r+6=(r+2)(r+3)=0$ gives roots $r=-2,-3$, so $y=Ae^{-2x}+Be^{-3x}$. Imposing $y_1(0)=1$ gives $A+B=1$, and imposing $y_1'(0)=0$ gives $-2A-3B=0$. Solving this system gives $A=3$, $B=-2$, so $y_1(x) = 3e^{-2x}-2e^{-3x}$.\n\n$e^{-2x}-e^{-3x}$ is actually the theorem's formula for $y_2$, which instead satisfies $y_2(0)=0$ and $y_2'(0)=1$; the two initial-condition roles have been swapped.\n\n$-3e^{-2x}+2e^{-3x}$ carries the correct coefficients with every sign reversed, the result of an overall sign error while solving the $2\\times2$ system.\n\n$3e^{-3x}-2e^{-2x}$ keeps the correct coefficients $3$ and $-2$ but attaches each one to the wrong root."
   },
   {
     id: "mth302_ch4_011",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "What is the reduction-of-order formula for a second solution of $y'' + Py' + Qy = 0$, given one solution $y_1$?",
+    text: "Given that $y_1 = x^2$ solves $x^2y'' - 3xy' + 4y = 0$ for $x > 0$, what is a second independent solution obtained by reduction of order?",
     options: [
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
-      "$y_2 = \\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int Q\\,dx}}{y_{1}^{2}}\\,dx$"
+      "$\\ln x$, omitting the required multiplication by $y_1 = x^2$",
+      "$x^{-2}\\ln x$, obtained by dropping the minus sign when forming $e^{-\\int P\\,dx}$",
+      "$x^2\\ln x$, since integrating gives $y_2 = x^2\\int (1/x)\\,dx$",
+      "$x^2$, which merely repeats the known solution $y_1$"
     ],
-    correctAnswer: 0,
-    explanation: "Substituting $y = vy_1$ and $z = v'$ into the equation produces $z' + \\left(\\dfrac{2y_1'}{y_1} + P\\right)z = 0$, whose solution is $z = e^{-\\int P\\,dx}/y_{1}^{2}$; integrating $z$ to recover $v$ and multiplying back by $y_1$ gives $y_2 = y_1\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$. The exponent carries a minus sign and the denominator is $y_1$ squared.\n\n$y_2 = y_1\\int \\dfrac{e^{\\int P\\,dx}}{y_{1}^{2}}\\,dx$ has the wrong sign on the exponent.\n\n$y_2 = \\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$ omits the multiplication by $y_1$ in front and uses only $y_1$ to the first power inside the integral.\n\n$y_2 = y_1\\int \\dfrac{e^{-\\int Q\\,dx}}{y_{1}^{2}}\\,dx$ wrongly uses $Q$ in place of $P$."
+    correctAnswer: 2,
+    explanation: "Standardizing by dividing through by $x^2$ gives $y'' - \\dfrac{3}{x}y' + \\dfrac{4}{x^2}y = 0$, so $P = -3/x$ and $e^{-\\int P\\,dx} = e^{3\\ln x} = x^3$. The reduction of order formula then gives $y_2 = y_1\\displaystyle\\int \\dfrac{x^3}{y_1^2}\\,dx = x^2\\displaystyle\\int \\dfrac{x^3}{x^4}\\,dx = x^2\\displaystyle\\int \\dfrac{dx}{x} = x^2\\ln x$.\n\n$\\ln x$ alone omits the required multiplication by $y_1 = x^2$ that reduction of order always keeps.\n\n$x^{-2}\\ln x$ comes from dropping the minus sign when forming $e^{-\\int P\\,dx}$, which flips $x^3$ into $x^{-3}$ and changes the sign of the power of $x$ in the final answer.\n\n$x^2$ is just the known solution $y_1$ repeated, which is not independent of itself and so cannot serve as $y_2$."
   },
   {
     id: "mth302_ch4_012",
@@ -173,29 +173,29 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_013",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "How is $p(x)y'' + q(x)y' + r(x)y = g(x)$ put into standard form?",
+    text: "What is the standard form (leading coefficient equal to $1$) of $2xy'' - 6y' + 8xy = 0$ for $x > 0$?",
     options: [
-      "Divide every term by $p(x)$ so the coefficient of $y''$ becomes $1$",
-      "Divide through by $r(x)$",
-      "Multiply through by $p(x)$",
-      "Move $g(x)$ to the left"
+      "$y'' + \\dfrac{3}{x}y' + 4y = 0$, obtained with the sign of the middle coefficient flipped",
+      "$y'' - \\dfrac{3}{x}y' + \\dfrac{4}{x}y = 0$, obtained by dividing the constant term by an extra unwanted factor of $x$",
+      "$y'' - 6y' + 8xy = 0$, obtained without actually carrying out the division by $x$",
+      "$y'' - \\dfrac{3}{x}y' + 4y = 0$"
     ],
-    correctAnswer: 0,
-    explanation: "Standard form requires a leading coefficient of $1$, so dividing by $p(x)$ produces $y'' + P(x)y' + Q(x)y = G(x)$, which is what Abel's theorem and the reduction formula assume.\n\nDividing by $r(x)$ normalises the wrong term and leaves $y''$ with a coefficient.\n\nMultiplying by $p(x)$ moves further from the required form.\n\nMoving $g(x)$ across changes nothing about the leading coefficient."
+    correctAnswer: 3,
+    explanation: "Dividing every term of $2xy'' - 6y' + 8xy = 0$ by the leading coefficient $2x$ gives $y'' - \\dfrac{6}{2x}y' + \\dfrac{8xy}{2x} = y'' - \\dfrac{3}{x}y' + 4y = 0$, which is standard form since the coefficient of $y''$ is now $1$.\n\n$y'' + \\dfrac{3}{x}y' + 4y = 0$ flips the sign of the middle coefficient during the division.\n\n$y'' - \\dfrac{3}{x}y' + \\dfrac{4}{x}y = 0$ divides the constant term by an extra unwanted factor of $x$ that disappears once $8xy$ is divided by $2x$.\n\n$y'' - 6y' + 8xy = 0$ never actually carries out the division by $x$, so its leading coefficient is still $2x$, not $1$; this is exactly the trap of reading coefficients before standardizing."
   },
   {
     id: "mth302_ch4_014",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "If $y_1$ and $y_2$ solve a homogeneous linear equation, what does the superposition principle assert?",
+    text: "Given that $y_1 = e^{x}$ and $y_2 = e^{3x}$ both solve $y'' - 4y' + 3y = 0$, what is the value of $y'' - 4y' + 3y$ when $y = 5e^{x} - 2e^{3x}$?",
     options: [
-      "$C_1y_1 + C_2y_2$ is also a solution",
-      "Only the sum $y_1 + y_2$ is a solution, with no other combination admitted",
-      "The product $y_1y_2$ is also a solution",
-      "The quotient $y_1/y_2$ is constant"
+      "$0$",
+      "$15e^{x} - 18e^{3x}$, obtained by forgetting to multiply the $-4y'$ term through by the coefficient $4$",
+      "$-30e^{x} + 12e^{3x}$, obtained by using $-3y$ in place of $+3y$",
+      "$12e^{3x}$, obtained by reusing $y'$ in place of $y''$"
     ],
     correctAnswer: 0,
-    explanation: "Linearity and homogeneity together mean any linear combination $C_1y_1 + C_2y_2$ again satisfies the equation.\n\nRestricting to the plain sum understates the principle, which admits arbitrary constants.\n\nProducts of solutions are not solutions of a linear equation in general.\n\nThe quotient being constant would say the two solutions are dependent, which superposition does not claim."
+    explanation: "For $y = 5e^{x} - 2e^{3x}$: $y' = 5e^{x} - 6e^{3x}$ and $y'' = 5e^{x} - 18e^{3x}$. Then $y'' - 4y' + 3y = (5e^{x}-18e^{3x}) - 4(5e^{x}-6e^{3x}) + 3(5e^{x}-2e^{3x})$. Collecting the $e^{x}$ terms gives $5-20+15=0$ and the $e^{3x}$ terms give $-18+24-6=0$, so the whole expression is $0$. This is the superposition principle at work: since $y_1=e^x$ and $y_2=e^{3x}$ each solve the homogeneous equation, every linear combination of them does too, so plugging one into the operator always gives zero.\n\n$15e^{x} - 18e^{3x}$ comes from forgetting to multiply the $-4y'$ term through by $4$, effectively using $-y'$ instead.\n\n$-30e^{x} + 12e^{3x}$ comes from using $-3y$ in place of $+3y$, a sign error on the last term.\n\n$12e^{3x}$ comes from reusing $y'$ in place of $y''$, effectively differentiating only once instead of twice."
   },
   {
     id: "mth302_ch4_015",
@@ -215,29 +215,29 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_016",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "The Wronskian $W(y_1, y_2)$ is given by which expression?",
+    text: "What is the Wronskian of $y_1 = x^3$ and $y_2 = x^4$?",
     options: [
-      "$y_1y_2' - y_1'y_2$",
-      "$y_1y_2' + y_1'y_2$, the sum of the two cross products",
-      "$y_1'y_2' - y_1y_2$, formed from the derivatives first",
-      "$y_1y_2 - y_1'y_2'$, subtracting the product of derivatives"
+      "$7x^6$, obtained by adding the two cross products instead of subtracting them",
+      "$x^6$, since $y_1y_2' - y_1'y_2 = x^3(4x^3) - (3x^2)(x^4) = 4x^6 - 3x^6 = x^6$",
+      "$-x^6$, obtained by reversing the order of the subtraction",
+      "$x^7$, obtained by multiplying $y_1$ and $y_2$ directly instead of forming the determinant"
     ],
-    correctAnswer: 0,
-    explanation: "The Wronskian is the determinant of the matrix whose rows are the functions and their derivatives, giving $y_1y_2' - y_1'y_2$.\n\nUsing a sum rather than a difference discards the determinant's alternating sign.\n\nPairing the two derivatives against the two functions is not the determinant of that matrix.\n\nSubtracting the product of derivatives from the product of functions inverts the roles entirely."
+    correctAnswer: 1,
+    explanation: "The Wronskian is $W = y_1y_2' - y_1'y_2 = x^3(4x^3) - (3x^2)(x^4) = 4x^6 - 3x^6 = x^6$.\n\n$7x^6$ comes from adding the two cross products instead of subtracting them.\n\n$-x^6$ reverses the order of the subtraction, computing $y_1'y_2 - y_1y_2'$ instead.\n\n$x^7$ comes from multiplying $y_1$ and $y_2$ directly rather than forming the determinant of functions and derivatives."
   },
   {
     id: "mth302_ch4_017",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "What does $W(x_0) \\neq 0$ at some point $x_0$ of an interval tell you about $y_1$ and $y_2$?",
+    text: "For $y_1 = e^{2x}$ and $y_2 = e^{-3x}$, both solutions of $y'' + y' - 6y = 0$, what is $W(0)$, and what does it imply about whether $y_1$ and $y_2$ form a fundamental set?",
     options: [
-      "They are linearly independent on that interval and so form a fundamental set",
-      "They are linearly dependent",
-      "They both vanish at $x_0$",
-      "They solve different equations"
+      "$W(0) = 5$, which is nonzero, so $y_1$ and $y_2$ form a fundamental set",
+      "$W(0) = -4$, which is nonzero, so $y_1$ and $y_2$ form a fundamental set",
+      "$W(0) = -5$, which is nonzero, so $y_1$ and $y_2$ form a fundamental set",
+      "$W(0) = 0$, so $y_1$ and $y_2$ are linearly dependent"
     ],
-    correctAnswer: 0,
-    explanation: "A nonvanishing Wronskian at a single point of the interval certifies linear independence, so the pair forms a fundamental set and the general solution is their linear combination.\n\nLinear dependence corresponds to a Wronskian that is identically zero.\n\nNothing about $W(x_0) \\neq 0$ forces either function to vanish anywhere.\n\nThe Wronskian is computed for two solutions of the same equation, so it says nothing about different equations."
+    correctAnswer: 2,
+    explanation: "With $y_1' = 2e^{2x}$ and $y_2' = -3e^{-3x}$: $W = y_1y_2' - y_1'y_2 = e^{2x}(-3e^{-3x}) - 2e^{2x}(e^{-3x}) = -3e^{-x} - 2e^{-x} = -5e^{-x}$, so $W(0) = -5$. Since this is nonzero, $y_1$ and $y_2$ are linearly independent and form a fundamental set.\n\n$W(0) = 5$ comes from a sign error while combining the two cross products.\n\n$W(0) = -4$ comes from forgetting the coefficient $2$ when differentiating $y_1 = e^{2x}$, using $e^{2x}$ instead of $2e^{2x}$ for $y_1'$.\n\n$W(0) = 0$ would follow from omitting the derivatives in the second row of the determinant, which trivially makes every entry cancel and wrongly suggests dependence."
   },
   {
     id: "mth302_ch4_018",
@@ -327,43 +327,43 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_024",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "For a repeated characteristic root $r$, what is the general solution?",
+    text: "What is the general solution of $y'' - 6y' + 9y = 0$?",
     options: [
-      "$(C_1 + C_2x)e^{rx}$",
-      "$C_1e^{rx} + C_2e^{rx}$ with two separate constants",
-      "$C_1e^{rx} + C_2e^{-rx}$",
-      "$C_1e^{rx} + C_2xe^{2rx}$"
+      "$C_1e^{3x} + C_2e^{3x}$, adding two copies of the same exponential without the factor of $x$",
+      "$C_1e^{3x} + C_2e^{-3x}$, invented from a second root $-3$",
+      "$C_1e^{3x} + C_2xe^{6x}$, doubling the exponent in the second term",
+      "$(C_1 + C_2x)e^{3x}$, since the repeated root $r=3$ requires the extra factor of $x$"
     ],
-    correctAnswer: 0,
-    explanation: "A repeated root supplies only one exponential, and multiplying by $x$ produces the required second independent solution, giving $(C_1 + C_2x)e^{rx}$.\n\nWriting $C_1e^{rx} + C_2e^{rx}$ adds two copies of the same function, so it collapses to a single constant times $e^{rx}$ and is not a general solution.\n\nIntroducing $e^{-rx}$ invents a second root that the characteristic equation does not have.\n\nDoubling the exponent in the second term does not solve the equation."
+    correctAnswer: 3,
+    explanation: "The characteristic equation $r^2 - 6r + 9 = (r-3)^2 = 0$ has the repeated root $r=3$, and a repeated root requires the extra factor of $x$ on the second term, giving $(C_1+C_2x)e^{3x}$.\n\n$C_1e^{3x}+C_2e^{3x}$ adds two copies of the identical function, which collapses to a single constant times $e^{3x}$ rather than supplying a second independent solution.\n\n$C_1e^{3x}+C_2e^{-3x}$ invents a second root $-3$ that this repeated-root characteristic equation does not have.\n\n$C_1e^{3x}+C_2xe^{6x}$ doubles the exponent in the second term instead of reusing the repeated root $3$."
   },
   {
     id: "mth302_ch4_025",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "Why is $C_1e^{rx} + C_2e^{rx}$ not a general solution for a repeated root?",
+    text: "For $y'' - 8y' + 16y = 0$, why does $y = C_1e^{4x} + C_2e^{4x}$ fail to be the general solution, even though it does satisfy the differential equation?",
     options: [
-      "The two terms are the same function, so they are not independent",
-      "The constants must be equal in that expression",
-      "It fails to satisfy the differential equation at all",
-      "It contains only one arbitrary constant"
+      "The two terms are the same function $e^{4x}$, so $C_1e^{4x}+C_2e^{4x}$ collapses to one arbitrary constant times $e^{4x}$ and cannot span a two-dimensional solution space",
+      "It does not actually satisfy $y'' - 8y' + 16y = 0$ for any choice of $C_1$ and $C_2$",
+      "The constants $C_1$ and $C_2$ are forced to be equal to each other",
+      "It is written with only one arbitrary constant, when a second-order equation needs two"
     ],
     correctAnswer: 0,
-    explanation: "Both terms are multiples of the identical function $e^{rx}$, so together they span only a one-dimensional space and cannot form a fundamental set.\n\nNothing forces the constants to be equal; the problem is that their combination collapses to a single constant.\n\nThe expression does satisfy the equation, which is exactly why the error is tempting.\n\nIt is written with two constants, but they are not independent, which is the real defect."
+    explanation: "Substituting $y=e^{4x}$ confirms it solves $y''-8y'+16y=0$, since $16e^{4x}-8(4e^{4x})+16e^{4x}=16e^{4x}-32e^{4x}+16e^{4x}=0$; this matches the double root of the characteristic equation $r^2-8r+16=(r-4)^2=0$. But $C_1e^{4x}+C_2e^{4x}=(C_1+C_2)e^{4x}$ is just a single effective constant times $e^{4x}$, spanning only a one-dimensional family, so it cannot be the two-parameter general solution; the correct second term needs the extra factor of $x$, giving $(C_1+C_2x)e^{4x}$.\n\nThe expression does satisfy the differential equation for every choice of $C_1$ and $C_2$, which is exactly why the error is tempting; the defect is independence, not whether it solves the equation.\n\nNothing forces $C_1$ and $C_2$ to be equal; any pair of values simply combines into the single effective constant $C_1+C_2$.\n\nIt is written with two constant symbols, not one; the real defect is that those two symbols are not independent of each other, not that there is only one of them."
   },
   {
     id: "mth302_ch4_026",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "For complex roots $r = \\alpha \\pm i\\beta$, what is the general solution?",
+    text: "What is the general solution of $y'' - 2y' + 10y = 0$?",
     options: [
-      "$e^{\\alpha x}(C_1\\cos \\beta x + C_2\\sin \\beta x)$",
-      "$e^{\\beta x}(C_1\\cos \\alpha x + C_2\\sin \\alpha x)$",
-      "$e^{\\alpha x}(C_1\\cos \\alpha x + C_2\\sin \\beta x)$",
-      "$C_1e^{\\alpha x} + C_2e^{\\beta x}$"
+      "$e^{3x}(C_1\\cos x + C_2\\sin x)$, swapping the real and imaginary parts",
+      "$e^{x}(C_1\\cos 3x + C_2\\sin 3x)$, from the roots $1 \\pm 3i$",
+      "$e^{x}(C_1\\cos x + C_2\\sin 3x)$, mixing the real part into one trig argument and the imaginary part into the other",
+      "$C_1e^{x} + C_2e^{3x}$, treating the roots as two distinct real roots"
     ],
-    correctAnswer: 0,
-    explanation: "The real part $\\alpha$ supplies the exponential factor and the imaginary part $\\beta$ supplies the frequency, giving $e^{\\alpha x}(C_1\\cos \\beta x + C_2\\sin \\beta x)$.\n\nSwapping the roles so that $\\beta$ sits in the exponential is the classic distractor for this form.\n\nMixing $\\alpha$ into one trigonometric argument and $\\beta$ into the other is inconsistent.\n\nTwo separate real exponentials correspond to distinct real roots, not to a complex pair."
+    correctAnswer: 1,
+    explanation: "The quadratic formula gives $r = \\dfrac{2 \\pm \\sqrt{4-40}}{2} = 1 \\pm 3i$, so the real part $1$ supplies the exponential factor $e^{x}$ and the imaginary part $3$ supplies the oscillation frequency, giving $e^{x}(C_1\\cos 3x + C_2\\sin 3x)$.\n\n$e^{3x}(C_1\\cos x + C_2\\sin x)$ swaps the roles of the real part and the imaginary part, a very common error.\n\n$e^{x}(C_1\\cos x + C_2\\sin 3x)$ mixes the real part into one trig argument and the imaginary part into the other, when both trig arguments must use the same imaginary part.\n\n$C_1e^{x} + C_2e^{3x}$ wrongly assumes two distinct real roots, but the roots here are complex."
   },
   {
     id: "mth302_ch4_027",
@@ -383,29 +383,29 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_028",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "In reduction of order, which substitution is made when one solution $y_1$ is already known?",
+    text: "Given that $y_1 = e^{-x}$ solves $y'' + 2y' + y = 0$, reduction of order sets $y = v(x)e^{-x}$ and $z = v'(x)$. After substituting $y=ve^{-x}$ into the equation and simplifying, what first-order equation does $z$ satisfy?",
     options: [
-      "$y = v(x)y_1$",
-      "$y = v(x) + y_1$",
-      "$y = v(x)/y_1$",
-      "$y = e^{v(x)}y_1$"
+      "$z' + 2z = 0$, keeping only the coefficient of $y'$ from the equation and forgetting the contribution from $y_1$",
+      "$z' - 2z = 0$, keeping only the contribution from $y_1$ and dropping the coefficient of $y'$ entirely",
+      "$z' = 0$",
+      "$z' - 4z = 0$, combining the two contributions with the wrong sign on the coefficient of $y'$"
     ],
-    correctAnswer: 0,
-    explanation: "Writing $y = v(x)y_1$ and setting $z = v'$ reduces the second-order equation to a first-order equation in $z$.\n\nAdding $v$ to $y_1$ does not produce the cancellation that makes the method work.\n\nDividing by $y_1$ is not the standard substitution and fails wherever $y_1$ vanishes.\n\nPlacing $v$ in an exponent is not the form that leads to the reduction."
+    correctAnswer: 2,
+    explanation: "With $y = ve^{-x}$: $y' = v'e^{-x} - ve^{-x}$ and $y'' = v''e^{-x} - 2v'e^{-x} + ve^{-x}$. Substituting into $y''+2y'+y=0$: $(v''e^{-x}-2v'e^{-x}+ve^{-x}) + 2(v'e^{-x}-ve^{-x}) + ve^{-x} = v''e^{-x} + 0\\cdot v'e^{-x} + 0\\cdot ve^{-x} = 0$, so $v''e^{-x}=0$ and, since $e^{-x}\\neq 0$, $v''=0$. With $z=v'$, this is $z'=0$, which is exactly why the repeated root $r=-1$ of $y''+2y'+y=0$ leads to a second solution of the form $xe^{-x}$: $z'=0$ gives $z=$ constant, so $v$ is linear in $x$.\n\n$z' + 2z = 0$ keeps only the coefficient $2$ from the original equation's $y'$ term and forgets the contribution $2y_1'/y_1 = -2$ coming from $y_1$, which exactly cancels it here.\n\n$z' - 2z = 0$ keeps only the contribution from $y_1$ and drops the equation's coefficient of $y'$ entirely, missing the cancellation.\n\n$z' - 4z = 0$ combines the two contributions with the wrong sign, adding their magnitudes instead of letting them cancel."
   },
   {
     id: "mth302_ch4_029",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "What is the reduction-of-order formula for the second solution?",
+    text: "Given that $y_1 = x^{-2}$ solves $x^2y'' + 5xy' + 4y = 0$ for $x > 0$, what is a second independent solution obtained by reduction of order?",
     options: [
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{+\\int P\\,dx}}{y_{1}^{2}}\\,dx$",
-      "$y_2 = y_1\\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_1}\\,dx$",
-      "$y_2 = \\displaystyle\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$"
+      "$x^{-2}$, which merely repeats the known solution $y_1$",
+      "$x^2\\ln x$, obtained by dropping the minus sign when forming $e^{-\\int P\\,dx}$",
+      "$\\ln x$, omitting the required multiplication by $y_1 = x^{-2}$",
+      "$x^{-2}\\ln x$, since integrating gives $y_2 = x^{-2}\\int (1/x)\\,dx$"
     ],
-    correctAnswer: 0,
-    explanation: "The derivation gives $y_2 = y_1\\int \\dfrac{e^{-\\int P\\,dx}}{y_{1}^{2}}\\,dx$, with the known solution both multiplying the integral and squared inside it.\n\nA positive exponent reverses the sign that the integrating factor supplies.\n\nUsing $y_1$ rather than $y_{1}^{2}$ in the denominator drops a factor from the derivation.\n\nOmitting the outer factor $y_1$ leaves an expression that does not solve the equation."
+    correctAnswer: 3,
+    explanation: "Standardizing by dividing through by $x^2$ gives $y'' + \\dfrac{5}{x}y' + \\dfrac{4}{x^2}y = 0$, so $P = 5/x$ and $e^{-\\int P\\,dx} = e^{-5\\ln x} = x^{-5}$. The reduction of order formula gives $y_2 = y_1\\displaystyle\\int \\dfrac{x^{-5}}{y_1^2}\\,dx = x^{-2}\\displaystyle\\int \\dfrac{x^{-5}}{x^{-4}}\\,dx = x^{-2}\\displaystyle\\int \\dfrac{dx}{x} = x^{-2}\\ln x$. This is the Euler-equation analogue of a repeated root: the characteristic-type equation $m(m-1)+5m+4=(m+2)^2=0$ has the double root $m=-2$, and just as a repeated root $r$ picks up an extra factor of $x$ in the constant-coefficient case, a repeated Euler root $m$ picks up an extra factor of $\\ln x$.\n\n$x^{-2}$ is just the known solution $y_1$ repeated and is not independent of itself.\n\n$x^2\\ln x$ comes from dropping the minus sign when forming $e^{-\\int P\\,dx}$, which flips $x^{-5}$ into $x^{5}$ and changes the sign of the power of $x$ in the final answer.\n\n$\\ln x$ alone omits the required multiplication by $y_1 = x^{-2}$."
   },
   {
     id: "mth302_ch4_030",
@@ -453,15 +453,15 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_033",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "Two solutions form a fundamental set precisely when which condition holds?",
+    text: "For $y'' - y = 0$, which of the following pairs is a fundamental set of solutions?",
     options: [
-      "They are linearly independent",
-      "They both vanish somewhere",
-      "Their sum is zero",
-      "They have the same derivative"
+      "$e^{x}$ and $e^{-x}$",
+      "$e^{x}$ and $5e^{x}$, scalar multiples of the same function",
+      "$\\sinh x$ and $2\\sinh x$, scalar multiples of the same function",
+      "$e^{x}$ and $xe^{x}$, using the repeated-root pattern for an equation with distinct roots"
     ],
     correctAnswer: 0,
-    explanation: "A fundamental set is a linearly independent pair, which is what allows every solution to be written as a linear combination of the two.\n\nVanishing somewhere is irrelevant to independence.\n\nA vanishing sum would make the two solutions dependent.\n\nEqual derivatives would force the solutions to differ by a constant, which does not give independence for this purpose."
+    explanation: "The equation $y''-y=0$ has characteristic roots $r=\\pm 1$, so $e^x$ and $e^{-x}$ solve it. Computing $W(e^x,e^{-x}) = e^x(-e^{-x}) - e^x(e^{-x}) = -1-1=-2$, which is never zero, confirms they form a fundamental set.\n\n$e^x$ and $5e^x$ are scalar multiples of the same function, so their Wronskian is identically zero and they are linearly dependent, not a fundamental set.\n\n$\\sinh x$ and $2\\sinh x$ are likewise scalar multiples of each other, even though $\\sinh x$ itself solves the equation.\n\n$e^x$ and $xe^x$ fails for a different reason: substituting $xe^x$ into $y''-y$ gives $2e^x$, not zero, so $xe^x$ is not even a solution here; the extra factor of $x$ only arises for a repeated root, and this equation has two distinct real roots $\\pm 1$."
   },
   {
     id: "mth302_ch4_034",
@@ -551,15 +551,15 @@ const mth302Chapter4: QuestionV2[] = [
     id: "mth302_ch4_040",
     course: "MTH 302",
     chapter: "Chapter 4",
-    text: "Two solutions of a second-order homogeneous linear equation have $W \\equiv 0$ on an interval. What follows?",
+    text: "For solutions of $y'' + \\dfrac{1}{x}y' + q(x)y = 0$ on $x > 0$, the Wronskian satisfies $W(3) = 0$. Using Abel's theorem, what is $W(10)$, and what does this imply about the two solutions?",
     options: [
-      "They are linearly dependent there",
-      "They are linearly independent there",
-      "They form a fundamental set",
-      "One of them must be identically zero"
+      "$W(10)$ cannot be determined without knowing $q(x)$, so no relationship between $W(3)$ and $W(10)$ exists",
+      "$W(10) = 0$, so the two solutions are linearly dependent on the interval",
+      "$W(10) = 0$, so the two solutions are linearly independent on the interval",
+      "$W(10) = 0$, but a Wronskian vanishing at a single point permits no conclusion about independence"
     ],
-    correctAnswer: 0,
-    explanation: "By Abel's theorem the Wronskian is either identically zero or never zero, and the vanishing case corresponds to linear dependence.\n\nIndependence is certified by a nonzero Wronskian, not a vanishing one.\n\nA fundamental set requires independence, which fails here.\n\nDependence means one is a constant multiple of the other, which does not force either to vanish identically."
+    correctAnswer: 1,
+    explanation: "Abel's theorem gives $W(x) = Ce^{-\\int (1/x)\\,dx} = Ce^{-\\ln x} = C/x$. Since $1/x$ is never zero for $x>0$, the only way $W(3)=C/3$ can equal zero is if $C=0$, which forces $W(x)=0$ for every $x$ in the domain, including $W(10)=0$; two solutions of the same linear equation with an identically zero Wronskian are linearly dependent.\n\nClaiming $W(10)$ needs $q(x)$ ignores that Abel's theorem is built entirely from $p(x)$, the coefficient of $y'$; $q(x)$ never enters the formula.\n\n$W(10)=0$ paired with a claim of independence reverses the correct conclusion: a vanishing Wronskian signals dependence, not independence.\n\nClaiming that a single vanishing point permits no conclusion ignores exactly what Abel's theorem guarantees: because $W$ is a constant multiple of a nonvanishing exponential, it is either identically zero everywhere or nowhere zero, so one zero forces all zeros."
   }
 ];
 

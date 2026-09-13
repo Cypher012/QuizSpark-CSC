@@ -47,15 +47,15 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_004",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "Which method is appropriate for solving $y'' + y = \\tan x$ on the interval $0 < x < \\pi/2$?",
+    text: "For $y'' + y = \\tan x$ on $0 < x < \\pi/2$, solved by variation of parameters with $y_1 = \\cos x$, $y_2 = \\sin x$, and Wronskian $W = y_1y_2' - y_1'y_2 = 1$, the formula for $y_p$ requires the integral $\\int \\dfrac{y_1 g}{W}\\,dx$ where $g(x) = \\tan x$ is the forcing term in standard form. What is this integral, up to a constant?",
     options: [
-      "Undetermined coefficients, which needs a closed family",
-      "The characteristic equation alone",
-      "Separation of variables",
-      "Variation of parameters"
+      "$-\\cos x$",
+      "$\\cos x$, with the sign flipped",
+      "$x$",
+      "$-\\sin x$, the derivative rather than the antiderivative"
     ],
-    correctAnswer: 3,
-    explanation: "$\\tan x$ is not an exponential, polynomial, sine, cosine, or a finite combination of these, so it has no finite trial family and undetermined coefficients cannot be applied. Variation of parameters works for any continuous forcing term, making it the appropriate method here.\n\nUndetermined coefficients fails precisely because $\\tan x$ falls outside the finite set of forcing functions that method can handle.\n\nThe characteristic equation alone only produces the complementary solution, not a particular solution for a nonhomogeneous equation.\n\nSeparation of variables applies to certain first-order equations, not to this linear second-order nonhomogeneous equation."
+    correctAnswer: 0,
+    explanation: "Since $y_1 = \\cos x$, the integrand simplifies first: $y_1g/W = \\cos x\\tan x/1 = \\cos x \\cdot \\dfrac{\\sin x}{\\cos x} = \\sin x$, and $\\int \\sin x\\,dx = -\\cos x + C$.\n\n$\\cos x$ has the sign flipped from the correct antiderivative of $\\sin x$.\n\n$x$ comes from mistakenly treating $\\tan x$ as $\\sec x$, so that $\\cos x\\sec x$ simplifies to $1$ instead of $\\sin x$, and integrating $1$ gives $x$.\n\n$-\\sin x$ is the derivative of $\\cos x$, not its antiderivative; differentiating instead of integrating is the underlying error."
   },
   {
     id: "mth302_ch5_005",
@@ -103,71 +103,71 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_008",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "The general solution of a nonhomogeneous linear equation has which structure?",
+    text: "For $y'' - 4y = 8x^2$, the characteristic equation gives $y_c = C_1e^{2x} + C_2e^{-2x}$, and substituting the trial $y_p = ax^2 + bx + c$ gives $-4ax^2 - 4bx + (2a - 4c) = 8x^2$. Using the structure $y = y_c + y_p$, what is the general solution?",
     options: [
-      "$y = y_c + y_p$, the complementary function plus any one particular solution",
-      "$y = y_cy_p$",
-      "$y = y_c - y_p$",
-      "$y = y_p$ alone"
+      "$y = C_1e^{2x} + C_2e^{-2x} - 2x^2 - 1$",
+      "$y = C_1e^{2x} + C_2e^{-2x} + 2x^2 + 1$, reversing the sign of every term",
+      "$y = -2x^2 - 1$",
+      "$y = C_1e^{2x} + C_2e^{-2x} - 2x^2$, dropping the constant term found from $2a-4c=0$"
     ],
     correctAnswer: 0,
-    explanation: "The general solution is the complementary function $y_c$, carrying both arbitrary constants, added to any single particular solution $y_p$ of the full equation.\n\nMultiplying the two pieces does not satisfy a linear equation.\n\nSubtracting $y_p$ would leave the forcing term unmatched.\n\nTaking $y_p$ alone drops the arbitrary constants and so is not a general solution."
+    explanation: "Matching coefficients: $-4a = 8$ gives $a = -2$; $-4b = 0$ gives $b = 0$; $2a - 4c = 0$ gives $c = a/2 = -1$, so $y_p = -2x^2 - 1$. The general solution keeps the complementary function together with this particular solution, $y = C_1e^{2x} + C_2e^{-2x} - 2x^2 - 1$, since $y = y_c + y_p$ always keeps both pieces together.\n\n$y = C_1e^{2x} + C_2e^{-2x} + 2x^2 + 1$ reverses the sign of every term in $y_p$.\n\n$y = -2x^2 - 1$ drops the complementary function entirely, leaving no arbitrary constants even though this is supposed to be a general solution.\n\n$y = C_1e^{2x} + C_2e^{-2x} - 2x^2$ loses the constant term $c = -1$ found from $2a - 4c = 0$."
   },
   {
     id: "mth302_ch5_009",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "For forcing term $G(x) = e^{ax}$ with $e^{ax}$ not in $y_c$, what is the trial particular solution?",
+    text: "For $y'' - 5y' + 6y = 6e^{4x}$, the characteristic roots are $2$ and $3$, so $e^{4x}$ does not appear in $y_c$. Using the trial $y_p = Ae^{4x}$, substitution gives $(16A - 20A + 6A)e^{4x} = 6e^{4x}$. What is $y_p$?",
     options: [
-      "$Ae^{ax}$",
-      "$Axe^{ax}$ with the extra factor included from the start",
-      "$Ae^{ax} + B$ with a constant added alongside",
-      "$Aa e^{x}$ using the exponent as a coefficient"
+      "$3e^{4x}$",
+      "$6e^{4x}$, copying the forcing coefficient directly",
+      "$-3e^{4x}$, with the sign of $A$ reversed",
+      "$3xe^{4x}$, wrongly treating this as a resonance case"
     ],
     correctAnswer: 0,
-    explanation: "An exponential forcing term calls for an exponential trial of the same rate, so $Ae^{ax}$ is used when it does not duplicate anything in $y_c$.\n\nThe extra factor $x$ is introduced only when resonance occurs.\n\nAdding a constant is unnecessary unless the forcing term itself contains one.\n\nMoving $a$ out of the exponent changes the function entirely."
+    explanation: "Simplifying gives $2Ae^{4x} = 6e^{4x}$, so $A = 3$ and $y_p = 3e^{4x}$, with no factor of $x$ needed since $4$ is not a characteristic root.\n\n$6e^{4x}$ copies the forcing coefficient directly instead of solving $2A=6$ for $A$.\n\n$-3e^{4x}$ has the sign of $A$ reversed.\n\n$3xe^{4x}$ wrongly introduces a resonance factor of $x$, but $e^{4x}$ does not duplicate either $e^{2x}$ or $e^{3x}$ in $y_c$."
   },
   {
     id: "mth302_ch5_010",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "For a polynomial forcing term of degree $n$, what trial form is used?",
+    text: "For $y'' - y = x^3$, using the full polynomial trial $y_p = ax^3 + bx^2 + cx + d$, substitution gives $-ax^3 - bx^2 + (6a - c)x + (2b - d) = x^3$. What are the coefficients?",
     options: [
-      "A complete polynomial $A_nx^n + \\cdots + A_1x + A_0$ with no missing powers",
-      "Only the single term $A_nx^n$",
-      "A polynomial of degree $n + 1$",
-      "The term $A_nx^n$ together with a constant"
+      "$a=-1,\\ b=0,\\ c=-6,\\ d=0$",
+      "$a=-1,\\ b=0,\\ c=0,\\ d=0$, leaving the linear term from $6a$ unmatched",
+      "$a=1,\\ b=0,\\ c=6,\\ d=0$, reversing the sign of every nonzero coefficient",
+      "$a=-1,\\ b=0,\\ c=6,\\ d=0$"
     ],
     correctAnswer: 0,
-    explanation: "Every power from $x^n$ down to the constant must be included, because differentiation mixes the powers and the lower coefficients are generally nonzero.\n\nKeeping only the leading term leaves too few coefficients to match the equation.\n\nRaising the degree adds an unnecessary coefficient that will vanish.\n\nIncluding only the top term and a constant leaves gaps in the intermediate powers."
+    explanation: "Matching $x^3$ gives $-a=1$ so $a=-1$; matching $x^2$ gives $-b=0$ so $b=0$; matching $x$ gives $6a-c=0$ so $c=6a=-6$; matching constants gives $2b-d=0$ so $d=0$.\n\n$a=-1,\\ b=0,\\ c=0,\\ d=0$ ignores the linear term generated by $6a$ and leaves $c$ unmatched.\n\n$a=1,\\ b=0,\\ c=6,\\ d=0$ reverses the sign of every nonzero coefficient.\n\n$a=-1,\\ b=0,\\ c=6,\\ d=0$ keeps $a$ correct but gets the sign of $c$ backwards."
   },
   {
     id: "mth302_ch5_011",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "For forcing term $\\sin bx$, what is the correct trial form?",
+    text: "For $y'' + 4y = 3\\sin 3x$, the trial $y_p = A\\cos 3x + B\\sin 3x$ gives, after substitution, $-5A\\cos 3x - 5B\\sin 3x = 3\\sin 3x$. What is $y_p$?",
     options: [
-      "$A\\cos bx + B\\sin bx$",
-      "$B\\sin bx$ only, matching the forcing term exactly",
-      "$A\\cos bx$ only, using the derivative of the forcing term",
-      "$Ae^{bx}$, converting the sine to an exponential"
+      "$-\\dfrac{3}{5}\\sin 3x$",
+      "$\\dfrac{3}{5}\\sin 3x$",
+      "$-\\dfrac{3}{5}\\cos 3x$, assigning the coefficient to the wrong trig term",
+      "$-\\dfrac{3}{5}x\\sin 3x$, wrongly inserting a resonance factor of $x$"
     ],
     correctAnswer: 0,
-    explanation: "Differentiating a sine produces a cosine, so both trigonometric terms must be present even when only one appears in the forcing term.\n\nUsing only the sine leaves no term to match the cosine generated by differentiation.\n\nUsing only the cosine has the same defect in reverse.\n\nAn exponential trial cannot reproduce an oscillating forcing term."
+    explanation: "Matching cosine terms gives $-5A=0$ so $A=0$; matching sine terms gives $-5B=3$ so $B=-3/5$, giving $y_p = -\\dfrac{3}{5}\\sin 3x$.\n\n$\\dfrac{3}{5}\\sin 3x$ has the sign of $B$ reversed.\n\n$-\\dfrac{3}{5}\\cos 3x$ assigns the solved coefficient to the wrong trigonometric term, when $A$ was found to be $0$.\n\n$-\\dfrac{3}{5}x\\sin 3x$ wrongly applies a resonance factor of $x$, but the roots $\\pm 2i$ do not match the forcing frequency $3$."
   },
   {
     id: "mth302_ch5_012",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "What is done when a term in the trial solution already appears in $y_c$?",
+    text: "For $y'' - 4y' + 4y = 5e^{2x}$, the repeated root $r=2$ gives $y_c = C_1e^{2x} + C_2xe^{2x}$, so both $e^{2x}$ and $xe^{2x}$ already appear in $y_c$. Using the correctly modified trial $y_p = Ax^2e^{2x}$, substitution gives $2Ae^{2x} = 5e^{2x}$. What is $y_p$?",
     options: [
-      "Multiply the whole trial by $x$, repeating if necessary",
-      "Discard that term from the trial",
-      "Replace the trial with a constant",
-      "Add a constant to the trial"
+      "$\\dfrac{5}{2}x^2e^{2x}$",
+      "$5x^2e^{2x}$, copying the forcing coefficient directly",
+      "$\\dfrac{5}{2}xe^{2x}$, using only one factor of $x$",
+      "$-\\dfrac{5}{2}x^2e^{2x}$, with the sign of $A$ reversed"
     ],
     correctAnswer: 0,
-    explanation: "Duplication with $y_c$ makes the trial collapse to zero in the equation, and multiplying the entire trial by $x$, repeated if the duplication persists, restores a usable form.\n\nDiscarding the term leaves nothing to match the forcing.\n\nA constant trial cannot reproduce the forcing term in general.\n\nAdding a constant does not remove the duplication."
+    explanation: "Since both $e^{2x}$ and $xe^{2x}$ duplicate terms in $y_c$, the trial is multiplied by $x$ twice, giving $Ax^2e^{2x}$; solving $2A=5$ gives $A=\\dfrac{5}{2}$.\n\n$5x^2e^{2x}$ copies the forcing coefficient directly instead of solving $2A=5$.\n\n$\\dfrac{5}{2}xe^{2x}$ uses only one factor of $x$, as if the root were simple rather than repeated.\n\n$-\\dfrac{5}{2}x^2e^{2x}$ has the sign of $A$ reversed."
   },
   {
     id: "mth302_ch5_013",
@@ -201,15 +201,15 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_015",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "For a double characteristic root $r$ with forcing $e^{rx}$, what trial is required?",
+    text: "For $y'' - 6y' + 9y = 4e^{3x}$, the characteristic equation has the repeated root $r=3$, so $y_c = C_1e^{3x} + C_2xe^{3x}$. Using the correctly modified trial $y_p = Ax^2e^{3x}$, substitution gives $2Ae^{3x} = 4e^{3x}$. What is $y_p$?",
     options: [
-      "$Ax^2e^{rx}$",
-      "$Ae^{rx}$ with no correcting factor",
-      "$Axe^{rx}$",
-      "$Ax^3e^{rx}$"
+      "$2x^2e^{3x}$",
+      "$4x^2e^{3x}$, copying the forcing coefficient directly",
+      "$2xe^{3x}$, using only one factor of $x$",
+      "$2x^2e^{-3x}$"
     ],
     correctAnswer: 0,
-    explanation: "Both $e^{rx}$ and $xe^{rx}$ already lie in $y_c$ for a double root, so the trial must be multiplied by $x$ twice, giving $Ax^2e^{rx}$.\n\nThe bare exponential duplicates $y_c$ immediately.\n\nOne factor of $x$ still duplicates the second member of $y_c$.\n\nThree factors overshoot, introducing an unnecessary power."
+    explanation: "Solving $2A=4$ gives $A=2$, so $y_p = 2x^2e^{3x}$, with the factor $x^2$ needed because the root $r=3$ is repeated.\n\n$4x^2e^{3x}$ copies the forcing coefficient directly instead of solving $2A=4$.\n\n$2xe^{3x}$ uses only one factor of $x$, as if $r=3$ were a simple root instead of a repeated one.\n\n$2x^2e^{-3x}$ has the wrong sign in the exponent, mismatching the repeated root $r=3$."
   },
   {
     id: "mth302_ch5_016",
@@ -229,29 +229,29 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_017",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "What is the variation-of-parameters formula for $y_p$?",
+    text: "For $y'' - y = \\dfrac{e^x}{x}$ on $x>0$, solved by variation of parameters with $y_1=e^x$, $y_2=e^{-x}$, and Wronskian $W=y_1y_2'-y_1'y_2=-2$, the formula for $y_p$ requires the integral $\\int \\dfrac{y_2g}{W}\\,dx$, where $g(x)=e^x/x$ is the forcing term. What is this integral, up to a constant?",
     options: [
-      "$-y_1\\displaystyle\\int \\dfrac{y_2g}{W}\\,dx + y_2\\displaystyle\\int \\dfrac{y_1g}{W}\\,dx$",
-      "$y_1\\displaystyle\\int \\dfrac{y_2g}{W}\\,dx + y_2\\displaystyle\\int \\dfrac{y_1g}{W}\\,dx$",
-      "$-y_1\\displaystyle\\int \\dfrac{y_2g}{W}\\,dx - y_2\\displaystyle\\int \\dfrac{y_1g}{W}\\,dx$",
-      "$\\displaystyle\\int \\dfrac{y_1y_2g}{W}\\,dx$"
+      "$-\\dfrac{1}{2}\\ln x$",
+      "$\\dfrac{1}{2}\\ln x$, with the sign flipped from the negative Wronskian",
+      "$-2\\ln x$, multiplying by $W$ instead of dividing",
+      "$-\\dfrac{1}{2}x$"
     ],
     correctAnswer: 0,
-    explanation: "Solving the two imposed conditions by Cramer's rule gives the stated formula, with the minus sign attached to the first integral only.\n\nDropping the minus sign reverses one of the two contributions.\n\nAttaching minus signs to both terms overcorrects.\n\nA single combined integral does not arise from the two-condition system."
+    explanation: "The integrand simplifies to $y_2g/W = e^{-x}(e^x/x)/(-2) = -\\dfrac{1}{2x}$, and $\\int -\\dfrac{1}{2x}\\,dx = -\\dfrac{1}{2}\\ln x + C$ for $x>0$.\n\n$\\dfrac{1}{2}\\ln x$ has the sign flipped, from mishandling the negative Wronskian.\n\n$-2\\ln x$ multiplies by $W=-2$ instead of dividing by it.\n\n$-\\dfrac{1}{2}x$ mistakes $\\int \\dfrac{1}{x}\\,dx$ for $\\int 1\\,dx$, dropping the logarithm."
   },
   {
     id: "mth302_ch5_018",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "In the variation-of-parameters formula, what is $W$?",
+    text: "For the homogeneous solutions $y_1=\\cos 3x$ and $y_2=\\sin 3x$ of $y''+9y=0$, what is the Wronskian $W=y_1y_2'-y_1'y_2$ used in the variation-of-parameters formula?",
     options: [
-      "$y_1y_2' - y_1'y_2$",
-      "$y_1y_2' + y_1'y_2$",
-      "$y_1y_2$, the plain product of the solutions",
-      "$y_1' y_2'$"
+      "$3$",
+      "$-3$",
+      "$\\cos^2 3x - \\sin^2 3x$",
+      "$9$"
     ],
     correctAnswer: 0,
-    explanation: "The denominator is the Wronskian of the fundamental set, namely $y_1y_2' - y_1'y_2$.\n\nA sum rather than a difference is not the determinant.\n\nThe plain product of the solutions is not the Wronskian.\n\nThe product of the derivatives alone omits the functions themselves."
+    explanation: "Here $y_1'=-3\\sin 3x$ and $y_2'=3\\cos 3x$, so $W = \\cos 3x(3\\cos 3x) - (-3\\sin 3x)(\\sin 3x) = 3\\cos^2 3x + 3\\sin^2 3x = 3$.\n\n$-3$ comes from a sign error in the term $y_1'y_2$.\n\n$\\cos^2 3x - \\sin^2 3x$ stops before applying the Pythagorean identity to reduce the expression to the constant $3$.\n\n$9$ mistakes the coefficient in the equation $y''+9y=0$ for the value of the Wronskian."
   },
   {
     id: "mth302_ch5_019",
@@ -271,29 +271,29 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_020",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "Which advantage does variation of parameters have over undetermined coefficients?",
+    text: "For $y'' - y' = \\dfrac{1}{1+e^x}$, the complementary solutions are $y_1=1$ and $y_2=e^x$, giving Wronskian $W=y_1y_2'-y_1'y_2=e^x$. Since $g(x)=\\dfrac{1}{1+e^x}$ cannot be matched by any finite trial family, variation of parameters must be used instead of undetermined coefficients. What is $c_2'(x) = \\dfrac{y_1g}{W}$?",
     options: [
-      "It works for any continuous $g$ and for variable coefficients",
-      "It requires no integration at all",
-      "It avoids the need for a fundamental set",
-      "It applies only to constant coefficients"
+      "$\\dfrac{1}{e^x(1+e^x)}$",
+      "$\\dfrac{e^x}{1+e^x}$, multiplying by $W$ instead of dividing by it",
+      "$\\dfrac{1}{1+e^x}$, omitting the Wronskian entirely",
+      "$-\\dfrac{1}{e^x(1+e^x)}$, mixing up the sign meant for $c_1'$"
     ],
     correctAnswer: 0,
-    explanation: "Undetermined coefficients needs constant coefficients and a forcing term from a restricted family, whereas variation of parameters handles any continuous $g$, which is why it is the method for $\\tan x$, $\\sec x$, $\\ln x$, and $1/x$.\n\nThe method is built on integrals, so it certainly requires integration.\n\nA fundamental set is exactly what the formula needs as input.\n\nRestricting to constant coefficients describes the weaker method, not this one."
+    explanation: "Substituting $y_1=1$ and $W=e^x$ gives $c_2' = \\dfrac{1\\cdot g}{e^x} = \\dfrac{1}{e^x(1+e^x)}$.\n\n$\\dfrac{e^x}{1+e^x}$ multiplies by $W$ instead of dividing by it.\n\n$\\dfrac{1}{1+e^x}$ omits the Wronskian entirely, as if $W$ were $1$.\n\n$-\\dfrac{1}{e^x(1+e^x)}$ introduces a sign that belongs to the formula for $c_1'$, not $c_2'$."
   },
   {
     id: "mth302_ch5_021",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "Which forcing term makes undetermined coefficients inapplicable?",
+    text: "For $y'' - 3y' - 10y = 7e^{5x}$, first find the characteristic roots to check whether resonance occurs. What is the correct particular solution $y_p$?",
     options: [
-      "$\\tan x$",
-      "$x^3$",
-      "$e^{2x}$",
-      "$\\sin 4x$"
+      "$xe^{5x}$",
+      "$e^{5x}$, failing to check for resonance at all",
+      "$7xe^{5x}$, using the forcing coefficient instead of solving for $A$",
+      "$x^2e^{5x}$"
     ],
     correctAnswer: 0,
-    explanation: "The trial families cover exponentials, polynomials, sines and cosines and their products, but repeated differentiation of $\\tan x$ never closes into a finite family.\n\nA polynomial is squarely within the admissible family.\n\nAn exponential is the simplest admissible case.\n\nA sine is admissible using the paired trigonometric trial."
+    explanation: "The characteristic equation $r^2-3r-10=(r-5)(r+2)=0$ has roots $5$ and $-2$, so $e^{5x}$ duplicates the root $r=5$ and the trial must be modified to $y_p=Axe^{5x}$; substituting shows the $x$-dependent terms cancel, leaving $7Ae^{5x}=7e^{5x}$, so $A=1$ and $y_p=xe^{5x}$.\n\n$e^{5x}$ fails to check for resonance: since $r=5$ satisfies the characteristic equation, this naive trial duplicates $y_c$ and is invalid, even though it looks like the obvious first guess.\n\n$7xe^{5x}$ correctly modifies the trial by $x$ but skips solving for the coefficient, using the forcing coefficient $7$ directly instead of the true value $A=1$.\n\n$x^2e^{5x}$ over-corrects by treating $r=5$ as a repeated root, when $(r-5)(r+2)=0$ shows the root is simple."
   },
   {
     id: "mth302_ch5_022",
@@ -327,15 +327,15 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_024",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "When applying initial conditions to a nonhomogeneous problem, to what are they applied?",
+    text: "Solve the initial value problem $y'' - y' - 6y = 4e^{-x}$ with $y(0)=0$ and $y'(0)=1$. The characteristic roots are $3$ and $-2$, giving $y_c = Ae^{3x}+Be^{-2x}$, and substituting $y_p=Ce^{-x}$ gives $C=-1$, so $y_p=-e^{-x}$. Applying the initial conditions correctly to the full solution $y=y_c+y_p$, what is the value of the constant $A$?",
     options: [
-      "The full solution $y_c + y_p$",
-      "The complementary function $y_c$ alone",
-      "The particular solution $y_p$ alone",
-      "The forcing term $g$"
+      "$\\dfrac{2}{5}$",
+      "$\\dfrac{1}{5}$, from applying both conditions to $y_c$ alone",
+      "$0$",
+      "$-\\dfrac{2}{5}$"
     ],
     correctAnswer: 0,
-    explanation: "The arbitrary constants live in $y_c$, but the conditions constrain the actual solution, so they must be imposed on the complete expression $y_c + y_p$.\n\nUsing $y_c$ alone ignores the contribution of $y_p$ at the initial point and is the standard slip.\n\nThe particular solution carries no arbitrary constants to determine.\n\nThe forcing term is data, not something conditions are applied to."
+    explanation: "Since $y_p(0)=-1$ and $y_p'(0)=1$, the conditions become $A+B-1=0$ and $3A-2B+1=1$, i.e. $A+B=1$ and $3A-2B=0$; solving gives $B=\\tfrac{3}{2}A$ and $A=\\tfrac{2}{5}$.\n\n$\\dfrac{1}{5}$ comes from applying both conditions to $y_c$ alone, using $A+B=0$ and $3A-2B=1$ and ignoring $y_p(0)$ and $y_p'(0)$ entirely, which is the standard slip on this type of problem.\n\n$0$ comes from ignoring $y_p(0)$ while still correctly including $y_p'(0)$, giving $A+B=0$ and $3A-2B=0$.\n\n$-\\dfrac{2}{5}$ comes from using the wrong sign for $y_p(0)$, treating it as $+1$ instead of $-1$, giving $A+B=-1$ and $3A-2B=0$."
   },
   {
     id: "mth302_ch5_025",
@@ -467,15 +467,15 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_034",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "Which condition must hold for undetermined coefficients to apply at all?",
+    text: "Consider $xy'' - y' = x^2$ for $x>0$. Attempting the standard undetermined-coefficients trial $y_p = ax^2+bx+c$, appropriate for a degree-2 forcing term, gives after substitution $xy_p'' - y_p' = -b$, which would have to equal $x^2$ for every $x$. This is impossible for any constant $b$. What does this demonstrate, and how should the equation actually be solved?",
     options: [
-      "The equation has constant coefficients",
-      "The equation is homogeneous",
-      "The equation is first order",
-      "The forcing term vanishes"
+      "Undetermined coefficients requires constant coefficients, which this equation lacks; since $y$ itself is missing, it should instead be solved by setting $p=y'$ and reducing to the first-order linear equation $xp'-p=x^2$",
+      "The trial needs an extra factor of $x$ to remove resonance, since $-b=x^2$ signals that the trial overlaps with the complementary solution",
+      "The contradiction is resolved by letting $b$ depend on $x$, so $b=x^2$ becomes an acceptable coefficient in undetermined coefficients",
+      "Variation of parameters should be used instead, taking $y_1=1$ and $y_2=e^x$ as the fundamental set of the homogeneous equation $xy''-y'=0$"
     ],
     correctAnswer: 0,
-    explanation: "The method assumes constant coefficients together with a forcing term built from exponentials, polynomials, sines and cosines.\n\nA homogeneous equation has no forcing term and so needs no particular solution.\n\nThe method is stated for second-order equations here, not restricted to first order.\n\nA vanishing forcing term would again make the problem homogeneous."
+    explanation: "The contradiction $-b=x^2$ arises because undetermined coefficients assumes constant coefficients, and here the coefficient of $y''$ is the variable $x$; since $y$ does not appear in the equation at all, the correct approach is the reduction $p=y'$, turning $xy''-y'=x^2$ into the first-order linear equation $xp'-p=x^2$, which can then be solved with an integrating factor.\n\nCalling this a resonance issue misreads the failure: resonance occurs when a trial term duplicates part of $y_c$, but here the trial fails structurally because $xy_p''$ is never quadratic in $x$ no matter what $b$ is.\n\nLetting $b$ vary with $x$ contradicts the entire premise of undetermined coefficients, which requires the trial's coefficients to be constants determined by matching, not functions of $x$.\n\n$y_1=1$ and $y_2=e^x$ solve the constant-coefficient equation $y''-y'=0$, not $xy''-y'=0$; the homogeneous equation here is itself missing $y$ and needs the same reduction technique, not a different pair of memorized solutions."
   },
   {
     id: "mth302_ch5_035",
@@ -509,29 +509,29 @@ const mth302Chapter5: QuestionV2[] = [
     id: "mth302_ch5_037",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "Which method should be used for $y'' + y = \\sec x$?",
+    text: "For $y'' + y = \\sec x$ on $-\\pi/2 < x < \\pi/2$, solved by variation of parameters with $y_1=\\cos x$, $y_2=\\sin x$, and $W=y_1y_2'-y_1'y_2=1$, the formula for $y_p$ requires the integral $\\int \\dfrac{y_1g}{W}\\,dx$ where $g(x)=\\sec x$ is the forcing term. What is this integral, up to a constant?",
     options: [
-      "Variation of parameters",
-      "Undetermined coefficients",
-      "Separation of variables",
-      "An integrating factor"
+      "$x$",
+      "$\\tan x$",
+      "$\\ln|\\sec x|$",
+      "$\\sec x$"
     ],
     correctAnswer: 0,
-    explanation: "The secant lies outside the exponential, polynomial and trigonometric family, so only variation of parameters applies.\n\nUndetermined coefficients cannot handle a forcing term whose derivatives never close into a finite family.\n\nSeparation of variables is a first-order technique.\n\nIntegrating factors belong to first-order linear equations."
+    explanation: "Since $y_1=\\cos x$, the integrand simplifies to $y_1g/W = \\cos x\\sec x/1 = 1$, and $\\int 1\\,dx = x + C$.\n\n$\\tan x$ confuses $\\cos x\\sec x$, which simplifies to $1$, with $\\sin x\\sec x$, which simplifies to $\\tan x$.\n\n$\\ln|\\sec x|$ computes the other integral in the formula, $\\int y_2g/W\\,dx = \\int \\sin x\\sec x\\,dx = \\int \\tan x\\,dx$, instead of the one asked for.\n\n$\\sec x$ fails to simplify $\\cos x\\sec x$ to $1$ before integrating, and instead integrates the original secant factor by itself."
   },
   {
     id: "mth302_ch5_038",
     course: "MTH 302",
     chapter: "Chapter 5",
-    text: "How many arbitrary constants does the general solution of a nonhomogeneous second-order equation contain?",
+    text: "For $y'' + 6y' + 9y = e^{-3x}$, the characteristic equation $r^2+6r+9=(r+3)^2=0$ has the repeated root $r=-3$, so $y_c = C_1e^{-3x}+C_2xe^{-3x}$, and the correctly modified trial is $y_p=Ax^2e^{-3x}$ with $A=\\tfrac{1}{2}$. How many independent arbitrary constants does the general solution $y=y_c+y_p$ contain, and where do they come from?",
     options: [
-      "$2$",
-      "$1$",
-      "$3$",
-      "$0$"
+      "$2$; both come from the complementary function $C_1e^{-3x}+C_2xe^{-3x}$",
+      "$3$; one from each of $C_1$, $C_2$, and the coefficient $\\tfrac{1}{2}$ in $y_p$",
+      "$1$; $C_1$ and $C_2$ must be equal since both terms come from the same repeated root",
+      "$0$; once $y_p$ is found by substitution, $y_c$ becomes fixed as well"
     ],
     correctAnswer: 0,
-    explanation: "The constants come entirely from the complementary function of a second-order equation, so there are exactly two.\n\nOne constant would correspond to a first-order equation.\n\nThree constants would require a third-order equation.\n\nA general solution must carry arbitrary constants, so zero is impossible."
+    explanation: "The particular solution $y_p=\\tfrac{1}{2}x^2e^{-3x}$ is one fixed function pinned down entirely by substitution, so the only free constants are $C_1$ and $C_2$ in $y_c$, giving exactly two.\n\nCounting the coefficient $\\tfrac{1}{2}$ as a third constant confuses a fixed value found by matching coefficients with a genuinely arbitrary constant.\n\n$e^{-3x}$ and $xe^{-3x}$ are linearly independent solutions of the homogeneous equation precisely because $r=-3$ is repeated, so $C_1$ and $C_2$ vary independently rather than being forced equal.\n\n$y_c$ solves the homogeneous equation for any choice of $C_1,C_2$ regardless of which particular solution $y_p$ is added, so it does not become fixed."
   },
   {
     id: "mth302_ch5_039",

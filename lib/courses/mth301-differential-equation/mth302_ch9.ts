@@ -75,15 +75,15 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_006",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the general formula for $B(m, n)$, the Beta function, in terms of the Gamma function?",
+    text: "Compute $B(5,3)$ by first writing it in terms of Gamma functions using $B(m,n) = \\Gamma(m)\\Gamma(n)/\\Gamma(m+n)$, then evaluating each Gamma at the specific integers involved.",
     options: [
-      "$\\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$",
-      "$\\dfrac{\\Gamma(m)\\Gamma(n)}{(m+n)!}$",
-      "$\\Gamma(m+n)\\Gamma(m)\\Gamma(n)$",
-      "$\\Gamma(m)\\Gamma(n)\\Gamma(m+n)$"
+      "$5!\\cdot 3!/7! = 720/5040 = 1/7$, using $m!$ and $n!$ instead of $\\Gamma(m)=(m-1)!$ and $\\Gamma(n)=(n-1)!$",
+      "$\\Gamma(5)\\Gamma(3)/8! = 48/40320 = 1/840$, using $(m+n)!$ instead of $\\Gamma(m+n)=(m+n-1)!$",
+      "$\\Gamma(5)\\Gamma(3)/\\Gamma(8) = 4!\\cdot 2!/7! = 48/5040 = 1/105$, since $\\Gamma(5)=4!=24$, $\\Gamma(3)=2!=2$, and $\\Gamma(8)=7!=5040$, following directly from the Beta-Gamma relation",
+      "$\\Gamma(8)/[\\Gamma(5)\\Gamma(3)] = 5040/48 = 105$, inverting the correct quotient"
     ],
-    correctAnswer: 0,
-    explanation: "For positive integers this identity reads $\\dfrac{(m-1)!(n-1)!}{(m+n-1)!}$, so the denominator is $\\Gamma(m+n)$, which equals $(m+n-1)!$, and not $(m+n)!$.\n\n$\\dfrac{\\Gamma(m)\\Gamma(n)}{(m+n)!}$ commits exactly the off-by-one error of using $(m+n)!$ instead of the correct $(m+n-1)!$ in the denominator.\n\n$\\Gamma(m+n)\\Gamma(m)\\Gamma(n)$ places $\\Gamma(m+n)$ in the numerator rather than the denominator, which is the reciprocal of the correct relationship.\n\n$\\Gamma(m)\\Gamma(n)\\Gamma(m+n)$ omits the division entirely, multiplying all three Gamma values together instead."
+    correctAnswer: 2,
+    explanation: "Writing $B(5,3) = \\Gamma(5)\\Gamma(3)/\\Gamma(8)$ and evaluating each Gamma as a factorial gives $\\Gamma(5)=4!=24$, $\\Gamma(3)=2!=2$, and $\\Gamma(8)=7!=5040$, so $B(5,3) = 24\\times 2/5040 = 48/5040 = 1/105$.\n\n$48/40320 = 1/840$ comes from writing $(m+n)! = 8!$ in the denominator instead of the correct $\\Gamma(m+n) = \\Gamma(8) = 7! = 5040$, the standard off-by-one slip in this relation.\n\n$720/5040 = 1/7$ comes from using $m! = 5!$ and $n! = 3!$ directly in the numerator instead of $\\Gamma(m) = (m-1)! = 4!$ and $\\Gamma(n) = (n-1)! = 2!$, confusing $\\Gamma(k)$ with $k!$.\n\n$5040/48 = 105$ inverts the quotient, placing $\\Gamma(m+n)$ in the numerator instead of the denominator."
   },
   {
     id: "mth302_ch9_007",
@@ -117,29 +117,29 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_009",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the trigonometric form of the Beta function $B(m, n)$?",
+    text: "By plugging $m=4$ and $n=3$ into the trigonometric form of the Beta function, $B(m,n) = 2\\displaystyle\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$, what is $B(4,3)$ expressed as a trigonometric integral?",
     options: [
-      "$\\displaystyle\\int_0^{\\pi/2}\\sin^m\\theta\\cos^n\\theta\\,d\\theta$",
-      "$\\displaystyle\\int_0^1\\sin^{m-1}\\theta\\cos^{n-1}\\theta\\,d\\theta$",
-      "$2\\displaystyle\\int_0^\\pi\\sin^{2m}\\theta\\cos^{2n}\\theta\\,d\\theta$",
-      "$2\\displaystyle\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$"
+      "$2\\displaystyle\\int_0^{\\pi/2}\\sin^7\\theta\\cos^5\\theta\\,d\\theta$, since the trig form uses $2m-1$ and $2n-1$, giving $2(4)-1=7$ and $2(3)-1=5$",
+      "$2\\displaystyle\\int_0^{\\pi/2}\\sin^4\\theta\\cos^3\\theta\\,d\\theta$, using $m$ and $n$ directly as the exponents without doubling and subtracting one",
+      "$\\displaystyle\\int_0^{\\pi/2}\\sin^7\\theta\\cos^5\\theta\\,d\\theta$, omitting the leading factor of $2$",
+      "$2\\displaystyle\\int_0^{\\pi}\\sin^7\\theta\\cos^5\\theta\\,d\\theta$, using $\\pi$ as the upper limit instead of $\\pi/2$"
     ],
-    correctAnswer: 3,
-    explanation: "Substituting $x = \\sin^2\\theta$ gives $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, and $x^{m-1}(1-x)^{n-1}$ becomes $\\sin^{2m-2}\\theta\\cos^{2n-2}\\theta$; combining the powers from the substitution and the integrand produces $2\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$. The upper limit is $\\pi/2$ because $x = 1$ corresponds to $\\theta = \\pi/2$.\n\nThe plain $\sin^m\theta\cos^n\theta$ form uses the wrong exponents and omits the leading factor of $2$.\n\nThe version integrated from $0$ to $1$ uses the wrong upper limit for a trigonometric substitution.\n\nThe version integrated from $0$ to $\pi$ with exponents $2m$ and $2n$ uses the wrong upper limit and the wrong exponents."
+    correctAnswer: 0,
+    explanation: "Substituting $m=4$ and $n=3$ into $B(m,n) = 2\\int_0^{\\pi/2}\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$ gives exponents $2(4)-1=7$ and $2(3)-1=5$, so $B(4,3) = 2\\int_0^{\\pi/2}\\sin^7\\theta\\cos^5\\theta\\,d\\theta$.\n\n$2\\int_0^{\\pi/2}\\sin^4\\theta\\cos^3\\theta\\,d\\theta$ uses $m$ and $n$ themselves as the exponents, skipping the doubling and the subtraction of one that the trigonometric substitution $x=\\sin^2\\theta$ actually produces.\n\n$\\int_0^{\\pi/2}\\sin^7\\theta\\cos^5\\theta\\,d\\theta$ has the right exponents but drops the factor of $2$ that comes from $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$.\n\n$2\\int_0^{\\pi}\\sin^7\\theta\\cos^5\\theta\\,d\\theta$ has the right exponents and factor of $2$ but the wrong upper limit; $x=1$ corresponds to $\\theta=\\pi/2$, not $\\theta=\\pi$."
   },
   {
     id: "mth302_ch9_010",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "At which values is the Gamma function undefined?",
+    text: "A student tries to compute $\\Gamma(-3)$ using the reverse recurrence $\\Gamma(x) = \\Gamma(x+1)/x$, starting from $\\Gamma(1) = 1$ and stepping down one integer at a time: $\\Gamma(0) = \\Gamma(1)/0$, $\\Gamma(-1) = \\Gamma(0)/(-1)$, $\\Gamma(-2) = \\Gamma(-1)/(-2)$, $\\Gamma(-3) = \\Gamma(-2)/(-3)$. What is the value of $\\Gamma(-3)$, and why?",
     options: [
-      "Only at $x = 0$",
-      "At $0$ and every negative integer",
-      "At every negative non-integer",
-      "Nowhere; Gamma is defined for all real numbers"
+      "$0$, since dividing by zero at the $\\Gamma(0)$ step is conventionally taken to give a value of zero",
+      "Undefined, since the chain divides by zero at the $\\Gamma(0)$ step, and undefined result carries to $\\Gamma(-3)$",
+      "$-1/6$, obtained by evaluating $1/[(-1)\\times(-2)\\times(-3)]$ as though the chain had no poles at all",
+      "$-6$, obtained by mistakenly treating $\\Gamma(-3)$ as equal to $(-3)!$ computed directly"
     ],
     correctAnswer: 1,
-    explanation: "Gamma has poles at $0$ and at every negative integer, where its value blows up to infinity, so it is undefined at those points; negative non-integer arguments, by contrast, are perfectly well defined and can be evaluated using the recurrence relation, with signs alternating as the argument decreases through successive negative half-integers.\n\nOnly at $x = 0$ misses the poles at every negative integer as well.\n\nAt every negative non-integer is exactly backwards, since those values are well defined while the negative integers are not.\n\nNowhere is defined for all real numbers ignores the poles entirely."
+    explanation: "The very first step of the reverse recurrence, $\\Gamma(0) = \\Gamma(1)/0$, divides by zero, so $\\Gamma(0)$ is already undefined; every later step in the chain, including $\\Gamma(-1)$, $\\Gamma(-2)$, and $\\Gamma(-3)$, inherits that undefined value, matching the fact that $\\Gamma$ has poles at $0$ and every negative integer.\n\n$0$ misreads division by zero as producing zero; a vanishing denominator makes the quotient undefined, not zero.\n\n$-1/6$ comes from computing $1/[(-1)(-2)(-3)]$ as if $\\Gamma(1)$ could simply be divided by each successive negative integer with no pole in between, ignoring that the very first division is by zero.\n\n$-6$ mistakenly treats $\\Gamma(-3)$ as $(-3)! = (-3)(-2)(-1) = -6$, but factorials are not defined for negative integers, and $\\Gamma$ itself is undefined there too."
   },
   {
     id: "mth302_ch9_011",
@@ -159,43 +159,43 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_012",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the integral definition of $\\Gamma(x)$?",
+    text: "By matching the integrand of $\\displaystyle\\int_0^\\infty t^{9/2}e^{-t}\\,dt$ against the defining integral $\\displaystyle\\int_0^\\infty t^{x-1}e^{-t}\\,dt$ for $\\Gamma(x)$, and then applying the recurrence forward from $\\Gamma(1/2) = \\sqrt{\\pi}$, what is $x$, and what does the integral equal?",
     options: [
-      "$\\displaystyle\\int_0^\\infty t^{x-1}e^{-t}\\,dt$",
-      "$\\displaystyle\\int_0^\\infty t^{x}e^{-t}\\,dt$, using the exponent $x$ rather than $x - 1$",
-      "$\\displaystyle\\int_0^1 t^{x-1}e^{-t}\\,dt$, integrating only over the unit interval",
-      "$\\displaystyle\\int_0^\\infty t^{x-1}e^{t}\\,dt$, with a growing exponential"
+      "$x = 11/2$, giving $\\Gamma(11/2) = 105\\sqrt{\\pi}/16$, stopping the recurrence one step short of the correct value",
+      "$x = 9/2$, giving $\\Gamma(9/2) = 105\\sqrt{\\pi}/16$, treating the exponent itself as $x$ instead of $x - 1$",
+      "$x = 11/2$, giving $\\Gamma(11/2) = 945\\sqrt{\\pi}/32$",
+      "$x = 13/2$, giving $\\Gamma(13/2) = 10395\\sqrt{\\pi}/64$, carrying the recurrence one step too far"
     ],
-    correctAnswer: 0,
-    explanation: "The Gamma function is defined by $\\int_0^\\infty t^{x-1}e^{-t}\\,dt$, convergent for $x > 0$.\n\nUsing the exponent $x$ instead of $x - 1$ defines $\\Gamma(x + 1)$.\n\nRestricting to the unit interval gives an incomplete Gamma function.\n\nA growing exponential makes the integral diverge."
+    correctAnswer: 2,
+    explanation: "Matching $t^{9/2}$ against $t^{x-1}$ gives $x - 1 = 9/2$, so $x = 11/2$. Applying $\\Gamma(k+1)=k\\Gamma(k)$ forward from $\\Gamma(1/2)=\\sqrt{\\pi}$: $\\Gamma(3/2)=\\tfrac12\\sqrt{\\pi}$, $\\Gamma(5/2)=\\tfrac34\\sqrt{\\pi}$, $\\Gamma(7/2)=\\tfrac{15}{8}\\sqrt{\\pi}$, $\\Gamma(9/2)=\\tfrac{105}{16}\\sqrt{\\pi}$, and $\\Gamma(11/2)=\\tfrac{9}{2}\\cdot\\tfrac{105}{16}\\sqrt{\\pi} = \\tfrac{945}{32}\\sqrt{\\pi}$.\n\n$x = 9/2$ treats the exponent $9/2$ itself as $x$, forgetting that the defining integral uses $t^{x-1}$, not $t^x$.\n\n$\\Gamma(11/2) = 105\\sqrt{\\pi}/16$ correctly identifies $x=11/2$ but reports the value of $\\Gamma(9/2)$, one recurrence step short.\n\n$x = 13/2$ overshoots by one, and $\\Gamma(13/2) = 10395\\sqrt{\\pi}/64$ is the value one step past the correct $\\Gamma(11/2)$."
   },
   {
     id: "mth302_ch9_013",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For which $x$ does the defining integral for $\\Gamma(x)$ converge?",
+    text: "The integral $\\displaystyle\\int_0^\\infty t^{-3/2}e^{-t}\\,dt$ matches $\\displaystyle\\int_0^\\infty t^{x-1}e^{-t}\\,dt$ with $x - 1 = -3/2$, so $x = -1/2$. Does this integral converge, and how does that relate to the accepted value $\\Gamma(-1/2) = -2\\sqrt{\\pi}$?",
     options: [
-      "$x > 0$",
-      "$x \\geq 1$, excluding the fractional values below one",
-      "Every real $x$, including the negative integers",
-      "$x < 0$ only, where the reverse recurrence applies"
+      "It diverges here, since convergence of the integral requires $x>0$; $\\Gamma(-1/2)=-2\\sqrt{\\pi}$ comes from the recurrence relation instead",
+      "It converges to $-2\\sqrt{\\pi}$, since the integral formula extends automatically to every negative argument",
+      "It diverges, because $t^{-3/2}$ grows too quickly as $t \\to \\infty$ rather than near the origin",
+      "It converges, since $e^{-t}$ decays fast enough to compensate for any negative power of $t$ near the origin"
     ],
     correctAnswer: 0,
-    explanation: "The integral converges precisely for positive $x$; negative non-integer values are reached afterwards through the reverse recurrence.\n\nRestricting to $x \\geq 1$ excludes values such as $\\Gamma(1/2)$, which the integral does define.\n\nConvergence fails at zero and the negative integers.\n\nNegative arguments are handled by extension, not by the integral itself."
+    explanation: "The defining integral $\\int_0^\\infty t^{x-1}e^{-t}\\,dt$ converges only for $x>0$; here $x=-1/2$, so the integral itself diverges near $t=0$. The finite value $\\Gamma(-1/2)=-2\\sqrt{\\pi}$ is not obtained from this divergent integral, but by extending $\\Gamma$ to negative arguments through the reverse recurrence $\\Gamma(x)=\\Gamma(x+1)/x$, starting from $\\Gamma(1/2)=\\sqrt{\\pi}$.\n\nClaiming convergence to $-2\\sqrt{\\pi}$ confuses the recurrence-extended value of $\\Gamma(-1/2)$ with the behavior of the raw integral, which does not converge at all for this $x$.\n\nThe divergence happens near $t=0$, where $t^{-3/2}$ blows up faster than $e^{-t}\\to 1$ can control it, not at $t\\to\\infty$ where $e^{-t}$ dominates any power of $t$.\n\n$e^{-t}$ decaying at infinity says nothing about the behavior near $t=0$, which is exactly where a negative power of $t$ causes the integral to diverge."
   },
   {
     id: "mth302_ch9_014",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the fundamental recurrence for the Gamma function?",
+    text: "A calculation shows that $\\Gamma(n+1) = 40320$ for a positive integer $n$. Using $\\Gamma(n+1) = n!$ together with the factorials $5! = 120$, $6! = 720$, $7! = 5040$, and $8! = 40320$, what is $n$, and what is $\\Gamma(n)$?",
     options: [
-      "$\\Gamma(x + 1) = x\\Gamma(x)$",
-      "$\\Gamma(x + 1) = (x + 1)\\Gamma(x)$, shifting the multiplier by one",
-      "$\\Gamma(x) = x\\Gamma(x + 1)$, inverting the direction of the relation",
-      "$\\Gamma(x + 1) = \\Gamma(x) + x$, adding rather than multiplying"
+      "$n = 9$, and $\\Gamma(9) = 8! = 40320$, shifting the recurrence's index by one in the wrong direction",
+      "$n = 8$, and $\\Gamma(8) = 8! = 40320$, treating $\\Gamma(n)$ as equal to $n!$ instead of $(n-1)!$",
+      "$n = 7$, since $7! = 5040$ is the closest familiar factorial to the given value",
+      "$n = 8$, and $\\Gamma(8) = 7! = 5040$, found by checking factorials until $n!$ matches"
     ],
-    correctAnswer: 0,
-    explanation: "Integration by parts gives $\\Gamma(x + 1) = x\\Gamma(x)$, which is the relation behind both the factorial values and the extension to negative arguments.\n\nUsing $x + 1$ as the multiplier misstates the result of the integration by parts.\n\nInverting the relation reverses which side carries the factor.\n\nThe recurrence is multiplicative, not additive."
+    correctAnswer: 3,
+    explanation: "Since $\\Gamma(n+1)=n!$, the equation $\\Gamma(n+1)=40320$ means $n!=40320$; checking the listed factorials shows $8!=40320$, so $n=8$. Then $\\Gamma(n)=\\Gamma(8)=7!=5040$, using $\\Gamma(k)=(k-1)!$.\n\n$\\Gamma(8) = 8! = 40320$ correctly finds $n=8$ but then applies $\\Gamma(n)=n!$ instead of $\\Gamma(n)=(n-1)!$, repeating the classic off-by-one slip on the recurrence.\n\n$n = 7$ picks the closest-looking factorial, $7!=5040$, rather than checking which factorial actually equals the given value of $40320$.\n\n$n = 9$ misreads which index solves $n!=40320$, shifting the correct $n=8$ up by one instead."
   },
   {
     id: "mth302_ch9_015",
@@ -229,15 +229,15 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_017",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "At which arguments is the Gamma function undefined?",
+    text: "Given that $\\Gamma(-1/2) = -2\\sqrt{\\pi}$, apply the reverse recurrence $\\Gamma(x) = \\Gamma(x+1)/x$ three consecutive times to compute $\\Gamma(-7/2)$.",
     options: [
-      "At $0$ and the negative integers",
-      "At every negative argument, integer or not",
-      "At the positive integers, where the factorial takes over",
-      "At the half-integers, where a square root appears"
+      "$28\\sqrt{\\pi}/15$, multiplying by $-7/2$ instead of dividing by it at the final step",
+      "$-16\\sqrt{\\pi}/105$, dropping the alternating sign pattern in the final step",
+      "$-8\\sqrt{\\pi}/15$, stopping the recurrence one step early at $\\Gamma(-5/2)$",
+      "$16\\sqrt{\\pi}/105$"
     ],
-    correctAnswer: 0,
-    explanation: "The reverse recurrence blows up at zero and at each negative integer, where the function has poles, while negative non-integers are perfectly well defined.\n\nNegative non-integers such as $-1/2$ do have finite values.\n\nThe positive integers give the factorial values and are certainly defined.\n\nHalf-integers give values involving $\\sqrt{\\pi}$ and are defined."
+    correctAnswer: 3,
+    explanation: "Stepping down with $\\Gamma(x)=\\Gamma(x+1)/x$: $\\Gamma(-3/2) = \\Gamma(-1/2)/(-3/2) = (-2\\sqrt{\\pi})/(-3/2) = 4\\sqrt{\\pi}/3$; $\\Gamma(-5/2) = \\Gamma(-3/2)/(-5/2) = (4\\sqrt{\\pi}/3)/(-5/2) = -8\\sqrt{\\pi}/15$; $\\Gamma(-7/2) = \\Gamma(-5/2)/(-7/2) = (-8\\sqrt{\\pi}/15)/(-7/2) = 16\\sqrt{\\pi}/105$.\n\n$-16\\sqrt{\\pi}/105$ has the right magnitude but the wrong sign; the alternating sign of the recurrence, driven by dividing by a negative number at each step, makes the final result positive here, not negative.\n\n$-8\\sqrt{\\pi}/15$ is the value of $\\Gamma(-5/2)$, reached one recurrence step before the requested $\\Gamma(-7/2)$.\n\n$28\\sqrt{\\pi}/15$ comes from multiplying $\\Gamma(-5/2)$ by $-7/2$ instead of dividing by it, mistaking the reverse recurrence's direction for the forward one."
   },
   {
     id: "mth302_ch9_018",
@@ -285,15 +285,15 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_021",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which substitution converts $\\Gamma(1/2)$ into a Gaussian integral?",
+    text: "Starting from $\\Gamma(1/2) = \\displaystyle\\int_0^\\infty t^{-1/2}e^{-t}\\,dt$ and substituting $t = u^2$ so that $dt = 2u\\,du$, what does the integrand $t^{-1/2}e^{-t}\\,dt$ simplify to before the Gaussian integral itself is evaluated?",
     options: [
-      "$t = u^2$",
-      "$t = \\sqrt{u}$",
-      "$t = e^{-u}$, replacing the variable by an exponential",
-      "$t = 1 - u$, reflecting the variable about one"
+      "$e^{-u^2}\\,du$, forgetting the factor of $2$ contributed by $dt = 2u\\,du$",
+      "$2e^{-u^2}\\,du$, since $t^{-1/2}=u^{-1}$ and $dt=2u\\,du$ together exactly cancel the extra $u$ factor",
+      "$2u\\,e^{-u^2}\\,du$, treating $t^{-1/2}$ as $u^{-1}$ but failing to cancel the $u$ factor from $dt$",
+      "$u^{-1}e^{-u^2}\\,du$, using $dt = u\\,du$ and omitting the factor of $2$ entirely"
     ],
-    correctAnswer: 0,
-    explanation: "Putting $t = u^2$ gives $dt = 2u\\,du$ and turns $\\Gamma(1/2)$ into $2\\int_0^\\infty e^{-u^2}\\,du$, which the polar-coordinate trick evaluates.\n\nThe reverse substitution does not clear the half-power.\n\nAn exponential substitution does not produce a Gaussian.\n\nReflecting about one belongs to the Beta function's symmetry argument."
+    correctAnswer: 1,
+    explanation: "With $t=u^2$, $t^{-1/2}=(u^2)^{-1/2}=u^{-1}$, $e^{-t}=e^{-u^2}$, and $dt=2u\\,du$, so $t^{-1/2}e^{-t}\\,dt = u^{-1}\\cdot e^{-u^2}\\cdot 2u\\,du = 2e^{-u^2}\\,du$, since the $u^{-1}$ and the extra $u$ from $dt$ cancel exactly.\n\n$e^{-u^2}\\,du$ correctly cancels the $u$ factor but drops the leading $2$ that $dt=2u\\,du$ contributes.\n\n$2u\\,e^{-u^2}\\,du$ keeps the extra $u$ from $dt$ without cancelling it against $t^{-1/2}=u^{-1}$, so the powers of $u$ do not simplify away as they should.\n\n$u^{-1}e^{-u^2}\\,du$ uses an incorrect differential $dt=u\\,du$ in place of the correct $dt=2u\\,du$, losing the factor of $2$ entirely."
   },
   {
     id: "mth302_ch9_022",
@@ -327,85 +327,85 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_024",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the general formula for $\\displaystyle\\int_0^\\infty x^ne^{-ax}\\,dx$ with $a > 0$?",
+    text: "What is $\\displaystyle\\int_0^\\infty x^5e^{-2x}\\,dx$?",
     options: [
-      "$\\dfrac{\\Gamma(n + 1)}{a^{n+1}}$",
-      "$\\dfrac{\\Gamma(n + 1)}{a^{n}}$",
-      "$\\dfrac{\\Gamma(n)}{a^{n+1}}$, shifting the Gamma argument down by one",
-      "$a^{n+1}\\Gamma(n + 1)$, multiplying rather than dividing"
+      "$15/8$",
+      "$15/4$, using $a^n$ instead of $a^{n+1}$ in the denominator",
+      "$3/8$, using $\\Gamma(n) = 4!$ instead of $\\Gamma(n+1) = 5!$ in the numerator",
+      "$7680$, multiplying by $a^{n+1}$ instead of dividing by it"
     ],
     correctAnswer: 0,
-    explanation: "Substituting $y = ax$ contributes one power of $a$ for each of the $n$ factors of $x$ and one more from $dx$, giving $a^{n+1}$ in the denominator.\n\nOmitting one power of $a$ is exactly the slip this substitution is designed to catch.\n\nShifting the Gamma argument confuses $\\Gamma(n)$ with $\\Gamma(n + 1)$.\n\nMultiplying by $a^{n+1}$ inverts the relation."
+    explanation: "Using $\\int_0^\\infty x^ne^{-ax}\\,dx = \\Gamma(n+1)/a^{n+1}$ with $n=5$ and $a=2$ gives $5!/2^6 = 120/64 = 15/8$.\n\n$15/4$ comes from using $a^n = 2^5 = 32$ instead of the correct $a^{n+1}=2^6=64$ in the denominator, dropping one power of $a$.\n\n$3/8$ comes from using $\\Gamma(n) = 4! = 24$ in the numerator instead of the correct $\\Gamma(n+1) = 5! = 120$.\n\n$7680$ comes from multiplying $5!$ by $2^6$ instead of dividing by it, inverting the relationship."
   },
   {
     id: "mth302_ch9_025",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the integral definition of $B(m, n)$?",
+    text: "What is $\\displaystyle\\int_0^1 x^5(1-x)^3\\,dx$?",
     options: [
-      "$\\displaystyle\\int_0^1 x^{m-1}(1 - x)^{n-1}\\,dx$",
-      "$\\displaystyle\\int_0^1 x^{m}(1 - x)^{n}\\,dx$, without reducing either exponent",
-      "$\\displaystyle\\int_0^\\infty x^{m-1}(1 - x)^{n-1}\\,dx$, over an infinite range",
-      "$\\displaystyle\\int_0^1 x^{m-1}(1 + x)^{n-1}\\,dx$"
+      "$B(6,4) = \\dfrac{\\Gamma(6)\\Gamma(4)}{\\Gamma(10)} = \\dfrac{120\\times 6}{362880} = \\dfrac{1}{504}$, matching $m=6,n=4$ from the exponents",
+      "$B(5,3) = \\dfrac{1}{105}$, misreading the exponents as the parameters directly instead of adding one to each",
+      "$B(6,4) = \\dfrac{1}{5040}$, using $(m+n)!$ instead of $\\Gamma(m+n) = (m+n-1)!$ in the denominator",
+      "$B(6,4) = \\dfrac{1}{21}$, using $6!$ and $4!$ in the numerator instead of $5!$ and $3!$"
     ],
     correctAnswer: 0,
-    explanation: "The Beta function is $\\int_0^1 x^{m-1}(1 - x)^{n-1}\\,dx$, convergent for $m > 0$ and $n > 0$.\n\nFailing to reduce the exponents shifts both parameters by one.\n\nThe range is the unit interval, not the half-line.\n\nThe bracket carries a minus sign, which is what confines the integrand to $[0, 1]$."
+    explanation: "Matching $x^{m-1}(1-x)^{n-1}$ against $x^5(1-x)^3$ gives $m-1=5$ and $n-1=3$, so $m=6$ and $n=4$. Then $B(6,4)=\\Gamma(6)\\Gamma(4)/\\Gamma(10) = 5!\\cdot 3!/9! = 120\\times 6/362880 = 1/504$.\n\n$B(5,3) = 1/105$ misreads the exponents $5$ and $3$ as the Beta parameters directly, forgetting to add one to each as the matching requires.\n\n$1/5040$ comes from writing $(m+n)! = 10!$ in the denominator instead of the correct $\\Gamma(m+n) = \\Gamma(10) = 9! = 362880$, the standard off-by-one slip.\n\n$1/21$ comes from using $m! = 6!$ and $n! = 4!$ in the numerator instead of $\\Gamma(m)=(m-1)!=5!$ and $\\Gamma(n)=(n-1)!=3!$."
   },
   {
     id: "mth302_ch9_026",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What symmetry does the Beta function possess?",
+    text: "What is the common value of $B(3,6)$ and $B(6,3)$, computed using $B(m,n) = \\Gamma(m)\\Gamma(n)/\\Gamma(m+n)$, and why must the two expressions agree?",
     options: [
-      "$B(m, n) = B(n, m)$",
-      "$B(m, n) = -B(n, m)$, changing sign under the exchange",
-      "$B(m, n) = B(m + n, 1)$, collapsing the two parameters",
-      "$B(m, n) = \\dfrac{1}{B(n, m)}$, giving the reciprocal"
+      "$1/168$ for both, since $\\Gamma(3)\\Gamma(6)$ is unchanged by the order of multiplication, and $\\Gamma(9)$ in the denominator",
+      "$1/21$ for both, using $\\Gamma(8) = 7!$ in the denominator instead of the correct $\\Gamma(9) = 8!$",
+      "$1/168$ for $B(3,6)$ but $-1/168$ for $B(6,3)$, treating the exchange of parameters as introducing a sign change",
+      "$1/1512$ for both, using $(m+n)! = 9!$ in the denominator instead of the correct $\\Gamma(m+n) = (m+n-1)! = 8!$, an off-by-one slip"
     ],
     correctAnswer: 0,
-    explanation: "The substitution $x \\mapsto 1 - x$ exchanges the two exponents, showing $B(m, n) = B(n, m)$.\n\nA sign change would contradict the positivity of the integrand.\n\nCollapsing the parameters discards information the function retains.\n\nThe reciprocal relation does not follow from the substitution."
+    explanation: "$\\Gamma(3)=2!=2$, $\\Gamma(6)=5!=120$, and $\\Gamma(9)=8!=40320$, so $B(3,6)=B(6,3)=2\\times 120/40320=240/40320=1/168$. The two expressions must agree because $\\Gamma(3)\\Gamma(6)$ is a product, unaffected by the order in which the parameters are listed, and the denominator $\\Gamma(3+6)=\\Gamma(9)$ is the same regardless of which parameter is written first.\n\n$1/21$ comes from using $\\Gamma(8)=7!=5040$ in the denominator instead of the correct $\\Gamma(9)=8!=40320$, an off-by-one error in identifying which Gamma value belongs in the sum.\n\nAssigning opposite signs to $B(3,6)$ and $B(6,3)$ contradicts the fact that the Beta integral is manifestly positive for positive parameters; no sign change occurs under the symmetry $B(m,n)=B(n,m)$.\n\n$1/1512$ comes from writing $(m+n)!=9!=362880$ in the denominator instead of the correct $\\Gamma(m+n)=\\Gamma(9)=8!=40320$, the standard off-by-one trap in the Beta-Gamma relation."
   },
   {
     id: "mth302_ch9_027",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "Which substitution produces the trigonometric form of the Beta function?",
+    text: "Applying the substitution $x = \\sin^2\\theta$ to $B(4,2) = \\displaystyle\\int_0^1 x^3(1-x)\\,dx$, so that $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, $x^3 = \\sin^6\\theta$, and $1-x=\\cos^2\\theta$, what does the integrand become?",
     options: [
-      "$x = \\sin^2\\theta$",
-      "$x = \\sin\\theta$, without the square on the sine",
-      "$x = \\cos\\theta$, using the cosine instead",
-      "$x = \\tan^2\\theta$"
+      "$2\\sin^6\\theta\\cos^2\\theta\\,d\\theta$, omitting the extra $\\sin\\theta\\cos\\theta$ factor supplied by $dx$",
+      "$2\\sin^7\\theta\\cos^3\\theta\\,d\\theta$, combining the sine and cosine power contributions together",
+      "$\\sin^7\\theta\\cos^3\\theta\\,d\\theta$, dropping the leading factor of $2$ contributed by $dx$",
+      "$2\\sin^7\\theta\\cos^2\\theta\\,d\\theta$, forgetting to include the additional power of $\\cos\\theta$ contributed by $dx$"
     ],
-    correctAnswer: 0,
-    explanation: "Putting $x = \\sin^2\\theta$ gives $1 - x = \\cos^2\\theta$ and $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$, sending $x = 0$ to $\\theta = 0$ and $x = 1$ to $\\theta = \\pi/2$.\n\nOmitting the square fails to convert $1 - x$ into a clean square.\n\nThe cosine reverses the limits and does not simplify the bracket.\n\nThe tangent squared runs to infinity rather than to one."
+    correctAnswer: 1,
+    explanation: "Multiplying $x^3(1-x) = \\sin^6\\theta\\cos^2\\theta$ by $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$ combines the powers: $\\sin^6\\theta\\cdot\\sin\\theta = \\sin^7\\theta$ and $\\cos^2\\theta\\cdot\\cos\\theta = \\cos^3\\theta$, giving $2\\sin^7\\theta\\cos^3\\theta\\,d\\theta$, consistent with the general trigonometric form $2\\sin^{2m-1}\\theta\\cos^{2n-1}\\theta\\,d\\theta$ for $m=4$, $n=2$.\n\n$2\\sin^6\\theta\\cos^2\\theta\\,d\\theta$ keeps only $x^3(1-x)$ itself and forgets to fold in the extra $\\sin\\theta\\cos\\theta$ that $dx$ contributes.\n\n$\\sin^7\\theta\\cos^3\\theta\\,d\\theta$ gets the powers right but drops the leading factor of $2$ that comes from $dx = 2\\sin\\theta\\cos\\theta\\,d\\theta$.\n\n$2\\sin^7\\theta\\cos^2\\theta\\,d\\theta$ correctly combines the sine powers but leaves out the extra power of $\\cos\\theta$ that $dx$ supplies, so the cosine exponent is one too low."
   },
   {
     id: "mth302_ch9_028",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is $\\displaystyle\\int_0^{\\pi/2}\\sin^p\\theta\\cos^q\\theta\\,d\\theta$ in terms of the Beta function?",
+    text: "What is $\\displaystyle\\int_0^{\\pi/2}\\sin\\theta\\cos^5\\theta\\,d\\theta$, expressed via the Beta function with $p=1$, $q=5$ and then evaluated numerically?",
     options: [
-      "$\\tfrac{1}{2}B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$",
-      "$B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$",
-      "$\\tfrac{1}{2}B\\!\\left(\\dfrac{p}{2},\\ \\dfrac{q}{2}\\right)$",
-      "$2B\\!\\left(\\dfrac{p+1}{2},\\ \\dfrac{q+1}{2}\\right)$, doubling instead of halving"
+      "$B(1,3) = \\dfrac{1}{3}$, omitting the leading factor of $\\tfrac{1}{2}$ in front of the Beta function",
+      "$\\tfrac{1}{2}B(1,3) = \\tfrac{1}{2}\\cdot\\dfrac{\\Gamma(1)\\Gamma(3)}{\\Gamma(4)} = \\tfrac{1}{2}\\cdot\\dfrac{1\\times 2}{6} = \\dfrac{1}{6}$, matching $p=1$ and $q=5$ in the formula",
+      "$\\tfrac{1}{2}B(1/2,\\,5/2) = \\dfrac{3\\pi}{16}$, using $p/2$ and $q/2$ instead of $(p+1)/2$ and $(q+1)/2$",
+      "$\\tfrac{1}{2}B(2,6) = \\dfrac{1}{84}$, using $p$ and $q$ directly as the Beta parameters without halving them first"
     ],
-    correctAnswer: 0,
-    explanation: "Inverting the trigonometric form gives the integral as one half of the Beta function with each parameter shifted and halved.\n\nOmitting the factor of one half doubles the answer.\n\nDropping the shift by one misreads the parameters.\n\nDoubling inverts the required factor."
+    correctAnswer: 1,
+    explanation: "Using $\\int_0^{\\pi/2}\\sin^p\\theta\\cos^q\\theta\\,d\\theta = \\tfrac{1}{2}B\\!\\left(\\tfrac{p+1}{2},\\tfrac{q+1}{2}\\right)$ with $p=1$, $q=5$ gives $\\tfrac{1}{2}B(1,3) = \\tfrac{1}{2}\\cdot\\dfrac{\\Gamma(1)\\Gamma(3)}{\\Gamma(4)} = \\tfrac{1}{2}\\cdot\\dfrac{1\\times 2}{6} = \\dfrac{1}{6}$.\n\n$B(1,3) = 1/3$ correctly identifies the Beta parameters but omits the leading factor of $\\tfrac{1}{2}$ that the formula requires.\n\n$\\tfrac{1}{2}B(1/2,5/2) = 3\\pi/16$ uses $p/2$ and $q/2$ instead of the correct $(p+1)/2$ and $(q+1)/2$, dropping the shift by one; since $p=1$ is odd, the correct answer should be rational, and the appearance of $\\pi$ here signals the error.\n\n$\\tfrac{1}{2}B(2,6) = 1/84$ uses $p$ and $q$ directly as the Beta parameters, skipping the halving step entirely."
   },
   {
     id: "mth302_ch9_029",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "For positive integers, what does $B(m, n)$ equal in factorial form?",
+    text: "What is $B(6,2)$ expressed in factorial form using $B(m,n) = \\dfrac{(m-1)!\\,(n-1)!}{(m+n-1)!}$, and what is its numeric value?",
     options: [
-      "$\\dfrac{(m-1)!\\,(n-1)!}{(m+n-1)!}$",
-      "$\\dfrac{m!\\,n!}{(m+n)!}$",
-      "$\\dfrac{(m-1)!\\,(n-1)!}{(m+n)!}$, reducing only the numerator",
-      "$\\dfrac{m!\\,n!}{(m+n-1)!}$, reducing only the denominator"
+      "$\\dfrac{5!\\,1!}{8!} = \\dfrac{120}{40320} = \\dfrac{1}{336}$, reducing only the numerator",
+      "$\\dfrac{6!\\,2!}{8!} = \\dfrac{1440}{40320} = \\dfrac{1}{28}$, leaving both factorials unreduced",
+      "$\\dfrac{5!\\,1!}{7!} = \\dfrac{120}{5040} = \\dfrac{1}{42}$, the correctly reduced factorial form",
+      "$\\dfrac{6!\\,2!}{7!} = \\dfrac{1440}{5040} = \\dfrac{2}{7}$, reducing only the denominator's factorial and leaving the numerator unreduced"
     ],
-    correctAnswer: 0,
-    explanation: "Since $B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m+n)}$ and $\\Gamma(k) = (k-1)!$, every factorial is reduced by one.\n\nLeaving all the factorials unreduced is the standard off-by-one error.\n\nReducing only the numerator is inconsistent.\n\nReducing only the denominator is likewise inconsistent."
+    correctAnswer: 2,
+    explanation: "With $m=6$, $n=2$: $(m-1)!=5!=120$, $(n-1)!=1!=1$, and $(m+n-1)!=7!=5040$, so $B(6,2) = 120\\times 1/5040 = 1/42$.\n\n$1/28$ leaves every factorial unreduced, using $6!$, $2!$, and $8!$ in place of $5!$, $1!$, and $7!$.\n\n$1/336$ reduces only the numerator to $5!\\cdot 1!$ while leaving the denominator as the unreduced $8!$ instead of $7!$.\n\n$2/7$ reduces only the denominator to $7!$ while leaving the numerator as the unreduced $6!\\cdot 2!$ instead of $5!\\cdot 1!$."
   },
   {
     id: "mth302_ch9_030",
@@ -439,15 +439,15 @@ const mth302Chapter9: QuestionV2[] = [
     id: "mth302_ch9_032",
     course: "MTH 302",
     chapter: "Chapter 9",
-    text: "What is the relation between the Beta and Gamma functions?",
+    text: "Given that $\\Gamma(7) = 720$, $\\Gamma(2) = 1$, and $\\Gamma(9) = 40320$, use the Beta-Gamma relation $B(m,n) = \\Gamma(m)\\Gamma(n)/\\Gamma(m+n)$ to compute $B(7,2)$.",
     options: [
-      "$B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{\\Gamma(m + n)}$",
-      "$B(m, n) = \\dfrac{\\Gamma(m)\\Gamma(n)}{(m + n)!}$",
-      "$B(m, n) = \\dfrac{\\Gamma(m + n)}{\\Gamma(m)\\Gamma(n)}$",
-      "$B(m, n) = \\Gamma(m)\\Gamma(n)\\Gamma(m + n)$, forming a product of all three"
+      "$720\\times 1/362880 = 1/504$, mistakenly using $\\Gamma(9)=9!=362880$ instead of the correct $\\Gamma(9)=8!=40320$",
+      "$720\\times 1\\times 40320 = 29030400$, forming a product of all three Gamma values instead of dividing",
+      "$40320/(720\\times 1) = 56$, inverting the correct quotient",
+      "$\\Gamma(7)\\Gamma(2)/\\Gamma(9) = 720\\times 1/40320 = 1/56$, dividing the product of the two given Gamma values by the Gamma value of their sum"
     ],
-    correctAnswer: 0,
-    explanation: "The Beta function is the product of two Gamma values divided by the Gamma of their sum.\n\nWriting $(m + n)!$ in the denominator carries an off-by-one error, since $\\Gamma(m + n) = (m + n - 1)!$.\n\nInverting the quotient gives the reciprocal.\n\nA product of all three has entirely the wrong structure."
+    correctAnswer: 3,
+    explanation: "The Beta-Gamma relation gives $B(7,2) = \\Gamma(7)\\Gamma(2)/\\Gamma(9) = 720\\times 1/40320 = 1/56$, dividing the product of the two given Gamma values by the Gamma value of their sum.\n\n$29030400$ multiplies all three given Gamma values together instead of dividing $\\Gamma(7)\\Gamma(2)$ by $\\Gamma(9)$.\n\n$56$ inverts the correct quotient, placing $\\Gamma(m+n)$ in the numerator instead of the denominator.\n\n$1/504$ comes from mistakenly treating $\\Gamma(9)$ as $9!=362880$ instead of the correct $\\Gamma(9)=8!=40320$, confusing $\\Gamma(k)$ with $k!$ rather than $(k-1)!$."
   },
   {
     id: "mth302_ch9_033",

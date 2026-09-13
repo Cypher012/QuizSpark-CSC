@@ -5,15 +5,15 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_001",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "If $f$ is an odd function on $[-\\pi, \\pi]$, which Fourier coefficients vanish?",
+    text: "Consider $f(x) = x^3 + x$ on $(-\\pi, \\pi)$, extended periodically with period $2\\pi$. Since $x^3$ and $x$ are both odd functions, $f(-x) = -f(x)$ for every $x$. Which Fourier coefficients of $f$ vanish as a result?",
     options: [
-      "The sine coefficients $b_n$",
-      "The constant term $a_0$ and all cosine coefficients $a_n$",
-      "Both $a_n$ and $b_n$ for all $n$",
+      "$a_0$ and all the cosine coefficients $a_n$",
+      "All the sine coefficients $b_n$",
+      "Both $a_n$ and $b_n$ for every $n$",
       "Only the constant term $a_0$"
     ],
-    correctAnswer: 1,
-    explanation: "An odd function multiplied by $\\cos(nx)$ is itself odd, so every cosine-related integral over the symmetric interval vanishes, including the constant term $a_0$, which is computed the same way. Only the sine coefficients survive, giving a pure sine series.\n\nThe sine coefficients $b_n$ is exactly the statement for an even function, not an odd one.\n\nBoth $a_n$ and $b_n$ vanishing for all $n$ would leave no series at all, which is too strong.\n\nOnly the constant term $a_0$ understates the result, since every cosine coefficient $a_n$ vanishes as well, not just the constant term."
+    correctAnswer: 0,
+    explanation: "Because $f$ is a sum of two odd functions, $f$ itself is odd, and an odd function multiplied by $\\cos(nx)$ is odd, so every cosine-related integral vanishes over the symmetric interval, including the constant term $a_0$, which uses the same integral form as $a_n$ with $n = 0$. Only the sine coefficients $b_n$ survive, so the series is a pure sine series.\n\nAll the sine coefficients $b_n$ vanishing describes what happens for an even function, not an odd one.\n\nBoth $a_n$ and $b_n$ vanishing for every $n$ would leave no series at all, which is far too strong a conclusion.\n\nOnly the constant term $a_0$ vanishing understates the result, since every cosine coefficient $a_n$ vanishes along with it, not just the constant term."
   },
   {
     id: "mth302_ch11_002",
@@ -47,29 +47,29 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_004",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "In the expansion $f(x) = \\dfrac{a_0}{2} + \\sum(a_n\\cos nx + b_n\\sin nx)$, with $a_0$ defined by the standard integral formula, what does the constant term $a_0/2$ represent?",
+    text: "A function of period $2$ is defined by $f(x) = 2(1+x)$ on $(-1, 0)$ and $f(x) = 0$ on $(0, 1)$. First identify $L$, then compute $a_0 = \\dfrac{1}{L}\\displaystyle\\int_{-L}^{L} f(x)\\,dx$, and finally state the constant term $a_0/2$ of its Fourier series.",
     options: [
-      "Twice the mean value of $f$",
-      "The maximum value of $f$",
-      "The mean value of $f$ over a period",
-      "It is always zero"
+      "$L = 1$, $a_0 = 1$, so the constant term $a_0/2$ equals $1/2$",
+      "$L = 2$, using the full period as $L$ instead of the half-period, which gives $a_0 = 1/2$ and a constant term of $1/4$",
+      "$L = 1$, $a_0 = 1$, but writing the constant term as $a_0$ itself, equal to $1$",
+      "$L = 1$, doubling the integral to get $a_0 = 2$, so the constant term equals $1$"
     ],
-    correctAnswer: 2,
-    explanation: "Since $a_0/2$ equals $\\dfrac{1}{2\\pi}\\displaystyle\\int f\\,dx$ over one period, it is precisely the average value of $f$ over that period. This gives a quick sanity check on any Fourier answer: for a function that equals $0$ on half the period and $a$ on the other half, the constant term must work out to $a/2$.\n\nTwice the mean value of $f$ is off by a factor of $2$ from the correct interpretation.\n\nThe maximum value of $f$ confuses the constant, or average, term with a completely different quantity.\n\nIt is always zero is only true for functions whose average over a period happens to be zero, such as the odd square wave, not for Fourier series in general."
+    correctAnswer: 0,
+    explanation: "With $f$ defined on $(-1, 1)$ and period $2$, the half-period is $L = 1$. Then $a_0 = \\dfrac{1}{1}\\left[\\displaystyle\\int_{-1}^{0}2(1+x)\\,dx + \\int_0^1 0\\,dx\\right] = \\big[2x+x^2\\big]_{-1}^{0} = 0-(-1) = 1$, so the constant term is $a_0/2 = 1/2$, the mean value of $f$ over the period.\n\nTaking $L=2$ mistakes the full period for the half-period, the standard trap, which halves the prefactor and so halves both $a_0$ and the constant term from their correct values.\n\nWriting the constant term as $a_0=1$ itself forgets the required halving, doubling the true constant term.\n\nDoubling the integral to claim $a_0=2$ introduces an arithmetic slip not present in the actual integration, and still fails to halve for the constant term."
   },
   {
     id: "mth302_ch11_005",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "At a point where a function $f$ has a jump discontinuity, what does its Fourier series converge to?",
+    text: "A function of period $2\\pi$ is defined by $f(x) = 1$ on $(-\\pi, 0)$ and $f(x) = 5$ on $(0, \\pi)$, with a jump discontinuity at $x = 0$. What value does its Fourier series converge to at $x = 0$?",
     options: [
-      "The left-hand limit $f(x_0^-)$",
-      "The right-hand limit $f(x_0^+)$",
-      "The average of the left and right limits, one half times the sum $f(x_0^-) + f(x_0^+)$",
-      "The series diverges"
+      "$3$, the average of the one-sided limits $1$ and $5$",
+      "$1$, the left-hand limit at the jump",
+      "$5$, the right-hand limit at the jump",
+      "$6$, the sum of the one-sided limits without averaging"
     ],
-    correctAnswer: 2,
-    explanation: "By the Dirichlet convergence theorem, at a jump discontinuity the Fourier series converges to the average of the one-sided limits, $\\dfrac{1}{2}[f(x_0^-) + f(x_0^+)]$. For the square wave at $x = 0$ this gives $0$, the midpoint between $-k$ and $k$, even though the function itself is defined to equal one of those two values at that exact point.\n\nThe left-hand limit and the right-hand limit each capture only one side of the jump rather than the correct average of both.\n\nThe series diverges is incorrect, since Dirichlet's theorem guarantees convergence to a specific value even at a jump."
+    correctAnswer: 0,
+    explanation: "By the Dirichlet convergence theorem, at a jump discontinuity the series converges to the average of the one-sided limits, $\\tfrac{1}{2}[f(x_0^-)+f(x_0^+)]$. Here $f(0^-)=1$ and $f(0^+)=5$, so the series converges to $\\tfrac{1}{2}(1+5)=3$.\n\nTaking only the left-hand limit of $1$ ignores the contribution from the right side of the jump.\n\nTaking only the right-hand limit of $5$ has the same defect in the opposite direction.\n\nSumming the two limits to get $6$ without dividing by two skips the averaging step that the convergence theorem requires."
   },
   {
     id: "mth302_ch11_006",
@@ -103,43 +103,43 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_008",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "For a function of period $2L$, what is the formula for the coefficient $b_n$?",
+    text: "A function has period $16$. Starting from the substitution $v = \\pi x/L$ that rescales the period-$2\\pi$ formula $b_n = \\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi} f\\sin(nv)\\,dv$, first find $L$, then state the resulting formula for $b_n$.",
     options: [
-      "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L} f\\sin\\left(\\dfrac{n\\pi x}{L}\\right)dx$",
-      "$\\dfrac{1}{2L}\\displaystyle\\int_{-L}^{L} f\\sin\\left(\\dfrac{n\\pi x}{L}\\right)dx$",
-      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-L}^{L} f\\sin(nx)\\,dx$",
-      "$\\dfrac{1}{L}\\displaystyle\\int_0^{L} f\\sin\\left(\\dfrac{n\\pi x}{L}\\right)dx$"
+      "$L=8$, giving $b_n = \\dfrac{1}{8}\\displaystyle\\int_{-8}^{8} f\\sin\\left(\\dfrac{n\\pi x}{8}\\right)dx$",
+      "$L=16$, using the full period as $L$, giving $b_n = \\dfrac{1}{16}\\displaystyle\\int_{-16}^{16} f\\sin\\left(\\dfrac{n\\pi x}{16}\\right)dx$",
+      "$L=8$, but keeping the prefactor $1/\\pi$ unchanged, giving $b_n = \\dfrac{1}{\\pi}\\displaystyle\\int_{-8}^{8} f\\sin(nx)\\,dx$",
+      "$L=8$, giving $b_n = \\dfrac{1}{16}\\displaystyle\\int_{-8}^{8} f\\sin\\left(\\dfrac{n\\pi x}{8}\\right)dx$, with an extra factor of two in the prefactor"
     ],
     correctAnswer: 0,
-    explanation: "Rescaling $v = \\pi x/L$ so that $v$ runs over $2\\pi$ while $x$ runs over $2L$ turns every prefactor of $1/\\pi$ in the period-$2\\pi$ formulas into $1/L$, with the limits becoming $\\pm L$ and $nx$ becoming $n\\pi x/L$, giving $b_n = \\dfrac{1}{L}\\int_{-L}^{L} f\\sin(n\\pi x/L)\\,dx$.\n\nThe version with $1/(2L)$ has an extra factor of $2$ in the denominator that does not belong.\n\nThe version with $1/\\pi$ and $\\sin(nx)$ incorrectly keeps the period-$2\\pi$ prefactor and argument rather than rescaling them for period $2L$.\n\nThe version integrated from $0$ to $L$ is the half-range sine formula, which carries a different prefactor of $2/L$ and different limits, not the full-range formula asked for here."
+    explanation: "The half-period is $L = 16/2 = 8$. Rescaling with $v=\\pi x/L$ replaces the prefactor $1/\\pi$ by $1/L=1/8$ and the argument $nv$ by $n\\pi x/L = n\\pi x/8$, giving $b_n = \\dfrac{1}{8}\\displaystyle\\int_{-8}^{8}f\\sin\\left(\\dfrac{n\\pi x}{8}\\right)dx$.\n\nTaking $L=16$ mistakes the full period for the half-period, the standard trap, which changes both the prefactor and the harmonic argument.\n\nKeeping the prefactor as $1/\\pi$ and the argument as $nx$ fails to rescale either quantity for the new period.\n\nInserting an extra factor of two in the prefactor, giving $1/16$ instead of $1/8$, does not follow from the substitution and understates the true coefficient."
   },
   {
     id: "mth302_ch11_009",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "For $f(x) = x^2$ on $(-\\pi, \\pi)$ extended periodically, which statement is correct?",
+    text: "Consider $f(x) = 4\\cos(2x) + 1$ on $(-\\pi, \\pi)$, extended periodically with period $2\\pi$. Since $\\cos(2x)$ and the constant $1$ are both even functions, $f(-x) = f(x)$ for every $x$. Which statement about the Fourier coefficients of $f$ is correct?",
     options: [
-      "All the $a_n$ coefficients vanish",
-      "The series has only sine terms",
-      "The constant term $a_0$ is zero",
-      "All the $b_n$ coefficients vanish"
+      "All the sine coefficients $b_n$ vanish, leaving a pure cosine series",
+      "All the cosine coefficients $a_n$ vanish, leaving a pure sine series",
+      "The constant term $a_0$ is zero, since a nonzero constant added to a cosine cannot survive",
+      "Neither family vanishes, since adding a constant to a cosine destroys the even symmetry"
     ],
-    correctAnswer: 3,
-    explanation: "Since $x^2$ is an even function, $f(x)\\sin(nx)$ is odd, so every sine-related integral over the symmetric interval $[-\\pi, \\pi]$ vanishes, meaning all $b_n$ coefficients are zero. The resulting expansion is a pure cosine series, with $a_0$ equal to $2\\pi^2/3$ and $a_n$ equal to $4(-1)^n/n^2$.\n\nAll the $a_n$ coefficients vanish is exactly backwards, since it is the cosine coefficients that survive for this even function.\n\nThe series has only sine terms is also backwards, since an even function produces a cosine series, not a sine series.\n\nThe constant term $a_0$ is zero is false, since $a_0$ works out to the nonzero value $2\\pi^2/3$ for this function."
+    correctAnswer: 0,
+    explanation: "Because $f$ is a sum of two even functions, $f$ itself is even, and an even function times $\\sin(nx)$ is odd, so every sine-related integral over the symmetric interval vanishes, leaving a pure cosine series plus the constant term, which uses the same even integrand structure as the $a_n$.\n\nClaiming the cosine coefficients vanish instead describes the odd case, not this even function.\n\nClaiming $a_0$ is zero is false, since the mean value of $f$ over a period is exactly the added constant $1$, which survives the averaging.\n\nClaiming neither family vanishes misunderstands parity, since adding a constant to an even function keeps the sum even rather than destroying its symmetry."
   },
   {
     id: "mth302_ch11_010",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Solving $u_t = \\kappa u_{xx}$ on $0 < x < L$ with $u(0, t) = u(L, t) = 0$ and a general initial temperature profile requires expanding $u(x, 0)$ in which type of series?",
+    text: "For heat flow governed by $u_t = \\kappa u_{xx}$ on the rod $0 < x < 6$ with both ends held at zero temperature, $u(0,t) = u(6,t) = 0$, and a general initial temperature profile $u(x,0) = f(x)$, the profile must be expanded in eigenfunctions $\\sin(n\\pi x/L)$. What value of $L$ should be used here, and why?",
     options: [
-      "A full Fourier series on the interval from $-L$ to $L$",
-      "A half-range cosine series",
-      "A half-range sine series",
-      "A Taylor series"
+      "$L=6$, since the eigenfunctions must vanish at both $x=0$ and $x=6$ exactly as the boundary conditions require",
+      "$L=3$, halving the rod length as though $6$ were a full period rather than the interval on which the eigenfunctions are defined",
+      "$L=12$, doubling the rod length before substituting into the eigenfunction formula",
+      "$L=2\\pi$, applying the standard period-$2\\pi$ Fourier series without adjusting for the rod's actual length"
     ],
-    correctAnswer: 2,
-    explanation: "The eigenfunctions of the associated Sturm-Liouville problem $X'' + \\lambda X = 0$ with $X(0) = X(L) = 0$ are $\\sin(n\\pi x/L)$, so the initial condition must be expanded in those functions alone, which is a half-range sine series. A half-range cosine series would instead be required for insulated ends, where the boundary condition involves $u_x = 0$ at both endpoints rather than $u = 0$.\n\nA full Fourier series on the interval from $-L$ to $L$ does not match the boundary conditions given here, which are defined only on $(0, L)$.\n\nA half-range cosine series is the companion expansion appropriate for insulated, not zero-temperature, boundary conditions.\n\nA Taylor series has no connection to satisfying the zero-boundary eigenfunction structure required by this problem."
+    correctAnswer: 0,
+    explanation: "The eigenfunctions of $X''+\\lambda X=0$ with $X(0)=X(6)=0$ are $\\sin(n\\pi x/6)$, so $L$ is simply the length of the interval on which the boundary value problem is posed, giving $L=6$ directly, since these eigenfunctions must vanish at both endpoints of the rod.\n\nHalving to $L=3$ wrongly imports the half-period rule from rescaling a period-$2L$ Fourier series, but this rod-length problem never involves a period being cut in half.\n\nDoubling to $L=12$ has no basis in either the boundary conditions or the eigenfunction derivation.\n\nUsing $L=2\\pi$ ignores the specific length of the rod entirely and substitutes an unrelated constant."
   },
   {
     id: "mth302_ch11_011",
@@ -201,29 +201,29 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_015",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "In the expansion $f(x) = \\dfrac{a_0}{2} + \\sum(a_n\\cos nx + b_n\\sin nx)$, what does $\\dfrac{a_0}{2}$ represent?",
+    text: "A function of period $8$ is defined by $f(x) = 4$ on $(-1, 1)$ and $f(x) = 0$ elsewhere on $(-4, 4)$. First find $L$, then compute $a_0$, and finally state the constant term $a_0/2$ of its Fourier series.",
     options: [
-      "The mean value of $f$ over a period",
-      "The amplitude of the first harmonic in the series",
-      "The value of $f$ at the origin of the interval",
-      "Twice the average value of $f$ over a period"
+      "$L=4$, $a_0=2$, so the constant term equals $1$",
+      "$L=8$, using the full period as $L$, giving $a_0=1$ and a constant term of $1/2$",
+      "$L=4$, $a_0=2$, but writing the constant term as $a_0$ itself, equal to $2$",
+      "$L=4$, $a_0=8$, forgetting to divide by $L$ at all, so the constant term equals $4$"
     ],
     correctAnswer: 0,
-    explanation: "With $a_0 = \\dfrac{1}{\\pi}\\int_{-\\pi}^{\\pi}f\\,dx$, the constant term $\\dfrac{a_0}{2}$ equals the average of $f$ over one period.\n\nThe first harmonic's amplitude is governed by $a_1$ and $b_1$.\n\nThe value at the origin is generally different from the mean.\n\nDoubling rather than halving is exactly the error this convention invites."
+    explanation: "The period is $8$, so the half-period is $L=4$. Then $a_0 = \\dfrac{1}{4}\\displaystyle\\int_{-1}^{1}4\\,dx = \\dfrac{1}{4}(8) = 2$, and the constant term is $a_0/2 = 1$, the mean value of $f$ spread over the full period.\n\nTaking $L=8$ mistakes the full period for the half-period, halving the prefactor and so halving both $a_0$ and the resulting constant term from their true values.\n\nWriting the constant term as $a_0=2$ itself skips the required halving, doubling the true constant term.\n\nDropping the prefactor $1/L$ entirely leaves the raw integral value of $8$ in place of $a_0=2$, a fourfold overstatement that then still needs, but does not receive, halving."
   },
   {
     id: "mth302_ch11_016",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the formula for $a_n$ on the interval $[-\\pi, \\pi]$?",
+    text: "Let $f(x) = 7\\cos(4x)$ on $(-\\pi, \\pi)$, extended periodically with period $2\\pi$. Using $a_n = \\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi} f(x)\\cos(nx)\\,dx$ together with the orthogonality relation $\\displaystyle\\int_{-\\pi}^{\\pi}\\cos(mx)\\cos(nx)\\,dx = 0$ for $m \\neq n$, what is $a_4$?",
     options: [
-      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f(x)\\cos nx\\,dx$",
-      "$\\dfrac{1}{2\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f(x)\\cos nx\\,dx$, halving the prefactor",
-      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi}f(x)\\sin nx\\,dx$, which gives $b_n$ instead",
-      "$\\dfrac{2}{\\pi}\\displaystyle\\int_{0}^{\\pi}f(x)\\cos nx\\,dx$, valid only for even $f$"
+      "$7$",
+      "$7/2$, halving the value as though the constant-term convention applied to $a_4$ as well",
+      "$14$, doubling the value by using a prefactor of $2/\\pi$ instead of $1/\\pi$",
+      "$0$, since orthogonality forces every cosine coefficient to vanish, including at matching indices"
     ],
     correctAnswer: 0,
-    explanation: "The cosine coefficient carries the prefactor $\\dfrac{1}{\\pi}$ over the full interval $[-\\pi, \\pi]$.\n\nHalving the prefactor is the convention in which the constant term is written as $a_0$ rather than $a_0/2$.\n\nUsing the sine gives $b_n$.\n\nThe half-range form applies only when $f$ is even and is not the general definition."
+    explanation: "The orthogonality relations kill every term except the one where the index matches, so $a_4 = \\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi} 7\\cos^2(4x)\\,dx = \\dfrac{7}{\\pi}(\\pi) = 7$, using $\\int_{-\\pi}^{\\pi}\\cos^2(nx)\\,dx=\\pi$ for nonzero integer $n$.\n\nHalving to $7/2$ wrongly imports the $a_0/2$ convention, but that halving applies only to the constant term, not to $a_n$ for $n\\geq 1$.\n\nDoubling to $14$ uses the wrong prefactor; the definition here uses $1/\\pi$, not $2/\\pi$.\n\nClaiming every cosine coefficient vanishes misreads orthogonality, which only kills mismatched indices, not the matching one that actually produces the nonzero coefficient."
   },
   {
     id: "mth302_ch11_017",
@@ -299,43 +299,43 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_022",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "If $f$ is even, which coefficients vanish?",
+    text: "Consider $f(x) = x^2 + 1$ on $(-\\pi, \\pi)$, extended periodically. Since $x^2$ and the constant $1$ are both even, $f(-x) = f(x)$ for every $x$. Which coefficients vanish as a result?",
     options: [
-      "All the $b_n$",
-      "All the $a_n$",
-      "Only $a_0$, while the rest survive unchanged",
-      "None of them, since parity does not affect the coefficients"
+      "All the sine coefficients $b_n$",
+      "All the cosine coefficients $a_n$",
+      "Only the constant term $a_0$, while the rest survive unchanged",
+      "None of them, since adding a constant changes the parity of $x^2$"
     ],
     correctAnswer: 0,
-    explanation: "An even function is orthogonal to every sine on a symmetric interval, so $b_n = 0$ and the series is a pure cosine series plus the constant.\n\nKilling the cosines describes the odd case.\n\nThe constant term generally survives for an even function.\n\nParity is precisely what determines which family survives."
+    explanation: "Since $f$ is even, being a sum of two even functions, it is orthogonal to every sine on the symmetric interval, so every $b_n$ vanishes and the series is a pure cosine series plus the constant term.\n\nClaiming the cosine coefficients vanish instead describes the odd case, not this even function.\n\nClaiming only $a_0$ vanishes is backwards, since $a_0$ is nonzero here, the mean value of $x^2+1$ over a period being positive, while it is the sine coefficients that vanish.\n\nClaiming none vanish misunderstands parity, since adding an even constant to the even function $x^2$ keeps the sum even rather than removing its symmetry."
   },
   {
     id: "mth302_ch11_023",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "If $f$ is odd, which coefficients vanish?",
+    text: "Consider $g(x) = \\sin(2x) + 3x$ on $(-\\pi, \\pi)$, extended periodically. Since $\\sin(2x)$ and $3x$ are both odd, $g(-x) = -g(x)$ for every $x$. Which coefficients vanish as a result?",
     options: [
-      "$a_0$ and all the $a_n$",
-      "All the $b_n$",
-      "Only $a_0$, while the cosines survive unchanged",
-      "Only the odd-index coefficients throughout"
+      "$a_0$ and all the cosine coefficients $a_n$",
+      "All the sine coefficients $b_n$",
+      "Only $a_0$, while the cosine coefficients survive unchanged",
+      "Only the even-indexed coefficients, regardless of family"
     ],
     correctAnswer: 0,
-    explanation: "An odd function is orthogonal to the constant and to every cosine, so only sine terms remain.\n\nKilling the sines describes the even case.\n\nThe cosines vanish as well, not only the constant.\n\nThe distinction is by family, not by index parity."
+    explanation: "Since $g$ is odd, being a sum of two odd functions, it is orthogonal to the constant and to every cosine on the symmetric interval, so $a_0$ and every $a_n$ vanish, leaving a pure sine series.\n\nClaiming the sine coefficients vanish instead describes the even case, not this odd function.\n\nClaiming only $a_0$ vanishes understates the result, since every cosine coefficient $a_n$ vanishes along with it.\n\nClaiming only even-indexed coefficients vanish misidentifies the distinction, which is by family, cosine versus sine, not by index parity."
   },
   {
     id: "mth302_ch11_024",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "At a jump discontinuity $x_0$, to what value does the Fourier series converge?",
+    text: "A function of period $4$ is defined by $f(x) = -2$ on $(-2, 0)$ and $f(x) = 6$ on $(0, 2)$, repeated periodically. Using periodicity to find the one-sided limits at $x = 2$, what value does the Fourier series converge to there?",
     options: [
-      "$\\tfrac{1}{2}[f(x_0^-) + f(x_0^+)]$",
-      "$f(x_0^+)$",
-      "$f(x_0^-)$, the value approached from the left",
-      "The larger of the two one-sided limits"
+      "$2$, the average of $6$ approached from the left and $-2$ approached from the right using periodicity",
+      "$6$, the value of $f$ immediately to the left of $x=2$",
+      "$-2$, the value of $f$ immediately to the right of $x=2$ within the next period",
+      "$4$, half the total jump measured as $6-(-2)$ without locating the two one-sided limits"
     ],
     correctAnswer: 0,
-    explanation: "Under the Dirichlet conditions the series converges to the average of the two one-sided limits at a jump.\n\nTaking the right-hand limit ignores the left-hand contribution.\n\nTaking the left-hand limit has the same defect.\n\nSelecting the larger limit has no basis in the convergence theorem."
+    explanation: "Since $f$ has period $4$, the point $x=2$ is also a jump point: approaching from the left within $(0,2)$ gives $f(2^-)=6$, while approaching from the right means entering the next period, where $x-4$ lies just inside $(-2,0)$, giving $f(2^+) = f(-2^+) = -2$. The Dirichlet convergence theorem gives the average of these one-sided limits, $\\tfrac{1}{2}(6+(-2)) = 2$.\n\nUsing only $6$, the left-hand limit, ignores the wraparound value on the other side of the jump.\n\nUsing only $-2$, the right-hand limit, has the same defect in the opposite direction.\n\nComputing half the difference $6-(-2)$ instead of half the sum confuses the jump size with the converged value, which is the midpoint, not half the gap."
   },
   {
     id: "mth302_ch11_025",
@@ -355,15 +355,15 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_026",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the formula for $b_n$ for a function of period $2L$?",
+    text: "A function has period $12$. Starting from the substitution $v = \\pi x/L$ that rescales the period-$2\\pi$ formula $b_n = \\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi} f\\sin(nv)\\,dv$, first find $L$, then state the resulting formula for $b_n$.",
     options: [
-      "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$",
-      "$\\dfrac{1}{2L}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$, halving the prefactor",
-      "$\\dfrac{1}{L}\\displaystyle\\int_{-L}^{L}f\\cos\\dfrac{n\\pi x}{L}\\,dx$",
-      "$\\dfrac{1}{\\pi}\\displaystyle\\int_{-L}^{L}f\\sin\\dfrac{n\\pi x}{L}\\,dx$"
+      "$L=6$, giving $b_n = \\dfrac{1}{6}\\displaystyle\\int_{-6}^{6} f\\sin\\left(\\dfrac{n\\pi x}{6}\\right)dx$",
+      "$L=12$, using the full period as $L$, giving $b_n = \\dfrac{1}{12}\\displaystyle\\int_{-12}^{12} f\\sin\\left(\\dfrac{n\\pi x}{12}\\right)dx$",
+      "$L=6$, giving $b_n = \\dfrac{1}{6}\\displaystyle\\int_{-6}^{6} f\\cos\\left(\\dfrac{n\\pi x}{6}\\right)dx$, using cosine in place of sine",
+      "$L=6$, giving $b_n = \\dfrac{1}{12}\\displaystyle\\int_{-6}^{6} f\\sin\\left(\\dfrac{n\\pi x}{6}\\right)dx$, halving the prefactor beyond what the substitution requires"
     ],
     correctAnswer: 0,
-    explanation: "Rescaling the period-$2\\pi$ formulas by $v = \\pi x/L$ replaces the prefactor $1/\\pi$ by $1/L$ and the harmonic $\\sin nx$ by $\\sin(n\\pi x/L)$.\n\nHalving the prefactor belongs to a different normalisation.\n\nUsing the cosine gives $a_n$.\n\nRetaining $\\pi$ in the prefactor fails to rescale consistently."
+    explanation: "The half-period is $L=12/2=6$. Rescaling with $v=\\pi x/L$ replaces $1/\\pi$ by $1/L=1/6$ and the argument $nv$ by $n\\pi x/6$, giving $b_n = \\dfrac{1}{6}\\displaystyle\\int_{-6}^{6}f\\sin\\left(\\dfrac{n\\pi x}{6}\\right)dx$.\n\nTaking $L=12$ mistakes the full period for the half-period, changing both the prefactor and the harmonic incorrectly.\n\nSwitching to cosine gives the formula for $a_n$, not $b_n$.\n\nHalving the prefactor to $1/12$ after already finding the correct $L=6$ introduces an extra, unjustified factor of one half."
   },
   {
     id: "mth302_ch11_027",
@@ -411,15 +411,15 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_030",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What are the Dirichlet conditions for convergence of a Fourier series?",
+    text: "A function $g(x)$ is periodic with period $2\\pi$. On one period it oscillates so rapidly near $x = 0$ that it has infinitely many local maxima and minima there, although it remains bounded and single-valued everywhere else on the period. Does $g(x)$ satisfy the Dirichlet conditions required for its Fourier series to converge?",
     options: [
-      "Periodic, single valued, piecewise continuous, with finitely many extrema and discontinuities in a period",
-      "Continuous and differentiable everywhere on the whole real line",
-      "Bounded and monotonic throughout each period without exception",
-      "Infinitely differentiable with all derivatives bounded"
+      "No, because the Dirichlet conditions require only finitely many maxima and minima in a period",
+      "Yes, because being bounded and single-valued is all that Dirichlet's conditions require",
+      "Yes, because periodicity by itself guarantees all of Dirichlet's conditions",
+      "No, because Dirichlet's conditions also require $g$ to be infinitely differentiable, which it is not"
     ],
     correctAnswer: 0,
-    explanation: "The Dirichlet conditions require periodicity, single-valuedness, piecewise continuity, and finitely many maxima, minima and discontinuities in a period.\n\nRequiring differentiability everywhere would exclude the square wave, whose series converges.\n\nMonotonicity is far too strong and excludes ordinary oscillating functions.\n\nInfinite differentiability is likewise unnecessary."
+    explanation: "The Dirichlet conditions require periodicity, single-valuedness, piecewise continuity, and only finitely many maxima, minima and discontinuities within one period. Infinitely many extrema near a single point violates that finiteness requirement directly, regardless of boundedness.\n\nBeing bounded and single-valued is necessary but not sufficient, since the finite-extrema requirement is a separate condition that this function fails.\n\nPeriodicity alone does not guarantee the other three conditions, which must be checked independently.\n\nInfinite differentiability is never one of the Dirichlet conditions, so failing it is not the actual reason this function fails to qualify."
   },
   {
     id: "mth302_ch11_031",
@@ -467,15 +467,15 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_034",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "What is the fundamental period of a periodic function?",
+    text: "What is the fundamental period of $f(x) = \\sin(2x) + \\cos(4x)$?",
     options: [
-      "The smallest positive period",
-      "The largest period the function possesses",
-      "The average spacing between successive maxima",
-      "Any interval over which the function repeats"
+      "$\\pi$, the smallest value of $T$ for which both $\\sin(2x)$ and $\\cos(4x)$ individually repeat",
+      "$2\\pi$, the period that both terms would share if $\\sin(2x)$ were instead $\\sin x$",
+      "$\\pi/2$, the period of $\\cos(4x)$ alone, since it is the higher-frequency term",
+      "$2\\pi/3$, dividing $2\\pi$ by the sum of the two frequencies $2$ and $4$"
     ],
     correctAnswer: 0,
-    explanation: "Every integer multiple of a period is again a period, so the fundamental period is defined as the smallest positive one.\n\nNo largest period exists, since multiples grow without bound.\n\nSpacing between maxima can differ from the period for a general profile.\n\nAny repeating interval is a period, but not necessarily the fundamental one."
+    explanation: "The term $\\sin(2x)$ has period $\\pi$ and $\\cos(4x)$ has period $\\pi/2$. The fundamental period of the sum is the smallest $T$ that is an integer multiple of both individual periods, and $T=\\pi$ works since $\\pi/\\pi=1$ and $\\pi/(\\pi/2)=2$ are both integers, so $\\pi$ is the fundamental period.\n\nUsing $2\\pi$ would be correct only if the first term were $\\sin x$ rather than $\\sin(2x)$; here it overshoots the true smallest common period.\n\nUsing $\\pi/2$, the period of $\\cos(4x)$ alone, ignores that $\\sin(2x)$ does not repeat that quickly, since $\\sin(2(x+\\pi/2)) = \\sin(2x+\\pi) = -\\sin(2x) \\neq \\sin(2x)$.\n\nDividing $2\\pi$ by the sum of the frequencies has no basis in how periods of a sum combine; periods combine through a common multiple, not through the sum of frequencies."
   },
   {
     id: "mth302_ch11_035",
@@ -509,29 +509,29 @@ const mth302Chapter11: QuestionV2[] = [
     id: "mth302_ch11_037",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Rescaling a period-$2\\pi$ series to period $2L$ uses which substitution?",
+    text: "A period-$2\\pi$ Fourier series is being rescaled to apply to a function of period $22$, using a substitution $v = Kx$ chosen so that $v$ runs over $2\\pi$ exactly when $x$ runs over one full period. First find $L$, then find $K$, and state the resulting substitution.",
     options: [
-      "$v = \\dfrac{\\pi x}{L}$",
-      "$v = \\dfrac{Lx}{\\pi}$",
-      "$v = 2\\pi x$",
-      "$v = \\dfrac{x}{2L}$, omitting the factor $\\pi$"
+      "$L=11$, $K=\\pi/11$, so $v = \\pi x/11$",
+      "$L=22$, using the full period as $L$ instead of the half-period, so $v = \\pi x/22$",
+      "$L=11$, inverting the ratio to get $K=11/\\pi$, so $v = 11x/\\pi$",
+      "$L=11$, omitting the factor of $\\pi$ from $K$, so $v = x/11$"
     ],
     correctAnswer: 0,
-    explanation: "Choosing $\\kappa$ so that $v$ runs over $2\\pi$ while $x$ runs over $2L$ gives $\\kappa = \\pi/L$, hence $v = \\pi x/L$.\n\nInverting the ratio rescales in the wrong direction.\n\nIgnoring $L$ fails to match the two ranges.\n\nOmitting $\\pi$ leaves the harmonics unnormalised."
+    explanation: "The period is $22$, so $L=11$. Choosing $K$ so that $v=2\\pi$ when $x=2L=22$ gives $2\\pi = K(22)$, so $K=\\pi/11$, and the substitution is $v = \\pi x/11$.\n\nTaking $L=22$ mistakes the full period for the half-period, the standard trap, doubling the denominator in the substitution.\n\nInverting the ratio to $K=11/\\pi$ rescales in the wrong direction entirely, producing dimensions that do not match the original period-$2\\pi$ formulas.\n\nOmitting the factor of $\\pi$ leaves the harmonics unnormalised relative to the trigonometric functions they are meant to rescale."
   },
   {
     id: "mth302_ch11_038",
     course: "MTH 302",
     chapter: "Chapter 11",
-    text: "Which error does writing the constant term as $a_0$ rather than $\\dfrac{a_0}{2}$ produce?",
+    text: "A student correctly computes $a_0 = 8$ for a function of period $2\\pi$ using $a_0 = \\dfrac{1}{\\pi}\\displaystyle\\int_{-\\pi}^{\\pi} f(x)\\,dx$, but then writes the constant term of the Fourier series as $a_0 = 8$ instead of $a_0/2$. By how much, and in which direction, is the resulting constant term wrong?",
     options: [
-      "It doubles the mean value of the function",
-      "It halves every sine coefficient in the series",
-      "It shifts each harmonic frequency by one",
-      "It has no effect on the resulting series"
+      "Too large by $4$, since the correct constant term is $a_0/2 = 4$, not $a_0 = 8$",
+      "Too small by $4$, since the correct constant term should have been $12$",
+      "Too large by $8$, since the correct constant term should have used $2a_0 = 16$",
+      "Not wrong at all, since $a_0$ and $a_0/2$ represent the same quantity"
     ],
     correctAnswer: 0,
-    explanation: "With $a_0$ defined using the same prefactor $1/\\pi$ as the other coefficients, the constant term must be $a_0/2$, so omitting the halving doubles the mean.\n\nThe sine coefficients are untouched by this convention.\n\nThe harmonic frequencies are unaffected.\n\nThe error changes the constant term and so does affect the series."
+    explanation: "Since $a_0$ carries the same $1/\\pi$ prefactor as $a_n$ and $b_n$, the constant term of the series is $a_0/2 = 8/2 = 4$, not $a_0$ itself. Writing $8$ in place of $4$ overstates the constant term by $4$.\n\nClaiming the error makes the term too small, or that the correct value is $12$, reverses the direction of the mistake and invents a value with no basis in the computation.\n\nClaiming the correct constant term should have used $2a_0=16$ compounds the error rather than correcting it, moving further from the true value of $4$.\n\nClaiming there is no error at all denies the well-known distinction between $a_0$ and $a_0/2$ in this convention, which are not the same quantity."
   }
 ];
 

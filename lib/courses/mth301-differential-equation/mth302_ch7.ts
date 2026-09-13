@@ -103,15 +103,15 @@ const mth302Chapter7: QuestionV2[] = [
     id: "mth302_ch7_008",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "How many real characteristic families does an elliptic second-order PDE have?",
+    text: "For the equation $2u_{xx} + 2u_{xy} + 5u_{yy} = 0$, compute the discriminant $B^2 - 4AC$ and determine how many real characteristic families the equation has.",
     options: [
-      "$0$",
-      "$1$",
-      "$2$",
+      "1, since the discriminant is assumed to vanish here, matching the parabolic case where the two characteristic directions coincide into a single family",
+      "0, since the discriminant equals -36, which is negative, so the equation is elliptic",
+      "2, since a positive discriminant would give two distinct real directions",
       "Infinitely many"
     ],
-    correctAnswer: 0,
-    explanation: "Since $B^2 - 4AC < 0$ for an elliptic equation, the roots of the characteristic direction formula are complex conjugates, so no real characteristic curves exist. By contrast, hyperbolic equations have two real characteristic families and parabolic equations have exactly one.\n\n$1$ is the count for a parabolic equation, not an elliptic one.\n\n$2$ is the count for a hyperbolic equation.\n\nInfinitely many does not match any of the three classification types."
+    correctAnswer: 1,
+    explanation: "Here $A=2$, $B=2$, $C=5$, so $B^2-4AC = 4 - 40 = -36$, which is negative, making the equation elliptic. An elliptic equation has no real characteristic directions at all, since the roots of the characteristic quadratic are complex conjugates.\n\nOne real family is the count for a parabolic equation, which requires the discriminant to equal zero, not -36.\n\nTwo real families is the count for a hyperbolic equation, which requires a positive discriminant.\n\nInfinitely many does not correspond to any of the three classification types, since the family count is always 0, 1, or 2."
   },
   {
     id: "mth302_ch7_009",
@@ -159,71 +159,71 @@ const mth302Chapter7: QuestionV2[] = [
     id: "mth302_ch7_012",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "For $Au_{xx} + Bu_{xy} + Cu_{yy} + Du_x + Eu_y + Fu = G$, which coefficients determine the classification of the equation?",
+    text: "For the equation $3u_{xx} + 4u_{xy} + 2u_{yy} + 7u_x - 5u_y + u = e^x$, which classification does it have?",
     options: [
-      "$A$ and $G$ only",
-      "$D$, $E$, and $F$ only",
-      "All of $A$ through $F$",
-      "$A$, $B$, and $C$ only"
+      "Elliptic, since only $A=3$, $B=4$, and $C=2$ enter the discriminant, giving $B^2-4AC = 16-24 = -8$, while the terms $7u_x$, $-5u_y$, and $u$ play no role in the classification",
+      "Hyperbolic, obtained by treating the coefficient of $u_x$ as the value of $C$ instead of $2$",
+      "Parabolic, obtained by assuming the discriminant vanishes whenever lower-order terms are present",
+      "Indeterminate, since the classification cannot be decided without also knowing the coefficient of $u$"
     ],
-    correctAnswer: 3,
-    explanation: "Only the second-order, or principal, part of the equation decides the classification, through the discriminant $B^2 - 4AC$. Lower-order terms affect the solution but never the type, which is why $u_t = \\kappa u_{xx}$ and $u_t = \\kappa u_{xx} + u$ are both classified as parabolic despite differing in their lower-order terms.\n\n$A$ and $G$ only omits $B$ and $C$, both of which are essential to computing the discriminant.\n\n$D$, $E$, and $F$ only wrongly focuses on the lower-order coefficients that have no bearing on classification.\n\nAll of $A$ through $F$ wrongly includes the lower-order coefficients $D$, $E$, and $F$, which play no role in determining the type."
+    correctAnswer: 0,
+    explanation: "Only the second-order, or principal, part of the equation decides the classification, through the discriminant $B^2-4AC$. Here $A=3$, $B=4$, $C=2$, so $B^2-4AC = 16-24 = -8$, which is negative, giving an elliptic equation; the lower-order coefficients $7$, $-5$, and $1$, and the forcing term $e^x$, play no part in the computation.\n\nTreating the coefficient of $u_x$ as if it were $C$ mixes up a first-order coefficient with a second-order one, which changes the discriminant to a value that does not belong to this equation at all.\n\nAssuming lower-order terms force the discriminant to vanish misunderstands the rule entirely, since $D$, $E$, and $F$ never enter $B^2-4AC$.\n\nThe classification never depends on the coefficient of $u$, since $F$ is a lower-order coefficient just like $D$ and $E$."
   },
   {
     id: "mth302_ch7_013",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "For $Au_{xx} + Bu_{xy} + Cu_{yy} + \\cdots = G$, what is the discriminant used in this course?",
+    text: "For the equation $u_{xx} + 4u_{xy} + u_{yy} = 0$, using this course's convention where $B$ is the full coefficient of $u_{xy}$, what is the value of the discriminant $B^2-4AC$, and what type does it give?",
     options: [
-      "$B^2 - 4AC$",
-      "$B^2 - AC$",
-      "$4AC - B^2$, with the sign of the whole expression reversed",
-      "$A^2 - 4BC$"
+      "12, since $B^2-4AC = 16 - 4 = 12$, which is positive, so the equation is hyperbolic",
+      "15, obtained by using the alternative convention $B^2-AC$ that applies when the equation is written with a leading factor of $2$ on the mixed term, giving a different numerical value though not a different type",
+      "$-12$, obtained by reversing the sign of the standard formula",
+      "$-15$"
     ],
     correctAnswer: 0,
-    explanation: "With $B$ read as the full coefficient of $u_{xy}$, the discriminant is $B^2 - 4AC$.\n\nThe form $B^2 - AC$ belongs to the alternative convention in which the mixed term is written as $2Bu_{xy}$.\n\nReversing the sign would invert the elliptic and hyperbolic cases.\n\nSquaring $A$ instead of $B$ misidentifies which coefficient plays the middle role."
+    explanation: "With $A=1$, $B=4$, $C=1$ and $B$ read as the full coefficient of $u_{xy}$, the discriminant is $B^2-4AC = 16-4 = 12$, which is positive, so the equation is hyperbolic.\n\nThe value 15 belongs to the alternative convention in which the mixed term is written as $2Bu_{xy}$ and the discriminant is $B^2-AC$; the sign, and hence the type, is unchanged, but the numerical value differs from this course's convention.\n\nReversing the sign to $-12$ would wrongly turn a hyperbolic equation into an elliptic one.\n\n$-15$ compounds both of the errors above at once."
   },
   {
     id: "mth302_ch7_014",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "A second-order PDE with $\\Delta < 0$ is of which type?",
+    text: "For the equation $6u_{xx} + 2u_{xy} + 5u_{yy} = 0$, compute the discriminant and classify the equation.",
     options: [
-      "Elliptic",
       "Hyperbolic",
-      "Parabolic, which occurs only when the discriminant vanishes exactly",
-      "Undetermined without knowing the lower-order coefficients as well"
+      "Elliptic, since $B^2-4AC = 4 - 120 = -116$, which is negative",
+      "Parabolic, obtained by assuming the cross term contributes $B^2-AC$ rather than $B^2-4AC$ and that this alternative value happens to equal zero for these coefficients",
+      "Undetermined without also knowing the lower-order coefficients"
     ],
-    correctAnswer: 0,
-    explanation: "A negative discriminant corresponds to the elliptic case, modelled by the Laplace equation.\n\nA positive discriminant gives the hyperbolic case.\n\nA vanishing discriminant gives the parabolic case.\n\nThe lower-order coefficients play no part in classification."
+    correctAnswer: 1,
+    explanation: "Here $A=6$, $B=2$, $C=5$, so $B^2-4AC = 4 - 120 = -116$, which is negative, corresponding to the elliptic case modelled by the Laplace equation.\n\nHyperbolic would require a positive discriminant, the opposite sign of what is found here.\n\nUsing $B^2-AC$ instead of $B^2-4AC$ still gives $4-30=-26$, which is negative, not zero, so this route does not actually produce a parabolic conclusion either.\n\nThe lower-order coefficients play no part in classification, since only $A$, $B$, and $C$ enter the discriminant."
   },
   {
     id: "mth302_ch7_015",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "Which coefficients decide the classification of a second-order PDE?",
+    text: "For the equation $xu_{xx} + 4u_{xy} + yu_{yy} + x^3u_x - 2u = 0$, how is it classified at the point $(x,y) = (1,3)$?",
     options: [
-      "$A$, $B$ and $C$ only, the coefficients of the second-order derivatives",
-      "$A$, $B$, $C$, $D$ and $E$ together",
-      "$D$, $E$ and $F$",
-      "All the coefficients including the forcing term $G$"
+      "Hyperbolic, since at this point $A=1$, $B=4$, $C=3$, giving $B^2-4AC = 16-12 = 4$, which is positive",
+      "Elliptic everywhere, since a single fixed type must apply across the whole plane once the equation is written down, regardless of how $A$ and $C$ depend on position",
+      "Parabolic, since the discriminant is assumed to vanish once the term $x^3u_x$ is included",
+      "Elliptic"
     ],
     correctAnswer: 0,
-    explanation: "Only the coefficients of the second-order derivatives enter the discriminant, so $D$, $E$, $F$ and $G$ are irrelevant to the type.\n\nIncluding $D$ and $E$ brings in first-order terms that do not affect the classification.\n\nThe lower-order coefficients alone determine nothing about the type.\n\nThe forcing term never affects classification."
+    explanation: "Only the coefficients of the second-order derivatives enter the discriminant, so the terms $x^3u_x$ and $-2u$ play no role here. At $(x,y)=(1,3)$, $A=x=1$, $B=4$, $C=y=3$, giving $B^2-4AC = 16-12 = 4$, which is positive, so the equation is hyperbolic at this point.\n\nSince $A$ and $C$ are functions of position here, the type is decided pointwise and can change across the plane, so no single fixed label can be assigned without specifying where.\n\nThe first-order term $x^3u_x$ has no effect on the discriminant at all, so it cannot make the equation parabolic.\n\nElliptic would require a negative discriminant, which is not the value found at this point."
   },
   {
     id: "mth302_ch7_016",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "Which model equation is parabolic?",
+    text: "For the equation $u_t = 5u_{xx}$, treating $x$ and $t$ as the two independent variables so that $A$ is the coefficient of $u_{xx}$ and there is no $u_{tt}$ or mixed term, what is the resulting classification?",
     options: [
-      "$u_t = K^2u_{xx}$",
-      "$u_{xx} + u_{yy} = f(x, y)$",
-      "$u_{tt} = a^2u_{xx}$",
-      "$u_{xx} - u_{yy} = 0$"
+      "Hyperbolic",
+      "Parabolic, since $C=0$ and $B=0$ give $B^2-4AC = 0$, matching the diffusion equation pattern",
+      "Elliptic, obtained by assuming that the missing $u_{tt}$ term should be replaced with a negative coefficient before the discriminant is computed",
+      "Undetermined"
     ],
-    correctAnswer: 0,
-    explanation: "The diffusion equation $u_t = K^2u_{xx}$ has no $u_{tt}$ term, so $A = K^2$, $B = 0$, $C = 0$ and $\\Delta = 0$, making it parabolic.\n\nThe Poisson equation is the elliptic model.\n\nThe wave equation is the hyperbolic model.\n\nA difference of second derivatives gives $\\Delta > 0$ and is hyperbolic."
+    correctAnswer: 1,
+    explanation: "With $A=5$, and no $u_{tt}$ term and no mixed term, $C=0$ and $B=0$, so $B^2-4AC = 0-0 = 0$, making the equation parabolic; this is exactly the diffusion-equation pattern, since $u_t=\\kappa u_{xx}$ has the same structure for any positive $\\kappa$.\n\nHyperbolic would require a positive discriminant, which does not occur when $B=0$ and $C=0$.\n\nInventing a coefficient for a $u_{tt}$ term that is not actually present in the equation is not a valid step; $C$ is genuinely $0$ here, not negative.\n\nThe equation is well posed and its coefficients are fully known, so the discriminant, and hence the type, is determined rather than undetermined."
   },
   {
     id: "mth302_ch7_017",
@@ -327,29 +327,29 @@ const mth302Chapter7: QuestionV2[] = [
     id: "mth302_ch7_024",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "When $B = 0$, the sign of the discriminant is decided by what?",
+    text: "For the equation $7u_{xx} + 2u_{yy} = 0$, where the mixed-derivative coefficient is $B=0$, what does the sign of the discriminant come from, and what is the resulting classification?",
     options: [
-      "The sign of $AC$, since the discriminant reduces to $-4AC$",
-      "The sign of $A$ alone",
-      "The sign of $A + C$",
-      "The sign of $D$"
+      "The product $AC = 14$, giving $B^2-4AC = -56$, which is negative, so the equation is elliptic",
+      "The value of $A$ alone, since $A=7$ is positive, which by itself is treated as sufficient to conclude that the equation is elliptic without reference to $C$",
+      "The sum $A+C = 9$, giving a positive discriminant and a hyperbolic classification",
+      "Neither $A$ nor $C$, since $B=0$ forces the equation to be parabolic"
     ],
     correctAnswer: 0,
-    explanation: "With $B = 0$ the discriminant reduces to $-4AC$, so like signs give an elliptic equation, opposite signs a hyperbolic one, and either coefficient vanishing a parabolic one.\n\nThe coefficient $A$ alone cannot determine the product's sign.\n\nThe sum of the coefficients does not appear in the discriminant.\n\nFirst-order coefficients never affect the type."
+    explanation: "With $B=0$ the discriminant reduces to $-4AC$. Here $A=7$ and $C=2$, so $AC=14$ and $B^2-4AC = 0 - 56 = -56$, which is negative, so like signs in $A$ and $C$ give an elliptic equation.\n\n$A$ alone cannot determine the product's sign, since a positive $A$ paired with a negative $C$ would instead give a hyperbolic equation.\n\nThe sum $A+C$ never appears in the discriminant formula, only the product does.\n\nSetting $B=0$ does not by itself force a parabolic type; that requires $AC=0$ as well, which is not the case here since neither $A$ nor $C$ vanishes."
   },
   {
     id: "mth302_ch7_025",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "If $C = 0$ and $B \\neq 0$, what type is the equation automatically?",
+    text: "For the equation $3u_{xx} + 5u_{xy} = 0$, where $C=0$ and $B=5 \\neq 0$, what type is the equation, and why does the value of $A$ not matter here?",
     options: [
-      "Hyperbolic",
-      "Parabolic, because one of the outer coefficients has vanished",
-      "Elliptic",
-      "Indeterminate without knowing the value of $A$ as well"
+      "Hyperbolic, since $B^2-4AC$ reduces to $B^2 = 25$, which is positive regardless of $A$",
+      "Parabolic, since setting $C=0$ is treated as forcing the whole second-order part to vanish, which is assumed to make the discriminant zero regardless of the value of $B$",
+      "Elliptic, since $A=3$ is positive and assumed to dominate the sign",
+      "Indeterminate without knowing $A$"
     ],
     correctAnswer: 0,
-    explanation: "With $C = 0$ the discriminant is $B^2 > 0$, so the equation is hyperbolic regardless of $A$.\n\nA vanishing $C$ does not make the discriminant zero unless $B$ also vanishes.\n\nThe discriminant is a square and so cannot be negative here.\n\nThe value of $A$ is irrelevant once $C = 0$ and $B \\neq 0$."
+    explanation: "With $C=0$, the discriminant $B^2-4AC$ reduces to $B^2 = 25$, which is positive regardless of what $A$ equals, so the equation is hyperbolic automatically once $C=0$ and $B \\neq 0$.\n\nA vanishing $C$ does not make the discriminant zero unless $B$ also vanishes, and here $B=5 \\neq 0$.\n\nThe discriminant is a perfect square in this case and so cannot be negative, ruling out an elliptic classification regardless of the sign of $A$.\n\nThe value of $A$ genuinely drops out of the discriminant once $C=0$, so the type is fully determined without it."
   },
   {
     id: "mth302_ch7_026",
@@ -369,85 +369,85 @@ const mth302Chapter7: QuestionV2[] = [
     id: "mth302_ch7_027",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "How many real characteristic families does a hyperbolic equation have?",
+    text: "For the equation $u_{xx} - 6u_{xy} + 3u_{yy} = 0$, compute the discriminant and state how many real characteristic families the equation has.",
     options: [
-      "Two",
-      "One",
-      "None, which is the count belonging to the elliptic case",
-      "Three, one for each type of classification"
+      "Zero",
+      "One, since the discriminant is assumed to vanish for these coefficients",
+      "Two, since $B^2-4AC = 36 - 12 = 24$, which is positive, so the equation is hyperbolic",
+      "Infinitely many, since the mixed-derivative term $-6u_{xy}$ is treated as introducing an extra family beyond the two ordinary directions given by a positive discriminant"
     ],
-    correctAnswer: 0,
-    explanation: "A positive discriminant gives two distinct real roots for $dy/dx$, hence two real characteristic families.\n\nOne family corresponds to the parabolic case, where the two roots coincide.\n\nNo real families corresponds to the elliptic case.\n\nThree families do not arise for a second-order equation in two variables."
+    correctAnswer: 2,
+    explanation: "Here $A=1$, $B=-6$, $C=3$, so $B^2-4AC = 36 - 12 = 24$, which is positive, so the equation is hyperbolic and has two distinct real roots for $dy/dx$, hence two real characteristic families.\n\nZero real families is the count for an elliptic equation, which requires a negative discriminant, not $24$.\n\nOne family corresponds to the parabolic case, where the discriminant vanishes and the two roots coincide, which is not the case here.\n\nThe mixed-derivative coefficient does not introduce any additional families beyond the two given by the two roots of the characteristic quadratic."
   },
   {
     id: "mth302_ch7_028",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "How many real characteristic families does a parabolic equation have?",
+    text: "For the equation $9u_{xx} + 6u_{xy} + u_{yy} = 0$, compute the discriminant and state how many real characteristic families the equation has.",
     options: [
-      "One",
-      "Two",
-      "None, which is the count belonging to the elliptic case",
-      "Infinitely many, one through each point of the region"
+      "Two, since a positive discriminant is assumed here even though $B^2-4AC$ actually equals $36-36=0$ for these coefficients",
+      "One, since $B^2-4AC = 36-36 = 0$, so the equation is parabolic",
+      "Zero, since the coefficients $9$ and $1$ are both positive, which is treated as automatically giving a negative discriminant regardless of the middle coefficient",
+      "Infinitely many"
     ],
-    correctAnswer: 0,
-    explanation: "A vanishing discriminant makes the two roots of the characteristic equation coincide, leaving a single real family.\n\nTwo distinct families require a positive discriminant.\n\nNo real families requires a negative discriminant.\n\nThe count refers to families of curves, not to individual curves."
+    correctAnswer: 1,
+    explanation: "Here $A=9$, $B=6$, $C=1$, so $B^2-4AC = 36-36 = 0$, meaning the discriminant vanishes; this makes the two roots of the characteristic equation coincide, leaving a single real family, so the equation is parabolic.\n\nTwo distinct families would require a positive discriminant, but $36-36=0$ is not positive.\n\nBoth outer coefficients being positive does not by itself force a negative discriminant, since the middle coefficient $B$ still enters through $B^2$; here it happens to make the discriminant exactly zero rather than negative.\n\nThe count refers to families of curves, not to individual curves, and a second-order equation in two variables never has more than two real families."
   },
   {
     id: "mth302_ch7_029",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "What are the characteristic directions for a hyperbolic equation?",
+    text: "For the equation $u_{xx} - 5u_{xy} + 6u_{yy} = 0$, use the characteristic-direction formula $\\dfrac{dy}{dx} = \\dfrac{B \\pm \\sqrt{B^2-4AC}}{2A}$ to find the two characteristic directions.",
     options: [
-      "$\\dfrac{dy}{dx} = \\dfrac{B \\pm \\sqrt{B^2 - 4AC}}{2A}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{B \\pm \\sqrt{B^2 - 4AC}}{2C}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{-B \\pm \\sqrt{B^2 - 4AC}}{2A}$, carrying a leading minus sign",
-      "$\\dfrac{dy}{dx} = B^2 - 4AC$"
+      "2 and 3, obtained by treating $B$ as $+5$ instead of $-5$ before applying the formula",
+      "$-1/3$ and $-1/2$, obtained by dividing by $2C$ instead of $2A$ in the denominator",
+      "$-2$ and $-3$, obtained from $(-5 \\pm 1)/2$",
+      "$-4$ and $-6$"
     ],
-    correctAnswer: 0,
-    explanation: "The two real directions come from the quadratic in $dy/dx$, giving $\\dfrac{B \\pm \\sqrt{B^2 - 4AC}}{2A}$.\n\nDividing by $2C$ misplaces the leading coefficient.\n\nThe leading minus sign belongs to the ordinary quadratic formula, not to this arrangement.\n\nThe discriminant measures the type and is not itself a slope."
+    correctAnswer: 2,
+    explanation: "Here $A=1$, $B=-5$, $C=6$, so $B^2-4AC = 25 - 24 = 1$, confirming the equation is hyperbolic. The two directions are $\\dfrac{-5 \\pm \\sqrt{1}}{2} = \\dfrac{-5 \\pm 1}{2}$, giving $-2$ and $-3$.\n\nTreating $B$ as though it were $+5$ instead of the actual value $-5$ flips both resulting directions to the wrong sign.\n\nDividing by $2C$ instead of $2A$ misplaces which coefficient belongs in the denominator of the formula.\n\nOmitting the factor of $2$ from the denominator $2A$ and dividing by $1$ instead gives values twice as large in magnitude as the correct directions."
   },
   {
     id: "mth302_ch7_030",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "For a parabolic equation, what is the single characteristic direction?",
+    text: "For the equation $4u_{xx} - 12u_{xy} + 9u_{yy} = 0$, first confirm that it is parabolic, then find its single characteristic direction $\\dfrac{dy}{dx} = \\dfrac{B}{2A}$.",
     options: [
-      "$\\dfrac{dy}{dx} = \\dfrac{B}{2A}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{B}{A}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{2A}{B}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{C}{2A}$"
+      "$-3$, obtained by dividing $B$ by $A$ instead of by $2A$, which omits the factor of two required by the formula",
+      "$-2/3$, obtained by inverting the ratio and computing $2A/B$ instead of $B/(2A)$",
+      "$-3/2$, since $B=-12$ and $2A=8$",
+      "$9/8$"
     ],
-    correctAnswer: 0,
-    explanation: "With $\\Delta = 0$ the square root vanishes and the two directions collapse to the single value $\\dfrac{B}{2A}$.\n\nOmitting the factor of two contradicts the quadratic formula.\n\nInverting the ratio reverses the direction.\n\nUsing $C$ in the numerator misreads which coefficient survives."
+    correctAnswer: 2,
+    explanation: "Here $A=4$, $B=-12$, $C=9$, so $B^2-4AC = 144-144=0$, confirming the equation is parabolic, with $\\Delta=0$ making the square root vanish and the two directions collapse to the single value $\\dfrac{B}{2A} = \\dfrac{-12}{8} = -\\dfrac{3}{2}$.\n\nDividing $B$ by $A$ instead of by $2A$ omits the factor of two required by the formula, doubling the magnitude of the result.\n\nInverting the ratio to $2A/B$ reverses which quantity is on top, giving the reciprocal of the correct direction instead of the direction itself.\n\nUsing $C$ in the numerator instead of $B$ misreads which coefficient survives once the square root vanishes."
   },
   {
     id: "mth302_ch7_031",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "What is the normal form of a hyperbolic equation?",
+    text: "For the equation $u_{xx} + 3u_{xy} + u_{yy} = 0$, first classify it using the discriminant, then state which normal form it reduces to after transforming to characteristic coordinates $\\xi, \\eta$.",
     options: [
       "$u_{\\xi\\eta} = \\phi$",
-      "$u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$",
-      "$u_{\\eta\\eta} = \\phi$, which is the parabolic normal form instead",
-      "$u_{\\xi} + u_{\\eta} = \\phi$, containing only first-order derivatives"
+      "$u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$, the elliptic pattern, which would require a negative discriminant rather than the positive value $5$ found here",
+      "$u_{\\eta\\eta} = \\phi$, the parabolic pattern, which would require the discriminant to vanish rather than equal $5$",
+      "$u_{\\xi\\xi} = \\phi$, obtained by mistaking the single pure second derivative of the parabolic case for the mixed-derivative pattern that this positive discriminant actually requires"
     ],
     correctAnswer: 0,
-    explanation: "In characteristic coordinates a hyperbolic equation reduces to the mixed-derivative form $u_{\\xi\\eta} = \\phi$, equivalently $u_{\\xi\\xi} - u_{\\eta\\eta} = \\phi$.\n\nThe sum of two pure second derivatives is the elliptic normal form.\n\nA single pure second derivative is the parabolic normal form.\n\nThe order is preserved, so first derivatives alone cannot be the normal form."
+    explanation: "Here $A=1$, $B=3$, $C=1$, so $B^2-4AC = 9-4 = 5$, which is positive, so the equation is hyperbolic. In characteristic coordinates a hyperbolic equation reduces to the mixed-derivative form $u_{\\xi\\eta} = \\phi$, equivalently $u_{\\xi\\xi} - u_{\\eta\\eta} = \\phi$.\n\nThe sum of two pure second derivatives is the elliptic normal form, which would require a negative discriminant rather than the positive value $5$ found here.\n\nA single pure second derivative of the form $u_{\\eta\\eta}=\\phi$ is the parabolic normal form, which would require the discriminant to vanish rather than equal $5$.\n\nThe same objection applies to $u_{\\xi\\xi}=\\phi$, which is just the other equivalent way of writing the parabolic normal form and does not match a positive discriminant."
   },
   {
     id: "mth302_ch7_032",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "What is the normal form of an elliptic equation?",
+    text: "For the equation $u_{xx} + u_{xy} + u_{yy} = 0$, first classify it using the discriminant, then state which normal form it reduces to after transforming to characteristic coordinates $\\xi, \\eta$.",
     options: [
+      "$u_{\\xi\\eta} = \\phi$, the hyperbolic pattern, which would require a positive discriminant rather than the negative value $-3$ found here",
+      "$u_{\\eta\\eta} = \\phi$, the parabolic pattern, which would require the discriminant to vanish rather than equal $-3$",
       "$u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$",
-      "$u_{\\xi\\eta} = \\phi$",
-      "$u_{\\xi\\xi} - u_{\\eta\\eta} = \\phi$",
-      "$u_{\\eta\\eta} = \\phi$, which is the parabolic normal form instead"
+      "$u_{\\xi\\xi} - u_{\\eta\\eta} = \\phi$, an alternative hyperbolic pattern that likewise requires a positive discriminant rather than the negative value found here"
     ],
-    correctAnswer: 0,
-    explanation: "An elliptic equation reduces to the Laplace-like form $u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$, reflecting the absence of real characteristics.\n\nThe mixed derivative is the hyperbolic form.\n\nA minus sign between the terms is the alternative hyperbolic form.\n\nA single second derivative is the parabolic form."
+    correctAnswer: 2,
+    explanation: "Here $A=1$, $B=1$, $C=1$, so $B^2-4AC = 1-4 = -3$, which is negative, so the equation is elliptic. An elliptic equation reduces to the Laplace-like form $u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$, reflecting the absence of any real characteristic directions.\n\nThe mixed-derivative form $u_{\\xi\\eta}=\\phi$ is the hyperbolic pattern, which would require a positive discriminant rather than the negative value $-3$ found here.\n\nA single pure second derivative such as $u_{\\eta\\eta}=\\phi$ is the parabolic pattern, which would require the discriminant to vanish rather than equal $-3$.\n\nThe difference form $u_{\\xi\\xi}-u_{\\eta\\eta}=\\phi$ is just the equivalent way of writing the hyperbolic pattern, so it fails for the same reason as the mixed-derivative form."
   },
   {
     id: "mth302_ch7_033",
@@ -537,15 +537,15 @@ const mth302Chapter7: QuestionV2[] = [
     id: "mth302_ch7_039",
     course: "MTH 302",
     chapter: "Chapter 7",
-    text: "What is the normal form of a parabolic equation?",
+    text: "For the equation $u_{xx} - 4u_{xy} + 4u_{yy} = 0$, first classify it using the discriminant, then state which normal form it reduces to after transforming to characteristic coordinates $\\xi, \\eta$.",
     options: [
-      "$u_{\\eta\\eta} = \\phi$",
-      "$u_{\\xi\\eta} = \\phi$",
-      "$u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$",
-      "$u_{\\xi\\xi} - u_{\\eta\\eta} = \\phi$, a difference of two pure second derivatives"
+      "$u_{\\xi\\eta} = \\phi$, the hyperbolic pattern, which would require a positive discriminant rather than the value $0$ found here",
+      "$u_{\\xi\\xi} + u_{\\eta\\eta} = \\phi$, the elliptic pattern, which would require a negative discriminant rather than the value $0$ found here",
+      "$u_{\\xi\\xi} - u_{\\eta\\eta} = \\phi$, an alternative hyperbolic pattern that requires a positive rather than zero discriminant",
+      "$u_{\\eta\\eta} = \\phi$"
     ],
-    correctAnswer: 0,
-    explanation: "With only one real characteristic direction, a parabolic equation reduces to a single pure second derivative, $u_{\\eta\\eta} = \\phi$ or equivalently $u_{\\xi\\xi} = \\phi$.\n\nThe mixed derivative characterises the hyperbolic case.\n\nThe sum of two pure second derivatives characterises the elliptic case.\n\nThe difference of two pure second derivatives is the alternative hyperbolic form."
+    correctAnswer: 3,
+    explanation: "Here $A=1$, $B=-4$, $C=4$, so $B^2-4AC = 16-16 = 0$, so the equation is parabolic. With only one real characteristic direction, a parabolic equation reduces to a single pure second derivative, $u_{\\eta\\eta} = \\phi$, equivalently $u_{\\xi\\xi} = \\phi$.\n\nThe mixed-derivative form $u_{\\xi\\eta}=\\phi$ characterises the hyperbolic case, which would require a positive discriminant rather than the value $0$ found here.\n\nThe sum of two pure second derivatives characterises the elliptic case, which would require a negative discriminant rather than the value $0$ found here.\n\nThe difference of two pure second derivatives is just the equivalent way of writing the hyperbolic pattern, so it fails for the same reason as the mixed-derivative form."
   },
   {
     id: "mth302_ch7_040",

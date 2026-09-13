@@ -5,29 +5,29 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_001",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "If $f(x, y)$ is merely continuous on a rectangle containing $(x_0, y_0)$, what is guaranteed for the IVP $y' = f$, $y(x_0) = y_0$?",
+    text: "Consider the initial value problem $y' = \\dfrac{5}{2}xy^{2/5}$, $y(x_0) = 0$. The right-hand side $f(x, y) = \\dfrac{5}{2}xy^{2/5}$ is continuous for every real $x$ and $y$, while $f_y = xy^{-3/5}$ is undefined at $y = 0$. Applying the existence and uniqueness theorems at this initial point, what can be concluded?",
     options: [
-      "No solution",
-      "At least one solution",
-      "Exactly one solution",
-      "Infinitely many solutions"
+      "A solution exists, but uniqueness is not guaranteed",
+      "Both existence and uniqueness hold, since $f$ is continuous everywhere on the plane",
+      "No solution exists, since $f_y$ fails to be defined at $y = 0$",
+      "The solution is unique, since $f_y$ is bounded near $y = 0$"
     ],
-    correctAnswer: 1,
-    explanation: "Continuity alone gives Peano existence, meaning at least one solution is guaranteed, but says nothing about uniqueness.\n\nNo solution contradicts the existence guarantee that continuity provides.\n\nExactly one solution would require the additional hypothesis that $f_y$ be continuous or that $f$ be Lipschitz in $y$; without that, an equation like $y' = \\dfrac{3}{2}y^{1/3}$, $y(0) = 0$ has a continuous right-hand side yet two distinct solutions.\n\nInfinitely many solutions is not guaranteed by continuity alone either, only that at least one exists."
+    correctAnswer: 0,
+    explanation: "Continuity of $f$ alone secures existence by the existence theorem, but uniqueness requires $f_y$ to be continuous as well, and $f_y = xy^{-3/5}$ blows up as $y \\to 0$, so no Lipschitz bound holds there and uniqueness is not guaranteed at this point.\n\nBoth existence and uniqueness hold is the classic trap of assuming continuity of $f$ by itself is enough for uniqueness, when the uniqueness theorem specifically needs $f_y$ continuous too.\n\nNo solution exists reverses the existence theorem, since continuity of $f$ guarantees a solution regardless of what happens to $f_y$.\n\nThe solution is unique because $f_y$ is bounded near $y = 0$ is factually backwards, since $f_y = xy^{-3/5}$ grows without bound as $y \\to 0$ rather than staying bounded."
   },
   {
     id: "mth302_ch3_002",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "$f(x, y)$ is Lipschitz continuous in $y$ on a region $R$ when which condition holds?",
+    text: "For the initial value problem $y' = x^2y + \\sin x$, $y(0) = 0$, the right-hand side $f(x, y) = x^2y + \\sin x$ is a sum of continuous functions, so it is continuous everywhere and the existence theorem guarantees a solution near $x = 0$. Computing $f_y = x^2$, which is also continuous everywhere and bounded on any closed rectangle, what extra conclusion follows from the uniqueness theorem?",
     options: [
-      "There exists $L > 0$ with $|f(x_2, y) - f(x_1, y)| \\leq L|x_2 - x_1|$",
-      "There exists $L > 0$ with $|f(x, y_2) - f(x, y_1)| \\leq L|y_2 - y_1|$",
-      "$|f(x, y)| \\leq L$ for all points in $R$",
-      "$|f_y(x, y)| = L$ for all points in $R$"
+      "The solution is also unique on some interval about $x = 0$",
+      "No extra conclusion follows, since $f_x$, not $f_y$, controls uniqueness",
+      "The solution becomes unique only after also checking that $f$ itself is bounded on the rectangle",
+      "The interval of existence extends to all real values of $x$"
     ],
-    correctAnswer: 1,
-    explanation: "The Lipschitz condition used in the uniqueness theorem controls how much $f$ varies in its second argument $y$, uniformly over $x$, which is exactly $|f(x, y_2) - f(x, y_1)| \\leq L|y_2 - y_1|$.\n\nThere exists $L > 0$ with $|f(x_2, y) - f(x_1, y)| \\leq L|x_2 - x_1|$ is a Lipschitz condition in $x$, which is not the hypothesis the uniqueness theorem requires.\n\n$|f(x, y)| \\leq L$ for all points in $R$ describes boundedness of $f$, a different property entirely.\n\n$|f_y(x, y)| = L$ for all points in $R$ demands an exact equality rather than the correct sufficient bound $|f_y| \\leq L$."
+    correctAnswer: 0,
+    explanation: "Continuity of $f_y = x^2$ on a rectangle about the initial point is exactly the extra hypothesis the uniqueness theorem needs, so together with the existing continuity of $f$ it upgrades the conclusion to a unique solution on some interval about $x = 0$.\n\nNo extra conclusion follows because $f_x$ controls uniqueness swaps the roles of the two partial derivatives; the Lipschitz condition and the uniqueness theorem are stated in terms of $f_y$, not $f_x$.\n\nRequiring $f$ itself to be bounded confuses boundedness of the function with continuity of its $y$-derivative, which is the actual hypothesis being tested.\n\nExtending the interval of existence to all real $x$ overstates the theorem, which only ever guarantees a solution on some interval about the initial point."
   },
   {
     id: "mth302_ch3_003",
@@ -75,15 +75,15 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_006",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "Which implication about differentiability, the Lipschitz condition, and continuity always holds on a closed bounded rectangle?",
+    text: "For $f(x, y) = x\\cos y$ on the closed bounded rectangle $-1 \\leq x \\leq 1$, $-\\pi \\leq y \\leq \\pi$, the partial derivative is $f_y = -x\\sin y$, which is continuous everywhere and satisfies $|f_y| \\leq 1$ on this rectangle. Which implication does this example illustrate?",
     options: [
-      "Continuous implies Lipschitz",
-      "Lipschitz implies differentiable",
-      "Continuously differentiable implies Lipschitz",
-      "Lipschitz implies bounded"
+      "Continuously differentiable in $y$ implies Lipschitz in $y$ on a closed bounded rectangle",
+      "The negative sign in $f_y$ shows that $f$ is not Lipschitz in $y$ on this rectangle",
+      "Lipschitz continuity in $y$ on this rectangle implies that $f$ must be continuously differentiable there as well",
+      "Boundedness of $f_y$ implies that $f$ itself is bounded on the rectangle"
     ],
-    correctAnswer: 2,
-    explanation: "On a closed bounded rectangle, continuity of $f_y$ guarantees $|f_y| \\leq L$ for some constant $L$, and the mean value theorem then converts this bound directly into the Lipschitz inequality, so continuously differentiable implies Lipschitz.\n\nContinuous implies Lipschitz fails, since $f(y) = y^{1/3}$ is continuous but not Lipschitz near $y = 0$.\n\nLipschitz implies differentiable fails, since $f(y) = |y|$ is Lipschitz with $L = 1$ but is not differentiable at $y = 0$.\n\nLipschitz implies bounded fails, since $f(y) = y$ is Lipschitz on the whole real line yet unbounded."
+    correctAnswer: 0,
+    explanation: "Since $f_y$ is continuous on a closed bounded rectangle it is automatically bounded there, and the mean value theorem then converts that bound directly into a Lipschitz inequality, which is exactly the implication that continuous differentiability in $y$ gives Lipschitz continuity in $y$.\n\nThe sign of $f_y$ is irrelevant to the Lipschitz condition, which bounds $|f_y|$ rather than $f_y$ itself, so a negative value does not block the conclusion.\n\nReversing the implication to claim Lipschitz continuity forces continuous differentiability is false in general, since a Lipschitz function need not even be differentiable everywhere.\n\nA bound on $f_y$ says nothing about the size of $f$ itself, only about how fast $f$ changes as $y$ varies."
   },
   {
     id: "mth302_ch3_007",
@@ -103,85 +103,85 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_008",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "What best describes the existence and uniqueness theorem for $y' = f(x, y)$?",
+    text: "For $y' = \\tan x + y$, $y(0) = 0$, the right-hand side $f(x, y) = \\tan x + y$ is continuous only for $x$ strictly between $-\\pi/2$ and $\\pi/2$, since $\\tan x$ is undefined at $x = \\pi/2$. On the smaller rectangle $-1 \\leq x \\leq 1$ with $y$ restricted to a bounded range, which lies entirely inside that interval, both $f$ and $f_y = 1$ are continuous, so the existence and uniqueness theorems both apply there. What does this illustrate about the theorems' guarantee?",
     options: [
-      "Global and necessary",
-      "Global and sufficient",
-      "Local and sufficient",
-      "Local and necessary"
+      "The guaranteed solution interval must be chosen small enough to avoid points where $f$ fails the hypotheses",
+      "The theorems guarantee a unique solution on the full interval $-1 \\leq x \\leq 1$ regardless of where $\\tan x$ is undefined",
+      "Since $\\tan x$ is undefined at $x = \\pi/2$, no solution can exist anywhere near $x = 0$",
+      "Uniqueness fails near $x = 0$ because $f_y$ is unbounded there"
     ],
-    correctAnswer: 2,
-    explanation: "The theorem's conclusion holds only on some interval about the initial point $x_0$, making it local, and its hypotheses guarantee the conclusion without being required for it, making it sufficient rather than necessary; for instance $y' = y^{1/3}$, $y(0) = 1$ has a unique solution even though $f_y$ is not bounded everywhere in the plane.\n\nGlobal and necessary and global and sufficient both wrongly claim the conclusion extends over the whole domain rather than just a neighborhood of the initial point.\n\nLocal and necessary wrongly claims the hypotheses must hold for uniqueness to occur, when they are only one sufficient route to it."
+    correctAnswer: 0,
+    explanation: "The theorems only apply on a rectangle where the hypotheses genuinely hold, so the guaranteed interval about $x_0$ has to be chosen inside the region where $f$ and $f_y$ are continuous, here the interval strictly between $-\\pi/2$ and $\\pi/2$; this is exactly why the conclusion is always local rather than automatic on any rectangle a student happens to write down.\n\nClaiming the theorems guarantee uniqueness on the full stated interval regardless of the singularity ignores that $f$ is not even continuous at $x = \\pi/2$, so the hypotheses fail there.\n\nA singularity at $x = \\pi/2$ does not prevent a solution from existing near $x = 0$, since $f$ is perfectly continuous on a rectangle around that point.\n\n$f_y = 1$ is a constant and therefore bounded everywhere, so uniqueness does not fail near $x = 0$ for that reason."
   },
   {
     id: "mth302_ch3_009",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "If $f$ is continuous on a rectangle $R$ containing $(x_0, y_0)$, what does the existence theorem guarantee for $y' = f(x, y)$, $y(x_0) = y_0$?",
+    text: "For $y' = 3 - xy^2$, $y(1) = 2$, the right-hand side $f(x, y) = 3 - xy^2$ is a polynomial in $x$ and $y$, hence continuous on the rectangle $0 \\leq x \\leq 2$, $0 \\leq y \\leq 4$, which contains the point $(1, 2)$. Based on continuity of $f$ alone, before checking $f_y$, what does the existence theorem guarantee?",
     options: [
-      "At least one solution on some interval about $x_0$",
-      "Exactly one solution valid on the whole of the rectangle $R$",
-      "A unique solution on every interval about $x_0$",
-      "No solution unless $f_y$ is also continuous"
+      "At least one solution exists on some interval about $x = 1$",
+      "Exactly one solution exists on some interval about $x = 1$, since $f$ is continuous there",
+      "A unique solution exists on the entire rectangle $0 \\leq x \\leq 2$, $0 \\leq y \\leq 4$",
+      "No solution is guaranteed unless $f_y$ is continuous too"
     ],
     correctAnswer: 0,
-    explanation: "Continuity of $f$ alone delivers existence, meaning at least one solution on some interval around $x_0$, but says nothing about how many.\n\nExactly one solution on the whole rectangle overstates both the uniqueness and the interval, since the conclusion is local.\n\nA unique solution requires the extra hypothesis on $f_y$ or a Lipschitz condition.\n\nContinuity is enough for a solution to exist, so denying existence without $f_y$ reverses the theorem."
+    explanation: "Continuity of $f$ by itself only triggers the existence theorem, which guarantees at least one solution on some interval about the initial point, and says nothing yet about how many solutions there are.\n\nClaiming exactly one solution from continuity of $f$ alone is the classic slip of borrowing the uniqueness conclusion before checking $f_y$, which has not been examined yet in this question.\n\nClaiming a unique solution on the entire rectangle overstates both the uniqueness and the size of the guaranteed interval, since the theorem's conclusion is always local.\n\nDenying any guarantee without $f_y$ reverses the theorem, since continuity of $f$ alone is already enough for existence."
   },
   {
     id: "mth302_ch3_010",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "Which additional hypothesis upgrades the existence theorem to a uniqueness theorem?",
+    text: "For $y' = e^{-x}y + x^3$, $y(0) = 1$, the right-hand side $f(x, y) = e^{-x}y + x^3$ is continuous everywhere, so the existence theorem guarantees a solution near $x = 0$. Computing $f_y = e^{-x}$, which is also continuous everywhere and bounded by $1$ for $x \\geq 0$, which additional hypothesis has just been verified to upgrade the guarantee to uniqueness?",
     options: [
-      "Continuity of $f_y$ on $R$",
-      "Boundedness of $f$ on the rectangle $R$",
-      "Continuity of the partial derivative $f_x$ on $R$",
-      "Differentiability of $f$ in $x$"
+      "Continuity of $f_y$ on the region",
+      "Continuity of $f_x$, since it is the derivative that controls how nearby solutions spread apart in $x$",
+      "Boundedness of $f$ itself on the same region, independent of $f_y$",
+      "Differentiability of $f$ with respect to $x$ rather than $y$"
     ],
     correctAnswer: 0,
-    explanation: "Adding continuity of $f_y$ on $R$, or equivalently a Lipschitz condition in $y$, yields a unique solution on some interval about $x_0$.\n\nBoundedness of $f$ helps control the interval of existence but does not by itself force uniqueness.\n\nContinuity of $f_x$ concerns the wrong variable, since the Lipschitz condition constrains variation in $y$.\n\nDifferentiability in $x$ is likewise the wrong variable for this conclusion."
+    explanation: "The uniqueness theorem's extra hypothesis beyond continuity of $f$ is continuity of $f_y$ on the region, and that is precisely what computing $f_y = e^{-x}$ and observing it is continuous and bounded has just confirmed.\n\nContinuity of $f_x$ swaps in the wrong partial derivative, since the Lipschitz condition and the uniqueness theorem are both stated in terms of variation in $y$, not $x$.\n\nBoundedness of $f$ itself controls the size of the function, not its rate of change in $y$, so it does not supply the hypothesis the uniqueness theorem needs.\n\nDifferentiability with respect to $x$ is again the wrong variable for the uniqueness hypothesis, which concerns $f_y$."
   },
   {
     id: "mth302_ch3_011",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "A convenient sufficient test for $f$ to be Lipschitz in $y$ on $R$ is which condition?",
+    text: "For $f(x, y) = (x^2 + 1)y$ on the rectangle $-1 \\leq x \\leq 1$, $-3 \\leq y \\leq 3$, the partial derivative is $f_y = x^2 + 1$, which is continuous and satisfies $x^2 + 1 \\leq 2$ for every $x$ in that range. Which Lipschitz constant does this sufficient test supply for $f$ in $y$ on this rectangle?",
     options: [
-      "$|f_y| \\leq L$ on $R$",
-      "$|f| \\leq L$ everywhere on the rectangle $R$",
-      "$|f_x| \\leq L$ at every point of $R$",
-      "$f$ is continuous on $R$"
+      "$L = 2$, from the maximum of $|f_y|$ on the rectangle",
+      "$L = 1$, from the constant term in $f_y$ alone, ignoring the contribution of $x^2$",
+      "$L = 3$, taken from the bound on $y$ rather than the bound on $f_y$",
+      "No finite Lipschitz constant exists on this rectangle"
     ],
     correctAnswer: 0,
-    explanation: "If $f_y$ exists and satisfies $|f_y| \\leq L$ on $R$, the mean value theorem gives $|f(x, y_2) - f(x, y_1)| \\leq L|y_2 - y_1|$, which is the Lipschitz condition.\n\nBounding $f$ itself controls the size of the function, not its rate of change in $y$.\n\nBounding $f_x$ constrains variation in the wrong variable.\n\nMere continuity is strictly weaker and does not imply a Lipschitz bound, as $y^{1/3}$ near $0$ shows."
+    explanation: "The sufficient test bounds $|f_y|$ on the rectangle, and since $f_y = x^2 + 1$ reaches its largest value of $2$ at $x = \\pm 1$, the mean value theorem gives the Lipschitz inequality with $L = 2$.\n\nUsing $L = 1$ drops the $x^2$ term and keeps only the constant piece of $f_y$, understating the actual maximum.\n\nUsing $L = 3$ mistakenly reads off the bound on the variable $y$ itself rather than the bound on the derivative $f_y$, which is what the Lipschitz test actually requires.\n\nA finite Lipschitz constant does exist, since $f_y$ is continuous on a closed bounded rectangle and therefore bounded there."
   },
   {
     id: "mth302_ch3_012",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "Which theorem converts a bound on $f_y$ into the Lipschitz inequality?",
+    text: "For $f(x, y) = x\\sin y + y$ on the rectangle $-2 \\leq x \\leq 2$ with $y$ unrestricted, the partial derivative is $f_y = x\\cos y + 1$, which satisfies $|f_y| \\leq |x| + 1 \\leq 3$ on this rectangle. Which theorem converts this bound into the Lipschitz inequality $|f(x, y_2) - f(x, y_1)| \\leq 3|y_2 - y_1|$, and what is the resulting constant?",
     options: [
-      "The mean value theorem",
-      "The intermediate value theorem for continuous functions",
-      "The fundamental theorem of calculus",
-      "Rolle's theorem"
+      "The mean value theorem, giving Lipschitz constant $L = 3$",
+      "The intermediate value theorem, giving Lipschitz constant $L = 3$, since $f_y$ attains every value between its bounds",
+      "The fundamental theorem of calculus, giving Lipschitz constant $L = 2$ from the bound on $x$ alone",
+      "Rolle's theorem, giving $L = 1$"
     ],
     correctAnswer: 0,
-    explanation: "The mean value theorem writes $f(x, y_2) - f(x, y_1) = f_y(x, \\xi)(y_2 - y_1)$ for some intermediate $\\xi$, so a bound $|f_y| \\leq L$ immediately gives the Lipschitz estimate.\n\nThe intermediate value theorem concerns attained values, not difference quotients.\n\nThe fundamental theorem of calculus relates integration and differentiation rather than bounding differences.\n\nRolle's theorem is the special case where the endpoint values coincide, which is too narrow here."
+    explanation: "The mean value theorem writes $f(x, y_2) - f(x, y_1) = f_y(x, \\xi)(y_2 - y_1)$ for some $\\xi$ between $y_1$ and $y_2$, so the bound $|f_y| \\leq 3$ converts directly into the Lipschitz inequality with $L = 3$.\n\nThe intermediate value theorem concerns which values a continuous function attains, not how to bound a difference quotient, so it does not supply the Lipschitz inequality.\n\nThe fundamental theorem of calculus links integration and differentiation and does not by itself produce a Lipschitz bound, and $L = 2$ also drops the constant $1$ from the bound on $f_y$.\n\nRolle's theorem is the special case of the mean value theorem where the endpoint values agree, too narrow to justify the general inequality, and $L = 1$ keeps only the constant term of $f_y$."
   },
   {
     id: "mth302_ch3_013",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "Which chain of implications is correct?",
+    text: "For $f(x, y) = y^2$ on the closed bounded rectangle $-1 \\leq x \\leq 1$, $-4 \\leq y \\leq 4$, the partial derivative $f_y = 2y$ is continuous on this rectangle and therefore bounded there, since a continuous function on a closed bounded set attains a maximum. Which chain of general implications is this specific example consistent with?",
     options: [
-      "Continuously differentiable implies Lipschitz implies continuous",
-      "Continuous implies Lipschitz implies continuously differentiable, in that order",
+      "Continuously differentiable implies Lipschitz, and Lipschitz in turn implies continuous, with no arrow reversing",
+      "Continuous implies Lipschitz implies continuously differentiable, so every continuous function like $y^2$ must already be continuously differentiable",
       "Lipschitz implies continuously differentiable implies continuous",
       "Continuous implies continuously differentiable implies Lipschitz"
     ],
     correctAnswer: 0,
-    explanation: "The correct ordering runs from the strongest condition to the weakest: continuous differentiability implies a Lipschitz condition, which in turn implies continuity, and no arrow reverses.\n\nStarting from continuity would claim every continuous function is Lipschitz, contradicted by $y^{1/3}$ near $0$.\n\nClaiming Lipschitz implies continuous differentiability is contradicted by $|y|$, which is Lipschitz but not differentiable at $0$.\n\nClaiming continuity implies continuous differentiability is false for the same reason."
+    explanation: "This example runs from the strongest hypothesis to the weakest: continuity of $f_y$ on a closed bounded rectangle gives boundedness of $f_y$, which the mean value theorem turns into the Lipschitz condition, which in turn implies ordinary continuity, and none of these arrows reverses in general.\n\nStarting the chain from continuity and claiming it forces continuous differentiability is false in general, even though $y^2$ happens to be smooth; a function such as $y^{1/3}$ is continuous without being Lipschitz or differentiable at the origin.\n\nPlacing Lipschitz before continuous differentiability reverses the true order, since a Lipschitz function need not be differentiable at all, as $|y|$ shows.\n\nPlacing plain continuity before continuous differentiability also reverses the order, since continuity alone is the weakest of the three conditions, not a stepping stone to the other two."
   },
   {
     id: "mth302_ch3_014",
@@ -215,15 +215,15 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_016",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "In the Lipschitz condition $|f(x, y_2) - f(x, y_1)| \\leq L|y_2 - y_1|$, what is held fixed between the two evaluations?",
+    text: "For $f(x, y) = x^2y$ on the rectangle $-3 \\leq x \\leq 3$, $-2 \\leq y \\leq 2$, the partial derivative $f_y = x^2$ is bounded by $9$ on this rectangle, while the partial derivative $f_x = 2xy$ is bounded by $12$ on the same rectangle. When checking whether $f$ is Lipschitz in $y$ using $f_y$, which variable is held fixed at a common value while the other varies between the two points being compared?",
     options: [
-      "The variable $x$",
-      "The variable $y$ between the two evaluations",
-      "The constant $L$ only",
-      "Both variables simultaneously"
+      "$x$ is held fixed while $y$ takes the two compared values",
+      "$y$ is held fixed while $x$ takes the two compared values, since $f_y$ measures change along the $y$-direction only",
+      "Both $x$ and $y$ are held fixed, and only the bound $9$ varies between the two points",
+      "Neither variable is held fixed in this comparison"
     ],
     correctAnswer: 0,
-    explanation: "The two points share the same $x$ and differ only in $y$, which is why the condition is described as Lipschitz continuity in $y$.\n\nHolding $y$ fixed would compare different $x$ values, which is not what the inequality states.\n\nThe constant $L$ is indeed fixed, but the question asks which variable is held fixed between evaluations.\n\nHolding both fixed would make the two points identical and the inequality vacuous."
+    explanation: "Lipschitz continuity in $y$ compares $f$ at two points that share the same $x$-value and differ only in $y$, so it is $x$ that is held fixed while $y$ ranges over the two compared values.\n\nClaiming $y$ is held fixed while $x$ varies describes Lipschitz continuity in $x$ instead, the companion condition that uses $f_x$ rather than $f_y$.\n\nHolding both variables fixed would make the two compared points identical, leaving nothing for the inequality to say.\n\nSome variable must be held fixed for the comparison to make sense, so denying that either one is fixed misreads the definition."
   },
   {
     id: "mth302_ch3_017",
@@ -257,15 +257,15 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_019",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "The existence and uniqueness theorems for $y' = f(x, y)$ are best described as which kind of conditions?",
+    text: "For $y' = y^{1/3}$, $y(0) = 8$, the right-hand side $f(x, y) = y^{1/3}$ is continuous everywhere, and its partial derivative $f_y = \\tfrac{1}{3}y^{-2/3}$ is also continuous near $y = 8$, well away from the singular point $y = 0$ where $f_y$ is undefined. Does the uniqueness theorem apply at this initial point, even though $f_y$ fails to be continuous elsewhere in the plane?",
     options: [
-      "Sufficient and local",
-      "Necessary as well as global",
-      "Necessary and sufficient for a solution to exist",
-      "Sufficient and global"
+      "Yes, since the hypotheses need only hold locally near this point",
+      "No, since $f_y$ must be continuous on the entire real line for the theorem to apply anywhere",
+      "No, because the failure of continuity at $y = 0$ makes the solution non-unique at every initial point",
+      "Yes, but only because $f$ itself happens to be bounded near $y = 8$"
     ],
     correctAnswer: 0,
-    explanation: "The hypotheses guarantee a conclusion on some interval about $x_0$, so they are sufficient rather than necessary, and the conclusion is local rather than global.\n\nCalling them necessary would imply that a failure of the hypotheses rules out a solution, which is false.\n\nCalling them necessary and sufficient claims an equivalence that does not hold.\n\nCalling the conclusion global overstates the interval on which it is valid."
+    explanation: "The theorem only requires $f$ and $f_y$ to be continuous on some rectangle containing the initial point, and near $y = 8$ that holds comfortably, so the uniqueness theorem applies there regardless of what happens far away at $y = 0$.\n\nRequiring $f_y$ to be continuous on the entire real line demands far more than the theorem actually needs, since only a rectangle around the initial point matters.\n\nA failure of continuity at one point, $y = 0$, does not contaminate every other initial point, since the theorem is applied locally around each point separately.\n\nBoundedness of $f$ is not the hypothesis being used here; the relevant condition is continuity of $f_y$ near the initial point, which is what secures uniqueness."
   },
   {
     id: "mth302_ch3_020",
@@ -355,29 +355,29 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_026",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "Why must the rectangle used in a Lipschitz argument be bounded as well as closed?",
+    text: "For $f(x, y) = xe^y$, the partial derivative is $f_y = xe^y$. On the closed bounded rectangle $-1 \\leq x \\leq 1$, $0 \\leq y \\leq 2$, $|f_y|$ is at most $e^2$, giving a finite Lipschitz constant, but on the unbounded strip $-1 \\leq x \\leq 1$, $y \\geq 0$, $f_y$ grows without bound as $y$ increases. Why does the argument require the rectangle to be both closed and bounded?",
     options: [
-      "So that the continuous $f_y$ attains a finite bound $L$",
-      "So that the solution can be extended to all of $\\mathbb{R}$",
-      "So that the initial point lies on the boundary",
-      "So that $f$ becomes linear in $y$"
+      "So that the continuous $f_y$ is guaranteed to attain a finite maximum on the region",
+      "So that the solution found on this rectangle can automatically be extended to the entire real line without further checking",
+      "So that the initial point is forced to lie exactly on the boundary of the region",
+      "So that $f$ becomes a linear function of $y$ on the region"
     ],
     correctAnswer: 0,
-    explanation: "A continuous function on a closed bounded set is bounded, and that finite bound is exactly the constant $L$ the Lipschitz condition requires.\n\nExtending the solution to the whole line is a global conclusion the local theorems do not provide.\n\nThe initial point is required to lie inside the rectangle, not on its boundary.\n\nNothing about the region makes $f$ linear in $y$."
+    explanation: "A continuous function on a closed bounded set always attains a maximum, and that finite maximum of $|f_y|$ is exactly the constant $L$ the Lipschitz condition needs; on the unbounded strip $f_y = xe^y$ has no such maximum, which is why boundedness of the region is essential.\n\nA local Lipschitz argument on one rectangle does not automatically extend the solution to the whole real line, since the theorem's conclusion is confined to some interval about the initial point.\n\nThe initial point is required to lie inside the rectangle, not forced onto its boundary.\n\nBoundedness and closedness of the rectangle have nothing to do with making $f$ linear in $y$; here $f = xe^y$ is not linear in $y$ at all."
   },
   {
     id: "mth302_ch3_027",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "Which statement about the converse implications is correct?",
+    text: "The function $f(y) = |y - 2|$ satisfies $|f(y_2) - f(y_1)| \\leq |y_2 - y_1|$, so it is Lipschitz with constant $1$, but it is not differentiable at $y = 2$ because of the corner there. The function $g(y) = y^{1/5}$ is continuous everywhere, but its derivative $\\tfrac{1}{5}y^{-4/5}$ grows without bound as $y$ approaches $0$, so $g$ is not Lipschitz near $y = 0$. Which statement about the chain of implications do these two functions together establish?",
     options: [
-      "None of the arrows in the chain reverses",
-      "Lipschitz always implies differentiability",
-      "Continuity always implies a Lipschitz bound",
-      "All of the arrows reverse whenever the functions involved are bounded"
+      "Neither the differentiable-to-Lipschitz arrow nor the Lipschitz-to-continuous arrow reverses",
+      "Both functions show that Lipschitz continuity always implies differentiability everywhere on their domain",
+      "Together they show that ordinary continuity is always enough to guarantee a Lipschitz bound",
+      "Both arrows reverse whenever the functions involved are bounded on their domain"
     ],
     correctAnswer: 0,
-    explanation: "Each implication in the chain is strict, with $|y|$ blocking the reverse of one arrow and $y^{1/3}$ blocking the other.\n\nThe absolute value is Lipschitz yet not differentiable at the origin.\n\nThe cube root is continuous yet not Lipschitz near the origin.\n\nBoundedness does not repair either counterexample, since both functions are bounded on suitable intervals."
+    explanation: "$f(y) = |y - 2|$ blocks the reverse of the Lipschitz-to-differentiable arrow, since it is Lipschitz without being differentiable at its corner, and $g(y) = y^{1/5}$ blocks the reverse of the continuous-to-Lipschitz arrow, since it is continuous without being Lipschitz near $y = 0$, so together they confirm that neither arrow reverses.\n\nClaiming Lipschitz continuity always implies differentiability is exactly contradicted by $f(y) = |y - 2|$, which is Lipschitz yet has a corner.\n\nClaiming ordinary continuity always guarantees a Lipschitz bound is exactly contradicted by $g(y) = y^{1/5}$, which is continuous yet fails to be Lipschitz near $y = 0$.\n\nBoundedness does not repair either counterexample, since both $f$ and $g$ are bounded on the small intervals where the respective failures occur."
   },
   {
     id: "mth302_ch3_028",
@@ -439,15 +439,15 @@ const mth302Chapter3: QuestionV2[] = [
     id: "mth302_ch3_032",
     course: "MTH 302",
     chapter: "Chapter 3",
-    text: "The interval on which the existence and uniqueness theorems guarantee a solution is described how?",
+    text: "For $y' = y^2$, $y(0) = 1$, both $f(x, y) = y^2$ and $f_y = 2y$ are continuous and bounded on the large rectangle $-10 \\leq x \\leq 10$, $-10 \\leq y \\leq 10$, so the existence and uniqueness theorems apply there. Solving by separation of variables gives $y = \\dfrac{1}{1 - x}$, which is the unique solution but ceases to exist once $x$ reaches $1$, well before $x = 10$. What does this show about the guaranteed solution interval?",
     options: [
-      "Some interval about $x_0$, not necessarily all of $[a, b]$",
-      "Exactly the interval $[a, b]$ defining the rectangle",
-      "The entire real line",
-      "An interval with $x_0$ as an endpoint"
+      "The theorems only guarantee a solution on some interval about $x = 0$",
+      "The theorems guarantee that the solution exists and stays unique for every $x$ between $-10$ and $10$",
+      "Since $f$ and $f_y$ are both continuous and bounded on the whole rectangle, uniqueness must extend across all of it",
+      "The solution fails to exist at $x = 1$"
     ],
     correctAnswer: 0,
-    explanation: "The conclusion is local: a solution is guaranteed on some interval containing $x_0$, which may be considerably smaller than the $x$-range of the rectangle.\n\nClaiming the full interval $[a, b]$ overstates what the theorems deliver.\n\nExtending to the whole real line is a global claim the theorems do not support.\n\nThe point $x_0$ sits inside the interval rather than at an endpoint."
+    explanation: "Even though $f$ and $f_y$ are continuous and bounded on the entire large rectangle, the theorems still only promise a solution on some interval about the initial point $x = 0$, and this example shows that interval can be much smaller than the rectangle, since the actual solution $y = 1/(1-x)$ breaks down at $x = 1$.\n\nClaiming the solution exists and stays unique for every $x$ from $-10$ to $10$ overstates the guarantee, since the solution itself stops existing at $x = 1$.\n\nContinuity and boundedness of $f$ and $f_y$ on the whole rectangle do not force the solution to survive across all of it; the theorems never promised that in the first place.\n\nThe solution failing to exist at $x = 1$ is the correct observation about where it breaks down, but it does not by itself state what the theorems guarantee about the interval, which is the question actually being asked."
   },
   {
     id: "mth302_ch3_033",

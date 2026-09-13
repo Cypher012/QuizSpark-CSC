@@ -145,29 +145,29 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_011",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "An integrating factor depending on $x$ alone exists for $M\\,dx + N\\,dy = 0$ under which condition?",
+    text: "Consider the equation $y^2\\,dx + xy\\,dy = 0$, which is not exact since $M_y = 2y$ and $N_x = y$. What is the integrating factor that depends on $x$ alone?",
     options: [
-      "$M_y$ equals $N_x$",
-      "$\\dfrac{M_y - N_x}{N}$ is a function of $x$ only",
-      "$\\dfrac{M_y - N_x}{M}$ is a function of $x$ only",
-      "$M$ and $N$ are both homogeneous"
+      "$x^{-1}$",
+      "$e^{xy}$",
+      "$x$",
+      "$y^{-1}$"
     ],
-    correctAnswer: 1,
-    explanation: "When $\\dfrac{M_y - N_x}{N}$ depends on $x$ alone, the integrating factor $\\mu(x) = \\exp\\left(\\int \\dfrac{M_y - N_x}{N}\\,dx\\right)$ makes the equation exact.\n\n$M_y$ equals $N_x$ is the condition for the equation to already be exact, meaning no integrating factor is needed at all.\n\n$\\dfrac{M_y - N_x}{M}$ is a function of $x$ only is close in form but is actually the condition used to build the $y$-only integrating factor via $\\dfrac{N_x - M_y}{M}$ as a function of $y$.\n\n$M$ and $N$ are both homogeneous does not by itself guarantee an integrating factor depending on $x$ alone."
+    correctAnswer: 2,
+    explanation: "Since $M = y^2$ and $N = xy$, we get $M_y = 2y$ and $N_x = y$, so the equation is not exact. Computing $\\dfrac{M_y - N_x}{N} = \\dfrac{2y - y}{xy} = \\dfrac{1}{x}$ shows the quotient depends on $x$ alone, so $\\mu(x) = e^{\\int \\frac{1}{x}\\,dx} = e^{\\ln|x|} = x$.\n\n$x^{-1}$ comes from using $\\dfrac{N_x - M_y}{N}$ instead of $\\dfrac{M_y - N_x}{N}$, which flips the sign of the exponent to $e^{-\\ln|x|}$.\n\n$e^{xy}$ comes from skipping the division by $N$ and instead exponentiating $\\int (M_y - N_x)\\,dx = \\int y\\,dx = xy$ directly.\n\n$y^{-1}$ comes from applying the $y$-alone construction $\\dfrac{N_x - M_y}{M}$ instead, which is the wrong formula since the quotient here is a function of $x$, not $y$."
   },
   {
     id: "mth302_ch2_012",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "An equation of the form $\\dfrac{dy}{dx} = f(x)g(y)$ is solved by which method?",
+    text: "What is the general solution of $\\dfrac{dy}{dx} = (x^2+1)e^{-y}$?",
     options: [
-      "Separation of variables",
-      "The integrating factor method",
-      "The exactness test and a potential function",
-      "Reduction of order"
+      "$y = \\ln\\left(\\dfrac{x^3}{3} + x + C\\right)$",
+      "$y = \\ln\\left(\\dfrac{x^3}{3} + x\\right) + C$",
+      "$y = -\\ln\\left(\\dfrac{x^3}{3} + x + C\\right)$",
+      "$\\dfrac{x^3}{3} + x + C$"
     ],
     correctAnswer: 0,
-    explanation: "Because the right-hand side factors into a function of $x$ times a function of $y$, the variables can be separated to give $\\int \\dfrac{dy}{g(y)} = \\int f(x)\\,dx + C$.\n\nBuilding an integrating factor is the method for a linear equation $y' + P(x)y = Q(x)$, which is a different standard form.\n\nTesting $M_y = N_x$ and constructing $\\psi$ is the procedure for an exact equation written as $M\\,dx + N\\,dy = 0$.\n\nReduction of order builds a second solution from an already-known one for a second-order equation, which has no bearing on this first-order separable equation."
+    explanation: "Separating gives $e^{y}\\,dy = (x^2+1)\\,dx$, so integrating both sides gives $e^{y} = \\dfrac{x^3}{3} + x + C$, and solving for $y$ gives $y = \\ln\\left(\\dfrac{x^3}{3} + x + C\\right)$.\n\n$y = \\ln\\left(\\dfrac{x^3}{3}+x\\right)+C$ places the constant of integration outside the logarithm instead of inside it, which changes the solution family since a constant added after taking the log is not the same as a constant added before it.\n\n$y = -\\ln\\left(\\dfrac{x^3}{3}+x+C\\right)$ carries an extra minus sign, as if the original equation had been $e^{-y}\\,dy = (x^2+1)\\,dx$ instead of $e^{y}\\,dy = (x^2+1)\\,dx$.\n\n$\\dfrac{x^3}{3}+x+C$ stops at the integrated form $e^y = \\dfrac{x^3}{3}+x+C$ and forgets to take the logarithm to solve for $y$."
   },
   {
     id: "mth302_ch2_013",
@@ -187,29 +187,29 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_014",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "When separating variables, dividing by $g(y)$ risks losing which solutions?",
+    text: "Separating the equation $\\dfrac{dy}{dx} = x(y-3)^2$ by dividing both sides by $(y-3)^2$ gives $-\\dfrac{1}{y-3} = \\dfrac{x^2}{2} + C$. Which solution of the original equation does this division step fail to capture?",
     options: [
-      "The constant solutions where $g(y) = 0$",
-      "The solutions that grow without bound as $x$ increases",
-      "The solutions passing through the origin of the plane",
-      "The solutions that fail to be differentiable at isolated points"
+      "$y = 0$",
+      "$y = -3$",
+      "$y = 3$",
+      "$y = x$"
     ],
-    correctAnswer: 0,
-    explanation: "Division by $g(y)$ is invalid wherever $g(y) = 0$, and each root of $g$ supplies a constant solution that the resulting family cannot reproduce, as with $y \\equiv 0$ for $y' = xy^2$.\n\nUnbounded growth is a feature some solutions in the family already have, so nothing is lost there.\n\nPassing through the origin is not what the division step excludes; the obstruction is the vanishing of $g$, wherever that occurs.\n\nDifferentiability failures are not created or removed by dividing through by $g(y)$."
+    correctAnswer: 2,
+    explanation: "Dividing by $(y-3)^2$ is only valid where $(y-3)^2 \\neq 0$, and the root of that factor is $y=3$. Substituting $y=3$ into the original equation gives $\\dfrac{dy}{dx}=0$ on the left and $x(3-3)^2=0$ on the right, so $y=3$ is a genuine constant solution that the division step discards.\n\n$y=0$ is not a root of $(y-3)^2$, and substituting it into the original equation gives $0 = 9x$, which fails except at $x=0$, so it is not a solution at all.\n\n$y=-3$ mistakes the root of $(y-3)^2$ for the negative of $3$ rather than $3$ itself.\n\n$y=x$ does not satisfy the original equation either, since substituting it gives $1 = x(x-3)^2$, which is not an identity in $x$."
   },
   {
     id: "mth302_ch2_015",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "The function $F$ is homogeneous of degree $n$ when which identity holds?",
+    text: "For $F(x,y) = x^4 - 3x^2y^2 + y^4$, evaluating $F(2x,2y)$ and comparing it to $F(x,y)$ determines the degree of homogeneity. Which degree is confirmed by this computation?",
     options: [
-      "$F(\\lambda x, \\lambda y) = \\lambda^n F(x, y)$",
-      "$F$ depends only on the ratio $y/x$",
-      "$F(x + \\lambda, y + \\lambda) = F(x, y)$",
-      "$F$ has $n$ continuous partial derivatives"
+      "Degree 2, since the middle term $x^2y^2$ is read as contributing degree 2 by counting only the exponent on $x$",
+      "Degree 4, since $F(2x,2y) = 16x^4 - 48x^2y^2 + 16y^4 = 16F(x,y)$ and $2^4=16$",
+      "Degree 16, since the scale factor $16$ obtained for $F(2x,2y)$ is mistaken for the degree itself instead of being solved as $2^n=16$",
+      "Not homogeneous, since the minus sign in front of the middle term is mistaken for evidence that the terms scale inconsistently"
     ],
-    correctAnswer: 0,
-    explanation: "Homogeneity of degree $n$ means scaling both arguments by $\\lambda$ scales the value by $\\lambda^n$, which is exactly $F(\\lambda x, \\lambda y) = \\lambda^n F(x, y)$.\n\nBeing a function of $y/x$ alone corresponds to homogeneity of degree zero, a special case rather than the general definition.\n\nAdding $\\lambda$ to each argument describes a translation property, which is unrelated to homogeneity under scaling.\n\nThe existence of partial derivatives up to order $n$ is a smoothness condition and says nothing about scaling behaviour."
+    correctAnswer: 1,
+    explanation: "Substituting $2x$ and $2y$ gives $F(2x,2y)=16x^4-48x^2y^2+16y^4=16F(x,y)$, and since $2^4=16$, matching $\\lambda^n F(x,y)$ with $\\lambda=2$ confirms $n=4$, so $F$ is homogeneous of degree $4$.\n\nDegree $2$ undercounts the total degree of the mixed term $x^2y^2$, whose exponents on $x$ and $y$ together add to $4$, not $2$.\n\nDegree $16$ confuses the scale factor $16$ that $F$ picks up with the exponent $n$ itself, when in fact $16$ must be written as $2^n$ and solved for $n=4$.\n\nNot homogeneous is incorrect, since the identity $F(2x,2y)=16F(x,y)$ does hold exactly, confirming homogeneity of degree $4$ despite the minus sign in the middle term."
   },
   {
     id: "mth302_ch2_016",
@@ -229,29 +229,29 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_017",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "Under the substitution $y = vx$, what does $\\dfrac{dy}{dx}$ become?",
+    text: "For the homogeneous equation $\\dfrac{dy}{dx} = \\dfrac{x^2+y^2}{xy}$, substituting $y=vx$ together with $y' = v + x\\dfrac{dv}{dx}$ and simplifying reduces it to which separable equation in $v$ and $x$?",
     options: [
-      "$v + x\\dfrac{dv}{dx}$",
-      "$x\\dfrac{dv}{dx}$ alone, since $v$ is treated as a constant during differentiation",
-      "$\\dfrac{dv}{dx}$ alone, because the factor $x$ cancels against the substitution",
-      "$v\\dfrac{dv}{dx}$, obtained by applying the chain rule to the product"
+      "$\\dfrac{v\\,dv}{1+v^2} = \\dfrac{dx}{x}$",
+      "$v\\,dv = \\dfrac{dx}{x}$",
+      "$v\\,dv = -\\dfrac{dx}{x}$",
+      "$x\\,dv = \\dfrac{dx}{v}$"
     ],
-    correctAnswer: 0,
-    explanation: "Differentiating the product $y = vx$ with respect to $x$ gives $\\dfrac{dy}{dx} = v + x\\dfrac{dv}{dx}$, and it is this expression that converts a homogeneous equation into a separable one.\n\nTreating $v$ as constant drops the $v$ term and ignores that $v$ depends on $x$.\n\nClaiming the factor $x$ cancels misapplies the product rule entirely.\n\nThe form $v\\dfrac{dv}{dx}$ would arise from differentiating something like $v^2/2$, not from the product $vx$."
+    correctAnswer: 1,
+    explanation: "Substituting $y=vx$ turns the right side into $\\dfrac{x^2+v^2x^2}{x \\cdot vx} = \\dfrac{1+v^2}{v}$, so the equation becomes $v + x\\dfrac{dv}{dx} = \\dfrac{1+v^2}{v}$. Subtracting $v$ gives $x\\dfrac{dv}{dx} = \\dfrac{1+v^2-v^2}{v} = \\dfrac{1}{v}$, which separates as $v\\,dv = \\dfrac{dx}{x}$.\n\n$\\dfrac{v\\,dv}{1+v^2} = \\dfrac{dx}{x}$ comes from treating $y'$ as $x\\dfrac{dv}{dx}$ alone and skipping the $+v$ term that the product rule contributes, so the $v^2$ terms never cancel.\n\n$v\\,dv = -\\dfrac{dx}{x}$ comes from a sign slip when combining $v$ and $\\dfrac{1+v^2}{v}$ over the common denominator $v$.\n\n$x\\,dv = \\dfrac{dx}{v}$ mixes up which variable is held fixed under the substitution, putting $x$ where $v$ belongs and $v$ where $x$ belongs."
   },
   {
     id: "mth302_ch2_018",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "For the linear equation $y' + P(x)y = Q(x)$, what is the integrating factor?",
+    text: "For $\\dfrac{dy}{dx} + \\dfrac{2}{x+1}y = (x+1)^2$, valid for $x > -1$, what is the integrating factor?",
     options: [
-      "$\\mu = e^{\\int P\\,dx}$",
-      "$\\mu = e^{\\int Q\\,dx}$",
-      "$\\mu = e^{-\\int P\\,dx}$",
-      "$\\mu = \\int P\\,dx$"
+      "$e^{2x}$",
+      "$(x+1)^{-2}$",
+      "$(x+1)^2$",
+      "$2\\ln(x+1)$"
     ],
-    correctAnswer: 0,
-    explanation: "The factor $\\mu = e^{\\int P\\,dx}$ satisfies $\\mu' = \\mu P$, which is precisely what makes the left-hand side collapse into the derivative $(\\mu y)'$.\n\nBuilding the factor from $Q$ ignores that the forcing term plays no part in producing an exact derivative.\n\nThe negative exponent would give $\\mu' = -\\mu P$ and would fail to produce $(\\mu y)'$.\n\nOmitting the exponential leaves a function that does not satisfy the required differential relation."
+    correctAnswer: 2,
+    explanation: "Here $P(x) = \\dfrac{2}{x+1}$, so $\\int P\\,dx = 2\\ln(x+1)$ and the integrating factor is $\\mu = e^{2\\ln(x+1)} = (x+1)^2$.\n\n$e^{2x}$ comes from reading the coefficient as the constant $2$ rather than $\\dfrac{2}{x+1}$, ignoring the shift by $1$.\n\n$(x+1)^{-2}$ carries the wrong sign in the exponent, as if $\\mu = e^{-\\int P\\,dx}$ rather than $e^{\\int P\\,dx}$.\n\n$2\\ln(x+1)$ stops at the integral $\\int P\\,dx$ without exponentiating to recover $\\mu$."
   },
   {
     id: "mth302_ch2_019",
@@ -285,15 +285,15 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_021",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "The equation $M\\,dx + N\\,dy = 0$ is exact precisely when which condition holds?",
+    text: "For $M\\,dx + N\\,dy = 0$ to admit a potential function $\\psi$ with $\\psi_x = M$ and $\\psi_y = N$, equality of the mixed partial derivatives $\\psi_{xy} = \\psi_{yx}$ forces a specific relation between $M$ and $N$. For $M = 2xy + y^2$ and $N = x^2 + 2xy$, which relation is confirmed by direct computation of the partial derivatives?",
     options: [
-      "$M_y = N_x$",
-      "$M_x = N_y$",
-      "$M = N$ identically",
-      "$M_y + N_x = 0$"
+      "$M_x = N_y$, since both equal $2y$ after differentiating $2xy$ with respect to the wrong variable",
+      "$M = N$, since setting $x=y$ makes the two coefficient functions identical",
+      "$M_y + N_x = 0$, since the mixed partial contributions are required to cancel rather than match",
+      "$M_y = N_x$, since both equal $2x+2y$ when computed directly"
     ],
-    correctAnswer: 0,
-    explanation: "Exactness on a simply connected region is equivalent to $M_y = N_x$, which is the consistency condition for a potential $\\psi$ with $\\psi_x = M$ and $\\psi_y = N$ to exist.\n\nComparing $M_x$ with $N_y$ pairs the wrong derivatives and does not test the equality of mixed partials of $\\psi$.\n\nRequiring $M = N$ is far too strong and holds for almost no exact equation.\n\nRequiring the sum to vanish describes a different relation altogether and does not follow from equality of mixed partials."
+    correctAnswer: 3,
+    explanation: "Differentiating gives $M_y = 2x+2y$ and $N_x = 2x+2y$, which are equal, confirming that $\\psi_{xy}=\\psi_{yx}$ forces $M_y=N_x$ in general, and this pair satisfies it.\n\n$M_x = N_y$ pairs the wrong derivatives: $M_x = 2y$ but $N_y = 2x$, which are not equal here, so that relation does not hold, and it is not the exactness condition to begin with.\n\n$M=N$ is far too strong a requirement and is not implied by equality of mixed partials; $2xy+y^2$ and $x^2+2xy$ are not identical functions.\n\n$M_y+N_x=0$ would require $2(2x+2y)=0$ for this pair, which is false except along the line $x=-y$, and it is not what equality of mixed partials produces in any case."
   },
   {
     id: "mth302_ch2_022",
@@ -327,15 +327,15 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_024",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "If $\\dfrac{N_x - M_y}{M}$ depends on $y$ alone, an integrating factor is given by which expression?",
+    text: "Consider $2xy\\,dx + (y^2-x^2)\\,dy = 0$, which is not exact since $M_y = 2x$ and $N_x = -2x$. What is the integrating factor that depends on $y$ alone?",
     options: [
-      "$\\mu(y) = e^{\\int \\frac{N_x - M_y}{M}\\,dy}$",
-      "$\\mu(x) = e^{\\int \\frac{M_y - N_x}{N}\\,dx}$, which is the companion case for $x$",
-      "$\\mu(y) = \\dfrac{N_x - M_y}{M}$, used directly without any integration",
-      "$\\mu(y) = e^{\\int M\\,dy}$, built from the first coefficient function alone"
+      "$y^{2}$",
+      "$x^{-2}$",
+      "$y^{-2}$",
+      "$e^{-4xy}$"
     ],
-    correctAnswer: 0,
-    explanation: "When the combination $\\dfrac{N_x - M_y}{M}$ is a function of $y$ only, integrating it with respect to $y$ and exponentiating produces a factor that makes the equation exact.\n\nThe expression with $\\dfrac{M_y - N_x}{N}$ integrated in $x$ is the companion test, which applies when that quotient depends on $x$ alone.\n\nUsing the quotient directly omits the integration and exponentiation that the derivation requires.\n\nBuilding the factor from $M$ alone ignores the mismatch between the mixed partial derivatives, which is what must be corrected."
+    correctAnswer: 2,
+    explanation: "Since $M=2xy$ and $N=y^2-x^2$, we get $M_y=2x$ and $N_x=-2x$, so the equation is not exact. Computing $\\dfrac{N_x-M_y}{M} = \\dfrac{-2x-2x}{2xy} = \\dfrac{-4x}{2xy} = -\\dfrac{2}{y}$ shows the quotient depends on $y$ alone, so $\\mu(y) = e^{\\int -\\frac{2}{y}\\,dy} = e^{-2\\ln|y|} = y^{-2}$.\n\n$y^{2}$ comes from dropping the minus sign in the exponent, as if $\\mu = e^{\\int \\frac{2}{y}\\,dy}$ instead of $e^{\\int -\\frac{2}{y}\\,dy}$.\n\n$x^{-2}$ mistakenly builds a factor depending on $x$, even though the quotient $\\dfrac{N_x-M_y}{M}$ simplifies to a function of $y$ alone here, which is exactly the condition that calls for a $y$-only factor.\n\n$e^{-4xy}$ comes from skipping the division by $M$ and instead exponentiating $\\int (N_x-M_y)\\,dy = \\int -4x\\,dy = -4xy$ directly."
   },
   {
     id: "mth302_ch2_025",
@@ -425,15 +425,15 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_031",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "In the solution formula $y = \\dfrac{1}{\\mu}\\left(\\int \\mu Q\\,dx + C\\right)$, why is no constant of integration needed inside $\\mu$ itself?",
+    text: "For $\\dfrac{dy}{dx} + \\dfrac{3}{x}y = x^4$, using the integrating factor $\\mu = x^3$ gives the solution $y = \\dfrac{x^5}{8} + Cx^{-3}$. If a constant of integration were included when forming $\\mu$, say $\\mu = 2x^3$ instead of $x^3$, what happens to the final solution for $y$?",
     options: [
-      "Because it cancels between the numerator and the denominator",
-      "Because the constant is always zero for every choice of the coefficient $P(x)$",
-      "Because the integral defining $\\mu$ is a definite integral with fixed limits",
-      "Because $\\mu$ is required by definition to take the value $1$ at the origin"
+      "The solution is unchanged, because the extra factor of $2$ combines with the arbitrary constant of integration into a new arbitrary constant, leaving the same family $y = \\dfrac{x^5}{8} + Cx^{-3}$",
+      "The particular part becomes $\\dfrac{x^5}{4}$ while the complementary part stays $Cx^{-3}$, since the factor of $2$ only affects the term coming from $Q(x)$",
+      "The whole solution scales by $2$, giving $y = \\dfrac{x^5}{4} + 2Cx^{-3}$, since multiplying $\\mu$ by a constant multiplies $y$ by the same constant",
+      "The equation becomes inconsistent, since two different integrating factors cannot both make the same linear equation exact"
     ],
     correctAnswer: 0,
-    explanation: "Including a constant would multiply $\\mu$ by a fixed nonzero factor, and that factor appears in both the numerator and the denominator of the solution formula, so it cancels and changes nothing.\n\nThe constant is not forced to be zero; it is simply irrelevant to the final answer.\n\nThe integral defining $\\mu$ is indefinite, so appealing to fixed limits misdescribes the construction.\n\nThere is no normalisation requiring $\\mu$ to equal $1$ at the origin."
+    explanation: "Using $\\mu = 2x^3$, the equation becomes $(2x^3y)' = 2x^3 \\cdot x^4 = 2x^7$, so integrating gives $2x^3y = \\dfrac{x^8}{4} + K$, and dividing by $2x^3$ gives $y = \\dfrac{x^5}{8} + \\dfrac{K}{2x^3}$. Since $K$ is an arbitrary constant, relabeling $C = K/2$ gives exactly $y = \\dfrac{x^5}{8} + Cx^{-3}$, the same family obtained with $\\mu = x^3$, which is why no constant of integration is ever needed when forming $\\mu$.\n\nThe particular part does not become $\\dfrac{x^5}{4}$, since dividing $\\dfrac{x^8}{4}$ by $2x^3$ (not just $x^3$) gives back $\\dfrac{x^5}{8}$, unchanged.\n\nThe whole solution does not scale by $2$, since the factor of $2$ introduced in $\\mu$ is divided back out on both terms when solving for $y$, not carried through unchanged.\n\nThe equation does not become inconsistent, since $\\mu = 2x^3$ and $\\mu = x^3$ both make the same equation exact; any nonzero constant multiple of a valid integrating factor is itself a valid integrating factor."
   },
   {
     id: "mth302_ch2_032",
@@ -453,29 +453,29 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_033",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "Which substitution converts a homogeneous first-order equation $y' = F(y/x)$ into a separable one?",
+    text: "Applying the substitution $y=vx$ to the homogeneous equation $\\dfrac{dy}{dx}=\\dfrac{x^2+3y^2}{2xy}$ and simplifying reduces it to which separable equation in $v$ and $x$?",
     options: [
-      "$y = vx$",
-      "$v = x^2y$",
-      "$\\mu = e^{\\int P\\,dx}$",
-      "$x = vy^2$"
+      "$\\dfrac{2v}{1+3v^2}\\,dv = \\dfrac{dx}{x}$",
+      "$\\dfrac{2v}{1+v^2}\\,dv = \\dfrac{dx}{x}$",
+      "$\\dfrac{2v}{1+v^2}\\,dv = -\\dfrac{dx}{x}$",
+      "$v\\,dv = \\dfrac{dx}{2x}$"
     ],
-    correctAnswer: 0,
-    explanation: "Setting $y = vx$ gives $y' = v + xv'$, and substituting turns the equation into one separable in $v$ and $x$.\n\nThe substitution $v = x^2y$ does not arise from the homogeneous $y\'=F(y/x)$ form at all.\n\nThe expression $\\mu = e^{\\int P\\,dx}$ is an integrating factor, not a substitution.\n\nThe form $x = vy^2$ is not a standard substitution for this class."
+    correctAnswer: 1,
+    explanation: "Substituting $y=vx$ turns the right side into $\\dfrac{x^2+3v^2x^2}{2x\\cdot vx} = \\dfrac{1+3v^2}{2v}$, so the equation becomes $v+x\\dfrac{dv}{dx} = \\dfrac{1+3v^2}{2v}$. Subtracting $v$ over the common denominator $2v$ gives $x\\dfrac{dv}{dx} = \\dfrac{1+3v^2-2v^2}{2v} = \\dfrac{1+v^2}{2v}$, which separates as $\\dfrac{2v}{1+v^2}\\,dv = \\dfrac{dx}{x}$.\n\n$\\dfrac{2v}{1+3v^2}\\,dv=\\dfrac{dx}{x}$ comes from dropping the $+v$ term contributed by the product rule and using $\\dfrac{1+3v^2}{2v}$ directly for $x\\dfrac{dv}{dx}$, so the $v^2$ terms never combine.\n\n$\\dfrac{2v}{1+v^2}\\,dv = -\\dfrac{dx}{x}$ comes from a sign slip when combining $v$ and $\\dfrac{1+3v^2}{2v}$ over the common denominator.\n\n$v\\,dv = \\dfrac{dx}{2x}$ comes from incorrectly simplifying $\\dfrac{1+v^2}{2v}$ down to $\\dfrac{v}{2}$, dropping the constant term $1$ inside the numerator."
   },
   {
     id: "mth302_ch2_034",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "If $\\dfrac{M_y - N_x}{N}$ depends on $x$ alone, which integrating factor makes $M\\,dx + N\\,dy = 0$ exact?",
+    text: "Consider $(2y-3x)\\,dx + x\\,dy = 0$, which is not exact since $M_y=2$ and $N_x=1$. After finding the integrating factor that depends on $x$ alone and multiplying through, what is the general solution?",
     options: [
-      "$\\mu(x) = e^{\\int \\frac{M_y - N_x}{N}\\,dx}$",
-      "$\\mu(y) = e^{\\int \\frac{N_x - M_y}{M}\\,dy}$",
-      "$\\mu(x) = \\dfrac{M_y - N_x}{N}$",
-      "$\\mu(x) = e^{\\int N\\,dx}$"
+      "$x^2y + x^3 = C$",
+      "$2xy - \\dfrac{3}{2}x^2 = C$",
+      "$x^2y - x^3 = C$",
+      "$x^2y - \\dfrac{3}{2}x^2 = C$"
     ],
-    correctAnswer: 0,
-    explanation: "When that quotient is a function of $x$ only, integrating it in $x$ and exponentiating produces a factor depending on $x$ that restores exactness.\n\nThe factor built from $\\dfrac{N_x - M_y}{M}$ integrated in $y$ is the companion case, used when that quotient depends on $y$ alone.\n\nUsing the quotient directly omits the integration and exponentiation.\n\nBuilding the factor from $N$ alone ignores the mismatch between the mixed partial derivatives."
+    correctAnswer: 2,
+    explanation: "Computing $\\dfrac{M_y-N_x}{N} = \\dfrac{2-1}{x} = \\dfrac{1}{x}$ shows the quotient depends on $x$ alone, so $\\mu(x) = e^{\\int \\frac{1}{x}\\,dx} = x$. Multiplying through gives $(2xy-3x^2)\\,dx + x^2\\,dy = 0$, which is exact since both partials equal $2x$. Integrating $\\psi_x = 2xy-3x^2$ gives $\\psi = x^2y - x^3 + h(y)$, and matching $\\psi_y = x^2+h'(y)$ against $x^2$ forces $h'(y)=0$, so the solution is $x^2y-x^3=C$.\n\n$x^2y+x^3=C$ carries a sign error integrating $-3x^2$, as if its antiderivative were $+x^3$ rather than $-x^3$.\n\n$2xy-\\dfrac{3}{2}x^2=C$ comes from trying to integrate the original $M=2y-3x$ directly without first multiplying through by the integrating factor $x$.\n\n$x^2y-\\dfrac{3}{2}x^2=C$ comes from multiplying only the $2y$ term of $M$ by the integrating factor and forgetting to also multiply the $-3x$ term by $x$, leaving it as $-3x$ and integrating that to $-\\dfrac{3}{2}x^2$ instead of $-3x^2$ integrating to $-x^3$."
   },
   {
     id: "mth302_ch2_035",
@@ -495,15 +495,15 @@ const mth302Chapter2: QuestionV2[] = [
     id: "mth302_ch2_036",
     course: "MTH 302",
     chapter: "Chapter 2",
-    text: "For an exact equation with potential $\\psi$ satisfying $\\psi_x = M$ and $\\psi_y = N$, the solution is written how?",
+    text: "The equation $(3x^2+2xy)\\,dx + (x^2+4y^3)\\,dy = 0$ is exact. Using the potential function method with $\\psi_x=M$ and $\\psi_y=N$, what is the solution written as $\\psi(x,y)=C$?",
     options: [
-      "$\\psi(x, y) = C$",
-      "$\\psi(x, y) = 0$",
-      "$\\psi_x + \\psi_y = C$",
-      "$\\psi(x, y) = Mx + Ny$"
+      "$x^3+x^2y+4y^4=C$",
+      "$3x^3+x^2y+y^4=C$",
+      "$x^3+x^2y+y^4=C$",
+      "$x^3+2xy+y^4=C$"
     ],
-    correctAnswer: 0,
-    explanation: "Because $d\\psi = M\\,dx + N\\,dy = 0$ along solutions, the potential is constant, giving the implicit solution $\\psi(x, y) = C$.\n\nSetting the potential to zero picks out one particular level curve rather than the general family.\n\nAdding the two partial derivatives does not reconstruct the potential.\n\nThe expression $Mx + Ny$ is not how the potential is recovered from $M$ and $N$."
+    correctAnswer: 2,
+    explanation: "Integrating $\\psi_x=3x^2+2xy$ with respect to $x$ gives $\\psi = x^3+x^2y+h(y)$, and matching $\\psi_y = x^2+h'(y)$ against $N=x^2+4y^3$ forces $h'(y)=4y^3$, so $h(y)=y^4$ and the solution is $x^3+x^2y+y^4=C$.\n\n$x^3+x^2y+4y^4=C$ forgets to integrate $4y^3$ down to $y^4$, keeping the original coefficient $4$ instead.\n\n$3x^3+x^2y+y^4=C$ forgets to reduce the coefficient when integrating $3x^2$, keeping it as $3$ instead of correctly obtaining $x^3$.\n\n$x^3+2xy+y^4=C$ never actually integrates the $2xy$ term with respect to $x$, leaving it in its original unintegrated form instead of the correct $x^2y$."
   }
 ];
 

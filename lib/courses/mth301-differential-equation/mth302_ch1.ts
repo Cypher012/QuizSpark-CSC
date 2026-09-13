@@ -33,15 +33,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_003",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "What is the degree of $y' + \\sin(y') = x$?",
+    text: "What is the degree of $(y'')^2 = \\sin(y') + x$?",
     options: [
-      "$1$",
-      "$2$",
-      "$0$",
-      "Not defined"
+      "Not defined, because $\\sin(y')$ prevents the equation from being written as a polynomial in the derivatives, even though $y''$ itself is squared",
+      "$2$, since the highest derivative $y''$ is squared and the sine term is treated as if it did not affect the degree at all",
+      "$1$, obtained by moving $\\sin(y')$ to the other side and reading $y''$ as if it then appeared to the first power",
+      "$0$, since sine functions are bounded and so are treated as contributing no degree to the equation"
     ],
-    correctAnswer: 3,
-    explanation: "Degree is defined only for equations that are polynomial in the derivatives. Because of $\\sin(y')$, this equation cannot be made polynomial in $y'$ by any algebraic manipulation, so its degree is not defined.\n\n$1$ assumes the derivative appears to the first power the way it would in a polynomial equation, which does not apply here.\n\n$2$ has no basis in the equation as written.\n\n$0$ would imply no derivative is present at all, which is false since $y'$ appears explicitly."
+    correctAnswer: 0,
+    explanation: "Degree is defined only when the whole equation can be written as a polynomial in all the derivatives present, not just the highest one. Here $y''$ is squared, which is fine on its own, but $\\sin(y')$ can never be rewritten as a polynomial in $y'$ no matter how the equation is rearranged, so the degree of the entire equation is not defined.\n\n$2$ only looks at the power on $y''$ and ignores that $\\sin(y')$ still blocks the polynomial form; a lower-order derivative sitting inside a transcendental function is just as fatal to degree as the highest one would be.\n\n$1$ pretends that moving $\\sin(y')$ across the equals sign removes it from consideration, but relocating a term does not clear it algebraically the way squaring a radical does.\n\n$0$ confuses the boundedness of $\\sin(y')$ as a function with the algebraic notion of degree, which has nothing to do with whether a function is bounded."
   },
   {
     id: "mth302_ch1_004",
@@ -75,29 +75,29 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_006",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "How many arbitrary constants does the general solution of a third-order ordinary differential equation contain?",
+    text: "For the equation $y''' - 6y'' + 11y' - 6y = 0$, what is its order, and how many arbitrary constants does its general solution contain?",
     options: [
-      "$1$",
-      "$2$",
-      "$3$",
-      "An arbitrary function"
+      "Order $3$, so the general solution contains $3$ arbitrary constants",
+      "Order $3$, so the general solution contains $2$ arbitrary constants, one fewer than the order because the undifferentiated term $y$ needs no constant of its own",
+      "Order $2$, so the general solution contains $2$ arbitrary constants, having mistaken $y''$ for the highest derivative present",
+      "Order $3$, so the general solution contains $6$ arbitrary constants, one for each coefficient appearing in the equation"
     ],
-    correctAnswer: 2,
-    explanation: "An $n$th-order ODE requires $n$ integrations to reach its general solution, so a third-order equation carries exactly $3$ arbitrary constants.\n\n$1$ and $2$ both undercount the number of integrations needed.\n\nAn arbitrary function belongs to the general solution of a partial differential equation, not an ordinary one, so it does not apply here."
+    correctAnswer: 0,
+    explanation: "The highest derivative present is $y'''$, so the equation is of order $3$, and an $n$th-order ODE requires $n$ integrations to reach its general solution, giving exactly $3$ arbitrary constants.\n\nSubtracting one constant for the undifferentiated term $y$ has no basis; every order of the equation contributes one constant regardless of which terms are present.\n\nOrder $2$ overlooks the term $y'''$, which is the actual highest derivative in the equation.\n\nCounting one constant per coefficient conflates the number of terms in the equation with the number of integrations needed, which is fixed by the order alone."
   },
   {
     id: "mth302_ch1_007",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "Which of the following is a boundary value problem?",
+    text: "Consider $y'' + 4y = 0$ with the two conditions $y(0) = 0$ and $y(\\pi/4) = 3$ imposed at two different points, making this a boundary value problem. What is the particular solution?",
     options: [
-      "$y'' + y = 0$, $y(0) = 1$, $y'(0) = 2$",
-      "$y' + y = x$, $y(1) = 0$",
-      "$y'' + y = 0$, $y(0) = 0$, $y(\\pi/2) = 1$",
-      "$y'' = x$, $y(2) = 1$, $y'(2) = 3$"
+      "$y = 3\\sin 2x$",
+      "$y = 3\\cos 2x$, obtained by fixing the coefficient from the condition at $x=0$ instead of eliminating it there",
+      "$y = 3\\sin x$",
+      "$y = \\dfrac{3}{2}\\sin 2x$"
     ],
-    correctAnswer: 2,
-    explanation: "A boundary value problem prescribes conditions at two or more distinct points, and $y(0) = 0$, $y(\\pi/2) = 1$ does exactly that.\n\n$y'' + y = 0$, $y(0) = 1$, $y'(0) = 2$ and $y'' = x$, $y(2) = 1$, $y'(2) = 3$ both give all their data at a single point, making them initial value problems instead.\n\n$y' + y = x$, $y(1) = 0$ is a first-order initial value problem, since only one condition at one point is needed to fix its single arbitrary constant."
+    correctAnswer: 0,
+    explanation: "The general solution of $y'' + 4y = 0$ is $y = A\\cos 2x + B\\sin 2x$. Imposing $y(0) = 0$ gives $A = 0$, and imposing $y(\\pi/4) = 3$ gives $B\\sin(\\pi/2) = B = 3$, so the particular solution is $y = 3\\sin 2x$.\n\n$y = 3\\cos 2x$ swaps the roles of the two coefficients, using the condition at $x = 0$ to fix the cosine term instead of eliminating it.\n\n$y = 3\\sin x$ drops the factor of $2$ that arises from $\\sqrt{4} = 2$ inside the trigonometric argument, so it fails $y(\\pi/4) = 3$.\n\n$y = \\dfrac{3}{2}\\sin 2x$ mistakenly divides the amplitude by the coefficient $4$ appearing in the original equation, confusing that constant with a scaling factor on the solution."
   },
   {
     id: "mth302_ch1_008",
@@ -173,15 +173,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_013",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "What is a differential equation?",
+    text: "Consider these four relations: $3xy'' - 5y' + 7y = \\sin x$, $x^3 + y^3 = 27$, $x^2 + 2xy + y^2 = 0$, and $\\sqrt{x} + \\sqrt{y} = 4$. Exactly one of them relates a dependent variable to its derivatives and therefore qualifies as a differential equation; the rest are purely algebraic relations containing no derivative at all. Which relation is the differential equation, and what is its order?",
     options: [
-      "An equation relating an unknown function to one or more of its derivatives",
-      "An equation containing only algebraic powers of an unknown variable",
-      "An equation whose solution is always a single numerical value",
-      "An equation relating two or more independent variables in which no unknown function appears"
+      "$3xy'' - 5y' + 7y = \\sin x$ is the differential equation, and it has order $2$ since $y''$ is the highest derivative present",
+      "$x^3 + y^3 = 27$ is the differential equation, and it has order $3$ because the highest power of $x$ or $y$ appearing in the equation is $3$",
+      "$3xy'' - 5y' + 7y = \\sin x$ is the differential equation, but it has order $1$ since only $y'$ is described as being differentiated with respect to $x$",
+      "$\\sqrt{x} + \\sqrt{y} = 4$ is the differential equation, and it has order $2$ because each variable appears under a square root"
     ],
     correctAnswer: 0,
-    explanation: "A differential equation relates an unknown function to one or more of its derivatives, as in $y' + 2y = e^x$ or $u_t = \\kappa u_{xx}$.\n\nAn equation containing only algebraic powers of an unknown variable is an ordinary algebraic equation, since no derivative appears in it.\n\nA solution of a differential equation is a function, not a single numerical value, so requiring a numerical solution misdescribes the whole subject.\n\nAn equation with no unknown function present cannot be a differential equation, because there is nothing to differentiate."
+    explanation: "A differential equation must relate a dependent variable to one or more of its derivatives; only $3xy'' - 5y' + 7y = \\sin x$ does this, and since $y''$ is the highest derivative present, its order is $2$.\n\n$x^3 + y^3 = 27$ contains no derivative at all, so it is a purely algebraic equation, and treating the exponent $3$ as an order confuses an algebraic power with a derivative order.\n\nCorrectly spotting $3xy'' - 5y' + 7y = \\sin x$ as the differential equation but then claiming order $1$ ignores the second derivative $y''$ that is actually present, undercounting the order.\n\n$\\sqrt{x} + \\sqrt{y} = 4$ also has no derivative anywhere in it; a square root on a variable is an algebraic radical, not a derivative."
   },
   {
     id: "mth302_ch1_014",
@@ -271,15 +271,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_020",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "Why is $(y')^2 + y = 0$ classified as nonlinear?",
+    text: "How should $x^2y'' + (y')^2 + 3y = \\sin x$ be classified, and which term is responsible for that classification?",
     options: [
-      "Because the derivative $y'$ is raised to a power greater than one",
-      "Because it has no forcing term on the right-hand side",
-      "Because its coefficients depend on $x$",
-      "Because it is a first-order equation rather than a second-order equation, and the order is what controls linearity"
+      "Nonlinear, because $(y')^2$ raises $y'$ to a power greater than one, breaking the required first-power form",
+      "Nonlinear, because the coefficient $x^2$ on $y''$ depends on $x$, treating any coefficient that varies with the independent variable as automatically disqualifying the equation",
+      "Linear, because $y''$ still appears to the first power, and the square on the lower-order derivative $y'$ does not affect linearity",
+      "Nonlinear, because the forcing term $\\sin x$ is a nonlinear function of $x$"
     ],
     correctAnswer: 0,
-    explanation: "Linearity requires $y$ and every derivative to appear to the first power, and the square on $y'$ violates that immediately.\n\nHaving no forcing term makes an equation homogeneous, which is an entirely separate property from linearity.\n\nThe coefficients here are constants, and in any case coefficients depending on $x$ are fully compatible with linearity.\n\nThe order of an equation carries no information about whether it is linear."
+    explanation: "Linearity requires $y$ and every one of its derivatives, not merely the highest one, to appear to the first power with coefficients depending only on $x$; the term $(y')^2$ squares the first derivative and immediately breaks that requirement, so the equation is nonlinear.\n\nThe coefficient $x^2$ on $y''$ depending on $x$ is exactly what linearity permits, since coefficients may be any function of the independent variable alone.\n\nTreating linearity as a condition on only the highest derivative is the real trap here: the rule applies to every derivative present, so the squared $y'$ term still disqualifies the equation even though $y''$ itself is fine.\n\nA forcing term such as $\\sin x$ being a nonlinear function of $x$ has no bearing on linearity, which is a statement about how $y$ and its derivatives appear, not about the right-hand side's dependence on $x$."
   },
   {
     id: "mth302_ch1_021",
@@ -299,15 +299,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_022",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "In the general linear form $a_n(x)y^{(n)} + \\cdots + a_1(x)y' + a_0(x)y = g(x)$, what must be true of the coefficients?",
+    text: "Is $x^2y'' + \\sin(x)\\,y' + 4y = e^x$ linear? Check the coefficient attached to each of $y''$, $y'$, and $y$.",
     options: [
-      "They must be constants",
-      "They may depend on $x$ only",
-      "They may depend on both $x$ and $y$",
-      "They must all equal one"
+      "Linear, because $x^2$, $\\sin x$, and $4$ depend only on $x$, and $y$, $y'$, $y''$ appear to the first power",
+      "Nonlinear, because $\\sin x$ is itself a nonlinear, transcendental function, so the coefficient on $y'$ disqualifies the equation from being linear",
+      "Nonlinear, because the coefficient $x^2$ on $y''$ is not constant",
+      "Linear only if $\\sin x$ is replaced by a constant, since a linear equation cannot have a derivative multiplied by anything other than a plain number"
     ],
-    correctAnswer: 1,
-    explanation: "Linearity permits the coefficients to depend on the independent variable $x$ alone, which is why $x^2y'' + xy' + y = e^x$ is still linear.\n\nRequiring constants describes only the constant-coefficient special case, which is narrower than linearity.\n\nAllowing dependence on $y$ would destroy linearity, since the unknown would then multiply its own derivatives.\n\nRequiring every coefficient to equal one describes no meaningful class of equations."
+    correctAnswer: 0,
+    explanation: "Linearity is checked by confirming that $y$ and every derivative appear to the first power, are never multiplied together, and that every coefficient depends only on $x$; here $x^2$, $\\sin x$, and $4$ all depend on $x$ alone, so the equation is linear.\n\nA coefficient being a transcendental function of $x$, such as $\\sin x$, is still a function of $x$ alone, and linearity places no restriction on how complicated that function of $x$ is allowed to be.\n\nA coefficient failing to be constant, such as $x^2$, describes a variable-coefficient linear equation, which is still linear; only dependence on $y$ itself would break linearity.\n\nRequiring coefficients to be plain numbers describes the narrower constant-coefficient case, not the general requirement for linearity, which only restricts coefficients to depend on $x$ alone."
   },
   {
     id: "mth302_ch1_023",
@@ -341,15 +341,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_025",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "What is a singular solution of a differential equation?",
+    text: "The differential equation $(y')^2 = 4y$ has general solution $y = (x + C)^2$ for arbitrary constant $C$. Which function also satisfies the equation but cannot be written as $(x + C)^2$ for any choice of $C$?",
     options: [
-      "A solution that cannot be recovered from the general solution for any value of the constants",
-      "A solution obtained by setting every arbitrary constant equal to zero",
-      "A solution that satisfies the equation at exactly one point",
-      "The unique solution guaranteed by an existence and uniqueness theorem when that theorem is applied at a point interior to the region of validity"
+      "$y = 0$",
+      "$y = x^2$, which already appears in the family at $C = 0$",
+      "$y = x$",
+      "$y = 4$"
     ],
     correctAnswer: 0,
-    explanation: "A singular solution genuinely satisfies the equation, yet no choice of the arbitrary constants in the general solution produces it, the classic case being $y = 0$ lost when dividing by $g(y)$ during separation.\n\nSetting every constant to zero simply yields one particular member of the general family, not something outside it.\n\nSatisfying the equation at a single point is not what solving means; a solution must satisfy the equation throughout an interval.\n\nThe solution produced by an existence and uniqueness theorem is a particular solution of an initial value problem, not a singular one."
+    explanation: "Substituting $y = 0$ gives $y' = 0$ and $(y')^2 = 0 = 4(0)$, so it genuinely solves the equation, yet $(x+C)^2$ is never identically zero for any fixed $C$, since it vanishes only at the single point $x = -C$; the constant function $0$ is therefore a singular solution, lost when the equation was divided by a power of $y$ during separation.\n\n$y = x^2$ does solve the equation, since $y' = 2x$ gives $(y')^2 = 4x^2 = 4y$, but it is already a member of the family at $C = 0$, so it can in fact be written as $(x+C)^2$ and does not answer the question asked.\n\n$y = x$ gives $(y')^2 = 1$ while $4y = 4x$, which are not equal for all $x$, so this function does not solve the equation at all.\n\n$y = 4$ gives $(y')^2 = 0$ while $4y = 16$, which are unequal, so this constant is not a solution either."
   },
   {
     id: "mth302_ch1_026",
@@ -369,15 +369,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_027",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "How many arbitrary constants does the general solution of a second-order ordinary differential equation contain?",
+    text: "For the equation $y'' + 5y' + 6y = 0$, what is its order, and how many arbitrary constants does its general solution contain?",
     options: [
-      "$1$",
-      "$2$",
-      "$3$",
-      "An arbitrary function rather than constants"
+      "Order $2$, so the general solution contains $2$ arbitrary constants",
+      "Order $2$, so the general solution contains $3$ arbitrary constants, one for each term in the equation",
+      "Order $3$, so the general solution contains $3$ arbitrary constants, having counted $y''$, $y'$, and $y$ as three separate orders added together",
+      "Order $2$, so the general solution contains $1$ arbitrary constant, since only one integration is needed to remove the highest derivative"
     ],
-    correctAnswer: 1,
-    explanation: "An $n$th-order ODE requires $n$ integrations and therefore carries $n$ arbitrary constants, giving $2$ for a second-order equation.\n\n$1$ corresponds to a first-order equation.\n\n$3$ corresponds to a third-order equation.\n\nArbitrary functions arise in the general solutions of partial differential equations, not ordinary ones, and this is the standard cross-topic distractor."
+    correctAnswer: 0,
+    explanation: "The highest derivative present is $y''$, so the equation is of order $2$, and an $n$th-order ODE requires $n$ integrations to reach its general solution, giving exactly $2$ arbitrary constants.\n\nCounting one constant per term confuses the number of terms in the equation with the number of integrations needed, which is fixed by the order alone.\n\nAdding the orders of $y''$, $y'$, and $y$ together as if order were a sum rather than a maximum wrongly inflates the order to $3$; the order is the single highest derivative present, which is $2$.\n\nA second-order equation requires two successive integrations to eliminate $y''$ entirely, not one, so a single integration leaves one arbitrary constant unaccounted for."
   },
   {
     id: "mth302_ch1_028",
@@ -397,15 +397,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_029",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "Which description fits a quasilinear PDE?",
+    text: "For the PDE $u\\,u_{xy} + u_{xx} = u^2$, how should it be classified?",
     options: [
-      "The highest derivatives appear linearly, but their coefficients may depend on $x$, $y$, and $u$",
-      "The highest derivatives themselves appear raised to powers greater than one, or multiplied by one another",
-      "Every coefficient depends only on the independent variables",
-      "The unknown function is absent from the equation entirely"
+      "Quasilinear, since $u_{xx}$ and $u_{xy}$ both appear to the first power",
+      "Not quasilinear, because the equation is nonlinear, and a nonlinear equation can never also be quasilinear",
+      "Linear, because $u_{xx}$ and $u_{xy}$ each appear to the first power throughout the equation",
+      "Fully nonlinear, because the term $u^2$ makes the highest derivatives appear nonlinearly"
     ],
     correctAnswer: 0,
-    explanation: "In a quasilinear PDE the highest derivatives enter linearly while their coefficients are allowed to involve $x$, $y$, $u$ and lower derivatives, as in $uu_x + u_y = 0$.\n\nHighest derivatives raised to powers greater than one describes a fully nonlinear equation instead.\n\nCoefficients depending only on the independent variables is the stricter requirement that characterises linear and semilinear equations.\n\nThe unknown function being absent would leave no PDE to classify."
+    explanation: "Quasilinear requires the highest-order derivatives, here $u_{xx}$ and $u_{xy}$, to enter to the first power without being multiplied together, while their coefficients are allowed to depend on $u$ itself; that holds here even though the coefficient $u$ on $u_{xy}$ also makes the whole equation nonlinear.\n\nTreating nonlinear and quasilinear as mutually exclusive is the real trap: a PDE can be nonlinear because of how a lower-order factor like $u$ enters as a coefficient, while still being quasilinear because the highest derivatives themselves appear linearly.\n\nCalling the equation linear ignores that the coefficient $u$ multiplying $u_{xy}$ depends on the unknown function itself, which linearity forbids.\n\nThe term $u^2$ is a lower-order term, not one of the highest derivatives $u_{xx}$ or $u_{xy}$, so it does not make the equation fully nonlinear."
   },
   {
     id: "mth302_ch1_030",
@@ -453,29 +453,29 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_033",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "A PDE described as being of the first degree in the unknown function and its partial derivatives, with those terms never multiplied together, is best called what?",
+    text: "How should the PDE $3u_{xx} + xy\\,u_{yy} = u^2 + x$ be classified?",
     options: [
-      "Quasilinear",
-      "Linear",
-      "Semilinear",
-      "Fully nonlinear"
+      "Semilinear, since $u_{xx}$ and $u_{yy}$ appear linearly with coefficients depending only on $x$ and $y$",
+      "Linear, because $u_{xx}$ and $u_{yy}$ each appear to the first power and are never multiplied together",
+      "Quasilinear but not semilinear, because the coefficient $xy$ on $u_{yy}$ depends on more than one independent variable",
+      "Fully nonlinear, because $u^2$ appears on the right-hand side"
     ],
-    correctAnswer: 1,
-    explanation: "First degree in the unknown and all of its partial derivatives, with no products among those terms, is precisely the definition of a linear PDE.\n\nQuasilinear is weaker, since it allows the coefficients of the highest derivatives to involve $u$ itself.\n\nSemilinear permits nonlinearity in $u$ and lower derivatives, which the stated condition explicitly rules out.\n\nFully nonlinear requires the highest derivatives to appear nonlinearly, contradicting the first-degree requirement."
+    correctAnswer: 0,
+    explanation: "Semilinear means the highest-order derivatives appear to the first power with coefficients depending only on the independent variables, while the equation may still be nonlinear in $u$ or lower derivatives; here $u_{xx}$ and $u_{yy}$ have coefficients $3$ and $xy$, both functions of $x$ and $y$ alone, but the $u^2$ term makes the equation nonlinear in $u$, which is exactly the semilinear pattern.\n\nCalling the equation linear ignores the $u^2$ term entirely, which is a nonlinear function of the unknown and rules out full linearity.\n\nA coefficient depending on more than one independent variable, such as $xy$ depending on both $x$ and $y$, is still perfectly compatible with the semilinear requirement, which only restricts coefficients from depending on $u$, not on how many independent variables they involve.\n\nThe term $u^2$ is a lower-order term rather than one of the highest derivatives $u_{xx}$ or $u_{yy}$, so it does not make the equation fully nonlinear."
   },
   {
     id: "mth302_ch1_034",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "For the general solution of a partial differential equation, what plays the role that arbitrary constants play for an ordinary differential equation?",
+    text: "A certain second-order PDE has general solution $u(x,y) = f(x + 2y) + g(x - 2y)$, where $f$ and $g$ are arbitrary differentiable functions of a single variable. What plays the role for this PDE that arbitrary constants play in the general solution of an ordinary differential equation, and how many such elements appear here?",
     options: [
-      "Arbitrary constants, exactly as for an ODE",
-      "Arbitrary functions, one for each order of the equation",
-      "A single fixed constant whose value is determined completely by the equation itself",
-      "No arbitrary element at all"
+      "Arbitrary functions, one for each order of the equation; here there are two, $f$ and $g$, matching the second order",
+      "Arbitrary constants, exactly as for an ODE; here there are two, since $f$ and $g$ are each treated as a constant of integration",
+      "Arbitrary functions, but only one is ever needed regardless of order, so $g$ is redundant here",
+      "Arbitrary functions, one for each independent variable; here there are two because the solution depends on $x$ and $y$"
     ],
-    correctAnswer: 1,
-    explanation: "The general solution of a PDE contains arbitrary functions rather than arbitrary constants, with one such function per order of the equation, so a second-order PDE needs two.\n\nOffering arbitrary constants for a PDE is the standard cross-topic slip, and an option promising a plain constant of integration for a PDE should be treated with suspicion.\n\nA single fixed constant determined by the equation would leave no freedom at all in the solution family.\n\nHaving no arbitrary element would contradict the very idea of a general solution."
+    correctAnswer: 0,
+    explanation: "The general solution of a PDE contains arbitrary functions rather than arbitrary constants, with one such function appearing per order of the equation; a second-order PDE needs two, which is exactly why both $f$ and $g$ appear here.\n\nTreating $f$ and $g$ as constants of integration is the standard cross-topic slip carried over from ODEs, where the free elements really are numbers rather than whole functions.\n\nClaiming that only one arbitrary function is ever needed contradicts the order-matching rule directly, since a second-order equation like this one requires two independent arbitrary functions to be fully general.\n\nThe count of arbitrary functions tracks the order of the equation, not the number of independent variables; that these two happen to match here, at two apiece, is a coincidence of this particular example rather than the actual rule."
   },
   {
     id: "mth302_ch1_035",
@@ -509,29 +509,29 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_037",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "Why is $u_{x}^{2} + u_y = 0$ not quasilinear?",
+    text: "How should the PDE $u_{xy}^2 + u_x = 0$ be classified in terms of order, degree, and linearity type?",
     options: [
-      "Its highest derivative does not appear linearly",
-      "Its coefficients depend on the independent variables",
-      "It has no forcing term on the right-hand side",
-      "It involves two independent variables rather than one"
+      "Order $2$, degree $2$, fully nonlinear, since the highest derivative $u_{xy}$ is squared",
+      "Order $1$, degree $2$, fully nonlinear, having taken $u_x$ as the highest derivative since it is the only term appearing to the first power",
+      "Order $2$, degree $1$, quasilinear, since $u_x$ appears linearly elsewhere in the equation",
+      "Order $2$, degree $2$, quasilinear, since quasilinear only requires the equation to be of second order"
     ],
     correctAnswer: 0,
-    explanation: "Quasilinear requires the highest derivatives to enter to the first power, and the square on $u_x$ violates that, so the equation is fully nonlinear instead.\n\nCoefficients depending on the independent variables is permitted in every class down to linear, so it cannot be the obstruction.\n\nThe absence of a forcing term concerns homogeneity, which is unrelated to this classification.\n\nHaving two independent variables is what makes it a PDE at all and says nothing about quasilinearity."
+    explanation: "The mixed partial derivative $u_{xy}$ is of order $2$ and is the highest derivative present, and since it appears squared, the degree is $2$; because the highest derivative itself appears nonlinearly, the equation is fully nonlinear rather than quasilinear.\n\nTaking $u_x$ as the highest derivative overlooks that $u_{xy}$, a mixed second partial derivative, is present and outranks the first partial derivative $u_x$.\n\nDegree $1$ ignores the square sitting on $u_{xy}$, and classifying the equation as quasilinear on the basis of a lower-order term like $u_x$ misapplies the rule, since quasilinearity is decided by how the highest derivative appears, not by a different, lower-order term.\n\nQuasilinearity is not simply a statement about order; it specifically requires the highest-order derivatives to appear to the first power, which fails here because $u_{xy}$ is squared."
   },
   {
     id: "mth302_ch1_038",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "A linear ODE written as $a_n(x)y^{(n)} + \\cdots + a_0(x)y = g(x)$ is called homogeneous under which condition?",
+    text: "How should $x^2y'' + 3xy' + y = 4x^3$ be classified?",
     options: [
-      "$g(x) = 0$",
-      "$a_0(x) = 0$",
-      "All the coefficients are constant",
-      "The equation has order at least two"
+      "Linear, nonhomogeneous, with variable coefficients, since $4x^3$ is nonzero and the coefficients $x^2$ and $3x$ depend on $x$",
+      "Linear, homogeneous, since $y$ and its derivatives all appear to the first power, which is a statement about linearity and does not by itself decide whether the forcing term vanishes",
+      "Nonlinear, because the coefficients $x^2$ and $3x$ are not constants",
+      "Linear, nonhomogeneous, with constant coefficients, since the equation only has one dependent variable $y$"
     ],
     correctAnswer: 0,
-    explanation: "Homogeneity for a linear equation means the forcing term vanishes identically, that is $g(x) = 0$.\n\nRequiring $a_0(x) = 0$ removes the undifferentiated term but has nothing to do with homogeneity.\n\nConstant coefficients describe a separate special case that may hold for homogeneous and nonhomogeneous equations alike.\n\nThe order of the equation is irrelevant to whether the forcing term vanishes."
+    explanation: "The equation is linear, since $y$, $y'$, and $y''$ each appear to the first power without being multiplied together; it is nonhomogeneous because the forcing term $4x^3$ is not identically zero, and it has variable coefficients since $x^2$ and $3x$ both depend on $x$.\n\nHaving $y$ and its derivatives appear to the first power establishes linearity, but homogeneity is decided separately by whether the right-hand side vanishes, and here it does not.\n\nCoefficients depending on $x$, such as $x^2$ and $3x$, are fully compatible with linearity; only dependence on $y$ itself would make the equation nonlinear.\n\nHaving a single dependent variable $y$ says nothing about whether the coefficients are constant, and $x^2$ and $3x$ plainly vary with $x$, so the coefficients are variable, not constant."
   },
   {
     id: "mth302_ch1_039",
@@ -551,15 +551,15 @@ const mth302Chapter1: QuestionV2[] = [
     id: "mth302_ch1_040",
     course: "MTH 302",
     chapter: "Chapter 1",
-    text: "What is the degree of $y'' + e^{y'} = 0$?",
+    text: "What are the order and degree of $y''' = \\sqrt{1 + (y'')^2}$?",
     options: [
-      "Not defined",
-      "$1$",
-      "$2$",
-      "$0$"
+      "Order $3$, degree $2$",
+      "Order $3$, degree $1$",
+      "Order $2$, degree $2$, mistaking $y''$ under the radical for the highest derivative present",
+      "Order $2$, degree $1$"
     ],
     correctAnswer: 0,
-    explanation: "Degree is defined only when the equation is polynomial in its derivatives, and $e^{y'}$ can never be reduced to a polynomial in $y'$, so the degree is not defined.\n\n$1$ assumes the highest derivative sits in a polynomial expression, which the exponential prevents.\n\n$2$ has no basis in the equation as written.\n\n$0$ would indicate no derivative at all, contradicting the presence of $y''$."
+    explanation: "Degree is read only after the equation is made polynomial in the derivatives. Squaring both sides gives $(y''')^2 = 1 + (y'')^2$, so the highest derivative $y'''$ is order $3$ and appears to the power $2$, giving degree $2$.\n\nOrder $3$, degree $1$ is what results if the radical is never cleared before reading the degree, which is the standard slip on this type of question.\n\nOrder $2$, degree $2$ mistakes $y''$, sitting under the radical, for the highest derivative present, when $y'''$ outside the radical is actually one order higher.\n\nOrder $2$, degree $1$ compounds both errors, misreading the order and never squaring away the radical."
   }
 ];
 

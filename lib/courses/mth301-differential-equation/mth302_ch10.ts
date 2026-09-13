@@ -33,15 +33,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_003",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What are the values of $P_n(1)$ and $P_n(-1)$ respectively?",
+    text: "Starting from the generating function $\\dfrac{1}{\\sqrt{1-2xt+t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, set $x=1$ so the left side simplifies to $\\dfrac{1}{1-t}$, and set $x=-1$ so it simplifies to $\\dfrac{1}{1+t}$. Expanding each as a power series in $t$ and reading off the coefficient of $t^6$, what are the values of $P_6(1)$ and $P_6(-1)$ respectively?",
     options: [
       "$1$ and $1$",
-      "$n$ and $-n$",
-      "$(-1)^n$ and $1$",
-      "$1$ and $(-1)^n$"
+      "$1$ and $-1$",
+      "$6$ and $-6$",
+      "$1$ and $0$"
     ],
-    correctAnswer: 3,
-    explanation: "Setting $x = 1$ in the generating function reduces it to $1/(1-t)$, whose power series is $\\sum t^n$, so $P_n(1) = 1$ for every $n$. Setting $x = -1$ reduces it to $1/(1+t)$, whose power series is $\\sum(-1)^nt^n$, so $P_n(-1) = (-1)^n$. This normalization $P_n(1) = 1$ is exactly what fixes the constants in each Legendre polynomial.\n\n$1$ and $1$ wrongly gives the same value at both endpoints, ignoring the alternating sign at $x = -1$.\n\n$n$ and $-n$ do not match the actual constant values $1$ and $(-1)^n$ obtained from the generating function.\n\n$(-1)^n$ and $1$ has the two values swapped."
+    correctAnswer: 0,
+    explanation: "Since $\\dfrac{1}{1-t} = \\sum_{n=0}^{\\infty}t^n$, every coefficient equals $1$, so $P_6(1) = 1$. Since $\\dfrac{1}{1+t} = \\sum_{n=0}^{\\infty}(-1)^nt^n$, the coefficient of $t^6$ is $(-1)^6 = 1$ because $6$ is even, so $P_6(-1) = 1$ as well.\n\n$1$ and $-1$ assumes the alternating sign always lands on $-1$, ignoring that $(-1)^n$ depends on the parity of $n$ and equals $1$ for the even index $n=6$.\n\n$6$ and $-6$ mistakes the index $n$ itself for the coefficient being extracted, rather than reading off the coefficient of $t^n$ in the expanded series.\n\n$1$ and $0$ wrongly assumes the coefficient vanishes at $x=-1$ for some parity of $n$, but the geometric series $\\sum(-1)^nt^n$ never has a zero coefficient."
   },
   {
     id: "mth302_ch10_004",
@@ -61,43 +61,43 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_005",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is Rodrigues' formula for the Legendre polynomials?",
+    text: "Apply Rodrigues' formula $P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2-1)^n$ with $n=2$ to derive $P_2(x)$ by hand. Expand $(x^2-1)^2 = x^4-2x^2+1$, differentiate twice with respect to $x$, and divide by the correct normalizing constant. What polynomial results?",
     options: [
-      "$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2-1)^n$",
-      "$P_n = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2-1)^n$",
-      "$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(1-x^2)^n$",
-      "$P_n = \\dfrac{1}{2^n}\\dfrac{d^n}{dx^n}(x^2-1)$"
+      "$(3x^2-1)/2$",
+      "$(3x^2+1)/2$",
+      "$3x^2 - 1$",
+      "$(4x^3-4x)/8$"
     ],
     correctAnswer: 0,
-    explanation: "The correct normalizing factor is $\\dfrac{1}{2^nn!}$, and the expression differentiated $n$ times is $(x^2-1)$ raised to the same power $n$ as the order of differentiation.\n\n$P_n = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2-1)^n$ omits the necessary factor of $2^n$ in the denominator.\n\n$P_n = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(1-x^2)^n$ differs by a sign inside the parentheses, which would violate the normalization $P_n(1) = 1$ for odd values of $n$.\n\n$P_n = \\dfrac{1}{2^n}\\dfrac{d^n}{dx^n}(x^2-1)$ both omits the $n!$ factor and fails to raise the bracket to the power $n$."
+    explanation: "Differentiating $x^4-2x^2+1$ once gives $4x^3-4x$, and differentiating again gives $12x^2-4$. Dividing by the normalizing constant $2^2\\cdot2! = 8$ gives $\\dfrac{12x^2-4}{8} = \\dfrac{3x^2-1}{2}$, which checks out since $P_2(1)$ must equal $1$ and $\\dfrac{3-1}{2}=1$.\n\n$(3x^2+1)/2$ results from expanding $(x^2-1)^2$ with the wrong sign, as if it were $(x^2+1)^2$, before differentiating.\n\n$3x^2 - 1$ comes from dividing by $2^n=4$ alone and forgetting the $n!=2$ factor in the normalizing constant $2^nn!$.\n\n$(4x^3-4x)/8$ stops after only one differentiation instead of the two required for $n=2$, then divides by the correct constant anyway."
   },
   {
     id: "mth302_ch10_006",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the recurrence relation for the Legendre polynomials?",
+    text: "The three-term recurrence relation for the Legendre polynomials is $(n+1)P_{n+1}(x) = (2n+1)xP_n(x) - nP_{n-1}(x)$. Given $P_2(x) = \\dfrac{3x^2-1}{2}$ and $P_3(x) = \\dfrac{5x^3-3x}{2}$, apply the recurrence with $n=3$ to derive $P_4(x)$.",
     options: [
-      "$(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$",
-      "$nP_{n+1} = (2n+1)xP_n - (n+1)P_{n-1}$",
-      "$P_{n+1} = xP_n - P_{n-1}$",
-      "$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$"
+      "$(35x^4-30x^2+3)/8$",
+      "$(35x^4-30x^2+3)/2$",
+      "$(35x^4-12x^2-3)/8$",
+      "$(3x^3+x)/4$"
     ],
     correctAnswer: 0,
-    explanation: "Testing this recurrence with $n = 1$ gives $2P_2 = 3xP_1 - P_0 = 3x^2 - 1$, so $P_2 = (3x^2-1)/2$, which matches the known correct polynomial, confirming that $(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$ is the correct form. Testing a low case against a known polynomial is the fastest way to verify the recurrence quickly.\n\n$nP_{n+1} = (2n+1)xP_n - (n+1)P_{n-1}$ has the coefficients $n$ and $n+1$ swapped relative to the correct recurrence.\n\n$P_{n+1} = xP_n - P_{n-1}$ omits the necessary coefficients $(2n+1)$ and $n$ entirely.\n\n$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$ misplaces the coefficient $(2n+1)$, which should multiply $xP_n$, not $P_{n+1}$."
+    explanation: "With $n=3$ the recurrence reads $4P_4 = 7xP_3 - 3P_2 = 7x\\cdot\\dfrac{5x^3-3x}{2} - 3\\cdot\\dfrac{3x^2-1}{2} = \\dfrac{35x^4-30x^2+3}{2}$, so dividing by $4$ gives $P_4 = \\dfrac{35x^4-30x^2+3}{8}$.\n\n$(35x^4-30x^2+3)/2$ stops right after combining the two terms and forgets to divide by the coefficient $(n+1)=4$.\n\n$(35x^4-12x^2-3)/8$ comes from using a plus sign instead of a minus sign on the $nP_{n-1}$ term.\n\n$(3x^3+x)/4$ comes from swapping the roles of $P_2$ and $P_3$, multiplying $x$ by $P_2$ instead of $P_3$."
   },
   {
     id: "mth302_ch10_007",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "For integer $n$, how does $J_{-n}(x)$ relate to $J_n(x)$?",
+    text: "For the Bessel function of the first kind, the relation for integer order $n$ is $J_{-n}(x) = (-1)^nJ_n(x)$. Using $n=7$, what is $J_{-7}(x)$ in terms of $J_7(x)$?",
     options: [
-      "$J_{-n}(x) = J_n(x)$",
-      "$J_{-n}(x) = -J_n(x)$",
-      "$J_{-n}(x) = (-1)^nJ_n(x)$",
-      "$J_{-n}(x) = Y_n(x)$"
+      "$J_{-7}(x) = -J_7(x)$",
+      "$J_{-7}(x) = J_7(x)$",
+      "$J_{-7}(x) = -7J_7(x)$",
+      "$J_{-7}(x) = Y_7(x)$"
     ],
-    correctAnswer: 2,
-    explanation: "Because $\\Gamma$ is infinite at every non-positive integer, the first $n$ terms of the series for $J_{-n}$ vanish, and re-indexing the remaining series with $k = p + n$ produces the overall factor $(-1)^n$, giving $J_{-n}(x) = (-1)^nJ_n(x)$. The practical consequence is that $J_n$ and $J_{-n}$ are linearly dependent for integer order, which is exactly why the second solution $Y_n$ must be introduced.\n\n$J_{-n}(x) = J_n(x)$ is correct only when $n$ is even, but the general relation includes the sign factor $(-1)^n$ for all integers.\n\n$J_{-n}(x) = -J_n(x)$ is correct only when $n$ is odd, again missing the general $(-1)^n$ pattern.\n\n$J_{-n}(x) = Y_n(x)$ confuses the negative-order Bessel function of the first kind with the entirely separate Bessel function of the second kind."
+    correctAnswer: 0,
+    explanation: "Since $\\Gamma$ is infinite at non-positive integers, the first $n$ terms of the series for $J_{-n}$ vanish, and reindexing gives $J_{-n}(x) = (-1)^nJ_n(x)$. With $n=7$, which is odd, $(-1)^7=-1$, so $J_{-7}(x) = -J_7(x)$.\n\n$J_{-7}(x) = J_7(x)$ applies the sign for an even order, but $7$ is odd.\n\n$J_{-7}(x) = -7J_7(x)$ mistakes the exponent $(-1)^n$ for a multiplication by $n$ itself.\n\n$J_{-7}(x) = Y_7(x)$ confuses the negative-order Bessel function of the first kind with the entirely separate Bessel function of the second kind."
   },
   {
     id: "mth302_ch10_008",
@@ -117,15 +117,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_009",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is Legendre's differential equation?",
+    text: "Legendre's differential equation with degree $k$ is $(1-x^2)y'' - 2xy' + k(k+1)y = 0$. Substituting $k=3$ and $y = P_3(x) = \\dfrac{5x^3-3x}{2}$, so that $y' = \\dfrac{15x^2-3}{2}$ and $y'' = 15x$, what is the value of $(1-x^2)y'' - 2xy' + 12y$?",
     options: [
-      "$(1 - x^2)y'' - 2xy' + k(k+1)y = 0$",
-      "$(1 - x^2)y'' + 2xy' + k(k+1)y = 0$, with the middle sign reversed",
-      "$x^2y'' + xy' + (x^2 - n^2)y = 0$, which is Bessel's equation instead",
-      "$(1 + x^2)y'' - 2xy' + k(k+1)y = 0$, with a plus inside the bracket"
+      "$0$",
+      "$15x^3$",
+      "$30x^3 - 6x$",
+      "$-15x^3 + 9x$"
     ],
     correctAnswer: 0,
-    explanation: "Legendre's equation is $(1 - x^2)y'' - 2xy' + k(k+1)y = 0$ on $[-1, 1]$.\n\nReversing the sign of the first-derivative term breaks the self-adjoint structure.\n\nThe equation with $x^2 - n^2$ is Bessel's equation.\n\nA plus sign inside the bracket changes the singular points away from $\\pm 1$."
+    explanation: "Substituting gives $(1-x^2)(15x) - 2x\\cdot\\dfrac{15x^2-3}{2} + 12\\cdot\\dfrac{5x^3-3x}{2} = (15x-15x^3) + (-15x^3+3x) + (30x^3-18x)$. The $x^3$ terms cancel to $0$ and the $x$ terms cancel to $0$, leaving $0$, confirming $P_3$ solves the equation with $k=3$.\n\n$15x^3$ results from dropping the factor $(1-x^2)$ on the $y''$ term and using $y''$ by itself.\n\n$30x^3 - 6x$ results from using a plus sign instead of a minus sign on the $2xy'$ term.\n\n$-15x^3 + 9x$ results from miscomputing $k(k+1)$ with $k=3$ as $6$ instead of $12$."
   },
   {
     id: "mth302_ch10_010",
@@ -145,15 +145,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_011",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the general solution of Legendre's equation?",
+    text: "The Legendre equation $(1-x^2)y'' - 2xy' + 20y = 0$ has the standard form $(1-x^2)y'' - 2xy' + k(k+1)y = 0$. Solve $k(k+1) = 20$ for the non-negative integer $k$, then state the general solution of the equation.",
     options: [
-      "$y = AP_k(x) + BQ_k(x)$",
-      "$y = AP_k(x)$ alone, since the second solution is discarded",
-      "$y = AJ_k(x) + BY_k(x)$, which uses the Bessel functions",
-      "$y = A\\cos kx + B\\sin kx$, a trigonometric pair"
+      "$y = AP_4(x) + BQ_4(x)$",
+      "$y = AP_5(x) + BQ_5(x)$",
+      "$y = AP_4(x)$ alone",
+      "$y = AJ_4(x) + BY_4(x)$"
     ],
     correctAnswer: 0,
-    explanation: "Being second order, the equation has two independent solutions, the Legendre functions of the first and second kind.\n\nDiscarding $Q_k$ happens in physical problems for boundedness, but the general solution retains both.\n\nThe Bessel functions solve a different equation.\n\nTrigonometric solutions belong to the constant-coefficient case."
+    explanation: "Factoring $k^2+k-20=0$ gives $(k-4)(k+5)=0$, and the non-negative integer root is $k=4$. Being second order, the equation has two independent solutions, so the general solution is $y = AP_4(x) + BQ_4(x)$.\n\n$y = AP_5(x) + BQ_5(x)$ comes from dropping the linear term and solving $k^2=20$ instead of $k(k+1)=20$, then rounding the approximate root up to $k=5$.\n\n$y = AP_4(x)$ alone correctly finds $k=4$ but wrongly discards the second solution; $Q_4$ is only dropped for boundedness in physical problems, not from the general solution.\n\n$y = AJ_4(x) + BY_4(x)$ correctly finds $k=4$ but wrongly applies the Bessel functions, which solve a different equation entirely."
   },
   {
     id: "mth302_ch10_012",
@@ -173,15 +173,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_013",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "How are the arbitrary constants chosen in defining $P_n$?",
+    text: "For $k=2$, the series solution of Legendre's equation before normalization is $y(x) = a_0(1-3x^2)$, where $a_0$ is an arbitrary constant. Using the condition $P_2(1)=1$ that fixes the arbitrary constants in defining $P_n$, what is the value of $a_0$?",
     options: [
-      "So that $P_n(1) = 1$",
-      "So that $P_n(0) = 1$, normalising at the midpoint instead",
-      "So that the leading coefficient equals one",
-      "So that the integral of $P_n$ over $[-1, 1]$ equals one"
+      "$-1/2$",
+      "$1/2$",
+      "$-2$",
+      "$1$"
     ],
     correctAnswer: 0,
-    explanation: "The standard normalisation fixes $P_n(1) = 1$, which is also the quickest check on any offered polynomial.\n\nNormalising at the origin would fail for odd $n$, where $P_n(0) = 0$.\n\nA monic normalisation gives different polynomials.\n\nThe integral of $P_n$ vanishes for $n \\geq 1$ by orthogonality against $P_0$."
+    explanation: "Setting $x=1$ gives $y(1) = a_0(1-3) = -2a_0$, and requiring $y(1)=1$ gives $-2a_0=1$, so $a_0 = -\\dfrac{1}{2}$.\n\n$1/2$ drops the negative sign when solving $-2a_0=1$.\n\n$-2$ mistakes the bracket value $1-3(1)^2=-2$, computed as if $a_0$ were already $1$, for the value of $a_0$ itself.\n\n$1$ assumes the normalization directly sets $a_0=1$, skipping the equation $-2a_0=1$ that must actually be solved."
   },
   {
     id: "mth302_ch10_014",
@@ -201,15 +201,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_015",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is Rodrigues' formula for the Legendre polynomials?",
+    text: "Apply Rodrigues' formula $P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2-1)^n$ with $n=3$ to derive $P_3(x)$ by hand. Expand $(x^2-1)^3 = x^6-3x^4+3x^2-1$, differentiate three times with respect to $x$, and divide by the correct normalizing constant. What polynomial results?",
     options: [
-      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2 - 1)^n$",
-      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^n}{dx^n}(x^2 + 1)^n$, with a plus inside the bracket",
-      "$P_n(x) = \\dfrac{1}{n!}\\dfrac{d^n}{dx^n}(x^2 - 1)^n$, omitting the power of two",
-      "$P_n(x) = \\dfrac{1}{2^nn!}\\dfrac{d^{n}}{dx^{n}}(x - 1)^n$, without squaring $x$"
+      "$(5x^3-3x)/2$",
+      "$(5x^3+3x)/2$",
+      "$15x^3 - 9x$",
+      "$30x^4 - 36x^2 + 6$"
     ],
     correctAnswer: 0,
-    explanation: "Rodrigues' formula differentiates $(x^2 - 1)^n$ exactly $n$ times and divides by $2^nn!$.\n\nA plus sign inside the bracket changes the roots away from $\\pm 1$.\n\nOmitting $2^n$ destroys the normalisation $P_n(1) = 1$.\n\nDropping the square gives a different polynomial family."
+    explanation: "Differentiating $x^6-3x^4+3x^2-1$ three times gives, in order, $6x^5-12x^3+6x$, then $30x^4-36x^2+6$, then $120x^3-72x$. Dividing by the normalizing constant $2^3\\cdot3! = 48$ gives $\\dfrac{120x^3-72x}{48} = \\dfrac{5x^3-3x}{2}$, which checks out since $P_3(1) = \\dfrac{5-3}{2}=1$.\n\n$(5x^3+3x)/2$ results from a sign error in expanding $(x^2-1)^3$, as if it were $(x^2+1)^3$, before differentiating.\n\n$15x^3 - 9x$ results from dividing $120x^3-72x$ by $2^3=8$ alone and forgetting the $3!=6$ factor in the normalizing constant.\n\n$30x^4 - 36x^2 + 6$ stops after only two differentiations instead of the three required for $n=3$."
   },
   {
     id: "mth302_ch10_016",
@@ -243,29 +243,29 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_018",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the degree and parity of $P_n(x)$?",
+    text: "Rodrigues' formula gives $P_5(x) = \\dfrac{1}{2^5\\cdot5!}\\dfrac{d^5}{dx^5}(x^2-1)^5$, where $(x^2-1)^5$ is a polynomial of degree $10$. After differentiating five times, determine the degree and parity (even or odd function) of the resulting polynomial, and use that parity to state the value of $P_5(-1)$.",
     options: [
-      "Degree exactly $n$, even for even $n$ and odd for odd $n$",
-      "Degree $n$, but always an even function regardless of $n$",
-      "Degree $2n$, with parity matching that of $n$",
-      "Degree $n - 1$, with parity opposite to that of $n$"
+      "Degree $5$, an odd function, with $P_5(-1) = -1$",
+      "Degree $10$, an even function, with $P_5(-1) = 1$",
+      "Degree $5$, an odd function, with $P_5(-1) = 1$",
+      "Degree $4$, an even function, with $P_5(-1) = 1$"
     ],
     correctAnswer: 0,
-    explanation: "Each Legendre polynomial has degree exactly $n$ and inherits the parity of $n$, so $P_3$ is an odd cubic.\n\nUniform evenness fails for $P_1(x) = x$.\n\nThe degree is $n$, not $2n$.\n\nA degree of $n - 1$ contradicts Rodrigues' formula."
+    explanation: "Differentiating a degree-$10$ polynomial five times reduces its degree by five, giving degree $5$, and $P_n$ always inherits the parity of its index, so $P_5$ is an odd function. Using $P_n(-1) = (-1)^n$ with $n=5$ gives $P_5(-1) = (-1)^5 = -1$.\n\nDegree $10$ and an even function keeps the pre-differentiation degree of $(x^2-1)^5$ instead of subtracting the five derivatives taken.\n\nDegree $5$, an odd function, with $P_5(-1) = 1$ correctly finds the degree and parity but wrongly applies $P_n(-1)=1$ for every $n$ regardless of parity.\n\nDegree $4$, an even function, with $P_5(-1) = 1$ over-subtracts, treating the five derivatives as reducing the degree by six instead of five."
   },
   {
     id: "mth302_ch10_019",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the recurrence relation for the Legendre polynomials?",
+    text: "The three-term recurrence relation for the Legendre polynomials is $(n+1)P_{n+1}(x) = (2n+1)xP_n(x) - nP_{n-1}(x)$. Given $P_3(x) = \\dfrac{5x^3-3x}{2}$ and $P_4(x) = \\dfrac{35x^4-30x^2+3}{8}$, apply the recurrence with $n=4$ to derive $P_5(x)$.",
     options: [
-      "$(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$",
-      "$(n+1)P_{n+1} = (2n+1)xP_n + nP_{n-1}$",
-      "$P_{n+1} = xP_n - P_{n-1}$, dropping every coefficient",
-      "$(2n+1)P_{n+1} = (n+1)xP_n - nP_{n-1}$, exchanging two coefficients"
+      "$(63x^5-70x^3+15x)/8$",
+      "$(315x^5-350x^3+75x)/8$",
+      "$(35x^4-30x^2+3)/8$",
+      "$(10x^4+3x^2-3)/10$"
     ],
     correctAnswer: 0,
-    explanation: "The three-term recurrence is $(n+1)P_{n+1} = (2n+1)xP_n - nP_{n-1}$, which reproduces $P_3$ from $P_2$ and $P_1$.\n\nReversing the final sign gives the wrong polynomial.\n\nDropping the coefficients loses the normalisation.\n\nExchanging the two outer coefficients breaks the identity."
+    explanation: "With $n=4$ the recurrence reads $5P_5 = 9xP_4 - 4P_3 = 9x\\cdot\\dfrac{35x^4-30x^2+3}{8} - 4\\cdot\\dfrac{5x^3-3x}{2} = \\dfrac{315x^5-350x^3+75x}{8}$, so dividing by $5$ gives $P_5 = \\dfrac{63x^5-70x^3+15x}{8}$.\n\n$(315x^5-350x^3+75x)/8$ stops right after combining the two terms and forgets to divide by the coefficient $(n+1)=5$.\n\n$(35x^4-30x^2+3)/8$ comes from using $n=3$ in the recurrence instead of $n=4$, which only reproduces $P_4$ rather than advancing to $P_5$.\n\n$(10x^4+3x^2-3)/10$ comes from swapping the roles of $P_3$ and $P_4$, multiplying $x$ by $P_3$ instead of $P_4$."
   },
   {
     id: "mth302_ch10_020",
@@ -313,15 +313,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_023",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is the generating function for the Legendre polynomials?",
+    text: "The generating function for the Legendre polynomials is $\\dfrac{1}{\\sqrt{1-2xt+t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$. Using the binomial series $(1-u)^{-1/2} = 1 + \\dfrac{u}{2} + \\dfrac{3u^2}{8} + \\cdots$ with $u = 2xt - t^2$, expand up to the $t^2$ term and read off its coefficient. What polynomial does this give for $P_2(x)$?",
     options: [
-      "$\\dfrac{1}{\\sqrt{1 - 2xt + t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$",
-      "$\\dfrac{1}{1 - 2xt + t^2} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, without the square root",
-      "$\\dfrac{1}{\\sqrt{1 + 2xt + t^2}} = \\sum_{n=0}^{\\infty}P_n(x)t^n$",
-      "$e^{xt} = \\sum_{n=0}^{\\infty}P_n(x)t^n$, an exponential generating function"
+      "$(3x^2-1)/2$",
+      "$(3x^2+1)/2$",
+      "$4x^2 - 1$",
+      "$-1/2$"
     ],
     correctAnswer: 0,
-    explanation: "The generating function is $(1 - 2xt + t^2)^{-1/2}$, valid for $|t| < 1$.\n\nOmitting the square root gives a different family of coefficients.\n\nA plus sign in the middle changes the expansion point.\n\nAn exponential generating function belongs to other polynomial families."
+    explanation: "The linear term contributes $\\dfrac{u}{2} = xt - \\dfrac{t^2}{2}$, giving $-\\dfrac{1}{2}$ from the $t^2$ piece, and the quadratic term contributes $\\dfrac{3u^2}{8}$, whose $t^2$ piece comes from $4x^2t^2$ inside $u^2$, giving $\\dfrac{3}{2}x^2$. Adding these gives $\\dfrac{3x^2}{2} - \\dfrac{1}{2} = \\dfrac{3x^2-1}{2}$.\n\n$(3x^2+1)/2$ results from dropping the minus sign inside $u=2xt-t^2$ when squaring it, as if $u=2xt+t^2$.\n\n$4x^2 - 1$ results from using the ordinary binomial series for exponent $-1$, namely $1+u+u^2+\\cdots$, instead of the correct exponent $-1/2$.\n\n$-1/2$ keeps only the linear term of the binomial series and omits the $u^2$ contribution entirely, losing the $x^2$ dependence."
   },
   {
     id: "mth302_ch10_024",
@@ -383,15 +383,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_028",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What is Bessel's differential equation of order $n$?",
+    text: "Bessel's differential equation of order $n$ is $x^2y'' + xy' + (x^2-n^2)y = 0$. What is Bessel's equation of order $n=5$, written out explicitly?",
     options: [
-      "$x^2y'' + xy' + (x^2 - n^2)y = 0$",
-      "$x^2y'' + xy' + (x^2 + n^2)y = 0$",
-      "$(1 - x^2)y'' - 2xy' + n(n+1)y = 0$, which is Legendre's equation",
-      "$x^2y'' + xy' + (n^2 - x^2)y = 0$, with the bracket reversed"
+      "$x^2y'' + xy' + (x^2-25)y = 0$",
+      "$x^2y'' + xy' + (x^2-5)y = 0$",
+      "$x^2y'' + xy' + (x^2+25)y = 0$",
+      "$x^2y'' + xy' + (25-x^2)y = 0$"
     ],
     correctAnswer: 0,
-    explanation: "Bessel's equation of order $n$ is $x^2y'' + xy' + (x^2 - n^2)y = 0$, with a regular singular point at the origin.\n\nA plus before $n^2$ gives the modified equation with different solutions.\n\nThe second expression is Legendre's equation.\n\nReversing the bracket changes the sign of the whole term."
+    explanation: "Substituting $n=5$ into $x^2-n^2$ gives $x^2-25$, so the equation is $x^2y'' + xy' + (x^2-25)y = 0$.\n\n$x^2y'' + xy' + (x^2-5)y = 0$ uses $n$ itself instead of $n^2$ in the bracket, the standard slip of reading the order directly as the constant term.\n\n$x^2y'' + xy' + (x^2+25)y = 0$ flips the sign before $n^2$, giving the modified Bessel equation instead of the ordinary one.\n\n$x^2y'' + xy' + (25-x^2)y = 0$ reverses the bracket, changing the sign of the entire quadratic term."
   },
   {
     id: "mth302_ch10_029",
@@ -425,29 +425,29 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_031",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "For integer $n$, how are $J_{-n}$ and $J_n$ related?",
+    text: "For the Bessel function of the first kind, the relation for integer order $n$ is $J_{-n}(x) = (-1)^nJ_n(x)$. Using $n=6$, what is $J_{-6}(x)$ in terms of $J_6(x)$?",
     options: [
-      "$J_{-n}(x) = (-1)^nJ_n(x)$",
-      "$J_{-n}(x) = J_n(x)$ for every integer $n$",
-      "$J_{-n}(x) = -J_n(x)$, regardless of parity",
-      "$J_{-n}(x) = \\dfrac{1}{J_n(x)}$, giving the reciprocal"
+      "$J_{-6}(x) = J_6(x)$",
+      "$J_{-6}(x) = -J_6(x)$",
+      "$J_{-6}(x) = 6J_6(x)$",
+      "$J_{-6}(x) = Y_6(x)$"
     ],
     correctAnswer: 0,
-    explanation: "Because $\\Gamma$ is infinite at non-positive integers, the first $n$ terms of the series for $J_{-n}$ vanish, and reindexing gives $J_{-n} = (-1)^nJ_n$.\n\nEquality without the sign fails for odd $n$.\n\nA uniform minus sign fails for even $n$.\n\nA reciprocal relation has no basis in the series."
+    explanation: "Since $\\Gamma$ is infinite at non-positive integers, the first $n$ terms of the series for $J_{-n}$ vanish, and reindexing gives $J_{-n}(x) = (-1)^nJ_n(x)$. With $n=6$, which is even, $(-1)^6=1$, so $J_{-6}(x) = J_6(x)$.\n\n$J_{-6}(x) = -J_6(x)$ applies the sign for an odd order, but $6$ is even.\n\n$J_{-6}(x) = 6J_6(x)$ mistakes the exponent $(-1)^n$ for a multiplication by $n$ itself.\n\n$J_{-6}(x) = Y_6(x)$ confuses the negative-order Bessel function of the first kind with the entirely separate Bessel function of the second kind."
   },
   {
     id: "mth302_ch10_032",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "Why is $Y_n$ needed as a second solution for integer order?",
+    text: "For integer order $n$, $J_{-n}(x) = (-1)^nJ_n(x)$. Using $n=3$, compute the ratio $J_{-3}(x)/J_3(x)$ and use it to determine whether a genuinely independent second solution is required for Bessel's equation of order $3$.",
     options: [
-      "Because $J_n$ and $J_{-n}$ are not independent then",
-      "Because $J_n$ fails to satisfy Bessel's equation for integer $n$",
-      "Because $J_n$ is unbounded at the origin for integer $n$",
-      "Because $J_n$ is only defined for non-integer order"
+      "The ratio is $-1$, so $J_{-3}$ and $J_3$ are proportional (linearly dependent), meaning a second solution $Y_3$ is needed",
+      "The ratio is $1$, so $J_{-3}$ and $J_3$ are proportional, meaning a second solution $Y_3$ is needed",
+      "The ratio is $-1$, so $J_{-3}$ and $J_3$ are independent, meaning no second solution is required",
+      "The ratio is $-3$, so $J_{-3}$ and $J_3$ are proportional, meaning a second solution $Y_3$ is needed"
     ],
     correctAnswer: 0,
-    explanation: "For integer order the relation $J_{-n} = (-1)^nJ_n$ makes the two proportional, so a genuinely independent second solution $Y_n$ is required.\n\nThe function $J_n$ does satisfy the equation for integer order.\n\nIt is $Y_n$, not $J_n$, that is unbounded at the origin.\n\nThe function $J_n$ is defined for every real order."
+    explanation: "With $n=3$, $(-1)^n = (-1)^3 = -1$, so $J_{-3}(x)/J_3(x) = -1$. A constant nonzero ratio means the two functions are proportional, hence linearly dependent, so they cannot form a general solution on their own and a genuinely independent second solution $Y_3$ is required.\n\nThe ratio is $1$ wrongly treats $n=3$ as even when computing $(-1)^n$, giving the wrong sign.\n\nThe ratio is $-1$, so $J_{-3}$ and $J_3$ are independent correctly computes the ratio but misapplies the independence test, since a constant nonzero ratio is exactly what proportionality (dependence) means.\n\nThe ratio is $-3$ mistakes the exponent $(-1)^n$ for a multiplication by $n$ itself, rather than raising $-1$ to the power $n$."
   },
   {
     id: "mth302_ch10_033",
@@ -481,15 +481,15 @@ const mth302Chapter10: QuestionV2[] = [
     id: "mth302_ch10_035",
     course: "MTH 302",
     chapter: "Chapter 10",
-    text: "What kind of point is $x = 0$ for Bessel's equation?",
+    text: "For the equation $x^2y'' + xy' + (x^2-9)y = 0$, dividing through by $x^2$ writes it as $y'' + p(x)y' + q(x)y = 0$ with $p(x) = 1/x$ and $q(x) = 1 - 9/x^2$. Examining the limits of $xp(x)$ and $x^2q(x)$ as $x \\to 0$, what kind of point is $x=0$?",
     options: [
-      "A regular singular point",
-      "An ordinary point",
-      "An irregular singular point",
-      "A point outside the domain of the equation"
+      "A regular singular point, since $xp(x) \\to 1$ and $x^2q(x) \\to -9$ remain finite as $x \\to 0$",
+      "An ordinary point, since $q(x) = 1 - 9/x^2$ is finite at $x=0$ once the $9/x^2$ term is ignored",
+      "An irregular singular point, since $p(x) = 1/x$ itself blows up as $x \\to 0$",
+      "A point outside the domain of the equation, since dividing by $x^2$ is undefined there"
     ],
     correctAnswer: 0,
-    explanation: "Dividing by $x^2$ produces coefficients singular at the origin but mildly enough for the Frobenius method, so the origin is a regular singular point.\n\nAn ordinary point would allow an ordinary power series without the Frobenius exponent.\n\nAn irregular singular point would obstruct the Frobenius construction.\n\nThe origin lies in the natural domain of the equation."
+    explanation: "Computing $xp(x) = x\\cdot\\dfrac{1}{x} = 1$ and $x^2q(x) = x^2\\left(1 - \\dfrac{9}{x^2}\\right) = x^2 - 9$, both limits as $x\\to 0$ are finite ($1$ and $-9$), which is exactly the test for a regular singular point.\n\nAn ordinary point ignoring the $9/x^2$ term is not a valid simplification, since that term is precisely what makes $q(x)$ singular at $x=0$.\n\nAn irregular singular point tests $p(x)$ and $q(x)$ directly rather than the required products $xp(x)$ and $x^2q(x)$, which is the correct test.\n\nA point outside the domain confuses the algebraic step of dividing by $x^2$ with the domain of the original equation, which is perfectly defined at $x=0$ before dividing."
   },
   {
     id: "mth302_ch10_036",

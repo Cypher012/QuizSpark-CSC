@@ -5,15 +5,15 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_001",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "For $a(x, y)u_x + b(x, y)u_y + c(x, y)u = f(x, y)$, what is the characteristic equation?",
+    text: "For the linear PDE $5u_x + 3u_y + 2u = 4x$, matching it against $a(x,y)u_x + b(x,y)u_y + cu = f(x,y)$ and then forming the characteristic equation $dy/dx = b/a$, what is the resulting characteristic equation?",
     options: [
-      "$\\dfrac{dy}{dx} = \\dfrac{a}{b}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{b}{a}$",
-      "$\\dfrac{dy}{dx} = -\\dfrac{b}{a}$",
-      "$\\dfrac{dy}{dx} = \\dfrac{c}{a}$"
+      "$\\dfrac{dy}{dx} = \\dfrac{3}{5}$",
+      "$\\dfrac{dy}{dx} = \\dfrac{5}{3}$",
+      "$\\dfrac{dy}{dx} = -\\dfrac{3}{5}$",
+      "$\\dfrac{dy}{dx} = \\dfrac{2}{5}$"
     ],
-    correctAnswer: 1,
-    explanation: "Choosing $\\eta$ so that $a\\eta_x + b\\eta_y = 0$ and setting $d\\eta = \\eta_x\\,dx + \\eta_y\\,dy = 0$ leads directly to $\\dfrac{dy}{dx} = -\\dfrac{\\eta_x}{\\eta_y} = \\dfrac{b}{a}$, equivalently $\\dfrac{dx}{a} = \\dfrac{dy}{b}$, where the coefficient of $u_x$ sits under $dx$. Inverting this ratio is the single most common error in the topic.\n\n$\\dfrac{dy}{dx} = \\dfrac{a}{b}$ inverts the correct ratio.\n\n$\\dfrac{dy}{dx} = -\\dfrac{b}{a}$ introduces a sign that does not belong in the standard characteristic equation.\n\n$\\dfrac{dy}{dx} = \\dfrac{c}{a}$ confuses the zeroth-order coefficient $c$ with the coefficient $b$ that actually belongs in the ratio."
+    correctAnswer: 0,
+    explanation: "Matching the equation against $au_x+bu_y+cu=f$ gives $a=5$ and $b=3$ (the term $4x$ plays the role of $f$ and does not enter the ratio), so the characteristic equation is $dy/dx = b/a = 3/5$.\n\n$dy/dx = 5/3$ inverts the ratio, using $a/b$ instead of $b/a$, which is the most common error in this topic.\n\n$dy/dx = -3/5$ introduces a sign that does not belong in the standard characteristic equation.\n\n$dy/dx = 2/5$ mistakenly uses the coefficient $c=2$ in place of $b$."
   },
   {
     id: "mth302_ch6_002",
@@ -117,15 +117,15 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_009",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "For a change of variables $\\xi = \\phi(x, y)$, $\\eta = \\psi(x, y)$ to be admissible in transforming a first-order PDE, what condition must hold?",
+    text: "A student proposes the change of variables $\\xi = x + y$, $\\eta = x - y$ to simplify a first-order linear PDE. Computing $\\xi_x = 1$, $\\xi_y = 1$, $\\eta_x = 1$, $\\eta_y = -1$, what is the Jacobian $J = \\xi_x\\eta_y - \\xi_y\\eta_x$, and is the transformation admissible?",
     options: [
-      "$\\phi$ equals $\\psi$",
-      "The Jacobian $J = \\phi_x\\psi_y - \\phi_y\\psi_x$ is nonzero",
-      "The Jacobian $J$ equals zero",
-      "$\\phi$ and $\\psi$ are both constant"
+      "$J = -2$, so the transformation is admissible since $J \\neq 0$",
+      "$J = 0$, so the transformation is admissible since $\\xi$ and $\\eta$ are linearly independent",
+      "$J = 2$, so the transformation fails because a positive Jacobian is not allowed",
+      "$J = -1$, so the transformation is admissible only where $x \\neq y$"
     ],
-    correctAnswer: 1,
-    explanation: "A nonvanishing Jacobian is exactly the condition for the transformation to be locally one-to-one, allowing it to be inverted so the solution can be transported back to the original variables $x$ and $y$.\n\n$\\phi$ equals $\\psi$ would make the two new coordinates identical, collapsing the transformation entirely.\n\nThe Jacobian $J$ equals zero is the opposite of what is required; a zero Jacobian means the transformation fails.\n\n$\\phi$ and $\\psi$ both constant would not define a valid coordinate change at all."
+    correctAnswer: 0,
+    explanation: "$J = \\xi_x\\eta_y - \\xi_y\\eta_x = (1)(-1) - (1)(1) = -2$, which is nonzero everywhere, so the transformation is admissible: a nonvanishing Jacobian is exactly the condition for the map to be locally one-to-one and invertible.\n\n$J=0$ misstates the arithmetic and also draws the wrong conclusion, since a vanishing Jacobian would make the transformation fail rather than succeed.\n\n$J=2$ drops the minus sign in the subtraction, and there is no rule that forbids a positive Jacobian; only a zero Jacobian is disallowed.\n\n$J=-1$ miscomputes the product $\\xi_y\\eta_x$ and wrongly restricts admissibility to a subset of the plane, when in fact $J=-2$ holds everywhere."
   },
   {
     id: "mth302_ch6_010",
@@ -145,15 +145,15 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_011",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "For the quasilinear equation $f(x, y, u)u_x + g(x, y, u)u_y = h(x, y, u)$, how are the characteristics determined?",
+    text: "For the quasilinear equation $(2x+u)u_x + (y-3u)u_y = u+1$, what system of ordinary differential equations determines its characteristics?",
     options: [
-      "$\\dfrac{du}{dt} = 0$",
-      "$\\dfrac{dx}{dt} = h$, $\\dfrac{dy}{dt} = g$, $\\dfrac{du}{dt} = f$",
-      "$\\dfrac{dy}{dx} = \\dfrac{f}{g}$ only",
-      "$\\dfrac{dx}{dt} = f$, $\\dfrac{dy}{dt} = g$, $\\dfrac{du}{dt} = h$"
+      "$\\dfrac{dx}{dt} = 2x+u$, $\\dfrac{dy}{dt} = y-3u$, $\\dfrac{du}{dt} = u+1$",
+      "$\\dfrac{dx}{dt} = u+1$, $\\dfrac{dy}{dt} = y-3u$, $\\dfrac{du}{dt} = 2x+u$",
+      "$\\dfrac{dy}{dx} = \\dfrac{2x+u}{y-3u}$ only, with no equation for $u$ along the curve",
+      "$\\dfrac{dx}{dt} = 2x+u$, $\\dfrac{dy}{dt} = u+1$, $\\dfrac{du}{dt} = y-3u$"
     ],
-    correctAnswer: 3,
-    explanation: "For quasilinear equations, the characteristics are curves in the three-dimensional $(x, y, u)$ space rather than just the $xy$-plane, because the coefficients depend on $u$; they satisfy $\\dfrac{dx}{dt} = f$, $\\dfrac{dy}{dt} = g$, $\\dfrac{du}{dt} = h$, and the solution surface is a union of such characteristic curves.\n\n$\\dfrac{du}{dt} = 0$ wrongly claims $u$ is constant along characteristics, which fails whenever $h$ is nonzero.\n\n$\\dfrac{dx}{dt} = h$, $\\dfrac{dy}{dt} = g$, $\\dfrac{du}{dt} = f$ mismatches which function governs which derivative.\n\n$\\dfrac{dy}{dx} = \\dfrac{f}{g}$ only reduces the problem back to a planar curve, missing the essential role of $u$ in the characteristics of a quasilinear equation."
+    correctAnswer: 0,
+    explanation: "For a quasilinear equation $f u_x + g u_y = h$, the characteristics are curves in $(x,y,u)$ space satisfying $dx/dt = f$, $dy/dt = g$, $du/dt = h$. Here $f = 2x+u$, $g = y-3u$, $h = u+1$, giving exactly $dx/dt = 2x+u$, $dy/dt = y-3u$, $du/dt = u+1$.\n\nAssigning $dx/dt = u+1$ and $du/dt = 2x+u$ swaps which expression drives $dx/dt$ and which drives $du/dt$, mismatching the coefficients with their derivatives.\n\nWriting only $dy/dx = (2x+u)/(y-3u)$ collapses the problem back to a planar curve and drops the equation tracking how $u$ changes along the characteristic, which matters because the coefficients depend on $u$.\n\nAssigning $dy/dt = u+1$ and $du/dt = y-3u$ swaps $h$ and $g$ between the last two derivatives, again mismatching the coefficients."
   },
   {
     id: "mth302_ch6_012",
@@ -173,29 +173,29 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_013",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "In $a(x,y)u_x + b(x,y)u_y + c(x,y)u = f(x,y)$, what condition is imposed on $a$ and $b$?",
+    text: "For the linear PDE $(x-1)u_x + (y+2)u_y + u = 0$, at which point $(x,y)$ do the coefficients of $u_x$ and $u_y$ both vanish simultaneously, which would violate the standing assumption that $a$ and $b$ are never both zero at once?",
     options: [
-      "They are not both zero at the same point, so a first-order term always survives",
-      "They are both strictly positive throughout the region considered",
-      "They are equal to one another everywhere in the region",
-      "They depend on $u$ as well as on $x$ and $y$"
+      "$(1, -2)$",
+      "$(-1, 2)$, obtained by flipping the sign of both roots found for $x-1=0$ and $y+2=0$",
+      "$(1, 2)$, obtained by solving $x-1=0$ correctly but flipping the sign of the root of $y+2=0$",
+      "$(0, 0)$"
     ],
     correctAnswer: 0,
-    explanation: "If $a$ and $b$ vanished together at a point the equation would carry no first-order derivative there, so the standing assumption is that they never vanish simultaneously.\n\nRequiring both to be positive is far stronger than the equation needs.\n\nRequiring them to be equal would collapse the family of characteristics to a single direction.\n\nDependence on $u$ would make the equation quasilinear rather than linear."
+    explanation: "Here $a(x,y) = x-1$ and $b(x,y) = y+2$. Setting both to zero gives $x-1=0$ and $y+2=0$, that is $x=1$ and $y=-2$, so the point is $(1,-2)$; at this point the equation would have no surviving first-order derivative, which is exactly the degeneracy the assumption on $a$ and $b$ rules out.\n\nFlipping the sign of both coordinates misreads the roots of $x-1=0$ and $y+2=0$.\n\nSolving $x-1=0$ correctly but flipping the sign of the root of $y+2=0$ mixes a correct step with an incorrect one.\n\n$(0, 0)$ does not make either coefficient vanish, since $a(0,0) = -1$ and $b(0,0)=2$."
   },
   {
     id: "mth302_ch6_014",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "Which Jacobian must be nonzero for the change of variables $\\xi = \\phi(x,y)$, $\\eta = \\psi(x,y)$?",
+    text: "For $\\xi = x^2 - y$ and $\\eta = 2x + y$, what is the Jacobian $J = \\xi_x\\eta_y - \\xi_y\\eta_x$ evaluated at $x = 3$?",
     options: [
-      "$\\phi_x\\psi_y - \\phi_y\\psi_x$",
-      "$\\phi_x\\psi_y + \\phi_y\\psi_x$",
-      "$\\phi_x\\phi_y - \\psi_x\\psi_y$, pairing each function with itself",
-      "$\\phi_x + \\psi_y$, the sum of the two leading derivatives"
+      "$8$",
+      "$6$",
+      "$4$",
+      "$-8$"
     ],
     correctAnswer: 0,
-    explanation: "The Jacobian is the determinant of the matrix of partial derivatives, giving $\\phi_x\\psi_y - \\phi_y\\psi_x$, and it must not vanish for the transformation to be one-to-one.\n\nAdding rather than subtracting discards the determinant's alternating sign.\n\nPairing each function with its own derivatives is not the determinant of that matrix.\n\nA sum of two derivatives is not a determinant at all."
+    explanation: "Here $\\xi_x = 2x$, $\\xi_y = -1$, $\\eta_x = 2$, $\\eta_y = 1$, so $J = \\xi_x\\eta_y - \\xi_y\\eta_x = 2x - (-1)(2) = 2x + 2$. At $x=3$ this gives $J = 6+2 = 8$.\n\n$6$ keeps only $\\xi_x\\eta_y = 2x = 6$ and drops the term $-\\xi_y\\eta_x$ entirely.\n\n$4$ adds the two products instead of subtracting them, computing $\\xi_x\\eta_y + \\xi_y\\eta_x = 6 + (-2) = 4$.\n\n$-8$ flips the overall sign of the correct determinant."
   },
   {
     id: "mth302_ch6_015",
@@ -215,29 +215,29 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_016",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "The requirement $a\\eta_x + b\\eta_y = 0$ leads to which ratio when $\\eta_y \\neq 0$?",
+    text: "For the PDE $7u_x + 4u_y + u = 0$, the requirement $a\\eta_x + b\\eta_y = 0$ determines $\\eta$. What ratio does $\\eta_x/\\eta_y$ equal in this case?",
     options: [
-      "$\\dfrac{\\eta_x}{\\eta_y} = -\\dfrac{b}{a}$",
-      "$\\dfrac{\\eta_x}{\\eta_y} = -\\dfrac{a}{b}$",
-      "$\\dfrac{\\eta_x}{\\eta_y} = \\dfrac{b}{a}$, keeping a positive sign throughout",
-      "$\\dfrac{\\eta_x}{\\eta_y} = ab$, formed as a product of the coefficients"
+      "$-\\dfrac{4}{7}$",
+      "$-\\dfrac{7}{4}$, inverting the ratio of coefficients instead of using $-b/a$",
+      "$\\dfrac{4}{7}$",
+      "$\\dfrac{7}{4}$, both inverting the ratio of coefficients and dropping the minus sign"
     ],
     correctAnswer: 0,
-    explanation: "Rearranging $a\\eta_x + b\\eta_y = 0$ gives $\\eta_x/\\eta_y = -b/a$, which is what produces the characteristic direction.\n\nInverting the ratio of coefficients reverses the roles of $a$ and $b$.\n\nDropping the minus sign contradicts the rearrangement.\n\nA product of the coefficients does not arise from solving this linear relation."
+    explanation: "Here $a=7$ and $b=4$. Rearranging $a\\eta_x+b\\eta_y=0$ gives $\\eta_x/\\eta_y = -b/a = -4/7$.\n\nInverting the ratio of coefficients gives $-7/4$, using $-a/b$ instead of $-b/a$.\n\n$4/7$ has the correct magnitude but drops the minus sign that comes from rearranging the equation.\n\nCombining both errors gives $7/4$: the inverted ratio with the sign also dropped."
   },
   {
     id: "mth302_ch6_017",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "Which differential form is equivalent to the characteristic equation $\\dfrac{dy}{dx} = \\dfrac{b}{a}$?",
+    text: "For the PDE $6u_x + 9u_y = 0$, which differential form is equivalent to its characteristic equation $dy/dx = b/a$?",
     options: [
-      "$\\dfrac{dx}{a} = \\dfrac{dy}{b}$",
-      "$\\dfrac{dx}{b} = \\dfrac{dy}{a}$",
-      "$a\\,dx = b\\,dy$, multiplying rather than dividing by the coefficients",
-      "$\\dfrac{dx}{dy} = \\dfrac{b}{a}$, keeping the same ratio on the right"
+      "$\\dfrac{dx}{6} = \\dfrac{dy}{9}$",
+      "$\\dfrac{dx}{9} = \\dfrac{dy}{6}$, swapping which coefficient sits under which differential",
+      "$9\\,dx = 6\\,dy$",
+      "$\\dfrac{dx}{dy} = \\dfrac{9}{6}$, keeping the same ratio but on the wrong side of the equation"
     ],
     correctAnswer: 0,
-    explanation: "Cross-multiplying $dy/dx = b/a$ gives $b\\,dx = a\\,dy$, which is the same as $\\dfrac{dx}{a} = \\dfrac{dy}{b}$, so the coefficient of $u_x$ sits under $dx$.\n\nExchanging the coefficients is precisely the reversal that this topic warns against.\n\nMultiplying by the coefficients instead of dividing inverts the relation.\n\nWriting $dx/dy$ with the same right-hand side flips only one side of the equation."
+    explanation: "Here $a=6$ and $b=9$, so $dy/dx = 9/6$. Cross-multiplying gives $6\\,dy = 9\\,dx$, which is the same as $dx/6 = dy/9$, so the coefficient of $u_x$ sits under $dx$.\n\nSwapping which coefficient sits under which differential gives $dx/9=dy/6$, exactly the reversal this topic warns against.\n\n$9\\,dx = 6\\,dy$ cross-multiplies with the coefficients on the wrong sides, which corresponds to $dy/dx = 6/9$ rather than $9/6$.\n\nKeeping the same ratio but on the wrong side of the equation gives $dx/dy = 9/6$, which is equivalent to $dy/dx = 6/9$, the reversed ratio."
   },
   {
     id: "mth302_ch6_018",
@@ -257,15 +257,15 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_019",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "What happens to the PDE along a characteristic curve?",
+    text: "For the PDE $3u_x + 2u_y + u = 5$, taking $\\xi = x$ so that $\\eta$ stays constant along each characteristic, the equation reduces along that characteristic to an ordinary differential equation in $x$. What is that ODE?",
     options: [
-      "It degenerates into an ODE, since only differentiation in $\\xi$ survives",
-      "It becomes an algebraic equation with no derivatives remaining at all",
-      "It gains an extra independent variable and rises in order",
-      "It becomes homogeneous regardless of the original forcing term"
+      "$\\dfrac{du}{dx} + \\dfrac{1}{3}u = \\dfrac{5}{3}$",
+      "$\\dfrac{du}{dx} + 3u = 5$, forgetting to divide the coefficient of $u$ by $a=3$ before rearranging",
+      "$\\dfrac{du}{dx} - \\dfrac{1}{3}u = \\dfrac{5}{3}$, introducing a sign error on the $u$ term not present in the original equation",
+      "$3\\dfrac{du}{dx} - u = 5$, both keeping the undivided coefficient $3$ on the derivative and flipping the sign of $u$"
     ],
     correctAnswer: 0,
-    explanation: "Choosing $\\eta$ constant along characteristics removes the $w_\\eta$ term, so only differentiation in $\\xi$ survives and the PDE reduces to an ordinary differential equation.\n\nDerivatives do not disappear entirely; one derivative remains.\n\nThe method reduces rather than increases the number of active variables.\n\nThe forcing term is unaffected by the change of variables."
+    explanation: "Along the characteristic, only differentiation with respect to $\\xi = x$ survives, so the PDE becomes $3\\,du/dx + u = 5$; dividing through by the coefficient $a=3$ gives $du/dx + u/3 = 5/3$.\n\nForgetting to divide the coefficient of $u$ by $a=3$ before rearranging leaves $du/dx + 3u = 5$.\n\nIntroducing a sign error on the $u$ term gives $du/dx - u/3 = 5/3$, which does not come from the original equation.\n\nKeeping the undivided coefficient $3$ on the derivative and flipping the sign of $u$ gives $3\\,du/dx - u = 5$."
   },
   {
     id: "mth302_ch6_020",
@@ -341,15 +341,15 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_025",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "Why is $\\eta$ chosen to be constant along the characteristic curves?",
+    text: "For the PDE $4u_x + 6u_y = 0$, a student proposes $\\eta = 3x - 2y$ as the variable that stays constant along characteristics. Computing $a\\eta_x + b\\eta_y$ with $a=4$, $b=6$, $\\eta_x = 3$, $\\eta_y = -2$, does this choice of $\\eta$ make the coefficient of $w_\\eta$ vanish?",
     options: [
-      "So that the two $w_\\eta$ terms cancel exactly",
-      "So that the Jacobian automatically equals one at every point of the domain",
-      "So that the forcing term is removed from the transformed equation entirely",
-      "So that $\\xi$ can be taken equal to $u$ rather than to $x$"
+      "Yes, since $a\\eta_x + b\\eta_y = 4(3) + 6(-2) = 0$",
+      "No, since $a\\eta_x + b\\eta_y = 4(3) + 6(2) = 24$, forgetting the sign of $\\eta_y$",
+      "No, since only $a\\eta_x = 12$ should be compared to zero, and $12 \\neq 0$",
+      "Yes, but only because the Jacobian of this transformation happens to equal one"
     ],
     correctAnswer: 0,
-    explanation: "Constancy of $\\eta$ along characteristics is exactly the condition $a\\eta_x + b\\eta_y = 0$, which makes the $w_\\eta$ contributions cancel and leaves an ODE.\n\nThe Jacobian must merely be nonzero, and it is not forced to equal one.\n\nThe forcing term persists through the transformation.\n\nThe new variable $\\xi$ is a function of $x$ and $y$, not of the unknown $u$."
+    explanation: "Substituting the given partial derivatives, $a\\eta_x + b\\eta_y = 4(3) + 6(-2) = 12 - 12 = 0$, so this choice of $\\eta$ does make the $w_\\eta$ term vanish exactly, which is the whole point of choosing $\\eta$ to be constant along characteristics.\n\nClaiming the sum equals $24$ drops the minus sign on $\\eta_y=-2$, treating it as $+2$, and so miscomputes the total as $24$ instead of $0$.\n\nComparing only $a\\eta_x=12$ against zero ignores $b\\eta_y$ altogether, which is not what the vanishing condition asks for.\n\nThe claim about the Jacobian is right about the vanishing but for an irrelevant reason; the vanishing of $a\\eta_x+b\\eta_y$ has nothing to do with the Jacobian equaling one, only with the Jacobian being nonzero elsewhere in the argument."
   },
   {
     id: "mth302_ch6_026",
@@ -369,43 +369,43 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_027",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "For the quasilinear equation $fu_x + gu_y = h$, in which space do the characteristics live?",
+    text: "For the quasilinear equation $u\\,u_x + x\\,u_y = y + u^2$, in which space are the characteristics determined, and why?",
     options: [
-      "$(x, y, u)$ space, since the coefficients may involve $u$",
-      "The $(x, y)$ plane alone",
-      "The $(\\xi, \\eta)$ plane of the transformed variables",
-      "A four-dimensional space including both $u$ and its derivatives"
+      "$(x,y,u)$ space, because the coefficient $u$ multiplying $u_x$ depends on the unknown itself",
+      "The $(x,y)$ plane alone, because the coefficient $x$ multiplying $u_y$ does not depend on $u$",
+      "The $(\\xi,\\eta)$ plane, since these become the natural coordinates once the standard linear change of variables is applied",
+      "A four-dimensional space that includes $u_x$ and $u_y$ as additional coordinates alongside $x$, $y$, and $u$"
     ],
     correctAnswer: 0,
-    explanation: "Because the coefficients may depend on $u$, the characteristic curves are determined in $(x, y, u)$ space rather than in the plane.\n\nRestricting to the plane is valid only when the coefficients are free of $u$.\n\nThe transformed variables describe the target coordinates, not where the characteristics live.\n\nThe derivatives of $u$ are not additional coordinates for these curves."
+    explanation: "Because the coefficient of $u_x$ is $u$ itself, the equation is genuinely quasilinear, and its characteristics are curves in $(x,y,u)$ space determined by $dx/dt=u$, $dy/dt=x$, $du/dt=y+u^2$.\n\nRestricting to the $(x,y)$ plane notices correctly that $x$ does not depend on $u$, but a single coefficient depending on $u$ is enough to require the full $(x,y,u)$ space; it is not necessary for every coefficient to depend on $u$.\n\nInvoking the $(\\xi,\\eta)$ plane confuses the characteristic space with the transformed coordinates used for linear equations whose coefficients are independent of $u$, which does not apply here.\n\nClaiming a four-dimensional space overcounts the dimensions needed; the derivatives $u_x$ and $u_y$ are not themselves coordinates of the characteristic curves."
   },
   {
     id: "mth302_ch6_028",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "For $fu_x + gu_y = h$, the characteristics satisfy which system?",
+    text: "For the quasilinear equation $y\\,u_x + (x+u)u_y = xu$, what system of ordinary differential equations determines its characteristics?",
     options: [
-      "$\\dfrac{dx}{f} = \\dfrac{dy}{g} = \\dfrac{du}{h}$",
-      "$\\dfrac{dx}{g} = \\dfrac{dy}{f} = \\dfrac{du}{h}$",
-      "$\\dfrac{dx}{f} = \\dfrac{dy}{g}$ only",
-      "$\\dfrac{dx}{h} = \\dfrac{dy}{g} = \\dfrac{du}{f}$, with the outer denominators exchanged"
+      "$\\dfrac{dx}{y} = \\dfrac{dy}{x+u} = \\dfrac{du}{xu}$",
+      "$\\dfrac{dx}{x+u} = \\dfrac{dy}{y} = \\dfrac{du}{xu}$, swapping which expression sits under $dx$ and which sits under $dy$",
+      "$\\dfrac{dx}{y} = \\dfrac{dy}{x+u}$ only",
+      "$\\dfrac{dx}{xu} = \\dfrac{dy}{x+u} = \\dfrac{du}{y}$, exchanging the outer denominators so that $h$ sits under $dx$ and $f$ sits under $du$"
     ],
     correctAnswer: 0,
-    explanation: "The coefficient of each derivative sits under the corresponding differential, and the right-hand side sits under $du$, giving the stated system.\n\nExchanging the first two denominators reverses the characteristic direction.\n\nOmitting the $du$ ratio would force $u$ to be constant, which holds only when $h = 0$.\n\nExchanging the outer denominators misassigns both $f$ and $h$."
+    explanation: "Matching against $f u_x + g u_y = h$ gives $f=y$, $g=x+u$, $h=xu$, and the coefficient of each derivative sits under the corresponding differential, giving $dx/y = dy/(x+u) = du/(xu)$.\n\nSwapping which expression sits under $dx$ and which sits under $dy$ reverses the roles of $f$ and $g$.\n\nWriting only $dx/y=dy/(x+u)$ omits the ratio involving $du$, which is needed because $h=xu$ is not identically zero.\n\nExchanging the outer denominators puts $h$ under $dx$ and $f$ under $du$, mismatching both."
   },
   {
     id: "mth302_ch6_029",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "For the Cauchy problem, what must be true of the curve carrying the initial data?",
+    text: "For the PDE $3u_x + 4u_y = 0$, whose characteristic curves are $4x - 3y = \\text{constant}$, initial data for the Cauchy problem are prescribed along the line $4x - 3y = 7$. What does this imply?",
     options: [
-      "It must not be a characteristic curve",
-      "It must coincide with a characteristic curve throughout its length",
-      "It must be a straight line through the origin of the plane",
-      "It must be closed and bounded within the region of interest"
+      "The data curve is itself a characteristic, so the data are either inconsistent with the equation or fail to determine $u$ uniquely off that line",
+      "The data curve is non-characteristic, so the data determine a unique solution everywhere in the plane",
+      "The data curve crosses every characteristic transversally, which guarantees the Cauchy problem is well-posed",
+      "Since $4x-3y=7$ is a straight line, the Cauchy problem is automatically well-posed regardless of the characteristics"
     ],
     correctAnswer: 0,
-    explanation: "Data prescribed along a characteristic either contradicts the equation or fails to determine the solution off that curve, so the initial curve must be non-characteristic.\n\nRequiring it to be a characteristic is exactly the situation in which uniqueness fails.\n\nNothing requires the curve to be straight or to pass through the origin.\n\nNo closedness or boundedness condition is imposed on the initial curve."
+    explanation: "The characteristic family for this equation is $4x-3y=\\text{constant}$, and the data curve $4x-3y=7$ is exactly one member of that family, so it is a characteristic curve; along it the PDE reduces to an ODE that either already fixes the prescribed data or contradicts it, leaving no unique solution off that line.\n\nCalling the curve non-characteristic misidentifies it, when it is in fact one of the characteristics.\n\nClaiming transversal crossing is false here because a curve from the characteristic family runs parallel to, and coincides with, the characteristics rather than crossing them transversally.\n\nAppealing to the line being straight ignores the characteristic structure entirely; straightness of the data curve has no bearing on well-posedness, only its relationship to the characteristics does."
   },
   {
     id: "mth302_ch6_030",
@@ -439,29 +439,29 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_032",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "The transformed equation takes which general shape?",
+    text: "For the PDE $2u_x + 7u_y + 3u = x$, the change of variables reduces it to the form $w_\\xi + h(\\xi,\\eta)w = F(\\xi,\\eta)$ with $\\xi = x$. What are $h$ and $F$?",
     options: [
-      "$w_\\xi + h(\\xi,\\eta)w = F(\\xi,\\eta)$",
-      "$w_\\eta + h(\\xi,\\eta)w = F(\\xi,\\eta)$",
-      "$w_{\\xi\\eta} + h(\\xi,\\eta)w = F(\\xi,\\eta)$",
-      "$w_\\xi + w_\\eta = F(\\xi,\\eta)$, keeping both first derivatives present"
+      "$h = \\dfrac{3}{2}$ and $F = \\dfrac{\\xi}{2}$",
+      "$h = \\dfrac{2}{3}$ and $F = 2\\xi$, inverting the roles of $a$ and $c$ when forming $h=c/a$ and $F=f/a$",
+      "$h = 3$ and $F = \\xi$",
+      "$h = \\dfrac{3}{2}$ and $F = \\dfrac{\\xi}{3}$, dividing the forcing term by the wrong coefficient when forming $F=f/a$"
     ],
     correctAnswer: 0,
-    explanation: "Eliminating the $w_\\eta$ term leaves a first-order equation in $\\xi$ alone, namely $w_\\xi + h w = F$.\n\nDifferentiating in $\\eta$ contradicts the choice that removed that term.\n\nA mixed second derivative cannot appear, since the original equation is first order.\n\nRetaining both derivatives defeats the purpose of the transformation."
+    explanation: "Dividing the equation through by the coefficient $a=2$ of $u_x$ gives $w_\\xi + (3/2)w = x/2$, and since $\\xi = x$, this is $w_\\xi + (3/2)w = \\xi/2$, so $h=3/2$ and $F=\\xi/2$.\n\nInverting the roles of $a$ and $c$ when forming $h=c/a$, and similarly mishandling $F=f/a$, gives $h=2/3$ and $F=2\\xi$.\n\n$h=3$ and $F=\\xi$ forgets to divide either coefficient by $a=2$ at all.\n\nDividing the forcing term by the wrong coefficient when forming $F=f/a$ gets $h$ right but gives $F=\\xi/3$ instead of $\\xi/2$."
   },
   {
     id: "mth302_ch6_033",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "Why must the Jacobian be nonzero on the domain?",
+    text: "For $\\xi = x^2 + y$ and $\\eta = x - y^2$, what is the Jacobian $J = \\xi_x\\eta_y - \\xi_y\\eta_x$ at the point $(x,y) = (1,1)$, and what does it imply about invertibility there?",
     options: [
-      "So the change of variables is one-to-one there and can therefore be inverted",
-      "So the transformed equation becomes homogeneous rather than nonhomogeneous",
-      "So the characteristic curves intersect at exactly one point of the region",
-      "So the coefficients of the original equation remain bounded everywhere"
+      "$J = -5$, so the transformation is locally invertible at that point",
+      "$J = -4$, so the transformation is locally invertible at that point",
+      "$J = -3$, so the transformation is locally invertible at that point",
+      "$J = 0$, so the transformation fails to be invertible at that point"
     ],
     correctAnswer: 0,
-    explanation: "A nonvanishing Jacobian is what guarantees the map from $(x,y)$ to $(\\xi,\\eta)$ is invertible, so the transformation can be undone.\n\nHomogeneity is unaffected by a change of variables.\n\nCharacteristics of the same family do not intersect, and the Jacobian is not about intersections.\n\nBoundedness of the coefficients is a separate continuity assumption."
+    explanation: "Here $\\xi_x = 2x$, $\\xi_y=1$, $\\eta_x=1$, $\\eta_y=-2y$. At $(1,1)$ these are $\\xi_x=2$, $\\xi_y=1$, $\\eta_x=1$, $\\eta_y=-2$, so $J = (2)(-2) - (1)(1) = -4-1 = -5$, which is nonzero, so the transformation is locally invertible there.\n\n$J=-4$ keeps only the term $\\xi_x\\eta_y=-4$ and drops the term $-\\xi_y\\eta_x$ entirely.\n\n$J=-3$ adds the two products instead of subtracting them, computing $\\xi_x\\eta_y+\\xi_y\\eta_x=-4+1=-3$.\n\n$J=0$ misreads the partial derivatives so badly that the two terms appear to cancel, when in fact $-4$ and $-1$ combine to $-5$, not zero."
   },
   {
     id: "mth302_ch6_034",
@@ -509,15 +509,15 @@ const mth302Chapter6: QuestionV2[] = [
     id: "mth302_ch6_037",
     course: "MTH 302",
     chapter: "Chapter 6",
-    text: "Which term in $au_x + bu_y + cu = f$ makes the equation nonhomogeneous?",
+    text: "For the linear PDE $4xu_x - 3yu_y + 7u = 2x+5$, identify $a$, $b$, $c$, and $f$, and determine which of them is responsible for the equation being nonhomogeneous.",
     options: [
-      "A nonzero $f$",
-      "A nonzero $c$, since it multiplies the undifferentiated unknown",
-      "A nonconstant $a$, because it varies across the region",
-      "A nonzero $b$, since it introduces a second derivative direction"
+      "$f = 2x+5$, which is nonzero, so the equation is nonhomogeneous",
+      "$c = 7$, which is nonzero, so the equation is nonhomogeneous",
+      "$a = 4x$, which is not constant, so the equation is nonhomogeneous",
+      "$b = -3y$, which is negative, so the equation is nonhomogeneous"
     ],
     correctAnswer: 0,
-    explanation: "Homogeneity concerns the term free of $u$, so the equation is nonhomogeneous exactly when $f \\neq 0$.\n\nThe coefficient $c$ multiplies $u$ and so belongs to the homogeneous part.\n\nVariable coefficients affect neither linearity nor homogeneity.\n\nThe coefficient $b$ multiplies a derivative of $u$ and is part of the homogeneous structure."
+    explanation: "Matching against $au_x+bu_y+cu=f$ gives $a=4x$, $b=-3y$, $c=7$, $f=2x+5$. Homogeneity is decided by the term free of $u$: since $f=2x+5$ is not identically zero, the equation is nonhomogeneous.\n\n$c=7$ multiplies $u$ itself and so belongs to the homogeneous part of the equation regardless of its value; a nonzero $c$ does not make an equation nonhomogeneous.\n\n$a=4x$ being a variable rather than constant coefficient affects neither linearity nor homogeneity, only how the characteristic equation is integrated.\n\n$b=-3y$ being negative is likewise irrelevant to homogeneity, which depends only on whether $f$ vanishes identically."
   },
   {
     id: "mth302_ch6_038",

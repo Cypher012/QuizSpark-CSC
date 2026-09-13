@@ -47,29 +47,29 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_004",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Eigenfunctions of a Sturm-Liouville system corresponding to distinct eigenvalues satisfy which relation?",
+    text: "The Cauchy-Euler equation $x^2y'' + xy' + \\lambda y = 0$ is rewritten in self-adjoint Sturm-Liouville form by dividing through by $x$, giving $(xy')' + (\\lambda/x)y = 0$ for $1 \\le x \\le e$. For eigenfunctions $y_m$ and $y_n$ belonging to different eigenvalues of this system, which orthogonality relation holds?",
     options: [
-      "$\\displaystyle\\int_a^b y_my_n\\,dx = 1$",
-      "$\\displaystyle\\int_a^b y_my_n\\,r(x)\\,dx = 0$",
-      "$\\displaystyle\\int_a^b y_my_n\\,dx = \\dfrac{2}{2n+1}$",
-      "$y_m = y_n$"
+      "$\\displaystyle\\int_1^e y_m(x)y_n(x)\\dfrac{1}{x}\\,dx = 0$, carrying the weight $r(x) = 1/x$ read off the standard form",
+      "$\\displaystyle\\int_1^e y_m(x)y_n(x)\\,dx = 0$, dropping the weight entirely",
+      "$\\displaystyle\\int_1^e y_m(x)y_n(x)\\,x\\,dx = 0$, mistaking the coefficient $p(x) = x$ for the weight",
+      "$\\displaystyle\\int_1^e y_m(x)y_n(x)\\dfrac{1}{x}\\,dx = 1$, normalizing to one instead of zero"
     ],
-    correctAnswer: 1,
-    explanation: "Orthogonality of Sturm-Liouville eigenfunctions is always taken with respect to the weight function $r(x)$ appearing in the equation, so the integral of $y_my_nr(x)\\,dx$ vanishes for $m \\neq n$. The weight may be omitted from the notation only when $r$ is identically $1$.\n\n$\\displaystyle\\int_a^b y_my_n\\,dx = 1$ wrongly assumes normalization to $1$ without the weight function.\n\n$\\displaystyle\\int_a^b y_my_n\\,dx = \\dfrac{2}{2n+1}$ is the special normalization used for Legendre polynomials, not a general Sturm-Liouville property.\n\n$y_m = y_n$ contradicts the premise that the eigenvalues, and hence the eigenfunctions, are distinct."
+    correctAnswer: 0,
+    explanation: "Dividing $x^2y'' + xy' + \\lambda y = 0$ by $x$ gives $xy'' + y' + (\\lambda/x)y = 0$, and since $(xy')' = xy'' + y'$, this is $(xy')' + (\\lambda/x)y = 0$. Matching against $(py')' + [q + \\lambda r]y = 0$ shows $r(x) = 1/x$, so orthogonality of eigenfunctions for different eigenvalues requires $\\int_1^e y_my_n\\dfrac{1}{x}\\,dx = 0$.\n\nDropping the weight and integrating $y_my_n$ alone is the standard slip of treating $r$ as $1$ when it is not.\n\nUsing $x$ instead of $1/x$ confuses the leading coefficient $p(x) = x$, which multiplies $y'$ before differentiation, with the weight $r(x)$, which multiplies $\\lambda$.\n\nOrthogonality means the integral vanishes, not that it equals one; a value of one would describe a normalization condition instead."
   },
   {
     id: "mth302_ch8_005",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Which statement about a regular Sturm-Liouville system is false?",
+    text: "For the mixed boundary value problem $y'' + \\lambda y = 0$ on $0 \\le x \\le 4$ with $y(0) = 0$ and $y'(4) = 0$, solving gives eigenvalues $\\lambda_n = \\dfrac{(2n-1)^2\\pi^2}{64}$ and eigenfunctions $y_n = \\sin\\!\\left(\\dfrac{(2n-1)\\pi x}{8}\\right)$ for $n = 1, 2, 3, \\ldots$. Which statement about this system is false?",
     options: [
-      "The eigenvalues are real",
-      "The eigenvalues form an increasing sequence tending to infinity",
-      "Each eigenvalue has exactly one linearly independent eigenfunction",
-      "Two different eigenvalues can share the same eigenfunction"
+      "The smallest eigenvalue is $\\lambda_0 = 0$, attained by a nonzero constant satisfying both conditions",
+      "Every eigenvalue $\\lambda_n$ is real and strictly positive",
+      "The eigenfunctions have the form $y_n = \\sin(\\sqrt{\\lambda_n}\\,x)$, since $y(0) = 0$ eliminates the cosine term",
+      "The eigenvalues increase without bound as $n$ increases"
     ],
-    correctAnswer: 3,
-    explanation: "An eigenfunction determines its eigenvalue uniquely through the differential equation it satisfies, so it is impossible for two different eigenvalues to share the same eigenfunction, making this statement false.\n\nThe eigenvalues are real is one of the standard listed properties of Sturm-Liouville systems, and is true.\n\nThe eigenvalues form an increasing sequence tending to infinity is also a standard true property.\n\nEach eigenvalue has exactly one linearly independent eigenfunction is true as well, understood as unique up to a constant multiple."
+    correctAnswer: 0,
+    explanation: "Applying $y(0) = 0$ to $y = A\\sin(\\sqrt{\\lambda}\\,x) + B\\cos(\\sqrt{\\lambda}\\,x)$ forces $B = 0$, and applying $y'(4) = 0$ to $y = A\\sin(\\sqrt{\\lambda}\\,x)$ forces $\\cos(4\\sqrt{\\lambda}) = 0$ for nontrivial $A$, which has no solution at $\\lambda = 0$ since $\\cos(0) = 1 \\neq 0$. A constant function satisfying $y(0) = 0$ must itself be zero, so $\\lambda_0 = 0$ is not an eigenvalue here, making this statement false.\n\nEvery eigenvalue $\\lambda_n$ is real and strictly positive is true, since $(2n-1)^2\\pi^2/64 > 0$ for every $n \\geq 1$.\n\nThe eigenfunctions having the form $\\sin(\\sqrt{\\lambda_n}\\,x)$ is true, since $B = 0$ was forced by the left boundary condition.\n\nThe eigenvalues increasing without bound is true, since $(2n-1)^2$ grows without bound as $n$ increases."
   },
   {
     id: "mth302_ch8_006",
@@ -103,29 +103,29 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_008",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "If $f$ is expanded as $\\sum_n c_n\\phi_n$, where the $\\phi_n$ are orthogonal on the interval from $a$ to $b$ with weight $r$, what is the formula for the coefficient $c_n$?",
+    text: "For the eigenvalue problem $y'' + \\lambda y = 0$ on $0 \\le x \\le 3$ with $y(0) = y(3) = 0$, the eigenfunctions are $y_n = \\sin(n\\pi x/3)$ with weight $r(x) = 1$. If $f(x)$ is expanded as $f(x) \\sim \\sum_n c_n\\sin(n\\pi x/3)$, which formula correctly gives the coefficient $c_n$?",
     options: [
-      "$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$",
-      "$c_n = \\dfrac{\\displaystyle\\int_a^b rf\\phi_n\\,dx}{\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx}$",
-      "$c_n = \\dfrac{\\displaystyle\\int_a^b f\\phi_n\\,dx}{\\displaystyle\\int_a^b \\phi_n\\,dx}$",
-      "$c_n$ equals the average of $f$ over the interval from $a$ to $b$"
+      "$c_n = \\dfrac{\\int_0^3 f(x)\\sin(n\\pi x/3)\\,dx}{\\int_0^3 \\sin^2(n\\pi x/3)\\,dx}$, since $r(x) = 1$ for this problem",
+      "$c_n = \\int_0^3 f(x)\\sin(n\\pi x/3)\\,dx$, omitting the normalizing denominator that the orthogonality relation for these eigenfunctions actually requires",
+      "$c_n = \\dfrac{\\int_0^3 xf(x)\\sin(n\\pi x/3)\\,dx}{\\int_0^3 x\\sin^2(n\\pi x/3)\\,dx}$",
+      "$c_n = \\dfrac{\\int_0^3 \\sin^2(n\\pi x/3)\\,dx}{\\int_0^3 f(x)\\sin(n\\pi x/3)\\,dx}$"
     ],
-    correctAnswer: 1,
-    explanation: "Multiplying the expansion by $r\\phi_m$ and integrating over the interval from $a$ to $b$ uses orthogonality to eliminate every term except the one with $n = m$, leaving $\\displaystyle\\int_a^b rf\\phi_n\\,dx$ equal to $c_n$ times $\\displaystyle\\int_a^b r\\phi_{n}^{2}\\,dx$, and dividing gives the coefficient formula.\n\n$c_n = \\displaystyle\\int_a^b rf\\phi_n\\,dx$ alone is correct only when the system is orthonormal, meaning the denominator integral happens to equal $1$, which is not assumed in general.\n\n$c_n = \\dfrac{\\int f\\phi_n\\,dx}{\\int \\phi_n\\,dx}$ omits the weight function $r$ from both integrals and uses $\\phi_n$ instead of $\\phi_n$ squared in the denominator.\n\n$c_n$ equals the average of $f$ describes only the special case of the constant term in a Fourier series, not the general Sturm-Liouville expansion coefficient."
+    correctAnswer: 0,
+    explanation: "Multiplying $f(x) \\sim \\sum_n c_n\\sin(n\\pi x/3)$ by $r(x)\\sin(m\\pi x/3) = \\sin(m\\pi x/3)$ and integrating over $[0,3]$ uses orthogonality to kill every term but $n = m$, leaving $c_n = \\dfrac{\\int_0^3 f(x)\\sin(n\\pi x/3)\\,dx}{\\int_0^3 \\sin^2(n\\pi x/3)\\,dx}$, since $r(x) = 1$ for this equation and drops out of the notation.\n\nOmitting the denominator would only be valid if the eigenfunctions were already normalized so that $\\int_0^3 \\sin^2(n\\pi x/3)\\,dx = 1$, which is not the case here.\n\nInserting a factor of $x$ in both integrals introduces a weight this equation does not have, since $r(x) = 1$, not $x$.\n\nSwapping the numerator and denominator inverts the coefficient formula entirely."
   },
   {
     id: "mth302_ch8_009",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Which equation is the general form of a Sturm-Liouville problem?",
+    text: "The equation $y'' - 2y' + \\lambda y = 0$ is not self-adjoint as written. Multiplying through by the integrating factor $\\mu(x) = e^{-2x}$ converts it into the form $(py')' + [q + \\lambda r]y = 0$. What are $p$, $q$, and $r$?",
     options: [
-      "$(p(x)y')' + [q(x) + \\lambda r(x)]y = 0$",
-      "$p(x)y'' + q(x)y' + r(x)y = 0$, with no eigenvalue parameter present",
-      "$(p(x)y')' + \\lambda y = 0$, omitting the functions $q$ and $r$ entirely",
-      "$y'' + \\lambda y = 0$, which is only the simplest special case"
+      "$p = e^{-2x}$, $q = 0$, and $r = e^{-2x}$, since multiplying by the integrating factor scales both terms together",
+      "$p = e^{-2x}$, $q = 0$, and $r = 1$, leaving the weight unmultiplied by the integrating factor used to fix $p$",
+      "$p = -2x$, $q = 0$, and $r = e^{-2x}$",
+      "$p = e^{-2x}$, $q = e^{-2x}$, and $r = 0$"
     ],
     correctAnswer: 0,
-    explanation: "The general form places the eigenvalue against the weight function, giving $(py')' + [q + \\lambda r]y = 0$ on $a \\leq x \\leq b$ with $r > 0$.\n\nAn equation with no $\\lambda$ is not an eigenvalue problem at all.\n\nDropping $q$ and $r$ discards both the potential term and the weight.\n\nThe constant-coefficient equation is one instance rather than the general form."
+    explanation: "Multiplying $y'' - 2y' + \\lambda y = 0$ by $e^{-2x}$ gives $e^{-2x}y'' - 2e^{-2x}y' + \\lambda e^{-2x}y = 0$, and since $(e^{-2x}y')' = e^{-2x}y'' - 2e^{-2x}y'$, this is $(e^{-2x}y')' + \\lambda e^{-2x}y = 0$. Comparing with $(py')' + [q + \\lambda r]y = 0$ gives $p = e^{-2x}$, $q = 0$, and $r = e^{-2x}$, since the integrating factor multiplies every term of the original equation, including the one attached to $\\lambda$.\n\nLeaving $r = 1$ forgets that the term multiplying $\\lambda$ was scaled by the integrating factor exactly like the other two terms.\n\n$p = -2x$ mistakes the exponent of the integrating factor for the integrating factor itself.\n\nPlacing the integrating factor in $q$ instead of $r$, and zero in $r$ instead of $q$, swaps which term is the potential and which is the weight."
   },
   {
     id: "mth302_ch8_010",
@@ -145,15 +145,15 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_011",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the expanded form $p(x)y'' + p'(x)y' + [q(x) + \\lambda r(x)]y = 0$, how is $p$ identified?",
+    text: "The equation $(x^3y')' + [2x + \\lambda x^3]y = 0$ is expanded by carrying out the differentiation on the first term. What is the coefficient of $y'$ in the resulting expanded equation?",
     options: [
-      "As the coefficient of $y''$",
-      "As the coefficient of $y'$, which is actually its derivative",
-      "As the coefficient of $y$, alongside the eigenvalue term",
-      "As the reciprocal of the weight function $r$"
+      "$3x^2$",
+      "$x^3$, treating the leading coefficient as also multiplying $y'$",
+      "$2x$, confusing the coefficient of $y'$ with the potential term $q(x)$",
+      "$\\lambda x^3$, confusing the coefficient of $y'$ with the term multiplying the eigenvalue"
     ],
     correctAnswer: 0,
-    explanation: "Comparing with the expanded form shows the coefficient of $y''$ is $p$ and the coefficient of $y'$ is $p'$, which is the consistency check.\n\nThe coefficient of $y'$ is the derivative $p'$, not $p$ itself.\n\nThe coefficient of $y$ contains $q$ and $\\lambda r$.\n\nThe weight is a separate function and is not the reciprocal of $p$."
+    explanation: "Expanding $(x^3y')' = x^3y'' + 3x^2y'$ turns the equation into $x^3y'' + 3x^2y' + 2xy + \\lambda x^3y = 0$, so the coefficient of $y'$ is $3x^2$, the derivative of $p(x) = x^3$.\n\n$x^3$ is the coefficient of $y''$, not $y'$; it is $p$ itself rather than $p'$.\n\n$2x$ is the coefficient of $y$ that does not carry $\\lambda$, which is $q(x)$, not the coefficient of $y'$.\n\n$\\lambda x^3$ is the term that carries the eigenvalue, which belongs with $q$ in the coefficient of $y$, not with $y'$."
   },
   {
     id: "mth302_ch8_012",
@@ -173,71 +173,71 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_013",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What form do the boundary conditions of a Sturm-Liouville system take?",
+    text: "A Sturm-Liouville problem has boundary conditions $2y(0) - 5y'(0) = 0$ and $y(1) + 3y'(1) = 0$. Writing these in the standard form $\\alpha_1y(a) + \\alpha_2y'(a) = 0$ and $\\beta_1y(b) + \\beta_2y'(b) = 0$ with $a = 0$ and $b = 1$, what are $\\alpha_1$, $\\alpha_2$, $\\beta_1$, and $\\beta_2$?",
     options: [
-      "$\\alpha_1y(a) + \\alpha_2y'(a) = 0$ and $\\beta_1y(b) + \\beta_2y'(b) = 0$",
-      "$y(a) = y(b)$ with the derivatives left entirely unconstrained",
-      "$y(a) = 1$ and $y(b) = 1$, fixing the values at the two ends",
-      "$y'(a) = y'(b) = \\lambda$, tying the derivatives to the eigenvalue"
+      "$\\alpha_1 = 2$, $\\alpha_2 = -5$, $\\beta_1 = 1$, and $\\beta_2 = 3$, matching each endpoint condition in order",
+      "$\\alpha_1 = 2$, $\\alpha_2 = 5$, $\\beta_1 = 1$, and $\\beta_2 = 3$, dropping the negative sign on the derivative coefficient at $x = 0$",
+      "$\\alpha_1 = 1$, $\\alpha_2 = 3$, $\\beta_1 = 2$, and $\\beta_2 = -5$",
+      "$\\alpha_1 = -5$, $\\alpha_2 = 2$, $\\beta_1 = 3$, and $\\beta_2 = 1$"
     ],
     correctAnswer: 0,
-    explanation: "Each end carries a homogeneous condition combining the function and its derivative, which is what makes the trivial solution always admissible and the eigenvalues discrete.\n\nMatching values at the two ends describes periodic conditions, a different type.\n\nNonzero prescribed values would make the conditions nonhomogeneous.\n\nTying the derivatives to $\\lambda$ is not a standard boundary condition."
+    explanation: "Matching $2y(0) - 5y'(0) = 0$ against $\\alpha_1y(a) + \\alpha_2y'(a) = 0$ reads off $\\alpha_1 = 2$ and $\\alpha_2 = -5$, and matching $y(1) + 3y'(1) = 0$ against $\\beta_1y(b) + \\beta_2y'(b) = 0$ reads off $\\beta_1 = 1$ and $\\beta_2 = 3$.\n\nDropping the negative sign on $\\alpha_2$ loses the minus that appears in front of $5y'(0)$ in the given condition.\n\nSwapping which pair of constants is labeled $\\alpha$ and which is labeled $\\beta$ mislabels the endpoint at $x = 0$ as $b$ and the endpoint at $x = 1$ as $a$.\n\nReversing the order of the function and derivative coefficients at each endpoint puts the derivative coefficient first where the function coefficient belongs."
   },
   {
     id: "mth302_ch8_014",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "What is true of the eigenvalues of a Sturm-Liouville system?",
+    text: "For $y'' + \\lambda y = 0$ on $0 \\le x \\le 2$ with $y(0) = 0$ and $y(2) = 0$, solving the boundary value problem gives $\\lambda_n = n^2\\pi^2/4$ for $n = 1, 2, 3, \\ldots$. Which statement about this eigenvalue sequence is correct?",
     options: [
-      "They are real, and non-negative under the usual sign conditions",
-      "They are complex in general, since the auxiliary roots are imaginary",
-      "They form a finite set determined by the interval length",
-      "They may repeat, with several eigenfunctions sharing one value"
+      "Every eigenvalue is real and positive, and $\\lambda_n$ increases without bound as $n$ increases",
+      "The eigenvalue $\\lambda_0 = 0$ belongs to the sequence, since a constant function satisfies both Dirichlet conditions at $x = 0$ and $x = 2$",
+      "The eigenvalues eventually decrease toward zero as $n$ grows",
+      "Each eigenvalue $\\lambda_n$ has two independent eigenfunctions, $\\sin(n\\pi x/2)$ and $\\cos(n\\pi x/2)$"
     ],
     correctAnswer: 0,
-    explanation: "The eigenvalues are real and, under the usual sign conditions, non-negative, even though the auxiliary equation produces roots $m = \\pm i\\sqrt{\\lambda}$.\n\nThe imaginary auxiliary roots do not make the eigenvalues complex.\n\nThe eigenvalues form an infinite sequence tending to infinity.\n\nEach eigenvalue is simple, so repetition does not occur."
+    explanation: "Since $\\lambda_n = n^2\\pi^2/4$ for $n = 1, 2, 3, \\ldots$, every eigenvalue is real and positive, and because $n^2$ grows without bound, so does $\\lambda_n$.\n\nA constant function satisfying $y(0) = 0$ must be the zero function, so $n = 0$ gives only the trivial solution and is excluded; $\\lambda_0 = 0$ is not part of this sequence.\n\nThe eigenvalues grow like $n^2$, so they increase rather than decrease as $n$ grows.\n\nApplying $y(0) = 0$ eliminates the cosine term, leaving only $\\sin(n\\pi x/2)$ as the eigenfunction for each $n$, not two independent functions."
   },
   {
     id: "mth302_ch8_015",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How can the eigenvalues be arranged?",
+    text: "For $y'' + \\lambda y = 0$ on $0 \\le x \\le 1$ with $y'(0) = 0$ and $y(1) = 0$, solving the boundary value problem gives eigenvalues $\\lambda_n = (2n-1)^2\\pi^2/4$ for $n = 1, 2, 3, \\ldots$, so that $\\lambda_1 = \\pi^2/4$, $\\lambda_2 = 9\\pi^2/4$, and $\\lambda_3 = 25\\pi^2/4$. How are the eigenvalues of this system arranged as $n$ increases?",
     options: [
-      "As a strictly increasing sequence tending to infinity",
-      "As a decreasing sequence tending to zero from above",
-      "As a finite list with a largest member",
-      "In no particular order, since they are unordered"
+      "A strictly increasing sequence with no upper bound",
+      "A strictly decreasing sequence approaching zero as $n$ increases",
+      "A bounded sequence that oscillates between $\\pi^2/4$ and $25\\pi^2/4$ without settling",
+      "A sequence that repeats every three terms"
     ],
     correctAnswer: 0,
-    explanation: "They form a strictly increasing infinite sequence $0 \\leq \\lambda_0 < \\lambda_1 < \\lambda_2 < \\cdots$ with $\\lambda_n \\to \\infty$.\n\nA decreasing sequence would contradict the growth to infinity.\n\nA largest eigenvalue cannot exist for an unbounded increasing sequence.\n\nThe eigenvalues are genuinely ordered by size."
+    explanation: "Since $\\lambda_n = (2n-1)^2\\pi^2/4$ and $(2n-1)^2$ grows without bound as $n$ increases, the values $\\pi^2/4 < 9\\pi^2/4 < 25\\pi^2/4 < \\cdots$ form a strictly increasing sequence with no upper bound.\n\nA decreasing sequence would contradict $(2n-1)^2$ growing as $n$ grows.\n\nThe three computed values already show strict growth rather than bounded oscillation between fixed limits.\n\nOnly three terms were computed for illustration, but the formula $(2n-1)^2\\pi^2/4$ produces a new, larger value for every subsequent $n$, so nothing repeats."
   },
   {
     id: "mth302_ch8_016",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "How many linearly independent eigenfunctions correspond to each eigenvalue?",
+    text: "For $y'' + \\lambda y = 0$ on $0 \\le x \\le \\pi$ with $y(0) = y(\\pi) = 0$, the eigenvalue $\\lambda_4 = 16$ arises from $n = 4$. The general solution before applying boundary conditions is $y = A\\sin(4x) + B\\cos(4x)$. After applying both boundary conditions, how many linearly independent eigenfunctions correspond to $\\lambda_4 = 16$?",
     options: [
-      "Exactly one, understood up to a constant multiple",
-      "Exactly two",
-      "Infinitely many, since any multiple is also an eigenfunction",
-      "A number that varies from one eigenvalue to the next"
+      "Exactly one, since $A$ is merely a free scaling constant rather than an independent solution",
+      "Exactly two, since both $A$ and $B$ can be chosen nonzero without violating either boundary condition",
+      "Infinitely many genuinely independent eigenfunctions, since $A$ can take on infinitely many distinct real values as the boundary conditions never pin it down",
+      "None, since $\\sin(4\\pi) = 0$ forces $A$ to vanish as well"
     ],
     correctAnswer: 0,
-    explanation: "The problem is simple, so each eigenvalue carries one eigenfunction up to a constant multiple, meaning $\\sin(n\\pi x/L)$ and $5\\sin(n\\pi x/L)$ are not counted as different.\n\nThe second-order equation admits two solutions, but only one satisfies both boundary conditions.\n\nConstant multiples do not count as independent.\n\nSimplicity means the count is one for every eigenvalue."
+    explanation: "Applying $y(0) = 0$ forces $B = 0$, leaving $y = A\\sin(4x)$. Applying $y(\\pi) = 0$ gives $A\\sin(4\\pi) = 0$, and since $\\sin(4\\pi) = 0$ automatically, this holds for any nonzero $A$, so $A$ is a free scaling constant rather than a second independent solution. There is exactly one eigenfunction up to a constant multiple.\n\n$B$ was forced to zero by the left boundary condition, so it cannot also be chosen nonzero.\n\nAllowing $A$ to range over infinitely many values only rescales the same eigenfunction; scalar multiples of one function are not independent functions.\n\n$\\sin(4\\pi)$ already equals zero regardless of $A$, so the right boundary condition does not force $A$ itself to be zero."
   },
   {
     id: "mth302_ch8_017",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "With respect to what are Sturm-Liouville eigenfunctions orthogonal?",
+    text: "The equation $x^2y'' + 2xy' + \\lambda y = 0$ is written in self-adjoint form as $(x^2y')' + \\lambda y = 0$ for $x > 0$. With respect to which weight function are its eigenfunctions mutually orthogonal?",
     options: [
-      "The weight function $r(x)$, which must be carried in the integral",
-      "The coefficient $p(x)$ appearing in the leading term",
-      "The potential $q(x)$ appearing alongside the eigenvalue",
-      "No weight at all"
+      "$r(x) = 1$, since no function multiplies $\\lambda$",
+      "$r(x) = x^2$, taking the coefficient of $y''$ before differentiation as the weight",
+      "$r(x) = 2x$, wrongly taking the coefficient of $y'$ itself as the weight",
+      "$r(x) = 1/x^2$, taking the reciprocal of the leading coefficient as the weight"
     ],
     correctAnswer: 0,
-    explanation: "The relation is $\\int_a^b y_my_nr\\,dx = 0$ for $m \\neq n$, so the weight $r$ must be carried unless it happens to equal one.\n\nThe coefficient $p$ appears in the differential operator, not in the inner product.\n\nThe potential $q$ likewise plays no part in orthogonality.\n\nDropping the weight is valid only in the special case $r \\equiv 1$."
+    explanation: "Comparing $(x^2y')' + \\lambda y = 0$ with $(py')' + [q + \\lambda r]y = 0$ shows $p(x) = x^2$, $q(x) = 0$, and $r(x) = 1$, since $\\lambda$ stands alone with no function attached to it in this equation. The eigenfunctions are therefore orthogonal with weight $1$.\n\n$x^2$ is the leading coefficient $p(x)$, which sits in the derivative term before differentiation, not the weight that multiplies $\\lambda$.\n\n$2x$ is $p'(x)$, the coefficient of $y'$ that appears after expanding $(x^2y')'$, and also has no role as the weight.\n\nThe reciprocal of the leading coefficient has no place in the standard form at all; the weight is read directly from whatever multiplies $\\lambda$."
   },
   {
     id: "mth302_ch8_018",
@@ -355,29 +355,29 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_026",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "When may the weight be omitted from the orthogonality integral?",
+    text: "The equation $(1+x^2)y'' + 2xy' + \\lambda y = 0$ is already in the self-adjoint form $[(1+x^2)y']' + \\lambda y = 0$. May the weight function be dropped from the orthogonality integral $\\int y_my_nr\\,dx$ for eigenfunctions of this problem?",
     options: [
-      "Only when $r \\equiv 1$",
-      "Whenever the eigenvalues are distinct from one another",
-      "Whenever the interval is symmetric about the origin",
-      "Always"
+      "Yes, because comparing with $(py')' + [q + \\lambda r]y = 0$ shows $r(x) = 1$ here, so the weight is simply absent from the notation",
+      "No, because $r(x) = 1 + x^2$ must be carried in the integral, since $p$ is not constant and therefore cannot be treated as the weight function",
+      "No, because $r(x) = 2x$ must be carried in the integral",
+      "Yes, but only after rescaling the eigenfunctions to unit length"
     ],
     correctAnswer: 0,
-    explanation: "The weight can be dropped only in the special case where it is identically one; otherwise it must be carried.\n\nDistinct eigenvalues are what make the integral vanish, not what removes the weight.\n\nSymmetry of the interval has no bearing on the weight.\n\nThe weight does not cancel and omitting it is a standard error."
+    explanation: "Comparing $[(1+x^2)y']' + \\lambda y = 0$ with $(py')' + [q + \\lambda r]y = 0$ gives $p(x) = 1 + x^2$, $q(x) = 0$, and $r(x) = 1$, since nothing multiplies $\\lambda$ beyond the coefficient $1$. The weight can be dropped from the orthogonality integral precisely because $r \\equiv 1$ here, even though $p$ itself is not constant.\n\nAssuming a nonconstant $p$ forces a nonconstant weight is exactly the slip this equation is built to catch: $p$ and $r$ are read off from different places in the standard form, and $p = 1+x^2$ does not make $r$ equal to $1+x^2$.\n\n$2x$ is $p'(x)$, the coefficient of $y'$ after expansion, not the weight multiplying $\\lambda$.\n\nWhether the weight can be dropped from the notation depends only on whether $r \\equiv 1$, not on any rescaling of the eigenfunctions themselves."
   },
   {
     id: "mth302_ch8_027",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Two functions are orthogonal on $[a, b]$ with respect to $r$ when which integral vanishes?",
+    text: "The equation $y'' - 2xy' + \\lambda y = 0$ is converted to self-adjoint form by multiplying through by the integrating factor $e^{-x^2}$, giving $(e^{-x^2}y')' + \\lambda e^{-x^2}y = 0$. For eigenfunctions $y_m$ and $y_n$ of this system belonging to different eigenvalues, which integral must vanish?",
     options: [
-      "$\\displaystyle\\int_a^b f(x)g(x)r(x)\\,dx$",
-      "$\\displaystyle\\int_a^b [f(x) + g(x)]r(x)\\,dx$, integrating a sum instead of a product",
-      "$\\displaystyle\\int_a^b \\dfrac{f(x)}{g(x)}r(x)\\,dx$, integrating a quotient of the two",
-      "$\\displaystyle\\int_a^b f(x)g(x)\\,dx$"
+      "$\\displaystyle\\int y_m(x)y_n(x)e^{-x^2}\\,dx = 0$, carrying the weight produced by the integrating factor",
+      "$\\displaystyle\\int y_m(x)y_n(x)e^{x^2}\\,dx = 0$, using the reciprocal of the correct weight instead of the weight itself",
+      "$\\displaystyle\\int [y_m(x) + y_n(x)]e^{-x^2}\\,dx = 0$, integrating a sum of the two eigenfunctions rather than their product",
+      "$\\displaystyle\\int y_m(x)y_n(x)\\,dx = 0$"
     ],
     correctAnswer: 0,
-    explanation: "Weighted orthogonality means the integral of the product of the two functions against the positive weight vanishes.\n\nA sum rather than a product does not define an inner product.\n\nA quotient is undefined wherever $g$ vanishes.\n\nOmitting the weight gives the unweighted notion, valid only when $r \\equiv 1$."
+    explanation: "Multiplying $y'' - 2xy' + \\lambda y = 0$ by $e^{-x^2}$ gives $(e^{-x^2}y')' + \\lambda e^{-x^2}y = 0$, so comparing with $(py')' + [q + \\lambda r]y = 0$ shows $r(x) = e^{-x^2}$. Orthogonality of eigenfunctions belonging to different eigenvalues therefore requires $\\int y_my_ne^{-x^2}\\,dx = 0$.\n\nUsing $e^{x^2}$ inverts the exponential and carries the reciprocal of the actual weight rather than the weight itself.\n\nIntegrating a sum $y_m + y_n$ rather than the product $y_my_n$ does not define an inner product at all.\n\nDropping $e^{-x^2}$ entirely repeats the standard slip of treating the weight as $1$ when the integrating factor shows it is not."
   },
   {
     id: "mth302_ch8_028",
@@ -495,15 +495,15 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_036",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "The eigenvalues of a Sturm-Liouville system form which kind of set?",
+    text: "For the eigenvalue problem $y'' + \\lambda y = 0$ on $0 \\le x \\le \\pi$ with $y(0) = 0$ and $y(\\pi) = 0$, solving gives eigenvalues $\\lambda_n = n^2$ for $n = 1, 2, 3, \\ldots$. Does this system have a finite or infinite number of eigenvalues, and why?",
     options: [
-      "An infinite sequence",
-      "A finite set whose size equals the order of the equation",
-      "A continuous interval of admissible values",
-      "A single value determined by the weight function"
+      "Infinite, since every positive integer $n$ produces a distinct eigenvalue $n^2$ satisfying both boundary conditions",
+      "Finite, limited to $n = 1, 2, 3$, since larger values of $n$ no longer satisfy the boundary condition at $x = \\pi$",
+      "Finite, because the interval $[0, \\pi]$ has finite length",
+      "Infinite, but only for even values of $n$"
     ],
     correctAnswer: 0,
-    explanation: "The solutions form an infinite sequence of eigenfunctions with eigenvalues indexed by $n = 0, 1, 2, \\ldots$ tending to infinity.\n\nA finite set would contradict the unbounded increasing sequence.\n\nA continuum of eigenvalues does not arise for a regular problem.\n\nA single eigenvalue would leave no expansion to build."
+    explanation: "The eigenfunctions $y_n = \\sin(nx)$ satisfy $y(0) = 0$ automatically and $y(\\pi) = \\sin(n\\pi) = 0$ for every positive integer $n$, so every $n = 1, 2, 3, \\ldots$ produces a genuine eigenvalue $\\lambda_n = n^2$, giving an infinite sequence.\n\nThere is nothing special about $n = 1, 2, 3$; $\\sin(n\\pi) = 0$ holds for every integer $n$, so larger values keep satisfying the boundary condition.\n\nThe finite length of the interval bounds the spacing of the eigenvalues, not how many of them there are.\n\n$\\sin(n\\pi) = 0$ holds for odd integers just as much as even ones, so odd values of $n$ are not excluded."
   },
   {
     id: "mth302_ch8_037",
@@ -523,29 +523,29 @@ const mth302Chapter8: QuestionV2[] = [
     id: "mth302_ch8_038",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "Which statement about a regular Sturm-Liouville system is false?",
+    text: "The Legendre equation $(1-x^2)y'' - 2xy' + \\lambda y = 0$ on $-1 \\le x \\le 1$ is written in self-adjoint form as $[(1-x^2)y']' + \\lambda y = 0$, with eigenvalues $\\lambda_n = n(n+1)$ and eigenfunctions the Legendre polynomials $P_n(x)$ for $n = 0, 1, 2, \\ldots$. Which statement about this system is false?",
     options: [
-      "Some eigenvalues may be repeated",
-      "The eigenvalues are all real numbers",
-      "The eigenfunctions are mutually orthogonal with weight $r$",
-      "The eigenvalues increase without bound"
+      "The weight function is $r(x) = 1 - x^2$, since that factor multiplies the derivative term in the equation, before any differentiation is carried out",
+      "The eigenfunctions $P_m(x)$ and $P_n(x)$ are orthogonal with weight $r(x) = 1$ for $m \\neq n$",
+      "The eigenvalues are $\\lambda_n = n(n+1)$ for $n = 0, 1, 2, \\ldots$",
+      "$p(x) = 1 - x^2$ is the coefficient multiplying $y'$ after differentiation, in $(py')'$"
     ],
     correctAnswer: 0,
-    explanation: "The system is simple, meaning each eigenvalue carries exactly one independent eigenfunction, so repetition never occurs and this statement is the false one.\n\nReality of the eigenvalues is one of the core properties.\n\nWeighted orthogonality is likewise a core property.\n\nGrowth without bound is part of the standard ordering of the eigenvalues."
+    explanation: "Comparing $[(1-x^2)y']' + \\lambda y = 0$ with $(py')' + [q + \\lambda r]y = 0$ shows $p(x) = 1-x^2$, $q(x) = 0$, and $r(x) = 1$, since nothing beyond the coefficient $1$ multiplies $\\lambda$. Calling $1-x^2$ the weight confuses it with $p$, the coefficient that sits inside the derivative term, so this statement is false.\n\nOrthogonality with weight $r(x) = 1$ is correct, since $r = 1$ is exactly what the standard form gives.\n\nThe eigenvalues $\\lambda_n = n(n+1)$ are the correct values for this system.\n\n$p(x) = 1-x^2$ correctly names the coefficient that appears inside $(py')'$, before the derivative is expanded out."
   },
   {
     id: "mth302_ch8_039",
     course: "MTH 302",
     chapter: "Chapter 8",
-    text: "In the expanded Sturm-Liouville form, what must the coefficient of $y'$ equal?",
+    text: "A student proposes that the equation $y'' + 6xy' + \\lambda y = 0$ is already in the self-adjoint form $py'' + p'y' + (q + \\lambda r)y = 0$ with $p(x) = 1$. Is this equation already in self-adjoint Sturm-Liouville form?",
     options: [
-      "$p'(x)$",
-      "$q(x)$",
-      "$r(x)$",
-      "Zero in every admissible case"
+      "No, because $p = 1$ gives $p' = 0$, which does not match the coefficient $6x$ actually multiplying $y'$ in the equation",
+      "Yes, because the coefficient of $y''$ is $1$ and the coefficient of $y$ is $\\lambda$, which is all that self-adjoint form requires of an equation",
+      "Yes, because $6x$ can be treated as part of the potential term $q(x)$",
+      "No, because the eigenvalue $\\lambda$ must always multiply a nonconstant weight function"
     ],
     correctAnswer: 0,
-    explanation: "Expanding $(py')'$ gives $py'' + p'y'$, so consistency requires the coefficient of $y'$ to be exactly the derivative of the coefficient of $y''$.\n\nThe potential $q$ multiplies $y$, not $y'$.\n\nThe weight $r$ multiplies $\\lambda y$.\n\nThe coefficient vanishes only when $p$ happens to be constant."
+    explanation: "Self-adjoint form requires the coefficient of $y'$ to equal $p'(x)$, the derivative of the coefficient of $y''$. Taking $p(x) = 1$ gives $p'(x) = 0$, but the equation's actual coefficient of $y'$ is $6x$, so $p' \\neq 6x$ and the equation is not yet self-adjoint; an integrating factor would be needed first.\n\nMatching the coefficients of $y''$ and $y$ alone is not sufficient; the coefficient of $y'$ must independently equal the derivative of the coefficient of $y''$, and here it does not.\n\n$q(x)$ multiplies $y$ alone, not $y'$, so $6x$ cannot be absorbed into $q$ without changing which derivative it multiplies.\n\nSelf-adjointness is a condition relating $p$ and $p'$ to the coefficient of $y'$; it places no requirement that $r(x)$ be nonconstant."
   },
   {
     id: "mth302_ch8_040",
